@@ -35,6 +35,7 @@ req(url)
 function handleEndpoint(endpointDom) {
   let endpointName = endpointDom.window.document.body.children[0].children[0].getAttribute('api-name').trim();
   return fs.mkdirAsync(endpointName)
+    .then(() => fs.mkdirAsync(endpointName + '/dtos'))
     .catch(() => {})
     .then(() => {
       let methods = endpointDom.window.document.getElementsByClassName('operation');
@@ -55,7 +56,7 @@ function handleApiBlock(endpointName, apiBlockHtml) {
   switch(type) {
     case 'response classes':
       let { returnType, dtos } = dtoUtils.readDtos(apiBlockHtml);
-      return dtos.map(schema => fs.writeFileAsync(endpointName + '/' + schema.title + '.json', JSON.stringify(schema, null, 2)));
+      return dtos.map(schema => fs.writeFileAsync(endpointName + '/dtos/' + schema.title + '.json', JSON.stringify(schema, null, 2)));
       break;
     case 'implementation notes':
     case 'response errors':
