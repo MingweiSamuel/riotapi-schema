@@ -7,10 +7,16 @@ const { JSDOM } = require("jsdom");
 
 const dtoUtils = require('./dtoUtils');
 
-process.chdir(__dirname + '/output');
+const url = 'https://developer.riotgames.com/api-methods/'
 
-let url = 'https://developer.riotgames.com/api-methods/'
-req(url)
+process.chdir(__dirname);
+
+fs.mkdirAsync('output')
+  .catch(() => {})
+  .then(() => {
+    process.chdir(__dirname + '/output');
+    return req(url)
+  })
   .catch(e => req(url))
   .then(body => {
     let dom = new JSDOM(body);
