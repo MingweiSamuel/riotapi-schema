@@ -1,0 +1,25 @@
+{
+  "name": "riotapi-schema",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://MingweiSamuel@github.com/MingweiSamuel/riotapi-schema.git"
+  },
+  "author": "Mingwei Samuel",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/MingweiSamuel/riotapi-schema/issues"
+  },
+  "homepage": "https://github.com/MingweiSamuel/riotapi-schema#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "jsdom": "^11.3.0",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
