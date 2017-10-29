@@ -14,7 +14,9 @@ module.exports = function(rootDir) {
 
   fs.mkdir(output).catch(() => {})
     .then(() => fs.readdir(output))
-    .then(files => Promise.all(files.map(file => fs.remove(output + '/' + file))))
+    .then(files => Promise.all(files
+      .filter(file => !file.startsWith('.'))
+      .map(file => fs.remove(output + '/' + file))))
     .then(() => {
       process.chdir(rootDir + '/' + output);
       return req(url).catch(e => req(url));
