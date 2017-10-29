@@ -2,9 +2,11 @@ const fs = require("./fs");
 
 const Method = require('./method')
 
-function Endpoint(endpointDom) {
-  this.dom = endpointDom;
-  this.name = endpointDom.window.document.body.children[0].children[0].getAttribute('api-name').trim();
+function Endpoint(dom, desc) {
+  this.dom = dom;
+  this.desc = desc;
+  this.name = dom.window.document.body.children[0].children[0].getAttribute('api-name');
+  this.id = dom.window.document.body.children[0].children[0].id.replace(/^resource_/, '');
   this.dtos = [];
 }
 
@@ -41,6 +43,13 @@ Endpoint.prototype.compile = function() {
       // Write methods index file.
       let methodsIndex = methods.map(method => method.name + '.json');
       promises.push(fs.writeFileAsync(methodsDir + 'index.json', JSON.stringify(methodsIndex, null, 2)));
+
+      let endpointInfo = {
+        name: this.name,
+        desc: this.desc,
+        id: this.id
+      };
+      promises.push(fs.writeFileAsync(this.name + '/endpoint.json', JSON.stringify(endpointInfo, null, 2)));
 
       return promises;
     });

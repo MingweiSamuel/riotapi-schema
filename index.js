@@ -22,15 +22,20 @@ fs.mkdirAsync(output)
     let dom = new JSDOM(body);
 
     let els = dom.window.document.getElementsByClassName('api_option');
-    let endpoints = {};
-    return Promise.all(Array.from(els).map(el => {
-      let name = el.getAttribute('api-name');
-      let url = 'https://developer.riotgames.com/api-details/' + name;
-      return req(url)
-        .catch(e => req(url)) // 1 retry.
-        .then(JSON.parse)
-        .then(o => new JSDOM(o.html))
-        .then(dom => new Endpoint(dom).compile());
-    }));
+    return Promise.all(Array.from(els)
+      .map(el => {
+        let name = el.getAttribute('api-name');
+        let desc = el.getElementsByClassName('api_desc')[0].textContent.trim();
+        let url = 'https://developer.riotgames.com/api-details/' + name;
+        return req(url)
+          .catch(e => req(url)) // 1 retry.
+          .then(JSON.parse)
+          .then(o => new JSDOM(o.html))
+          .then(dom => {
+            let endpoint = new Endpoint(dom, desc);
+            return endpoint.compile().then(() => endpoint);
+          });
+      }))
+      .then(endpoints => fs.writeFileAsync('index.json', JSON.stringify(endpoints.map(e => e.name), null, 2)));
   })
   .catch(console.err);
