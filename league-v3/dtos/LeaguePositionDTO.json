@@ -43,6 +43,10 @@
       "type": "string",
       "_type": "string"
     },
+    "leagueId": {
+      "type": "string",
+      "_type": "string"
+    },
     "leaguePoints": {
       "type": "integer",
       "_type": "int"

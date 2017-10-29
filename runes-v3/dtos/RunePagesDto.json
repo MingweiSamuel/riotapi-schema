@@ -4,7 +4,11 @@
   "title": "RunePagesDto",
   "properties": {
     "pages": {
-      "$ref": "./Set[RunePageDto].json",
+      "type": "array",
+      "items": {
+        "$ref": "./RunePageDto.json",
+        "_type": "RunePageDto"
+      },
       "_type": "Set[RunePageDto]",
       "description": "Collection of rune pages associated with the summoner."
     },

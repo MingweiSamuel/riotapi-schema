@@ -14,7 +14,7 @@
     "entries": {
       "type": "array",
       "items": {
-        "$ref": "./LeagueItemDTO.json",
+        "$ref": "./LeaguePositionDTO.json",
         "_type": "LeagueItemDTO"
       },
       "_type": "List[LeagueItemDTO]"

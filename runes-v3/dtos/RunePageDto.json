@@ -9,7 +9,11 @@
       "description": "Indicates if the page is the current page."
     },
     "slots": {
-      "$ref": "./Set[RuneSlotDto].json",
+      "type": "array",
+      "items": {
+        "$ref": "./RuneSlotDto.json",
+        "_type": "RuneSlotDto"
+      },
       "_type": "Set[RuneSlotDto]",
       "description": "Collection of rune slots associated with the rune page."
     },

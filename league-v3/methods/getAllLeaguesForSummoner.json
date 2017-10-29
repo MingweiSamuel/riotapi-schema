@@ -3,7 +3,11 @@
   "name": "getAllLeaguesForSummoner",
   "method": "GET",
   "returnType": {
-    "$ref": "./Set[LeagueListDTO].json",
+    "type": "array",
+    "items": {
+      "$ref": "./LeagueListDTO.json",
+      "_type": "LeagueListDTO"
+    },
     "_type": "Set[LeagueListDTO]"
   }
 }

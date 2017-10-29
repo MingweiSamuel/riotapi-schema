@@ -34,7 +34,11 @@
       "description": "The team size for the tournament code game."
     },
     "participants": {
-      "$ref": "./Set[long].json",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "_type": "long"
+      },
       "_type": "Set[long]"
     },
     "pickType": {
