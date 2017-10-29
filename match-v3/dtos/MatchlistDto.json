@@ -6,7 +6,7 @@
     "matches": {
       "type": "array",
       "items": {
-        "$ref": "MatchReferenceDto.json",
+        "$ref": "./MatchReferenceDto.json",
         "_type": "MatchReferenceDto"
       },
       "_type": "List[MatchReferenceDto]"

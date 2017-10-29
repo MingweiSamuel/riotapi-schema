@@ -11,7 +11,7 @@
     "masteries": {
       "type": "array",
       "items": {
-        "$ref": "MasteryDto.json",
+        "$ref": "./MasteryDto.json",
         "_type": "MasteryDto"
       },
       "_type": "List[MasteryDto]",

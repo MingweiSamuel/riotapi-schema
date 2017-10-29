@@ -3,7 +3,7 @@
   "name": "getChallengerLeague",
   "method": "GET",
   "returnType": {
-    "$ref": "LeagueListDTO.json",
+    "$ref": "./LeagueListDTO.json",
     "_type": "LeagueListDTO"
   }
 }

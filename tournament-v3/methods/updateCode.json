@@ -3,7 +3,7 @@
   "name": "updateCode",
   "method": "PUT",
   "returnType": {
-    "$ref": ".json",
+    "$ref": "./.json",
     "_type": ""
   }
 }

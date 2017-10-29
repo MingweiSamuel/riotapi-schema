@@ -6,7 +6,7 @@
     "champions": {
       "type": "array",
       "items": {
-        "$ref": "ChampionDto.json",
+        "$ref": "./ChampionDto.json",
         "_type": "ChampionDto"
       },
       "_type": "List[ChampionDto]",

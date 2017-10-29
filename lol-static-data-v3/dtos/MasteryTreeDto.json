@@ -6,7 +6,7 @@
     "Resolve": {
       "type": "array",
       "items": {
-        "$ref": "MasteryTreeListDto.json",
+        "$ref": "./MasteryTreeListDto.json",
         "_type": "MasteryTreeListDto"
       },
       "_type": "List[MasteryTreeListDto]"
@@ -14,7 +14,7 @@
     "Ferocity": {
       "type": "array",
       "items": {
-        "$ref": "MasteryTreeListDto.json",
+        "$ref": "./MasteryTreeListDto.json",
         "_type": "MasteryTreeListDto"
       },
       "_type": "List[MasteryTreeListDto]"
@@ -22,7 +22,7 @@
     "Cunning": {
       "type": "array",
       "items": {
-        "$ref": "MasteryTreeListDto.json",
+        "$ref": "./MasteryTreeListDto.json",
         "_type": "MasteryTreeListDto"
       },
       "_type": "List[MasteryTreeListDto]"

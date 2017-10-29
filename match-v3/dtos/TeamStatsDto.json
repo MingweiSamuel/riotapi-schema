@@ -14,7 +14,7 @@
     "bans": {
       "type": "array",
       "items": {
-        "$ref": "TeamBansDto.json",
+        "$ref": "./TeamBansDto.json",
         "_type": "TeamBansDto"
       },
       "_type": "List[TeamBansDto]"

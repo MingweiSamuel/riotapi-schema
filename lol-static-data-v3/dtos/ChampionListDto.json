@@ -22,7 +22,7 @@
         "_type": "string"
       },
       "additionalProperties": {
-        "$ref": "ChampionDto.json",
+        "$ref": "./ChampionDto.json",
         "_type": " ChampionDto"
       },
       "_type": "Map[string, ChampionDto]"

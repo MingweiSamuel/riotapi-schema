@@ -10,7 +10,7 @@
         "_type": "string"
       },
       "additionalProperties": {
-        "$ref": "RuneDto.json",
+        "$ref": "./RuneDto.json",
         "_type": " RuneDto"
       },
       "_type": "Map[string, RuneDto]"

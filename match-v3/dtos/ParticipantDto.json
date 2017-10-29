@@ -4,7 +4,7 @@
   "title": "ParticipantDto",
   "properties": {
     "stats": {
-      "$ref": "ParticipantStatsDto.json",
+      "$ref": "./ParticipantStatsDto.json",
       "_type": "ParticipantStatsDto"
     },
     "participantId": {
@@ -14,13 +14,13 @@
     "runes": {
       "type": "array",
       "items": {
-        "$ref": "RuneDto.json",
+        "$ref": "./RuneDto.json",
         "_type": "RuneDto"
       },
       "_type": "List[RuneDto]"
     },
     "timeline": {
-      "$ref": "ParticipantTimelineDto.json",
+      "$ref": "./ParticipantTimelineDto.json",
       "_type": "ParticipantTimelineDto"
     },
     "teamId": {
@@ -34,7 +34,7 @@
     "masteries": {
       "type": "array",
       "items": {
-        "$ref": "MasteryDto.json",
+        "$ref": "./MasteryDto.json",
         "_type": "MasteryDto"
       },
       "_type": "List[MasteryDto]"

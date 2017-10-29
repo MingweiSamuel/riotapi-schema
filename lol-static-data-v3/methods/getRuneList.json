@@ -3,7 +3,7 @@
   "name": "getRuneList",
   "method": "GET",
   "returnType": {
-    "$ref": "RuneListDto.json",
+    "$ref": "./RuneListDto.json",
     "_type": "RuneListDto"
   }
 }

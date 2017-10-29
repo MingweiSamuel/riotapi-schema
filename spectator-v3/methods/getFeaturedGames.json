@@ -3,7 +3,7 @@
   "name": "getFeaturedGames",
   "method": "GET",
   "returnType": {
-    "$ref": "FeaturedGames.json",
+    "$ref": "./FeaturedGames.json",
     "_type": "FeaturedGames"
   }
 }

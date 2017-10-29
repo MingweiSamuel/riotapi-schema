@@ -4,7 +4,7 @@
   "title": "MasteryPagesDto",
   "properties": {
     "pages": {
-      "$ref": "Set[MasteryPageDto].json",
+      "$ref": "./Set[MasteryPageDto].json",
       "_type": "Set[MasteryPageDto]",
       "description": "Collection of mastery pages associated with the summoner."
     },

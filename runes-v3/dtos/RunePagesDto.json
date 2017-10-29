@@ -4,7 +4,7 @@
   "title": "RunePagesDto",
   "properties": {
     "pages": {
-      "$ref": "Set[RunePageDto].json",
+      "$ref": "./Set[RunePageDto].json",
       "_type": "Set[RunePageDto]",
       "description": "Collection of rune pages associated with the summoner."
     },

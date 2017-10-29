@@ -93,7 +93,7 @@
       "_type": "int"
     },
     "position": {
-      "$ref": "MatchPositionDto.json",
+      "$ref": "./MatchPositionDto.json",
       "_type": "MatchPositionDto"
     },
     "beforeId": {

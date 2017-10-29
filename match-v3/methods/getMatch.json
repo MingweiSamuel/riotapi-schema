@@ -3,7 +3,7 @@
   "name": "getMatch",
   "method": "GET",
   "returnType": {
-    "$ref": "MatchDto.json",
+    "$ref": "./MatchDto.json",
     "_type": "MatchDto"
   }
 }

@@ -3,7 +3,7 @@
   "name": "getChampionById",
   "method": "GET",
   "returnType": {
-    "$ref": "ChampionDto.json",
+    "$ref": "./ChampionDto.json",
     "_type": "ChampionDto"
   }
 }

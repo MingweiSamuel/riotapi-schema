@@ -3,7 +3,7 @@
   "name": "getLanguageStrings",
   "method": "GET",
   "returnType": {
-    "$ref": "LanguageStringsDto.json",
+    "$ref": "./LanguageStringsDto.json",
     "_type": "LanguageStringsDto"
   }
 }

@@ -3,7 +3,7 @@
   "name": "getSummonerSpellList",
   "method": "GET",
   "returnType": {
-    "$ref": "SummonerSpellListDto.json",
+    "$ref": "./SummonerSpellListDto.json",
     "_type": "SummonerSpellListDto"
   }
 }

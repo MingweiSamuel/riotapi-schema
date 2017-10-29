@@ -18,7 +18,7 @@
     "participantIdentities": {
       "type": "array",
       "items": {
-        "$ref": "ParticipantIdentityDto.json",
+        "$ref": "./ParticipantIdentityDto.json",
         "_type": "ParticipantIdentityDto"
       },
       "_type": "List[ParticipantIdentityDto]"
@@ -46,7 +46,7 @@
     "teams": {
       "type": "array",
       "items": {
-        "$ref": "TeamStatsDto.json",
+        "$ref": "./TeamStatsDto.json",
         "_type": "TeamStatsDto"
       },
       "_type": "List[TeamStatsDto]"
@@ -54,7 +54,7 @@
     "participants": {
       "type": "array",
       "items": {
-        "$ref": "ParticipantDto.json",
+        "$ref": "./ParticipantDto.json",
         "_type": "ParticipantDto"
       },
       "_type": "List[ParticipantDto]"

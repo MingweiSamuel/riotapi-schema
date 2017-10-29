@@ -36,21 +36,21 @@
     "bannedChampions": {
       "type": "array",
       "items": {
-        "$ref": "BannedChampion.json",
+        "$ref": "./BannedChampion.json",
         "_type": "BannedChampion"
       },
       "_type": "List[BannedChampion]",
       "description": "Banned champion information"
     },
     "observers": {
-      "$ref": "Observer.json",
+      "$ref": "./Observer.json",
       "_type": "Observer",
       "description": "The observer information"
     },
     "participants": {
       "type": "array",
       "items": {
-        "$ref": "CurrentGameParticipant.json",
+        "$ref": "./CurrentGameParticipant.json",
         "_type": "CurrentGameParticipant"
       },
       "_type": "List[CurrentGameParticipant]",

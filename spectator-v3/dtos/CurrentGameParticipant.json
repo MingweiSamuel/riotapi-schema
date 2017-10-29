@@ -21,7 +21,7 @@
     "runes": {
       "type": "array",
       "items": {
-        "$ref": "Rune.json",
+        "$ref": "./Rune.json",
         "_type": "Rune"
       },
       "_type": "List[Rune]",
@@ -45,7 +45,7 @@
     "masteries": {
       "type": "array",
       "items": {
-        "$ref": "Mastery.json",
+        "$ref": "./Mastery.json",
         "_type": "Mastery"
       },
       "_type": "List[Mastery]",

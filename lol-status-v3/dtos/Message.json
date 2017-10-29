@@ -18,7 +18,7 @@
     "translations": {
       "type": "array",
       "items": {
-        "$ref": "Translation.json",
+        "$ref": "./Translation.json",
         "_type": "Translation"
       },
       "_type": "List[Translation]"

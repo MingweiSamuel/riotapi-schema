@@ -11,7 +11,7 @@
     "gameList": {
       "type": "array",
       "items": {
-        "$ref": "FeaturedGameInfo.json",
+        "$ref": "./FeaturedGameInfo.json",
         "_type": "FeaturedGameInfo"
       },
       "_type": "List[FeaturedGameInfo]",

@@ -8,7 +8,7 @@
       "_type": "string"
     },
     "image": {
-      "$ref": "ImageDto.json",
+      "$ref": "./ImageDto.json",
       "_type": "ImageDto"
     },
     "mapId": {

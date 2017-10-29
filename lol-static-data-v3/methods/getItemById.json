@@ -3,7 +3,7 @@
   "name": "getItemById",
   "method": "GET",
   "returnType": {
-    "$ref": "ItemDto.json",
+    "$ref": "./ItemDto.json",
     "_type": "ItemDto"
   }
 }

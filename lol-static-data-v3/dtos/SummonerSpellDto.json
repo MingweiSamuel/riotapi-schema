@@ -6,13 +6,13 @@
     "vars": {
       "type": "array",
       "items": {
-        "$ref": "SpellVarsDto.json",
+        "$ref": "./SpellVarsDto.json",
         "_type": "SpellVarsDto"
       },
       "_type": "List[SpellVarsDto]"
     },
     "image": {
-      "$ref": "ImageDto.json",
+      "$ref": "./ImageDto.json",
       "_type": "ImageDto"
     },
     "costBurn": {
@@ -62,7 +62,7 @@
     "effect": {
       "type": "array",
       "items": {
-        "$ref": "object.json",
+        "$ref": "./object.json",
         "_type": "object"
       },
       "_type": "List[object]",
@@ -73,7 +73,7 @@
       "_type": "string"
     },
     "leveltip": {
-      "$ref": "LevelTipDto.json",
+      "$ref": "./LevelTipDto.json",
       "_type": "LevelTipDto"
     },
     "modes": {
@@ -105,7 +105,7 @@
       "_type": "string"
     },
     "range": {
-      "$ref": "object.json",
+      "$ref": "./object.json",
       "_type": "object",
       "description": "This field is either a List of Integer or the String 'self' for spells that target one's own champion."
     },

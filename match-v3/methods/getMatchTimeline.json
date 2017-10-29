@@ -3,7 +3,7 @@
   "name": "getMatchTimeline",
   "method": "GET",
   "returnType": {
-    "$ref": "MatchTimelineDto.json",
+    "$ref": "./MatchTimelineDto.json",
     "_type": "MatchTimelineDto"
   }
 }

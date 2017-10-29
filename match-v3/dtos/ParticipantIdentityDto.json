@@ -4,7 +4,7 @@
   "title": "ParticipantIdentityDto",
   "properties": {
     "player": {
-      "$ref": "PlayerDto.json",
+      "$ref": "./PlayerDto.json",
       "_type": "PlayerDto"
     },
     "participantId": {

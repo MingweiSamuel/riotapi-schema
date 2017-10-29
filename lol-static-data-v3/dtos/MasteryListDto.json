@@ -10,7 +10,7 @@
         "_type": "string"
       },
       "additionalProperties": {
-        "$ref": "MasteryDto.json",
+        "$ref": "./MasteryDto.json",
         "_type": " MasteryDto"
       },
       "_type": "Map[string, MasteryDto]"
@@ -20,7 +20,7 @@
       "_type": "string"
     },
     "tree": {
-      "$ref": "MasteryTreeDto.json",
+      "$ref": "./MasteryTreeDto.json",
       "_type": "MasteryTreeDto"
     },
     "type": {

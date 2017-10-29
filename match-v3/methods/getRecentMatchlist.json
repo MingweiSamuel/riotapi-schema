@@ -3,7 +3,7 @@
   "name": "getRecentMatchlist",
   "method": "GET",
   "returnType": {
-    "$ref": "MatchlistDto.json",
+    "$ref": "./MatchlistDto.json",
     "_type": "MatchlistDto"
   }
 }

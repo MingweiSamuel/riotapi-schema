@@ -6,7 +6,7 @@
     "frames": {
       "type": "array",
       "items": {
-        "$ref": "MatchFrameDto.json",
+        "$ref": "./MatchFrameDto.json",
         "_type": "MatchFrameDto"
       },
       "_type": "List[MatchFrameDto]"

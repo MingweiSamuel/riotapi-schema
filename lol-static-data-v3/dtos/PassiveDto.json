@@ -4,7 +4,7 @@
   "title": "PassiveDto",
   "properties": {
     "image": {
-      "$ref": "ImageDto.json",
+      "$ref": "./ImageDto.json",
       "_type": "ImageDto"
     },
     "sanitizedDescription": {

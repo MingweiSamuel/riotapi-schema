@@ -3,7 +3,7 @@
   "name": "getCurrentGameInfoBySummoner",
   "method": "GET",
   "returnType": {
-    "$ref": "CurrentGameInfo.json",
+    "$ref": "./CurrentGameInfo.json",
     "_type": "CurrentGameInfo"
   }
 }

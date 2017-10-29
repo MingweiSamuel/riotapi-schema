@@ -21,7 +21,7 @@
       "_type": "int"
     },
     "image": {
-      "$ref": "ImageDto.json",
+      "$ref": "./ImageDto.json",
       "_type": "ImageDto"
     },
     "sanitizedDescription": {

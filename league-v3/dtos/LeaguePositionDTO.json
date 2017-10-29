@@ -12,7 +12,7 @@
       "_type": "boolean"
     },
     "miniSeries": {
-      "$ref": "MiniSeriesDTO.json",
+      "$ref": "./MiniSeriesDTO.json",
       "_type": "MiniSeriesDTO"
     },
     "wins": {

@@ -10,7 +10,7 @@
     "blocks": {
       "type": "array",
       "items": {
-        "$ref": "BlockDto.json",
+        "$ref": "./BlockDto.json",
         "_type": "BlockDto"
       },
       "_type": "List[BlockDto]"

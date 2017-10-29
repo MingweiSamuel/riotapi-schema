@@ -3,7 +3,7 @@
   "name": "getTournamentCode",
   "method": "GET",
   "returnType": {
-    "$ref": "TournamentCodeDTO.json",
+    "$ref": "./TournamentCodeDTO.json",
     "_type": "TournamentCodeDTO"
   }
 }

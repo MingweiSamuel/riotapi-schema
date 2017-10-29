@@ -10,7 +10,7 @@
         "_type": "string"
       },
       "additionalProperties": {
-        "$ref": "SummonerSpellDto.json",
+        "$ref": "./SummonerSpellDto.json",
         "_type": " SummonerSpellDto"
       },
       "_type": "Map[string, SummonerSpellDto]"

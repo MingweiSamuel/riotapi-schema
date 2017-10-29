@@ -10,7 +10,7 @@
         "_type": "string"
       },
       "additionalProperties": {
-        "$ref": "ProfileIconDetailsDto.json",
+        "$ref": "./ProfileIconDetailsDto.json",
         "_type": " ProfileIconDetailsDto"
       },
       "_type": "Map[string, ProfileIconDetailsDto]"

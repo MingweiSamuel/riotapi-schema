@@ -3,7 +3,7 @@
   "name": "getBySummonerId",
   "method": "GET",
   "returnType": {
-    "$ref": "SummonerDTO.json",
+    "$ref": "./SummonerDTO.json",
     "_type": "SummonerDTO"
   }
 }

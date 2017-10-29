@@ -14,7 +14,7 @@
         "_type": "int"
       },
       "additionalProperties": {
-        "$ref": "MatchParticipantFrameDto.json",
+        "$ref": "./MatchParticipantFrameDto.json",
         "_type": " MatchParticipantFrameDto"
       },
       "_type": "Map[int, MatchParticipantFrameDto]"
@@ -22,7 +22,7 @@
     "events": {
       "type": "array",
       "items": {
-        "$ref": "MatchEventDto.json",
+        "$ref": "./MatchEventDto.json",
         "_type": "MatchEventDto"
       },
       "_type": "List[MatchEventDto]"

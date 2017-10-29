@@ -10,7 +10,7 @@
         "_type": "string"
       },
       "additionalProperties": {
-        "$ref": "ItemDto.json",
+        "$ref": "./ItemDto.json",
         "_type": " ItemDto"
       },
       "_type": "Map[string, ItemDto]"
@@ -22,7 +22,7 @@
     "tree": {
       "type": "array",
       "items": {
-        "$ref": "ItemTreeDto.json",
+        "$ref": "./ItemTreeDto.json",
         "_type": "ItemTreeDto"
       },
       "_type": "List[ItemTreeDto]"
@@ -30,7 +30,7 @@
     "groups": {
       "type": "array",
       "items": {
-        "$ref": "GroupDto.json",
+        "$ref": "./GroupDto.json",
         "_type": "GroupDto"
       },
       "_type": "List[GroupDto]"

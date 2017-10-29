@@ -3,7 +3,7 @@
   "name": "getLobbyEventsByCode",
   "method": "GET",
   "returnType": {
-    "$ref": "LobbyEventDTOWrapper.json",
+    "$ref": "./LobbyEventDTOWrapper.json",
     "_type": "LobbyEventDTOWrapper"
   }
 }

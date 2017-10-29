@@ -5,7 +5,7 @@
   "returnType": {
     "type": "array",
     "items": {
-      "$ref": "ChampionMasteryDTO.json",
+      "$ref": "./ChampionMasteryDTO.json",
       "_type": "ChampionMasteryDTO"
     },
     "_type": "List[ChampionMasteryDTO]"

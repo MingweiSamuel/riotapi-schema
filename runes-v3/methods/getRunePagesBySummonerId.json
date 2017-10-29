@@ -3,7 +3,7 @@
   "name": "getRunePagesBySummonerId",
   "method": "GET",
   "returnType": {
-    "$ref": "RunePagesDto.json",
+    "$ref": "./RunePagesDto.json",
     "_type": "RunePagesDto"
   }
 }

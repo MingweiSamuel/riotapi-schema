@@ -4,7 +4,7 @@
   "title": "RuneDto",
   "properties": {
     "stats": {
-      "$ref": "RuneStatsDto.json",
+      "$ref": "./RuneStatsDto.json",
       "_type": "RuneStatsDto"
     },
     "name": {
@@ -20,7 +20,7 @@
       "_type": "List[string]"
     },
     "image": {
-      "$ref": "ImageDto.json",
+      "$ref": "./ImageDto.json",
       "_type": "ImageDto"
     },
     "sanitizedDescription": {
@@ -28,7 +28,7 @@
       "_type": "string"
     },
     "rune": {
-      "$ref": "MetaDataDto.json",
+      "$ref": "./MetaDataDto.json",
       "_type": "MetaDataDto"
     },
     "id": {

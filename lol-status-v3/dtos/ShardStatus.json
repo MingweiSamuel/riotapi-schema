@@ -18,7 +18,7 @@
     "services": {
       "type": "array",
       "items": {
-        "$ref": "Service.json",
+        "$ref": "./Service.json",
         "_type": "Service"
       },
       "_type": "List[Service]"

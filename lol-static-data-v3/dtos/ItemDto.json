@@ -4,7 +4,7 @@
   "title": "ItemDto",
   "properties": {
     "gold": {
-      "$ref": "GoldDto.json",
+      "$ref": "./GoldDto.json",
       "_type": "GoldDto"
     },
     "plaintext": {
@@ -32,7 +32,7 @@
       "_type": "int"
     },
     "stats": {
-      "$ref": "InventoryDataStatsDto.json",
+      "$ref": "./InventoryDataStatsDto.json",
       "_type": "InventoryDataStatsDto"
     },
     "colloq": {
@@ -56,7 +56,7 @@
       "_type": "int"
     },
     "image": {
-      "$ref": "ImageDto.json",
+      "$ref": "./ImageDto.json",
       "_type": "ImageDto"
     },
     "description": {

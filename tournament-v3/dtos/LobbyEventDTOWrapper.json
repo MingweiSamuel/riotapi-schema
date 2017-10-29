@@ -6,7 +6,7 @@
     "eventList": {
       "type": "array",
       "items": {
-        "$ref": "LobbyEventDTO.json",
+        "$ref": "./LobbyEventDTO.json",
         "_type": "LobbyEventDTO"
       },
       "_type": "List[LobbyEventDTO]"

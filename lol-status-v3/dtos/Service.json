@@ -10,7 +10,7 @@
     "incidents": {
       "type": "array",
       "items": {
-        "$ref": "Incident.json",
+        "$ref": "./Incident.json",
         "_type": "Incident"
       },
       "_type": "List[Incident]"

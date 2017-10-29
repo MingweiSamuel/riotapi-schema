@@ -10,7 +10,7 @@
         "_type": "string"
       },
       "additionalProperties": {
-        "$ref": "MapDetailsDto.json",
+        "$ref": "./MapDetailsDto.json",
         "_type": " MapDetailsDto"
       },
       "_type": "Map[string, MapDetailsDto]"

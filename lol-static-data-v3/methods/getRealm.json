@@ -3,7 +3,7 @@
   "name": "getRealm",
   "method": "GET",
   "returnType": {
-    "$ref": "RealmDto.json",
+    "$ref": "./RealmDto.json",
     "_type": "RealmDto"
   }
 }

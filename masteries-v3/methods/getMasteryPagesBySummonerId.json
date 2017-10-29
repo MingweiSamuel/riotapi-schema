@@ -3,7 +3,7 @@
   "name": "getMasteryPagesBySummonerId",
   "method": "GET",
   "returnType": {
-    "$ref": "MasteryPagesDto.json",
+    "$ref": "./MasteryPagesDto.json",
     "_type": "MasteryPagesDto"
   }
 }

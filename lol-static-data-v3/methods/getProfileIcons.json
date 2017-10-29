@@ -3,7 +3,7 @@
   "name": "getProfileIcons",
   "method": "GET",
   "returnType": {
-    "$ref": "ProfileIconDataDto.json",
+    "$ref": "./ProfileIconDataDto.json",
     "_type": "ProfileIconDataDto"
   }
 }

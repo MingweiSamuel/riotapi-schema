@@ -6,7 +6,7 @@
     "masteryTreeItems": {
       "type": "array",
       "items": {
-        "$ref": "MasteryTreeItemDto.json",
+        "$ref": "./MasteryTreeItemDto.json",
         "_type": "MasteryTreeItemDto"
       },
       "_type": "List[MasteryTreeItemDto]"

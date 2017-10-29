@@ -4,7 +4,7 @@
   "title": "ChampionDto",
   "properties": {
     "info": {
-      "$ref": "InfoDto.json",
+      "$ref": "./InfoDto.json",
       "_type": "InfoDto"
     },
     "enemytips": {
@@ -16,7 +16,7 @@
       "_type": "List[string]"
     },
     "stats": {
-      "$ref": "StatsDto.json",
+      "$ref": "./StatsDto.json",
       "_type": "StatsDto"
     },
     "name": {
@@ -28,7 +28,7 @@
       "_type": "string"
     },
     "image": {
-      "$ref": "ImageDto.json",
+      "$ref": "./ImageDto.json",
       "_type": "ImageDto"
     },
     "tags": {
@@ -46,19 +46,19 @@
     "skins": {
       "type": "array",
       "items": {
-        "$ref": "SkinDto.json",
+        "$ref": "./SkinDto.json",
         "_type": "SkinDto"
       },
       "_type": "List[SkinDto]"
     },
     "passive": {
-      "$ref": "PassiveDto.json",
+      "$ref": "./PassiveDto.json",
       "_type": "PassiveDto"
     },
     "recommended": {
       "type": "array",
       "items": {
-        "$ref": "RecommendedDto.json",
+        "$ref": "./RecommendedDto.json",
         "_type": "RecommendedDto"
       },
       "_type": "List[RecommendedDto]"
@@ -90,7 +90,7 @@
     "spells": {
       "type": "array",
       "items": {
-        "$ref": "ChampionSpellDto.json",
+        "$ref": "./ChampionSpellDto.json",
         "_type": "ChampionSpellDto"
       },
       "_type": "List[ChampionSpellDto]"

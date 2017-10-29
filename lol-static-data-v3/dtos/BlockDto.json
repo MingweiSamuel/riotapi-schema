@@ -6,7 +6,7 @@
     "items": {
       "type": "array",
       "items": {
-        "$ref": "BlockItemDto.json",
+        "$ref": "./BlockItemDto.json",
         "_type": "BlockItemDto"
       },
       "_type": "List[BlockItemDto]"
