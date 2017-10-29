@@ -1,11 +1,11 @@
 [
-  "CurrentGameInfo.json",
   "BannedChampion.json",
-  "Observer.json",
+  "CurrentGameInfo.json",
   "CurrentGameParticipant.json",
-  "Rune.json",
-  "Mastery.json",
-  "FeaturedGames.json",
   "FeaturedGameInfo.json",
-  "Participant.json"
+  "FeaturedGames.json",
+  "Mastery.json",
+  "Observer.json",
+  "Participant.json",
+  "Rune.json"
 ]

@@ -1,14 +1,14 @@
 [
-  "champion-mastery-v3",
-  "champion-v3",
-  "league-v3",
-  "lol-static-data-v3",
-  "lol-status-v3",
-  "masteries-v3",
-  "match-v3",
-  "runes-v3",
-  "spectator-v3",
-  "summoner-v3",
-  "tournament-stub-v3",
-  "tournament-v3"
+  "champion-mastery-v3/",
+  "champion-v3/",
+  "league-v3/",
+  "lol-static-data-v3/",
+  "lol-status-v3/",
+  "masteries-v3/",
+  "match-v3/",
+  "runes-v3/",
+  "spectator-v3/",
+  "summoner-v3/",
+  "tournament-stub-v3/",
+  "tournament-v3/"
 ]

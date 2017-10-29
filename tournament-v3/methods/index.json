@@ -1,8 +1,8 @@
 [
   "createTournamentCode.json",
-  "updateCode.json",
-  "getTournamentCode.json",
   "getLobbyEventsByCode.json",
+  "getTournamentCode.json",
   "registerProviderData.json",
-  "registerTournament.json"
+  "registerTournament.json",
+  "updateCode.json"
 ]

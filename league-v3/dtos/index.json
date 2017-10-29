@@ -1,6 +1,6 @@
 [
-  "LeagueListDTO.json",
   "LeagueItemDTO.json",
-  "MiniSeriesDTO.json",
-  "LeaguePositionDTO.json"
+  "LeagueListDTO.json",
+  "LeaguePositionDTO.json",
+  "MiniSeriesDTO.json"
 ]
