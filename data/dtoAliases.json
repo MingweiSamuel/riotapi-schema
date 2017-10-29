@@ -1,0 +1,5 @@
+{
+  "league-v3": {
+    "LeagueItemDTO": "LeaguePositionDTO"
+  }
+}

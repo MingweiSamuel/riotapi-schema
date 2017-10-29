@@ -1,6 +1,6 @@
 const fs = require("./fs");
 
-const dtoUtils = require('./dto');
+const Dto = require('./dto');
 
 function Method(endpoint, methodEl) {
   this.endpoint = endpoint;
@@ -10,7 +10,7 @@ function Method(endpoint, methodEl) {
   this.returnType = null;
   this.dtos = null;
 
-  console.log(this.name + ' - ' + this.httpMethod);
+  console.log('  ' + this.name + ' - ' + this.httpMethod);
 }
 
 Method.prototype.compile = function() {
@@ -33,7 +33,7 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
   let type = typeH4.textContent.trim().toLowerCase();
   switch(type) {
     case 'response classes':
-      let { returnType, dtos } = dtoUtils.readDtos(apiBlockHtml);
+      let { returnType, dtos } = Dto.readDtos(apiBlockHtml, this.endpoint.name);
       this.returnType = returnType;
       this.dtos = dtos;
       break;

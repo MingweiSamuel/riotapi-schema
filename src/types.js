@@ -1,11 +1,12 @@
+const aliases = require('../data/dtoAliases');
 
-function getType(typeString) {
-  let result = getTypeInternal(typeString);
+function getType(typeString, endpoint=null) {
+  let result = getTypeInternal(typeString, endpoint);
   result._type = typeString;
   return result;
 }
 
-function getTypeInternal(typeString) {
+function getTypeInternal(typeString, endpoint) {
   typeString = typeString.trim();
   switch(typeString.toLowerCase()) {
     case "boolean":
@@ -18,18 +19,23 @@ function getTypeInternal(typeString) {
     case "string":
       return { type: 'string' };
   }
-  if (typeString.startsWith('List[')) {
+  if (typeString.startsWith('List[') || typeString.startsWith('Set[')) {
     return {
       type: 'array',
-      items: getType(typeString.slice(typeString.indexOf('[') + 1, -1))
+      items: getType(typeString.slice(typeString.indexOf('[') + 1, -1), endpoint)
     };
   }
   if (typeString.startsWith('Map[')) {
     return {
       type: 'object',
-      _key: getType(typeString.slice(typeString.indexOf('[') + 1, typeString.indexOf(', '))),
-      additionalProperties: getType(typeString.slice(typeString.indexOf(', ') + 1, -1))
+      _key: getType(typeString.slice(typeString.indexOf('[') + 1, typeString.indexOf(', ')), endpoint),
+      additionalProperties: getType(typeString.slice(typeString.indexOf(', ') + 1, -1), endpoint)
     };
+  }
+  let aliasMap = aliases[endpoint];
+  if (aliasMap && aliasMap[typeString]) {
+    console.log('    RENAME ' + typeString + ' to ' + aliasMap[typeString] + '.');
+    typeString = aliasMap[typeString];
   }
   return {
     '$ref': './' + typeString + '.json'

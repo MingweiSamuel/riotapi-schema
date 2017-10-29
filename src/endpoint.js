@@ -11,6 +11,8 @@ function Endpoint(dom, desc) {
 }
 
 Endpoint.prototype.compile = function() {
+  console.log(this.name);
+
   let dtosDir = this.name + '/dtos/';
   let methodsDir = this.name + '/methods/';
 
@@ -30,18 +32,28 @@ Endpoint.prototype.compile = function() {
 
       // Write dto files.
       let methodDtos = methods
-        .map(method => method.dtos)
+        .map(method => method.dtos);
+
+      // Read dtos, check for conflicts.
       let allDtos = {};
       for (let dtoList of methodDtos) {
         for (let dto of dtoList) {
-          if (allDtos[dto.title]) {
-            console.log('Duplicate dto: ' + dto.title);
+          let existing = allDtos[dto.name];
+          if (existing) {
+            if (dto.isSubset(existing))
+              continue;
+            if (existing.isSubset(dto))
+              allDtos[dto.name] = dto
+            else {
+              console.error('  CONFLICTING DTO: ' + dto.name);
+              console.error('existing', existing, 'new', dto);
+            }
             continue;
           }
-          allDtos[dto.title] = dto;
+          allDtos[dto.name] = dto;
         }
       }
-      let dtos = Object.values(allDtos);
+      let dtos = Object.values(allDtos).map(dto => dto.toSchema());
 
 
       promises.push(...dtos.map(dto => fs.writeFileAsync(dtosDir + dto.title + '.json', JSON.stringify(dto, null, 2))));
