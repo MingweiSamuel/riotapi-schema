@@ -1,4 +1,4 @@
-const fs = require("./fs");
+const fs = require("fs-extra");
 
 const Method = require('./method')
 
@@ -18,8 +18,8 @@ Endpoint.prototype.compile = function() {
 
   let dirs = [ dtosDir, methodsDir ];
 
-  let mkdirsPromise = fs.mkdirAsync(this.name).catch(() => {})
-    .then(() => Promise.all(dirs.map(dir => fs.mkdirAsync(dir.slice(0, -1)).catch(() => {}))));
+  let mkdirsPromise = fs.mkdir(this.name)
+    .then(() => Promise.all(dirs.map(dir => fs.mkdir(dir.slice(0, -1)))));
 
   return mkdirsPromise
     .then(() => {
@@ -56,24 +56,18 @@ Endpoint.prototype.compile = function() {
       let dtos = Object.values(allDtos).map(dto => dto.toSchema());
 
 
-      promises.push(...dtos.map(dto => fs.writeFileAsync(dtosDir + dto.title + '.json', JSON.stringify(dto, null, 2))));
-      // Write dto index file.
-      let dtosIndex = dtos.map(dto => dto.title + '.json');
-      promises.push(fs.writeFileAsync(dtosDir + 'index.json', JSON.stringify(dtosIndex, null, 2)));
+      promises.push(...dtos.map(dto => fs.writeFile(dtosDir + dto.title + '.json', JSON.stringify(dto, null, 2))));
 
       // Write methods files.
       promises.push(...methods.map(method =>
-         fs.writeFileAsync(methodsDir + method.name + '.json', JSON.stringify(method.getMethod(), null, 2))));
-      // Write methods index file.
-      let methodsIndex = methods.map(method => method.name + '.json');
-      promises.push(fs.writeFileAsync(methodsDir + 'index.json', JSON.stringify(methodsIndex, null, 2)));
+         fs.writeFile(methodsDir + method.name + '.json', JSON.stringify(method.getMethod(), null, 2))));
 
       let endpointInfo = {
         name: this.name,
         desc: this.desc,
         id: this.id
       };
-      promises.push(fs.writeFileAsync(this.name + '/endpoint.json', JSON.stringify(endpointInfo, null, 2)));
+      promises.push(fs.writeFile(this.name + '/endpoint.json', JSON.stringify(endpointInfo, null, 2)));
 
       return promises;
     });
