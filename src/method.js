@@ -17,6 +17,11 @@ Method.prototype.compile = function() {
   let apiBlocks = this.methodEl.getElementsByClassName('api_block');
   Array.from(apiBlocks)
     .forEach(apiBlock => this._compileApiBlock(apiBlock));
+  let methodDir = this.endpoint.name + '/methods/' + this.name + '/';
+  return fs.mkdir(methodDir)
+    .then(() => Promise.all([
+      fs.writeFile(methodDir + 'method.json', JSON.stringify(this.getMethod(), null, 2))
+    ]));
 }
 
 Method.prototype.getMethod = function() {

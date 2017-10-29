@@ -12,7 +12,7 @@ const output = 'out';
 module.exports = function(rootDir) {
   process.chdir(rootDir);
 
-  fs.mkdir(output).catch(() => {})
+  fs.mkdirs(output)
     .then(() => fs.readdir(output))
     .then(files => Promise.all(files
       .filter(file => !file.startsWith('.'))

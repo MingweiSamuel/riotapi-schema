@@ -26,9 +26,8 @@ Endpoint.prototype.compile = function() {
       let methodEls = this.dom.window.document.getElementsByClassName('operation');
       let methods = Array.from(methodEls)
         .map(methodEl => new Method(this, methodEl));
-      methods.forEach(method => method.compile());
 
-      let promises = [];
+      let promises = methods.map(method => method.compile());
 
       // Write dto files.
       let methodDtos = methods
@@ -55,12 +54,8 @@ Endpoint.prototype.compile = function() {
       }
       let dtos = Object.values(allDtos).map(dto => dto.toSchema());
 
-
+      // Write DTOS.
       promises.push(...dtos.map(dto => fs.writeFile(dtosDir + dto.title + '.json', JSON.stringify(dto, null, 2))));
-
-      // Write methods files.
-      promises.push(...methods.map(method =>
-         fs.writeFile(methodsDir + method.name + '.json', JSON.stringify(method.getMethod(), null, 2))));
 
       let endpointInfo = {
         name: this.name,
