@@ -9,10 +9,12 @@
     },
     "gameId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     },
     "champion": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "platformId": {
@@ -21,10 +23,12 @@
     },
     "season": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "queue": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "role": {
@@ -33,6 +37,7 @@
     },
     "timestamp": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     }
   }

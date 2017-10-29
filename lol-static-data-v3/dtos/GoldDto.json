@@ -5,14 +5,17 @@
   "properties": {
     "sell": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "total": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "base": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "purchasable": {

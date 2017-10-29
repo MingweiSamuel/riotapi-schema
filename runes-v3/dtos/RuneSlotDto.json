@@ -5,11 +5,13 @@
   "properties": {
     "runeSlotId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "Rune slot ID."
     },
     "runeId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "Rune ID associated with the rune slot. For static information correlating to rune IDs, please refer to the LoL Static Data API."
     }

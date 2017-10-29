@@ -5,134 +5,167 @@
   "properties": {
     "PercentCritDamageMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentSpellBlockMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentHPRegenMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentMovementSpeedMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatSpellBlockMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatCritDamageMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatEnergyPoolMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentLifeStealMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatMPPoolMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatMovementSpeedMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentAttackSpeedMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatBlockMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentBlockMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatEnergyRegenMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentSpellVampMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatMPRegenMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentDodgeMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatAttackSpeedMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatArmorMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatHPRegenMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentMagicDamageMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentMPPoolMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatMagicDamageMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentMPRegenMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentPhysicalDamageMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatPhysicalDamageMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentHPPoolMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentArmorMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentCritChanceMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "PercentEXPBonus": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatHPPoolMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatCritChanceMod": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "FlatEXPBonus": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     }
   }

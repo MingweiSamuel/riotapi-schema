@@ -5,11 +5,13 @@
   "properties": {
     "id": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "Mastery ID. For static information correlating to masteries, please refer to the LoL Static Data API."
     },
     "rank": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "Mastery rank (i.e., the number of points put into this mastery)."
     }

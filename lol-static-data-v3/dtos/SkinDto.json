@@ -5,6 +5,7 @@
   "properties": {
     "num": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "name": {
@@ -13,6 +14,7 @@
     },
     "id": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

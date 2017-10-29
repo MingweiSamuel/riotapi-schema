@@ -5,14 +5,17 @@
   "properties": {
     "wins": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "losses": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "target": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "progress": {

@@ -5,10 +5,12 @@
   "properties": {
     "runeId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "rank": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

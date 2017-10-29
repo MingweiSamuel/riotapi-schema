@@ -19,6 +19,7 @@
       "type": "array",
       "items": {
         "type": "number",
+        "format": "double",
         "_type": "double"
       },
       "_type": "List[double]"

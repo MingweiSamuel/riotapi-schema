@@ -5,11 +5,13 @@
   "properties": {
     "gameId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the game"
     },
     "gameStartTime": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The game start time represented in epoch milliseconds"
     },
@@ -25,6 +27,7 @@
     },
     "mapId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the map"
     },
@@ -58,11 +61,13 @@
     },
     "gameLength": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The amount of time in seconds that has passed since the game started"
     },
     "gameQueueConfigId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The queue type (queue types are documented on the Game Constants page)"
     }

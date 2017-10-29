@@ -17,6 +17,7 @@
     },
     "wins": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "veteran": {
@@ -25,6 +26,7 @@
     },
     "losses": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "freshBlood": {
@@ -49,6 +51,7 @@
     },
     "leaguePoints": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

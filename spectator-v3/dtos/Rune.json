@@ -5,11 +5,13 @@
   "properties": {
     "count": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "The count of this rune used by the participant"
     },
     "runeId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the rune"
     }

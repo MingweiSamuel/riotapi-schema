@@ -5,6 +5,7 @@
   "properties": {
     "masteryId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "prereq": {

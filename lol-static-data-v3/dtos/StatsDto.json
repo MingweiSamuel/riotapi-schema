@@ -5,82 +5,102 @@
   "properties": {
     "armorperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "hpperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "attackdamage": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "mpperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "attackspeedoffset": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "armor": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "hp": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "hpregenperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "spellblock": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "attackrange": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "movespeed": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "attackdamageperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "mpregenperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "mp": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "spellblockperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "crit": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "mpregen": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "attackspeedperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "hpregen": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     },
     "critperlevel": {
       "type": "number",
+      "format": "double",
       "_type": "double"
     }
   }

@@ -5,12 +5,14 @@
   "properties": {
     "timestamp": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     },
     "participantFrames": {
       "type": "object",
       "_key": {
         "type": "integer",
+        "format": "int32",
         "_type": "int"
       },
       "additionalProperties": {

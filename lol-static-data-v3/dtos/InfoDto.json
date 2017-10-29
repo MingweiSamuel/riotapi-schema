@@ -5,18 +5,22 @@
   "properties": {
     "difficulty": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "attack": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "defense": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "magic": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

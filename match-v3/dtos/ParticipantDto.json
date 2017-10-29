@@ -9,6 +9,7 @@
     },
     "participantId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "runes": {
@@ -25,10 +26,12 @@
     },
     "teamId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "spell2Id": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "masteries": {
@@ -45,10 +48,12 @@
     },
     "spell1Id": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "championId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

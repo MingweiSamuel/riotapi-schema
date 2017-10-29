@@ -5,11 +5,13 @@
   "properties": {
     "profileIconId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the profile icon used by this participant"
     },
     "championId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the champion played by this participant"
     },
@@ -34,11 +36,13 @@
     },
     "teamId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The team ID of this participant, indicating the participant's team"
     },
     "spell2Id": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the second summoner spell used by this participant"
     },
@@ -53,11 +57,13 @@
     },
     "spell1Id": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the first summoner spell used by this participant"
     },
     "summonerId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The summoner ID of this participant"
     }

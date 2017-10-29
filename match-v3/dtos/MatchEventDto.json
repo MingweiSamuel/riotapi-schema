@@ -13,6 +13,7 @@
     },
     "teamId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "ascendedType": {
@@ -21,6 +22,7 @@
     },
     "killerId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "levelUpType": {
@@ -35,6 +37,7 @@
       "type": "array",
       "items": {
         "type": "integer",
+        "format": "int32",
         "_type": "int"
       },
       "_type": "List[int]"
@@ -54,18 +57,22 @@
     },
     "skillSlot": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "victimId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "timestamp": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     },
     "afterId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "monsterSubType": {
@@ -78,10 +85,12 @@
     },
     "itemId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "participantId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "buildingType": {
@@ -90,6 +99,7 @@
     },
     "creatorId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "position": {
@@ -98,6 +108,7 @@
     },
     "beforeId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

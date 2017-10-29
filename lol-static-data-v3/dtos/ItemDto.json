@@ -29,6 +29,7 @@
     },
     "id": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "stats": {
@@ -53,6 +54,7 @@
     },
     "specialRecipe": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "image": {
@@ -117,10 +119,12 @@
     },
     "depth": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "stacks": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

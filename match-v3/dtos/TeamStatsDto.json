@@ -21,6 +21,7 @@
     },
     "baronKills": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "firstRiftHerald": {
@@ -33,6 +34,7 @@
     },
     "riftHeraldKills": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "firstBlood": {
@@ -41,6 +43,7 @@
     },
     "teamId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "firstTower": {
@@ -49,18 +52,22 @@
     },
     "vilemawKills": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "inhibitorKills": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "towerKills": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "dominionVictoryScore": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "win": {
@@ -69,6 +76,7 @@
     },
     "dragonKills": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

@@ -14,6 +14,7 @@
     },
     "summonerId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "Summoner ID."
     }

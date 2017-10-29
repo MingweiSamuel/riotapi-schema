@@ -5,16 +5,19 @@
   "properties": {
     "pickTurn": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "The turn during which the champion was banned"
     },
     "championId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the banned champion"
     },
     "teamId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The ID of the team that banned the champion"
     }

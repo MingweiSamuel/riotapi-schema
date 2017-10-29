@@ -33,6 +33,7 @@
     },
     "profileiconmax": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "Special behavior number identifying the largest profile icon ID that can be used under 500. Any profile icon that is requested between this number and 500 should be mapped to 0."
     },

@@ -54,6 +54,7 @@
     },
     "maxrank": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "costBurn": {
@@ -73,6 +74,7 @@
       "type": "array",
       "items": {
         "type": "number",
+        "format": "double",
         "_type": "double"
       },
       "_type": "List[double]"
@@ -81,6 +83,7 @@
       "type": "array",
       "items": {
         "type": "integer",
+        "format": "int32",
         "_type": "int"
       },
       "_type": "List[int]"

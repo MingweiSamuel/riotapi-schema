@@ -33,6 +33,7 @@
     },
     "id": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "description": {

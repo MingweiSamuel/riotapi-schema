@@ -5,14 +5,17 @@
   "properties": {
     "seasonId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "queueId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "gameId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     },
     "participantIdentities": {
@@ -37,6 +40,7 @@
     },
     "mapId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "gameType": {
@@ -61,10 +65,12 @@
     },
     "gameDuration": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     },
     "gameCreation": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     }
   }

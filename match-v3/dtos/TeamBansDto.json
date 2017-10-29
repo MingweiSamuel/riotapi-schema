@@ -5,10 +5,12 @@
   "properties": {
     "pickTurn": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "championId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

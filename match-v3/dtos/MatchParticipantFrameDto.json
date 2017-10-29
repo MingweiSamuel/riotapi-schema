@@ -5,30 +5,37 @@
   "properties": {
     "totalGold": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "teamScore": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "participantId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "level": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "currentGold": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "minionsKilled": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "dominionScore": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "position": {
@@ -37,10 +44,12 @@
     },
     "xp": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "jungleMinionsKilled": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

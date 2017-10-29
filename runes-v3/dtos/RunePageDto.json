@@ -24,6 +24,7 @@
     },
     "id": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "Rune page ID."
     }

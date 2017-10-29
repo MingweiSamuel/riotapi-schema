@@ -21,18 +21,22 @@
     },
     "currentAccountId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     },
     "profileIcon": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "summonerId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     },
     "accountId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     }
   }

@@ -5,6 +5,7 @@
   "properties": {
     "clientRefreshInterval": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "The suggested interval to wait before requesting FeaturedGames again"
     },

@@ -25,11 +25,13 @@
     },
     "providerId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "The provider's ID."
     },
     "teamSize": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "The team size for the tournament code game."
     },
@@ -37,6 +39,7 @@
       "type": "array",
       "items": {
         "type": "integer",
+        "format": "int64",
         "_type": "long"
       },
       "_type": "Set[long]"
@@ -48,6 +51,7 @@
     },
     "tournamentId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "The tournament's ID."
     },
@@ -63,6 +67,7 @@
     },
     "id": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "The tournament code's ID."
     },

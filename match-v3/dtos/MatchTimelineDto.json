@@ -13,6 +13,7 @@
     },
     "frameInterval": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     }
   }

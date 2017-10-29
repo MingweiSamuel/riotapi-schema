@@ -5,6 +5,7 @@
   "properties": {
     "profileIconId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int",
       "description": "ID of the summoner icon associated with the summoner."
     },
@@ -15,21 +16,25 @@
     },
     "summonerLevel": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "Summoner level associated with the summoner."
     },
     "revisionDate": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change"
     },
     "id": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "Summoner ID."
     },
     "accountId": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "Account ID."
     }

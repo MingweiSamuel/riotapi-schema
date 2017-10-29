@@ -23,6 +23,7 @@
       "type": "array",
       "items": {
         "type": "number",
+        "format": "double",
         "_type": "double"
       },
       "_type": "List[double]"
@@ -37,6 +38,7 @@
     },
     "id": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "cooldownBurn": {
@@ -49,6 +51,7 @@
     },
     "maxrank": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "rangeBurn": {
@@ -113,12 +116,14 @@
       "type": "array",
       "items": {
         "type": "integer",
+        "format": "int32",
         "_type": "int"
       },
       "_type": "List[int]"
     },
     "summonerLevel": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

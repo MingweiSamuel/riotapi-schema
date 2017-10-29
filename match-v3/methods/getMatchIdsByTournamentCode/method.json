@@ -6,6 +6,7 @@
     "type": "array",
     "items": {
       "type": "integer",
+      "format": "int64",
       "_type": "long"
     },
     "_type": "List[long]"

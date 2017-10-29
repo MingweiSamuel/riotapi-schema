@@ -30,6 +30,7 @@
     },
     "id": {
       "type": "integer",
+      "format": "int64",
       "_type": "long",
       "description": "Champion ID. For static information correlating to champion IDs, please refer to the LoL Static Data API."
     }

@@ -17,18 +17,22 @@
     },
     "h": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "w": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "y": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "x": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     }
   }

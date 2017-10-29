@@ -9,6 +9,7 @@
     },
     "participantId": {
       "type": "integer",
+      "format": "int32",
       "_type": "int"
     },
     "csDiffPerMinDeltas": {
@@ -19,6 +20,7 @@
       },
       "additionalProperties": {
         "type": "number",
+        "format": "double",
         "_type": " double"
       },
       "_type": "Map[string, double]"
@@ -31,6 +33,7 @@
       },
       "additionalProperties": {
         "type": "number",
+        "format": "double",
         "_type": " double"
       },
       "_type": "Map[string, double]"
@@ -43,6 +46,7 @@
       },
       "additionalProperties": {
         "type": "number",
+        "format": "double",
         "_type": " double"
       },
       "_type": "Map[string, double]"
@@ -55,6 +59,7 @@
       },
       "additionalProperties": {
         "type": "number",
+        "format": "double",
         "_type": " double"
       },
       "_type": "Map[string, double]"
@@ -67,6 +72,7 @@
       },
       "additionalProperties": {
         "type": "number",
+        "format": "double",
         "_type": " double"
       },
       "_type": "Map[string, double]"
@@ -83,6 +89,7 @@
       },
       "additionalProperties": {
         "type": "number",
+        "format": "double",
         "_type": " double"
       },
       "_type": "Map[string, double]"
@@ -95,6 +102,7 @@
       },
       "additionalProperties": {
         "type": "number",
+        "format": "double",
         "_type": " double"
       },
       "_type": "Map[string, double]"
