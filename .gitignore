@@ -1,3 +1,6 @@
 node_modules/
 output/
+out/
+
+deploy_key
 leagues.html

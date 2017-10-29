@@ -1,20 +1,20 @@
-const Promise = require("bluebird");
-const fs = Promise.promisifyAll(require("fs"))
+const fs = require("./fs");
 
 const req = require("request-promise-native");
 const process = require('process');
 const { JSDOM } = require("jsdom");
 
-const dtoUtils = require('./dtoUtils');
+const Endpoint = require('./endpoint');
 
-const url = 'https://developer.riotgames.com/api-methods/'
+const url = 'https://developer.riotgames.com/api-methods/';
+const output = 'out';
 
 process.chdir(__dirname);
 
-fs.mkdirAsync('output')
+fs.mkdirAsync(output)
   .catch(() => {})
   .then(() => {
-    process.chdir(__dirname + '/output');
+    process.chdir(__dirname + '/' + output);
     return req(url)
   })
   .catch(e => req(url))
@@ -23,55 +23,14 @@ fs.mkdirAsync('output')
 
     let els = dom.window.document.getElementsByClassName('api_option');
     let endpoints = {};
-    for (let el of els) {
+    return Promise.all(Array.from(els).map(el => {
       let name = el.getAttribute('api-name');
-      if (name.startsWith('tournament'))
-        continue;
       let url = 'https://developer.riotgames.com/api-details/' + name;
-      endpoints[name] = req(url)
+      return req(url)
         .catch(e => req(url)) // 1 retry.
         .then(JSON.parse)
         .then(o => new JSDOM(o.html))
-        .then(handleEndpoint);
-    }
-    return Promise.props(endpoints);
+        .then(dom => new Endpoint(dom).compile());
+    }));
   })
   .catch(console.err);
-
-function handleEndpoint(endpointDom) {
-  let endpointName = endpointDom.window.document.body.children[0].children[0].getAttribute('api-name').trim();
-  return fs.mkdirAsync(endpointName)
-    .then(() => fs.mkdirAsync(endpointName + '/dtos'))
-    .catch(() => {})
-    .then(() => {
-      let methods = endpointDom.window.document.getElementsByClassName('operation');
-      return Promise.all(Array.from(methods)
-        .map(method => handleMethod(endpointName, method)));
-    });
-}
-
-function handleMethod(endpointName, methodHtml) {
-  let apiBlocks = methodHtml.getElementsByClassName('api_block');
-  return Promise.all(Array.from(apiBlocks)
-    .map(apiBlock => handleApiBlock(endpointName, apiBlock)));
-}
-
-function handleApiBlock(endpointName, apiBlockHtml) {
-  let typeH4 = apiBlockHtml.getElementsByTagName('h4')[0];
-  let type = typeH4.textContent.trim().toLowerCase();
-  switch(type) {
-    case 'response classes':
-      let { returnType, dtos } = dtoUtils.readDtos(apiBlockHtml);
-      return dtos.map(schema => fs.writeFileAsync(endpointName + '/dtos/' + schema.title + '.json', JSON.stringify(schema, null, 2)));
-      break;
-    case 'implementation notes':
-    case 'response errors':
-    case 'path parameters':
-    case 'query parameters':
-    case 'rate limit notes':
-      // TODO
-      break;
-    default:
-      console.error('Unhandled api block: ' + type);
-  }
-}
