@@ -1,6 +1,6 @@
 const fs = require("./fs");
 
-const dtoUtils = require('./dtoUtils');
+const dtoUtils = require('./dto');
 
 function Method(endpoint, methodEl) {
   this.endpoint = endpoint;

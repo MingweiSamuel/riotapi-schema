@@ -29,9 +29,21 @@ Endpoint.prototype.compile = function() {
       let promises = [];
 
       // Write dto files.
-      let dtos = methods
+      let methodDtos = methods
         .map(method => method.dtos)
-        .reduce((a, b) => a.concat(b), []);
+      let allDtos = {};
+      for (let dtoList of methodDtos) {
+        for (let dto of dtoList) {
+          if (allDtos[dto.title]) {
+            console.log('Duplicate dto: ' + dto.title);
+            continue;
+          }
+          allDtos[dto.title] = dto;
+        }
+      }
+      let dtos = Object.values(allDtos);
+
+
       promises.push(...dtos.map(dto => fs.writeFileAsync(dtosDir + dto.title + '.json', JSON.stringify(dto, null, 2))));
       // Write dto index file.
       let dtosIndex = dtos.map(dto => dto.title + '.json');
