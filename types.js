@@ -32,7 +32,7 @@ function getTypeInternal(typeString) {
     };
   }
   return {
-    '$ref': typeString + '.json'
+    '$ref': './' + typeString + '.json'
   };
   // throw new Error('Failed to resolve type: "' + typeString + '".');
 }
