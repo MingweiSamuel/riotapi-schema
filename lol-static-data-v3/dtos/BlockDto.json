@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "BlockDto",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "BlockItemDto.json",
+        "_type": "BlockItemDto"
+      },
+      "_type": "List[BlockItemDto]"
+    },
+    "recMath": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "type": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

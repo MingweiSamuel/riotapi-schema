@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MatchPositionDto",
+  "properties": {
+    "y": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "x": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

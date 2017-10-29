@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "LeagueListDTO",
+  "properties": {
+    "leagueId": {
+      "type": "string",
+      "_type": "string"
+    },
+    "tier": {
+      "type": "string",
+      "_type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "LeagueItemDTO.json",
+        "_type": "LeagueItemDTO"
+      },
+      "_type": "List[LeagueItemDTO]"
+    },
+    "queue": {
+      "type": "string",
+      "_type": "string"
+    },
+    "name": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

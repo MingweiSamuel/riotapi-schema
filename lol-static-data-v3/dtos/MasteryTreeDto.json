@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MasteryTreeDto",
+  "properties": {
+    "Resolve": {
+      "type": "array",
+      "items": {
+        "$ref": "MasteryTreeListDto.json",
+        "_type": "MasteryTreeListDto"
+      },
+      "_type": "List[MasteryTreeListDto]"
+    },
+    "Ferocity": {
+      "type": "array",
+      "items": {
+        "$ref": "MasteryTreeListDto.json",
+        "_type": "MasteryTreeListDto"
+      },
+      "_type": "List[MasteryTreeListDto]"
+    },
+    "Cunning": {
+      "type": "array",
+      "items": {
+        "$ref": "MasteryTreeListDto.json",
+        "_type": "MasteryTreeListDto"
+      },
+      "_type": "List[MasteryTreeListDto]"
+    }
+  }
+}

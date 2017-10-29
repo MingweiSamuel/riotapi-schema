@@ -1,0 +1,9 @@
+{
+  "endpoint": "lol-static-data-v3",
+  "name": "getChampionById",
+  "method": "GET",
+  "returnType": {
+    "$ref": "ChampionDto.json",
+    "_type": "ChampionDto"
+  }
+}

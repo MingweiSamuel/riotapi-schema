@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MatchTimelineDto",
+  "properties": {
+    "frames": {
+      "type": "array",
+      "items": {
+        "$ref": "MatchFrameDto.json",
+        "_type": "MatchFrameDto"
+      },
+      "_type": "List[MatchFrameDto]"
+    },
+    "frameInterval": {
+      "type": "integer",
+      "_type": "long"
+    }
+  }
+}

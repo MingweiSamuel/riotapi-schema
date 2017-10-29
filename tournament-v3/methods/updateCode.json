@@ -1,0 +1,9 @@
+{
+  "endpoint": "tournament-v3",
+  "name": "updateCode",
+  "method": "PUT",
+  "returnType": {
+    "$ref": ".json",
+    "_type": ""
+  }
+}

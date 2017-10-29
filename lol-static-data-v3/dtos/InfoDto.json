@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "InfoDto",
+  "properties": {
+    "difficulty": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "attack": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "defense": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "magic": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

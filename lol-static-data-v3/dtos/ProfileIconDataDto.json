@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ProfileIconDataDto",
+  "properties": {
+    "data": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "$ref": "ProfileIconDetailsDto.json",
+        "_type": " ProfileIconDetailsDto"
+      },
+      "_type": "Map[string, ProfileIconDetailsDto]"
+    },
+    "version": {
+      "type": "string",
+      "_type": "string"
+    },
+    "type": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "BannedChampion",
+  "properties": {
+    "pickTurn": {
+      "type": "integer",
+      "_type": "int",
+      "description": "The turn during which the champion was banned"
+    },
+    "championId": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The ID of the banned champion"
+    },
+    "teamId": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The ID of the team that banned the champion"
+    }
+  }
+}

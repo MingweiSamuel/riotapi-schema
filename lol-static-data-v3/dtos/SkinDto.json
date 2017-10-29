@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "SkinDto",
+  "properties": {
+    "num": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "name": {
+      "type": "string",
+      "_type": "string"
+    },
+    "id": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

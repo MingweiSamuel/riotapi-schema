@@ -1,0 +1,9 @@
+{
+  "endpoint": "league-v3",
+  "name": "getMasterLeague",
+  "method": "GET",
+  "returnType": {
+    "$ref": "LeagueListDTO.json",
+    "_type": "LeagueListDTO"
+  }
+}

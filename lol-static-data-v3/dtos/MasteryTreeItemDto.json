@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MasteryTreeItemDto",
+  "properties": {
+    "masteryId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "prereq": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MatchlistDto",
+  "properties": {
+    "matches": {
+      "type": "array",
+      "items": {
+        "$ref": "MatchReferenceDto.json",
+        "_type": "MatchReferenceDto"
+      },
+      "_type": "List[MatchReferenceDto]"
+    },
+    "totalGames": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "startIndex": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "endIndex": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

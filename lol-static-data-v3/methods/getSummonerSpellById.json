@@ -1,0 +1,9 @@
+{
+  "endpoint": "lol-static-data-v3",
+  "name": "getSummonerSpellById",
+  "method": "GET",
+  "returnType": {
+    "$ref": "SummonerSpellDto.json",
+    "_type": "SummonerSpellDto"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "endpoint": "lol-static-data-v3",
+  "name": "getItemList",
+  "method": "GET",
+  "returnType": {
+    "$ref": "ItemListDto.json",
+    "_type": "ItemListDto"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "PlayerDto",
+  "properties": {
+    "currentPlatformId": {
+      "type": "string",
+      "_type": "string"
+    },
+    "summonerName": {
+      "type": "string",
+      "_type": "string"
+    },
+    "matchHistoryUri": {
+      "type": "string",
+      "_type": "string"
+    },
+    "platformId": {
+      "type": "string",
+      "_type": "string"
+    },
+    "currentAccountId": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "profileIcon": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "summonerId": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "accountId": {
+      "type": "integer",
+      "_type": "long"
+    }
+  }
+}

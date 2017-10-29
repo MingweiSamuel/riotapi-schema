@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "RunePagesDto",
+  "properties": {
+    "pages": {
+      "$ref": "Set[RunePageDto].json",
+      "_type": "Set[RunePageDto]",
+      "description": "Collection of rune pages associated with the summoner."
+    },
+    "summonerId": {
+      "type": "integer",
+      "_type": "long",
+      "description": "Summoner ID."
+    }
+  }
+}

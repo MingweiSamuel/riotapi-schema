@@ -1,0 +1,9 @@
+{
+  "endpoint": "runes-v3",
+  "name": "getRunePagesBySummonerId",
+  "method": "GET",
+  "returnType": {
+    "$ref": "RunePagesDto.json",
+    "_type": "RunePagesDto"
+  }
+}

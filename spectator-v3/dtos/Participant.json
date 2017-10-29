@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "Participant",
+  "properties": {
+    "profileIconId": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The ID of the profile icon used by this participant"
+    },
+    "championId": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The ID of the champion played by this participant"
+    },
+    "summonerName": {
+      "type": "string",
+      "_type": "string",
+      "description": "The summoner name of this participant"
+    },
+    "bot": {
+      "type": "boolean",
+      "_type": "boolean",
+      "description": "Flag indicating whether or not this participant is a bot"
+    },
+    "spell2Id": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The ID of the second summoner spell used by this participant"
+    },
+    "teamId": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The team ID of this participant, indicating the participant's team"
+    },
+    "spell1Id": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The ID of the first summoner spell used by this participant"
+    }
+  }
+}

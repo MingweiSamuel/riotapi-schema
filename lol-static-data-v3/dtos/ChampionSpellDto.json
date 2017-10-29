@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ChampionSpellDto",
+  "properties": {
+    "cooldownBurn": {
+      "type": "string",
+      "_type": "string"
+    },
+    "resource": {
+      "type": "string",
+      "_type": "string"
+    },
+    "leveltip": {
+      "$ref": "LevelTipDto.json",
+      "_type": "LevelTipDto"
+    },
+    "vars": {
+      "type": "array",
+      "items": {
+        "$ref": "SpellVarsDto.json",
+        "_type": "SpellVarsDto"
+      },
+      "_type": "List[SpellVarsDto]"
+    },
+    "costType": {
+      "type": "string",
+      "_type": "string"
+    },
+    "image": {
+      "$ref": "ImageDto.json",
+      "_type": "ImageDto"
+    },
+    "sanitizedDescription": {
+      "type": "string",
+      "_type": "string"
+    },
+    "sanitizedTooltip": {
+      "type": "string",
+      "_type": "string"
+    },
+    "effect": {
+      "type": "array",
+      "items": {
+        "$ref": "object.json",
+        "_type": "object"
+      },
+      "_type": "List[object]",
+      "description": "This field is a List of List of Double."
+    },
+    "tooltip": {
+      "type": "string",
+      "_type": "string"
+    },
+    "maxrank": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "costBurn": {
+      "type": "string",
+      "_type": "string"
+    },
+    "rangeBurn": {
+      "type": "string",
+      "_type": "string"
+    },
+    "range": {
+      "$ref": "object.json",
+      "_type": "object",
+      "description": "This field is either a List of Integer or the String 'self' for spells that target one's own champion."
+    },
+    "cooldown": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "_type": "double"
+      },
+      "_type": "List[double]"
+    },
+    "cost": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "_type": "int"
+      },
+      "_type": "List[int]"
+    },
+    "key": {
+      "type": "string",
+      "_type": "string"
+    },
+    "description": {
+      "type": "string",
+      "_type": "string"
+    },
+    "effectBurn": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "_type": "string"
+      },
+      "_type": "List[string]"
+    },
+    "altimages": {
+      "type": "array",
+      "items": {
+        "$ref": "ImageDto.json",
+        "_type": "ImageDto"
+      },
+      "_type": "List[ImageDto]"
+    },
+    "name": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

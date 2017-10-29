@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ItemDto",
+  "properties": {
+    "gold": {
+      "$ref": "GoldDto.json",
+      "_type": "GoldDto"
+    },
+    "plaintext": {
+      "type": "string",
+      "_type": "string"
+    },
+    "hideFromAll": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "inStore": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "into": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "_type": "string"
+      },
+      "_type": "List[string]"
+    },
+    "id": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "stats": {
+      "$ref": "InventoryDataStatsDto.json",
+      "_type": "InventoryDataStatsDto"
+    },
+    "colloq": {
+      "type": "string",
+      "_type": "string"
+    },
+    "maps": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "boolean",
+        "_type": " boolean"
+      },
+      "_type": "Map[string, boolean]"
+    },
+    "specialRecipe": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "image": {
+      "$ref": "ImageDto.json",
+      "_type": "ImageDto"
+    },
+    "description": {
+      "type": "string",
+      "_type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "_type": "string"
+      },
+      "_type": "List[string]"
+    },
+    "effect": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "_type": " string"
+      },
+      "_type": "Map[string, string]"
+    },
+    "requiredChampion": {
+      "type": "string",
+      "_type": "string"
+    },
+    "from": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "_type": "string"
+      },
+      "_type": "List[string]"
+    },
+    "group": {
+      "type": "string",
+      "_type": "string"
+    },
+    "consumeOnFull": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "name": {
+      "type": "string",
+      "_type": "string"
+    },
+    "consumed": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "sanitizedDescription": {
+      "type": "string",
+      "_type": "string"
+    },
+    "depth": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "stacks": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

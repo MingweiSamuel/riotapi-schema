@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MatchFrameDto",
+  "properties": {
+    "timestamp": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "participantFrames": {
+      "type": "object",
+      "_key": {
+        "type": "integer",
+        "_type": "int"
+      },
+      "additionalProperties": {
+        "$ref": "MatchParticipantFrameDto.json",
+        "_type": " MatchParticipantFrameDto"
+      },
+      "_type": "Map[int, MatchParticipantFrameDto]"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "MatchEventDto.json",
+        "_type": "MatchEventDto"
+      },
+      "_type": "List[MatchEventDto]"
+    }
+  }
+}

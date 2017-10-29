@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MasteryPageDto",
+  "properties": {
+    "current": {
+      "type": "boolean",
+      "_type": "boolean",
+      "description": "Indicates if the mastery page is the current mastery page."
+    },
+    "masteries": {
+      "type": "array",
+      "items": {
+        "$ref": "MasteryDto.json",
+        "_type": "MasteryDto"
+      },
+      "_type": "List[MasteryDto]",
+      "description": "Collection of masteries associated with the mastery page."
+    },
+    "name": {
+      "type": "string",
+      "_type": "string",
+      "description": "Mastery page name."
+    },
+    "id": {
+      "type": "integer",
+      "_type": "long",
+      "description": "Mastery page ID."
+    }
+  }
+}

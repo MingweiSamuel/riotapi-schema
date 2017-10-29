@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ParticipantDto",
+  "properties": {
+    "stats": {
+      "$ref": "ParticipantStatsDto.json",
+      "_type": "ParticipantStatsDto"
+    },
+    "participantId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "runes": {
+      "type": "array",
+      "items": {
+        "$ref": "RuneDto.json",
+        "_type": "RuneDto"
+      },
+      "_type": "List[RuneDto]"
+    },
+    "timeline": {
+      "$ref": "ParticipantTimelineDto.json",
+      "_type": "ParticipantTimelineDto"
+    },
+    "teamId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "spell2Id": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "masteries": {
+      "type": "array",
+      "items": {
+        "$ref": "MasteryDto.json",
+        "_type": "MasteryDto"
+      },
+      "_type": "List[MasteryDto]"
+    },
+    "highestAchievedSeasonTier": {
+      "type": "string",
+      "_type": "string"
+    },
+    "spell1Id": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "championId": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

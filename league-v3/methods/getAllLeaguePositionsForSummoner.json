@@ -1,0 +1,9 @@
+{
+  "endpoint": "league-v3",
+  "name": "getAllLeaguePositionsForSummoner",
+  "method": "GET",
+  "returnType": {
+    "$ref": "LeaguePositionDTO.json",
+    "_type": "LeaguePositionDTO"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MatchReferenceDto",
+  "properties": {
+    "lane": {
+      "type": "string",
+      "_type": "string"
+    },
+    "gameId": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "champion": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "platformId": {
+      "type": "string",
+      "_type": "string"
+    },
+    "season": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "queue": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "role": {
+      "type": "string",
+      "_type": "string"
+    },
+    "timestamp": {
+      "type": "integer",
+      "_type": "long"
+    }
+  }
+}

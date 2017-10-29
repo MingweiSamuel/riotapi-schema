@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "TeamBansDto",
+  "properties": {
+    "pickTurn": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "championId": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

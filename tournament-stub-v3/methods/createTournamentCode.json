@@ -1,0 +1,13 @@
+{
+  "endpoint": "tournament-stub-v3",
+  "name": "createTournamentCode",
+  "method": "POST",
+  "returnType": {
+    "type": "array",
+    "items": {
+      "type": "string",
+      "_type": "string"
+    },
+    "_type": "List[string]"
+  }
+}

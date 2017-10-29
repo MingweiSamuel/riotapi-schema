@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "Mastery",
+  "properties": {
+    "masteryId": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The ID of the mastery"
+    },
+    "rank": {
+      "type": "integer",
+      "_type": "int",
+      "description": "The number of points put into this mastery by the user"
+    }
+  }
+}

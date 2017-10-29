@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MetaDataDto",
+  "properties": {
+    "tier": {
+      "type": "string",
+      "_type": "string"
+    },
+    "type": {
+      "type": "string",
+      "_type": "string"
+    },
+    "isRune": {
+      "type": "boolean",
+      "_type": "boolean"
+    }
+  }
+}

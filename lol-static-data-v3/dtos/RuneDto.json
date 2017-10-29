@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "RuneDto",
+  "properties": {
+    "stats": {
+      "$ref": "RuneStatsDto.json",
+      "_type": "RuneStatsDto"
+    },
+    "name": {
+      "type": "string",
+      "_type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "_type": "string"
+      },
+      "_type": "List[string]"
+    },
+    "image": {
+      "$ref": "ImageDto.json",
+      "_type": "ImageDto"
+    },
+    "sanitizedDescription": {
+      "type": "string",
+      "_type": "string"
+    },
+    "rune": {
+      "$ref": "MetaDataDto.json",
+      "_type": "MetaDataDto"
+    },
+    "id": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "description": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

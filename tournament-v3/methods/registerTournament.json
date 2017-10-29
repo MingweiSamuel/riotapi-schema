@@ -1,0 +1,9 @@
+{
+  "endpoint": "tournament-v3",
+  "name": "registerTournament",
+  "method": "POST",
+  "returnType": {
+    "type": "integer",
+    "_type": "int"
+  }
+}

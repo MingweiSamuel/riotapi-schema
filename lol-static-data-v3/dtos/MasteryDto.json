@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MasteryDto",
+  "properties": {
+    "prereq": {
+      "type": "string",
+      "_type": "string"
+    },
+    "masteryTree": {
+      "type": "string",
+      "_type": "string",
+      "description": "(Legal values:  Cunning,  Ferocity,  Resolve)"
+    },
+    "name": {
+      "type": "string",
+      "_type": "string"
+    },
+    "ranks": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "image": {
+      "$ref": "ImageDto.json",
+      "_type": "ImageDto"
+    },
+    "sanitizedDescription": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "_type": "string"
+      },
+      "_type": "List[string]"
+    },
+    "id": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "description": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "_type": "string"
+      },
+      "_type": "List[string]"
+    }
+  }
+}

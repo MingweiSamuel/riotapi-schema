@@ -1,0 +1,9 @@
+{
+  "endpoint": "tournament-stub-v3",
+  "name": "registerProviderData",
+  "method": "POST",
+  "returnType": {
+    "type": "integer",
+    "_type": "int"
+  }
+}

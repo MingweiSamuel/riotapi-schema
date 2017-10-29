@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MatchParticipantFrameDto",
+  "properties": {
+    "totalGold": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "teamScore": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "participantId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "level": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "currentGold": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "minionsKilled": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "dominionScore": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "position": {
+      "$ref": "MatchPositionDto.json",
+      "_type": "MatchPositionDto"
+    },
+    "xp": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "jungleMinionsKilled": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "InventoryDataStatsDto",
+  "properties": {
+    "PercentCritDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentSpellBlockMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentHPRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMovementSpeedMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatSpellBlockMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatCritDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatEnergyPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentLifeStealMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMPPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMovementSpeedMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentAttackSpeedMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatBlockMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentBlockMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatEnergyRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentSpellVampMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMPRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentDodgeMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatAttackSpeedMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatArmorMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatHPRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMagicDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMPPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMagicDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMPRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentPhysicalDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatPhysicalDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentHPPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentArmorMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentCritChanceMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentEXPBonus": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatHPPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatCritChanceMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatEXPBonus": {
+      "type": "number",
+      "_type": "double"
+    }
+  }
+}

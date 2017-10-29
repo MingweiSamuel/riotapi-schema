@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "RunePageDto",
+  "properties": {
+    "current": {
+      "type": "boolean",
+      "_type": "boolean",
+      "description": "Indicates if the page is the current page."
+    },
+    "slots": {
+      "$ref": "Set[RuneSlotDto].json",
+      "_type": "Set[RuneSlotDto]",
+      "description": "Collection of rune slots associated with the rune page."
+    },
+    "name": {
+      "type": "string",
+      "_type": "string",
+      "description": "Rune page name."
+    },
+    "id": {
+      "type": "integer",
+      "_type": "long",
+      "description": "Rune page ID."
+    }
+  }
+}

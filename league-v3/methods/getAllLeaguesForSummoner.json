@@ -1,0 +1,9 @@
+{
+  "endpoint": "league-v3",
+  "name": "getAllLeaguesForSummoner",
+  "method": "GET",
+  "returnType": {
+    "$ref": "Set[LeagueListDTO].json",
+    "_type": "Set[LeagueListDTO]"
+  }
+}

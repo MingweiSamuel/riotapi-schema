@@ -1,0 +1,13 @@
+{
+  "endpoint": "match-v3",
+  "name": "getMatchIdsByTournamentCode",
+  "method": "GET",
+  "returnType": {
+    "type": "array",
+    "items": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "_type": "List[long]"
+  }
+}

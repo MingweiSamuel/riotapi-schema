@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "FeaturedGames",
+  "properties": {
+    "clientRefreshInterval": {
+      "type": "integer",
+      "_type": "long",
+      "description": "The suggested interval to wait before requesting FeaturedGames again"
+    },
+    "gameList": {
+      "type": "array",
+      "items": {
+        "$ref": "FeaturedGameInfo.json",
+        "_type": "FeaturedGameInfo"
+      },
+      "_type": "List[FeaturedGameInfo]",
+      "description": "The list of featured games"
+    }
+  }
+}

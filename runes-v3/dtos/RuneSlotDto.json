@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "RuneSlotDto",
+  "properties": {
+    "runeSlotId": {
+      "type": "integer",
+      "_type": "int",
+      "description": "Rune slot ID."
+    },
+    "runeId": {
+      "type": "integer",
+      "_type": "int",
+      "description": "Rune ID associated with the rune slot. For static information correlating to rune IDs, please refer to the LoL Static Data API."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "endpoint": "spectator-v3",
+  "name": "getCurrentGameInfoBySummoner",
+  "method": "GET",
+  "returnType": {
+    "$ref": "CurrentGameInfo.json",
+    "_type": "CurrentGameInfo"
+  }
+}

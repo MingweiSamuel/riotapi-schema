@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "SummonerDTO",
+  "properties": {
+    "profileIconId": {
+      "type": "integer",
+      "_type": "int",
+      "description": "ID of the summoner icon associated with the summoner."
+    },
+    "name": {
+      "type": "string",
+      "_type": "string",
+      "description": "Summoner name."
+    },
+    "summonerLevel": {
+      "type": "integer",
+      "_type": "long",
+      "description": "Summoner level associated with the summoner."
+    },
+    "revisionDate": {
+      "type": "integer",
+      "_type": "long",
+      "description": "Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change"
+    },
+    "id": {
+      "type": "integer",
+      "_type": "long",
+      "description": "Summoner ID."
+    },
+    "accountId": {
+      "type": "integer",
+      "_type": "long",
+      "description": "Account ID."
+    }
+  }
+}

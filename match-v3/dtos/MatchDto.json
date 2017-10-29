@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MatchDto",
+  "properties": {
+    "seasonId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "queueId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "gameId": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "participantIdentities": {
+      "type": "array",
+      "items": {
+        "$ref": "ParticipantIdentityDto.json",
+        "_type": "ParticipantIdentityDto"
+      },
+      "_type": "List[ParticipantIdentityDto]"
+    },
+    "gameVersion": {
+      "type": "string",
+      "_type": "string"
+    },
+    "platformId": {
+      "type": "string",
+      "_type": "string"
+    },
+    "gameMode": {
+      "type": "string",
+      "_type": "string"
+    },
+    "mapId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "gameType": {
+      "type": "string",
+      "_type": "string"
+    },
+    "teams": {
+      "type": "array",
+      "items": {
+        "$ref": "TeamStatsDto.json",
+        "_type": "TeamStatsDto"
+      },
+      "_type": "List[TeamStatsDto]"
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "$ref": "ParticipantDto.json",
+        "_type": "ParticipantDto"
+      },
+      "_type": "List[ParticipantDto]"
+    },
+    "gameDuration": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "gameCreation": {
+      "type": "integer",
+      "_type": "long"
+    }
+  }
+}

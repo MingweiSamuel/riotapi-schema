@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MapDetailsDto",
+  "properties": {
+    "mapName": {
+      "type": "string",
+      "_type": "string"
+    },
+    "image": {
+      "$ref": "ImageDto.json",
+      "_type": "ImageDto"
+    },
+    "mapId": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "unpurchasableItemList": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "_type": "long"
+      },
+      "_type": "List[long]"
+    }
+  }
+}

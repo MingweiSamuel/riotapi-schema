@@ -1,0 +1,8 @@
+[
+  "getMatchIdsByTournamentCode.json",
+  "getMatch.json",
+  "getMatchByTournamentCode.json",
+  "getMatchlist.json",
+  "getRecentMatchlist.json",
+  "getMatchTimeline.json"
+]

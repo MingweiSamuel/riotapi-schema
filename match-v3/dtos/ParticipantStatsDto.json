@@ -1,0 +1,295 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ParticipantStatsDto",
+  "properties": {
+    "physicalDamageDealt": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "neutralMinionsKilledTeamJungle": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "magicDamageDealt": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "totalPlayerScore": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "deaths": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "win": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "neutralMinionsKilledEnemyJungle": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "altarsCaptured": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "largestCriticalStrike": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "totalDamageDealt": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "magicDamageDealtToChampions": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "visionWardsBoughtInGame": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "damageDealtToObjectives": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "largestKillingSpree": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "item1": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "quadraKills": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "teamObjective": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "totalTimeCrowdControlDealt": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "longestTimeSpentLiving": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "wardsKilled": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "firstTowerAssist": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "firstTowerKill": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "item2": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "item3": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "item0": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "firstBloodAssist": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "visionScore": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "wardsPlaced": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "item4": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "item5": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "item6": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "turretKills": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "tripleKills": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "damageSelfMitigated": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "champLevel": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "nodeNeutralizeAssist": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "firstInhibitorKill": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "goldEarned": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "magicalDamageTaken": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "kills": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "doubleKills": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "nodeCaptureAssist": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "trueDamageTaken": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "nodeNeutralize": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "firstInhibitorAssist": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "assists": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "unrealKills": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "neutralMinionsKilled": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "objectivePlayerScore": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "combatPlayerScore": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "damageDealtToTurrets": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "altarsNeutralized": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "physicalDamageDealtToChampions": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "goldSpent": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "trueDamageDealt": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "trueDamageDealtToChampions": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "participantId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "pentaKills": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "totalHeal": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "totalMinionsKilled": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "firstBloodKill": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "nodeCapture": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "largestMultiKill": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "sightWardsBoughtInGame": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "totalDamageDealtToChampions": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "totalUnitsHealed": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "inhibitorKills": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "totalScoreRank": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "totalDamageTaken": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "killingSprees": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "timeCCingOthers": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "physicalDamageTaken": {
+      "type": "integer",
+      "_type": "long"
+    }
+  }
+}

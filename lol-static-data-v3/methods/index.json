@@ -1,0 +1,18 @@
+[
+  "getChampionList.json",
+  "getChampionById.json",
+  "getItemList.json",
+  "getItemById.json",
+  "getLanguageStrings.json",
+  "getLanguages.json",
+  "getMapData.json",
+  "getMasteryList.json",
+  "getMasteryById.json",
+  "getProfileIcons.json",
+  "getRealm.json",
+  "getRuneList.json",
+  "getRuneById.json",
+  "getSummonerSpellList.json",
+  "getSummonerSpellById.json",
+  "getVersions.json"
+]

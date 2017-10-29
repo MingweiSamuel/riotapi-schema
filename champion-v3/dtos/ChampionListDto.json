@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ChampionListDto",
+  "properties": {
+    "champions": {
+      "type": "array",
+      "items": {
+        "$ref": "ChampionDto.json",
+        "_type": "ChampionDto"
+      },
+      "_type": "List[ChampionDto]",
+      "description": "The collection of champion information."
+    }
+  }
+}

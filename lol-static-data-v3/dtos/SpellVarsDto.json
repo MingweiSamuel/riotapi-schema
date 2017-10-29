@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "SpellVarsDto",
+  "properties": {
+    "ranksWith": {
+      "type": "string",
+      "_type": "string"
+    },
+    "dyn": {
+      "type": "string",
+      "_type": "string"
+    },
+    "link": {
+      "type": "string",
+      "_type": "string"
+    },
+    "coeff": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "_type": "double"
+      },
+      "_type": "List[double]"
+    },
+    "key": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

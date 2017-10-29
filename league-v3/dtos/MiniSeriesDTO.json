@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "MiniSeriesDTO",
+  "properties": {
+    "wins": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "losses": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "target": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "progress": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

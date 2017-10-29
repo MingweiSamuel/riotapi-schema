@@ -1,0 +1,9 @@
+{
+  "endpoint": "lol-static-data-v3",
+  "name": "getMasteryList",
+  "method": "GET",
+  "returnType": {
+    "$ref": "MasteryListDto.json",
+    "_type": "MasteryListDto"
+  }
+}

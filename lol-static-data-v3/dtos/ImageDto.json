@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ImageDto",
+  "properties": {
+    "full": {
+      "type": "string",
+      "_type": "string"
+    },
+    "group": {
+      "type": "string",
+      "_type": "string"
+    },
+    "sprite": {
+      "type": "string",
+      "_type": "string"
+    },
+    "h": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "w": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "y": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "x": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

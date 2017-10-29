@@ -1,0 +1,9 @@
+{
+  "endpoint": "champion-mastery-v3",
+  "name": "getChampionMasteryScore",
+  "method": "GET",
+  "returnType": {
+    "type": "integer",
+    "_type": "int"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ChampionDto",
+  "properties": {
+    "rankedPlayEnabled": {
+      "type": "boolean",
+      "_type": "boolean",
+      "description": "Ranked play enabled flag."
+    },
+    "botEnabled": {
+      "type": "boolean",
+      "_type": "boolean",
+      "description": "Bot enabled flag (for custom games)."
+    },
+    "botMmEnabled": {
+      "type": "boolean",
+      "_type": "boolean",
+      "description": "Bot Match Made enabled flag (for Co-op vs. AI games)."
+    },
+    "active": {
+      "type": "boolean",
+      "_type": "boolean",
+      "description": "Indicates if the champion is active."
+    },
+    "freeToPlay": {
+      "type": "boolean",
+      "_type": "boolean",
+      "description": "Indicates if the champion is free to play. Free to play champions are rotated periodically."
+    },
+    "id": {
+      "type": "integer",
+      "_type": "long",
+      "description": "Champion ID. For static information correlating to champion IDs, please refer to the LoL Static Data API."
+    }
+  }
+}

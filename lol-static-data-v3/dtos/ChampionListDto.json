@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ChampionListDto",
+  "properties": {
+    "keys": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "_type": " string"
+      },
+      "_type": "Map[string, string]"
+    },
+    "data": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "$ref": "ChampionDto.json",
+        "_type": " ChampionDto"
+      },
+      "_type": "Map[string, ChampionDto]"
+    },
+    "version": {
+      "type": "string",
+      "_type": "string"
+    },
+    "type": {
+      "type": "string",
+      "_type": "string"
+    },
+    "format": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

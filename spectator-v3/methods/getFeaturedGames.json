@@ -1,0 +1,9 @@
+{
+  "endpoint": "spectator-v3",
+  "name": "getFeaturedGames",
+  "method": "GET",
+  "returnType": {
+    "$ref": "FeaturedGames.json",
+    "_type": "FeaturedGames"
+  }
+}

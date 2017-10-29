@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "RecommendedDto",
+  "properties": {
+    "map": {
+      "type": "string",
+      "_type": "string"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "$ref": "BlockDto.json",
+        "_type": "BlockDto"
+      },
+      "_type": "List[BlockDto]"
+    },
+    "champion": {
+      "type": "string",
+      "_type": "string"
+    },
+    "title": {
+      "type": "string",
+      "_type": "string"
+    },
+    "priority": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "mode": {
+      "type": "string",
+      "_type": "string"
+    },
+    "type": {
+      "type": "string",
+      "_type": "string"
+    }
+  }
+}

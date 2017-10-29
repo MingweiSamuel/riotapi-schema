@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "GoldDto",
+  "properties": {
+    "sell": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "total": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "base": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "purchasable": {
+      "type": "boolean",
+      "_type": "boolean"
+    }
+  }
+}

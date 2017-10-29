@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "Incident",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "_type": "boolean"
+    },
+    "created_at": {
+      "type": "string",
+      "_type": "string"
+    },
+    "id": {
+      "type": "integer",
+      "_type": "long"
+    },
+    "updates": {
+      "type": "array",
+      "items": {
+        "$ref": "Message.json",
+        "_type": "Message"
+      },
+      "_type": "List[Message]"
+    }
+  }
+}

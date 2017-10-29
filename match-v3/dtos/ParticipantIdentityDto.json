@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ParticipantIdentityDto",
+  "properties": {
+    "player": {
+      "$ref": "PlayerDto.json",
+      "_type": "PlayerDto"
+    },
+    "participantId": {
+      "type": "integer",
+      "_type": "int"
+    }
+  }
+}

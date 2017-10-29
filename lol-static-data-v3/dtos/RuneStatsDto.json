@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "RuneStatsDto",
+  "properties": {
+    "PercentTimeDeadModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentArmorPenetrationModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentCritDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentSpellBlockMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentHPRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMovementSpeedMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatSpellBlockMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatEnergyRegenModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatEnergyPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMagicPenetrationModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentLifeStealMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMPPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentCooldownMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMagicPenetrationMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatArmorPenetrationModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMovementSpeedMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatTimeDeadModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatArmorModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentAttackSpeedMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatDodgeModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMagicDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentBlockMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatDodgeMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatEnergyRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatHPModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentAttackSpeedModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentSpellVampMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMPRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentHPPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentDodgeMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatAttackSpeedMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatArmorMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMagicDamageModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatHPRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentPhysicalDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatCritChanceModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatSpellBlockModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentTimeDeadMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatBlockMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMPPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMagicDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMPRegenMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMovementSpeedModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentCooldownModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMPModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatEnergyModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatPhysicalDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatHPRegenModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatCritDamageMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentArmorMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMagicPenetrationMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentCritChanceMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatPhysicalDamageModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentArmorPenetrationMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentEXPBonus": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMPRegenModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "PercentMagicPenetrationModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatTimeDeadMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatMovementSpeedModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatGoldPer10Mod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatArmorPenetrationMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatCritDamageModPerLevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatHPPoolMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatCritChanceMod": {
+      "type": "number",
+      "_type": "double"
+    },
+    "FlatEXPBonus": {
+      "type": "number",
+      "_type": "double"
+    }
+  }
+}

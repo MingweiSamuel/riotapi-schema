@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "ParticipantTimelineDto",
+  "properties": {
+    "lane": {
+      "type": "string",
+      "_type": "string"
+    },
+    "participantId": {
+      "type": "integer",
+      "_type": "int"
+    },
+    "csDiffPerMinDeltas": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "_type": " double"
+      },
+      "_type": "Map[string, double]"
+    },
+    "goldPerMinDeltas": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "_type": " double"
+      },
+      "_type": "Map[string, double]"
+    },
+    "xpDiffPerMinDeltas": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "_type": " double"
+      },
+      "_type": "Map[string, double]"
+    },
+    "creepsPerMinDeltas": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "_type": " double"
+      },
+      "_type": "Map[string, double]"
+    },
+    "xpPerMinDeltas": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "_type": " double"
+      },
+      "_type": "Map[string, double]"
+    },
+    "role": {
+      "type": "string",
+      "_type": "string"
+    },
+    "damageTakenDiffPerMinDeltas": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "_type": " double"
+      },
+      "_type": "Map[string, double]"
+    },
+    "damageTakenPerMinDeltas": {
+      "type": "object",
+      "_key": {
+        "type": "string",
+        "_type": "string"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "_type": " double"
+      },
+      "_type": "Map[string, double]"
+    }
+  }
+}

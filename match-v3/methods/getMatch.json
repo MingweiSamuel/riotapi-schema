@@ -1,0 +1,9 @@
+{
+  "endpoint": "match-v3",
+  "name": "getMatch",
+  "method": "GET",
+  "returnType": {
+    "$ref": "MatchDto.json",
+    "_type": "MatchDto"
+  }
+}

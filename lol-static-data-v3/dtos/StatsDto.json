@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "StatsDto",
+  "properties": {
+    "armorperlevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "hpperlevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "attackdamage": {
+      "type": "number",
+      "_type": "double"
+    },
+    "mpperlevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "attackspeedoffset": {
+      "type": "number",
+      "_type": "double"
+    },
+    "armor": {
+      "type": "number",
+      "_type": "double"
+    },
+    "hp": {
+      "type": "number",
+      "_type": "double"
+    },
+    "hpregenperlevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "spellblock": {
+      "type": "number",
+      "_type": "double"
+    },
+    "attackrange": {
+      "type": "number",
+      "_type": "double"
+    },
+    "movespeed": {
+      "type": "number",
+      "_type": "double"
+    },
+    "attackdamageperlevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "mpregenperlevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "mp": {
+      "type": "number",
+      "_type": "double"
+    },
+    "spellblockperlevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "crit": {
+      "type": "number",
+      "_type": "double"
+    },
+    "mpregen": {
+      "type": "number",
+      "_type": "double"
+    },
+    "attackspeedperlevel": {
+      "type": "number",
+      "_type": "double"
+    },
+    "hpregen": {
+      "type": "number",
+      "_type": "double"
+    },
+    "critperlevel": {
+      "type": "number",
+      "_type": "double"
+    }
+  }
+}
