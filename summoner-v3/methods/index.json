@@ -1,5 +1,5 @@
 [
-  "getByAccountId.json",
-  "getBySummonerId.json",
-  "getBySummonerName.json"
+  "getByAccountId/",
+  "getBySummonerId/",
+  "getBySummonerName/"
 ]

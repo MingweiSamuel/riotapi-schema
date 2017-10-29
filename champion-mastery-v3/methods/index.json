@@ -1,5 +1,5 @@
 [
-  "getAllChampionMasteries.json",
-  "getChampionMastery.json",
-  "getChampionMasteryScore.json"
+  "getAllChampionMasteries/",
+  "getChampionMastery/",
+  "getChampionMasteryScore/"
 ]

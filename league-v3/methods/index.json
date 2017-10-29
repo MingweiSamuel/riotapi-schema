@@ -1,7 +1,7 @@
 [
-  "getAllLeaguePositionsForSummoner.json",
-  "getAllLeaguesForSummoner.json",
-  "getChallengerLeague.json",
-  "getLeagueById.json",
-  "getMasterLeague.json"
+  "getAllLeaguePositionsForSummoner/",
+  "getAllLeaguesForSummoner/",
+  "getChallengerLeague/",
+  "getLeagueById/",
+  "getMasterLeague/"
 ]

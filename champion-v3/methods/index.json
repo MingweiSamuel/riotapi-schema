@@ -1,4 +1,4 @@
 [
-  "getChampions.json",
-  "getChampionsById.json"
+  "getChampions/",
+  "getChampionsById/"
 ]
