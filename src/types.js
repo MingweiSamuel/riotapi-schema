@@ -12,10 +12,11 @@ function getTypeInternal(typeString, endpoint) {
     case "boolean":
       return { type: 'boolean' };
     case "int":
+      return { type: 'integer', format: 'int32' };
     case "long":
-      return { type: 'integer' };
+      return { type: 'integer', format: 'int64' };
     case "double":
-      return { type: 'number' };
+      return { type: 'number', format: 'double' };
     case "string":
       return { type: 'string' };
   }
