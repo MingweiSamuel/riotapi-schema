@@ -6,6 +6,7 @@ const req = (function(req) {
 
 const process = require('process');
 const { JSDOM } = require("jsdom");
+const hash = require('object-hash');
 
 const Endpoint = require('./endpoint');
 const Region = require('./region');
@@ -92,7 +93,7 @@ module.exports = function(rootDir) {
           schemas
         }
       };
-      openAPI.info.version = "" + 123; //TODO HASH
+      openAPI.info.version = hash(openAPI);
       return openAPI;
     })
     .then(openAPI => fs.writeFile("riotapi.json", JSON.stringify(openAPI, null, 2)))
