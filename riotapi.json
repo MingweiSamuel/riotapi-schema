@@ -2,9 +2,9 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Riot API",
-    "description": "Riot API desc",
+    "description": "Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "123"
+    "version": "4730df2f3bf78e4127f2fb278ffe95cb4e33af9a"
   },
   "servers": [
     {
