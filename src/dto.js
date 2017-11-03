@@ -21,8 +21,8 @@ function deepEqual(a, b) {
   if (typeof a === 'object') {
     if (typeof b !== 'object')
       return false;
-    let aKeys = Object.keys(a).filter(x => !x.startsWith('_')).sort();
-    let bKeys = Object.keys(b).filter(x => !x.startsWith('_')).sort();
+    let aKeys = Object.keys(a).filter(x => !x.startsWith('x-')).sort();
+    let bKeys = Object.keys(b).filter(x => !x.startsWith('x-')).sort();
     if (!deepEqual(aKeys, bKeys))
       return false;
     for (let key of aKeys) {
@@ -63,7 +63,6 @@ Dto.prototype.isSubset = function(other) {
 }
 Dto.prototype.toSchema = function() {
   return {
-    '$schema': 'http://json-schema.org/draft-06/schema#',
     type: 'object',
     title: this.name,
     properties: this.properties

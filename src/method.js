@@ -6,31 +6,58 @@ function Method(endpoint, methodEl) {
   this.endpoint = endpoint;
   this.methodEl = methodEl;
   this.name = methodEl.id.substring(1);
-  this.httpMethod = methodEl.children[0].children[0].children[0].textContent.trim();
+
+  let heading = methodEl.children[0];
+  let method = heading.children[0].children[0];
+  this.httpMethod = method.textContent.trim().toLowerCase();
+  this.urlHash = method.getAttribute("href");
+  this.pathUrl = heading.children[1].children[0].textContent.trim();
+
   this.returnType = null;
   this.dtos = null;
 
-  console.log('  ' + this.name + ' - ' + this.httpMethod);
+  this.summary = null; //TODO
+  this.description = null;
+
+  console.log('  ' + this.name + ' - ' + this.httpMethod.toUpperCase());
+  this._compile();
 }
 
-Method.prototype.compile = function() {
+Method.prototype._compile = function() {
   let apiBlocks = this.methodEl.getElementsByClassName('api_block');
   Array.from(apiBlocks)
     .forEach(apiBlock => this._compileApiBlock(apiBlock));
-  let methodDir = this.endpoint.name + '/methods/' + this.name + '/';
-  return fs.mkdir(methodDir)
-    .then(() => Promise.all([
-      fs.writeFile(methodDir + 'method.json', JSON.stringify(this.getMethod(), null, 2))
-    ]));
 }
 
-Method.prototype.getMethod = function() {
-  return {
-    endpoint: this.endpoint.name,
-    name: this.name,
-    method: this.httpMethod,
-    returnType: this.returnType
+// https://swagger.io/specification/#pathItemObject
+Method.prototype.getPathItemObject = function() {
+  let result = {};
+  let operation = {
+    tags: [ this.endpoint.name ],
+    externalDocs: {
+      description: "Official API Reference",
+      url: "https://developer.riotgames.com/api-methods/" + this.urlHash
+    },
+    responses: {
+      "200": {
+        description: 'ReSpOnSe', //TODO
+        content: {
+          "application/json": {
+            schema: this.returnType
+          }
+        }
+      }
+    }
+    // name: this.name
   };
+  if (this.summary) operation.summary = this.summary;
+  if (this.description) operation.description = this.description;
+  result[this.httpMethod] = operation;
+  return result;
+}
+
+Method.prototype.getPathUrl = function() {
+  return this.pathUrl;
 }
 
 Method.prototype._compileApiBlock = function(apiBlockHtml) {

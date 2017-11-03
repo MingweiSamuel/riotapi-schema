@@ -1,8 +1,8 @@
 const aliases = require('../data/dtoAliases');
 
-function getType(typeString, endpoint=null) {
+function getType(typeString, endpoint) {
   let result = getTypeInternal(typeString, endpoint);
-  result._type = typeString;
+  result["x-type"] = typeString;
   return result;
 }
 
@@ -19,6 +19,8 @@ function getTypeInternal(typeString, endpoint) {
       return { type: 'number', format: 'double' };
     case "string":
       return { type: 'string' };
+    case "object":
+      return { type: 'object' };
   }
   if (typeString.startsWith('List[') || typeString.startsWith('Set[')) {
     return {
@@ -29,7 +31,7 @@ function getTypeInternal(typeString, endpoint) {
   if (typeString.startsWith('Map[')) {
     return {
       type: 'object',
-      _key: getType(typeString.slice(typeString.indexOf('[') + 1, typeString.indexOf(', ')), endpoint),
+      "x-key": getType(typeString.slice(typeString.indexOf('[') + 1, typeString.indexOf(', ')), endpoint),
       additionalProperties: getType(typeString.slice(typeString.indexOf(', ') + 1, -1), endpoint)
     };
   }
@@ -39,9 +41,8 @@ function getTypeInternal(typeString, endpoint) {
     typeString = aliasMap[typeString];
   }
   return {
-    '$ref': './' + typeString + '.json'
+    '$ref': '#/components/schemas/' + endpoint + '.' + typeString
   };
-  // throw new Error('Failed to resolve type: "' + typeString + '".');
 }
 
 

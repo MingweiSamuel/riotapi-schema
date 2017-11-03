@@ -7,10 +7,14 @@ function Endpoint(dom, desc) {
   this.desc = desc;
   this.name = dom.window.document.body.children[0].children[0].getAttribute('api-name');
   this.id = dom.window.document.body.children[0].children[0].id.replace(/^resource_/, '');
-  this.dtos = [];
+
+  this.dtos = null;
+  this.methods = null;
+
+  this._compile();
 }
 
-Endpoint.prototype.compile = function() {
+Endpoint.prototype._compile = function() {
   console.log(this.name);
 
   let dtosDir = this.name + '/dtos/';
@@ -18,54 +22,33 @@ Endpoint.prototype.compile = function() {
 
   let dirs = [ dtosDir, methodsDir ];
 
-  let mkdirsPromise = fs.mkdir(this.name)
-    .then(() => Promise.all(dirs.map(dir => fs.mkdir(dir.slice(0, -1)))));
+  let methodEls = this.dom.window.document.getElementsByClassName('operation');
+  this.methods = Array.from(methodEls)
+    .map(methodEl => new Method(this, methodEl));
+  // Write dto files.
+  let methodDtos = this.methods
+    .map(method => method.dtos);
 
-  return mkdirsPromise
-    .then(() => {
-      let methodEls = this.dom.window.document.getElementsByClassName('operation');
-      let methods = Array.from(methodEls)
-        .map(methodEl => new Method(this, methodEl));
-
-      let promises = methods.map(method => method.compile());
-
-      // Write dto files.
-      let methodDtos = methods
-        .map(method => method.dtos);
-
-      // Read dtos, check for conflicts.
-      let allDtos = {};
-      for (let dtoList of methodDtos) {
-        for (let dto of dtoList) {
-          let existing = allDtos[dto.name];
-          if (existing) {
-            if (dto.isSubset(existing))
-              continue;
-            if (existing.isSubset(dto))
-              allDtos[dto.name] = dto
-            else {
-              console.error('  CONFLICTING DTO: ' + dto.name);
-              console.error('existing', existing, 'new', dto);
-            }
-            continue;
-          }
-          allDtos[dto.name] = dto;
+  // Read dtos, check for conflicts.
+  let allDtos = {};
+  for (let dtoList of methodDtos) {
+    for (let dto of dtoList) {
+      let existing = allDtos[dto.name];
+      if (existing) {
+        if (dto.isSubset(existing))
+          continue;
+        if (existing.isSubset(dto))
+          allDtos[dto.name] = dto
+        else {
+          console.error('  CONFLICTING DTO: ' + dto.name);
+          console.error('existing', existing, 'new', dto);
         }
+        continue;
       }
-      let dtos = Object.values(allDtos).map(dto => dto.toSchema());
-
-      // Write DTOS.
-      promises.push(...dtos.map(dto => fs.writeFile(dtosDir + dto.title + '.json', JSON.stringify(dto, null, 2))));
-
-      let endpointInfo = {
-        name: this.name,
-        desc: this.desc,
-        id: this.id
-      };
-      promises.push(fs.writeFile(this.name + '/endpoint.json', JSON.stringify(endpointInfo, null, 2)));
-
-      return promises;
-    });
+      allDtos[dto.name] = dto;
+    }
+  }
+  this.dtos = Object.values(allDtos);
 }
 
 module.exports = Endpoint;
