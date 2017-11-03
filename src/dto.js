@@ -37,6 +37,12 @@ function deepEqual(a, b) {
 function Dto(dtoHtml, endpointName) {
   this.endpointName = endpointName;
   this.name = dtoHtml.children[0].textContent.trim();
+  this.description = Array.from(dtoHtml.childNodes)
+    .filter(node => node.nodeType === 3 /* Node.TEXT_NODE */)
+    .map(node => node.textContent.trim())
+    .filter(str => str.length)
+    .reduce((a, b) => a + ' ' + b, '')
+    .replace(/^\s*-\s+/, '');
   this.properties = {};
 
   let tbody = dtoHtml.querySelector('table > tbody');
@@ -65,6 +71,7 @@ Dto.prototype.toSchema = function() {
   return {
     type: 'object',
     title: this.name,
+    description: this.description,
     properties: this.properties
   };
 }
@@ -81,6 +88,7 @@ Dto.readDtos = function(apiBlockHtml, endpointName) {
 
 function readReturnType(returnHtml, endpointName) {
   let returnTypeString = returnHtml.textContent.trim().replace(/^Return value: /, '');
+  if (!returnTypeString) return null;
   let returnType = types.getType(returnTypeString, endpointName);
   return returnType;
 }
