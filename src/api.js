@@ -70,11 +70,11 @@ module.exports = function(rootDir) {
         return schemas;
       }, {});
 
-      let openAPI = {
+      let spec = {
         openapi: "3.0.0",
         info: {
           title: "Riot API",
-          description: "Riot API desc", //TODO
+          description: "Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).",
           termsOfService: "https://developer.riotgames.com/terms-and-conditions.html"
         },
         servers: [
@@ -93,8 +93,15 @@ module.exports = function(rootDir) {
           schemas
         }
       };
-      openAPI.info.version = hash(openAPI);
-      return openAPI;
+
+      const ignored = [ 'openapi', 'info' ];
+      let versioned = {};
+      for (let [ key, value ] of Object.entries(spec)) {
+        if (!ignored.includes(key))
+          versioned[key] = value;
+      }
+      spec.info.version = hash(versioned);
+      return spec;
     })
     .then(openAPI => fs.writeFile("riotapi.json", JSON.stringify(openAPI, null, 2)))
     // .then(() => {
