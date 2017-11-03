@@ -1,9 +1,0 @@
-{
-  "endpoint": "lol-static-data-v3",
-  "name": "getMapData",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./MapDataDto.json",
-    "_type": "MapDataDto"
-  }
-}

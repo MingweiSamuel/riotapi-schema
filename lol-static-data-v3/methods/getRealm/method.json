@@ -1,9 +1,0 @@
-{
-  "endpoint": "lol-static-data-v3",
-  "name": "getRealm",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./RealmDto.json",
-    "_type": "RealmDto"
-  }
-}

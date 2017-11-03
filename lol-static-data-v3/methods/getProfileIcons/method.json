@@ -1,9 +1,0 @@
-{
-  "endpoint": "lol-static-data-v3",
-  "name": "getProfileIcons",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./ProfileIconDataDto.json",
-    "_type": "ProfileIconDataDto"
-  }
-}

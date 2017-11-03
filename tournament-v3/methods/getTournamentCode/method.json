@@ -1,9 +1,0 @@
-{
-  "endpoint": "tournament-v3",
-  "name": "getTournamentCode",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./TournamentCodeDTO.json",
-    "_type": "TournamentCodeDTO"
-  }
-}

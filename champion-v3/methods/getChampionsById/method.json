@@ -1,9 +1,0 @@
-{
-  "endpoint": "champion-v3",
-  "name": "getChampionsById",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./ChampionDto.json",
-    "_type": "ChampionDto"
-  }
-}

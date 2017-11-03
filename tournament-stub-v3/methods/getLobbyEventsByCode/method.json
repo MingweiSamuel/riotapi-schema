@@ -1,9 +1,0 @@
-{
-  "endpoint": "tournament-stub-v3",
-  "name": "getLobbyEventsByCode",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./LobbyEventDTOWrapper.json",
-    "_type": "LobbyEventDTOWrapper"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "endpoint": "lol-static-data-v3",
-  "name": "getLanguageStrings",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./LanguageStringsDto.json",
-    "_type": "LanguageStringsDto"
-  }
-}

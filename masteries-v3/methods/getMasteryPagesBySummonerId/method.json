@@ -1,9 +1,0 @@
-{
-  "endpoint": "masteries-v3",
-  "name": "getMasteryPagesBySummonerId",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./MasteryPagesDto.json",
-    "_type": "MasteryPagesDto"
-  }
-}

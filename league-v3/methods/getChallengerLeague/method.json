@@ -1,9 +1,0 @@
-{
-  "endpoint": "league-v3",
-  "name": "getChallengerLeague",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./LeagueListDTO.json",
-    "_type": "LeagueListDTO"
-  }
-}

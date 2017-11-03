@@ -1,8 +1,0 @@
-[
-  "getMatch/",
-  "getMatchByTournamentCode/",
-  "getMatchIdsByTournamentCode/",
-  "getMatchlist/",
-  "getMatchTimeline/",
-  "getRecentMatchlist/"
-]

@@ -1,9 +1,0 @@
-{
-  "endpoint": "champion-mastery-v3",
-  "name": "getChampionMastery",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./ChampionMasteryDTO.json",
-    "_type": "ChampionMasteryDTO"
-  }
-}

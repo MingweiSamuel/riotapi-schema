@@ -1,9 +1,0 @@
-{
-  "endpoint": "summoner-v3",
-  "name": "getByAccountId",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./SummonerDTO.json",
-    "_type": "SummonerDTO"
-  }
-}

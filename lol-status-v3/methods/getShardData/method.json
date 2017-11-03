@@ -1,9 +1,0 @@
-{
-  "endpoint": "lol-status-v3",
-  "name": "getShardData",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./ShardStatus.json",
-    "_type": "ShardStatus"
-  }
-}

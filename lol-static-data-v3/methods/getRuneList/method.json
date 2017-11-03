@@ -1,9 +1,0 @@
-{
-  "endpoint": "lol-static-data-v3",
-  "name": "getRuneList",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./RuneListDto.json",
-    "_type": "RuneListDto"
-  }
-}

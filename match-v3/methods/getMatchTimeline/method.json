@@ -1,9 +1,0 @@
-{
-  "endpoint": "match-v3",
-  "name": "getMatchTimeline",
-  "method": "GET",
-  "returnType": {
-    "$ref": "./MatchTimelineDto.json",
-    "_type": "MatchTimelineDto"
-  }
-}

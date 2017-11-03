@@ -1,8 +1,0 @@
-[
-  "createTournamentCode/",
-  "getLobbyEventsByCode/",
-  "getTournamentCode/",
-  "registerProviderData/",
-  "registerTournament/",
-  "updateCode/"
-]
