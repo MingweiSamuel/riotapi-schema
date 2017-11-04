@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "f900c989f57f3419a5f297a226210bacb753f59a"
+    "version": "778e5640e84eb83b7cb2d0c3601b223a8400b574"
   },
   "servers": [
     {
@@ -43,7 +43,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -73,7 +73,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -99,7 +99,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -126,7 +126,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -152,7 +152,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -178,7 +178,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -204,7 +204,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -234,7 +234,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -260,7 +260,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -286,7 +286,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -312,7 +312,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -338,7 +338,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -364,7 +364,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -390,7 +390,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -416,7 +416,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -442,7 +442,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -472,7 +472,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -498,7 +498,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -524,7 +524,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -550,7 +550,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -576,7 +576,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -602,7 +602,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -628,7 +628,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -654,7 +654,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -680,7 +680,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -706,7 +706,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -736,7 +736,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -762,7 +762,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -788,7 +788,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -819,7 +819,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -845,7 +845,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -871,7 +871,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -897,7 +897,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -923,7 +923,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -949,7 +949,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -975,7 +975,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1001,7 +1001,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1027,7 +1027,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1053,7 +1053,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1079,7 +1079,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1105,7 +1105,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1147,7 +1147,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1173,7 +1173,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1212,7 +1212,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1251,7 +1251,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1293,7 +1293,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe"
+            "description": "Success"
           }
         },
         "description": "Update the pick type, map, spectator type, or allowed summoners for a code.",
@@ -1321,7 +1321,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1347,7 +1347,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1373,7 +1373,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1412,7 +1412,7 @@
         },
         "responses": {
           "200": {
-            "description": "ReSpOnSe",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -2927,7 +2927,12 @@
           "masteryTree": {
             "type": "string",
             "x-type": "string",
-            "description": "(Legal values:  Cunning,  Ferocity,  Resolve)"
+            "description": "(Legal values:  Cunning,  Ferocity,  Resolve)",
+            "enum": [
+              "Cunning",
+              "Ferocity",
+              "Resolve"
+            ]
           },
           "name": {
             "type": "string",
@@ -4929,7 +4934,22 @@
           "type": {
             "type": "string",
             "x-type": "string",
-            "description": "(Legal values:  CHAMPION_KILL,  WARD_PLACED,  WARD_KILL,  BUILDING_KILL,  ELITE_MONSTER_KILL,  ITEM_PURCHASED,  ITEM_SOLD,  ITEM_DESTROYED,  ITEM_UNDO,  SKILL_LEVEL_UP,  ASCENDED_EVENT,  CAPTURE_POINT,  PORO_KING_SUMMON)"
+            "description": "(Legal values:  CHAMPION_KILL,  WARD_PLACED,  WARD_KILL,  BUILDING_KILL,  ELITE_MONSTER_KILL,  ITEM_PURCHASED,  ITEM_SOLD,  ITEM_DESTROYED,  ITEM_UNDO,  SKILL_LEVEL_UP,  ASCENDED_EVENT,  CAPTURE_POINT,  PORO_KING_SUMMON)",
+            "enum": [
+              "CHAMPION_KILL",
+              "WARD_PLACED",
+              "WARD_KILL",
+              "BUILDING_KILL",
+              "ELITE_MONSTER_KILL",
+              "ITEM_PURCHASED",
+              "ITEM_SOLD",
+              "ITEM_DESTROYED",
+              "ITEM_UNDO",
+              "SKILL_LEVEL_UP",
+              "ASCENDED_EVENT",
+              "CAPTURE_POINT",
+              "PORO_KING_SUMMON"
+            ]
           },
           "skillSlot": {
             "type": "integer",
@@ -5477,18 +5497,31 @@
           "spectatorType": {
             "type": "string",
             "x-type": "string",
-            "description": "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+            "description": "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)",
+            "enum": [
+              "NONE",
+              "LOBBYONLY",
+              "ALL"
+            ]
           },
           "teamSize": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "The team size of the game. Valid values are 1-5."
+            "description": "The team size of the game. Valid values are 1-5.",
+            "minimum": 1,
+            "maximum": 5
           },
           "pickType": {
             "type": "string",
             "x-type": "string",
-            "description": "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+            "description": "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)",
+            "enum": [
+              "BLIND_PICK",
+              "DRAFT_MODE",
+              "ALL_RANDOM",
+              "TOURNAMENT_DRAFT"
+            ]
           },
           "allowedSummonerIds": {
             "$ref": "#/components/schemas/tournament-stub-v3.SummonerIdParams",
@@ -5498,7 +5531,12 @@
           "mapType": {
             "type": "string",
             "x-type": "string",
-            "description": "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
+            "description": "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)",
+            "enum": [
+              "SUMMONERS_RIFT",
+              "TWISTED_TREELINE",
+              "HOWLING_ABYSS"
+            ]
           },
           "metadata": {
             "type": "string",
@@ -5574,7 +5612,20 @@
           "region": {
             "type": "string",
             "x-type": "string",
-            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
+            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)",
+            "enum": [
+              "BR",
+              "EUNE",
+              "EUW",
+              "JP",
+              "LAN",
+              "LAS",
+              "NA",
+              "OCE",
+              "PBE",
+              "RU",
+              "TR"
+            ]
           }
         }
       },
@@ -5604,18 +5655,31 @@
           "spectatorType": {
             "type": "string",
             "x-type": "string",
-            "description": "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+            "description": "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)",
+            "enum": [
+              "NONE",
+              "LOBBYONLY",
+              "ALL"
+            ]
           },
           "teamSize": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "The team size of the game. Valid values are 1-5."
+            "description": "The team size of the game. Valid values are 1-5.",
+            "minimum": 1,
+            "maximum": 5
           },
           "pickType": {
             "type": "string",
             "x-type": "string",
-            "description": "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+            "description": "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)",
+            "enum": [
+              "BLIND_PICK",
+              "DRAFT_MODE",
+              "ALL_RANDOM",
+              "TOURNAMENT_DRAFT"
+            ]
           },
           "allowedSummonerIds": {
             "$ref": "#/components/schemas/tournament-v3.SummonerIdParams",
@@ -5625,7 +5689,12 @@
           "mapType": {
             "type": "string",
             "x-type": "string",
-            "description": "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
+            "description": "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)",
+            "enum": [
+              "SUMMONERS_RIFT",
+              "TWISTED_TREELINE",
+              "HOWLING_ABYSS"
+            ]
           },
           "metadata": {
             "type": "string",
@@ -5659,12 +5728,23 @@
           "spectatorType": {
             "type": "string",
             "x-type": "string",
-            "description": "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+            "description": "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)",
+            "enum": [
+              "NONE",
+              "LOBBYONLY",
+              "ALL"
+            ]
           },
           "pickType": {
             "type": "string",
             "x-type": "string",
-            "description": "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+            "description": "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)",
+            "enum": [
+              "BLIND_PICK",
+              "DRAFT_MODE",
+              "ALL_RANDOM",
+              "TOURNAMENT_DRAFT"
+            ]
           },
           "allowedParticipants": {
             "type": "string",
@@ -5674,7 +5754,12 @@
           "mapType": {
             "type": "string",
             "x-type": "string",
-            "description": "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
+            "description": "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)",
+            "enum": [
+              "SUMMONERS_RIFT",
+              "TWISTED_TREELINE",
+              "HOWLING_ABYSS"
+            ]
           }
         }
       },
@@ -5701,7 +5786,20 @@
           "region": {
             "type": "string",
             "x-type": "string",
-            "description": "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
+            "description": "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)",
+            "enum": [
+              "BR",
+              "EUNE",
+              "EUW",
+              "JP",
+              "LAN",
+              "LAS",
+              "NA",
+              "OCE",
+              "PBE",
+              "RU",
+              "TR"
+            ]
           },
           "providerId": {
             "type": "integer",
@@ -5808,7 +5906,20 @@
           "region": {
             "type": "string",
             "x-type": "string",
-            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
+            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)",
+            "enum": [
+              "BR",
+              "EUNE",
+              "EUW",
+              "JP",
+              "LAN",
+              "LAS",
+              "NA",
+              "OCE",
+              "PBE",
+              "RU",
+              "TR"
+            ]
           }
         }
       },
