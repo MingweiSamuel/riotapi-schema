@@ -104,10 +104,6 @@ module.exports = function(rootDir) {
       return spec;
     })
     .then(openAPI => fs.writeFile("riotapi.json", JSON.stringify(openAPI, null, 2)))
-    // .then(() => {
-    //   // Write index files.
-    //   return writeIndex('./');
-    // })
     .catch(console.err);
 };
 

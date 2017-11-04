@@ -1,6 +1,7 @@
 const fs = require("fs-extra");
 
 const Dto = require('./dto');
+const types = require('./types');
 
 function Method(endpoint, methodEl) {
   this.endpoint = endpoint;
@@ -14,8 +15,10 @@ function Method(endpoint, methodEl) {
   this.pathUrl = heading.children[1].textContent.trim();
   this.summary = heading.children[2].textContent.trim();
 
+  this.bodyType = null;
+  this.bodyRequired = null;
   this.returnType = null;
-  this.dtos = null;
+  this.dtos = [];
 
   this.rateLimitNotes = null;
   this.implementationNotes = null;
@@ -37,7 +40,7 @@ Method.prototype.getOperation = function() {
   };
   if (this.returnType) {
     response200.content = {
-      "application/json": {
+      'application/json': {
         schema: this.returnType
       }
     };
@@ -55,10 +58,24 @@ Method.prototype.getOperation = function() {
     }
     // name: this.name
   };
+
   let description = [ this.summary ];
   if (this.implementationNotes) description.push(...['## Implementation Notes', this.implementationNotes]);
   if (this.rateLimitNotes) description.push(...['## Rate Limit Notes', this.rateLimitNotes]);
   operation.description = description.join('\n');
+
+  if (this.bodyType) {
+    operation.requestBody = {
+      description: this.bodyDesc,
+      content: {
+        'application/json': {
+          schema: this.bodyType
+        }
+      },
+      required: this.bodyRequired
+    }
+  }
+
   return operation;
 }
 
@@ -71,9 +88,7 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
   let type = typeH4.textContent.trim().toLowerCase();
   switch(type) {
     case 'response classes':
-      let { returnType, dtos } = Dto.readDtos(apiBlockHtml, this.endpoint.name);
-      this.returnType = returnType; // Can be null.
-      this.dtos = dtos;
+      this._handleResponseClasses(apiBlockHtml);
       break;
     case 'implementation notes':
       this.implementationNotes = apiBlockHtml.children[1].textContent.trim();
@@ -84,12 +99,36 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
     case 'response errors':
     case 'path parameters':
     case 'query parameters':
+      break;
     case 'body parameters':
-      // TODO
+      this._handleBodyParameters(apiBlockHtml);
       break;
     default:
       console.error('Unhandled api block: "' + type + '".');
   }
 }
+
+Method.prototype._handleResponseClasses = function(apiBlockHtml) {
+  // returnType may be null.
+  this.returnType = Dto.readReturnType(apiBlockHtml.children[1], this.endpoint.name);
+  this.dtos.push(...Array.from(apiBlockHtml.children)
+    .slice(2, -1)
+    .map(e => new Dto(e, this.endpoint.name)));
+};
+
+Method.prototype._handleBodyParameters = function(apiBlockHtml) {
+  let table = apiBlockHtml.children[1];
+  let tr = table.tBodies[0].children[0];
+  let code = tr.children[0];
+
+  this.bodyType = types.getType(code.childNodes[0].textContent.trim(), this.endpoint.name);
+  this.bodyRequired = 'required' === code.children[0].textContent.trim().toLowerCase();
+  this.bodyDesc = tr.children[3].textContent.trim();
+
+  let block = apiBlockHtml;
+  while ((block = block.nextElementSibling) && block.classList.contains('block')) {
+    this.dtos.push(new Dto(block, this.endpoint.name));
+  }
+};
 
 module.exports = Method;

@@ -66,7 +66,7 @@ Dto.prototype.isSubset = function(other) {
       return false;
   }
   return true;
-}
+};
 Dto.prototype.toSchema = function() {
   return {
     type: 'object',
@@ -74,24 +74,14 @@ Dto.prototype.toSchema = function() {
     description: this.description,
     properties: this.properties
   };
-}
+};
 
-Dto.readDtos = function(apiBlockHtml, endpointName) {
-  let returnType = readReturnType(apiBlockHtml.children[1], endpointName);
-  let dtos = Array.from(apiBlockHtml.children)
-    .slice(2, -1)
-    .map(e => new Dto(e, endpointName));
-  return {
-    returnType, dtos
-  };
-}
-
-function readReturnType(returnHtml, endpointName) {
+Dto.readReturnType = function(returnHtml, endpointName) {
   let returnTypeString = returnHtml.textContent.trim().replace(/^Return value: /, '');
   if (!returnTypeString) return null;
   let returnType = types.getType(returnTypeString, endpointName);
   return returnType;
-}
+};
 
 function clone(obj) {
   return JSON.parse(JSON.stringify(obj));
