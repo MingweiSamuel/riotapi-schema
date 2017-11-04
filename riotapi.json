@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "4730df2f3bf78e4127f2fb278ffe95cb4e33af9a"
+    "version": "f900c989f57f3419a5f297a226210bacb753f59a"
   },
   "servers": [
     {
@@ -1120,7 +1120,19 @@
             }
           }
         },
-        "description": "Create a mock tournament code for the given tournament."
+        "description": "Create a mock tournament code for the given tournament.",
+        "requestBody": {
+          "description": "Metadata for the generated code",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-stub-v3.TournamentCodeParameters",
+                "x-type": "TournamentCodeParameters"
+              }
+            }
+          },
+          "required": false
+        }
       }
     },
     "/lol/tournament-stub/v3/lobby-events/by-code/{tournamentCode}": {
@@ -1173,7 +1185,19 @@
             }
           }
         },
-        "description": "Creates a mock tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work."
+        "description": "Creates a mock tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
+        "requestBody": {
+          "description": "The provider definition.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-stub-v3.ProviderRegistrationParameters",
+                "x-type": "ProviderRegistrationParameters"
+              }
+            }
+          },
+          "required": true
+        }
       }
     },
     "/lol/tournament-stub/v3/tournaments": {
@@ -1200,7 +1224,19 @@
             }
           }
         },
-        "description": "Creates a mock tournament and returns its ID."
+        "description": "Creates a mock tournament and returns its ID.",
+        "requestBody": {
+          "description": "The tournament definition.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-stub-v3.TournamentRegistrationParameters",
+                "x-type": "TournamentRegistrationParameters"
+              }
+            }
+          },
+          "required": true
+        }
       }
     },
     "/lol/tournament/v3/codes": {
@@ -1230,7 +1266,19 @@
             }
           }
         },
-        "description": "Create a tournament code for the given tournament."
+        "description": "Create a tournament code for the given tournament.",
+        "requestBody": {
+          "description": "Metadata for the generated code",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-v3.TournamentCodeParameters",
+                "x-type": "TournamentCodeParameters"
+              }
+            }
+          },
+          "required": true
+        }
       }
     },
     "/lol/tournament/v3/codes/{tournamentCode}": {
@@ -1248,7 +1296,19 @@
             "description": "ReSpOnSe"
           }
         },
-        "description": "Update the pick type, map, spectator type, or allowed summoners for a code."
+        "description": "Update the pick type, map, spectator type, or allowed summoners for a code.",
+        "requestBody": {
+          "description": "The fields to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-v3.TournamentCodeUpdateParameters",
+                "x-type": "TournamentCodeUpdateParameters"
+              }
+            }
+          },
+          "required": false
+        }
       },
       "get": {
         "tags": [
@@ -1325,7 +1385,19 @@
             }
           }
         },
-        "description": "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work."
+        "description": "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
+        "requestBody": {
+          "description": "The provider definition.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-v3.ProviderRegistrationParameters",
+                "x-type": "ProviderRegistrationParameters"
+              }
+            }
+          },
+          "required": true
+        }
       }
     },
     "/lol/tournament/v3/tournaments": {
@@ -1352,7 +1424,19 @@
             }
           }
         },
-        "description": "Creates a tournament and returns its ID."
+        "description": "Creates a tournament and returns its ID.",
+        "requestBody": {
+          "description": "The tournament definition.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-v3.TournamentRegistrationParameters",
+                "x-type": "TournamentRegistrationParameters"
+              }
+            }
+          },
+          "required": true
+        }
       }
     }
   },
@@ -5385,6 +5469,61 @@
           }
         }
       },
+      "tournament-stub-v3.TournamentCodeParameters": {
+        "type": "object",
+        "title": "TournamentCodeParameters",
+        "description": "",
+        "properties": {
+          "spectatorType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+          },
+          "teamSize": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The team size of the game. Valid values are 1-5."
+          },
+          "pickType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+          },
+          "allowedSummonerIds": {
+            "$ref": "#/components/schemas/tournament-stub-v3.SummonerIdParams",
+            "x-type": "SummonerIdParams",
+            "description": "Optional list of participants in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future."
+          },
+          "mapType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
+          },
+          "metadata": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Optional string that may contain any data in any format, if specified at all. Used to denote any custom information about the game."
+          }
+        }
+      },
+      "tournament-stub-v3.SummonerIdParams": {
+        "type": "object",
+        "title": "SummonerIdParams",
+        "description": "",
+        "properties": {
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "x-type": "Set[long]",
+            "description": "the tournament participants"
+          }
+        }
+      },
       "tournament-stub-v3.LobbyEventDTOWrapper": {
         "type": "object",
         "title": "LobbyEventDTOWrapper",
@@ -5419,6 +5558,123 @@
             "type": "string",
             "x-type": "string",
             "description": "Timestamp from the event"
+          }
+        }
+      },
+      "tournament-stub-v3.ProviderRegistrationParameters": {
+        "type": "object",
+        "title": "ProviderRegistrationParameters",
+        "description": "",
+        "properties": {
+          "url": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The provider's callback URL to which tournament game results in this region should be posted. The URL must be well-formed, use the http or https protocol, and use the default port for the protocol (http URLs must use port 80, https URLs must use port 443)."
+          },
+          "region": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
+          }
+        }
+      },
+      "tournament-stub-v3.TournamentRegistrationParameters": {
+        "type": "object",
+        "title": "TournamentRegistrationParameters",
+        "description": "",
+        "properties": {
+          "providerId": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The provider ID to specify the regional registered provider data to associate this tournament."
+          },
+          "name": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The optional name of the tournament."
+          }
+        }
+      },
+      "tournament-v3.TournamentCodeParameters": {
+        "type": "object",
+        "title": "TournamentCodeParameters",
+        "description": "",
+        "properties": {
+          "spectatorType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+          },
+          "teamSize": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The team size of the game. Valid values are 1-5."
+          },
+          "pickType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+          },
+          "allowedSummonerIds": {
+            "$ref": "#/components/schemas/tournament-v3.SummonerIdParams",
+            "x-type": "SummonerIdParams",
+            "description": "Optional list of participants in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future."
+          },
+          "mapType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
+          },
+          "metadata": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Optional string that may contain any data in any format, if specified at all. Used to denote any custom information about the game."
+          }
+        }
+      },
+      "tournament-v3.SummonerIdParams": {
+        "type": "object",
+        "title": "SummonerIdParams",
+        "description": "",
+        "properties": {
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "x-type": "Set[long]",
+            "description": "the tournament participants"
+          }
+        }
+      },
+      "tournament-v3.TournamentCodeUpdateParameters": {
+        "type": "object",
+        "title": "TournamentCodeUpdateParameters",
+        "description": "",
+        "properties": {
+          "spectatorType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+          },
+          "pickType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+          },
+          "allowedParticipants": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Comma separated list of summoner Ids"
+          },
+          "mapType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
           }
         }
       },
@@ -5536,6 +5792,41 @@
             "type": "string",
             "x-type": "string",
             "description": "Timestamp from the event"
+          }
+        }
+      },
+      "tournament-v3.ProviderRegistrationParameters": {
+        "type": "object",
+        "title": "ProviderRegistrationParameters",
+        "description": "",
+        "properties": {
+          "url": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The provider's callback URL to which tournament game results in this region should be posted. The URL must be well-formed, use the http or https protocol, and use the default port for the protocol (http URLs must use port 80, https URLs must use port 443)."
+          },
+          "region": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
+          }
+        }
+      },
+      "tournament-v3.TournamentRegistrationParameters": {
+        "type": "object",
+        "title": "TournamentRegistrationParameters",
+        "description": "",
+        "properties": {
+          "providerId": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The provider ID to specify the regional registered provider data to associate this tournament."
+          },
+          "name": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The optional name of the tournament."
           }
         }
       }
