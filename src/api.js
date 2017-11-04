@@ -57,11 +57,11 @@ module.exports = function(rootDir) {
       let { endpoints, regions } = data;
 
       let methods = [].concat.apply([], endpoints.map(endpoint => endpoint.methods));
-      let paths = methods.reduce((paths, method) => {
+      let paths = {};
+      methods.forEach(method => {
         let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
         path[method.httpMethod] = method.getOperation();
-        return paths;
-      }, {});
+      });
 
       let schemas = methods.reduce((schemas, method) => {
         method.dtos.forEach(dto => {

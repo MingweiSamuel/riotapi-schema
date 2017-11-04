@@ -1,38 +1,5 @@
 const types = require('./types');
-
-/**
- * Deep equals, ignoring underscore-prefixed keys.
- * Only handles primitives, arrays, and objects.
- */
-function deepEqual(a, b) {
-  if (Object.is(a, b))
-    return true;
-  if (a instanceof Array) {
-    if (!(b instanceof Array))
-      return false;
-    if (a.length !== b.length)
-      return false;
-    for (let i = 0; i < a.length; i++) {
-      if (!deepEqual(a[i], b[i]))
-        return false;
-    }
-    return true;
-  }
-  if (typeof a === 'object') {
-    if (typeof b !== 'object')
-      return false;
-    let aKeys = Object.keys(a).filter(x => !x.startsWith('x-')).sort();
-    let bKeys = Object.keys(b).filter(x => !x.startsWith('x-')).sort();
-    if (!deepEqual(aKeys, bKeys))
-      return false;
-    for (let key of aKeys) {
-      if (!deepEqual(a[key], b[key]))
-        return false;
-    }
-    return true;
-  }
-  throw new Error('Unknown type: ' + (typeof a));
-}
+const deepEqual = require('./deepEqual');
 
 function Dto(dtoHtml, endpointName) {
   this.endpointName = endpointName;
@@ -49,9 +16,17 @@ function Dto(dtoHtml, endpointName) {
   Array.from(tbody.children).forEach(tr => {
     let [ name, typeStr, desc ] = Array.from(tr.children)
       .map(c => c.textContent.trim());
-    this.properties[name] = clone(types.getType(typeStr, this.endpointName));
-    if (desc)
-      this.properties[name].description = desc;
+    let prop = this.properties[name] = types.getType(typeStr, this.endpointName);
+    if (desc) {
+      prop.description = desc;
+      let match;
+      if ((match = /\(Legal values:\s*(\S+(?:,\s*\S+)*)\)$/.exec(desc)))
+        prop.enum = match[1].split(/,\s*/);
+      else if ((match = /Valid values are (\d+)-(\d+)\.?$/.exec(desc))) {
+        prop.minimum = +match[1];
+        prop.maximum = +match[2];
+      }
+    }
   });
 }
 /**
@@ -82,9 +57,5 @@ Dto.readReturnType = function(returnHtml, endpointName) {
   let returnType = types.getType(returnTypeString, endpointName);
   return returnType;
 };
-
-function clone(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
 
 module.exports = Dto;

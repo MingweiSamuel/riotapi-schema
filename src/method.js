@@ -36,7 +36,7 @@ Method.prototype._compile = function() {
 // https://swagger.io/specification/#pathItemObject
 Method.prototype.getOperation = function() {
   let response200 = {
-    description: 'ReSpOnSe', //TODO
+    description: 'Success',
   };
   if (this.returnType) {
     response200.content = {
