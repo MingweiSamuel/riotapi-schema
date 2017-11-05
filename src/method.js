@@ -58,8 +58,8 @@ Method.prototype.getOperation = function() {
       description: "Official API Reference",
       url: "https://developer.riotgames.com/api-methods/" + this.urlHash
     },
-    responses: this.responses
-    // name: this.name
+    responses: this.responses,
+    operationId: this.endpoint.name + '.' + this.name
   };
 
   let description = [ this.summary ];
