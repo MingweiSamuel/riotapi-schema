@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "95b1a9580dab55114a24a6d42fac9fe181d65659"
+    "version": "11f9d801f6497b22f8c3905f0284c7deb52df5d7"
   },
   "servers": [
     {
@@ -91,6 +91,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "champion-mastery-v3.getAllChampionMasteries",
         "description": "Get all champion mastery entries sorted by number of champion points descending,",
         "parameters": [
           {
@@ -164,6 +165,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "champion-mastery-v3.getChampionMastery",
         "description": "Get a champion mastery by player ID and champion ID.",
         "parameters": [
           {
@@ -250,6 +252,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "champion-mastery-v3.getChampionMasteryScore",
         "description": "Get a player's total champion mastery score, which is the sum of individual champion mastery levels.",
         "parameters": [
           {
@@ -323,6 +326,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "champion-v3.getChampions",
         "description": "Retrieve all champions.",
         "parameters": [
           {
@@ -395,6 +399,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "champion-v3.getChampionsById",
         "description": "Retrieve champion by ID.",
         "parameters": [
           {
@@ -468,6 +473,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "league-v3.getChallengerLeague",
         "description": "Get the challenger league for given queue.",
         "parameters": [
           {
@@ -548,6 +554,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "league-v3.getAllLeaguesForSummoner",
         "description": "Get leagues in all queues for a given summoner ID.",
         "parameters": [
           {
@@ -621,6 +628,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "league-v3.getLeagueById",
         "description": "Get league with given ID, including inactive entries.",
         "parameters": [
           {
@@ -693,6 +701,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "league-v3.getMasterLeague",
         "description": "Get the master league for given queue.",
         "parameters": [
           {
@@ -769,6 +778,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "league-v3.getAllLeaguePositionsForSummoner",
         "description": "Get league positions in all queues for given summoner ID.",
         "parameters": [
           {
@@ -841,6 +851,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getChampionList",
         "description": "Retrieves champion list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -999,6 +1010,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getChampionById",
         "description": "Retrieves champion by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -1156,6 +1168,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getItemList",
         "description": "Retrieves item list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -1308,6 +1321,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getItemById",
         "description": "Retrieves item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -1470,6 +1484,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getLanguageStrings",
         "description": "Retrieve language strings data\n## Implementation Notes\nLanguage strings data was not generated for patch version 7.4.2.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -1588,6 +1603,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getLanguages",
         "description": "Retrieve supported languages data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       }
     },
@@ -1647,6 +1663,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getMapData",
         "description": "Retrieve map data\n## Implementation Notes\nThis endpoint is only supported for patch version 5.5.3 and later. Also, map data was not generated for patch versions 5.15.1, 5.16.1, and 5.17.1.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -1761,6 +1778,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getMasteryList",
         "description": "Retrieves mastery list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -1899,6 +1917,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getMasteryById",
         "description": "Retrieves mastery item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -2048,6 +2067,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getProfileIcons",
         "description": "Retrieve profile icons\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -2162,6 +2182,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getRealm",
         "description": "Retrieve realm data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       }
     },
@@ -2221,6 +2242,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getRuneList",
         "description": "Retrieves rune list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -2357,6 +2379,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getRuneById",
         "description": "Retrieves rune by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -2505,6 +2528,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getSummonerSpellList",
         "description": "Retrieves summoner spell list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -2667,6 +2691,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getSummonerSpellById",
         "description": "Retrieves summoner spell by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
@@ -2834,6 +2859,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-static-data-v3.getVersions",
         "description": "Retrieve version data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       }
     },
@@ -2893,6 +2919,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "lol-status-v3.getShardData",
         "description": "Get League of Legends status for the given shard.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       }
     },
@@ -2940,6 +2967,7 @@
             "description": "Service unavailable"
           }
         },
+        "operationId": "masteries-v3.getMasteryPagesBySummonerId",
         "description": "Get mastery pages for a given summoner ID.",
         "parameters": [
           {
@@ -3017,6 +3045,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "match-v3.getMatchIdsByTournamentCode",
         "description": "Get match IDs by tournament code.",
         "parameters": [
           {
@@ -3089,6 +3118,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "match-v3.getMatch",
         "description": "Get match by match ID.",
         "parameters": [
           {
@@ -3162,6 +3192,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "match-v3.getMatchByTournamentCode",
         "description": "Get match by match ID and tournament code.",
         "parameters": [
           {
@@ -3249,6 +3280,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "match-v3.getMatchlist",
         "description": "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
         "parameters": [
           {
@@ -3421,6 +3453,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "match-v3.getRecentMatchlist",
         "description": "Get matchlist for last 20 matches played on given account ID and platform ID.",
         "parameters": [
           {
@@ -3494,6 +3527,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "match-v3.getMatchTimeline",
         "description": "Get match timeline by match ID.\n## Implementation Notes\nNot all matches have timeline data.",
         "parameters": [
           {
@@ -3555,6 +3589,7 @@
             "description": "Service unavailable"
           }
         },
+        "operationId": "runes-v3.getRunePagesBySummonerId",
         "description": "Get rune pages for a given summoner ID.",
         "parameters": [
           {
@@ -3627,6 +3662,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "spectator-v3.getCurrentGameInfoBySummoner",
         "description": "Get current game information for the given summoner ID.",
         "parameters": [
           {
@@ -3700,6 +3736,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "spectator-v3.getFeaturedGames",
         "description": "Get list of featured games."
       }
     },
@@ -3759,6 +3796,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "summoner-v3.getByAccountId",
         "description": "Get a summoner by account ID.",
         "parameters": [
           {
@@ -3831,6 +3869,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "summoner-v3.getBySummonerName",
         "description": "Get a summoner by summoner name.",
         "parameters": [
           {
@@ -3903,6 +3942,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "summoner-v3.getBySummonerId",
         "description": "Get a summoner by summoner ID.",
         "parameters": [
           {
@@ -3980,6 +4020,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-stub-v3.createTournamentCode",
         "description": "Create a mock tournament code for the given tournament.",
         "requestBody": {
           "description": "Metadata for the generated code",
@@ -4077,6 +4118,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-stub-v3.getLobbyEventsByCode",
         "description": "Gets a mock list of lobby events by tournament code.",
         "parameters": [
           {
@@ -4150,6 +4192,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-stub-v3.registerProviderData",
         "description": "Creates a mock tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
         "requestBody": {
           "description": "The provider definition.",
@@ -4222,6 +4265,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-stub-v3.registerTournament",
         "description": "Creates a mock tournament and returns its ID.",
         "requestBody": {
           "description": "The tournament definition.",
@@ -4297,6 +4341,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-v3.createTournamentCode",
         "description": "Create a tournament code for the given tournament.",
         "requestBody": {
           "description": "Metadata for the generated code",
@@ -4386,6 +4431,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-v3.updateCode",
         "description": "Update the pick type, map, spectator type, or allowed summoners for a code.",
         "requestBody": {
           "description": "The fields to update",
@@ -4468,6 +4514,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-v3.getTournamentCode",
         "description": "Returns the tournament code DTO associated with a tournament code string.",
         "parameters": [
           {
@@ -4540,6 +4587,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-v3.getLobbyEventsByCode",
         "description": "Gets a list of lobby events by tournament code.",
         "parameters": [
           {
@@ -4613,6 +4661,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-v3.registerProviderData",
         "description": "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
         "requestBody": {
           "description": "The provider definition.",
@@ -4685,6 +4734,7 @@
             "description": "Gateway timeout"
           }
         },
+        "operationId": "tournament-v3.registerTournament",
         "description": "Creates a tournament and returns its ID.",
         "requestBody": {
           "description": "The tournament definition.",
