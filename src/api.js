@@ -1,4 +1,5 @@
 const fs = require("fs-extra");
+const YAML = require('yamljs');
 
 const req = (function(req) {
   return url => req(url).catch(() => req(url));
@@ -63,12 +64,28 @@ module.exports = function(rootDir) {
         path[method.httpMethod] = method.getOperation();
       });
 
-      let schemas = methods.reduce((schemas, method) => {
+      let schemas = {
+        Error: {
+          "properties": {
+            "status": {
+              "type": "object",
+              "properties": {
+                "status_code": {
+                  "type": "integer"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      };
+      methods.forEach(method => {
         method.dtos.forEach(dto => {
           schemas[method.endpoint.name + '.' + dto.name] = dto.toSchema();
         });
-        return schemas;
-      }, {});
+      });
 
       let spec = {
         openapi: "3.0.0",
@@ -103,7 +120,11 @@ module.exports = function(rootDir) {
       spec.info.version = hash(versioned);
       return spec;
     })
-    .then(openAPI => fs.writeFile("riotapi.json", JSON.stringify(openAPI, null, 2)))
+    .then(spec => Promise.all([
+      fs.writeFile("riotapi.json", JSON.stringify(spec, null, 2)),
+      fs.writeFile("riotapi.min.json", JSON.stringify(spec)),
+      fs.writeFile("riotapi.yml", YAML.stringify(spec, 2))
+    ]))
     .catch(console.err);
 };
 

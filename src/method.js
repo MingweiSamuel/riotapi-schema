@@ -1,6 +1,6 @@
 const fs = require("fs-extra");
 
-const Dto = require('./dto');
+const Schema = require('./schema');
 const types = require('./types');
 
 function Method(endpoint, methodEl) {
@@ -15,19 +15,23 @@ function Method(endpoint, methodEl) {
   this.pathUrl = heading.children[1].textContent.trim();
   this.summary = heading.children[2].textContent.trim();
 
+  let content = methodEl.children[1];
+  let methodMeta = content.getElementsByClassName('method_meta')[0];
+  this.deprecated = methodMeta && methodMeta.textContent.toLowerCase().includes('deprecated');
+
   this.bodyType = null;
   this.bodyRequired = null;
   this.returnType = null;
   this.dtos = [];
+  this.params = [];
+  this.responses = {};
 
   this.rateLimitNotes = null;
   this.implementationNotes = null;
 
-  console.log('  ' + this.name + ' - ' + this.httpMethod.toUpperCase());
-  this._compile();
-}
+  console.log('  ' + this.name + ' - ' + this.httpMethod.toUpperCase() +
+    (this.deprecated ? ' (DEPRECATED)'  : ''));
 
-Method.prototype._compile = function() {
   let apiBlocks = this.methodEl.getElementsByClassName('api_block');
   Array.from(apiBlocks)
     .forEach(apiBlock => this._compileApiBlock(apiBlock));
@@ -45,6 +49,7 @@ Method.prototype.getOperation = function() {
       }
     };
   }
+  this.responses['200'] = response200;
 
   let operation = {
     tags: [ this.endpoint.name ],
@@ -53,9 +58,7 @@ Method.prototype.getOperation = function() {
       description: "Official API Reference",
       url: "https://developer.riotgames.com/api-methods/" + this.urlHash
     },
-    responses: {
-      "200": response200
-    }
+    responses: this.responses
     // name: this.name
   };
 
@@ -75,6 +78,10 @@ Method.prototype.getOperation = function() {
       required: this.bodyRequired
     }
   }
+  if (this.params.length)
+    operation.parameters = this.params;
+  if (this.deprecated)
+    operation.deprecated = true;
 
   return operation;
 }
@@ -96,12 +103,25 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
     case 'rate limit notes':
       this.rateLimitNotes = apiBlockHtml.children[1].textContent.trim();
       break;
-    case 'response errors':
     case 'path parameters':
     case 'query parameters':
+      let inType = type.split(/\s+/, 1)[0];
+      let params = new Schema(apiBlockHtml, this.endpoint.name).toParameters(inType);
+      this.params.push(...params);
       break;
     case 'body parameters':
       this._handleBodyParameters(apiBlockHtml);
+      break;
+    case 'response errors':
+      let table = apiBlockHtml.lastElementChild;
+      let tbody = table.tBodies[0];
+      Array.from(tbody.children)
+        .forEach(tr => {
+          let [ code, description ] = Array.from(tr.children).map(td => td.textContent.trim());
+          this.responses[code] = {
+            description
+          };
+        });
       break;
     default:
       console.error('Unhandled api block: "' + type + '".');
@@ -110,10 +130,10 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
 
 Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   // returnType may be null.
-  this.returnType = Dto.readReturnType(apiBlockHtml.children[1], this.endpoint.name);
+  this.returnType = Schema.readReturnType(apiBlockHtml.children[1], this.endpoint.name);
   this.dtos.push(...Array.from(apiBlockHtml.children)
     .slice(2, -1)
-    .map(e => new Dto(e, this.endpoint.name)));
+    .map(el => new Schema(el, this.endpoint.name)));
 };
 
 Method.prototype._handleBodyParameters = function(apiBlockHtml) {
@@ -127,7 +147,7 @@ Method.prototype._handleBodyParameters = function(apiBlockHtml) {
 
   let block = apiBlockHtml;
   while ((block = block.nextElementSibling) && block.classList.contains('block')) {
-    this.dtos.push(new Dto(block, this.endpoint.name));
+    this.dtos.push(new Schema(block, this.endpoint.name));
   }
 };
 
