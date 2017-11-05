@@ -31,6 +31,13 @@ function Schema(schemaHtml, endpointName) {
       this.required.push(name);
 
     let prop = this.properties[name] = types.getType(dataType, this.endpointName);
+
+    let valueTd = tr.children[headers.indexOf('value')];
+    if (valueTd && valueTd.firstElementChild.tagName.toLowerCase() === 'select') {
+      prop.enum = Array.from(valueTd.firstElementChild.children)
+        .map(option => option.textContent.trim());
+    }
+
     if (description) {
       prop.description = description;
       let match;
