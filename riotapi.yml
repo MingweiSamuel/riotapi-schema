@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: 'Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).'
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 11f9d801f6497b22f8c3905f0284c7deb52df5d7
+  version: 95f1a5b6a6140f4d0f957039cc90fc78da649808
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -3717,7 +3717,7 @@ components:
             x-type: string
           additionalProperties:
             type: string
-            x-type: ' string'
+            x-type: string
           x-type: 'Map[string, string]'
         data:
           type: object
@@ -3726,7 +3726,7 @@ components:
             x-type: string
           additionalProperties:
             $ref: '#/components/schemas/lol-static-data-v3.ChampionDto'
-            x-type: ' ChampionDto'
+            x-type: ChampionDto
           x-type: 'Map[string, ChampionDto]'
         version:
           type: string
@@ -4075,9 +4075,10 @@ components:
         effect:
           type: array
           items:
-            type: object
-            x-type: object
-          x-type: 'List[object]'
+            type: array
+            items:
+              type: integer
+              format: double
           description: 'This field is a List of List of Double.'
         tooltip:
           type: string
@@ -4093,8 +4094,16 @@ components:
           type: string
           x-type: string
         range:
-          type: object
-          x-type: object
+          anyOf:
+            -
+              type: array
+              items:
+                type: number
+                format: int32
+            -
+              type: string
+              enum:
+                - self
           description: 'This field is either a List of Integer or the String ''self'' for spells that target one''s own champion.'
         cooldown:
           type: array
@@ -4184,7 +4193,7 @@ components:
             x-type: string
           additionalProperties:
             $ref: '#/components/schemas/lol-static-data-v3.ItemDto'
-            x-type: ' ItemDto'
+            x-type: ItemDto
           x-type: 'Map[string, ItemDto]'
         version:
           type: string
@@ -4258,7 +4267,7 @@ components:
             x-type: string
           additionalProperties:
             type: boolean
-            x-type: ' boolean'
+            x-type: boolean
           x-type: 'Map[string, boolean]'
         specialRecipe:
           type: integer
@@ -4283,7 +4292,7 @@ components:
             x-type: string
           additionalProperties:
             type: string
-            x-type: ' string'
+            x-type: string
           x-type: 'Map[string, string]'
         requiredChampion:
           type: string
@@ -4497,7 +4506,7 @@ components:
             x-type: string
           additionalProperties:
             type: string
-            x-type: ' string'
+            x-type: string
           x-type: 'Map[string, string]'
         version:
           type: string
@@ -4517,7 +4526,7 @@ components:
             x-type: string
           additionalProperties:
             $ref: '#/components/schemas/lol-static-data-v3.MapDetailsDto'
-            x-type: ' MapDetailsDto'
+            x-type: MapDetailsDto
           x-type: 'Map[string, MapDetailsDto]'
         version:
           type: string
@@ -4559,7 +4568,7 @@ components:
             x-type: string
           additionalProperties:
             $ref: '#/components/schemas/lol-static-data-v3.MasteryDto'
-            x-type: ' MasteryDto'
+            x-type: MasteryDto
           x-type: 'Map[string, MasteryDto]'
         version:
           type: string
@@ -4627,11 +4636,11 @@ components:
         masteryTree:
           type: string
           x-type: string
-          description: '(Legal values:  Cunning,  Ferocity,  Resolve)'
           enum:
             - Cunning
             - Ferocity
             - Resolve
+          description: '(Legal values:  Cunning,  Ferocity,  Resolve)'
         name:
           type: string
           x-type: string
@@ -4670,7 +4679,7 @@ components:
             x-type: string
           additionalProperties:
             $ref: '#/components/schemas/lol-static-data-v3.ProfileIconDetailsDto'
-            x-type: ' ProfileIconDetailsDto'
+            x-type: ProfileIconDetailsDto
           x-type: 'Map[string, ProfileIconDetailsDto]'
         version:
           type: string
@@ -4714,7 +4723,7 @@ components:
             x-type: string
           additionalProperties:
             type: string
-            x-type: ' string'
+            x-type: string
           x-type: 'Map[string, string]'
           description: 'Latest changed version for each data type listed.'
         profileiconmax:
@@ -4750,7 +4759,7 @@ components:
             x-type: string
           additionalProperties:
             $ref: '#/components/schemas/lol-static-data-v3.RuneDto'
-            x-type: ' RuneDto'
+            x-type: RuneDto
           x-type: 'Map[string, RuneDto]'
         version:
           type: string
@@ -5082,7 +5091,7 @@ components:
             x-type: string
           additionalProperties:
             $ref: '#/components/schemas/lol-static-data-v3.SummonerSpellDto'
-            x-type: ' SummonerSpellDto'
+            x-type: SummonerSpellDto
           x-type: 'Map[string, SummonerSpellDto]'
         version:
           type: string
@@ -5143,9 +5152,10 @@ components:
         effect:
           type: array
           items:
-            type: object
-            x-type: object
-          x-type: 'List[object]'
+            type: array
+            items:
+              type: integer
+              format: double
           description: 'This field is a List of List of Double.'
         key:
           type: string
@@ -5175,8 +5185,16 @@ components:
           type: string
           x-type: string
         range:
-          type: object
-          x-type: object
+          anyOf:
+            -
+              type: array
+              items:
+                type: number
+                format: int32
+            -
+              type: string
+              enum:
+                - self
           description: 'This field is either a List of Integer or the String ''self'' for spells that target one''s own champion.'
         cost:
           type: array
@@ -5905,7 +5923,7 @@ components:
           additionalProperties:
             type: number
             format: double
-            x-type: ' double'
+            x-type: double
           x-type: 'Map[string, double]'
         goldPerMinDeltas:
           type: object
@@ -5915,7 +5933,7 @@ components:
           additionalProperties:
             type: number
             format: double
-            x-type: ' double'
+            x-type: double
           x-type: 'Map[string, double]'
         xpDiffPerMinDeltas:
           type: object
@@ -5925,7 +5943,7 @@ components:
           additionalProperties:
             type: number
             format: double
-            x-type: ' double'
+            x-type: double
           x-type: 'Map[string, double]'
         creepsPerMinDeltas:
           type: object
@@ -5935,7 +5953,7 @@ components:
           additionalProperties:
             type: number
             format: double
-            x-type: ' double'
+            x-type: double
           x-type: 'Map[string, double]'
         xpPerMinDeltas:
           type: object
@@ -5945,7 +5963,7 @@ components:
           additionalProperties:
             type: number
             format: double
-            x-type: ' double'
+            x-type: double
           x-type: 'Map[string, double]'
         role:
           type: string
@@ -5958,7 +5976,7 @@ components:
           additionalProperties:
             type: number
             format: double
-            x-type: ' double'
+            x-type: double
           x-type: 'Map[string, double]'
         damageTakenPerMinDeltas:
           type: object
@@ -5968,7 +5986,7 @@ components:
           additionalProperties:
             type: number
             format: double
-            x-type: ' double'
+            x-type: double
           x-type: 'Map[string, double]'
     match-v3.MasteryDto:
       type: object
@@ -6072,7 +6090,7 @@ components:
             x-type: int
           additionalProperties:
             $ref: '#/components/schemas/match-v3.MatchParticipantFrameDto'
-            x-type: ' MatchParticipantFrameDto'
+            x-type: MatchParticipantFrameDto
           x-type: 'Map[int, MatchParticipantFrameDto]'
         events:
           type: array
@@ -6181,7 +6199,6 @@ components:
         type:
           type: string
           x-type: string
-          description: '(Legal values:  CHAMPION_KILL,  WARD_PLACED,  WARD_KILL,  BUILDING_KILL,  ELITE_MONSTER_KILL,  ITEM_PURCHASED,  ITEM_SOLD,  ITEM_DESTROYED,  ITEM_UNDO,  SKILL_LEVEL_UP,  ASCENDED_EVENT,  CAPTURE_POINT,  PORO_KING_SUMMON)'
           enum:
             - CHAMPION_KILL
             - WARD_PLACED
@@ -6196,6 +6213,7 @@ components:
             - ASCENDED_EVENT
             - CAPTURE_POINT
             - PORO_KING_SUMMON
+          description: '(Legal values:  CHAMPION_KILL,  WARD_PLACED,  WARD_KILL,  BUILDING_KILL,  ELITE_MONSTER_KILL,  ITEM_PURCHASED,  ITEM_SOLD,  ITEM_DESTROYED,  ITEM_UNDO,  SKILL_LEVEL_UP,  ASCENDED_EVENT,  CAPTURE_POINT,  PORO_KING_SUMMON)'
         skillSlot:
           type: integer
           format: int32
@@ -6630,27 +6648,27 @@ components:
         spectatorType:
           type: string
           x-type: string
-          description: "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
           enum:
             - NONE
             - LOBBYONLY
             - ALL
+          description: "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
         teamSize:
           type: integer
           format: int32
           x-type: int
-          description: 'The team size of the game. Valid values are 1-5.'
           minimum: 1
           maximum: 5
+          description: 'The team size of the game. Valid values are 1-5.'
         pickType:
           type: string
           x-type: string
-          description: "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
           enum:
             - BLIND_PICK
             - DRAFT_MODE
             - ALL_RANDOM
             - TOURNAMENT_DRAFT
+          description: "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
         allowedSummonerIds:
           $ref: '#/components/schemas/tournament-stub-v3.SummonerIdParams'
           x-type: SummonerIdParams
@@ -6658,11 +6676,11 @@ components:
         mapType:
           type: string
           x-type: string
-          description: "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
           enum:
             - SUMMONERS_RIFT
             - TWISTED_TREELINE
             - HOWLING_ABYSS
+          description: "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
         metadata:
           type: string
           x-type: string
@@ -6720,7 +6738,6 @@ components:
         region:
           type: string
           x-type: string
-          description: "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
           enum:
             - BR
             - EUNE
@@ -6733,6 +6750,7 @@ components:
             - PBE
             - RU
             - TR
+          description: "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
     tournament-stub-v3.TournamentRegistrationParameters:
       type: object
       title: TournamentRegistrationParameters
@@ -6755,27 +6773,27 @@ components:
         spectatorType:
           type: string
           x-type: string
-          description: "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
           enum:
             - NONE
             - LOBBYONLY
             - ALL
+          description: "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
         teamSize:
           type: integer
           format: int32
           x-type: int
-          description: 'The team size of the game. Valid values are 1-5.'
           minimum: 1
           maximum: 5
+          description: 'The team size of the game. Valid values are 1-5.'
         pickType:
           type: string
           x-type: string
-          description: "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
           enum:
             - BLIND_PICK
             - DRAFT_MODE
             - ALL_RANDOM
             - TOURNAMENT_DRAFT
+          description: "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
         allowedSummonerIds:
           $ref: '#/components/schemas/tournament-v3.SummonerIdParams'
           x-type: SummonerIdParams
@@ -6783,11 +6801,11 @@ components:
         mapType:
           type: string
           x-type: string
-          description: "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
           enum:
             - SUMMONERS_RIFT
             - TWISTED_TREELINE
             - HOWLING_ABYSS
+          description: "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
         metadata:
           type: string
           x-type: string
@@ -6813,20 +6831,20 @@ components:
         spectatorType:
           type: string
           x-type: string
-          description: "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
           enum:
             - NONE
             - LOBBYONLY
             - ALL
+          description: "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
         pickType:
           type: string
           x-type: string
-          description: "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
           enum:
             - BLIND_PICK
             - DRAFT_MODE
             - ALL_RANDOM
             - TOURNAMENT_DRAFT
+          description: "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
         allowedParticipants:
           type: string
           x-type: string
@@ -6834,11 +6852,11 @@ components:
         mapType:
           type: string
           x-type: string
-          description: "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
           enum:
             - SUMMONERS_RIFT
             - TWISTED_TREELINE
             - HOWLING_ABYSS
+          description: "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
     tournament-v3.TournamentCodeDTO:
       type: object
       title: TournamentCodeDTO
@@ -6859,7 +6877,6 @@ components:
         region:
           type: string
           x-type: string
-          description: "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
           enum:
             - BR
             - EUNE
@@ -6872,6 +6889,7 @@ components:
             - PBE
             - RU
             - TR
+          description: "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
         providerId:
           type: integer
           format: int32
@@ -6955,7 +6973,6 @@ components:
         region:
           type: string
           x-type: string
-          description: "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
           enum:
             - BR
             - EUNE
@@ -6968,6 +6985,7 @@ components:
             - PBE
             - RU
             - TR
+          description: "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
     tournament-v3.TournamentRegistrationParameters:
       type: object
       title: TournamentRegistrationParameters
