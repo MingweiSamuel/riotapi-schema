@@ -91,7 +91,21 @@ module.exports = function(rootDir) {
         openapi: "3.0.0",
         info: {
           title: "Riot API",
-          description: "Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).",
+          description:
+`
+OpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.
+## Download OpenAPI Spec File
+The following versions of the Riot API spec file are available:
+- [\`riotapi.json\`](../riotapi.json)
+- [\`riotapi.min.json\`](../riotapi.min.json)
+- [\`riotapi.yml\`](../riotapi.yml)
+- [\`riotapi.min.yml\`](../riotapi.yml)
+## Source Code
+Source code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!
+## Automatically Generated
+Rebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.
+***
+`,
           termsOfService: "https://developer.riotgames.com/terms-and-conditions.html"
         },
         servers: [
