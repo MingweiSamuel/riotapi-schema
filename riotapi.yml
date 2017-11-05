@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 'Riot API'
-  description: 'Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).'
+  description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- [`riotapi.json`](../riotapi.json)\n- [`riotapi.min.json`](../riotapi.min.json)\n- [`riotapi.yml`](../riotapi.yml)\n- [`riotapi.min.yml`](../riotapi.yml)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
   version: 95f1a5b6a6140f4d0f957039cc90fc78da649808
 servers:
