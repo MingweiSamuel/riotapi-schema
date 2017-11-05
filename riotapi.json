@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "53f5ac80fa125ae4ba045e7410b611117d77f2ec"
+    "version": "0d64f33ceccf1d98f0a91a4a6d30de3ad01f2dac"
   },
   "servers": [
     {
@@ -8651,6 +8651,28 @@
           }
         }
       }
+    },
+    "securitySchemes": {
+      "api_key": {
+        "description": "API key in query param.",
+        "name": "api_key",
+        "type": "apiKey",
+        "in": "query"
+      },
+      "X-Riot-Token": {
+        "descrption": "API key in header.",
+        "name": "X-Riot-Token",
+        "type": "apiKey",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "api_key": []
+    },
+    {
+      "X-Riot-Token": []
+    }
+  ]
 }
