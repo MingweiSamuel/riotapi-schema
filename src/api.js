@@ -107,8 +107,26 @@ module.exports = function(rootDir) {
         ],
         paths,
         components: {
-          schemas
-        }
+          schemas,
+          securitySchemes: {
+            'api_key': {
+              description: 'API key in query param.',
+              name: 'api_key',
+              type: 'apiKey',
+              in: 'query'
+            },
+            'X-Riot-Token': {
+              descrption: 'API key in header.',
+              name: 'X-Riot-Token',
+              type: 'apiKey',
+              in: 'header'
+            }
+          }
+        },
+        security: [
+          { 'api_key': [] },
+          { 'X-Riot-Token': [] }
+        ]
       };
 
       const ignored = [ 'openapi', 'info' ];
