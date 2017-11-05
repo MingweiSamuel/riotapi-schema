@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "778e5640e84eb83b7cb2d0c3601b223a8400b574"
+    "version": "53f5ac80fa125ae4ba045e7410b611117d77f2ec"
   },
   "servers": [
     {
@@ -56,9 +56,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get all champion mastery entries sorted by number of champion points descending,"
+        "description": "Get all champion mastery entries sorted by number of champion points descending,",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "description": "Summoner ID associated with the player",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/champion-mastery/v3/champion-masteries/by-summoner/{summonerId}/by-champion/{championId}": {
@@ -82,9 +129,68 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get a champion mastery by player ID and champion ID."
+        "description": "Get a champion mastery by player ID and champion ID.",
+        "parameters": [
+          {
+            "name": "championId",
+            "in": "path",
+            "description": "Champion ID to retrieve Champion Mastery for",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          },
+          {
+            "name": "summonerId",
+            "in": "path",
+            "description": "Summoner ID associated with the player",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/champion-mastery/v3/scores/by-summoner/{summonerId}": {
@@ -109,9 +215,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get a player's total champion mastery score, which is the sum of individual champion mastery levels."
+        "description": "Get a player's total champion mastery score, which is the sum of individual champion mastery levels.",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "description": "Summoner ID associated with the player",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/platform/v3/champions": {
@@ -135,9 +288,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieve all champions."
+        "description": "Retrieve all champions.",
+        "parameters": [
+          {
+            "name": "freeToPlay",
+            "in": "query",
+            "description": "Optional filter param to retrieve only free to play champions.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-type": "boolean"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/platform/v3/champions/{id}": {
@@ -161,9 +360,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieve champion by ID."
+        "description": "Retrieve champion by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Champion ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/league/v3/challengerleagues/by-queue/{queue}": {
@@ -187,9 +433,54 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get the challenger league for given queue."
+        "description": "Get the challenger league for given queue.",
+        "parameters": [
+          {
+            "name": "queue",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/league/v3/leagues/by-summoner/{summonerId}": {
@@ -217,9 +508,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get leagues in all queues for a given summoner ID."
+        "description": "Get leagues in all queues for a given summoner ID.",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ],
+        "deprecated": true
       }
     },
     "/lol/league/v3/leagues/{leagueId}": {
@@ -243,9 +581,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get league with given ID, including inactive entries."
+        "description": "Get league with given ID, including inactive entries.",
+        "parameters": [
+          {
+            "name": "leagueId",
+            "in": "path",
+            "description": "The UUID of the league.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/league/v3/masterleagues/by-queue/{queue}": {
@@ -269,9 +653,54 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get the master league for given queue."
+        "description": "Get the master league for given queue.",
+        "parameters": [
+          {
+            "name": "queue",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/league/v3/positions/by-summoner/{summonerId}": {
@@ -295,9 +724,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get league positions in all queues for given summoner ID."
+        "description": "Get league positions in all queues for given summoner ID.",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "Long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/champions": {
@@ -321,9 +796,92 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves champion list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves champion list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          },
+          {
+            "name": "dataById",
+            "in": "query",
+            "description": "If specified as true, the returned data map will use the champions' IDs as the keys. If not specified or specified as false, the returned data map will use the champions' keys instead.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-type": "boolean"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/champions/{id}": {
@@ -347,9 +905,93 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves champion by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves champion by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Champion ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/items": {
@@ -373,9 +1015,81 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves item list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves item list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only type, version, data, id, name, description, plaintext, and group are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/items/{id}": {
@@ -399,9 +1113,93 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Item ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only id, name, description, plaintext, and group are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/language-strings": {
@@ -425,9 +1223,66 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieve language strings data\n## Implementation Notes\nLanguage strings data was not generated for patch version 7.4.2.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieve language strings data\n## Implementation Notes\nLanguage strings data was not generated for patch version 7.4.2.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/languages": {
@@ -455,6 +1310,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Retrieve supported languages data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
@@ -481,9 +1369,66 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieve map data\n## Implementation Notes\nThis endpoint is only supported for patch version 5.5.3 and later. Also, map data was not generated for patch versions 5.15.1, 5.16.1, and 5.17.1.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieve map data\n## Implementation Notes\nThis endpoint is only supported for patch version 5.5.3 and later. Also, map data was not generated for patch versions 5.15.1, 5.16.1, and 5.17.1.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/masteries": {
@@ -507,9 +1452,81 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves mastery list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves mastery list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/masteries/{id}": {
@@ -533,9 +1550,93 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves mastery item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves mastery item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Mastery ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/profile-icons": {
@@ -559,9 +1660,66 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieve profile icons\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieve profile icons\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/realms": {
@@ -585,6 +1743,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Retrieve realm data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
@@ -611,9 +1802,81 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves rune list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves rune list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only type, version, data, id, name, description, and rune are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/runes/{id}": {
@@ -637,9 +1900,93 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves rune by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves rune by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Rune ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only id, name, description, and rune are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/summoner-spells": {
@@ -663,9 +2010,92 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves summoner spell list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves summoner spell list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "dataById",
+            "in": "query",
+            "description": "If specified as true, the returned data map will use the spells' IDs as the keys. If not specified or specified as false, the returned data map will use the spells' keys instead.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-type": "boolean"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/summoner-spells/{id}": {
@@ -689,9 +2119,93 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Retrieves summoner spell by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+        "description": "Retrieves summoner spell by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Summoner spell ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to return additional data. Only id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Set[string]"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/static-data/v3/versions": {
@@ -719,6 +2233,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Retrieve version data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
@@ -745,6 +2292,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Get League of Legends status for the given shard.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
@@ -771,9 +2351,43 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "503": {
+            "description": "Service unavailable"
           }
         },
-        "description": "Get mastery pages for a given summoner ID."
+        "description": "Get mastery pages for a given summoner ID.",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "description": "Summoner ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids": {
@@ -802,9 +2416,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get match IDs by tournament code."
+        "description": "Get match IDs by tournament code.",
+        "parameters": [
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "description": "The tournament code.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/match/v3/matches/{matchId}": {
@@ -828,9 +2488,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get match by match ID."
+        "description": "Get match by match ID.",
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "description": "The match ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/match/v3/matches/{matchId}/by-tournament-code/{tournamentCode}": {
@@ -854,9 +2561,67 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get match by match ID and tournament code."
+        "description": "Get match by match ID and tournament code.",
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "description": "The match ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          },
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "description": "The tournament code.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/match/v3/matchlists/by-account/{accountId}": {
@@ -880,9 +2645,155 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned."
+        "description": "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "description": "The account ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          },
+          {
+            "name": "queue",
+            "in": "query",
+            "description": "Set of queue IDs for which to filtering matchlist.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32",
+                "x-type": "int"
+              },
+              "x-type": "Set[int]"
+            },
+            "explode": true
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "description": "The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          },
+          {
+            "name": "beginIndex",
+            "in": "query",
+            "description": "The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          },
+          {
+            "name": "beginTime",
+            "in": "query",
+            "description": "The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "description": "Set of season IDs for which to filtering matchlist.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32",
+                "x-type": "int"
+              },
+              "x-type": "Set[int]"
+            },
+            "explode": true
+          },
+          {
+            "name": "champion",
+            "in": "query",
+            "description": "Set of champion IDs for which to filtering matchlist.",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32",
+                "x-type": "int"
+              },
+              "x-type": "Set[int]"
+            },
+            "explode": true
+          },
+          {
+            "name": "endIndex",
+            "in": "query",
+            "description": "The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/match/v3/matchlists/by-account/{accountId}/recent": {
@@ -906,9 +2817,59 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get matchlist for last 20 matches played on given account ID and platform ID."
+        "description": "Get matchlist for last 20 matches played on given account ID and platform ID.",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "description": "The account ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/match/v3/timelines/by-match/{matchId}": {
@@ -932,9 +2893,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get match timeline by match ID.\n## Implementation Notes\nNot all matches have timeline data."
+        "description": "Get match timeline by match ID.\n## Implementation Notes\nNot all matches have timeline data.",
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "description": "The match ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/platform/v3/runes/by-summoner/{summonerId}": {
@@ -958,9 +2966,43 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "503": {
+            "description": "Service unavailable"
           }
         },
-        "description": "Get rune pages for a given summoner ID."
+        "description": "Get rune pages for a given summoner ID.",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "description": "Summoner ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/spectator/v3/active-games/by-summoner/{summonerId}": {
@@ -984,9 +3026,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get current game information for the given summoner ID."
+        "description": "Get current game information for the given summoner ID.",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "description": "The ID of the summoner.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/spectator/v3/featured-games": {
@@ -1010,6 +3099,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Get list of featured games."
@@ -1036,9 +3158,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get a summoner by account ID."
+        "description": "Get a summoner by account ID.",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/summoner/v3/summoners/by-name/{summonerName}": {
@@ -1062,9 +3230,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get a summoner by summoner name."
+        "description": "Get a summoner by summoner name.",
+        "parameters": [
+          {
+            "name": "summonerName",
+            "in": "path",
+            "description": "Summoner Name",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/summoner/v3/summoners/{summonerId}": {
@@ -1088,9 +3302,56 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Get a summoner by summoner ID."
+        "description": "Get a summoner by summoner ID.",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "description": "Summoner ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/tournament-stub/v3/codes": {
@@ -1118,6 +3379,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Create a mock tournament code for the given tournament.",
@@ -1132,7 +3426,33 @@
             }
           },
           "required": false
-        }
+        },
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "description": "The number of codes to create (max 1000)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          },
+          {
+            "name": "tournamentId",
+            "in": "query",
+            "description": "The tournament ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/tournament-stub/v3/lobby-events/by-code/{tournamentCode}": {
@@ -1156,9 +3476,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Gets a mock list of lobby events by tournament code."
+        "description": "Gets a mock list of lobby events by tournament code.",
+        "parameters": [
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "description": "The short code to look up lobby events for",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/tournament-stub/v3/providers": {
@@ -1183,6 +3549,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Creates a mock tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
@@ -1222,6 +3621,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Creates a mock tournament and returns its ID.",
@@ -1264,6 +3696,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Create a tournament code for the given tournament.",
@@ -1278,7 +3743,33 @@
             }
           },
           "required": true
-        }
+        },
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "description": "The number of codes to create (max 1000)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          },
+          {
+            "name": "tournamentId",
+            "in": "query",
+            "description": "The tournament ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/tournament/v3/codes/{tournamentCode}": {
@@ -1294,6 +3785,39 @@
         "responses": {
           "200": {
             "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Update the pick type, map, spectator type, or allowed summoners for a code.",
@@ -1308,7 +3832,20 @@
             }
           },
           "required": false
-        }
+        },
+        "parameters": [
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "description": "The tournament code to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       },
       "get": {
         "tags": [
@@ -1330,9 +3867,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Returns the tournament code DTO associated with a tournament code string."
+        "description": "Returns the tournament code DTO associated with a tournament code string.",
+        "parameters": [
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "description": "The tournament code string.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/tournament/v3/lobby-events/by-code/{tournamentCode}": {
@@ -1356,9 +3939,55 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
-        "description": "Gets a list of lobby events by tournament code."
+        "description": "Gets a list of lobby events by tournament code.",
+        "parameters": [
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "description": "The short code to look up lobby events for",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "explode": true
+          }
+        ]
       }
     },
     "/lol/tournament/v3/providers": {
@@ -1383,6 +4012,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
@@ -1422,6 +4084,39 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Invalid API key specified"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
           }
         },
         "description": "Creates a tournament and returns its ID.",
@@ -1442,6 +4137,21 @@
   },
   "components": {
     "schemas": {
+      "Error": {
+        "properties": {
+          "status": {
+            "type": "object",
+            "properties": {
+              "status_code": {
+                "type": "integer"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
       "champion-mastery-v3.ChampionMasteryDTO": {
         "type": "object",
         "title": "ChampionMasteryDTO",
