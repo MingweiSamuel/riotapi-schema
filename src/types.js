@@ -1,13 +1,13 @@
-const aliases = require('../data/dtoAliases');
+const aliases = require('./data/dtoAliases');
 
 function getType(typeString, endpoint) {
+  typeString = typeString.trim();
   let result = getTypeInternal(typeString, endpoint);
   result["x-type"] = typeString;
   return result;
 }
 
 function getTypeInternal(typeString, endpoint) {
-  typeString = typeString.trim();
   switch(typeString.toLowerCase()) {
     case "boolean":
       return { type: 'boolean' };

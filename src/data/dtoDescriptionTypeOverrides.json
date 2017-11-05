@@ -1,0 +1,27 @@
+{
+  "This field is a List of List of Double.": {
+    "type": "array",
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "double"
+      }
+    }
+  },
+  "This field is either a List of Integer or the String 'self' for spells that target one's own champion.": {
+    "anyOf": [
+      {
+        "type": "array",
+        "items": {
+          "type": "number",
+          "format": "int32"
+        }
+      },
+      {
+        "type": "string",
+        "enum": [ "self" ]
+      }
+    ]
+  }
+}

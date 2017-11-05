@@ -1,3 +1,5 @@
+const descTypeOverrides = require('./data/dtoDescriptionTypeOverrides');
+
 const types = require('./types');
 const deepEqual = require('./deepEqual');
 
@@ -30,24 +32,27 @@ function Schema(schemaHtml, endpointName) {
     if (requiredStr === 'required')
       this.required.push(name);
 
-    let prop = this.properties[name] = types.getType(dataType, this.endpointName);
+    let prop = types.getType(dataType, this.endpointName);
+    if (description) {
+      let match;
+      if (descTypeOverrides[description])
+        prop = JSON.parse(JSON.stringify(descTypeOverrides[description]));
+      else if ((match = /\(Legal values:\s*(\S+(?:,\s*\S+)*)\)$/.exec(description)))
+        prop.enum = match[1].split(/,\s*/);
+      else if ((match = /Valid values are (\d+)-(\d+)\.?$/.exec(description))) {
+        prop.minimum = +match[1];
+        prop.maximum = +match[2];
+      }
+      prop.description = description;
+    }
 
     let valueTd = tr.children[headers.indexOf('value')];
     if (valueTd && valueTd.firstElementChild.tagName.toLowerCase() === 'select') {
       prop.enum = Array.from(valueTd.firstElementChild.children)
         .map(option => option.textContent.trim());
     }
+    this.properties[name] = prop;
 
-    if (description) {
-      prop.description = description;
-      let match;
-      if ((match = /\(Legal values:\s*(\S+(?:,\s*\S+)*)\)$/.exec(description)))
-        prop.enum = match[1].split(/,\s*/);
-      else if ((match = /Valid values are (\d+)-(\d+)\.?$/.exec(description))) {
-        prop.minimum = +match[1];
-        prop.maximum = +match[2];
-      }
-    }
   });
 }
 /**
