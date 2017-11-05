@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: 'Automatically generated daily from the [Riot API](https://developer.riotgames.com/). [Download spec file](../riotapi.json).'
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 0d64f33ceccf1d98f0a91a4a6d30de3ad01f2dac
+  version: 95b1a9580dab55114a24a6d42fac9fe181d65659
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -335,6 +335,10 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - RANKED_SOLO_5x5
+              - RANKED_FLEX_SR
+              - RANKED_FLEX_TT
           explode: true
   '/lol/league/v3/leagues/by-summoner/{summonerId}':
     get:
@@ -487,6 +491,10 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - RANKED_SOLO_5x5
+              - RANKED_FLEX_SR
+              - RANKED_FLEX_TT
           explode: true
   '/lol/league/v3/positions/by-summoner/{summonerId}':
     get:
@@ -586,6 +594,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -607,6 +645,23 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - allytips
+              - blurb
+              - enemytips
+              - format
+              - image
+              - info
+              - keys
+              - lore
+              - partype
+              - passive
+              - recommended
+              - skins
+              - spells
+              - stats
+              - tags
           explode: true
         -
           name: dataById
@@ -675,6 +730,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -696,6 +781,21 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - allytips
+              - blurb
+              - enemytips
+              - image
+              - info
+              - lore
+              - partype
+              - passive
+              - recommended
+              - skins
+              - spells
+              - stats
+              - tags
           explode: true
   /lol/static-data/v3/items:
     get:
@@ -745,6 +845,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -766,6 +896,28 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - colloq
+              - consumeOnFull
+              - consumed
+              - depth
+              - effect
+              - from
+              - gold
+              - groups
+              - hideFromAll
+              - image
+              - inStore
+              - into
+              - maps
+              - requiredChampion
+              - sanitizedDescription
+              - specialRecipe
+              - stacks
+              - stats
+              - tags
+              - tree
           explode: true
   '/lol/static-data/v3/items/{id}':
     get:
@@ -825,6 +977,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: tags
@@ -837,6 +1019,26 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - colloq
+              - consumeOnFull
+              - consumed
+              - depth
+              - effect
+              - from
+              - gold
+              - hideFromAll
+              - image
+              - inStore
+              - into
+              - maps
+              - requiredChampion
+              - sanitizedDescription
+              - specialRecipe
+              - stacks
+              - stats
+              - tags
           explode: true
         -
           name: version
@@ -895,6 +1097,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -995,6 +1227,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -1053,6 +1315,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -1074,6 +1366,14 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - image
+              - masteryTree
+              - prereq
+              - ranks
+              - sanitizedDescription
+              - tree
           explode: true
   '/lol/static-data/v3/masteries/{id}':
     get:
@@ -1133,6 +1433,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -1154,6 +1484,13 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - image
+              - masteryTree
+              - prereq
+              - ranks
+              - sanitizedDescription
           explode: true
   /lol/static-data/v3/profile-icons:
     get:
@@ -1203,6 +1540,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -1300,6 +1667,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -1321,6 +1718,12 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - image
+              - sanitizedDescription
+              - stats
+              - tags
           explode: true
   '/lol/static-data/v3/runes/{id}':
     get:
@@ -1383,6 +1786,12 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - image
+              - sanitizedDescription
+              - stats
+              - tags
           explode: true
         -
           name: locale
@@ -1392,6 +1801,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -1450,6 +1889,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -1480,6 +1949,27 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - cooldown
+              - cooldownBurn
+              - cost
+              - costBurn
+              - costType
+              - effect
+              - effectBurn
+              - image
+              - key
+              - leveltip
+              - maxrank
+              - modes
+              - range
+              - rangeBurn
+              - resource
+              - sanitizedDescription
+              - sanitizedTooltip
+              - tooltip
+              - vars
           explode: true
   '/lol/static-data/v3/summoner-spells/{id}':
     get:
@@ -1539,6 +2029,36 @@ paths:
           schema:
             type: string
             x-type: string
+            enum:
+              - cs_CZ
+              - de_DE
+              - el_GR
+              - en_AU
+              - en_GB
+              - en_PH
+              - en_PL
+              - en_SG
+              - en_US
+              - es_AR
+              - es_ES
+              - es_MX
+              - fr_FR
+              - hu_HU
+              - id_ID
+              - it_IT
+              - ja_JP
+              - ko_KR
+              - ms_MY
+              - pl_PL
+              - pt_BR
+              - ro_RO
+              - ru_RU
+              - th_TH
+              - tr_TR
+              - vn_VN
+              - zh_CN
+              - zh_MY
+              - zh_TW
           explode: true
         -
           name: version
@@ -1560,6 +2080,27 @@ paths:
               type: string
               x-type: string
             x-type: 'Set[string]'
+            enum:
+              - all
+              - cooldown
+              - cooldownBurn
+              - cost
+              - costBurn
+              - costType
+              - effect
+              - effectBurn
+              - image
+              - key
+              - leveltip
+              - maxrank
+              - modes
+              - range
+              - rangeBurn
+              - resource
+              - sanitizedDescription
+              - sanitizedTooltip
+              - tooltip
+              - vars
           explode: true
   /lol/static-data/v3/versions:
     get:
