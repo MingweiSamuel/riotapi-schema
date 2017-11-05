@@ -123,7 +123,8 @@ module.exports = function(rootDir) {
     .then(spec => Promise.all([
       fs.writeFile("riotapi.json", JSON.stringify(spec, null, 2)),
       fs.writeFile("riotapi.min.json", JSON.stringify(spec)),
-      fs.writeFile("riotapi.yml", YAML.stringify(spec, 2))
+      fs.writeFile("riotapi.yml", YAML.stringify(spec, 1/0, 2)),
+      fs.writeFile("riotapi.min.yml", YAML.stringify(spec, 0))
     ]))
     .catch(console.err);
 };
