@@ -74,7 +74,7 @@ window.onload = function() {
 
   // Build a system
   const ui = SwaggerUIBundle({
-    url: '../riotapi.min.json',
+    url: '../' + (document.location.search.slice(1) || 'openapi-3.0.0.min.json'),
     dom_id: '#swagger-ui',
     deepLinking: true,
     presets: [

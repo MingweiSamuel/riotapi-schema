@@ -7,10 +7,13 @@ const req = (function(req) {
 
 const process = require('process');
 const { JSDOM } = require("jsdom");
-const hash = require('object-hash');
 
 const Endpoint = require('./endpoint');
 const Region = require('./region');
+
+const openapi_300 = require('./openapi-3.0.0');
+const swaggerspec_20 = require('./swaggerspec-2.0');
+const specs = [ openapi_300, swaggerspec_20 ];
 
 const baseUrl = 'https://developer.riotgames.com/';
 const output = 'out';
@@ -37,8 +40,7 @@ module.exports = function(rootDir) {
               return req(baseUrl + 'api-details/' + name)
                 .then(JSON.parse)
                 .then(o => new JSDOM(o.html))
-                .then(dom => new Endpoint(dom, desc))
-                .catch(console.error);
+                .then(dom => new Endpoint(dom, desc));
             }));
         });
 
@@ -54,109 +56,35 @@ module.exports = function(rootDir) {
 
       return Promise.props({ endpoints, regions });
     })
-    .then(({ endpoints, regions }) => {
-      let methods = [].concat.apply([], endpoints.map(endpoint => endpoint.methods));
-      let paths = {};
-      methods.forEach(method => {
-        let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
-        path[method.httpMethod] = method.getOperation();
-      });
-
-      let schemas = {
-        Error: {
-          "properties": {
-            "status": {
-              "type": "object",
-              "properties": {
-                "status_code": {
-                  "type": "integer"
-                },
-                "message": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      };
-      methods.forEach(method => {
-        method.dtos.forEach(dto => {
-          schemas[method.endpoint.name + '.' + dto.name] = dto.toSchema();
-        });
-      });
-
-      let spec = {
-        openapi: "3.0.0",
-        info: {
-          title: "Riot API",
-          description:
-`
+    .then(data => {
+      let names = [].concat.apply([], specs.map(s => [
+        s.name + '.json',
+        s.name + '.min.json',
+        s.name + '.yml',
+        s.name + '.min.yml'
+      ]));
+      data.description = `
 OpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.
 ## Download OpenAPI Spec File
 The following versions of the Riot API spec file are available:
-- [\`riotapi.json\`](../riotapi.json)
-- [\`riotapi.min.json\`](../riotapi.min.json)
-- [\`riotapi.yml\`](../riotapi.yml)
-- [\`riotapi.min.yml\`](../riotapi.yml)
+${names.map(n => `- \`${n}\` ([view](?${n}), [download](../${n}))`).join('\n')}
 ## Source Code
 Source code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!
 ## Automatically Generated
 Rebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.
 ***
-`,
-          termsOfService: "https://developer.riotgames.com/terms-and-conditions.html"
-        },
-        servers: [
-          {
-            url: "https://{platform}.api.riotgames.com",
-            variables: {
-              platform: {
-                enum: regions.service.map(r => r.hostPlatform),
-                default: "na1"
-              }
-            }
-          }
-        ],
-        paths,
-        components: {
-          schemas,
-          securitySchemes: {
-            'api_key': {
-              description: 'API key in query param.',
-              name: 'api_key',
-              type: 'apiKey',
-              in: 'query'
-            },
-            'X-Riot-Token': {
-              descrption: 'API key in header.',
-              name: 'X-Riot-Token',
-              type: 'apiKey',
-              in: 'header'
-            }
-          }
-        },
-        security: [
-          { 'api_key': [] },
-          { 'X-Riot-Token': [] }
-        ]
-      };
-
-      const ignored = [ 'openapi', 'info' ];
-      let versioned = {};
-      for (let [ key, value ] of Object.entries(spec)) {
-        if (!ignored.includes(key))
-          versioned[key] = value;
-      }
-      spec.info.version = hash(versioned);
-      return spec;
+`;
+      return Promise.all(specs.map(spec => {
+        let d = spec.toSpec(data);
+        return Promise.all([
+          fs.writeFile(spec.name + ".json", JSON.stringify(d, null, 2)),
+          fs.writeFile(spec.name + ".min.json", JSON.stringify(d)),
+          fs.writeFile(spec.name + ".yml", YAML.stringify(d, 1/0, 2)),
+          fs.writeFile(spec.name + ".min.yml", YAML.stringify(d, 0))
+        ]);
+      }))
     })
-    .then(spec => Promise.all([
-      fs.writeFile("riotapi.json", JSON.stringify(spec, null, 2)),
-      fs.writeFile("riotapi.min.json", JSON.stringify(spec)),
-      fs.writeFile("riotapi.yml", YAML.stringify(spec, 1/0, 2)),
-      fs.writeFile("riotapi.min.yml", YAML.stringify(spec, 0))
-    ]))
-    .catch(console.err);
+    .catch(console.error);
 };
 
 if (!Promise.props) {
