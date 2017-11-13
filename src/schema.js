@@ -87,8 +87,7 @@ Schema.prototype.toSchema = function() {
  */
 Schema.prototype.toParameters = function(inType) {
   return Object.entries(this.properties)
-    .map(kv => {
-      let [ name, prop ] = kv;
+    .map(([ name, prop ]) => {
       let desc = prop.description;
       delete prop.description;
       return {

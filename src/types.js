@@ -46,4 +46,4 @@ function getTypeInternal(typeString, endpoint) {
 }
 
 
-module.exports = { getType }
+module.exports = { getType };

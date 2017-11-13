@@ -54,9 +54,7 @@ module.exports = function(rootDir) {
 
       return Promise.props({ endpoints, regions });
     })
-    .then(data => {
-      let { endpoints, regions } = data;
-
+    .then(({ endpoints, regions }) => {
       let methods = [].concat.apply([], endpoints.map(endpoint => endpoint.methods));
       let paths = {};
       methods.forEach(method => {
