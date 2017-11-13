@@ -67,7 +67,7 @@ module.exports = function(rootDir) {
 OpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.
 ## Download OpenAPI Spec File
 The following versions of the Riot API spec file are available:
-${names.map(n => `- \`${n}\` ([view](?${n}), [download](../${n}))`).join('\n')}
+${names.map(n => `- \`${n}\` ([download file](../${n}), [view ui](?${n}))`).join('\n')}
 ## Source Code
 Source code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!
 ## Automatically Generated
