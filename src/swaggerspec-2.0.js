@@ -6,7 +6,7 @@ function toSpec({ endpoints, regions, description }) {
   methods.forEach(method => {
     let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
     let op = path[method.httpMethod] = method.getOperation();
-    op.produces = 'application/json';
+    op.produces = [ 'application/json' ];
     if (op.parameters) {
       op.parameters.forEach(param => {
         // Merge schema into param obj.
