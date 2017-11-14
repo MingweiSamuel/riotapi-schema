@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "8e65ed9c4683248af71ab26ac9653c2ca131d481"
+    "version": "1102d7c0fa35ebed21fb088e5e9a58f5289f93f6"
   },
   "host": "{platform}.api.riotgames.com",
   "x-host-platform": [
@@ -99,7 +99,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/champion-mastery/v3/champion-masteries/by-summoner/{summonerId}/by-champion/{championId}": {
@@ -182,7 +184,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/champion-mastery/v3/scores/by-summoner/{summonerId}": {
@@ -256,7 +260,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/platform/v3/champions": {
@@ -328,7 +334,9 @@
             "x-type": "boolean"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/platform/v3/champions/{id}": {
@@ -401,7 +409,9 @@
             "x-type": "int"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/league/v3/challengerleagues/by-queue/{queue}": {
@@ -477,7 +487,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/league/v3/leagues/by-summoner/{summonerId}": {
@@ -554,7 +566,9 @@
           }
         ],
         "deprecated": true,
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/league/v3/leagues/{leagueId}": {
@@ -626,7 +640,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/league/v3/masterleagues/by-queue/{queue}": {
@@ -702,7 +718,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/league/v3/positions/by-summoner/{summonerId}": {
@@ -774,7 +792,9 @@
             "x-type": "Long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/champions": {
@@ -926,7 +946,9 @@
             "x-type": "boolean"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/champions/{id}": {
@@ -1077,7 +1099,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/items": {
@@ -1225,7 +1249,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/items/{id}": {
@@ -1381,7 +1407,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/language-strings": {
@@ -1493,7 +1521,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/languages": {
@@ -1558,7 +1588,9 @@
         },
         "operationId": "lol-static-data-v3.getLanguages",
         "description": "Retrieve supported languages data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/maps": {
@@ -1670,7 +1702,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/masteries": {
@@ -1804,7 +1838,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/masteries/{id}": {
@@ -1947,7 +1983,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/profile-icons": {
@@ -2059,7 +2097,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/realms": {
@@ -2120,7 +2160,9 @@
         },
         "operationId": "lol-static-data-v3.getRealm",
         "description": "Retrieve realm data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/runes": {
@@ -2252,7 +2294,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/runes/{id}": {
@@ -2394,7 +2438,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/summoner-spells": {
@@ -2550,7 +2596,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/summoner-spells/{id}": {
@@ -2707,7 +2755,9 @@
             ]
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/static-data/v3/versions": {
@@ -2772,7 +2822,9 @@
         },
         "operationId": "lol-static-data-v3.getVersions",
         "description": "Retrieve version data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/status/v3/shard-data": {
@@ -2833,7 +2885,9 @@
         },
         "operationId": "lol-status-v3.getShardData",
         "description": "Get League of Legends status for the given shard.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/platform/v3/masteries/by-summoner/{summonerId}": {
@@ -2893,7 +2947,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids": {
@@ -2970,7 +3026,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/match/v3/matches/{matchId}": {
@@ -3043,7 +3101,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/match/v3/matches/{matchId}/by-tournament-code/{tournamentCode}": {
@@ -3125,7 +3185,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/match/v3/matchlists/by-account/{accountId}": {
@@ -3283,7 +3345,9 @@
             "x-type": "int"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/match/v3/matchlists/by-account/{accountId}/recent": {
@@ -3359,7 +3423,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/match/v3/timelines/by-match/{matchId}": {
@@ -3432,7 +3498,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/platform/v3/runes/by-summoner/{summonerId}": {
@@ -3492,7 +3560,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/spectator/v3/active-games/by-summoner/{summonerId}": {
@@ -3565,7 +3635,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/spectator/v3/featured-games": {
@@ -3626,7 +3698,9 @@
         },
         "operationId": "spectator-v3.getFeaturedGames",
         "description": "Get list of featured games.",
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/summoner/v3/summoners/by-account/{accountId}": {
@@ -3698,7 +3772,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/summoner/v3/summoners/by-name/{summonerName}": {
@@ -3770,7 +3846,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/summoner/v3/summoners/{summonerId}": {
@@ -3843,7 +3921,9 @@
             "x-type": "long"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/tournament-stub/v3/codes": {
@@ -3939,7 +4019,9 @@
             "in": "body"
           }
         ],
-        "produces": "application/json",
+        "produces": [
+          "application/json"
+        ],
         "consumes": [
           "application/json"
         ]
@@ -4014,7 +4096,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/tournament-stub/v3/providers": {
@@ -4076,7 +4160,9 @@
         },
         "operationId": "tournament-stub-v3.registerProviderData",
         "description": "Creates a mock tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
-        "produces": "application/json",
+        "produces": [
+          "application/json"
+        ],
         "consumes": [
           "application/json"
         ],
@@ -4152,7 +4238,9 @@
         },
         "operationId": "tournament-stub-v3.registerTournament",
         "description": "Creates a mock tournament and returns its ID.",
-        "produces": "application/json",
+        "produces": [
+          "application/json"
+        ],
         "consumes": [
           "application/json"
         ],
@@ -4262,7 +4350,9 @@
             "in": "body"
           }
         ],
-        "produces": "application/json",
+        "produces": [
+          "application/json"
+        ],
         "consumes": [
           "application/json"
         ]
@@ -4338,7 +4428,9 @@
             "in": "body"
           }
         ],
-        "produces": "application/json",
+        "produces": [
+          "application/json"
+        ],
         "consumes": [
           "application/json"
         ]
@@ -4411,7 +4503,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/tournament/v3/lobby-events/by-code/{tournamentCode}": {
@@ -4483,7 +4577,9 @@
             "x-type": "string"
           }
         ],
-        "produces": "application/json"
+        "produces": [
+          "application/json"
+        ]
       }
     },
     "/lol/tournament/v3/providers": {
@@ -4545,7 +4641,9 @@
         },
         "operationId": "tournament-v3.registerProviderData",
         "description": "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
-        "produces": "application/json",
+        "produces": [
+          "application/json"
+        ],
         "consumes": [
           "application/json"
         ],
@@ -4621,7 +4719,9 @@
         },
         "operationId": "tournament-v3.registerTournament",
         "description": "Creates a tournament and returns its ID.",
-        "produces": "application/json",
+        "produces": [
+          "application/json"
+        ],
         "consumes": [
           "application/json"
         ],
