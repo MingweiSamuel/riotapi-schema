@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 99330158f9cef055d2ad9e3bda2ad2907914e7e5
+  version: c7642dbc7f563bcedbd7fcc9091bdc2fedc6cf98
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -6423,34 +6423,31 @@ components:
           type: string
           x-type: string
           description: 'The summoner name of this participant'
-        runes:
+        gameCustomizationObjects:
           type: array
           items:
-            $ref: '#/components/schemas/spectator-v3.Rune'
-            x-type: Rune
-          x-type: 'List[Rune]'
-          description: 'The runes used by this participant'
+            $ref: '#/components/schemas/spectator-v3.GameCustomizationObject'
+            x-type: GameCustomizationObject
+          x-type: 'List[GameCustomizationObject]'
+          description: 'List of Game Customizations'
         bot:
           type: boolean
           x-type: boolean
           description: 'Flag indicating whether or not this participant is a bot'
-        teamId:
-          type: integer
-          format: int64
-          x-type: long
-          description: 'The team ID of this participant, indicating the participant''s team'
+        perks:
+          $ref: '#/components/schemas/spectator-v3.Perks'
+          x-type: Perks
+          description: 'Perks/Runes Reforged Information'
         spell2Id:
           type: integer
           format: int64
           x-type: long
           description: 'The ID of the second summoner spell used by this participant'
-        masteries:
-          type: array
-          items:
-            $ref: '#/components/schemas/spectator-v3.Mastery'
-            x-type: Mastery
-          x-type: 'List[Mastery]'
-          description: 'The masteries used by this participant'
+        teamId:
+          type: integer
+          format: int64
+          x-type: long
+          description: 'The team ID of this participant, indicating the participant''s team'
         spell1Id:
           type: integer
           format: int64
@@ -6461,36 +6458,42 @@ components:
           format: int64
           x-type: long
           description: 'The summoner ID of this participant'
-    spectator-v3.Rune:
+    spectator-v3.GameCustomizationObject:
       type: object
-      title: Rune
+      title: GameCustomizationObject
       description: ""
       properties:
-        count:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'The count of this rune used by the participant'
-        runeId:
+        category:
+          type: string
+          x-type: string
+          description: 'Category identifier for Game Customization'
+        content:
+          type: string
+          x-type: string
+          description: 'Game Customization content'
+    spectator-v3.Perks:
+      type: object
+      title: Perks
+      description: ""
+      properties:
+        perkStyle:
           type: integer
           format: int64
           x-type: long
-          description: 'The ID of the rune'
-    spectator-v3.Mastery:
-      type: object
-      title: Mastery
-      description: ""
-      properties:
-        masteryId:
+          description: 'Primary runes path'
+        perkIds:
+          type: array
+          items:
+            type: integer
+            format: int64
+            x-type: Long
+          x-type: 'List[Long]'
+          description: 'IDs of the perks/runes assigned.'
+        perkSubStyle:
           type: integer
           format: int64
           x-type: long
-          description: 'The ID of the mastery'
-        rank:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'The number of points put into this mastery by the user'
+          description: 'Secondary runes path'
     spectator-v3.FeaturedGames:
       type: object
       title: FeaturedGames
@@ -6530,7 +6533,16 @@ components:
         gameMode:
           type: string
           x-type: string
-          description: 'The game mode'
+          enum:
+            - CLASSIC
+            - ODIN
+            - ARAM
+            - TUTORIAL
+            - ONEFORALL
+            - ASCENSION
+            - FIRSTBLOOD
+            - KINGPORO
+          description: "The game mode\n             (Legal values:  CLASSIC,  ODIN,  ARAM,  TUTORIAL,  ONEFORALL,  ASCENSION,  FIRSTBLOOD,  KINGPORO)"
         mapId:
           type: integer
           format: int64
@@ -6539,7 +6551,11 @@ components:
         gameType:
           type: string
           x-type: string
-          description: 'The game type'
+          enum:
+            - CUSTOM_GAME
+            - MATCHED_GAME
+            - TUTORIAL_GAME
+          description: "The game type\n             (Legal values:  CUSTOM_GAME,  MATCHED_GAME,  TUTORIAL_GAME)"
         bannedChampions:
           type: array
           items:

@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "1102d7c0fa35ebed21fb088e5e9a58f5289f93f6"
+    "version": "002e31f434de6721a7e8e0628fe6b73ae4b2b30d"
   },
   "host": "{platform}.api.riotgames.com",
   "x-host-platform": [
@@ -8559,25 +8559,24 @@
           "x-type": "string",
           "description": "The summoner name of this participant"
         },
-        "runes": {
+        "gameCustomizationObjects": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/spectator-v3.Rune",
-            "x-type": "Rune"
+            "$ref": "#/definitions/spectator-v3.GameCustomizationObject",
+            "x-type": "GameCustomizationObject"
           },
-          "x-type": "List[Rune]",
-          "description": "The runes used by this participant"
+          "x-type": "List[GameCustomizationObject]",
+          "description": "List of Game Customizations"
         },
         "bot": {
           "type": "boolean",
           "x-type": "boolean",
           "description": "Flag indicating whether or not this participant is a bot"
         },
-        "teamId": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "The team ID of this participant, indicating the participant's team"
+        "perks": {
+          "$ref": "#/definitions/spectator-v3.Perks",
+          "x-type": "Perks",
+          "description": "Perks/Runes Reforged Information"
         },
         "spell2Id": {
           "type": "integer",
@@ -8585,14 +8584,11 @@
           "x-type": "long",
           "description": "The ID of the second summoner spell used by this participant"
         },
-        "masteries": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/spectator-v3.Mastery",
-            "x-type": "Mastery"
-          },
-          "x-type": "List[Mastery]",
-          "description": "The masteries used by this participant"
+        "teamId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The team ID of this participant, indicating the participant's team"
         },
         "spell1Id": {
           "type": "integer",
@@ -8608,41 +8604,49 @@
         }
       }
     },
-    "spectator-v3.Rune": {
+    "spectator-v3.GameCustomizationObject": {
       "type": "object",
-      "title": "Rune",
+      "title": "GameCustomizationObject",
       "description": "",
       "properties": {
-        "count": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "The count of this rune used by the participant"
+        "category": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Category identifier for Game Customization"
         },
-        "runeId": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "The ID of the rune"
+        "content": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Game Customization content"
         }
       }
     },
-    "spectator-v3.Mastery": {
+    "spectator-v3.Perks": {
       "type": "object",
-      "title": "Mastery",
+      "title": "Perks",
       "description": "",
       "properties": {
-        "masteryId": {
+        "perkStyle": {
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The ID of the mastery"
+          "description": "Primary runes path"
         },
-        "rank": {
+        "perkIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "Long"
+          },
+          "x-type": "List[Long]",
+          "description": "IDs of the perks/runes assigned."
+        },
+        "perkSubStyle": {
           "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "The number of points put into this mastery by the user"
+          "format": "int64",
+          "x-type": "long",
+          "description": "Secondary runes path"
         }
       }
     },
@@ -8693,7 +8697,17 @@
         "gameMode": {
           "type": "string",
           "x-type": "string",
-          "description": "The game mode"
+          "enum": [
+            "CLASSIC",
+            "ODIN",
+            "ARAM",
+            "TUTORIAL",
+            "ONEFORALL",
+            "ASCENSION",
+            "FIRSTBLOOD",
+            "KINGPORO"
+          ],
+          "description": "The game mode\n             (Legal values:  CLASSIC,  ODIN,  ARAM,  TUTORIAL,  ONEFORALL,  ASCENSION,  FIRSTBLOOD,  KINGPORO)"
         },
         "mapId": {
           "type": "integer",
@@ -8704,7 +8718,12 @@
         "gameType": {
           "type": "string",
           "x-type": "string",
-          "description": "The game type"
+          "enum": [
+            "CUSTOM_GAME",
+            "MATCHED_GAME",
+            "TUTORIAL_GAME"
+          ],
+          "description": "The game type\n             (Legal values:  CUSTOM_GAME,  MATCHED_GAME,  TUTORIAL_GAME)"
         },
         "bannedChampions": {
           "type": "array",
