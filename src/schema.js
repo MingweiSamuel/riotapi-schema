@@ -90,14 +90,16 @@ Schema.prototype.toParameters = function(inType) {
     .map(([ name, prop ]) => {
       let desc = prop.description;
       delete prop.description;
-      return {
+      let res = {
         name,
         in: inType,
         description: desc,
         required: this.required.includes(name),
-        schema: prop,
-        explode: true
+        schema: prop
       };
+      if ('array' === prop.type)
+        res.explode = true;
+      return res;
     });
 }
 
