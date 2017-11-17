@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 002e31f434de6721a7e8e0628fe6b73ae4b2b30d
-host: '{platform}.api.riotgames.com'
+  version: 9561ba7412a16a98a664d817930e2c7bcdfa8c7d
+host: na1.api.riotgames.com
 x-host-platform:
   - br1
   - eun1
@@ -32,14 +32,12 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/definitions/champion-mastery-v3.ChampionMasteryDTO'
-                  x-type: ChampionMasteryDTO
-                x-type: 'List[ChampionMasteryDTO]'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/champion-mastery-v3.ChampionMasteryDTO'
+              x-type: ChampionMasteryDTO
+            x-type: 'List[ChampionMasteryDTO]'
         '400':
           description: 'Bad request'
         '401':
@@ -70,7 +68,6 @@ paths:
           in: path
           description: 'Summoner ID associated with the player'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -87,11 +84,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/champion-mastery-v3.ChampionMasteryDTO'
-                x-type: ChampionMasteryDTO
+          schema:
+            $ref: '#/definitions/champion-mastery-v3.ChampionMasteryDTO'
+            x-type: ChampionMasteryDTO
         '400':
           description: 'Bad request'
         '401':
@@ -122,7 +117,6 @@ paths:
           in: path
           description: 'Champion ID to retrieve Champion Mastery for'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -131,7 +125,6 @@ paths:
           in: path
           description: 'Summoner ID associated with the player'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -148,12 +141,10 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: integer
-                format: int32
-                x-type: int
+          schema:
+            type: integer
+            format: int32
+            x-type: int
         '400':
           description: 'Bad request'
         '401':
@@ -184,7 +175,6 @@ paths:
           in: path
           description: 'Summoner ID associated with the player'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -201,11 +191,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/champion-v3.ChampionListDto'
-                x-type: ChampionListDto
+          schema:
+            $ref: '#/definitions/champion-v3.ChampionListDto'
+            x-type: ChampionListDto
         '400':
           description: 'Bad request'
         '401':
@@ -236,7 +224,6 @@ paths:
           in: query
           description: 'Optional filter param to retrieve only free to play champions.'
           required: false
-          explode: true
           type: boolean
           x-type: boolean
       produces:
@@ -252,11 +239,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/champion-v3.ChampionDto'
-                x-type: ChampionDto
+          schema:
+            $ref: '#/definitions/champion-v3.ChampionDto'
+            x-type: ChampionDto
         '400':
           description: 'Bad request'
         '401':
@@ -287,7 +272,6 @@ paths:
           in: path
           description: 'Champion ID'
           required: true
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -304,11 +288,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/league-v3.LeagueListDTO'
-                x-type: LeagueListDTO
+          schema:
+            $ref: '#/definitions/league-v3.LeagueListDTO'
+            x-type: LeagueListDTO
         '400':
           description: 'Bad request'
         '401':
@@ -337,9 +319,8 @@ paths:
         -
           name: queue
           in: path
-          description: null
+          description: ""
           required: true
-          explode: true
           type: string
           x-type: string
           enum:
@@ -359,14 +340,12 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/definitions/league-v3.LeagueListDTO'
-                  x-type: LeagueListDTO
-                x-type: 'Set[LeagueListDTO]'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/league-v3.LeagueListDTO'
+              x-type: LeagueListDTO
+            x-type: 'Set[LeagueListDTO]'
         '400':
           description: 'Bad request'
         '401':
@@ -395,9 +374,8 @@ paths:
         -
           name: summonerId
           in: path
-          description: null
+          description: ""
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -415,11 +393,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/league-v3.LeagueListDTO'
-                x-type: LeagueListDTO
+          schema:
+            $ref: '#/definitions/league-v3.LeagueListDTO'
+            x-type: LeagueListDTO
         '400':
           description: 'Bad request'
         '401':
@@ -450,7 +426,6 @@ paths:
           in: path
           description: 'The UUID of the league.'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -466,11 +441,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/league-v3.LeagueListDTO'
-                x-type: LeagueListDTO
+          schema:
+            $ref: '#/definitions/league-v3.LeagueListDTO'
+            x-type: LeagueListDTO
         '400':
           description: 'Bad request'
         '401':
@@ -499,9 +472,8 @@ paths:
         -
           name: queue
           in: path
-          description: null
+          description: ""
           required: true
-          explode: true
           type: string
           x-type: string
           enum:
@@ -521,11 +493,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/league-v3.LeaguePositionDTO'
-                x-type: LeaguePositionDTO
+          schema:
+            $ref: '#/definitions/league-v3.LeaguePositionDTO'
+            x-type: LeaguePositionDTO
         '400':
           description: 'Bad request'
         '401':
@@ -554,9 +524,8 @@ paths:
         -
           name: summonerId
           in: path
-          description: null
+          description: ""
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: Long
@@ -573,11 +542,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.ChampionListDto'
-                x-type: ChampionListDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.ChampionListDto'
+            x-type: ChampionListDto
         '400':
           description: 'Bad request'
         '401':
@@ -608,7 +575,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -646,7 +612,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
         -
@@ -654,7 +619,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -682,7 +646,6 @@ paths:
           in: query
           description: 'If specified as true, the returned data map will use the champions'' IDs as the keys. If not specified or specified as false, the returned data map will use the champions'' keys instead.'
           required: false
-          explode: true
           type: boolean
           x-type: boolean
       produces:
@@ -698,11 +661,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.ChampionDto'
-                x-type: ChampionDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.ChampionDto'
+            x-type: ChampionDto
         '400':
           description: 'Bad request'
         '401':
@@ -733,7 +694,6 @@ paths:
           in: path
           description: 'Champion ID'
           required: true
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -742,7 +702,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -780,7 +739,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
         -
@@ -788,7 +746,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -822,11 +779,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.ItemListDto'
-                x-type: ItemListDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.ItemListDto'
+            x-type: ItemListDto
         '400':
           description: 'Bad request'
         '401':
@@ -857,7 +812,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -895,7 +849,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
         -
@@ -903,7 +856,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only type, version, data, id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -944,11 +896,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.ItemDto'
-                x-type: ItemDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.ItemDto'
+            x-type: ItemDto
         '400':
           description: 'Bad request'
         '401':
@@ -979,7 +929,6 @@ paths:
           in: path
           description: 'Item ID'
           required: true
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -988,7 +937,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1026,7 +974,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -1057,7 +1004,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
       produces:
@@ -1073,11 +1019,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.LanguageStringsDto'
-                x-type: LanguageStringsDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.LanguageStringsDto'
+            x-type: LanguageStringsDto
         '400':
           description: 'Bad request'
         '401':
@@ -1108,7 +1052,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1146,7 +1089,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
       produces:
@@ -1162,14 +1104,12 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-                  x-type: string
-                x-type: 'List[string]'
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'List[string]'
         '400':
           description: 'Bad request'
         '401':
@@ -1207,11 +1147,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.MapDataDto'
-                x-type: MapDataDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.MapDataDto'
+            x-type: MapDataDto
         '400':
           description: 'Bad request'
         '401':
@@ -1242,7 +1180,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1280,7 +1217,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
       produces:
@@ -1296,11 +1232,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.MasteryListDto'
-                x-type: MasteryListDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.MasteryListDto'
+            x-type: MasteryListDto
         '400':
           description: 'Bad request'
         '401':
@@ -1331,7 +1265,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1369,7 +1302,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
         -
@@ -1377,7 +1309,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -1404,11 +1335,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.MasteryDto'
-                x-type: MasteryDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.MasteryDto'
+            x-type: MasteryDto
         '400':
           description: 'Bad request'
         '401':
@@ -1439,7 +1368,6 @@ paths:
           in: path
           description: 'Mastery ID'
           required: true
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -1448,7 +1376,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1486,7 +1413,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
         -
@@ -1494,7 +1420,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -1520,11 +1445,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.ProfileIconDataDto'
-                x-type: ProfileIconDataDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.ProfileIconDataDto'
+            x-type: ProfileIconDataDto
         '400':
           description: 'Bad request'
         '401':
@@ -1555,7 +1478,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1593,7 +1515,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
       produces:
@@ -1609,11 +1530,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.RealmDto'
-                x-type: RealmDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.RealmDto'
+            x-type: RealmDto
         '400':
           description: 'Bad request'
         '401':
@@ -1651,11 +1570,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.RuneListDto'
-                x-type: RuneListDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.RuneListDto'
+            x-type: RuneListDto
         '400':
           description: 'Bad request'
         '401':
@@ -1686,7 +1603,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1724,7 +1640,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
         -
@@ -1732,7 +1647,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only type, version, data, id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -1757,11 +1671,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.RuneDto'
-                x-type: RuneDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.RuneDto'
+            x-type: RuneDto
         '400':
           description: 'Bad request'
         '401':
@@ -1792,7 +1704,6 @@ paths:
           in: path
           description: 'Rune ID'
           required: true
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -1801,7 +1712,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -1818,7 +1728,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1856,7 +1765,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
       produces:
@@ -1872,11 +1780,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.SummonerSpellListDto'
-                x-type: SummonerSpellListDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.SummonerSpellListDto'
+            x-type: SummonerSpellListDto
         '400':
           description: 'Bad request'
         '401':
@@ -1907,7 +1813,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -1945,7 +1850,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
         -
@@ -1953,7 +1857,6 @@ paths:
           in: query
           description: 'If specified as true, the returned data map will use the spells'' IDs as the keys. If not specified or specified as false, the returned data map will use the spells'' keys instead.'
           required: false
-          explode: true
           type: boolean
           x-type: boolean
         -
@@ -1961,7 +1864,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -2001,11 +1903,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-static-data-v3.SummonerSpellDto'
-                x-type: SummonerSpellDto
+          schema:
+            $ref: '#/definitions/lol-static-data-v3.SummonerSpellDto'
+            x-type: SummonerSpellDto
         '400':
           description: 'Bad request'
         '401':
@@ -2036,7 +1936,6 @@ paths:
           in: path
           description: 'Summoner spell ID'
           required: true
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -2045,7 +1944,6 @@ paths:
           in: query
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
-          explode: true
           type: string
           x-type: string
           enum:
@@ -2083,7 +1981,6 @@ paths:
           in: query
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
-          explode: true
           type: string
           x-type: string
         -
@@ -2091,7 +1988,6 @@ paths:
           in: query
           description: 'Tags to return additional data. Only id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
-          explode: true
           type: array
           items:
             type: string
@@ -2131,14 +2027,12 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-                  x-type: string
-                x-type: 'List[string]'
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'List[string]'
         '400':
           description: 'Bad request'
         '401':
@@ -2176,11 +2070,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/lol-status-v3.ShardStatus'
-                x-type: ShardStatus
+          schema:
+            $ref: '#/definitions/lol-status-v3.ShardStatus'
+            x-type: ShardStatus
         '400':
           description: 'Bad request'
         '401':
@@ -2218,11 +2110,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/masteries-v3.MasteryPagesDto'
-                x-type: MasteryPagesDto
+          schema:
+            $ref: '#/definitions/masteries-v3.MasteryPagesDto'
+            x-type: MasteryPagesDto
         '400':
           description: 'Bad request'
         '401':
@@ -2245,7 +2135,6 @@ paths:
           in: path
           description: 'Summoner ID'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -2261,15 +2150,13 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: integer
-                  format: int64
-                  x-type: long
-                x-type: 'List[long]'
+          schema:
+            type: array
+            items:
+              type: integer
+              format: int64
+              x-type: long
+            x-type: 'List[long]'
         '400':
           description: 'Bad request'
         '401':
@@ -2300,7 +2187,6 @@ paths:
           in: path
           description: 'The tournament code.'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -2316,11 +2202,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/match-v3.MatchDto'
-                x-type: MatchDto
+          schema:
+            $ref: '#/definitions/match-v3.MatchDto'
+            x-type: MatchDto
         '400':
           description: 'Bad request'
         '401':
@@ -2351,7 +2235,6 @@ paths:
           in: path
           description: 'The match ID.'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2368,11 +2251,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/match-v3.MatchDto'
-                x-type: MatchDto
+          schema:
+            $ref: '#/definitions/match-v3.MatchDto'
+            x-type: MatchDto
         '400':
           description: 'Bad request'
         '401':
@@ -2403,7 +2284,6 @@ paths:
           in: path
           description: 'The match ID.'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2412,7 +2292,6 @@ paths:
           in: path
           description: 'The tournament code.'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -2428,11 +2307,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/match-v3.MatchlistDto'
-                x-type: MatchlistDto
+          schema:
+            $ref: '#/definitions/match-v3.MatchlistDto'
+            x-type: MatchlistDto
         '400':
           description: 'Bad request'
         '401':
@@ -2465,7 +2342,6 @@ paths:
           in: path
           description: 'The account ID.'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2474,7 +2350,6 @@ paths:
           in: query
           description: 'Set of queue IDs for which to filtering matchlist.'
           required: false
-          explode: true
           type: array
           items:
             type: integer
@@ -2486,7 +2361,6 @@ paths:
           in: query
           description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
           required: false
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2495,7 +2369,6 @@ paths:
           in: query
           description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
           required: false
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -2504,7 +2377,6 @@ paths:
           in: query
           description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
           required: false
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2513,7 +2385,6 @@ paths:
           in: query
           description: 'Set of season IDs for which to filtering matchlist.'
           required: false
-          explode: true
           type: array
           items:
             type: integer
@@ -2525,7 +2396,6 @@ paths:
           in: query
           description: 'Set of champion IDs for which to filtering matchlist.'
           required: false
-          explode: true
           type: array
           items:
             type: integer
@@ -2537,7 +2407,6 @@ paths:
           in: query
           description: 'The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
           required: false
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -2554,11 +2423,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/match-v3.MatchlistDto'
-                x-type: MatchlistDto
+          schema:
+            $ref: '#/definitions/match-v3.MatchlistDto'
+            x-type: MatchlistDto
         '400':
           description: 'Bad request'
         '401':
@@ -2591,7 +2458,6 @@ paths:
           in: path
           description: 'The account ID.'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2608,11 +2474,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/match-v3.MatchTimelineDto'
-                x-type: MatchTimelineDto
+          schema:
+            $ref: '#/definitions/match-v3.MatchTimelineDto'
+            x-type: MatchTimelineDto
         '400':
           description: 'Bad request'
         '401':
@@ -2643,7 +2507,6 @@ paths:
           in: path
           description: 'The match ID.'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2660,11 +2523,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/runes-v3.RunePagesDto'
-                x-type: RunePagesDto
+          schema:
+            $ref: '#/definitions/runes-v3.RunePagesDto'
+            x-type: RunePagesDto
         '400':
           description: 'Bad request'
         '401':
@@ -2687,7 +2548,6 @@ paths:
           in: path
           description: 'Summoner ID'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -2703,11 +2563,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/spectator-v3.CurrentGameInfo'
-                x-type: CurrentGameInfo
+          schema:
+            $ref: '#/definitions/spectator-v3.CurrentGameInfo'
+            x-type: CurrentGameInfo
         '400':
           description: 'Bad request'
         '401':
@@ -2738,7 +2596,6 @@ paths:
           in: path
           description: 'The ID of the summoner.'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2755,11 +2612,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/spectator-v3.FeaturedGames'
-                x-type: FeaturedGames
+          schema:
+            $ref: '#/definitions/spectator-v3.FeaturedGames'
+            x-type: FeaturedGames
         '400':
           description: 'Bad request'
         '401':
@@ -2797,11 +2652,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/summoner-v3.SummonerDTO'
-                x-type: SummonerDTO
+          schema:
+            $ref: '#/definitions/summoner-v3.SummonerDTO'
+            x-type: SummonerDTO
         '400':
           description: 'Bad request'
         '401':
@@ -2830,9 +2683,8 @@ paths:
         -
           name: accountId
           in: path
-          description: null
+          description: ""
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2849,11 +2701,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/summoner-v3.SummonerDTO'
-                x-type: SummonerDTO
+          schema:
+            $ref: '#/definitions/summoner-v3.SummonerDTO'
+            x-type: SummonerDTO
         '400':
           description: 'Bad request'
         '401':
@@ -2884,7 +2734,6 @@ paths:
           in: path
           description: 'Summoner Name'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -2900,11 +2749,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/summoner-v3.SummonerDTO'
-                x-type: SummonerDTO
+          schema:
+            $ref: '#/definitions/summoner-v3.SummonerDTO'
+            x-type: SummonerDTO
         '400':
           description: 'Bad request'
         '401':
@@ -2935,7 +2782,6 @@ paths:
           in: path
           description: 'Summoner ID'
           required: true
-          explode: true
           type: integer
           format: int64
           x-type: long
@@ -2952,14 +2798,12 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-                  x-type: string
-                x-type: 'List[string]'
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'List[string]'
         '400':
           description: 'Bad request'
         '401':
@@ -2990,7 +2834,6 @@ paths:
           in: query
           description: 'The number of codes to create (max 1000)'
           required: false
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -2999,7 +2842,6 @@ paths:
           in: query
           description: 'The tournament ID'
           required: true
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -3010,6 +2852,7 @@ paths:
             $ref: '#/definitions/tournament-stub-v3.TournamentCodeParameters'
             x-type: TournamentCodeParameters
           in: body
+          name: TournamentCodeParameters
       produces:
         - application/json
       consumes:
@@ -3025,11 +2868,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/tournament-stub-v3.LobbyEventDTOWrapper'
-                x-type: LobbyEventDTOWrapper
+          schema:
+            $ref: '#/definitions/tournament-stub-v3.LobbyEventDTOWrapper'
+            x-type: LobbyEventDTOWrapper
         '400':
           description: 'Bad request'
         '401':
@@ -3060,7 +2901,6 @@ paths:
           in: path
           description: 'The short code to look up lobby events for'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -3076,12 +2916,10 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: integer
-                format: int32
-                x-type: int
+          schema:
+            type: integer
+            format: int32
+            x-type: int
         '400':
           description: 'Bad request'
         '401':
@@ -3118,6 +2956,7 @@ paths:
             $ref: '#/definitions/tournament-stub-v3.ProviderRegistrationParameters'
             x-type: ProviderRegistrationParameters
           in: body
+          name: ProviderRegistrationParameters
   /lol/tournament-stub/v3/tournaments:
     post:
       tags:
@@ -3129,12 +2968,10 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: integer
-                format: int32
-                x-type: int
+          schema:
+            type: integer
+            format: int32
+            x-type: int
         '400':
           description: 'Bad request'
         '401':
@@ -3171,6 +3008,7 @@ paths:
             $ref: '#/definitions/tournament-stub-v3.TournamentRegistrationParameters'
             x-type: TournamentRegistrationParameters
           in: body
+          name: TournamentRegistrationParameters
   /lol/tournament/v3/codes:
     post:
       tags:
@@ -3182,14 +3020,12 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-                  x-type: string
-                x-type: 'List[string]'
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'List[string]'
         '400':
           description: 'Bad request'
         '401':
@@ -3220,7 +3056,6 @@ paths:
           in: query
           description: 'The number of codes to create (max 1000)'
           required: false
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -3229,7 +3064,6 @@ paths:
           in: query
           description: 'The tournament ID'
           required: true
-          explode: true
           type: integer
           format: int32
           x-type: int
@@ -3240,6 +3074,7 @@ paths:
             $ref: '#/definitions/tournament-v3.TournamentCodeParameters'
             x-type: TournamentCodeParameters
           in: body
+          name: TournamentCodeParameters
       produces:
         - application/json
       consumes:
@@ -3285,7 +3120,6 @@ paths:
           in: path
           description: 'The tournament code to update'
           required: true
-          explode: true
           type: string
           x-type: string
         -
@@ -3295,6 +3129,7 @@ paths:
             $ref: '#/definitions/tournament-v3.TournamentCodeUpdateParameters'
             x-type: TournamentCodeUpdateParameters
           in: body
+          name: TournamentCodeUpdateParameters
       produces:
         - application/json
       consumes:
@@ -3309,11 +3144,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/tournament-v3.TournamentCodeDTO'
-                x-type: TournamentCodeDTO
+          schema:
+            $ref: '#/definitions/tournament-v3.TournamentCodeDTO'
+            x-type: TournamentCodeDTO
         '400':
           description: 'Bad request'
         '401':
@@ -3344,7 +3177,6 @@ paths:
           in: path
           description: 'The tournament code string.'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -3360,11 +3192,9 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/tournament-v3.LobbyEventDTOWrapper'
-                x-type: LobbyEventDTOWrapper
+          schema:
+            $ref: '#/definitions/tournament-v3.LobbyEventDTOWrapper'
+            x-type: LobbyEventDTOWrapper
         '400':
           description: 'Bad request'
         '401':
@@ -3395,7 +3225,6 @@ paths:
           in: path
           description: 'The short code to look up lobby events for'
           required: true
-          explode: true
           type: string
           x-type: string
       produces:
@@ -3411,12 +3240,10 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: integer
-                format: int32
-                x-type: int
+          schema:
+            type: integer
+            format: int32
+            x-type: int
         '400':
           description: 'Bad request'
         '401':
@@ -3453,6 +3280,7 @@ paths:
             $ref: '#/definitions/tournament-v3.ProviderRegistrationParameters'
             x-type: ProviderRegistrationParameters
           in: body
+          name: ProviderRegistrationParameters
   /lol/tournament/v3/tournaments:
     post:
       tags:
@@ -3464,12 +3292,10 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-              schema:
-                type: integer
-                format: int32
-                x-type: int
+          schema:
+            type: integer
+            format: int32
+            x-type: int
         '400':
           description: 'Bad request'
         '401':
@@ -3506,6 +3332,7 @@ paths:
             $ref: '#/definitions/tournament-v3.TournamentRegistrationParameters'
             x-type: TournamentRegistrationParameters
           in: body
+          name: TournamentRegistrationParameters
 definitions:
   Error:
     properties:
@@ -4119,17 +3946,11 @@ definitions:
         type: string
         x-type: string
       range:
-        anyOf:
-          -
-            type: array
-            items:
-              type: number
-              format: int32
-          -
-            type: string
-            enum:
-              - self
         description: 'This field is either a List of Integer or the String ''self'' for spells that target one''s own champion.'
+        type: array
+        items:
+          type: number
+          format: int32
       cooldown:
         type: array
         items:
@@ -5210,17 +5031,11 @@ definitions:
         type: string
         x-type: string
       range:
-        anyOf:
-          -
-            type: array
-            items:
-              type: number
-              format: int32
-          -
-            type: string
-            enum:
-              - self
         description: 'This field is either a List of Integer or the String ''self'' for spells that target one''s own champion.'
+        type: array
+        items:
+          type: number
+          format: int32
       cost:
         type: array
         items:

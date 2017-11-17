@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: c7642dbc7f563bcedbd7fcc9091bdc2fedc6cf98
+  version: 213c0f6e64a36aa52d896e25f23e55cf3cf2e044
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -77,7 +77,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   '/lol/champion-mastery/v3/champion-masteries/by-summoner/{summonerId}/by-champion/{championId}':
     get:
       tags:
@@ -128,7 +127,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
         -
           name: summonerId
           in: path
@@ -138,7 +136,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   '/lol/champion-mastery/v3/scores/by-summoner/{summonerId}':
     get:
       tags:
@@ -190,7 +187,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   /lol/platform/v3/champions:
     get:
       tags:
@@ -240,7 +236,6 @@ paths:
           schema:
             type: boolean
             x-type: boolean
-          explode: true
   '/lol/platform/v3/champions/{id}':
     get:
       tags:
@@ -291,7 +286,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
   '/lol/league/v3/challengerleagues/by-queue/{queue}':
     get:
       tags:
@@ -345,7 +339,6 @@ paths:
               - RANKED_SOLO_5x5
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
-          explode: true
   '/lol/league/v3/leagues/by-summoner/{summonerId}':
     get:
       tags:
@@ -399,7 +392,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
       deprecated: true
   '/lol/league/v3/leagues/{leagueId}':
     get:
@@ -450,7 +442,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   '/lol/league/v3/masterleagues/by-queue/{queue}':
     get:
       tags:
@@ -504,7 +495,6 @@ paths:
               - RANKED_SOLO_5x5
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
-          explode: true
   '/lol/league/v3/positions/by-summoner/{summonerId}':
     get:
       tags:
@@ -555,7 +545,6 @@ paths:
             type: integer
             format: int64
             x-type: Long
-          explode: true
   /lol/static-data/v3/champions:
     get:
       tags:
@@ -635,7 +624,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -644,7 +632,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
         -
           name: tags
           in: query
@@ -682,7 +669,6 @@ paths:
           schema:
             type: boolean
             x-type: boolean
-          explode: true
   '/lol/static-data/v3/champions/{id}':
     get:
       tags:
@@ -733,7 +719,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
         -
           name: locale
           in: query
@@ -772,7 +757,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -781,7 +765,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
         -
           name: tags
           in: query
@@ -888,7 +871,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -897,7 +879,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
         -
           name: tags
           in: query
@@ -982,7 +963,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
         -
           name: locale
           in: query
@@ -1021,7 +1001,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: tags
           in: query
@@ -1062,7 +1041,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   /lol/static-data/v3/language-strings:
     get:
       tags:
@@ -1142,7 +1120,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -1151,7 +1128,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   /lol/static-data/v3/languages:
     get:
       tags:
@@ -1274,7 +1250,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -1283,7 +1258,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   /lol/static-data/v3/masteries:
     get:
       tags:
@@ -1363,7 +1337,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -1372,7 +1345,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
         -
           name: tags
           in: query
@@ -1443,7 +1415,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
         -
           name: locale
           in: query
@@ -1482,7 +1453,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -1491,7 +1461,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
         -
           name: tags
           in: query
@@ -1590,7 +1559,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -1599,7 +1567,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   /lol/static-data/v3/realms:
     get:
       tags:
@@ -1719,7 +1686,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -1728,7 +1694,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
         -
           name: tags
           in: query
@@ -1797,7 +1762,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
         -
           name: tags
           in: query
@@ -1854,7 +1818,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -1863,7 +1826,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   /lol/static-data/v3/summoner-spells:
     get:
       tags:
@@ -1943,7 +1905,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -1952,7 +1913,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
         -
           name: dataById
           in: query
@@ -1961,7 +1921,6 @@ paths:
           schema:
             type: boolean
             x-type: boolean
-          explode: true
         -
           name: tags
           in: query
@@ -2045,7 +2004,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
         -
           name: locale
           in: query
@@ -2084,7 +2042,6 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
-          explode: true
         -
           name: version
           in: query
@@ -2093,7 +2050,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
         -
           name: tags
           in: query
@@ -2251,7 +2207,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   '/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids':
     get:
       tags:
@@ -2305,7 +2260,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   '/lol/match/v3/matches/{matchId}':
     get:
       tags:
@@ -2356,7 +2310,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   '/lol/match/v3/matches/{matchId}/by-tournament-code/{tournamentCode}':
     get:
       tags:
@@ -2407,7 +2360,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
         -
           name: tournamentCode
           in: path
@@ -2416,7 +2368,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   '/lol/match/v3/matchlists/by-account/{accountId}':
     get:
       tags:
@@ -2469,7 +2420,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
         -
           name: queue
           in: query
@@ -2492,7 +2442,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
         -
           name: beginIndex
           in: query
@@ -2502,7 +2451,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
         -
           name: beginTime
           in: query
@@ -2512,7 +2460,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
         -
           name: season
           in: query
@@ -2548,7 +2495,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
   '/lol/match/v3/matchlists/by-account/{accountId}/recent':
     get:
       tags:
@@ -2601,7 +2547,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   '/lol/match/v3/timelines/by-match/{matchId}':
     get:
       tags:
@@ -2652,7 +2597,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   '/lol/platform/v3/runes/by-summoner/{summonerId}':
     get:
       tags:
@@ -2694,7 +2638,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   '/lol/spectator/v3/active-games/by-summoner/{summonerId}':
     get:
       tags:
@@ -2745,7 +2688,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   /lol/spectator/v3/featured-games:
     get:
       tags:
@@ -2836,7 +2778,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   '/lol/summoner/v3/summoners/by-name/{summonerName}':
     get:
       tags:
@@ -2886,7 +2827,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   '/lol/summoner/v3/summoners/{summonerId}':
     get:
       tags:
@@ -2937,7 +2877,6 @@ paths:
             type: integer
             format: int64
             x-type: long
-          explode: true
   /lol/tournament-stub/v3/codes:
     post:
       tags:
@@ -2999,7 +2938,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
         -
           name: tournamentId
           in: query
@@ -3009,7 +2947,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
   '/lol/tournament-stub/v3/lobby-events/by-code/{tournamentCode}':
     get:
       tags:
@@ -3059,7 +2996,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   /lol/tournament-stub/v3/providers:
     post:
       tags:
@@ -3219,7 +3155,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
         -
           name: tournamentId
           in: query
@@ -3229,7 +3164,6 @@ paths:
             type: integer
             format: int32
             x-type: int
-          explode: true
   '/lol/tournament/v3/codes/{tournamentCode}':
     put:
       tags:
@@ -3282,7 +3216,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
     get:
       tags:
         - tournament-v3
@@ -3331,7 +3264,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   '/lol/tournament/v3/lobby-events/by-code/{tournamentCode}':
     get:
       tags:
@@ -3381,7 +3313,6 @@ paths:
           schema:
             type: string
             x-type: string
-          explode: true
   /lol/tournament/v3/providers:
     post:
       tags:
