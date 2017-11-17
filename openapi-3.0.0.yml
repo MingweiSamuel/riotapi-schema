@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 213c0f6e64a36aa52d896e25f23e55cf3cf2e044
+  version: 2dcb1f39134e3342a1e9283e8b2c85f23dcb9fe7
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -71,12 +71,12 @@ paths:
         -
           name: summonerId
           in: path
-          description: 'Summoner ID associated with the player'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'Summoner ID associated with the player'
   '/lol/champion-mastery/v3/champion-masteries/by-summoner/{summonerId}/by-champion/{championId}':
     get:
       tags:
@@ -121,21 +121,21 @@ paths:
         -
           name: championId
           in: path
-          description: 'Champion ID to retrieve Champion Mastery for'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'Champion ID to retrieve Champion Mastery for'
         -
           name: summonerId
           in: path
-          description: 'Summoner ID associated with the player'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'Summoner ID associated with the player'
   '/lol/champion-mastery/v3/scores/by-summoner/{summonerId}':
     get:
       tags:
@@ -181,12 +181,12 @@ paths:
         -
           name: summonerId
           in: path
-          description: 'Summoner ID associated with the player'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'Summoner ID associated with the player'
   /lol/platform/v3/champions:
     get:
       tags:
@@ -231,11 +231,11 @@ paths:
         -
           name: freeToPlay
           in: query
-          description: 'Optional filter param to retrieve only free to play champions.'
           required: false
           schema:
             type: boolean
             x-type: boolean
+          description: 'Optional filter param to retrieve only free to play champions.'
   '/lol/platform/v3/champions/{id}':
     get:
       tags:
@@ -280,12 +280,12 @@ paths:
         -
           name: id
           in: path
-          description: 'Champion ID'
           required: true
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'Champion ID'
   '/lol/league/v3/challengerleagues/by-queue/{queue}':
     get:
       tags:
@@ -330,7 +330,6 @@ paths:
         -
           name: queue
           in: path
-          description: null
           required: true
           schema:
             type: string
@@ -386,7 +385,6 @@ paths:
         -
           name: summonerId
           in: path
-          description: null
           required: true
           schema:
             type: integer
@@ -437,11 +435,11 @@ paths:
         -
           name: leagueId
           in: path
-          description: 'The UUID of the league.'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'The UUID of the league.'
   '/lol/league/v3/masterleagues/by-queue/{queue}':
     get:
       tags:
@@ -486,7 +484,6 @@ paths:
         -
           name: queue
           in: path
-          description: null
           required: true
           schema:
             type: string
@@ -539,7 +536,6 @@ paths:
         -
           name: summonerId
           in: path
-          description: null
           required: true
           schema:
             type: integer
@@ -589,7 +585,6 @@ paths:
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -624,18 +619,18 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -660,15 +655,16 @@ paths:
               - spells
               - stats
               - tags
+          description: 'Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
         -
           name: dataById
           in: query
-          description: 'If specified as true, the returned data map will use the champions'' IDs as the keys. If not specified or specified as false, the returned data map will use the champions'' keys instead.'
           required: false
           schema:
             type: boolean
             x-type: boolean
+          description: 'If specified as true, the returned data map will use the champions'' IDs as the keys. If not specified or specified as false, the returned data map will use the champions'' keys instead.'
   '/lol/static-data/v3/champions/{id}':
     get:
       tags:
@@ -713,16 +709,15 @@ paths:
         -
           name: id
           in: path
-          description: 'Champion ID'
           required: true
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'Champion ID'
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -757,18 +752,18 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -791,6 +786,7 @@ paths:
               - spells
               - stats
               - tags
+          description: 'Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
   /lol/static-data/v3/items:
     get:
@@ -836,7 +832,6 @@ paths:
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -871,18 +866,18 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only type, version, data, id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -912,6 +907,7 @@ paths:
               - stats
               - tags
               - tree
+          description: 'Tags to return additional data. Only type, version, data, id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
   '/lol/static-data/v3/items/{id}':
     get:
@@ -957,16 +953,15 @@ paths:
         -
           name: id
           in: path
-          description: 'Item ID'
           required: true
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'Item ID'
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1001,10 +996,10 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -1032,15 +1027,16 @@ paths:
               - stacks
               - stats
               - tags
+          description: 'Tags to return additional data. Only id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
   /lol/static-data/v3/language-strings:
     get:
       tags:
@@ -1085,7 +1081,6 @@ paths:
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1120,14 +1115,15 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
   /lol/static-data/v3/languages:
     get:
       tags:
@@ -1215,7 +1211,6 @@ paths:
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1250,14 +1245,15 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
   /lol/static-data/v3/masteries:
     get:
       tags:
@@ -1302,7 +1298,6 @@ paths:
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1337,18 +1332,18 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -1364,6 +1359,7 @@ paths:
               - ranks
               - sanitizedDescription
               - tree
+          description: 'Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
   '/lol/static-data/v3/masteries/{id}':
     get:
@@ -1409,16 +1405,15 @@ paths:
         -
           name: id
           in: path
-          description: 'Mastery ID'
           required: true
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'Mastery ID'
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1453,18 +1448,18 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -1479,6 +1474,7 @@ paths:
               - prereq
               - ranks
               - sanitizedDescription
+          description: 'Tags to return additional data. Only id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
   /lol/static-data/v3/profile-icons:
     get:
@@ -1524,7 +1520,6 @@ paths:
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1559,14 +1554,15 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
   /lol/static-data/v3/realms:
     get:
       tags:
@@ -1651,7 +1647,6 @@ paths:
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1686,18 +1681,18 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only type, version, data, id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -1711,6 +1706,7 @@ paths:
               - sanitizedDescription
               - stats
               - tags
+          description: 'Tags to return additional data. Only type, version, data, id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
   '/lol/static-data/v3/runes/{id}':
     get:
@@ -1756,16 +1752,15 @@ paths:
         -
           name: id
           in: path
-          description: 'Rune ID'
           required: true
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'Rune ID'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -1779,11 +1774,11 @@ paths:
               - sanitizedDescription
               - stats
               - tags
+          description: 'Tags to return additional data. Only id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1818,14 +1813,15 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
   /lol/static-data/v3/summoner-spells:
     get:
       tags:
@@ -1870,7 +1866,6 @@ paths:
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -1905,26 +1900,26 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
           name: dataById
           in: query
-          description: 'If specified as true, the returned data map will use the spells'' IDs as the keys. If not specified or specified as false, the returned data map will use the spells'' keys instead.'
           required: false
           schema:
             type: boolean
             x-type: boolean
+          description: 'If specified as true, the returned data map will use the spells'' IDs as the keys. If not specified or specified as false, the returned data map will use the spells'' keys instead.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -1953,6 +1948,7 @@ paths:
               - sanitizedTooltip
               - tooltip
               - vars
+          description: 'Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
   '/lol/static-data/v3/summoner-spells/{id}':
     get:
@@ -1998,16 +1994,15 @@ paths:
         -
           name: id
           in: path
-          description: 'Summoner spell ID'
           required: true
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'Summoner spell ID'
         -
           name: locale
           in: query
-          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
           required: false
           schema:
             type: string
@@ -2042,18 +2037,18 @@ paths:
               - zh_CN
               - zh_MY
               - zh_TW
+          description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
           name: version
           in: query
-          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
           required: false
           schema:
             type: string
             x-type: string
+          description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
           name: tags
           in: query
-          description: 'Tags to return additional data. Only id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           required: false
           schema:
             type: array
@@ -2082,6 +2077,7 @@ paths:
               - sanitizedTooltip
               - tooltip
               - vars
+          description: 'Tags to return additional data. Only id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
   /lol/static-data/v3/versions:
     get:
@@ -2202,11 +2198,11 @@ paths:
         -
           name: summonerId
           in: path
-          description: 'Summoner ID'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'Summoner ID'
   '/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids':
     get:
       tags:
@@ -2255,11 +2251,11 @@ paths:
         -
           name: tournamentCode
           in: path
-          description: 'The tournament code.'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'The tournament code.'
   '/lol/match/v3/matches/{matchId}':
     get:
       tags:
@@ -2304,12 +2300,12 @@ paths:
         -
           name: matchId
           in: path
-          description: 'The match ID.'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'The match ID.'
   '/lol/match/v3/matches/{matchId}/by-tournament-code/{tournamentCode}':
     get:
       tags:
@@ -2354,20 +2350,20 @@ paths:
         -
           name: matchId
           in: path
-          description: 'The match ID.'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'The match ID.'
         -
           name: tournamentCode
           in: path
-          description: 'The tournament code.'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'The tournament code.'
   '/lol/match/v3/matchlists/by-account/{accountId}':
     get:
       tags:
@@ -2414,16 +2410,15 @@ paths:
         -
           name: accountId
           in: path
-          description: 'The account ID.'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'The account ID.'
         -
           name: queue
           in: query
-          description: 'Set of queue IDs for which to filtering matchlist.'
           required: false
           schema:
             type: array
@@ -2432,38 +2427,38 @@ paths:
               format: int32
               x-type: int
             x-type: 'Set[int]'
+          description: 'Set of queue IDs for which to filtering matchlist.'
           explode: true
         -
           name: endTime
           in: query
-          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
           required: false
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
         -
           name: beginIndex
           in: query
-          description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
           required: false
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
         -
           name: beginTime
           in: query
-          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
           required: false
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
         -
           name: season
           in: query
-          description: 'Set of season IDs for which to filtering matchlist.'
           required: false
           schema:
             type: array
@@ -2472,11 +2467,11 @@ paths:
               format: int32
               x-type: int
             x-type: 'Set[int]'
+          description: 'Set of season IDs for which to filtering matchlist.'
           explode: true
         -
           name: champion
           in: query
-          description: 'Set of champion IDs for which to filtering matchlist.'
           required: false
           schema:
             type: array
@@ -2485,16 +2480,17 @@ paths:
               format: int32
               x-type: int
             x-type: 'Set[int]'
+          description: 'Set of champion IDs for which to filtering matchlist.'
           explode: true
         -
           name: endIndex
           in: query
-          description: 'The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
           required: false
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
   '/lol/match/v3/matchlists/by-account/{accountId}/recent':
     get:
       tags:
@@ -2541,12 +2537,12 @@ paths:
         -
           name: accountId
           in: path
-          description: 'The account ID.'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'The account ID.'
   '/lol/match/v3/timelines/by-match/{matchId}':
     get:
       tags:
@@ -2591,12 +2587,12 @@ paths:
         -
           name: matchId
           in: path
-          description: 'The match ID.'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'The match ID.'
   '/lol/platform/v3/runes/by-summoner/{summonerId}':
     get:
       tags:
@@ -2633,11 +2629,11 @@ paths:
         -
           name: summonerId
           in: path
-          description: 'Summoner ID'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'Summoner ID'
   '/lol/spectator/v3/active-games/by-summoner/{summonerId}':
     get:
       tags:
@@ -2682,12 +2678,12 @@ paths:
         -
           name: summonerId
           in: path
-          description: 'The ID of the summoner.'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'The ID of the summoner.'
   /lol/spectator/v3/featured-games:
     get:
       tags:
@@ -2772,7 +2768,6 @@ paths:
         -
           name: accountId
           in: path
-          description: null
           required: true
           schema:
             type: integer
@@ -2822,11 +2817,11 @@ paths:
         -
           name: summonerName
           in: path
-          description: 'Summoner Name'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'Summoner Name'
   '/lol/summoner/v3/summoners/{summonerId}':
     get:
       tags:
@@ -2871,12 +2866,12 @@ paths:
         -
           name: summonerId
           in: path
-          description: 'Summoner ID'
           required: true
           schema:
             type: integer
             format: int64
             x-type: long
+          description: 'Summoner ID'
   /lol/tournament-stub/v3/codes:
     post:
       tags:
@@ -2921,32 +2916,32 @@ paths:
       operationId: tournament-stub-v3.createTournamentCode
       description: 'Create a mock tournament code for the given tournament.'
       requestBody:
-        description: 'Metadata for the generated code'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/tournament-stub-v3.TournamentCodeParameters'
               x-type: TournamentCodeParameters
         required: false
+        description: 'Metadata for the generated code'
       parameters:
         -
           name: count
           in: query
-          description: 'The number of codes to create (max 1000)'
           required: false
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'The number of codes to create (max 1000)'
         -
           name: tournamentId
           in: query
-          description: 'The tournament ID'
           required: true
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'The tournament ID'
   '/lol/tournament-stub/v3/lobby-events/by-code/{tournamentCode}':
     get:
       tags:
@@ -2991,11 +2986,11 @@ paths:
         -
           name: tournamentCode
           in: path
-          description: 'The short code to look up lobby events for'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'The short code to look up lobby events for'
   /lol/tournament-stub/v3/providers:
     post:
       tags:
@@ -3038,13 +3033,13 @@ paths:
       operationId: tournament-stub-v3.registerProviderData
       description: "Creates a mock tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work."
       requestBody:
-        description: 'The provider definition.'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/tournament-stub-v3.ProviderRegistrationParameters'
               x-type: ProviderRegistrationParameters
         required: true
+        description: 'The provider definition.'
   /lol/tournament-stub/v3/tournaments:
     post:
       tags:
@@ -3087,13 +3082,13 @@ paths:
       operationId: tournament-stub-v3.registerTournament
       description: 'Creates a mock tournament and returns its ID.'
       requestBody:
-        description: 'The tournament definition.'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/tournament-stub-v3.TournamentRegistrationParameters'
               x-type: TournamentRegistrationParameters
         required: true
+        description: 'The tournament definition.'
   /lol/tournament/v3/codes:
     post:
       tags:
@@ -3138,32 +3133,32 @@ paths:
       operationId: tournament-v3.createTournamentCode
       description: 'Create a tournament code for the given tournament.'
       requestBody:
-        description: 'Metadata for the generated code'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/tournament-v3.TournamentCodeParameters'
               x-type: TournamentCodeParameters
         required: true
+        description: 'Metadata for the generated code'
       parameters:
         -
           name: count
           in: query
-          description: 'The number of codes to create (max 1000)'
           required: false
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'The number of codes to create (max 1000)'
         -
           name: tournamentId
           in: query
-          description: 'The tournament ID'
           required: true
           schema:
             type: integer
             format: int32
             x-type: int
+          description: 'The tournament ID'
   '/lol/tournament/v3/codes/{tournamentCode}':
     put:
       tags:
@@ -3200,22 +3195,22 @@ paths:
       operationId: tournament-v3.updateCode
       description: 'Update the pick type, map, spectator type, or allowed summoners for a code.'
       requestBody:
-        description: 'The fields to update'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/tournament-v3.TournamentCodeUpdateParameters'
               x-type: TournamentCodeUpdateParameters
         required: false
+        description: 'The fields to update'
       parameters:
         -
           name: tournamentCode
           in: path
-          description: 'The tournament code to update'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'The tournament code to update'
     get:
       tags:
         - tournament-v3
@@ -3259,11 +3254,11 @@ paths:
         -
           name: tournamentCode
           in: path
-          description: 'The tournament code string.'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'The tournament code string.'
   '/lol/tournament/v3/lobby-events/by-code/{tournamentCode}':
     get:
       tags:
@@ -3308,11 +3303,11 @@ paths:
         -
           name: tournamentCode
           in: path
-          description: 'The short code to look up lobby events for'
           required: true
           schema:
             type: string
             x-type: string
+          description: 'The short code to look up lobby events for'
   /lol/tournament/v3/providers:
     post:
       tags:
@@ -3355,13 +3350,13 @@ paths:
       operationId: tournament-v3.registerProviderData
       description: "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work."
       requestBody:
-        description: 'The provider definition.'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/tournament-v3.ProviderRegistrationParameters'
               x-type: ProviderRegistrationParameters
         required: true
+        description: 'The provider definition.'
   /lol/tournament/v3/tournaments:
     post:
       tags:
@@ -3404,13 +3399,13 @@ paths:
       operationId: tournament-v3.registerTournament
       description: 'Creates a tournament and returns its ID.'
       requestBody:
-        description: 'The tournament definition.'
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/tournament-v3.TournamentRegistrationParameters'
               x-type: TournamentRegistrationParameters
         required: true
+        description: 'The tournament definition.'
 components:
   schemas:
     Error:
@@ -3425,7 +3420,6 @@ components:
     champion-mastery-v3.ChampionMasteryDTO:
       type: object
       title: ChampionMasteryDTO
-      description: 'This object contains single Champion Mastery information for player and champion combination.'
       properties:
         chestGranted:
           type: boolean
@@ -3466,10 +3460,10 @@ components:
           format: int64
           x-type: long
           description: 'Last time this champion was played by this player - in Unix milliseconds time format.'
+      description: 'This object contains single Champion Mastery information for player and champion combination.'
     champion-v3.ChampionListDto:
       type: object
       title: ChampionListDto
-      description: 'This object contains a collection of champion information.'
       properties:
         champions:
           type: array
@@ -3478,10 +3472,10 @@ components:
             x-type: ChampionDto
           x-type: 'List[ChampionDto]'
           description: 'The collection of champion information.'
+      description: 'This object contains a collection of champion information.'
     champion-v3.ChampionDto:
       type: object
       title: ChampionDto
-      description: 'This object contains champion information.'
       properties:
         rankedPlayEnabled:
           type: boolean
@@ -3508,10 +3502,10 @@ components:
           format: int64
           x-type: long
           description: 'Champion ID. For static information correlating to champion IDs, please refer to the LoL Static Data API.'
+      description: 'This object contains champion information.'
     league-v3.LeagueListDTO:
       type: object
       title: LeagueListDTO
-      description: ""
       properties:
         leagueId:
           type: string
@@ -3534,7 +3528,6 @@ components:
     league-v3.LeagueItemDTO:
       type: object
       title: LeagueItemDTO
-      description: ""
       properties:
         rank:
           type: string
@@ -3575,7 +3568,6 @@ components:
     league-v3.MiniSeriesDTO:
       type: object
       title: MiniSeriesDTO
-      description: ""
       properties:
         wins:
           type: integer
@@ -3595,7 +3587,6 @@ components:
     league-v3.LeaguePositionDTO:
       type: object
       title: LeaguePositionDTO
-      description: ""
       properties:
         rank:
           type: string
@@ -3639,7 +3630,6 @@ components:
     lol-static-data-v3.ChampionListDto:
       type: object
       title: ChampionListDto
-      description: 'This object contains champion list data.'
       properties:
         keys:
           type: object
@@ -3668,10 +3658,10 @@ components:
         format:
           type: string
           x-type: string
+      description: 'This object contains champion list data.'
     lol-static-data-v3.ChampionDto:
       type: object
       title: ChampionDto
-      description: 'This object contains champion data.'
       properties:
         info:
           $ref: '#/components/schemas/lol-static-data-v3.InfoDto'
@@ -3743,10 +3733,10 @@ components:
             $ref: '#/components/schemas/lol-static-data-v3.ChampionSpellDto'
             x-type: ChampionSpellDto
           x-type: 'List[ChampionSpellDto]'
+      description: 'This object contains champion data.'
     lol-static-data-v3.InfoDto:
       type: object
       title: InfoDto
-      description: 'This object contains champion information.'
       properties:
         difficulty:
           type: integer
@@ -3764,10 +3754,10 @@ components:
           type: integer
           format: int32
           x-type: int
+      description: 'This object contains champion information.'
     lol-static-data-v3.StatsDto:
       type: object
       title: StatsDto
-      description: 'This object contains champion stats data.'
       properties:
         armorperlevel:
           type: number
@@ -3849,10 +3839,10 @@ components:
           type: number
           format: double
           x-type: double
+      description: 'This object contains champion stats data.'
     lol-static-data-v3.ImageDto:
       type: object
       title: ImageDto
-      description: 'This object contains image data.'
       properties:
         full:
           type: string
@@ -3879,10 +3869,10 @@ components:
           type: integer
           format: int32
           x-type: int
+      description: 'This object contains image data.'
     lol-static-data-v3.SkinDto:
       type: object
       title: SkinDto
-      description: 'This object contains champion skin data.'
       properties:
         num:
           type: integer
@@ -3895,10 +3885,10 @@ components:
           type: integer
           format: int32
           x-type: int
+      description: 'This object contains champion skin data.'
     lol-static-data-v3.PassiveDto:
       type: object
       title: PassiveDto
-      description: 'This object contains champion passive data.'
       properties:
         image:
           $ref: '#/components/schemas/lol-static-data-v3.ImageDto'
@@ -3912,10 +3902,10 @@ components:
         description:
           type: string
           x-type: string
+      description: 'This object contains champion passive data.'
     lol-static-data-v3.RecommendedDto:
       type: object
       title: RecommendedDto
-      description: 'This object contains champion recommended data.'
       properties:
         map:
           type: string
@@ -3941,10 +3931,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains champion recommended data.'
     lol-static-data-v3.BlockDto:
       type: object
       title: BlockDto
-      description: 'This object contains champion recommended block data.'
       properties:
         items:
           type: array
@@ -3958,10 +3948,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains champion recommended block data.'
     lol-static-data-v3.BlockItemDto:
       type: object
       title: BlockItemDto
-      description: 'This object contains champion recommended block item data.'
       properties:
         count:
           type: integer
@@ -3971,10 +3961,10 @@ components:
           type: integer
           format: int32
           x-type: int
+      description: 'This object contains champion recommended block item data.'
     lol-static-data-v3.ChampionSpellDto:
       type: object
       title: ChampionSpellDto
-      description: 'This object contains champion spell data.'
       properties:
         cooldownBurn:
           type: string
@@ -4071,10 +4061,10 @@ components:
         name:
           type: string
           x-type: string
+      description: 'This object contains champion spell data.'
     lol-static-data-v3.LevelTipDto:
       type: object
       title: LevelTipDto
-      description: 'This object contains champion level tip data.'
       properties:
         effect:
           type: array
@@ -4088,10 +4078,10 @@ components:
             type: string
             x-type: string
           x-type: 'List[string]'
+      description: 'This object contains champion level tip data.'
     lol-static-data-v3.SpellVarsDto:
       type: object
       title: SpellVarsDto
-      description: 'This object contains spell vars data.'
       properties:
         ranksWith:
           type: string
@@ -4112,10 +4102,10 @@ components:
         key:
           type: string
           x-type: string
+      description: 'This object contains spell vars data.'
     lol-static-data-v3.ItemListDto:
       type: object
       title: ItemListDto
-      description: 'This object contains item list data.'
       properties:
         data:
           type: object
@@ -4144,10 +4134,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains item list data.'
     lol-static-data-v3.ItemTreeDto:
       type: object
       title: ItemTreeDto
-      description: 'This object contains item tree data.'
       properties:
         header:
           type: string
@@ -4158,10 +4148,10 @@ components:
             type: string
             x-type: string
           x-type: 'List[string]'
+      description: 'This object contains item tree data.'
     lol-static-data-v3.ItemDto:
       type: object
       title: ItemDto
-      description: 'This object contains item data.'
       properties:
         gold:
           $ref: '#/components/schemas/lol-static-data-v3.GoldDto'
@@ -4257,10 +4247,10 @@ components:
           type: integer
           format: int32
           x-type: int
+      description: 'This object contains item data.'
     lol-static-data-v3.GoldDto:
       type: object
       title: GoldDto
-      description: 'This object contains item gold data.'
       properties:
         sell:
           type: integer
@@ -4277,10 +4267,10 @@ components:
         purchasable:
           type: boolean
           x-type: boolean
+      description: 'This object contains item gold data.'
     lol-static-data-v3.InventoryDataStatsDto:
       type: object
       title: InventoryDataStatsDto
-      description: 'This object contains stats for inventory (e.g., runes and items).'
       properties:
         PercentCritDamageMod:
           type: number
@@ -4414,10 +4404,10 @@ components:
           type: number
           format: double
           x-type: double
+      description: 'This object contains stats for inventory (e.g., runes and items).'
     lol-static-data-v3.GroupDto:
       type: object
       title: GroupDto
-      description: 'This object contains item group data.'
       properties:
         MaxGroupOwnable:
           type: string
@@ -4425,10 +4415,10 @@ components:
         key:
           type: string
           x-type: string
+      description: 'This object contains item group data.'
     lol-static-data-v3.LanguageStringsDto:
       type: object
       title: LanguageStringsDto
-      description: 'This object contains language strings data.'
       properties:
         data:
           type: object
@@ -4445,10 +4435,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains language strings data.'
     lol-static-data-v3.MapDataDto:
       type: object
       title: MapDataDto
-      description: 'This object contains map data.'
       properties:
         data:
           type: object
@@ -4465,10 +4455,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains map data.'
     lol-static-data-v3.MapDetailsDto:
       type: object
       title: MapDetailsDto
-      description: 'This object contains map details data.'
       properties:
         mapName:
           type: string
@@ -4487,10 +4477,10 @@ components:
             format: int64
             x-type: long
           x-type: 'List[long]'
+      description: 'This object contains map details data.'
     lol-static-data-v3.MasteryListDto:
       type: object
       title: MasteryListDto
-      description: 'This object contains mastery list data.'
       properties:
         data:
           type: object
@@ -4510,10 +4500,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains mastery list data.'
     lol-static-data-v3.MasteryTreeDto:
       type: object
       title: MasteryTreeDto
-      description: 'This object contains mastery tree data.'
       properties:
         Resolve:
           type: array
@@ -4533,10 +4523,10 @@ components:
             $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeListDto'
             x-type: MasteryTreeListDto
           x-type: 'List[MasteryTreeListDto]'
+      description: 'This object contains mastery tree data.'
     lol-static-data-v3.MasteryTreeListDto:
       type: object
       title: MasteryTreeListDto
-      description: 'This object contains mastery tree list data.'
       properties:
         masteryTreeItems:
           type: array
@@ -4544,10 +4534,10 @@ components:
             $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeItemDto'
             x-type: MasteryTreeItemDto
           x-type: 'List[MasteryTreeItemDto]'
+      description: 'This object contains mastery tree list data.'
     lol-static-data-v3.MasteryTreeItemDto:
       type: object
       title: MasteryTreeItemDto
-      description: 'This object contains mastery tree item data.'
       properties:
         masteryId:
           type: integer
@@ -4556,10 +4546,10 @@ components:
         prereq:
           type: string
           x-type: string
+      description: 'This object contains mastery tree item data.'
     lol-static-data-v3.MasteryDto:
       type: object
       title: MasteryDto
-      description: 'This object contains mastery data.'
       properties:
         prereq:
           type: string
@@ -4598,10 +4588,10 @@ components:
             type: string
             x-type: string
           x-type: 'List[string]'
+      description: 'This object contains mastery data.'
     lol-static-data-v3.ProfileIconDataDto:
       type: object
       title: ProfileIconDataDto
-      description: 'This object contains profile icon data.'
       properties:
         data:
           type: object
@@ -4618,10 +4608,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains profile icon data.'
     lol-static-data-v3.ProfileIconDetailsDto:
       type: object
       title: ProfileIconDetailsDto
-      description: 'This object contains profile icon details data.'
       properties:
         image:
           $ref: '#/components/schemas/lol-static-data-v3.ImageDto'
@@ -4630,10 +4620,10 @@ components:
           type: integer
           format: int64
           x-type: long
+      description: 'This object contains profile icon details data.'
     lol-static-data-v3.RealmDto:
       type: object
       title: RealmDto
-      description: 'This object contains realm data.'
       properties:
         lg:
           type: string
@@ -4678,10 +4668,10 @@ components:
           type: string
           x-type: string
           description: 'Latest changed version of Dragon Magic''s CSS file.'
+      description: 'This object contains realm data.'
     lol-static-data-v3.RuneListDto:
       type: object
       title: RuneListDto
-      description: 'This object contains rune list data.'
       properties:
         data:
           type: object
@@ -4698,10 +4688,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains rune list data.'
     lol-static-data-v3.RuneDto:
       type: object
       title: RuneDto
-      description: 'This object contains rune data.'
       properties:
         stats:
           $ref: '#/components/schemas/lol-static-data-v3.RuneStatsDto'
@@ -4731,10 +4721,10 @@ components:
         description:
           type: string
           x-type: string
+      description: 'This object contains rune data.'
     lol-static-data-v3.RuneStatsDto:
       type: object
       title: RuneStatsDto
-      description: 'This object contains stats for runes.'
       properties:
         PercentTimeDeadModPerLevel:
           type: number
@@ -4996,10 +4986,10 @@ components:
           type: number
           format: double
           x-type: double
+      description: 'This object contains stats for runes.'
     lol-static-data-v3.MetaDataDto:
       type: object
       title: MetaDataDto
-      description: 'This object contains meta data.'
       properties:
         tier:
           type: string
@@ -5010,10 +5000,10 @@ components:
         isRune:
           type: boolean
           x-type: boolean
+      description: 'This object contains meta data.'
     lol-static-data-v3.SummonerSpellListDto:
       type: object
       title: SummonerSpellListDto
-      description: 'This object contains summoner spell list data.'
       properties:
         data:
           type: object
@@ -5030,10 +5020,10 @@ components:
         type:
           type: string
           x-type: string
+      description: 'This object contains summoner spell list data.'
     lol-static-data-v3.SummonerSpellDto:
       type: object
       title: SummonerSpellDto
-      description: 'This object contains summoner spell data.'
       properties:
         vars:
           type: array
@@ -5138,10 +5128,10 @@ components:
           type: integer
           format: int32
           x-type: int
+      description: 'This object contains summoner spell data.'
     lol-status-v3.ShardStatus:
       type: object
       title: ShardStatus
-      description: ""
       properties:
         name:
           type: string
@@ -5170,7 +5160,6 @@ components:
     lol-status-v3.Service:
       type: object
       title: Service
-      description: ""
       properties:
         status:
           type: string
@@ -5190,7 +5179,6 @@ components:
     lol-status-v3.Incident:
       type: object
       title: Incident
-      description: ""
       properties:
         active:
           type: boolean
@@ -5211,7 +5199,6 @@ components:
     lol-status-v3.Message:
       type: object
       title: Message
-      description: ""
       properties:
         severity:
           type: string
@@ -5240,7 +5227,6 @@ components:
     lol-status-v3.Translation:
       type: object
       title: Translation
-      description: ""
       properties:
         locale:
           type: string
@@ -5254,7 +5240,6 @@ components:
     masteries-v3.MasteryPagesDto:
       type: object
       title: MasteryPagesDto
-      description: 'This object contains masteries information.'
       properties:
         pages:
           type: array
@@ -5268,10 +5253,10 @@ components:
           format: int64
           x-type: long
           description: 'Summoner ID.'
+      description: 'This object contains masteries information.'
     masteries-v3.MasteryPageDto:
       type: object
       title: MasteryPageDto
-      description: 'This object contains mastery page information.'
       properties:
         current:
           type: boolean
@@ -5293,10 +5278,10 @@ components:
           format: int64
           x-type: long
           description: 'Mastery page ID.'
+      description: 'This object contains mastery page information.'
     masteries-v3.MasteryDto:
       type: object
       title: MasteryDto
-      description: 'This object contains mastery information.'
       properties:
         id:
           type: integer
@@ -5308,10 +5293,10 @@ components:
           format: int32
           x-type: int
           description: 'Mastery rank (i.e., the number of points put into this mastery).'
+      description: 'This object contains mastery information.'
     match-v3.MatchDto:
       type: object
       title: MatchDto
-      description: ""
       properties:
         seasonId:
           type: integer
@@ -5370,7 +5355,6 @@ components:
     match-v3.ParticipantIdentityDto:
       type: object
       title: ParticipantIdentityDto
-      description: ""
       properties:
         player:
           $ref: '#/components/schemas/match-v3.PlayerDto'
@@ -5382,7 +5366,6 @@ components:
     match-v3.PlayerDto:
       type: object
       title: PlayerDto
-      description: ""
       properties:
         currentPlatformId:
           type: string
@@ -5415,7 +5398,6 @@ components:
     match-v3.TeamStatsDto:
       type: object
       title: TeamStatsDto
-      description: ""
       properties:
         firstDragon:
           type: boolean
@@ -5479,7 +5461,6 @@ components:
     match-v3.TeamBansDto:
       type: object
       title: TeamBansDto
-      description: ""
       properties:
         pickTurn:
           type: integer
@@ -5492,7 +5473,6 @@ components:
     match-v3.ParticipantDto:
       type: object
       title: ParticipantDto
-      description: ""
       properties:
         stats:
           $ref: '#/components/schemas/match-v3.ParticipantStatsDto'
@@ -5538,7 +5518,6 @@ components:
     match-v3.ParticipantStatsDto:
       type: object
       title: ParticipantStatsDto
-      description: ""
       properties:
         physicalDamageDealt:
           type: integer
@@ -5824,7 +5803,6 @@ components:
     match-v3.RuneDto:
       type: object
       title: RuneDto
-      description: ""
       properties:
         runeId:
           type: integer
@@ -5837,7 +5815,6 @@ components:
     match-v3.ParticipantTimelineDto:
       type: object
       title: ParticipantTimelineDto
-      description: ""
       properties:
         lane:
           type: string
@@ -5922,7 +5899,6 @@ components:
     match-v3.MasteryDto:
       type: object
       title: MasteryDto
-      description: ""
       properties:
         masteryId:
           type: integer
@@ -5935,7 +5911,6 @@ components:
     match-v3.MatchlistDto:
       type: object
       title: MatchlistDto
-      description: ""
       properties:
         matches:
           type: array
@@ -5958,7 +5933,6 @@ components:
     match-v3.MatchReferenceDto:
       type: object
       title: MatchReferenceDto
-      description: ""
       properties:
         lane:
           type: string
@@ -5992,7 +5966,6 @@ components:
     match-v3.MatchTimelineDto:
       type: object
       title: MatchTimelineDto
-      description: ""
       properties:
         frames:
           type: array
@@ -6007,7 +5980,6 @@ components:
     match-v3.MatchFrameDto:
       type: object
       title: MatchFrameDto
-      description: ""
       properties:
         timestamp:
           type: integer
@@ -6032,7 +6004,6 @@ components:
     match-v3.MatchParticipantFrameDto:
       type: object
       title: MatchParticipantFrameDto
-      description: ""
       properties:
         totalGold:
           type: integer
@@ -6076,7 +6047,6 @@ components:
     match-v3.MatchPositionDto:
       type: object
       title: MatchPositionDto
-      description: ""
       properties:
         y:
           type: integer
@@ -6089,7 +6059,6 @@ components:
     match-v3.MatchEventDto:
       type: object
       title: MatchEventDto
-      description: ""
       properties:
         eventType:
           type: string
@@ -6192,7 +6161,6 @@ components:
     runes-v3.RunePagesDto:
       type: object
       title: RunePagesDto
-      description: 'This object contains rune pages information.'
       properties:
         pages:
           type: array
@@ -6206,10 +6174,10 @@ components:
           format: int64
           x-type: long
           description: 'Summoner ID.'
+      description: 'This object contains rune pages information.'
     runes-v3.RunePageDto:
       type: object
       title: RunePageDto
-      description: 'This object contains rune page information.'
       properties:
         current:
           type: boolean
@@ -6231,10 +6199,10 @@ components:
           format: int64
           x-type: long
           description: 'Rune page ID.'
+      description: 'This object contains rune page information.'
     runes-v3.RuneSlotDto:
       type: object
       title: RuneSlotDto
-      description: 'This object contains rune slot information.'
       properties:
         runeSlotId:
           type: integer
@@ -6246,10 +6214,10 @@ components:
           format: int32
           x-type: int
           description: 'Rune ID associated with the rune slot. For static information correlating to rune IDs, please refer to the LoL Static Data API.'
+      description: 'This object contains rune slot information.'
     spectator-v3.CurrentGameInfo:
       type: object
       title: CurrentGameInfo
-      description: ""
       properties:
         gameId:
           type: integer
@@ -6309,7 +6277,6 @@ components:
     spectator-v3.BannedChampion:
       type: object
       title: BannedChampion
-      description: ""
       properties:
         pickTurn:
           type: integer
@@ -6329,7 +6296,6 @@ components:
     spectator-v3.Observer:
       type: object
       title: Observer
-      description: ""
       properties:
         encryptionKey:
           type: string
@@ -6338,7 +6304,6 @@ components:
     spectator-v3.CurrentGameParticipant:
       type: object
       title: CurrentGameParticipant
-      description: ""
       properties:
         profileIconId:
           type: integer
@@ -6392,7 +6357,6 @@ components:
     spectator-v3.GameCustomizationObject:
       type: object
       title: GameCustomizationObject
-      description: ""
       properties:
         category:
           type: string
@@ -6405,7 +6369,6 @@ components:
     spectator-v3.Perks:
       type: object
       title: Perks
-      description: ""
       properties:
         perkStyle:
           type: integer
@@ -6428,7 +6391,6 @@ components:
     spectator-v3.FeaturedGames:
       type: object
       title: FeaturedGames
-      description: ""
       properties:
         clientRefreshInterval:
           type: integer
@@ -6445,7 +6407,6 @@ components:
     spectator-v3.FeaturedGameInfo:
       type: object
       title: FeaturedGameInfo
-      description: ""
       properties:
         gameId:
           type: integer
@@ -6518,7 +6479,6 @@ components:
     spectator-v3.Participant:
       type: object
       title: Participant
-      description: ""
       properties:
         profileIconId:
           type: integer
@@ -6556,7 +6516,6 @@ components:
     summoner-v3.SummonerDTO:
       type: object
       title: SummonerDTO
-      description: 'represents a summoner'
       properties:
         profileIconId:
           type: integer
@@ -6587,10 +6546,10 @@ components:
           format: int64
           x-type: long
           description: 'Account ID.'
+      description: 'represents a summoner'
     tournament-stub-v3.TournamentCodeParameters:
       type: object
       title: TournamentCodeParameters
-      description: ""
       properties:
         spectatorType:
           type: string
@@ -6635,7 +6594,6 @@ components:
     tournament-stub-v3.SummonerIdParams:
       type: object
       title: SummonerIdParams
-      description: ""
       properties:
         participants:
           type: array
@@ -6648,7 +6606,6 @@ components:
     tournament-stub-v3.LobbyEventDTOWrapper:
       type: object
       title: LobbyEventDTOWrapper
-      description: ""
       properties:
         eventList:
           type: array
@@ -6659,7 +6616,6 @@ components:
     tournament-stub-v3.LobbyEventDTO:
       type: object
       title: LobbyEventDTO
-      description: ""
       properties:
         eventType:
           type: string
@@ -6676,7 +6632,6 @@ components:
     tournament-stub-v3.ProviderRegistrationParameters:
       type: object
       title: ProviderRegistrationParameters
-      description: ""
       properties:
         url:
           type: string
@@ -6701,7 +6656,6 @@ components:
     tournament-stub-v3.TournamentRegistrationParameters:
       type: object
       title: TournamentRegistrationParameters
-      description: ""
       properties:
         providerId:
           type: integer
@@ -6715,7 +6669,6 @@ components:
     tournament-v3.TournamentCodeParameters:
       type: object
       title: TournamentCodeParameters
-      description: ""
       properties:
         spectatorType:
           type: string
@@ -6760,7 +6713,6 @@ components:
     tournament-v3.SummonerIdParams:
       type: object
       title: SummonerIdParams
-      description: ""
       properties:
         participants:
           type: array
@@ -6773,7 +6725,6 @@ components:
     tournament-v3.TournamentCodeUpdateParameters:
       type: object
       title: TournamentCodeUpdateParameters
-      description: ""
       properties:
         spectatorType:
           type: string
@@ -6807,7 +6758,6 @@ components:
     tournament-v3.TournamentCodeDTO:
       type: object
       title: TournamentCodeDTO
-      description: ""
       properties:
         map:
           type: string
@@ -6883,7 +6833,6 @@ components:
     tournament-v3.LobbyEventDTOWrapper:
       type: object
       title: LobbyEventDTOWrapper
-      description: ""
       properties:
         eventList:
           type: array
@@ -6894,7 +6843,6 @@ components:
     tournament-v3.LobbyEventDTO:
       type: object
       title: LobbyEventDTO
-      description: ""
       properties:
         eventType:
           type: string
@@ -6911,7 +6859,6 @@ components:
     tournament-v3.ProviderRegistrationParameters:
       type: object
       title: ProviderRegistrationParameters
-      description: ""
       properties:
         url:
           type: string
@@ -6936,7 +6883,6 @@ components:
     tournament-v3.TournamentRegistrationParameters:
       type: object
       title: TournamentRegistrationParameters
-      description: ""
       properties:
         providerId:
           type: integer
