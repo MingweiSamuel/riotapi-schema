@@ -69,7 +69,6 @@ Method.prototype.getOperation = function() {
 
   if (this.bodyType) {
     operation.requestBody = {
-      description: this.bodyDesc,
       content: {
         'application/json': {
           schema: this.bodyType
@@ -78,6 +77,8 @@ Method.prototype.getOperation = function() {
       required: this.bodyRequired
     }
   }
+  if (this.bodyDesc)
+    operation.requestBody.description = this.bodyDesc;
   if (this.params.length)
     operation.parameters = this.params;
   if (this.deprecated)

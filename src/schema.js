@@ -73,9 +73,10 @@ Schema.prototype.toSchema = function() {
   let schema = {
     type: 'object',
     title: this.name,
-    description: this.description,
     properties: this.properties
   };
+  if (this.description)
+    schema.description = this.description;
   if (this.required.length)
     schema.required = this.required;
   return schema;
@@ -93,10 +94,11 @@ Schema.prototype.toParameters = function(inType) {
       let res = {
         name,
         in: inType,
-        description: desc,
         required: this.required.includes(name),
         schema: prop
       };
+      if (desc)
+        res.description = desc;
       if ('array' === prop.type)
         res.explode = true;
       return res;
