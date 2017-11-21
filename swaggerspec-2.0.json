@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "e6c64380397be11b889c9ac865369efa82ca8de3"
+    "version": "3cf884f5cb7babfd458777627e41f59f9d0de5ec"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -685,7 +685,7 @@
         "tags": [
           "league-v3"
         ],
-        "summary": "Get league positions in all queues for given summoner ID.",
+        "summary": "Get league positions in all queues for a given summoner ID.",
         "externalDocs": {
           "description": "Official API Reference",
           "url": "https://developer.riotgames.com/api-methods/#league-v3/GET_getAllLeaguePositionsForSummoner"
@@ -733,7 +733,7 @@
           }
         },
         "operationId": "league-v3.getAllLeaguePositionsForSummoner",
-        "description": "Get league positions in all queues for given summoner ID.",
+        "description": "Get league positions in all queues for a given summoner ID.",
         "parameters": [
           {
             "name": "summonerId",
@@ -741,7 +741,7 @@
             "required": true,
             "type": "integer",
             "format": "int64",
-            "x-type": "Long",
+            "x-type": "long",
             "description": ""
           }
         ],
@@ -803,7 +803,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getChampionList",
-        "description": "Retrieves champion list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves champion list\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "locale",
@@ -949,7 +949,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getChampionById",
-        "description": "Retrieves champion by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves champion by ID\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "id",
@@ -1094,7 +1094,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getItemList",
-        "description": "Retrieves item list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves item list\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "locale",
@@ -1237,7 +1237,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getItemById",
-        "description": "Retrieves item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves item by ID\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "id",
@@ -1387,7 +1387,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getLanguageStrings",
-        "description": "Retrieve language strings data\n## Implementation Notes\nLanguage strings data was not generated for patch version 7.4.2.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieve language strings data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "locale",
@@ -1558,7 +1558,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getMapData",
-        "description": "Retrieve map data\n## Implementation Notes\nThis endpoint is only supported for patch version 5.5.3 and later. Also, map data was not generated for patch versions 5.15.1, 5.16.1, and 5.17.1.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieve map data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "locale",
@@ -1666,7 +1666,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getMasteryList",
-        "description": "Retrieves mastery list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves mastery list\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "locale",
@@ -1795,7 +1795,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getMasteryById",
-        "description": "Retrieves mastery item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves mastery item by ID\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "id",
@@ -2099,7 +2099,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getRuneList",
-        "description": "Retrieves rune list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves rune list\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "locale",
@@ -2226,7 +2226,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getRuneById",
-        "description": "Retrieves rune by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves rune by ID\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "id",
@@ -2362,7 +2362,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getSummonerSpellList",
-        "description": "Retrieves summoner spell list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves summoner spell list\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "locale",
@@ -2512,7 +2512,7 @@
           }
         },
         "operationId": "lol-static-data-v3.getSummonerSpellById",
-        "description": "Retrieves summoner spell by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Retrieves summoner spell by ID\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
         "parameters": [
           {
             "name": "id",
@@ -3067,7 +3067,7 @@
           }
         },
         "operationId": "match-v3.getMatchlist",
-        "description": "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
+        "description": "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.",
         "parameters": [
           {
             "name": "accountId",
@@ -3285,7 +3285,7 @@
           }
         },
         "operationId": "match-v3.getMatchTimeline",
-        "description": "Get match timeline by match ID.\n## Implementation Notes\nNot all matches have timeline data.",
+        "description": "Get match timeline by match ID.",
         "parameters": [
           {
             "name": "matchId",
@@ -3916,7 +3916,7 @@
           }
         },
         "operationId": "tournament-stub-v3.registerProviderData",
-        "description": "Creates a mock tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
+        "description": "Creates a mock tournament provider and returns its ID.",
         "produces": [
           "application/json"
         ],
@@ -4376,7 +4376,7 @@
           }
         },
         "operationId": "tournament-v3.registerProviderData",
-        "description": "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
+        "description": "Creates a tournament provider and returns its ID.",
         "produces": [
           "application/json"
         ],
@@ -4739,6 +4739,10 @@
           "type": "boolean",
           "x-type": "boolean"
         },
+        "leagueId": {
+          "type": "string",
+          "x-type": "string"
+        },
         "playerOrTeamName": {
           "type": "string",
           "x-type": "string"
@@ -4751,7 +4755,7 @@
           "type": "string",
           "x-type": "string"
         },
-        "leagueId": {
+        "tier": {
           "type": "string",
           "x-type": "string"
         },
