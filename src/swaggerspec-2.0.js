@@ -53,6 +53,7 @@ function toSpec({ endpoints, regions, description }) {
 
   let schemas = {
     Error: {
+      "type": "object",
       "properties": {
         "status": {
           "type": "object",
