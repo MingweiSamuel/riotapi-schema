@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "042889574a4f3ff950cf5c0f51ad907e862f12dc"
+    "version": "cefa465018d0fde286854c967d3796331e9cfaf5"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -2732,63 +2732,6 @@
         ]
       }
     },
-    "/lol/platform/v3/masteries/by-summoner/{summonerId}": {
-      "get": {
-        "tags": [
-          "masteries-v3"
-        ],
-        "summary": "Get mastery pages for a given summoner ID.",
-        "externalDocs": {
-          "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#masteries-v3/GET_getMasteryPagesBySummonerId"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/masteries-v3.MasteryPagesDto",
-              "x-type": "MasteryPagesDto"
-            }
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Data not found"
-          },
-          "429": {
-            "description": "Rate limit exceeded"
-          },
-          "500": {
-            "description": "Internal server error"
-          },
-          "503": {
-            "description": "Service unavailable"
-          }
-        },
-        "operationId": "masteries-v3.getMasteryPagesBySummonerId",
-        "description": "Get mastery pages for a given summoner ID.",
-        "parameters": [
-          {
-            "name": "summonerId",
-            "in": "path",
-            "required": true,
-            "description": "Summoner ID",
-            "type": "string",
-            "x-type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
     "/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids": {
       "get": {
         "tags": [
@@ -3302,63 +3245,6 @@
         ]
       }
     },
-    "/lol/platform/v3/runes/by-summoner/{summonerId}": {
-      "get": {
-        "tags": [
-          "runes-v3"
-        ],
-        "summary": "Get rune pages for a given summoner ID.",
-        "externalDocs": {
-          "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#runes-v3/GET_getRunePagesBySummonerId"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/runes-v3.RunePagesDto",
-              "x-type": "RunePagesDto"
-            }
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Data not found"
-          },
-          "429": {
-            "description": "Rate limit exceeded"
-          },
-          "500": {
-            "description": "Internal server error"
-          },
-          "503": {
-            "description": "Service unavailable"
-          }
-        },
-        "operationId": "runes-v3.getRunePagesBySummonerId",
-        "description": "Get rune pages for a given summoner ID.",
-        "parameters": [
-          {
-            "name": "summonerId",
-            "in": "path",
-            "required": true,
-            "description": "Summoner ID",
-            "type": "string",
-            "x-type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
     "/lol/spectator/v3/active-games/by-summoner/{summonerId}": {
       "get": {
         "tags": [
@@ -3681,6 +3567,79 @@
         },
         "operationId": "summoner-v3.getBySummonerId",
         "description": "Get a summoner by summoner ID.",
+        "parameters": [
+          {
+            "name": "summonerId",
+            "in": "path",
+            "required": true,
+            "description": "Summoner ID",
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/lol/platform/v3/third-party-code/by-summoner/{summonerId}": {
+      "get": {
+        "tags": [
+          "third-party-code-v3"
+        ],
+        "summary": "Get third party code for a given summoner ID.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#third-party-code-v3/GET_getThirdPartyCodeBySummonerId"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string",
+              "x-type": "String"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "third-party-code-v3.getThirdPartyCodeBySummonerId",
+        "description": "Get third party code for a given summoner ID.",
         "parameters": [
           {
             "name": "summonerId",
@@ -6858,79 +6817,6 @@
         }
       }
     },
-    "masteries-v3.MasteryPagesDto": {
-      "type": "object",
-      "title": "MasteryPagesDto",
-      "properties": {
-        "pages": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/masteries-v3.MasteryPageDto",
-            "x-type": "MasteryPageDto"
-          },
-          "x-type": "Set[MasteryPageDto]",
-          "description": "Collection of mastery pages associated with the summoner."
-        },
-        "summonerId": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Summoner ID."
-        }
-      },
-      "description": "This object contains masteries information."
-    },
-    "masteries-v3.MasteryPageDto": {
-      "type": "object",
-      "title": "MasteryPageDto",
-      "properties": {
-        "current": {
-          "type": "boolean",
-          "x-type": "boolean",
-          "description": "Indicates if the mastery page is the current mastery page."
-        },
-        "masteries": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/masteries-v3.MasteryDto",
-            "x-type": "MasteryDto"
-          },
-          "x-type": "List[MasteryDto]",
-          "description": "Collection of masteries associated with the mastery page."
-        },
-        "name": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Mastery page name."
-        },
-        "id": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Mastery page ID."
-        }
-      },
-      "description": "This object contains mastery page information."
-    },
-    "masteries-v3.MasteryDto": {
-      "type": "object",
-      "title": "MasteryDto",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "Mastery ID. For static information correlating to masteries, please refer to the LoL Static Data API."
-        },
-        "rank": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "Mastery rank (i.e., the number of points put into this mastery)."
-        }
-      },
-      "description": "This object contains mastery information."
-    },
     "match-v3.MatchDto": {
       "type": "object",
       "title": "MatchDto",
@@ -8044,79 +7930,6 @@
           "x-type": "int"
         }
       }
-    },
-    "runes-v3.RunePagesDto": {
-      "type": "object",
-      "title": "RunePagesDto",
-      "properties": {
-        "pages": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/runes-v3.RunePageDto",
-            "x-type": "RunePageDto"
-          },
-          "x-type": "Set[RunePageDto]",
-          "description": "Collection of rune pages associated with the summoner."
-        },
-        "summonerId": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Summoner ID."
-        }
-      },
-      "description": "This object contains rune pages information."
-    },
-    "runes-v3.RunePageDto": {
-      "type": "object",
-      "title": "RunePageDto",
-      "properties": {
-        "current": {
-          "type": "boolean",
-          "x-type": "boolean",
-          "description": "Indicates if the page is the current page."
-        },
-        "slots": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/runes-v3.RuneSlotDto",
-            "x-type": "RuneSlotDto"
-          },
-          "x-type": "Set[RuneSlotDto]",
-          "description": "Collection of rune slots associated with the rune page."
-        },
-        "name": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Rune page name."
-        },
-        "id": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Rune page ID."
-        }
-      },
-      "description": "This object contains rune page information."
-    },
-    "runes-v3.RuneSlotDto": {
-      "type": "object",
-      "title": "RuneSlotDto",
-      "properties": {
-        "runeSlotId": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "Rune slot ID."
-        },
-        "runeId": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "Rune ID associated with the rune slot. For static information correlating to rune IDs, please refer to the LoL Static Data API."
-        }
-      },
-      "description": "This object contains rune slot information."
     },
     "spectator-v3.CurrentGameInfo": {
       "type": "object",
