@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 5e804a3fe71a5b7647f1adf47c3b3f396aa1a2a4
+  version: becf3fc02e201a4d32da786fd4b5b7c6dede7598
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -603,6 +603,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getChampionList
+      x-app-rate-limit-excluded: true
       description: "Retrieves champion list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -728,6 +729,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getChampionById
+      x-app-rate-limit-excluded: true
       description: "Retrieves champion by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -852,6 +854,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getItemList
+      x-app-rate-limit-excluded: true
       description: "Retrieves item list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -974,6 +977,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getItemById
+      x-app-rate-limit-excluded: true
       description: "Retrieves item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -1103,6 +1107,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getLanguageStrings
+      x-app-rate-limit-excluded: true
       description: "Retrieve language strings data\n## Implementation Notes\nLanguage strings data was not generated for patch version 7.4.2.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -1194,6 +1199,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getLanguages
+      x-app-rate-limit-excluded: true
       description: "Retrieve supported languages data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
     x-endpoint: lol-static-data-v3
   /lol/static-data/v3/maps:
@@ -1235,6 +1241,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getMapData
+      x-app-rate-limit-excluded: true
       description: "Retrieve map data\n## Implementation Notes\nThis endpoint is only supported for patch version 5.5.3 and later. Also, map data was not generated for patch versions 5.15.1, 5.16.1, and 5.17.1.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -1323,6 +1330,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getMasteryList
+      x-app-rate-limit-excluded: true
       description: "Retrieves mastery list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -1431,6 +1439,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getMasteryById
+      x-app-rate-limit-excluded: true
       description: "Retrieves mastery item by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -1547,6 +1556,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getProfileIcons
+      x-app-rate-limit-excluded: true
       description: "Retrieve profile icons\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -1635,6 +1645,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getRealm
+      x-app-rate-limit-excluded: true
       description: "Retrieve realm data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
     x-endpoint: lol-static-data-v3
   /lol/static-data/v3/runes:
@@ -1676,6 +1687,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getRuneList
+      x-app-rate-limit-excluded: true
       description: "Retrieves rune list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -1782,6 +1794,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getRuneById
+      x-app-rate-limit-excluded: true
       description: "Retrieves rune by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -1897,6 +1910,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getSummonerSpellList
+      x-app-rate-limit-excluded: true
       description: "Retrieves summoner spell list\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -2026,6 +2040,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getSummonerSpellById
+      x-app-rate-limit-excluded: true
       description: "Retrieves summoner spell by ID\n## Implementation Notes\nNot all data specified below is returned by default. See the tags parameter for more information.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
@@ -2159,6 +2174,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-static-data-v3.getVersions
+      x-app-rate-limit-excluded: true
       description: "Retrieve version data\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
     x-endpoint: lol-static-data-v3
   /lol/status/v3/shard-data:
@@ -2200,6 +2216,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lol-status-v3.getShardData
+      x-app-rate-limit-excluded: true
       description: "Get League of Legends status for the given shard.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
     x-endpoint: lol-status-v3
   '/lol/match/v3/matches/by-tournament-code/{tournamentCode}/ids':
