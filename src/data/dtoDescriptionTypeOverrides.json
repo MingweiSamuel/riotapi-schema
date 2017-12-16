@@ -4,7 +4,7 @@
     "items": {
       "type": "array",
       "items": {
-        "type": "integer",
+        "type": "number",
         "format": "double"
       }
     }
@@ -14,7 +14,7 @@
       {
         "type": "array",
         "items": {
-          "type": "number",
+          "type": "integer",
           "format": "int32"
         }
       },
