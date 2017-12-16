@@ -61,6 +61,8 @@ Method.prototype.getOperation = function() {
     responses: this.responses,
     operationId: this.endpoint.name + '.' + this.name
   };
+  if (this.appRateLimitExcluded)
+    operation['x-app-rate-limit-excluded'] = true;
 
   let description = [ this.summary ];
   if (this.implementationNotes) description.push(...['## Implementation Notes', this.implementationNotes]);
@@ -103,6 +105,8 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
       break;
     case 'rate limit notes':
       this.rateLimitNotes = apiBlockHtml.children[1].textContent.trim();
+      this.appRateLimitExcluded = this.rateLimitNotes.toUpperCase() ===
+        'Requests to this API are not counted against the application Rate Limits.'.toUpperCase()
       break;
     case 'path parameters':
     case 'query parameters':
