@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: de421b0218fbd1f3ec7beefd9945631a938f9bb2
+  version: 098f978090b1edc354522bcb3fdc3915ce5f5013
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -3991,7 +3991,7 @@ components:
           items:
             type: array
             items:
-              type: integer
+              type: number
               format: double
           description: 'This field is a List of List of Double.'
         tooltip:
@@ -4012,7 +4012,7 @@ components:
             -
               type: array
               items:
-                type: number
+                type: integer
                 format: int32
             -
               type: string
@@ -5068,7 +5068,7 @@ components:
           items:
             type: array
             items:
-              type: integer
+              type: number
               format: double
           description: 'This field is a List of List of Double.'
         key:
@@ -5103,7 +5103,7 @@ components:
             -
               type: array
               items:
-                type: number
+                type: integer
                 format: int32
             -
               type: string
