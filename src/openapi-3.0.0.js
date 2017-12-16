@@ -1,11 +1,15 @@
 const hash = require('object-hash');
 
 function toSpec({ endpoints, regions, description }) {
-  let methods = [].concat.apply([], endpoints.map(endpoint => endpoint.methods));
+  let methods = [];
   let paths = {};
-  methods.forEach(method => {
-    let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
-    path[method.httpMethod] = method.getOperation();
+  endpoints.forEach(endpoint => {
+    endpoint.methods.forEach(method => {
+        methods.push(method);
+        let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
+        path[method.httpMethod] = method.getOperation();
+        path['x-endpoint'] = endpoint.name;
+    });
   });
 
   let schemas = {
