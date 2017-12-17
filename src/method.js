@@ -1,5 +1,6 @@
 const fs = require("fs-extra");
 
+const aliases = require('./data/dtoAliases');
 const Schema = require('./schema');
 const types = require('./types');
 
@@ -136,9 +137,11 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
 Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   // returnType may be null.
   this.returnType = Schema.readReturnType(apiBlockHtml.children[1], this.endpoint.name);
+  let aliasMap = aliases[this.endpoint.name];
   this.dtos.push(...Array.from(apiBlockHtml.children)
     .slice(2, -1)
-    .map(el => new Schema(el, this.endpoint.name)));
+    .map(el => new Schema(el, this.endpoint.name))
+    .filter(s => !aliasMap || !aliasMap[s.name]));
 };
 
 Method.prototype._handleBodyParameters = function(apiBlockHtml) {
