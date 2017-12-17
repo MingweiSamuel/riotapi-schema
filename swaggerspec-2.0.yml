@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 64f30234feb4d675c1472967352fa5f3adb55714
+  version: ad3ef12272fdd00befeb841eaea427aa7c6e2d1a
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -3453,46 +3453,6 @@ definitions:
       name:
         type: string
         x-type: string
-  league-v3.LeagueItemDTO:
-    type: object
-    title: LeagueItemDTO
-    properties:
-      rank:
-        type: string
-        x-type: string
-      hotStreak:
-        type: boolean
-        x-type: boolean
-      miniSeries:
-        $ref: '#/definitions/league-v3.MiniSeriesDTO'
-        x-type: MiniSeriesDTO
-      wins:
-        type: integer
-        format: int32
-        x-type: int
-      veteran:
-        type: boolean
-        x-type: boolean
-      losses:
-        type: integer
-        format: int32
-        x-type: int
-      freshBlood:
-        type: boolean
-        x-type: boolean
-      playerOrTeamName:
-        type: string
-        x-type: string
-      inactive:
-        type: boolean
-        x-type: boolean
-      playerOrTeamId:
-        type: string
-        x-type: string
-      leaguePoints:
-        type: integer
-        format: int32
-        x-type: int
   league-v3.MiniSeriesDTO:
     type: object
     title: MiniSeriesDTO
