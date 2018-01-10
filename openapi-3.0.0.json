@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "8d39db9a064557788d3d967fab2237638af4ee43"
+    "version": "1d66f28a7a8fb424d9bdae4f66d0b4ad10bd27b2"
   },
   "servers": [
     {
@@ -493,87 +493,6 @@
             }
           }
         ]
-      },
-      "x-endpoint": "league-v3"
-    },
-    "/lol/league/v3/leagues/by-summoner/{summonerId}": {
-      "get": {
-        "tags": [
-          "league-v3"
-        ],
-        "summary": "Get leagues in all queues for a given summoner ID.",
-        "externalDocs": {
-          "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#league-v3/GET_getAllLeaguesForSummoner"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/league-v3.LeagueListDTO",
-                    "x-type": "LeagueListDTO"
-                  },
-                  "x-type": "Set[LeagueListDTO]"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Data not found"
-          },
-          "405": {
-            "description": "Method not allowed"
-          },
-          "415": {
-            "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
-          "429": {
-            "description": "Rate limit exceeded"
-          },
-          "500": {
-            "description": "Internal server error"
-          },
-          "502": {
-            "description": "Bad gateway"
-          },
-          "503": {
-            "description": "Service unavailable"
-          },
-          "504": {
-            "description": "Gateway timeout"
-          }
-        },
-        "operationId": "league-v3.getAllLeaguesForSummoner",
-        "description": "Get leagues in all queues for a given summoner ID.",
-        "parameters": [
-          {
-            "name": "summonerId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64",
-              "x-type": "long"
-            }
-          }
-        ],
-        "deprecated": true
       },
       "x-endpoint": "league-v3"
     },
