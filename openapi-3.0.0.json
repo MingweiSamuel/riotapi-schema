@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "1d66f28a7a8fb424d9bdae4f66d0b4ad10bd27b2"
+    "version": "54a843ecb4e3c9ef28dfeb5b8e50d93513522093"
   },
   "servers": [
     {
@@ -74,6 +74,9 @@
           },
           "415": {
             "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -148,6 +151,9 @@
           },
           "415": {
             "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -234,6 +240,9 @@
           },
           "415": {
             "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -4698,11 +4707,17 @@
             "x-type": "long",
             "description": "Number of points needed to achieve next level. Zero if player reached maximum champion level for this champion."
           },
+          "tokensEarned": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The token earned for this champion to levelup."
+          },
           "championPointsSinceLastLevel": {
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "Number of points earned since current level has been achieved. Zero if player reached maximum champion level for this champion."
+            "description": "Number of points earned since current level has been achieved."
           },
           "lastPlayTime": {
             "type": "integer",
