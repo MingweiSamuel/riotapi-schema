@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: b21011fdb3a20a3ec4fb49705c7c4484cd70c69b
+  version: 2661101eabca6f6fd9dbc0fd662536497ae7b266
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -2892,6 +2892,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2928,8 +2930,8 @@ paths:
           required: true
           schema:
             type: integer
-            format: int32
-            x-type: int
+            format: int64
+            x-type: long
           description: 'The tournament ID'
     x-endpoint: tournament-stub-v3
   '/lol/tournament-stub/v3/lobby-events/by-code/{tournamentCode}':
@@ -2960,6 +2962,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -3011,6 +3015,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -3061,6 +3067,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -6447,8 +6455,12 @@ components:
             - TOURNAMENT_DRAFT
           description: "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
         allowedSummonerIds:
-          $ref: '#/components/schemas/tournament-stub-v3.SummonerIdParams'
-          x-type: SummonerIdParams
+          type: array
+          items:
+            type: integer
+            format: int64
+            x-type: long
+          x-type: 'Set[long]'
           description: 'Optional list of participants in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
         mapType:
           type: string
@@ -6462,18 +6474,6 @@ components:
           type: string
           x-type: string
           description: 'Optional string that may contain any data in any format, if specified at all. Used to denote any custom information about the game.'
-    tournament-stub-v3.SummonerIdParams:
-      type: object
-      title: SummonerIdParams
-      properties:
-        participants:
-          type: array
-          items:
-            type: integer
-            format: int64
-            x-type: long
-          x-type: 'Set[long]'
-          description: 'the tournament participants'
     tournament-stub-v3.LobbyEventDTOWrapper:
       type: object
       title: LobbyEventDTOWrapper
