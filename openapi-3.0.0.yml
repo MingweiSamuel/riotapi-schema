@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 2661101eabca6f6fd9dbc0fd662536497ae7b266
+  version: e5921f29f0a78b2696314ada051b7cc59c2d4a1f
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -235,7 +235,8 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: champion-v3.getChampions
-      description: 'Retrieve all champions.'
+      x-app-rate-limit-excluded: true
+      description: "Retrieve all champions.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
           name: freeToPlay
@@ -285,7 +286,8 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: champion-v3.getChampionsById
-      description: 'Retrieve champion by ID.'
+      x-app-rate-limit-excluded: true
+      description: "Retrieve champion by ID.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
           name: id
@@ -542,6 +544,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -602,6 +606,35 @@ paths:
             type: string
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
+        -
+          name: champListData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - allytips
+              - blurb
+              - enemytips
+              - format
+              - image
+              - info
+              - keys
+              - lore
+              - partype
+              - passive
+              - recommended
+              - skins
+              - spells
+              - stats
+              - tags
+          description: 'Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
         -
           name: tags
           in: query
@@ -668,6 +701,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -688,8 +723,8 @@ paths:
           required: true
           schema:
             type: integer
-            format: int32
-            x-type: int
+            format: int64
+            x-type: long
           description: 'Champion ID'
         -
           name: locale
@@ -729,6 +764,33 @@ paths:
               - zh_MY
               - zh_TW
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
+        -
+          name: champData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - allytips
+              - blurb
+              - enemytips
+              - image
+              - info
+              - lore
+              - partype
+              - passive
+              - recommended
+              - skins
+              - spells
+              - stats
+              - tags
+          description: 'Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
         -
           name: version
           in: query
@@ -793,6 +855,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -845,6 +909,40 @@ paths:
               - zh_MY
               - zh_TW
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
+        -
+          name: itemListData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - colloq
+              - consumeOnFull
+              - consumed
+              - depth
+              - effect
+              - from
+              - gold
+              - groups
+              - hideFromAll
+              - image
+              - inStore
+              - into
+              - maps
+              - requiredChampion
+              - sanitizedDescription
+              - specialRecipe
+              - stacks
+              - stats
+              - tags
+              - tree
+          description: 'Tags to return additional data. Only type, version, data, id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
         -
           name: version
           in: query
@@ -916,6 +1014,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -936,8 +1036,8 @@ paths:
           required: true
           schema:
             type: integer
-            format: int32
-            x-type: int
+            format: int64
+            x-type: long
           description: 'Item ID'
         -
           name: locale
@@ -1017,6 +1117,38 @@ paths:
             type: string
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
+        -
+          name: itemData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - colloq
+              - consumeOnFull
+              - consumed
+              - depth
+              - effect
+              - from
+              - gold
+              - hideFromAll
+              - image
+              - inStore
+              - into
+              - maps
+              - requiredChampion
+              - sanitizedDescription
+              - specialRecipe
+              - stacks
+              - stats
+              - tags
+          description: 'Tags to return additional data. Only id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
     x-endpoint: lol-static-data-v3
   /lol/static-data/v3/language-strings:
     get:
@@ -1046,6 +1178,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1138,6 +1272,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1180,6 +1316,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1269,6 +1407,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1349,6 +1489,26 @@ paths:
               - tree
           description: 'Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
+        -
+          name: masteryListData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - image
+              - masteryTree
+              - prereq
+              - ranks
+              - sanitizedDescription
+              - tree
+          description: 'Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
     x-endpoint: lol-static-data-v3
   '/lol/static-data/v3/masteries/{id}':
     get:
@@ -1378,6 +1538,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1398,9 +1560,28 @@ paths:
           required: true
           schema:
             type: integer
-            format: int32
-            x-type: int
+            format: int64
+            x-type: long
           description: 'Mastery ID'
+        -
+          name: masteryData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - image
+              - masteryTree
+              - prereq
+              - ranks
+              - sanitizedDescription
+          description: 'Tags to return additional data. Only id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
         -
           name: locale
           in: query
@@ -1495,6 +1676,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1584,6 +1767,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1626,6 +1811,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1687,6 +1874,24 @@ paths:
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
+          name: runeListData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - image
+              - sanitizedDescription
+              - stats
+              - tags
+          description: 'Tags to return additional data. Only type, version, data, id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
+        -
           name: tags
           in: query
           required: false
@@ -1733,6 +1938,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1753,8 +1960,8 @@ paths:
           required: true
           schema:
             type: integer
-            format: int32
-            x-type: int
+            format: int64
+            x-type: long
           description: 'Rune ID'
         -
           name: tags
@@ -1820,6 +2027,24 @@ paths:
             type: string
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
+        -
+          name: runeData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - image
+              - sanitizedDescription
+              - stats
+              - tags
+          description: 'Tags to return additional data. Only id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
     x-endpoint: lol-static-data-v3
   /lol/static-data/v3/summoner-spells:
     get:
@@ -1849,6 +2074,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1909,6 +2136,39 @@ paths:
             type: string
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
+        -
+          name: spellListData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - cooldown
+              - cooldownBurn
+              - cost
+              - costBurn
+              - costType
+              - effect
+              - effectBurn
+              - image
+              - key
+              - leveltip
+              - maxrank
+              - modes
+              - range
+              - rangeBurn
+              - resource
+              - sanitizedDescription
+              - sanitizedTooltip
+              - tooltip
+              - vars
+          description: 'Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
         -
           name: dataById
           in: query
@@ -1979,6 +2239,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1999,8 +2261,8 @@ paths:
           required: true
           schema:
             type: integer
-            format: int32
-            x-type: int
+            format: int64
+            x-type: long
           description: 'Summoner spell ID'
         -
           name: locale
@@ -2048,6 +2310,39 @@ paths:
             type: string
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
+        -
+          name: spellData
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'Set[string]'
+            enum:
+              - all
+              - cooldown
+              - cooldownBurn
+              - cost
+              - costBurn
+              - costType
+              - effect
+              - effectBurn
+              - image
+              - key
+              - leveltip
+              - maxrank
+              - modes
+              - range
+              - rangeBurn
+              - resource
+              - sanitizedDescription
+              - sanitizedTooltip
+              - tooltip
+              - vars
+          description: 'Tags to return additional data. Only id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
+          explode: true
         -
           name: tags
           in: query
@@ -2113,6 +2408,8 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2849,7 +3146,8 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: third-party-code-v3.getThirdPartyCodeBySummonerId
-      description: 'Get third party code for a given summoner ID.'
+      x-app-rate-limit-excluded: true
+      description: "Get third party code for a given summoner ID.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
       parameters:
         -
           name: summonerId
@@ -2912,7 +3210,7 @@ paths:
             schema:
               $ref: '#/components/schemas/tournament-stub-v3.TournamentCodeParameters'
               x-type: TournamentCodeParameters
-        required: false
+        required: true
         description: 'Metadata for the generated code'
       parameters:
         -
