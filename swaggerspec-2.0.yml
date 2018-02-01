@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 81a76172557a21d5b27f5a5c613363980dec3316
+  version: 71e9719c987d67f2b76b6542d6d2d13ca7603c17
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -2564,17 +2564,6 @@ paths:
           format: int64
           x-type: long
         -
-          name: queue
-          in: query
-          required: false
-          description: 'Set of queue IDs for which to filtering matchlist.'
-          type: array
-          items:
-            type: integer
-            format: int32
-            x-type: int
-          x-type: 'Set[int]'
-        -
           name: endTime
           in: query
           required: false
@@ -2599,21 +2588,10 @@ paths:
           format: int64
           x-type: long
         -
-          name: season
-          in: query
-          required: false
-          description: 'Set of season IDs for which to filtering matchlist.'
-          type: array
-          items:
-            type: integer
-            format: int32
-            x-type: int
-          x-type: 'Set[int]'
-        -
           name: champion
           in: query
           required: false
-          description: 'Set of champion IDs for which to filtering matchlist.'
+          description: 'Set of champion IDs for filtering the matchlist.'
           type: array
           items:
             type: integer
@@ -2628,6 +2606,28 @@ paths:
           type: integer
           format: int32
           x-type: int
+        -
+          name: queue
+          in: query
+          required: false
+          description: 'Set of queue IDs for filtering the matchlist.'
+          type: array
+          items:
+            type: integer
+            format: int32
+            x-type: int
+          x-type: 'Set[int]'
+        -
+          name: season
+          in: query
+          required: false
+          description: 'Set of season IDs for filtering the matchlist.'
+          type: array
+          items:
+            type: integer
+            format: int32
+            x-type: int
+          x-type: 'Set[int]'
       produces:
         - application/json
   '/lol/match/v3/matchlists/by-account/{accountId}/recent':
