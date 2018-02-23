@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "8a91a85d31c25387cb0f97c08a680f4bae38a5e3"
+    "version": "7624057f7adf6a1d6d17ef10c77fa53f6eec4d9c"
   },
   "servers": [
     {
@@ -2352,6 +2352,384 @@
       },
       "x-endpoint": "lol-static-data-v3"
     },
+    "/lol/static-data/v3/reforged-rune-paths": {
+      "get": {
+        "tags": [
+          "lol-static-data-v3"
+        ],
+        "summary": "Retrieves reforged rune path list",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-static-data-v3/GET_getReforgedRunePaths"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/lol-static-data-v3.ReforgedRunePathDto",
+                    "x-type": "ReforgedRunePathDto"
+                  },
+                  "x-type": "List[ReforgedRunePathDto]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-static-data-v3.getReforgedRunePaths",
+        "x-app-rate-limit-excluded": true,
+        "description": "Retrieves reforged rune path list\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint."
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used."
+          }
+        ]
+      },
+      "x-endpoint": "lol-static-data-v3"
+    },
+    "/lol/static-data/v3/reforged-rune-paths/{id}": {
+      "get": {
+        "tags": [
+          "lol-static-data-v3"
+        ],
+        "summary": "Retrieves reforged rune path by ID",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-static-data-v3/GET_getReforgedRunePathById"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/lol-static-data-v3.ReforgedRunePathDto",
+                  "x-type": "ReforgedRunePathDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-static-data-v3.getReforgedRunePathById",
+        "x-app-rate-limit-excluded": true,
+        "description": "Retrieves reforged rune path by ID\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "description": "Reforged rune path ID"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint."
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used."
+          }
+        ]
+      },
+      "x-endpoint": "lol-static-data-v3"
+    },
+    "/lol/static-data/v3/reforged-runes": {
+      "get": {
+        "tags": [
+          "lol-static-data-v3"
+        ],
+        "summary": "Retrieves reforged rune list",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-static-data-v3/GET_getReforgedRunes"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/lol-static-data-v3.ReforgedRuneDto",
+                    "x-type": "ReforgedRuneDto"
+                  },
+                  "x-type": "List[ReforgedRuneDto]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-static-data-v3.getReforgedRunes",
+        "x-app-rate-limit-excluded": true,
+        "description": "Retrieves reforged rune list\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint."
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used."
+          }
+        ]
+      },
+      "x-endpoint": "lol-static-data-v3"
+    },
+    "/lol/static-data/v3/reforged-runes/{id}": {
+      "get": {
+        "tags": [
+          "lol-static-data-v3"
+        ],
+        "summary": "Retrieves reforged rune by ID",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-static-data-v3/GET_getReforgedRuneById"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/lol-static-data-v3.ReforgedRuneDto",
+                  "x-type": "ReforgedRuneDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-static-data-v3.getReforgedRuneById",
+        "x-app-rate-limit-excluded": true,
+        "description": "Retrieves reforged rune by ID\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "description": "Reforged rune ID"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint."
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used."
+          }
+        ]
+      },
+      "x-endpoint": "lol-static-data-v3"
+    },
     "/lol/static-data/v3/runes": {
       "get": {
         "tags": [
@@ -3087,6 +3465,83 @@
             },
             "description": "Tags to return additional data. Only id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
             "explode": true
+          }
+        ]
+      },
+      "x-endpoint": "lol-static-data-v3"
+    },
+    "/lol/static-data/v3/tarball-links": {
+      "get": {
+        "tags": [
+          "lol-static-data-v3"
+        ],
+        "summary": "Retrieves full tarball link",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-static-data-v3/GET_getFullTarballLink"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "x-type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "422": {
+            "description": "Player exists, but hasn't played since match history collection began"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-static-data-v3.getFullTarballLink",
+        "x-app-rate-limit-excluded": true,
+        "description": "Retrieves full tarball link\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "parameters": [
+          {
+            "name": "version",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "Patch version for returned data. If not specified, the latest version is used. List of valid versions can be obtained from the /versions endpoint."
           }
         ]
       },
@@ -5290,327 +5745,62 @@
           }
         }
       },
-      "lol-static-data-v3.ChampionListDto": {
+      "lol-static-data-v3.ReforgedRunePathDto": {
         "type": "object",
-        "title": "ChampionListDto",
+        "title": "ReforgedRunePathDto",
         "properties": {
-          "keys": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "Map[string, string]"
-          },
-          "data": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "$ref": "#/components/schemas/lol-static-data-v3.ChampionDto",
-              "x-type": "ChampionDto"
-            },
-            "x-type": "Map[string, ChampionDto]"
-          },
-          "version": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "format": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains champion list data."
-      },
-      "lol-static-data-v3.ChampionDto": {
-        "type": "object",
-        "title": "ChampionDto",
-        "properties": {
-          "info": {
-            "$ref": "#/components/schemas/lol-static-data-v3.InfoDto",
-            "x-type": "InfoDto"
-          },
-          "enemytips": {
+          "slots": {
             "type": "array",
             "items": {
-              "type": "string",
-              "x-type": "string"
+              "$ref": "#/components/schemas/lol-static-data-v3.ReforgedRuneSlotDto",
+              "x-type": "ReforgedRuneSlotDto"
             },
-            "x-type": "List[string]"
+            "x-type": "List[ReforgedRuneSlotDto]"
           },
-          "stats": {
-            "$ref": "#/components/schemas/lol-static-data-v3.StatsDto",
-            "x-type": "StatsDto"
-          },
-          "name": {
+          "icon": {
             "type": "string",
             "x-type": "string"
           },
-          "title": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "partype": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "skins": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.SkinDto",
-              "x-type": "SkinDto"
-            },
-            "x-type": "List[SkinDto]"
-          },
-          "passive": {
-            "$ref": "#/components/schemas/lol-static-data-v3.PassiveDto",
-            "x-type": "PassiveDto"
-          },
-          "recommended": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.RecommendedDto",
-              "x-type": "RecommendedDto"
-            },
-            "x-type": "List[RecommendedDto]"
-          },
-          "allytips": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
           },
           "key": {
             "type": "string",
             "x-type": "string"
           },
-          "lore": {
+          "name": {
             "type": "string",
             "x-type": "string"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "blurb": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "spells": {
+          }
+        },
+        "description": "This object contains reforged rune path data."
+      },
+      "lol-static-data-v3.ReforgedRuneSlotDto": {
+        "type": "object",
+        "title": "ReforgedRuneSlotDto",
+        "properties": {
+          "runes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.ChampionSpellDto",
-              "x-type": "ChampionSpellDto"
+              "$ref": "#/components/schemas/lol-static-data-v3.ReforgedRuneDto",
+              "x-type": "ReforgedRuneDto"
             },
-            "x-type": "List[ChampionSpellDto]"
+            "x-type": "List[ReforgedRuneDto]"
           }
         },
-        "description": "This object contains champion data."
+        "description": "This object contains reforged rune slot data."
       },
-      "lol-static-data-v3.InfoDto": {
+      "lol-static-data-v3.ReforgedRuneDto": {
         "type": "object",
-        "title": "InfoDto",
+        "title": "ReforgedRuneDto",
         "properties": {
-          "difficulty": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "attack": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "defense": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "magic": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          }
-        },
-        "description": "This object contains champion information."
-      },
-      "lol-static-data-v3.StatsDto": {
-        "type": "object",
-        "title": "StatsDto",
-        "properties": {
-          "armorperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "hpperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "attackdamage": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "mpperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "attackspeedoffset": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "armor": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "hp": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "hpregenperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "spellblock": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "attackrange": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "movespeed": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "attackdamageperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "mpregenperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "mp": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "spellblockperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "crit": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "mpregen": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "attackspeedperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "hpregen": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "critperlevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          }
-        },
-        "description": "This object contains champion stats data."
-      },
-      "lol-static-data-v3.ImageDto": {
-        "type": "object",
-        "title": "ImageDto",
-        "properties": {
-          "full": {
+          "runePathName": {
             "type": "string",
             "x-type": "string"
           },
-          "group": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "sprite": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "h": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "w": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "y": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "x": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          }
-        },
-        "description": "This object contains image data."
-      },
-      "lol-static-data-v3.SkinDto": {
-        "type": "object",
-        "title": "SkinDto",
-        "properties": {
-          "num": {
+          "runePathId": {
             "type": "integer",
             "format": "int32",
             "x-type": "int"
@@ -5623,1636 +5813,25 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int"
-          }
-        },
-        "description": "This object contains champion skin data."
-      },
-      "lol-static-data-v3.PassiveDto": {
-        "type": "object",
-        "title": "PassiveDto",
-        "properties": {
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "sanitizedDescription": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "name": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "description": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains champion passive data."
-      },
-      "lol-static-data-v3.RecommendedDto": {
-        "type": "object",
-        "title": "RecommendedDto",
-        "properties": {
-          "map": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "blocks": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.BlockDto",
-              "x-type": "BlockDto"
-            },
-            "x-type": "List[BlockDto]"
-          },
-          "champion": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "title": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "priority": {
-            "type": "boolean",
-            "x-type": "boolean"
-          },
-          "mode": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains champion recommended data."
-      },
-      "lol-static-data-v3.BlockDto": {
-        "type": "object",
-        "title": "BlockDto",
-        "properties": {
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.BlockItemDto",
-              "x-type": "BlockItemDto"
-            },
-            "x-type": "List[BlockItemDto]"
-          },
-          "recMath": {
-            "type": "boolean",
-            "x-type": "boolean"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains champion recommended block data."
-      },
-      "lol-static-data-v3.BlockItemDto": {
-        "type": "object",
-        "title": "BlockItemDto",
-        "properties": {
-          "count": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          }
-        },
-        "description": "This object contains champion recommended block item data."
-      },
-      "lol-static-data-v3.ChampionSpellDto": {
-        "type": "object",
-        "title": "ChampionSpellDto",
-        "properties": {
-          "cooldownBurn": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "resource": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "leveltip": {
-            "$ref": "#/components/schemas/lol-static-data-v3.LevelTipDto",
-            "x-type": "LevelTipDto"
-          },
-          "vars": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.SpellVarsDto",
-              "x-type": "SpellVarsDto"
-            },
-            "x-type": "List[SpellVarsDto]"
-          },
-          "costType": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "sanitizedDescription": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "sanitizedTooltip": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "effect": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "format": "double"
-              }
-            },
-            "description": "This field is a List of List of Double."
-          },
-          "tooltip": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "maxrank": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "costBurn": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "rangeBurn": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "range": {
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "self"
-                ]
-              }
-            ],
-            "description": "This field is either a List of Integer or the String 'self' for spells that target one's own champion."
-          },
-          "cooldown": {
-            "type": "array",
-            "items": {
-              "type": "number",
-              "format": "double",
-              "x-type": "double"
-            },
-            "x-type": "List[double]"
-          },
-          "cost": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32",
-              "x-type": "int"
-            },
-            "x-type": "List[int]"
           },
           "key": {
             "type": "string",
             "x-type": "string"
           },
-          "description": {
+          "shortDesc": {
             "type": "string",
             "x-type": "string"
           },
-          "effectBurn": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
+          "longDesc": {
+            "type": "string",
+            "x-type": "string"
           },
-          "altimages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-              "x-type": "ImageDto"
-            },
-            "x-type": "List[ImageDto]"
-          },
-          "name": {
+          "icon": {
             "type": "string",
             "x-type": "string"
           }
         },
-        "description": "This object contains champion spell data."
-      },
-      "lol-static-data-v3.LevelTipDto": {
-        "type": "object",
-        "title": "LevelTipDto",
-        "properties": {
-          "effect": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "label": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          }
-        },
-        "description": "This object contains champion level tip data."
-      },
-      "lol-static-data-v3.SpellVarsDto": {
-        "type": "object",
-        "title": "SpellVarsDto",
-        "properties": {
-          "ranksWith": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "dyn": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "link": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "coeff": {
-            "type": "array",
-            "items": {
-              "type": "number",
-              "format": "double",
-              "x-type": "double"
-            },
-            "x-type": "List[double]"
-          },
-          "key": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains spell vars data."
-      },
-      "lol-static-data-v3.ItemListDto": {
-        "type": "object",
-        "title": "ItemListDto",
-        "properties": {
-          "data": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "$ref": "#/components/schemas/lol-static-data-v3.ItemDto",
-              "x-type": "ItemDto"
-            },
-            "x-type": "Map[string, ItemDto]"
-          },
-          "version": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "tree": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.ItemTreeDto",
-              "x-type": "ItemTreeDto"
-            },
-            "x-type": "List[ItemTreeDto]"
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.GroupDto",
-              "x-type": "GroupDto"
-            },
-            "x-type": "List[GroupDto]"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains item list data."
-      },
-      "lol-static-data-v3.ItemTreeDto": {
-        "type": "object",
-        "title": "ItemTreeDto",
-        "properties": {
-          "header": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          }
-        },
-        "description": "This object contains item tree data."
-      },
-      "lol-static-data-v3.ItemDto": {
-        "type": "object",
-        "title": "ItemDto",
-        "properties": {
-          "gold": {
-            "$ref": "#/components/schemas/lol-static-data-v3.GoldDto",
-            "x-type": "GoldDto"
-          },
-          "plaintext": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "hideFromAll": {
-            "type": "boolean",
-            "x-type": "boolean"
-          },
-          "inStore": {
-            "type": "boolean",
-            "x-type": "boolean"
-          },
-          "into": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "stats": {
-            "$ref": "#/components/schemas/lol-static-data-v3.InventoryDataStatsDto",
-            "x-type": "InventoryDataStatsDto"
-          },
-          "colloq": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "maps": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "type": "boolean",
-              "x-type": "boolean"
-            },
-            "x-type": "Map[string, boolean]"
-          },
-          "specialRecipe": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "description": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "effect": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "Map[string, string]"
-          },
-          "requiredChampion": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "from": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "group": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "consumeOnFull": {
-            "type": "boolean",
-            "x-type": "boolean"
-          },
-          "name": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "consumed": {
-            "type": "boolean",
-            "x-type": "boolean"
-          },
-          "sanitizedDescription": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "depth": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "stacks": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          }
-        },
-        "description": "This object contains item data."
-      },
-      "lol-static-data-v3.GoldDto": {
-        "type": "object",
-        "title": "GoldDto",
-        "properties": {
-          "sell": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "base": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "purchasable": {
-            "type": "boolean",
-            "x-type": "boolean"
-          }
-        },
-        "description": "This object contains item gold data."
-      },
-      "lol-static-data-v3.InventoryDataStatsDto": {
-        "type": "object",
-        "title": "InventoryDataStatsDto",
-        "properties": {
-          "PercentCritDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentSpellBlockMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentHPRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMovementSpeedMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatSpellBlockMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatCritDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatEnergyPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentLifeStealMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMPPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMovementSpeedMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentAttackSpeedMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatBlockMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentBlockMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatEnergyRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentSpellVampMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMPRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentDodgeMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatAttackSpeedMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatArmorMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatHPRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMagicDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMPPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMagicDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMPRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentPhysicalDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatPhysicalDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentHPPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentArmorMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentCritChanceMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentEXPBonus": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatHPPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatCritChanceMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatEXPBonus": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          }
-        },
-        "description": "This object contains stats for inventory (e.g., runes and items)."
-      },
-      "lol-static-data-v3.GroupDto": {
-        "type": "object",
-        "title": "GroupDto",
-        "properties": {
-          "MaxGroupOwnable": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "key": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains item group data."
-      },
-      "lol-static-data-v3.LanguageStringsDto": {
-        "type": "object",
-        "title": "LanguageStringsDto",
-        "properties": {
-          "data": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "Map[string, string]"
-          },
-          "version": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains language strings data."
-      },
-      "lol-static-data-v3.MapDataDto": {
-        "type": "object",
-        "title": "MapDataDto",
-        "properties": {
-          "data": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "$ref": "#/components/schemas/lol-static-data-v3.MapDetailsDto",
-              "x-type": "MapDetailsDto"
-            },
-            "x-type": "Map[string, MapDetailsDto]"
-          },
-          "version": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains map data."
-      },
-      "lol-static-data-v3.MapDetailsDto": {
-        "type": "object",
-        "title": "MapDetailsDto",
-        "properties": {
-          "mapName": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "mapId": {
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          },
-          "unpurchasableItemList": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int64",
-              "x-type": "long"
-            },
-            "x-type": "List[long]"
-          }
-        },
-        "description": "This object contains map details data."
-      },
-      "lol-static-data-v3.MasteryListDto": {
-        "type": "object",
-        "title": "MasteryListDto",
-        "properties": {
-          "data": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "$ref": "#/components/schemas/lol-static-data-v3.MasteryDto",
-              "x-type": "MasteryDto"
-            },
-            "x-type": "Map[string, MasteryDto]"
-          },
-          "version": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "tree": {
-            "$ref": "#/components/schemas/lol-static-data-v3.MasteryTreeDto",
-            "x-type": "MasteryTreeDto"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains mastery list data."
-      },
-      "lol-static-data-v3.MasteryTreeDto": {
-        "type": "object",
-        "title": "MasteryTreeDto",
-        "properties": {
-          "Resolve": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.MasteryTreeListDto",
-              "x-type": "MasteryTreeListDto"
-            },
-            "x-type": "List[MasteryTreeListDto]"
-          },
-          "Ferocity": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.MasteryTreeListDto",
-              "x-type": "MasteryTreeListDto"
-            },
-            "x-type": "List[MasteryTreeListDto]"
-          },
-          "Cunning": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.MasteryTreeListDto",
-              "x-type": "MasteryTreeListDto"
-            },
-            "x-type": "List[MasteryTreeListDto]"
-          }
-        },
-        "description": "This object contains mastery tree data."
-      },
-      "lol-static-data-v3.MasteryTreeListDto": {
-        "type": "object",
-        "title": "MasteryTreeListDto",
-        "properties": {
-          "masteryTreeItems": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.MasteryTreeItemDto",
-              "x-type": "MasteryTreeItemDto"
-            },
-            "x-type": "List[MasteryTreeItemDto]"
-          }
-        },
-        "description": "This object contains mastery tree list data."
-      },
-      "lol-static-data-v3.MasteryTreeItemDto": {
-        "type": "object",
-        "title": "MasteryTreeItemDto",
-        "properties": {
-          "masteryId": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "prereq": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains mastery tree item data."
-      },
-      "lol-static-data-v3.MasteryDto": {
-        "type": "object",
-        "title": "MasteryDto",
-        "properties": {
-          "prereq": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "masteryTree": {
-            "type": "string",
-            "x-type": "string",
-            "enum": [
-              "Cunning",
-              "Ferocity",
-              "Resolve"
-            ],
-            "description": "(Legal values:  Cunning,  Ferocity,  Resolve)"
-          },
-          "name": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "ranks": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "sanitizedDescription": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "description": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          }
-        },
-        "description": "This object contains mastery data."
-      },
-      "lol-static-data-v3.ProfileIconDataDto": {
-        "type": "object",
-        "title": "ProfileIconDataDto",
-        "properties": {
-          "data": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "$ref": "#/components/schemas/lol-static-data-v3.ProfileIconDetailsDto",
-              "x-type": "ProfileIconDetailsDto"
-            },
-            "x-type": "Map[string, ProfileIconDetailsDto]"
-          },
-          "version": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains profile icon data."
-      },
-      "lol-static-data-v3.ProfileIconDetailsDto": {
-        "type": "object",
-        "title": "ProfileIconDetailsDto",
-        "properties": {
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          }
-        },
-        "description": "This object contains profile icon details data."
-      },
-      "lol-static-data-v3.RealmDto": {
-        "type": "object",
-        "title": "RealmDto",
-        "properties": {
-          "lg": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Legacy script mode for IE6 or older."
-          },
-          "dd": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Latest changed version of Dragon Magic."
-          },
-          "l": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Default language for this realm."
-          },
-          "n": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "Map[string, string]",
-            "description": "Latest changed version for each data type listed."
-          },
-          "profileiconmax": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "description": "Special behavior number identifying the largest profile icon ID that can be used under 500. Any profile icon that is requested between this number and 500 should be mapped to 0."
-          },
-          "store": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Additional API data drawn from other sources that may be related to Data Dragon functionality."
-          },
-          "v": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Current version of this file for this realm."
-          },
-          "cdn": {
-            "type": "string",
-            "x-type": "string",
-            "description": "The base CDN URL."
-          },
-          "css": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Latest changed version of Dragon Magic's CSS file."
-          }
-        },
-        "description": "This object contains realm data."
-      },
-      "lol-static-data-v3.RuneListDto": {
-        "type": "object",
-        "title": "RuneListDto",
-        "properties": {
-          "data": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "$ref": "#/components/schemas/lol-static-data-v3.RuneDto",
-              "x-type": "RuneDto"
-            },
-            "x-type": "Map[string, RuneDto]"
-          },
-          "version": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains rune list data."
-      },
-      "lol-static-data-v3.RuneDto": {
-        "type": "object",
-        "title": "RuneDto",
-        "properties": {
-          "stats": {
-            "$ref": "#/components/schemas/lol-static-data-v3.RuneStatsDto",
-            "x-type": "RuneStatsDto"
-          },
-          "name": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "sanitizedDescription": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "rune": {
-            "$ref": "#/components/schemas/lol-static-data-v3.MetaDataDto",
-            "x-type": "MetaDataDto"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "description": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains rune data."
-      },
-      "lol-static-data-v3.RuneStatsDto": {
-        "type": "object",
-        "title": "RuneStatsDto",
-        "properties": {
-          "PercentTimeDeadModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentArmorPenetrationModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentCritDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentSpellBlockMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentHPRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMovementSpeedMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatSpellBlockMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatEnergyRegenModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatEnergyPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMagicPenetrationModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentLifeStealMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMPPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentCooldownMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMagicPenetrationMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatArmorPenetrationModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMovementSpeedMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatTimeDeadModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatArmorModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentAttackSpeedMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatDodgeModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMagicDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentBlockMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatDodgeMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatEnergyRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatHPModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentAttackSpeedModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentSpellVampMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMPRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentHPPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentDodgeMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatAttackSpeedMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatArmorMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMagicDamageModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatHPRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentPhysicalDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatCritChanceModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatSpellBlockModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentTimeDeadMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatBlockMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMPPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMagicDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMPRegenMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMovementSpeedModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentCooldownModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMPModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatEnergyModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatPhysicalDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatHPRegenModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatCritDamageMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentArmorMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMagicPenetrationMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentCritChanceMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatPhysicalDamageModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentArmorPenetrationMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentEXPBonus": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMPRegenModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "PercentMagicPenetrationModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatTimeDeadMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatMovementSpeedModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatGoldPer10Mod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatArmorPenetrationMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatCritDamageModPerLevel": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatHPPoolMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatCritChanceMod": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          },
-          "FlatEXPBonus": {
-            "type": "number",
-            "format": "double",
-            "x-type": "double"
-          }
-        },
-        "description": "This object contains stats for runes."
-      },
-      "lol-static-data-v3.MetaDataDto": {
-        "type": "object",
-        "title": "MetaDataDto",
-        "properties": {
-          "tier": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "isRune": {
-            "type": "boolean",
-            "x-type": "boolean"
-          }
-        },
-        "description": "This object contains meta data."
-      },
-      "lol-static-data-v3.SummonerSpellListDto": {
-        "type": "object",
-        "title": "SummonerSpellListDto",
-        "properties": {
-          "data": {
-            "type": "object",
-            "x-key": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "additionalProperties": {
-              "$ref": "#/components/schemas/lol-static-data-v3.SummonerSpellDto",
-              "x-type": "SummonerSpellDto"
-            },
-            "x-type": "Map[string, SummonerSpellDto]"
-          },
-          "version": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "type": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "description": "This object contains summoner spell list data."
-      },
-      "lol-static-data-v3.SummonerSpellDto": {
-        "type": "object",
-        "title": "SummonerSpellDto",
-        "properties": {
-          "vars": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-static-data-v3.SpellVarsDto",
-              "x-type": "SpellVarsDto"
-            },
-            "x-type": "List[SpellVarsDto]"
-          },
-          "image": {
-            "$ref": "#/components/schemas/lol-static-data-v3.ImageDto",
-            "x-type": "ImageDto"
-          },
-          "costBurn": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "cooldown": {
-            "type": "array",
-            "items": {
-              "type": "number",
-              "format": "double",
-              "x-type": "double"
-            },
-            "x-type": "List[double]"
-          },
-          "effectBurn": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "cooldownBurn": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "tooltip": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "maxrank": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "rangeBurn": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "description": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "effect": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "format": "double"
-              }
-            },
-            "description": "This field is a List of List of Double."
-          },
-          "key": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "leveltip": {
-            "$ref": "#/components/schemas/lol-static-data-v3.LevelTipDto",
-            "x-type": "LevelTipDto"
-          },
-          "modes": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
-          },
-          "resource": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "name": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "costType": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "sanitizedDescription": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "sanitizedTooltip": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "range": {
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              {
-                "type": "string",
-                "enum": [
-                  "self"
-                ]
-              }
-            ],
-            "description": "This field is either a List of Integer or the String 'self' for spells that target one's own champion."
-          },
-          "cost": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32",
-              "x-type": "int"
-            },
-            "x-type": "List[int]"
-          },
-          "summonerLevel": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          }
-        },
-        "description": "This object contains summoner spell data."
+        "description": "This object contains reforged rune data."
       },
       "lol-status-v3.ShardStatus": {
         "type": "object",
