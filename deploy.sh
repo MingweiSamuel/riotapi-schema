@@ -54,7 +54,7 @@ fi
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
 git add -A .
-if ! git commit -m "Deploy to GitHub Pages: ${SHA}"; then
+if ! git commit -m "Deploy to GitHub Pages on $(date -Iseconds), script hash ${SHA}."; then
     echo "No changes to the output on this push; exiting. (Nothing to commit)."
     exit 0
 fi
