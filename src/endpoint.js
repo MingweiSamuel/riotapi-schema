@@ -8,8 +8,9 @@ function Endpoint(dom, desc) {
   this.name = dom.window.document.body.children[0].children[0].getAttribute('api-name');
   this.id = dom.window.document.body.children[0].children[0].id.replace(/^resource_/, '');
 
-  this.dtos = null;
   this.methods = null;
+
+  this._allDtos = null;
 
   this._compile();
 }
@@ -48,7 +49,21 @@ Endpoint.prototype._compile = function() {
       allDtos[dto.name] = dto;
     }
   }
-  this.dtos = Object.values(allDtos);
-}
+  this._allDtos = allDtos;
+};
+
+Endpoint.prototype.get_dtos = function() {
+  return Object.values(this._allDtos);
+};
+
+Endpoint.prototype.list_missing_dtos = function() {
+  return Object.values(this._allDtos)
+    .flatMap(dto => Object.values(dto.properties))
+    .map(prop => prop.$ref)
+    .filter(ref => ref)
+    .map(ref => ref.split('.').pop())
+    .filter(name => !this._allDtos[name])
+    .forEach(console.log);
+};
 
 module.exports = Endpoint;

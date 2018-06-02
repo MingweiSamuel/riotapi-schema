@@ -55,6 +55,7 @@ function Schema(schemaHtml, endpointName) {
 
   });
 }
+
 /**
  * Returns true if `this` and `other` have the same name and
  * `this` is a (possibly non-strict) subset of `other`.

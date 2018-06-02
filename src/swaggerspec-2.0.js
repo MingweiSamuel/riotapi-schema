@@ -4,7 +4,7 @@ const hash = require('object-hash');
 const MIME_JSON = 'application/json';
 
 function toSpec({ endpoints, regions, description }) {
-  let methods = [].concat.apply([], endpoints.map(endpoint => endpoint.methods));
+  let methods = endpoints.flatMap(endpoint => endpoint.methods);
   let paths = {};
   methods.forEach(method => {
     let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
@@ -69,19 +69,20 @@ function toSpec({ endpoints, regions, description }) {
       }
     }
   };
-  methods.forEach(method => {
-    method.dtos.forEach(dto => {
-      let schema = schemas[method.endpoint.name + '.' + dto.name] = dto.toSchema();
-      Object.values(schema.properties).forEach(prop => {
-        // Override anyOf for v2.0.
-        if (!prop.type && prop.anyOf) {
-          // Use first anyOf value.
-          Object.assign(prop, prop.anyOf[0]);
-          delete prop.anyOf;
-        }
-      });
-    });
-  });
+  endpoints.forEach(endpoint =>
+    endpoint.get_dtos()
+      .forEach(dto => {
+        let schema = schemas[endpoint.name + '.' + dto.name] = dto.toSchema();
+        Object.values(schema.properties).forEach(prop => {
+          // Override anyOf for v2.0.
+          if (!prop.type && prop.anyOf) {
+            // Use first anyOf value.
+            Object.assign(prop, prop.anyOf[0]);
+            delete prop.anyOf;
+          }
+        });
+      })
+  );
 
   let spec = {
     swagger: "2.0",

@@ -8,6 +8,8 @@ const req = (function(req) {
 const process = require('process');
 const { JSDOM } = require("jsdom");
 
+require('./arrayFill');
+
 const Endpoint = require('./endpoint');
 const Region = require('./region');
 
@@ -42,6 +44,10 @@ module.exports = function(rootDir) {
                 .then(o => new JSDOM(o.html))
                 .then(dom => new Endpoint(dom, desc));
             }));
+        })
+        .then(endpoints => {
+          endpoints.forEach(e => e.list_missing_dtos());
+          return endpoints;
         });
 
       let regions = req(baseUrl + 'regional-endpoints.html')
@@ -57,12 +63,12 @@ module.exports = function(rootDir) {
       return Promise.props({ endpoints, regions });
     })
     .then(data => {
-      let names = [].concat.apply([], specs.map(s => [
+      let names = specs.flatMap(s => [
         s.name + '.json',
         s.name + '.min.json',
         s.name + '.yml',
         s.name + '.min.yml'
-      ]));
+      ]);
       data.description = `
 OpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.
 ## Download OpenAPI Spec File

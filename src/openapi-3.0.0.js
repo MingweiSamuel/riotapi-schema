@@ -1,14 +1,12 @@
 const hash = require('object-hash');
 
 function toSpec({ endpoints, regions, description }) {
-  let methods = [];
   let paths = {};
   endpoints.forEach(endpoint => {
     endpoint.methods.forEach(method => {
-        methods.push(method);
-        let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
-        path[method.httpMethod] = method.getOperation();
-        path['x-endpoint'] = endpoint.name;
+      let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
+      path[method.httpMethod] = method.getOperation();
+      path['x-endpoint'] = endpoint.name;
     });
   });
 
@@ -30,11 +28,10 @@ function toSpec({ endpoints, regions, description }) {
       }
     }
   };
-  methods.forEach(method => {
-    method.dtos.forEach(dto => {
-      schemas[method.endpoint.name + '.' + dto.name] = dto.toSchema();
-    });
-  });
+  endpoints.forEach(endpoint =>
+    endpoint.get_dtos()
+      .forEach(dto => schemas[endpoint.name + '.' + dto.name] = dto.toSchema())
+  );
 
   let spec = {
     openapi: "3.0.0",
