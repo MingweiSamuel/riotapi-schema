@@ -112,7 +112,7 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
     case 'path parameters':
     case 'query parameters':
       let inType = type.split(/\s+/, 1)[0];
-      let params = new Schema(apiBlockHtml, this.endpoint.name).toParameters(inType);
+      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name).toParameters(inType);
       this.params.push(...params);
       break;
     case 'body parameters':
@@ -140,7 +140,7 @@ Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   let aliasMap = aliases[this.endpoint.name];
   this.dtos.push(...Array.from(apiBlockHtml.children)
     .slice(2, -1)
-    .map(el => new Schema(el, this.endpoint.name))
+    .map(el => Schema.fromHtml(el, this.endpoint.name))
     .filter(s => !aliasMap || !aliasMap[s.name]));
 };
 
@@ -155,7 +155,7 @@ Method.prototype._handleBodyParameters = function(apiBlockHtml) {
 
   let block = apiBlockHtml;
   while ((block = block.nextElementSibling) && block.classList.contains('block')) {
-    this.dtos.push(new Schema(block, this.endpoint.name));
+    this.dtos.push(Schema.fromHtml(block, this.endpoint.name));
   }
 };
 

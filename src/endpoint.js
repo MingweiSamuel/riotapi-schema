@@ -1,6 +1,7 @@
 const fs = require("fs-extra");
 
-const Method = require('./method')
+const Method = require('./method');
+const Schema = require('./schema');
 
 function Endpoint(dom, desc) {
   this.dom = dom;
@@ -42,7 +43,7 @@ Endpoint.prototype._compile = function() {
           allDtos[dto.name] = dto
         else {
           console.error('  CONFLICTING DTO: ' + dto.name);
-          console.error('existing', existing, 'new', dto);
+          console.error('  existing', existing, 'new', dto);
         }
         continue;
       }
@@ -57,13 +58,27 @@ Endpoint.prototype.get_dtos = function() {
 };
 
 Endpoint.prototype.list_missing_dtos = function() {
+  //TODO: Doesn't catch if "Return value:" type is missing.
   return Object.values(this._allDtos)
     .flatMap(dto => Object.values(dto.properties))
-    .map(prop => prop.$ref)
+    .map(prop => {
+      // Get $ref (or undefined).
+      if (prop.$ref)
+        return prop.$ref;
+      if ('array' === prop.type)
+        return prop.items.$ref;
+      if ('object' === prop.type)
+        return prop.additionalProperties.$ref
+    })
     .filter(ref => ref)
     .map(ref => ref.split('.').pop())
-    .filter(name => !this._allDtos[name])
-    .forEach(console.log);
+    .filter(name => !this._allDtos[name]);
+};
+
+Endpoint.prototype.add_old_dto = function(oldDto) {
+  if (this._allDtos[oldDto.title])
+    throw Error('DTO with name ' + oldDto.title + 'already exists!');
+  this._allDtos[oldDto.name] = new Schema(this.name, oldDto.title, oldDto.description, oldDto.properties);
 };
 
 module.exports = Endpoint;

@@ -6,6 +6,7 @@ const req = (function(req) {
 })(require("request-promise-native"));
 
 const process = require('process');
+const childProcess = require('child-process-es6-promise')
 const { JSDOM } = require("jsdom");
 
 require('./arrayFill');
@@ -17,21 +18,21 @@ const openapi_300 = require('./openapi-3.0.0');
 const swaggerspec_20 = require('./swaggerspec-2.0');
 const specs = [ openapi_300, swaggerspec_20 ];
 
-const baseUrl = 'https://developer.riotgames.com/';
-const output = 'out';
+const BASE_URL = 'https://developer.riotgames.com/';
+const OUTPUT = 'out';
 
 module.exports = function(rootDir) {
   process.chdir(rootDir);
 
-  fs.mkdirs(output)
-    .then(() => fs.readdir(output))
+  fs.mkdirs(OUTPUT)
+    .then(() => fs.readdir(OUTPUT))
     .then(files => Promise.all(files
       .filter(file => !file.startsWith('.'))
-      .map(file => fs.remove(output + '/' + file))))
-    .then(() => fs.copy('swagger-ui-dist/', output + '/tool'))
-    .then(() => process.chdir(rootDir + '/' + output))
+      .map(file => fs.remove(OUTPUT + '/' + file))))
+    .then(() => fs.copy('swagger-ui-dist/', OUTPUT + '/tool'))
+    .then(() => process.chdir(rootDir + '/' + OUTPUT))
     .then(() => {
-      let endpoints = req(baseUrl + 'api-methods/')
+      let endpoints = req(BASE_URL + 'api-methods/')
         .then(body => {
           let dom = new JSDOM(body);
           let els = dom.window.document.getElementsByClassName('api_option');
@@ -39,18 +40,45 @@ module.exports = function(rootDir) {
             .map(el => {
               let name = el.getAttribute('api-name');
               let desc = el.getElementsByClassName('api_desc')[0].textContent.trim();
-              return req(baseUrl + 'api-details/' + name)
+              return req(BASE_URL + 'api-details/' + name)
                 .then(JSON.parse)
                 .then(o => new JSDOM(o.html))
                 .then(dom => new Endpoint(dom, desc));
             }));
         })
         .then(endpoints => {
-          endpoints.forEach(e => e.list_missing_dtos());
+          // Look back at previous version for any missing dtos.
+          //TODO: doesn't check if added dtos in turn have their own missing dtos.
+          let missing = endpoints.flatMap(endpoint => endpoint.list_missing_dtos().map(dtoName => ({ endpoint, dtoName })));
+          if (missing.length) {
+            console.log();
+            return childProcess.exec('git --no-pager show origin/gh-pages~1:openapi-3.0.0.min.json')
+              .then(({ stdout, stderr }) => {
+                if (stderr)
+                  throw Error(stderr);
+                return stdout;
+              })
+              .then(JSON.parse)
+              .then(oldSchema => {
+                for (let { endpoint, dtoName } of missing) {
+                  let fullDtoName = endpoint.name + '.' + dtoName;
+                  console.log('Missing DTO: ' + fullDtoName + '.')
+                  let oldDto = oldSchema.components.schemas[fullDtoName]
+                  if (oldDto) {
+                    console.log('  Using previous commit version.');
+                    endpoint.add_old_dto(oldDto);
+                  }
+                  else
+                    console.log('  FAILED to find dto for ' + fullDtoName + '.');
+                }
+              })
+              .catch(e => console.log('FAILED to get previous commit.', e))
+              .then(() => endpoints)
+          }
           return endpoints;
         });
 
-      let regions = req(baseUrl + 'regional-endpoints.html')
+      let regions = req(BASE_URL + 'regional-endpoints.html')
         .then(body => {
           let dom = new JSDOM(body);
           let panel = dom.window.document.getElementsByClassName('panel-content')[0];

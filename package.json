@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MingweiSamuel/riotapi-schema#readme",
   "dependencies": {
+    "child-process-es6-promise": "^1.2.0",
     "fs-extra": "^4.0.2",
     "jsdom": "^11.3.0",
     "object-hash": "1.2.0",

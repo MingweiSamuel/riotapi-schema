@@ -3,23 +3,30 @@ const descTypeOverrides = require('./data/dtoDescriptionTypeOverrides');
 const types = require('./types');
 const deepEqual = require('./deepEqual');
 
-function Schema(schemaHtml, endpointName) {
+function Schema(endpointName, name, description, properties) {
   this.endpointName = endpointName;
-  this.name = schemaHtml.firstElementChild.textContent.trim();
-  this.description = Array.from(schemaHtml.childNodes)
+  this.name = name;
+  this.description = description;
+  this.properties = properties;
+  
+  this.required = [];
+}
+
+Schema.fromHtml = function(schemaHtml, endpointName) {
+  let name = schemaHtml.firstElementChild.textContent.trim();
+  let description = Array.from(schemaHtml.childNodes)
     .filter(node => node.nodeType === 3 /* Node.TEXT_NODE */)
     .map(node => node.textContent.trim())
     .filter(str => str.length)
     .reduce((a, b) => a + ' ' + b, '')
     .replace(/^\s*-\s+/, '');
-  this.properties = {};
+  let schema = new Schema(endpointName, name, description, {});
 
   let table = schemaHtml.lastElementChild;
   let headers = Array.from(table.tHead.firstElementChild.children)
     .map(th => th.textContent.toLowerCase())
     .map(s => s.replace(/\s+(\S)/g, c => c[1].toUpperCase()));
 
-  this.required = [];
   let tbody = table.tBodies[0];
   Array.from(tbody.children).forEach(tr => {
     let data = {}
@@ -30,9 +37,9 @@ function Schema(schemaHtml, endpointName) {
     [ name, requiredStr ] = name.split(/\s+/, 2);
 
     if (requiredStr === 'required')
-      this.required.push(name);
+      schema.required.push(name);
 
-    let prop = types.getType(dataType, this.endpointName);
+    let prop = types.getType(dataType, schema.endpointName);
     if (description) {
       let match;
       if (descTypeOverrides[description])
@@ -51,10 +58,11 @@ function Schema(schemaHtml, endpointName) {
       prop.enum = Array.from(valueTd.firstElementChild.children)
         .map(option => option.textContent.trim());
     }
-    this.properties[name] = prop;
-
+    schema.properties[name] = prop;
   });
-}
+
+  return schema;
+};
 
 /**
  * Returns true if `this` and `other` have the same name and
