@@ -52,7 +52,7 @@ module.exports = function(rootDir) {
           let missing = endpoints.flatMap(endpoint => endpoint.list_missing_dtos().map(dtoName => ({ endpoint, dtoName })));
           if (missing.length) {
             console.log();
-            return childProcess.exec('git --no-pager show origin/gh-pages~1:openapi-3.0.0.min.json')
+            return childProcess.exec('git --no-pager show origin/gh-pages:openapi-3.0.0.min.json')
               .then(({ stdout, stderr }) => {
                 if (stderr)
                   throw Error(stderr);
