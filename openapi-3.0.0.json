@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "6927cc650d0d5f3633dd0d9f1571db755bc33923"
+    "version": "1259c8894cb790ee047b473ae34a11136205ee1f"
   },
   "servers": [
     {
@@ -4608,8 +4608,7 @@
           }
         },
         "operationId": "third-party-code-v3.getThirdPartyCodeBySummonerId",
-        "x-app-rate-limit-excluded": true,
-        "description": "Get third party code for a given summoner ID.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits.",
+        "description": "Get third party code for a given summoner ID.",
         "parameters": [
           {
             "name": "summonerId",
@@ -4619,8 +4618,7 @@
               "type": "integer",
               "format": "int64",
               "x-type": "long"
-            },
-            "description": "Summoner ID"
+            }
           }
         ]
       },
@@ -8750,49 +8748,6 @@
           }
         }
       },
-      "match-v3.MatchReferenceDto": {
-        "type": "object",
-        "title": "MatchReferenceDto",
-        "properties": {
-          "lane": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "gameId": {
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          },
-          "champion": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "platformId": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "season": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "queue": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "role": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "timestamp": {
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          }
-        }
-      },
       "match-v3.MatchTimelineDto": {
         "type": "object",
         "title": "MatchTimelineDto",
@@ -9041,6 +8996,49 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int"
+          }
+        }
+      },
+      "match-v3.MatchReferenceDto": {
+        "type": "object",
+        "title": "MatchReferenceDto",
+        "properties": {
+          "lane": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "gameId": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "champion": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "platformId": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "season": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "queue": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "role": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
           }
         }
       },
