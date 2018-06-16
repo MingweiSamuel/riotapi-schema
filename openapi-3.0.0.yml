@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 1259c8894cb790ee047b473ae34a11136205ee1f
+  version: fd65f429a59966d17f43f61acac5f03a02879fed
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -611,35 +611,6 @@ paths:
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
-          name: champListData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - allytips
-              - blurb
-              - enemytips
-              - format
-              - image
-              - info
-              - keys
-              - lore
-              - partype
-              - passive
-              - recommended
-              - skins
-              - spells
-              - stats
-              - tags
-          description: 'Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
-        -
           name: tags
           in: query
           required: false
@@ -769,33 +740,6 @@ paths:
               - zh_TW
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
         -
-          name: champData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - allytips
-              - blurb
-              - enemytips
-              - image
-              - info
-              - lore
-              - partype
-              - passive
-              - recommended
-              - skins
-              - spells
-              - stats
-              - tags
-          description: 'Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
-        -
           name: version
           in: query
           required: false
@@ -913,40 +857,6 @@ paths:
               - zh_MY
               - zh_TW
           description: 'Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.'
-        -
-          name: itemListData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - colloq
-              - consumeOnFull
-              - consumed
-              - depth
-              - effect
-              - from
-              - gold
-              - groups
-              - hideFromAll
-              - image
-              - inStore
-              - into
-              - maps
-              - requiredChampion
-              - sanitizedDescription
-              - specialRecipe
-              - stacks
-              - stats
-              - tags
-              - tree
-          description: 'Tags to return additional data. Only type, version, data, id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
         -
           name: version
           in: query
@@ -1121,38 +1031,6 @@ paths:
             type: string
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
-        -
-          name: itemData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - colloq
-              - consumeOnFull
-              - consumed
-              - depth
-              - effect
-              - from
-              - gold
-              - hideFromAll
-              - image
-              - inStore
-              - into
-              - maps
-              - requiredChampion
-              - sanitizedDescription
-              - specialRecipe
-              - stacks
-              - stats
-              - tags
-          description: 'Tags to return additional data. Only id, name, description, plaintext, and group are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
     x-endpoint: lol-static-data-v3
   /lol/static-data/v3/language-strings:
     get:
@@ -1493,26 +1371,6 @@ paths:
               - tree
           description: 'Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
           explode: true
-        -
-          name: masteryListData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - image
-              - masteryTree
-              - prereq
-              - ranks
-              - sanitizedDescription
-              - tree
-          description: 'Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
     x-endpoint: lol-static-data-v3
   '/lol/static-data/v3/masteries/{id}':
     get:
@@ -1567,25 +1425,6 @@ paths:
             format: int64
             x-type: long
           description: 'Mastery ID'
-        -
-          name: masteryData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - image
-              - masteryTree
-              - prereq
-              - ranks
-              - sanitizedDescription
-          description: 'Tags to return additional data. Only id, name, and description are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
         -
           name: locale
           in: query
@@ -2146,24 +1985,6 @@ paths:
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
-          name: runeListData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - image
-              - sanitizedDescription
-              - stats
-              - tags
-          description: 'Tags to return additional data. Only type, version, data, id, name, description, and rune are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
-        -
           name: tags
           in: query
           required: false
@@ -2409,39 +2230,6 @@ paths:
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
         -
-          name: spellListData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - cooldown
-              - cooldownBurn
-              - cost
-              - costBurn
-              - costType
-              - effect
-              - effectBurn
-              - image
-              - key
-              - leveltip
-              - maxrank
-              - modes
-              - range
-              - rangeBurn
-              - resource
-              - sanitizedDescription
-              - sanitizedTooltip
-              - tooltip
-              - vars
-          description: 'Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
-        -
           name: dataById
           in: query
           required: false
@@ -2582,39 +2370,6 @@ paths:
             type: string
             x-type: string
           description: 'Patch version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint.'
-        -
-          name: spellData
-          in: query
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-              x-type: string
-            x-type: 'Set[string]'
-            enum:
-              - all
-              - cooldown
-              - cooldownBurn
-              - cost
-              - costBurn
-              - costType
-              - effect
-              - effectBurn
-              - image
-              - key
-              - leveltip
-              - maxrank
-              - modes
-              - range
-              - rangeBurn
-              - resource
-              - sanitizedDescription
-              - sanitizedTooltip
-              - tooltip
-              - vars
-          description: 'Tags to return additional data. Only id, key, name, description, and summonerLevel are returned by default if this parameter isn''t specified. To return all additional data, use the tag ''all''.'
-          explode: true
         -
           name: tags
           in: query
@@ -4315,375 +4070,6 @@ components:
             x-type: ChampionSpellDto
           x-type: 'List[ChampionSpellDto]'
       description: 'This object contains champion data.'
-    lol-static-data-v3.InfoDto:
-      type: object
-      title: InfoDto
-      properties:
-        difficulty:
-          type: integer
-          format: int32
-          x-type: int
-        attack:
-          type: integer
-          format: int32
-          x-type: int
-        defense:
-          type: integer
-          format: int32
-          x-type: int
-        magic:
-          type: integer
-          format: int32
-          x-type: int
-      description: 'This object contains champion information.'
-    lol-static-data-v3.StatsDto:
-      type: object
-      title: StatsDto
-      properties:
-        armorperlevel:
-          type: number
-          format: double
-          x-type: double
-        hpperlevel:
-          type: number
-          format: double
-          x-type: double
-        attackdamage:
-          type: number
-          format: double
-          x-type: double
-        mpperlevel:
-          type: number
-          format: double
-          x-type: double
-        attackspeedoffset:
-          type: number
-          format: double
-          x-type: double
-        armor:
-          type: number
-          format: double
-          x-type: double
-        hp:
-          type: number
-          format: double
-          x-type: double
-        hpregenperlevel:
-          type: number
-          format: double
-          x-type: double
-        spellblock:
-          type: number
-          format: double
-          x-type: double
-        attackrange:
-          type: number
-          format: double
-          x-type: double
-        movespeed:
-          type: number
-          format: double
-          x-type: double
-        attackdamageperlevel:
-          type: number
-          format: double
-          x-type: double
-        mpregenperlevel:
-          type: number
-          format: double
-          x-type: double
-        mp:
-          type: number
-          format: double
-          x-type: double
-        spellblockperlevel:
-          type: number
-          format: double
-          x-type: double
-        crit:
-          type: number
-          format: double
-          x-type: double
-        mpregen:
-          type: number
-          format: double
-          x-type: double
-        attackspeedperlevel:
-          type: number
-          format: double
-          x-type: double
-        hpregen:
-          type: number
-          format: double
-          x-type: double
-        critperlevel:
-          type: number
-          format: double
-          x-type: double
-      description: 'This object contains champion stats data.'
-    lol-static-data-v3.ImageDto:
-      type: object
-      title: ImageDto
-      properties:
-        full:
-          type: string
-          x-type: string
-        group:
-          type: string
-          x-type: string
-        sprite:
-          type: string
-          x-type: string
-        h:
-          type: integer
-          format: int32
-          x-type: int
-        w:
-          type: integer
-          format: int32
-          x-type: int
-        y:
-          type: integer
-          format: int32
-          x-type: int
-        x:
-          type: integer
-          format: int32
-          x-type: int
-      description: 'This object contains image data.'
-    lol-static-data-v3.SkinDto:
-      type: object
-      title: SkinDto
-      properties:
-        num:
-          type: integer
-          format: int32
-          x-type: int
-        name:
-          type: string
-          x-type: string
-        id:
-          type: integer
-          format: int32
-          x-type: int
-      description: 'This object contains champion skin data.'
-    lol-static-data-v3.PassiveDto:
-      type: object
-      title: PassiveDto
-      properties:
-        image:
-          $ref: '#/components/schemas/lol-static-data-v3.ImageDto'
-          x-type: ImageDto
-        sanitizedDescription:
-          type: string
-          x-type: string
-        name:
-          type: string
-          x-type: string
-        description:
-          type: string
-          x-type: string
-      description: 'This object contains champion passive data.'
-    lol-static-data-v3.RecommendedDto:
-      type: object
-      title: RecommendedDto
-      properties:
-        map:
-          type: string
-          x-type: string
-        blocks:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.BlockDto'
-            x-type: BlockDto
-          x-type: 'List[BlockDto]'
-        champion:
-          type: string
-          x-type: string
-        title:
-          type: string
-          x-type: string
-        priority:
-          type: boolean
-          x-type: boolean
-        mode:
-          type: string
-          x-type: string
-        type:
-          type: string
-          x-type: string
-      description: 'This object contains champion recommended data.'
-    lol-static-data-v3.BlockDto:
-      type: object
-      title: BlockDto
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.BlockItemDto'
-            x-type: BlockItemDto
-          x-type: 'List[BlockItemDto]'
-        recMath:
-          type: boolean
-          x-type: boolean
-        type:
-          type: string
-          x-type: string
-      description: 'This object contains champion recommended block data.'
-    lol-static-data-v3.BlockItemDto:
-      type: object
-      title: BlockItemDto
-      properties:
-        count:
-          type: integer
-          format: int32
-          x-type: int
-        id:
-          type: integer
-          format: int32
-          x-type: int
-      description: 'This object contains champion recommended block item data.'
-    lol-static-data-v3.ChampionSpellDto:
-      type: object
-      title: ChampionSpellDto
-      properties:
-        cooldownBurn:
-          type: string
-          x-type: string
-        resource:
-          type: string
-          x-type: string
-        leveltip:
-          $ref: '#/components/schemas/lol-static-data-v3.LevelTipDto'
-          x-type: LevelTipDto
-        vars:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.SpellVarsDto'
-            x-type: SpellVarsDto
-          x-type: 'List[SpellVarsDto]'
-        costType:
-          type: string
-          x-type: string
-        image:
-          $ref: '#/components/schemas/lol-static-data-v3.ImageDto'
-          x-type: ImageDto
-        sanitizedDescription:
-          type: string
-          x-type: string
-        sanitizedTooltip:
-          type: string
-          x-type: string
-        effect:
-          type: array
-          items:
-            type: array
-            items:
-              type: number
-              format: double
-          description: 'This field is a List of List of Double.'
-        tooltip:
-          type: string
-          x-type: string
-        maxrank:
-          type: integer
-          format: int32
-          x-type: int
-        costBurn:
-          type: string
-          x-type: string
-        rangeBurn:
-          type: string
-          x-type: string
-        range:
-          anyOf:
-            -
-              type: array
-              items:
-                type: integer
-                format: int32
-            -
-              type: string
-              enum:
-                - self
-          description: 'This field is either a List of Integer or the String ''self'' for spells that target one''s own champion.'
-        cooldown:
-          type: array
-          items:
-            type: number
-            format: double
-            x-type: double
-          x-type: 'List[double]'
-        cost:
-          type: array
-          items:
-            type: integer
-            format: int32
-            x-type: int
-          x-type: 'List[int]'
-        key:
-          type: string
-          x-type: string
-        description:
-          type: string
-          x-type: string
-        effectBurn:
-          type: array
-          items:
-            type: string
-            x-type: string
-          x-type: 'List[string]'
-        altimages:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.ImageDto'
-            x-type: ImageDto
-          x-type: 'List[ImageDto]'
-        name:
-          type: string
-          x-type: string
-      description: 'This object contains champion spell data.'
-    lol-static-data-v3.LevelTipDto:
-      type: object
-      title: LevelTipDto
-      properties:
-        effect:
-          type: array
-          items:
-            type: string
-            x-type: string
-          x-type: 'List[string]'
-        label:
-          type: array
-          items:
-            type: string
-            x-type: string
-          x-type: 'List[string]'
-      description: 'This object contains champion level tip data.'
-    lol-static-data-v3.SpellVarsDto:
-      type: object
-      title: SpellVarsDto
-      properties:
-        ranksWith:
-          type: string
-          x-type: string
-        dyn:
-          type: string
-          x-type: string
-        link:
-          type: string
-          x-type: string
-        coeff:
-          type: array
-          items:
-            type: number
-            format: double
-            x-type: double
-          x-type: 'List[double]'
-        key:
-          type: string
-          x-type: string
-      description: 'This object contains spell vars data.'
     lol-static-data-v3.ItemListDto:
       type: object
       title: ItemListDto
@@ -4716,20 +4102,6 @@ components:
           type: string
           x-type: string
       description: 'This object contains item list data.'
-    lol-static-data-v3.ItemTreeDto:
-      type: object
-      title: ItemTreeDto
-      properties:
-        header:
-          type: string
-          x-type: string
-        tags:
-          type: array
-          items:
-            type: string
-            x-type: string
-          x-type: 'List[string]'
-      description: 'This object contains item tree data.'
     lol-static-data-v3.ItemDto:
       type: object
       title: ItemDto
@@ -4829,174 +4201,6 @@ components:
           format: int32
           x-type: int
       description: 'This object contains item data.'
-    lol-static-data-v3.GoldDto:
-      type: object
-      title: GoldDto
-      properties:
-        sell:
-          type: integer
-          format: int32
-          x-type: int
-        total:
-          type: integer
-          format: int32
-          x-type: int
-        base:
-          type: integer
-          format: int32
-          x-type: int
-        purchasable:
-          type: boolean
-          x-type: boolean
-      description: 'This object contains item gold data.'
-    lol-static-data-v3.InventoryDataStatsDto:
-      type: object
-      title: InventoryDataStatsDto
-      properties:
-        PercentCritDamageMod:
-          type: number
-          format: double
-          x-type: double
-        PercentSpellBlockMod:
-          type: number
-          format: double
-          x-type: double
-        PercentHPRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMovementSpeedMod:
-          type: number
-          format: double
-          x-type: double
-        FlatSpellBlockMod:
-          type: number
-          format: double
-          x-type: double
-        FlatCritDamageMod:
-          type: number
-          format: double
-          x-type: double
-        FlatEnergyPoolMod:
-          type: number
-          format: double
-          x-type: double
-        PercentLifeStealMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMPPoolMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMovementSpeedMod:
-          type: number
-          format: double
-          x-type: double
-        PercentAttackSpeedMod:
-          type: number
-          format: double
-          x-type: double
-        FlatBlockMod:
-          type: number
-          format: double
-          x-type: double
-        PercentBlockMod:
-          type: number
-          format: double
-          x-type: double
-        FlatEnergyRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentSpellVampMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMPRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentDodgeMod:
-          type: number
-          format: double
-          x-type: double
-        FlatAttackSpeedMod:
-          type: number
-          format: double
-          x-type: double
-        FlatArmorMod:
-          type: number
-          format: double
-          x-type: double
-        FlatHPRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMagicDamageMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMPPoolMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMagicDamageMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMPRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentPhysicalDamageMod:
-          type: number
-          format: double
-          x-type: double
-        FlatPhysicalDamageMod:
-          type: number
-          format: double
-          x-type: double
-        PercentHPPoolMod:
-          type: number
-          format: double
-          x-type: double
-        PercentArmorMod:
-          type: number
-          format: double
-          x-type: double
-        PercentCritChanceMod:
-          type: number
-          format: double
-          x-type: double
-        PercentEXPBonus:
-          type: number
-          format: double
-          x-type: double
-        FlatHPPoolMod:
-          type: number
-          format: double
-          x-type: double
-        FlatCritChanceMod:
-          type: number
-          format: double
-          x-type: double
-        FlatEXPBonus:
-          type: number
-          format: double
-          x-type: double
-      description: 'This object contains stats for inventory (e.g., runes and items).'
-    lol-static-data-v3.GroupDto:
-      type: object
-      title: GroupDto
-      properties:
-        MaxGroupOwnable:
-          type: string
-          x-type: string
-        key:
-          type: string
-          x-type: string
-      description: 'This object contains item group data.'
     lol-static-data-v3.LanguageStringsDto:
       type: object
       title: LanguageStringsDto
@@ -5037,28 +4241,6 @@ components:
           type: string
           x-type: string
       description: 'This object contains map data.'
-    lol-static-data-v3.MapDetailsDto:
-      type: object
-      title: MapDetailsDto
-      properties:
-        mapName:
-          type: string
-          x-type: string
-        image:
-          $ref: '#/components/schemas/lol-static-data-v3.ImageDto'
-          x-type: ImageDto
-        mapId:
-          type: integer
-          format: int64
-          x-type: long
-        unpurchasableItemList:
-          type: array
-          items:
-            type: integer
-            format: int64
-            x-type: long
-          x-type: 'List[long]'
-      description: 'This object contains map details data.'
     lol-static-data-v3.MasteryListDto:
       type: object
       title: MasteryListDto
@@ -5082,70 +4264,6 @@ components:
           type: string
           x-type: string
       description: 'This object contains mastery list data.'
-    lol-static-data-v3.MasteryTreeDto:
-      type: object
-      title: MasteryTreeDto
-      properties:
-        Resolve:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeListDto'
-            x-type: MasteryTreeListDto
-          x-type: 'List[MasteryTreeListDto]'
-        Defense:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeListDto'
-            x-type: MasteryTreeListDto
-          x-type: 'List[MasteryTreeListDto]'
-        Utility:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeListDto'
-            x-type: MasteryTreeListDto
-          x-type: 'List[MasteryTreeListDto]'
-        Offense:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeListDto'
-            x-type: MasteryTreeListDto
-          x-type: 'List[MasteryTreeListDto]'
-        Ferocity:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeListDto'
-            x-type: MasteryTreeListDto
-          x-type: 'List[MasteryTreeListDto]'
-        Cunning:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeListDto'
-            x-type: MasteryTreeListDto
-          x-type: 'List[MasteryTreeListDto]'
-      description: 'This object contains mastery tree data.'
-    lol-static-data-v3.MasteryTreeListDto:
-      type: object
-      title: MasteryTreeListDto
-      properties:
-        masteryTreeItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.MasteryTreeItemDto'
-            x-type: MasteryTreeItemDto
-          x-type: 'List[MasteryTreeItemDto]'
-      description: 'This object contains mastery tree list data.'
-    lol-static-data-v3.MasteryTreeItemDto:
-      type: object
-      title: MasteryTreeItemDto
-      properties:
-        masteryId:
-          type: integer
-          format: int32
-          x-type: int
-        prereq:
-          type: string
-          x-type: string
-      description: 'This object contains mastery tree item data.'
     lol-static-data-v3.MasteryDto:
       type: object
       title: MasteryDto
@@ -5211,18 +4329,6 @@ components:
           type: string
           x-type: string
       description: 'This object contains profile icon data.'
-    lol-static-data-v3.ProfileIconDetailsDto:
-      type: object
-      title: ProfileIconDetailsDto
-      properties:
-        image:
-          $ref: '#/components/schemas/lol-static-data-v3.ImageDto'
-          x-type: ImageDto
-        id:
-          type: integer
-          format: int64
-          x-type: long
-      description: 'This object contains profile icon details data.'
     lol-static-data-v3.RealmDto:
       type: object
       title: RealmDto
@@ -5295,17 +4401,6 @@ components:
           type: string
           x-type: string
       description: 'This object contains reforged rune path data.'
-    lol-static-data-v3.ReforgedRuneSlotDto:
-      type: object
-      title: ReforgedRuneSlotDto
-      properties:
-        runes:
-          type: array
-          items:
-            $ref: '#/components/schemas/lol-static-data-v3.ReforgedRuneDto'
-            x-type: ReforgedRuneDto
-          x-type: 'List[ReforgedRuneDto]'
-      description: 'This object contains reforged rune slot data.'
     lol-static-data-v3.ReforgedRuneDto:
       type: object
       title: ReforgedRuneDto
@@ -5390,285 +4485,6 @@ components:
           type: string
           x-type: string
       description: 'This object contains rune data.'
-    lol-static-data-v3.RuneStatsDto:
-      type: object
-      title: RuneStatsDto
-      properties:
-        PercentTimeDeadModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentArmorPenetrationModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentCritDamageMod:
-          type: number
-          format: double
-          x-type: double
-        PercentSpellBlockMod:
-          type: number
-          format: double
-          x-type: double
-        PercentHPRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMovementSpeedMod:
-          type: number
-          format: double
-          x-type: double
-        FlatSpellBlockMod:
-          type: number
-          format: double
-          x-type: double
-        FlatEnergyRegenModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatEnergyPoolMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMagicPenetrationModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentLifeStealMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMPPoolMod:
-          type: number
-          format: double
-          x-type: double
-        PercentCooldownMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMagicPenetrationMod:
-          type: number
-          format: double
-          x-type: double
-        FlatArmorPenetrationModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatMovementSpeedMod:
-          type: number
-          format: double
-          x-type: double
-        FlatTimeDeadModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatArmorModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentAttackSpeedMod:
-          type: number
-          format: double
-          x-type: double
-        FlatDodgeModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentMagicDamageMod:
-          type: number
-          format: double
-          x-type: double
-        PercentBlockMod:
-          type: number
-          format: double
-          x-type: double
-        FlatDodgeMod:
-          type: number
-          format: double
-          x-type: double
-        FlatEnergyRegenMod:
-          type: number
-          format: double
-          x-type: double
-        FlatHPModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentAttackSpeedModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentSpellVampMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMPRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentHPPoolMod:
-          type: number
-          format: double
-          x-type: double
-        PercentDodgeMod:
-          type: number
-          format: double
-          x-type: double
-        FlatAttackSpeedMod:
-          type: number
-          format: double
-          x-type: double
-        FlatArmorMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMagicDamageModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatHPRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentPhysicalDamageMod:
-          type: number
-          format: double
-          x-type: double
-        FlatCritChanceModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatSpellBlockModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentTimeDeadMod:
-          type: number
-          format: double
-          x-type: double
-        FlatBlockMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMPPoolMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMagicDamageMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMPRegenMod:
-          type: number
-          format: double
-          x-type: double
-        PercentMovementSpeedModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentCooldownModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatMPModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatEnergyModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatPhysicalDamageMod:
-          type: number
-          format: double
-          x-type: double
-        FlatHPRegenModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatCritDamageMod:
-          type: number
-          format: double
-          x-type: double
-        PercentArmorMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMagicPenetrationMod:
-          type: number
-          format: double
-          x-type: double
-        PercentCritChanceMod:
-          type: number
-          format: double
-          x-type: double
-        FlatPhysicalDamageModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentArmorPenetrationMod:
-          type: number
-          format: double
-          x-type: double
-        PercentEXPBonus:
-          type: number
-          format: double
-          x-type: double
-        FlatMPRegenModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        PercentMagicPenetrationModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatTimeDeadMod:
-          type: number
-          format: double
-          x-type: double
-        FlatMovementSpeedModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatGoldPer10Mod:
-          type: number
-          format: double
-          x-type: double
-        FlatArmorPenetrationMod:
-          type: number
-          format: double
-          x-type: double
-        FlatCritDamageModPerLevel:
-          type: number
-          format: double
-          x-type: double
-        FlatHPPoolMod:
-          type: number
-          format: double
-          x-type: double
-        FlatCritChanceMod:
-          type: number
-          format: double
-          x-type: double
-        FlatEXPBonus:
-          type: number
-          format: double
-          x-type: double
-      description: 'This object contains stats for runes.'
-    lol-static-data-v3.MetaDataDto:
-      type: object
-      title: MetaDataDto
-      properties:
-        tier:
-          type: string
-          x-type: string
-        type:
-          type: string
-          x-type: string
-        isRune:
-          type: boolean
-          x-type: boolean
-      description: 'This object contains meta data.'
     lol-static-data-v3.SummonerSpellListDto:
       type: object
       title: SummonerSpellListDto
@@ -5797,6 +4613,23 @@ components:
           format: int32
           x-type: int
       description: 'This object contains summoner spell data.'
+    lol-static-data-v3.LevelTipDto:
+      type: object
+      title: LevelTipDto
+      properties:
+        effect:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+        label:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+      description: 'This object contains champion level tip data.'
     lol-status-v3.ShardStatus:
       type: object
       title: ShardStatus
