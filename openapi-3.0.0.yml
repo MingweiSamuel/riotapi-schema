@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: bcf99c8dce51139714558524d138f64bfe80768e
+  version: 62e5f0fe7326a4f34fa78656a4b8929e4b6f1800
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -4746,12 +4746,12 @@ components:
           type: integer
           format: int32
           x-type: int
-          description: 'SeasonId the match was played during. Please refer to the Game Constants documentation.'
+          description: 'Please refer to the Game Constants documentation.'
         queueId:
           type: integer
           format: int32
           x-type: int
-          description: 'Match queueId. Please refer to the Game Constants documentation.'
+          description: 'Please refer to the Game Constants documentation.'
         gameId:
           type: integer
           format: int64
@@ -4766,7 +4766,7 @@ components:
         gameVersion:
           type: string
           x-type: string
-          description: 'Match version. The major.minor version typically indicates the patch the match was played on.'
+          description: 'The major.minor version typically indicates the patch the match was played on.'
         platformId:
           type: string
           x-type: string
@@ -4774,16 +4774,16 @@ components:
         gameMode:
           type: string
           x-type: string
-          description: 'Match mode. Please refer to the Game Constants documentation.'
+          description: 'Please refer to the Game Constants documentation.'
         mapId:
           type: integer
           format: int32
           x-type: int
-          description: 'Match mapId. Please refer to the Game Constants documentation.'
+          description: 'Please refer to the Game Constants documentation.'
         gameType:
           type: string
           x-type: string
-          description: 'Match type. Please refer to the Game Constants documentation.'
+          description: 'Please refer to the Game Constants documentation.'
         teams:
           type: array
           items:
@@ -4807,7 +4807,796 @@ components:
           type: integer
           format: int64
           x-type: long
-          description: 'Match creation time. Designates when the champ select ends and the loading screen appears, NOT when the game timer is at 0:00.'
+          description: 'Designates the timestamp when champion select ended and the loading screen appeared, NOT when the game timer was at 0:00.'
+    match-v3.ParticipantIdentityDto:
+      type: object
+      title: ParticipantIdentityDto
+      properties:
+        player:
+          $ref: '#/components/schemas/match-v3.PlayerDto'
+          x-type: PlayerDto
+          description: 'Player information.'
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+    match-v3.PlayerDto:
+      type: object
+      title: PlayerDto
+      properties:
+        currentPlatformId:
+          type: string
+          x-type: string
+        summonerName:
+          type: string
+          x-type: string
+        matchHistoryUri:
+          type: string
+          x-type: string
+        platformId:
+          type: string
+          x-type: string
+          description: 'Original platformId.'
+        currentAccountId:
+          type: integer
+          format: int64
+          x-type: long
+        profileIcon:
+          type: integer
+          format: int32
+          x-type: int
+        summonerId:
+          type: integer
+          format: int64
+          x-type: long
+        accountId:
+          type: integer
+          format: int64
+          x-type: long
+          description: 'Original accountId.'
+    match-v3.TeamStatsDto:
+      type: object
+      title: TeamStatsDto
+      properties:
+        firstDragon:
+          type: boolean
+          x-type: boolean
+          description: 'Flag indicating whether or not the team scored the first Dragon kill.'
+        firstInhibitor:
+          type: boolean
+          x-type: boolean
+          description: 'Flag indicating whether or not the team destroyed the first inhibitor.'
+        bans:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v3.TeamBansDto'
+            x-type: TeamBansDto
+          x-type: 'List[TeamBansDto]'
+          description: 'If match queueId has a draft, contains banned champion data, otherwise empty.'
+        baronKills:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Number of times the team killed Baron.'
+        firstRiftHerald:
+          type: boolean
+          x-type: boolean
+          description: 'Flag indicating whether or not the team scored the first Rift Herald kill.'
+        firstBaron:
+          type: boolean
+          x-type: boolean
+          description: 'Flag indicating whether or not the team scored the first Baron kill.'
+        riftHeraldKills:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Number of times the team killed Rift Herald.'
+        firstBlood:
+          type: boolean
+          x-type: boolean
+          description: 'Flag indicating whether or not the team scored the first blood.'
+        teamId:
+          type: integer
+          format: int32
+          x-type: int
+          description: '100 for blue side. 200 for red side.'
+        firstTower:
+          type: boolean
+          x-type: boolean
+          description: 'Flag indicating whether or not the team destroyed the first tower.'
+        vilemawKills:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Number of times the team killed Vilemaw.'
+        inhibitorKills:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Number of inhibitors the team destroyed.'
+        towerKills:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Number of towers the team destroyed.'
+        dominionVictoryScore:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'For Dominion matches, specifies the points the team had at game end.'
+        win:
+          type: string
+          x-type: string
+          enum:
+            - Fail
+            - Win
+          description: "String indicating whether or not the team won. There are only two values visibile in public match history.\n             (Legal values:  Fail,  Win)"
+        dragonKills:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Number of times the team killed Dragon.'
+    match-v3.TeamBansDto:
+      type: object
+      title: TeamBansDto
+      properties:
+        pickTurn:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Turn during which the champion was banned.'
+        championId:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Banned championId.'
+    match-v3.ParticipantDto:
+      type: object
+      title: ParticipantDto
+      properties:
+        stats:
+          $ref: '#/components/schemas/match-v3.ParticipantStatsDto'
+          x-type: ParticipantStatsDto
+          description: 'Participant statistics.'
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+        runes:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v3.RuneDto'
+            x-type: RuneDto
+          x-type: 'List[RuneDto]'
+          description: 'List of legacy Rune information. Not included for matches played with Runes Reforged.'
+        timeline:
+          $ref: '#/components/schemas/match-v3.ParticipantTimelineDto'
+          x-type: ParticipantTimelineDto
+          description: 'Participant timeline data.'
+        teamId:
+          type: integer
+          format: int32
+          x-type: int
+          description: '100 for blue side. 200 for red side.'
+        spell2Id:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Second Summoner Spell id.'
+        masteries:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v3.MasteryDto'
+            x-type: MasteryDto
+          x-type: 'List[MasteryDto]'
+          description: 'List of legacy Mastery information. Not included for matches played with Runes Reforged.'
+        highestAchievedSeasonTier:
+          type: string
+          x-type: string
+          enum:
+            - CHALLENGER
+            - MASTER
+            - DIAMOND
+            - PLATINUM
+            - GOLD
+            - SILVER
+            - BRONZE
+            - UNRANKED
+          description: "Highest ranked tier achieved for the previous season in a specific subset of queueIds, if any, otherwise null. Used to display border in game loading screen. Please refer to the Ranked Info documentation.\n             (Legal values:  CHALLENGER,  MASTER,  DIAMOND,  PLATINUM,  GOLD,  SILVER,  BRONZE,  UNRANKED)"
+        spell1Id:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'First Summoner Spell id.'
+        championId:
+          type: integer
+          format: int32
+          x-type: int
+    match-v3.ParticipantStatsDto:
+      type: object
+      title: ParticipantStatsDto
+      properties:
+        firstBloodAssist:
+          type: boolean
+          x-type: boolean
+        visionScore:
+          type: integer
+          format: int64
+          x-type: long
+        magicDamageDealtToChampions:
+          type: integer
+          format: int64
+          x-type: long
+        damageDealtToObjectives:
+          type: integer
+          format: int64
+          x-type: long
+        totalTimeCrowdControlDealt:
+          type: integer
+          format: int32
+          x-type: int
+        longestTimeSpentLiving:
+          type: integer
+          format: int32
+          x-type: int
+        perk1Var1:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk1Var3:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk1Var2:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        tripleKills:
+          type: integer
+          format: int32
+          x-type: int
+        perk3Var3:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        nodeNeutralizeAssist:
+          type: integer
+          format: int32
+          x-type: int
+        perk3Var2:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        playerScore9:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore8:
+          type: integer
+          format: int32
+          x-type: int
+        kills:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore1:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore0:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore3:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore2:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore5:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore4:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore7:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore6:
+          type: integer
+          format: int32
+          x-type: int
+        perk5Var1:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk5Var3:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk5Var2:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        totalScoreRank:
+          type: integer
+          format: int32
+          x-type: int
+        neutralMinionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        damageDealtToTurrets:
+          type: integer
+          format: int64
+          x-type: long
+        physicalDamageDealtToChampions:
+          type: integer
+          format: int64
+          x-type: long
+        nodeCapture:
+          type: integer
+          format: int32
+          x-type: int
+        largestMultiKill:
+          type: integer
+          format: int32
+          x-type: int
+        perk2Var2:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk2Var3:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        totalUnitsHealed:
+          type: integer
+          format: int32
+          x-type: int
+        perk2Var1:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk4Var1:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk4Var2:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk4Var3:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        wardsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        largestCriticalStrike:
+          type: integer
+          format: int32
+          x-type: int
+        largestKillingSpree:
+          type: integer
+          format: int32
+          x-type: int
+        quadraKills:
+          type: integer
+          format: int32
+          x-type: int
+        teamObjective:
+          type: integer
+          format: int32
+          x-type: int
+        magicDamageDealt:
+          type: integer
+          format: int64
+          x-type: long
+        item2:
+          type: integer
+          format: int32
+          x-type: int
+        item3:
+          type: integer
+          format: int32
+          x-type: int
+        item0:
+          type: integer
+          format: int32
+          x-type: int
+        neutralMinionsKilledTeamJungle:
+          type: integer
+          format: int32
+          x-type: int
+        item6:
+          type: integer
+          format: int32
+          x-type: int
+        item4:
+          type: integer
+          format: int32
+          x-type: int
+        item5:
+          type: integer
+          format: int32
+          x-type: int
+        perk1:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Primary path rune.'
+        perk0:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Primary path keystone rune.'
+        perk3:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Primary path rune.'
+        perk2:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Primary path rune.'
+        perk5:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Secondary path rune.'
+        perk4:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Secondary path rune.'
+        perk3Var1:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        damageSelfMitigated:
+          type: integer
+          format: int64
+          x-type: long
+        magicalDamageTaken:
+          type: integer
+          format: int64
+          x-type: long
+        firstInhibitorKill:
+          type: boolean
+          x-type: boolean
+        trueDamageTaken:
+          type: integer
+          format: int64
+          x-type: long
+        nodeNeutralize:
+          type: integer
+          format: int32
+          x-type: int
+        assists:
+          type: integer
+          format: int32
+          x-type: int
+        combatPlayerScore:
+          type: integer
+          format: int32
+          x-type: int
+        perkPrimaryStyle:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Primary rune path'
+        goldSpent:
+          type: integer
+          format: int32
+          x-type: int
+        trueDamageDealt:
+          type: integer
+          format: int64
+          x-type: long
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+        totalDamageTaken:
+          type: integer
+          format: int64
+          x-type: long
+        physicalDamageDealt:
+          type: integer
+          format: int64
+          x-type: long
+        sightWardsBoughtInGame:
+          type: integer
+          format: int32
+          x-type: int
+        totalDamageDealtToChampions:
+          type: integer
+          format: int64
+          x-type: long
+        physicalDamageTaken:
+          type: integer
+          format: int64
+          x-type: long
+        totalPlayerScore:
+          type: integer
+          format: int32
+          x-type: int
+        win:
+          type: boolean
+          x-type: boolean
+        objectivePlayerScore:
+          type: integer
+          format: int32
+          x-type: int
+        totalDamageDealt:
+          type: integer
+          format: int64
+          x-type: long
+        item1:
+          type: integer
+          format: int32
+          x-type: int
+        neutralMinionsKilledEnemyJungle:
+          type: integer
+          format: int32
+          x-type: int
+        deaths:
+          type: integer
+          format: int32
+          x-type: int
+        wardsPlaced:
+          type: integer
+          format: int32
+          x-type: int
+        perkSubStyle:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Secondary rune path'
+        turretKills:
+          type: integer
+          format: int32
+          x-type: int
+        firstBloodKill:
+          type: boolean
+          x-type: boolean
+        trueDamageDealtToChampions:
+          type: integer
+          format: int64
+          x-type: long
+        goldEarned:
+          type: integer
+          format: int32
+          x-type: int
+        killingSprees:
+          type: integer
+          format: int32
+          x-type: int
+        unrealKills:
+          type: integer
+          format: int32
+          x-type: int
+        altarsCaptured:
+          type: integer
+          format: int32
+          x-type: int
+        firstTowerAssist:
+          type: boolean
+          x-type: boolean
+        firstTowerKill:
+          type: boolean
+          x-type: boolean
+        champLevel:
+          type: integer
+          format: int32
+          x-type: int
+        doubleKills:
+          type: integer
+          format: int32
+          x-type: int
+        nodeCaptureAssist:
+          type: integer
+          format: int32
+          x-type: int
+        inhibitorKills:
+          type: integer
+          format: int32
+          x-type: int
+        firstInhibitorAssist:
+          type: boolean
+          x-type: boolean
+        perk0Var1:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk0Var2:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        perk0Var3:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
+        visionWardsBoughtInGame:
+          type: integer
+          format: int32
+          x-type: int
+        altarsNeutralized:
+          type: integer
+          format: int32
+          x-type: int
+        pentaKills:
+          type: integer
+          format: int32
+          x-type: int
+        totalHeal:
+          type: integer
+          format: int64
+          x-type: long
+        totalMinionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        timeCCingOthers:
+          type: integer
+          format: int64
+          x-type: long
+    match-v3.RuneDto:
+      type: object
+      title: RuneDto
+      properties:
+        runeId:
+          type: integer
+          format: int32
+          x-type: int
+        rank:
+          type: integer
+          format: int32
+          x-type: int
+    match-v3.ParticipantTimelineDto:
+      type: object
+      title: ParticipantTimelineDto
+      properties:
+        lane:
+          type: string
+          x-type: string
+          enum:
+            - MID
+            - MIDDLE
+            - TOP
+            - JUNGLE
+            - BOT
+            - BOTTOM
+          description: "Participant's calculated lane. MID and BOT are legacy values.\n             (Legal values:  MID,  MIDDLE,  TOP,  JUNGLE,  BOT,  BOTTOM)"
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+        csDiffPerMinDeltas:
+          type: object
+          x-key:
+            type: string
+            x-type: string
+          additionalProperties:
+            type: number
+            format: double
+            x-type: double
+          x-type: 'Map[string, double]'
+          description: 'Creep score difference versus the calculated lane opponent(s) for a specified period.'
+        goldPerMinDeltas:
+          type: object
+          x-key:
+            type: string
+            x-type: string
+          additionalProperties:
+            type: number
+            format: double
+            x-type: double
+          x-type: 'Map[string, double]'
+          description: 'Gold for a specified period.'
+        xpDiffPerMinDeltas:
+          type: object
+          x-key:
+            type: string
+            x-type: string
+          additionalProperties:
+            type: number
+            format: double
+            x-type: double
+          x-type: 'Map[string, double]'
+          description: 'Experience difference versus the calculated lane opponent(s) for a specified period.'
+        creepsPerMinDeltas:
+          type: object
+          x-key:
+            type: string
+            x-type: string
+          additionalProperties:
+            type: number
+            format: double
+            x-type: double
+          x-type: 'Map[string, double]'
+          description: 'Creeps for a specified period.'
+        xpPerMinDeltas:
+          type: object
+          x-key:
+            type: string
+            x-type: string
+          additionalProperties:
+            type: number
+            format: double
+            x-type: double
+          x-type: 'Map[string, double]'
+          description: 'Experience change for a specified period.'
+        role:
+          type: string
+          x-type: string
+          enum:
+            - DUO
+            - NONE
+            - SOLO
+            - DUO_CARRY
+            - DUO_SUPPORT
+          description: "Participant's calculated role.\n             (Legal values:  DUO,  NONE,  SOLO,  DUO_CARRY,  DUO_SUPPORT)"
+        damageTakenDiffPerMinDeltas:
+          type: object
+          x-key:
+            type: string
+            x-type: string
+          additionalProperties:
+            type: number
+            format: double
+            x-type: double
+          x-type: 'Map[string, double]'
+          description: 'Damage taken difference versus the calculated lane opponent(s) for a specified period.'
+        damageTakenPerMinDeltas:
+          type: object
+          x-key:
+            type: string
+            x-type: string
+          additionalProperties:
+            type: number
+            format: double
+            x-type: double
+          x-type: 'Map[string, double]'
+          description: 'Damage taken for a specified period.'
+    match-v3.MasteryDto:
+      type: object
+      title: MasteryDto
+      properties:
+        masteryId:
+          type: integer
+          format: int32
+          x-type: int
+        rank:
+          type: integer
+          format: int32
+          x-type: int
     match-v3.MatchlistDto:
       type: object
       title: MatchlistDto
