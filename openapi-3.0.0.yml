@@ -5619,6 +5619,39 @@ components:
           type: integer
           format: int32
           x-type: int
+    match-v3.MatchReferenceDto:
+      type: object
+      title: MatchReferenceDto
+      properties:
+        lane:
+          type: string
+          x-type: string
+        gameId:
+          type: integer
+          format: int64
+          x-type: long
+        champion:
+          type: integer
+          format: int32
+          x-type: int
+        platformId:
+          type: string
+          x-type: string
+        season:
+          type: integer
+          format: int32
+          x-type: int
+        queue:
+          type: integer
+          format: int32
+          x-type: int
+        role:
+          type: string
+          x-type: string
+        timestamp:
+          type: integer
+          format: int64
+          x-type: long
     match-v3.MatchTimelineDto:
       type: object
       title: MatchTimelineDto
@@ -5814,39 +5847,6 @@ components:
           type: integer
           format: int32
           x-type: int
-    match-v3.MatchReferenceDto:
-      type: object
-      title: MatchReferenceDto
-      properties:
-        lane:
-          type: string
-          x-type: string
-        gameId:
-          type: integer
-          format: int64
-          x-type: long
-        champion:
-          type: integer
-          format: int32
-          x-type: int
-        platformId:
-          type: string
-          x-type: string
-        season:
-          type: integer
-          format: int32
-          x-type: int
-        queue:
-          type: integer
-          format: int32
-          x-type: int
-        role:
-          type: string
-          x-type: string
-        timestamp:
-          type: integer
-          format: int64
-          x-type: long
     spectator-v3.CurrentGameInfo:
       type: object
       title: CurrentGameInfo
