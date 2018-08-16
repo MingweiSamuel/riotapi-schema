@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: d387864e61a32d8df2967a17fdf2f09af910a257
+  version: 882eb31f0decae60dae6e070a578564b3a969621
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -186,6 +186,49 @@ paths:
           x-type: long
       produces:
         - application/json
+  /lol/platform/v3/champion-rotations:
+    get:
+      tags:
+        - champion-v3
+      summary: 'Returns champion rotations, including free-to-play and low-level free-to-play rotations (REST)'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#champion-v3/GET_getChampionInfo'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/champion-v3.ChampionInfo'
+            x-type: ChampionInfo
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '422':
+          description: 'Player exists, but hasn''t played since match history collection began'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: champion-v3.getChampionInfo
+      x-app-rate-limit-excluded: true
+      description: "Returns champion rotations, including free-to-play and low-level free-to-play rotations (REST)\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+      produces:
+        - application/json
   /lol/platform/v3/champions:
     get:
       tags:
@@ -235,6 +278,7 @@ paths:
           description: 'Optional filter param to retrieve only free to play champions.'
           type: boolean
           x-type: boolean
+      deprecated: true
       produces:
         - application/json
   '/lol/platform/v3/champions/{id}':
@@ -287,6 +331,7 @@ paths:
           type: integer
           format: int64
           x-type: long
+      deprecated: true
       produces:
         - application/json
   '/lol/league/v3/challengerleagues/by-queue/{queue}':
@@ -3693,6 +3738,28 @@ definitions:
         x-type: long
         description: 'Last time this champion was played by this player - in Unix milliseconds time format.'
     description: 'This object contains single Champion Mastery information for player and champion combination.'
+  champion-v3.ChampionInfo:
+    type: object
+    title: ChampionInfo
+    properties:
+      freeChampionIdsForNewPlayers:
+        type: array
+        items:
+          type: integer
+          format: int32
+          x-type: int
+        x-type: 'List[int]'
+      freeChampionIds:
+        type: array
+        items:
+          type: integer
+          format: int32
+          x-type: int
+        x-type: 'List[int]'
+      maxNewPlayerLevel:
+        type: integer
+        format: int32
+        x-type: int
   champion-v3.ChampionListDto:
     type: object
     title: ChampionListDto
