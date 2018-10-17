@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 7e47ae5d56ad233b2d5b6d414149d6f2ff41f2c1
+  version: e04eb30617c277f132dbf0eb461adc88570eda27
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -225,113 +225,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: champion-v3.getChampionInfo
-      x-app-rate-limit-excluded: true
-      description: "Returns champion rotations, including free-to-play and low-level free-to-play rotations (REST)\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
-      produces:
-        - application/json
-  /lol/platform/v3/champions:
-    get:
-      tags:
-        - champion-v3
-      summary: 'Retrieve all champions.'
-      externalDocs:
-        description: 'Official API Reference'
-        url: 'https://developer.riotgames.com/api-methods/#champion-v3/GET_getChampions'
-      responses:
-        '200':
-          description: Success
-          schema:
-            $ref: '#/definitions/champion-v3.ChampionListDto'
-            x-type: ChampionListDto
-        '400':
-          description: 'Bad request'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: 'Data not found'
-        '405':
-          description: 'Method not allowed'
-        '415':
-          description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
-        '429':
-          description: 'Rate limit exceeded'
-        '500':
-          description: 'Internal server error'
-        '502':
-          description: 'Bad gateway'
-        '503':
-          description: 'Service unavailable'
-        '504':
-          description: 'Gateway timeout'
-      operationId: champion-v3.getChampions
-      x-app-rate-limit-excluded: true
-      description: "Retrieve all champions.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
-      parameters:
-        -
-          name: freeToPlay
-          in: query
-          required: false
-          description: 'Optional filter param to retrieve only free to play champions.'
-          type: boolean
-          x-type: boolean
-      deprecated: true
-      produces:
-        - application/json
-  '/lol/platform/v3/champions/{id}':
-    get:
-      tags:
-        - champion-v3
-      summary: 'Retrieve champion by ID.'
-      externalDocs:
-        description: 'Official API Reference'
-        url: 'https://developer.riotgames.com/api-methods/#champion-v3/GET_getChampionsById'
-      responses:
-        '200':
-          description: Success
-          schema:
-            $ref: '#/definitions/champion-v3.ChampionDto'
-            x-type: ChampionDto
-        '400':
-          description: 'Bad request'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: 'Data not found'
-        '405':
-          description: 'Method not allowed'
-        '415':
-          description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
-        '429':
-          description: 'Rate limit exceeded'
-        '500':
-          description: 'Internal server error'
-        '502':
-          description: 'Bad gateway'
-        '503':
-          description: 'Service unavailable'
-        '504':
-          description: 'Gateway timeout'
-      operationId: champion-v3.getChampionsById
-      x-app-rate-limit-excluded: true
-      description: "Retrieve champion by ID.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
-      parameters:
-        -
-          name: id
-          in: path
-          required: true
-          description: 'Champion ID'
-          type: integer
-          format: int64
-          x-type: long
-      deprecated: true
+      description: 'Returns champion rotations, including free-to-play and low-level free-to-play rotations (REST)'
       produces:
         - application/json
   '/lol/league/v3/challengerleagues/by-queue/{queue}':
@@ -1863,48 +1757,6 @@ definitions:
         type: integer
         format: int32
         x-type: int
-  champion-v3.ChampionListDto:
-    type: object
-    title: ChampionListDto
-    properties:
-      champions:
-        type: array
-        items:
-          $ref: '#/definitions/champion-v3.ChampionDto'
-          x-type: ChampionDto
-        x-type: 'List[ChampionDto]'
-        description: 'The collection of champion information.'
-    description: 'This object contains a collection of champion information.'
-  champion-v3.ChampionDto:
-    type: object
-    title: ChampionDto
-    properties:
-      rankedPlayEnabled:
-        type: boolean
-        x-type: boolean
-        description: 'Ranked play enabled flag.'
-      botEnabled:
-        type: boolean
-        x-type: boolean
-        description: 'Bot enabled flag (for custom games).'
-      botMmEnabled:
-        type: boolean
-        x-type: boolean
-        description: 'Bot Match Made enabled flag (for Co-op vs. AI games).'
-      active:
-        type: boolean
-        x-type: boolean
-        description: 'Indicates if the champion is active.'
-      freeToPlay:
-        type: boolean
-        x-type: boolean
-        description: 'Indicates if the champion is free to play. Free to play champions are rotated periodically.'
-      id:
-        type: integer
-        format: int64
-        x-type: long
-        description: 'Champion ID. For static information correlating to champion IDs, please refer to the LoL Static Data API.'
-    description: 'This object contains champion information.'
   league-v3.LeagueListDTO:
     type: object
     title: LeagueListDTO
