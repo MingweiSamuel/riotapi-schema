@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 4b4a73508b9c1d085d84d217f3e52ddfe61f2648
+  version: 5540d1f0c13a37fd87f7b5dee816a7564d84e3ba
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -2767,56 +2767,56 @@ components:
           type: object
           x-key:
             type: string
-            x-type: string
+            x-type: String
           additionalProperties:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[string, double]'
+          x-type: 'Map[String,  double]'
           description: 'Creep score difference versus the calculated lane opponent(s) for a specified period.'
         goldPerMinDeltas:
           type: object
           x-key:
             type: string
-            x-type: string
+            x-type: String
           additionalProperties:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[string, double]'
+          x-type: 'Map[String,  double]'
           description: 'Gold for a specified period.'
         xpDiffPerMinDeltas:
           type: object
           x-key:
             type: string
-            x-type: string
+            x-type: String
           additionalProperties:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[string, double]'
+          x-type: 'Map[String,  double]'
           description: 'Experience difference versus the calculated lane opponent(s) for a specified period.'
         creepsPerMinDeltas:
           type: object
           x-key:
             type: string
-            x-type: string
+            x-type: String
           additionalProperties:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[string, double]'
+          x-type: 'Map[String,  double]'
           description: 'Creeps for a specified period.'
         xpPerMinDeltas:
           type: object
           x-key:
             type: string
-            x-type: string
+            x-type: String
           additionalProperties:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[string, double]'
+          x-type: 'Map[String,  double]'
           description: 'Experience change for a specified period.'
         role:
           type: string
@@ -2832,23 +2832,23 @@ components:
           type: object
           x-key:
             type: string
-            x-type: string
+            x-type: String
           additionalProperties:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[string, double]'
+          x-type: 'Map[String,  double]'
           description: 'Damage taken difference versus the calculated lane opponent(s) for a specified period.'
         damageTakenPerMinDeltas:
           type: object
           x-key:
             type: string
-            x-type: string
+            x-type: String
           additionalProperties:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[string, double]'
+          x-type: 'Map[String,  double]'
           description: 'Damage taken for a specified period.'
     match-v3.MasteryDto:
       type: object
@@ -2942,74 +2942,18 @@ components:
         participantFrames:
           type: object
           x-key:
-            type: integer
-            format: int32
-            x-type: int
+            type: string
+            x-type: String
           additionalProperties:
             $ref: '#/components/schemas/match-v3.MatchParticipantFrameDto'
             x-type: MatchParticipantFrameDto
-          x-type: 'Map[int, MatchParticipantFrameDto]'
+          x-type: 'Map[String,  MatchParticipantFrameDto]'
         events:
           type: array
           items:
             $ref: '#/components/schemas/match-v3.MatchEventDto'
             x-type: MatchEventDto
           x-type: 'List[MatchEventDto]'
-    match-v3.MatchParticipantFrameDto:
-      type: object
-      title: MatchParticipantFrameDto
-      properties:
-        totalGold:
-          type: integer
-          format: int32
-          x-type: int
-        teamScore:
-          type: integer
-          format: int32
-          x-type: int
-        participantId:
-          type: integer
-          format: int32
-          x-type: int
-        level:
-          type: integer
-          format: int32
-          x-type: int
-        currentGold:
-          type: integer
-          format: int32
-          x-type: int
-        minionsKilled:
-          type: integer
-          format: int32
-          x-type: int
-        dominionScore:
-          type: integer
-          format: int32
-          x-type: int
-        position:
-          $ref: '#/components/schemas/match-v3.MatchPositionDto'
-          x-type: MatchPositionDto
-        xp:
-          type: integer
-          format: int32
-          x-type: int
-        jungleMinionsKilled:
-          type: integer
-          format: int32
-          x-type: int
-    match-v3.MatchPositionDto:
-      type: object
-      title: MatchPositionDto
-      properties:
-        y:
-          type: integer
-          format: int32
-          x-type: int
-        x:
-          type: integer
-          format: int32
-          x-type: int
     match-v3.MatchEventDto:
       type: object
       title: MatchEventDto
@@ -3109,6 +3053,61 @@ components:
           $ref: '#/components/schemas/match-v3.MatchPositionDto'
           x-type: MatchPositionDto
         beforeId:
+          type: integer
+          format: int32
+          x-type: int
+    match-v3.MatchPositionDto:
+      type: object
+      title: MatchPositionDto
+      properties:
+        y:
+          type: integer
+          format: int32
+          x-type: int
+        x:
+          type: integer
+          format: int32
+          x-type: int
+    match-v3.MatchParticipantFrameDto:
+      type: object
+      title: MatchParticipantFrameDto
+      properties:
+        totalGold:
+          type: integer
+          format: int32
+          x-type: int
+        teamScore:
+          type: integer
+          format: int32
+          x-type: int
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+        level:
+          type: integer
+          format: int32
+          x-type: int
+        currentGold:
+          type: integer
+          format: int32
+          x-type: int
+        minionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        dominionScore:
+          type: integer
+          format: int32
+          x-type: int
+        position:
+          $ref: '#/components/schemas/match-v3.MatchPositionDto'
+          x-type: MatchPositionDto
+        xp:
+          type: integer
+          format: int32
+          x-type: int
+        jungleMinionsKilled:
           type: integer
           format: int32
           x-type: int
@@ -3277,8 +3276,8 @@ components:
           items:
             type: integer
             format: int64
-            x-type: Long
-          x-type: 'List[Long]'
+            x-type: long
+          x-type: 'List[long]'
           description: 'IDs of the perks/runes assigned.'
         perkSubStyle:
           type: integer
