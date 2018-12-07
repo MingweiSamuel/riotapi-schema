@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "7aa561d1f988b275b046b4100eecb7fa63058fad"
+    "version": "fa1c253bf2f36a830293fbb526b5be33bff5b454"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -64,9 +64,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -137,9 +134,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -220,9 +214,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -515,9 +506,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -577,9 +565,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -598,6 +583,80 @@
         },
         "operationId": "league-v3.getChallengerLeague",
         "description": "Get the challenger league for given queue.",
+        "parameters": [
+          {
+            "name": "queue",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "RANKED_SOLO_5x5",
+              "RANKED_FLEX_SR",
+              "RANKED_FLEX_TT"
+            ],
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/lol/league/v3/grandmasterleagues/by-queue/{queue}": {
+      "get": {
+        "tags": [
+          "league-v3"
+        ],
+        "summary": "Get the grandmaster league for given queue.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#league-v3/GET_getGrandmasterLeague"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/league-v3.LeagueListDTO",
+              "x-type": "LeagueListDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "league-v3.getGrandmasterLeague",
+        "description": "Get the grandmaster league for given queue.",
         "parameters": [
           {
             "name": "queue",
@@ -653,9 +712,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -725,9 +781,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -806,9 +859,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -898,6 +948,80 @@
         },
         "operationId": "league-v4.getChallengerLeague",
         "description": "Get the challenger league for given queue.",
+        "parameters": [
+          {
+            "name": "queue",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "RANKED_SOLO_5x5",
+              "RANKED_FLEX_SR",
+              "RANKED_FLEX_TT"
+            ],
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/lol/league/v4/grandmasterleagues/by-queue/{queue}": {
+      "get": {
+        "tags": [
+          "league-v4"
+        ],
+        "summary": "Get the grandmaster league of a specific queue",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#league-v4/GET_getGrandmasterLeague"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/league-v4.LeagueListDTO",
+              "x-type": "LeagueListDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "league-v4.getGrandmasterLeague",
+        "description": "Get the grandmaster league of a specific queue",
         "parameters": [
           {
             "name": "queue",
@@ -1170,9 +1294,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -1237,9 +1358,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -1309,9 +1427,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -1383,9 +1498,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -1406,6 +1518,14 @@
         "description": "Get match by match ID and tournament code.",
         "parameters": [
           {
+            "name": "tournamentCode",
+            "in": "path",
+            "required": true,
+            "description": "The tournament code.",
+            "type": "string",
+            "x-type": "string"
+          },
+          {
             "name": "matchId",
             "in": "path",
             "required": true,
@@ -1413,14 +1533,6 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long"
-          },
-          {
-            "name": "tournamentCode",
-            "in": "path",
-            "required": true,
-            "description": "The tournament code.",
-            "type": "string",
-            "x-type": "string"
           }
         ],
         "produces": [
@@ -1496,33 +1608,6 @@
             "x-type": "long"
           },
           {
-            "name": "endTime",
-            "in": "query",
-            "required": false,
-            "description": "The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          },
-          {
-            "name": "beginIndex",
-            "in": "query",
-            "required": false,
-            "description": "The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          {
-            "name": "beginTime",
-            "in": "query",
-            "required": false,
-            "description": "The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          },
-          {
             "name": "champion",
             "in": "query",
             "required": false,
@@ -1534,15 +1619,6 @@
               "x-type": "int"
             },
             "x-type": "Set[int]"
-          },
-          {
-            "name": "endIndex",
-            "in": "query",
-            "required": false,
-            "description": "The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
           },
           {
             "name": "queue",
@@ -1569,6 +1645,42 @@
               "x-type": "int"
             },
             "x-type": "Set[int]"
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "required": false,
+            "description": "The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          {
+            "name": "beginTime",
+            "in": "query",
+            "required": false,
+            "description": "The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          {
+            "name": "endIndex",
+            "in": "query",
+            "required": false,
+            "description": "The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          {
+            "name": "beginIndex",
+            "in": "query",
+            "required": false,
+            "description": "The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
           }
         ],
         "produces": [
@@ -1611,9 +1723,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -1849,6 +1958,14 @@
         "description": "Get match by match ID and tournament code.",
         "parameters": [
           {
+            "name": "tournamentCode",
+            "in": "path",
+            "required": true,
+            "description": "The tournament code.",
+            "type": "string",
+            "x-type": "string"
+          },
+          {
             "name": "matchId",
             "in": "path",
             "required": true,
@@ -1856,14 +1973,6 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long"
-          },
-          {
-            "name": "tournamentCode",
-            "in": "path",
-            "required": true,
-            "description": "The tournament code.",
-            "type": "string",
-            "x-type": "string"
           }
         ],
         "produces": [
@@ -1935,33 +2044,6 @@
             "x-type": "string"
           },
           {
-            "name": "endTime",
-            "in": "query",
-            "required": false,
-            "description": "The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          },
-          {
-            "name": "beginIndex",
-            "in": "query",
-            "required": false,
-            "description": "The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          {
-            "name": "beginTime",
-            "in": "query",
-            "required": false,
-            "description": "The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          },
-          {
             "name": "champion",
             "in": "query",
             "required": false,
@@ -1973,15 +2055,6 @@
               "x-type": "int"
             },
             "x-type": "Set[int]"
-          },
-          {
-            "name": "endIndex",
-            "in": "query",
-            "required": false,
-            "description": "The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
           },
           {
             "name": "queue",
@@ -2008,6 +2081,42 @@
               "x-type": "int"
             },
             "x-type": "Set[int]"
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "required": false,
+            "description": "The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          {
+            "name": "beginTime",
+            "in": "query",
+            "required": false,
+            "description": "The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          {
+            "name": "endIndex",
+            "in": "query",
+            "required": false,
+            "description": "The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          {
+            "name": "beginIndex",
+            "in": "query",
+            "required": false,
+            "description": "The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.",
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
           }
         ],
         "produces": [
@@ -2121,9 +2230,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -2193,9 +2299,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -2384,9 +2487,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -2457,9 +2557,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -2528,9 +2625,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -2878,9 +2972,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -3024,9 +3115,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -3119,9 +3207,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -3191,9 +3276,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -3269,9 +3351,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -3666,9 +3745,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -3757,9 +3833,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -3840,9 +3913,6 @@
           "415": {
             "description": "Unsupported media type"
           },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
-          },
           "429": {
             "description": "Rate limit exceeded"
           },
@@ -3911,9 +3981,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -3984,9 +4051,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -4062,9 +4126,6 @@
           },
           "415": {
             "description": "Unsupported media type"
-          },
-          "422": {
-            "description": "Player exists, but hasn't played since match history collection began"
           },
           "429": {
             "description": "Rate limit exceeded"
@@ -4499,6 +4560,75 @@
         "progress": {
           "type": "string",
           "x-type": "string"
+        }
+      }
+    },
+    "league-v4.LeaguePositionDTO": {
+      "type": "object",
+      "title": "LeaguePositionDTO",
+      "properties": {
+        "queueType": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "summonerName": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "hotStreak": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "miniSeries": {
+          "$ref": "#/definitions/league-v4.MiniSeriesDTO",
+          "x-type": "MiniSeriesDTO"
+        },
+        "wins": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "veteran": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "losses": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "freshBlood": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "leagueId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "inactive": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "rank": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "leagueName": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "tier": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "leaguePoints": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
         }
       }
     },
@@ -5608,7 +5738,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Creep score difference versus the calculated lane opponent(s) for a specified period."
         },
         "goldPerMinDeltas": {
@@ -5622,7 +5752,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Gold for a specified period."
         },
         "xpDiffPerMinDeltas": {
@@ -5636,7 +5766,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Experience difference versus the calculated lane opponent(s) for a specified period."
         },
         "creepsPerMinDeltas": {
@@ -5650,7 +5780,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Creeps for a specified period."
         },
         "xpPerMinDeltas": {
@@ -5664,7 +5794,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Experience change for a specified period."
         },
         "role": {
@@ -5690,7 +5820,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Damage taken difference versus the calculated lane opponent(s) for a specified period."
         },
         "damageTakenPerMinDeltas": {
@@ -5704,7 +5834,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Damage taken for a specified period."
         }
       }
@@ -5835,7 +5965,7 @@
             "$ref": "#/definitions/match-v3.MatchParticipantFrameDto",
             "x-type": "MatchParticipantFrameDto"
           },
-          "x-type": "Map[String,  MatchParticipantFrameDto]"
+          "x-type": "Map[String, MatchParticipantFrameDto]"
         },
         "events": {
           "type": "array",
@@ -5844,6 +5974,77 @@
             "x-type": "MatchEventDto"
           },
           "x-type": "List[MatchEventDto]"
+        }
+      }
+    },
+    "match-v3.MatchParticipantFrameDto": {
+      "type": "object",
+      "title": "MatchParticipantFrameDto",
+      "properties": {
+        "totalGold": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "teamScore": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "participantId": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "level": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "currentGold": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "minionsKilled": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "dominionScore": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "position": {
+          "$ref": "#/definitions/match-v3.MatchPositionDto",
+          "x-type": "MatchPositionDto"
+        },
+        "xp": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "jungleMinionsKilled": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      }
+    },
+    "match-v3.MatchPositionDto": {
+      "type": "object",
+      "title": "MatchPositionDto",
+      "properties": {
+        "y": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "x": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
         }
       }
     },
@@ -5970,77 +6171,6 @@
           "x-type": "MatchPositionDto"
         },
         "beforeId": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        }
-      }
-    },
-    "match-v3.MatchPositionDto": {
-      "type": "object",
-      "title": "MatchPositionDto",
-      "properties": {
-        "y": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "x": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        }
-      }
-    },
-    "match-v3.MatchParticipantFrameDto": {
-      "type": "object",
-      "title": "MatchParticipantFrameDto",
-      "properties": {
-        "totalGold": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "teamScore": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "participantId": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "level": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "currentGold": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "minionsKilled": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "dominionScore": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "position": {
-          "$ref": "#/definitions/match-v3.MatchPositionDto",
-          "x-type": "MatchPositionDto"
-        },
-        "xp": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "jungleMinionsKilled": {
           "type": "integer",
           "format": "int32",
           "x-type": "int"
@@ -7005,7 +7135,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Creep score difference versus the calculated lane opponent(s) for a specified period."
         },
         "goldPerMinDeltas": {
@@ -7019,7 +7149,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Gold for a specified period."
         },
         "xpDiffPerMinDeltas": {
@@ -7033,7 +7163,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Experience difference versus the calculated lane opponent(s) for a specified period."
         },
         "creepsPerMinDeltas": {
@@ -7047,7 +7177,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Creeps for a specified period."
         },
         "xpPerMinDeltas": {
@@ -7061,7 +7191,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Experience change for a specified period."
         },
         "role": {
@@ -7087,7 +7217,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Damage taken difference versus the calculated lane opponent(s) for a specified period."
         },
         "damageTakenPerMinDeltas": {
@@ -7101,7 +7231,7 @@
             "format": "double",
             "x-type": "double"
           },
-          "x-type": "Map[String,  double]",
+          "x-type": "Map[String, double]",
           "description": "Damage taken for a specified period."
         }
       }
@@ -7232,7 +7362,7 @@
             "$ref": "#/definitions/match-v4.MatchParticipantFrameDto",
             "x-type": "MatchParticipantFrameDto"
           },
-          "x-type": "Map[String,  MatchParticipantFrameDto]"
+          "x-type": "Map[String, MatchParticipantFrameDto]"
         },
         "events": {
           "type": "array",
@@ -7241,6 +7371,77 @@
             "x-type": "MatchEventDto"
           },
           "x-type": "List[MatchEventDto]"
+        }
+      }
+    },
+    "match-v4.MatchParticipantFrameDto": {
+      "type": "object",
+      "title": "MatchParticipantFrameDto",
+      "properties": {
+        "totalGold": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "teamScore": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "participantId": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "level": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "currentGold": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "minionsKilled": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "dominionScore": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "position": {
+          "$ref": "#/definitions/match-v4.MatchPositionDto",
+          "x-type": "MatchPositionDto"
+        },
+        "xp": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "jungleMinionsKilled": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      }
+    },
+    "match-v4.MatchPositionDto": {
+      "type": "object",
+      "title": "MatchPositionDto",
+      "properties": {
+        "y": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "x": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
         }
       }
     },
@@ -7367,22 +7568,6 @@
           "x-type": "MatchPositionDto"
         },
         "beforeId": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        }
-      }
-    },
-    "match-v4.MatchPositionDto": {
-      "type": "object",
-      "title": "MatchPositionDto",
-      "properties": {
-        "y": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "x": {
           "type": "integer",
           "format": "int32",
           "x-type": "int"

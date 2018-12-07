@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 876686f72f2a5f35ed8a70036d6efed394753969
+  version: fffbeadf6df63d22957fa284dc67cbd9c67a7493
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -55,8 +55,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -108,8 +106,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -171,8 +167,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -387,8 +381,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -430,8 +422,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -444,6 +434,59 @@ paths:
           description: 'Gateway timeout'
       operationId: league-v3.getChallengerLeague
       description: 'Get the challenger league for given queue.'
+      parameters:
+        -
+          name: queue
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+            enum:
+              - RANKED_SOLO_5x5
+              - RANKED_FLEX_SR
+              - RANKED_FLEX_TT
+    x-endpoint: league-v3
+  '/lol/league/v3/grandmasterleagues/by-queue/{queue}':
+    get:
+      tags:
+        - league-v3
+      summary: 'Get the grandmaster league for given queue.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#league-v3/GET_getGrandmasterLeague'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/league-v3.LeagueListDTO'
+                x-type: LeagueListDTO
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: league-v3.getGrandmasterLeague
+      description: 'Get the grandmaster league for given queue.'
       parameters:
         -
           name: queue
@@ -485,8 +528,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -537,8 +578,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -595,8 +634,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -659,6 +696,59 @@ paths:
           description: 'Gateway timeout'
       operationId: league-v4.getChallengerLeague
       description: 'Get the challenger league for given queue.'
+      parameters:
+        -
+          name: queue
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+            enum:
+              - RANKED_SOLO_5x5
+              - RANKED_FLEX_SR
+              - RANKED_FLEX_TT
+    x-endpoint: league-v4
+  '/lol/league/v4/grandmasterleagues/by-queue/{queue}':
+    get:
+      tags:
+        - league-v4
+      summary: 'Get the grandmaster league of a specific queue'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#league-v4/GET_getGrandmasterLeague'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/league-v4.LeagueListDTO'
+                x-type: LeagueListDTO
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: league-v4.getGrandmasterLeague
+      description: 'Get the grandmaster league of a specific queue'
       parameters:
         -
           name: queue
@@ -855,8 +945,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -903,8 +991,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -955,8 +1041,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1008,8 +1092,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1024,6 +1106,14 @@ paths:
       description: 'Get match by match ID and tournament code.'
       parameters:
         -
+          name: tournamentCode
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+          description: 'The tournament code.'
+        -
           name: matchId
           in: path
           required: true
@@ -1032,14 +1122,6 @@ paths:
             format: int64
             x-type: long
           description: 'The match ID.'
-        -
-          name: tournamentCode
-          in: path
-          required: true
-          schema:
-            type: string
-            x-type: string
-          description: 'The tournament code.'
     x-endpoint: match-v3
   '/lol/match/v3/matchlists/by-account/{accountId}':
     get:
@@ -1094,33 +1176,6 @@ paths:
             x-type: long
           description: 'The account ID.'
         -
-          name: endTime
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int64
-            x-type: long
-          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
-        -
-          name: beginIndex
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-            x-type: int
-          description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
-        -
-          name: beginTime
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int64
-            x-type: long
-          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
-        -
           name: champion
           in: query
           required: false
@@ -1133,15 +1188,6 @@ paths:
             x-type: 'Set[int]'
           description: 'Set of champion IDs for filtering the matchlist.'
           explode: true
-        -
-          name: endIndex
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-            x-type: int
-          description: 'The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
         -
           name: queue
           in: query
@@ -1168,6 +1214,42 @@ paths:
             x-type: 'Set[int]'
           description: 'Set of season IDs for filtering the matchlist.'
           explode: true
+        -
+          name: endTime
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+            x-type: long
+          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
+        -
+          name: beginTime
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+            x-type: long
+          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
+        -
+          name: endIndex
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
+        -
+          name: beginIndex
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
     x-endpoint: match-v3
   '/lol/match/v3/timelines/by-match/{matchId}':
     get:
@@ -1197,8 +1279,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1369,6 +1449,14 @@ paths:
       description: 'Get match by match ID and tournament code.'
       parameters:
         -
+          name: tournamentCode
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+          description: 'The tournament code.'
+        -
           name: matchId
           in: path
           required: true
@@ -1377,14 +1465,6 @@ paths:
             format: int64
             x-type: long
           description: 'The match ID.'
-        -
-          name: tournamentCode
-          in: path
-          required: true
-          schema:
-            type: string
-            x-type: string
-          description: 'The tournament code.'
     x-endpoint: match-v4
   '/lol/match/v4/matchlists/by-account/{encryptedAccountId}':
     get:
@@ -1436,33 +1516,6 @@ paths:
             x-type: string
           description: 'The account ID.'
         -
-          name: endTime
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int64
-            x-type: long
-          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
-        -
-          name: beginIndex
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-            x-type: int
-          description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
-        -
-          name: beginTime
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int64
-            x-type: long
-          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
-        -
           name: champion
           in: query
           required: false
@@ -1475,15 +1528,6 @@ paths:
             x-type: 'Set[int]'
           description: 'Set of champion IDs for filtering the matchlist.'
           explode: true
-        -
-          name: endIndex
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-            x-type: int
-          description: 'The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
         -
           name: queue
           in: query
@@ -1510,6 +1554,42 @@ paths:
             x-type: 'Set[int]'
           description: 'Set of season IDs for filtering the matchlist.'
           explode: true
+        -
+          name: endTime
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+            x-type: long
+          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
+        -
+          name: beginTime
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+            x-type: long
+          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
+        -
+          name: endIndex
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'The end index to use for filtering matchlist. If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
+        -
+          name: beginIndex
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
     x-endpoint: match-v4
   '/lol/match/v4/timelines/by-match/{matchId}':
     get:
@@ -1590,8 +1670,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1643,8 +1721,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1777,8 +1853,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1829,8 +1903,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -1881,8 +1953,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2133,8 +2203,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2237,8 +2305,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2307,8 +2373,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2360,8 +2424,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2412,8 +2474,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2687,8 +2747,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2752,8 +2810,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2811,8 +2867,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2862,8 +2916,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2915,8 +2967,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -2967,8 +3017,6 @@ paths:
           description: 'Method not allowed'
         '415':
           description: 'Unsupported media type'
-        '422':
-          description: 'Player exists, but hasn''t played since match history collection began'
         '429':
           description: 'Rate limit exceeded'
         '500':
@@ -3295,6 +3343,58 @@ components:
         progress:
           type: string
           x-type: string
+    league-v4.LeaguePositionDTO:
+      type: object
+      title: LeaguePositionDTO
+      properties:
+        queueType:
+          type: string
+          x-type: string
+        summonerName:
+          type: string
+          x-type: string
+        hotStreak:
+          type: boolean
+          x-type: boolean
+        miniSeries:
+          $ref: '#/components/schemas/league-v4.MiniSeriesDTO'
+          x-type: MiniSeriesDTO
+        wins:
+          type: integer
+          format: int32
+          x-type: int
+        veteran:
+          type: boolean
+          x-type: boolean
+        losses:
+          type: integer
+          format: int32
+          x-type: int
+        freshBlood:
+          type: boolean
+          x-type: boolean
+        leagueId:
+          type: string
+          x-type: string
+        inactive:
+          type: boolean
+          x-type: boolean
+        rank:
+          type: string
+          x-type: string
+        leagueName:
+          type: string
+          x-type: string
+        tier:
+          type: string
+          x-type: string
+        summonerId:
+          type: string
+          x-type: string
+        leaguePoints:
+          type: integer
+          format: int32
+          x-type: int
     lol-status-v3.ShardStatus:
       type: object
       title: ShardStatus
@@ -4172,7 +4272,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Creep score difference versus the calculated lane opponent(s) for a specified period.'
         goldPerMinDeltas:
           type: object
@@ -4183,7 +4283,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Gold for a specified period.'
         xpDiffPerMinDeltas:
           type: object
@@ -4194,7 +4294,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Experience difference versus the calculated lane opponent(s) for a specified period.'
         creepsPerMinDeltas:
           type: object
@@ -4205,7 +4305,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Creeps for a specified period.'
         xpPerMinDeltas:
           type: object
@@ -4216,7 +4316,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Experience change for a specified period.'
         role:
           type: string
@@ -4237,7 +4337,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Damage taken difference versus the calculated lane opponent(s) for a specified period.'
         damageTakenPerMinDeltas:
           type: object
@@ -4248,7 +4348,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Damage taken for a specified period.'
     match-v3.MasteryDto:
       type: object
@@ -4347,13 +4447,68 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/match-v3.MatchParticipantFrameDto'
             x-type: MatchParticipantFrameDto
-          x-type: 'Map[String,  MatchParticipantFrameDto]'
+          x-type: 'Map[String, MatchParticipantFrameDto]'
         events:
           type: array
           items:
             $ref: '#/components/schemas/match-v3.MatchEventDto'
             x-type: MatchEventDto
           x-type: 'List[MatchEventDto]'
+    match-v3.MatchParticipantFrameDto:
+      type: object
+      title: MatchParticipantFrameDto
+      properties:
+        totalGold:
+          type: integer
+          format: int32
+          x-type: int
+        teamScore:
+          type: integer
+          format: int32
+          x-type: int
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+        level:
+          type: integer
+          format: int32
+          x-type: int
+        currentGold:
+          type: integer
+          format: int32
+          x-type: int
+        minionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        dominionScore:
+          type: integer
+          format: int32
+          x-type: int
+        position:
+          $ref: '#/components/schemas/match-v3.MatchPositionDto'
+          x-type: MatchPositionDto
+        xp:
+          type: integer
+          format: int32
+          x-type: int
+        jungleMinionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+    match-v3.MatchPositionDto:
+      type: object
+      title: MatchPositionDto
+      properties:
+        y:
+          type: integer
+          format: int32
+          x-type: int
+        x:
+          type: integer
+          format: int32
+          x-type: int
     match-v3.MatchEventDto:
       type: object
       title: MatchEventDto
@@ -4453,61 +4608,6 @@ components:
           $ref: '#/components/schemas/match-v3.MatchPositionDto'
           x-type: MatchPositionDto
         beforeId:
-          type: integer
-          format: int32
-          x-type: int
-    match-v3.MatchPositionDto:
-      type: object
-      title: MatchPositionDto
-      properties:
-        y:
-          type: integer
-          format: int32
-          x-type: int
-        x:
-          type: integer
-          format: int32
-          x-type: int
-    match-v3.MatchParticipantFrameDto:
-      type: object
-      title: MatchParticipantFrameDto
-      properties:
-        totalGold:
-          type: integer
-          format: int32
-          x-type: int
-        teamScore:
-          type: integer
-          format: int32
-          x-type: int
-        participantId:
-          type: integer
-          format: int32
-          x-type: int
-        level:
-          type: integer
-          format: int32
-          x-type: int
-        currentGold:
-          type: integer
-          format: int32
-          x-type: int
-        minionsKilled:
-          type: integer
-          format: int32
-          x-type: int
-        dominionScore:
-          type: integer
-          format: int32
-          x-type: int
-        position:
-          $ref: '#/components/schemas/match-v3.MatchPositionDto'
-          x-type: MatchPositionDto
-        xp:
-          type: integer
-          format: int32
-          x-type: int
-        jungleMinionsKilled:
           type: integer
           format: int32
           x-type: int
@@ -5279,7 +5379,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Creep score difference versus the calculated lane opponent(s) for a specified period.'
         goldPerMinDeltas:
           type: object
@@ -5290,7 +5390,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Gold for a specified period.'
         xpDiffPerMinDeltas:
           type: object
@@ -5301,7 +5401,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Experience difference versus the calculated lane opponent(s) for a specified period.'
         creepsPerMinDeltas:
           type: object
@@ -5312,7 +5412,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Creeps for a specified period.'
         xpPerMinDeltas:
           type: object
@@ -5323,7 +5423,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Experience change for a specified period.'
         role:
           type: string
@@ -5344,7 +5444,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Damage taken difference versus the calculated lane opponent(s) for a specified period.'
         damageTakenPerMinDeltas:
           type: object
@@ -5355,7 +5455,7 @@ components:
             type: number
             format: double
             x-type: double
-          x-type: 'Map[String,  double]'
+          x-type: 'Map[String, double]'
           description: 'Damage taken for a specified period.'
     match-v4.MasteryDto:
       type: object
@@ -5454,13 +5554,68 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/match-v4.MatchParticipantFrameDto'
             x-type: MatchParticipantFrameDto
-          x-type: 'Map[String,  MatchParticipantFrameDto]'
+          x-type: 'Map[String, MatchParticipantFrameDto]'
         events:
           type: array
           items:
             $ref: '#/components/schemas/match-v4.MatchEventDto'
             x-type: MatchEventDto
           x-type: 'List[MatchEventDto]'
+    match-v4.MatchParticipantFrameDto:
+      type: object
+      title: MatchParticipantFrameDto
+      properties:
+        totalGold:
+          type: integer
+          format: int32
+          x-type: int
+        teamScore:
+          type: integer
+          format: int32
+          x-type: int
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+        level:
+          type: integer
+          format: int32
+          x-type: int
+        currentGold:
+          type: integer
+          format: int32
+          x-type: int
+        minionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        dominionScore:
+          type: integer
+          format: int32
+          x-type: int
+        position:
+          $ref: '#/components/schemas/match-v4.MatchPositionDto'
+          x-type: MatchPositionDto
+        xp:
+          type: integer
+          format: int32
+          x-type: int
+        jungleMinionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+    match-v4.MatchPositionDto:
+      type: object
+      title: MatchPositionDto
+      properties:
+        y:
+          type: integer
+          format: int32
+          x-type: int
+        x:
+          type: integer
+          format: int32
+          x-type: int
     match-v4.MatchEventDto:
       type: object
       title: MatchEventDto
@@ -5560,18 +5715,6 @@ components:
           $ref: '#/components/schemas/match-v4.MatchPositionDto'
           x-type: MatchPositionDto
         beforeId:
-          type: integer
-          format: int32
-          x-type: int
-    match-v4.MatchPositionDto:
-      type: object
-      title: MatchPositionDto
-      properties:
-        y:
-          type: integer
-          format: int32
-          x-type: int
-        x:
           type: integer
           format: int32
           x-type: int
