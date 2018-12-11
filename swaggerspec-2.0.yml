@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: fa1c253bf2f36a830293fbb526b5be33bff5b454
+  version: fcc5fa810b1ecdf151b2eef7cf49f13cc72adce6
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -1992,7 +1992,7 @@ paths:
     get:
       tags:
         - summoner-v4
-      summary: 'Get a summoner by PUUID'
+      summary: 'Get a summoner by PUUID.'
       externalDocs:
         description: 'Official API Reference'
         url: 'https://developer.riotgames.com/api-methods/#summoner-v4/GET_getByPUUID'
@@ -2025,7 +2025,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: summoner-v4.getByPUUID
-      description: 'Get a summoner by PUUID'
+      description: 'Get a summoner by PUUID.'
       parameters:
         -
           name: encryptedPUUID
