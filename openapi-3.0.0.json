@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "e03277f9f9d88205dc5467b416347342bfc57c16"
+    "version": "713042b112c73fccd4154b1521485b0eb58f91d8"
   },
   "servers": [
     {
@@ -4379,6 +4379,475 @@
         }
       },
       "x-endpoint": "tournament-v3"
+    },
+    "/lol/tournament/v4/codes": {
+      "post": {
+        "tags": [
+          "tournament-v4"
+        ],
+        "summary": "Create a tournament code for the given tournament.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tournament-v4/POST_createTournamentCode"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "x-type": "string"
+                  },
+                  "x-type": "List[string]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tournament-v4.createTournamentCode",
+        "description": "Create a tournament code for the given tournament.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-v4.TournamentCodeParameters",
+                "x-type": "TournamentCodeParameters"
+              }
+            }
+          },
+          "required": true,
+          "description": "Metadata for the generated code"
+        },
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            },
+            "description": "The number of codes to create (max 1000)"
+          },
+          {
+            "name": "tournamentId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "description": "The tournament ID"
+          }
+        ]
+      },
+      "x-endpoint": "tournament-v4"
+    },
+    "/lol/tournament/v4/codes/{tournamentCode}": {
+      "get": {
+        "tags": [
+          "tournament-v4"
+        ],
+        "summary": "Returns the tournament code DTO associated with a tournament code string.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tournament-v4/GET_getTournamentCode"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tournament-v4.TournamentCodeDTO",
+                  "x-type": "TournamentCodeDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tournament-v4.getTournamentCode",
+        "description": "Returns the tournament code DTO associated with a tournament code string.",
+        "parameters": [
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "The tournament code string."
+          }
+        ]
+      },
+      "x-endpoint": "tournament-v4",
+      "put": {
+        "tags": [
+          "tournament-v4"
+        ],
+        "summary": "Update the pick type, map, spectator type, or allowed summoners for a code.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tournament-v4/PUT_updateCode"
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tournament-v4.updateCode",
+        "description": "Update the pick type, map, spectator type, or allowed summoners for a code.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-v4.TournamentCodeUpdateParameters",
+                "x-type": "TournamentCodeUpdateParameters"
+              }
+            }
+          },
+          "required": false,
+          "description": "The fields to update"
+        },
+        "parameters": [
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "The tournament code to update"
+          }
+        ]
+      }
+    },
+    "/lol/tournament/v4/lobby-events/by-code/{tournamentCode}": {
+      "get": {
+        "tags": [
+          "tournament-v4"
+        ],
+        "summary": "Gets a list of lobby events by tournament code.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tournament-v4/GET_getLobbyEventsByCode"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tournament-v4.LobbyEventDTOWrapper",
+                  "x-type": "LobbyEventDTOWrapper"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tournament-v4.getLobbyEventsByCode",
+        "description": "Gets a list of lobby events by tournament code.",
+        "parameters": [
+          {
+            "name": "tournamentCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "description": "The short code to look up lobby events for"
+          }
+        ]
+      },
+      "x-endpoint": "tournament-v4"
+    },
+    "/lol/tournament/v4/providers": {
+      "post": {
+        "tags": [
+          "tournament-v4"
+        ],
+        "summary": "Creates a tournament provider and returns its ID.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tournament-v4/POST_registerProviderData"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "x-type": "int"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tournament-v4.registerProviderData",
+        "description": "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-v4.ProviderRegistrationParameters",
+                "x-type": "ProviderRegistrationParameters"
+              }
+            }
+          },
+          "required": true,
+          "description": "The provider definition."
+        }
+      },
+      "x-endpoint": "tournament-v4"
+    },
+    "/lol/tournament/v4/tournaments": {
+      "post": {
+        "tags": [
+          "tournament-v4"
+        ],
+        "summary": "Creates a tournament and returns its ID.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tournament-v4/POST_registerTournament"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "x-type": "int"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tournament-v4.registerTournament",
+        "description": "Creates a tournament and returns its ID.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tournament-v4.TournamentRegistrationParameters",
+                "x-type": "TournamentRegistrationParameters"
+              }
+            }
+          },
+          "required": true,
+          "description": "The tournament definition."
+        }
+      },
+      "x-endpoint": "tournament-v4"
     }
   },
   "components": {
@@ -9171,6 +9640,217 @@
         }
       },
       "tournament-v3.TournamentRegistrationParameters": {
+        "type": "object",
+        "title": "TournamentRegistrationParameters",
+        "properties": {
+          "providerId": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The provider ID to specify the regional registered provider data to associate this tournament."
+          },
+          "name": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The optional name of the tournament."
+          }
+        }
+      },
+      "tournament-v4.TournamentCodeParameters": {
+        "type": "object",
+        "title": "TournamentCodeParameters",
+        "properties": {
+          "spectatorType": {
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "NONE",
+              "LOBBYONLY",
+              "ALL"
+            ],
+            "description": "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+          },
+          "teamSize": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "The team size of the game. Valid values are 1-5."
+          },
+          "pickType": {
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "BLIND_PICK",
+              "DRAFT_MODE",
+              "ALL_RANDOM",
+              "TOURNAMENT_DRAFT"
+            ],
+            "description": "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+          },
+          "allowedSummonerIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            },
+            "x-type": "Set[long]",
+            "description": "Optional list of participants in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future."
+          },
+          "mapType": {
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "SUMMONERS_RIFT",
+              "TWISTED_TREELINE",
+              "HOWLING_ABYSS"
+            ],
+            "description": "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
+          },
+          "metadata": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Optional string that may contain any data in any format, if specified at all. Used to denote any custom information about the game."
+          }
+        }
+      },
+      "tournament-v4.TournamentCodeDTO": {
+        "type": "object",
+        "title": "TournamentCodeDTO",
+        "properties": {
+          "map": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The game map for the tournament code game"
+          },
+          "code": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The tournament code."
+          },
+          "spectators": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The spectator mode for the tournament code game."
+          },
+          "region": {
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "BR",
+              "EUNE",
+              "EUW",
+              "JP",
+              "LAN",
+              "LAS",
+              "NA",
+              "OCE",
+              "PBE",
+              "RU",
+              "TR"
+            ],
+            "description": "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
+          },
+          "providerId": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The provider's ID."
+          },
+          "teamSize": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The team size for the tournament code game."
+          },
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "x-type": "Set[string]"
+          },
+          "pickType": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The pick mode for tournament code game."
+          },
+          "tournamentId": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The tournament's ID."
+          },
+          "lobbyName": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The lobby name for the tournament code game."
+          },
+          "password": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The password for the tournament code game."
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "The tournament code's ID."
+          },
+          "metaData": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The metadata for tournament code."
+          }
+        }
+      },
+      "tournament-v4.LobbyEventDTOWrapper": {
+        "type": "object",
+        "title": "LobbyEventDTOWrapper",
+        "properties": {
+          "eventList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/tournament-v4.LobbyEventDTO",
+              "x-type": "LobbyEventDTO"
+            },
+            "x-type": "List[LobbyEventDTO]"
+          }
+        }
+      },
+      "tournament-v4.ProviderRegistrationParameters": {
+        "type": "object",
+        "title": "ProviderRegistrationParameters",
+        "properties": {
+          "url": {
+            "type": "string",
+            "x-type": "string",
+            "description": "The provider's callback URL to which tournament game results in this region should be posted. The URL must be well-formed, use the http or https protocol, and use the default port for the protocol (http URLs must use port 80, https URLs must use port 443)."
+          },
+          "region": {
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "BR",
+              "EUNE",
+              "EUW",
+              "JP",
+              "LAN",
+              "LAS",
+              "NA",
+              "OCE",
+              "PBE",
+              "RU",
+              "TR"
+            ],
+            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
+          }
+        }
+      },
+      "tournament-v4.TournamentRegistrationParameters": {
         "type": "object",
         "title": "TournamentRegistrationParameters",
         "properties": {
