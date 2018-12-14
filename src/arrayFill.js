@@ -1,3 +1,5 @@
+/// Array polyfills.
+
 Array.prototype.flat = function() {
   return [].concat.apply([], this);
 }

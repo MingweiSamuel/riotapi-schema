@@ -1,3 +1,8 @@
+/// Representation of a single method.
+/// i.e. https://developer.riotgames.com/api-methods/#champion-mastery-v4/GET_getAllChampionMasteries
+/// A method is a single REST API url with associated argument, return value,
+/// and response code information.
+
 const fs = require("fs-extra");
 
 const aliases = require('./data/dtoAliases');

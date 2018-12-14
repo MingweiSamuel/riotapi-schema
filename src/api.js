@@ -1,6 +1,9 @@
+/// This is the main entry point for the schema generation.
+
 const fs = require("fs-extra");
 const YAML = require('yamljs');
 
+// Two-try request function.
 const req = (function(req) {
   return url => req(url).catch(() => req(url));
 })(require("request-promise-native"));

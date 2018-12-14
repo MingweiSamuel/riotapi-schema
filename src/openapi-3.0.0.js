@@ -1,3 +1,5 @@
+/// OpenAPI spec generator
+
 const hash = require('object-hash');
 
 function toSpec({ endpoints, regions, description }) {

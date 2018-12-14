@@ -1,3 +1,8 @@
+/// Represents a Schema.
+/// Schema is equivalent to a DTO. This object stores info about the different
+/// properties a particular Schema contains, as well as it's name, description,
+/// and which endpoint it came from.
+
 const descTypeOverrides = require('./data/dtoDescriptionTypeOverrides');
 
 const types = require('./types');

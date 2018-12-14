@@ -1,7 +1,6 @@
-/**
- * Deep equals, ignoring underscore-prefixed keys.
- * Only handles primitives, arrays, and objects.
- */
+/// Deep equals, ignoring underscore-prefixed keys.
+/// Only handles primitives, arrays, and objects.
+
 function deepEqual(a, b) {
   if (Object.is(a, b))
     return true;

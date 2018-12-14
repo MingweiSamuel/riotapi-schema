@@ -1,3 +1,6 @@
+/// Type util functions for dealing with different variable types in
+/// JSON Schema / Swagger Spec / OpenAPI
+
 const aliases = require('./data/dtoAliases');
 
 function getType(typeString, endpoint) {

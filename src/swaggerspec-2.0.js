@@ -1,3 +1,5 @@
+/// Swagger Spec generator
+
 const hash = require('object-hash');
 
 // Riot API exclusively uses JSON.

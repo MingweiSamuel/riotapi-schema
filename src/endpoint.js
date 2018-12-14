@@ -1,3 +1,7 @@
+/// Representation of a single endpoint.
+/// i.e. https://developer.riotgames.com/api-methods/#champion-mastery-v4
+/// An endpoint is the top-level collection of methods.
+
 const fs = require("fs-extra");
 
 const Method = require('./method');
@@ -19,10 +23,10 @@ function Endpoint(dom, desc) {
 Endpoint.prototype._compile = function() {
   console.log(this.name);
 
-  let dtosDir = this.name + '/dtos/';
-  let methodsDir = this.name + '/methods/';
+  // let dtosDir = this.name + '/dtos/';
+  // let methodsDir = this.name + '/methods/';
 
-  let dirs = [ dtosDir, methodsDir ];
+  // let dirs = [ dtosDir, methodsDir ];
 
   let methodEls = this.dom.window.document.getElementsByClassName('operation');
   this.methods = Array.from(methodEls)

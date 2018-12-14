@@ -1,3 +1,5 @@
+/// Representation of a Riot Games API region.
+/// https://developer.riotgames.com/regional-endpoints.html
 
 function Region(tr) {
   let [ region, platforms, host ] = Array.from(tr.children)
