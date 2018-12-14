@@ -13,7 +13,7 @@ function Schema(endpointName, name, description, properties) {
   this.name = name;
   this.description = description;
   this.properties = properties;
-  
+
   this.required = [];
 }
 

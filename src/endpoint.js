@@ -2,8 +2,6 @@
 /// i.e. https://developer.riotgames.com/api-methods/#champion-mastery-v4
 /// An endpoint is the top-level collection of methods.
 
-const fs = require("fs-extra");
-
 const Method = require('./method');
 const Schema = require('./schema');
 
@@ -62,9 +60,19 @@ Endpoint.prototype.get_dtos = function() {
 };
 
 Endpoint.prototype.list_missing_dtos = function() {
-  //TODO: Doesn't catch if "Return value:" type is missing.
-  return Object.values(this._allDtos)
-    .flatMap(dto => Object.values(dto.properties))
+  // DTOs referenced by other DTOs.
+  let dtoToDtoReferences = Object.values(this._allDtos)
+    .flatMap(dto => Object.values(dto.properties));
+
+  // DTOs referenced by methods in return values or body parameters.
+  // (path parameters are always primitives, so they can be ignored).
+  let methodDtoReferences = this.methods
+    .flatMap(method => [ method.returnType, method.bodyType ])
+    .filter(dto => dto);
+
+  let allDtoReferences = dtoToDtoReferences.concat(methodDtoReferences);
+  return allDtoReferences
+    // Extract full name out of references.
     .map(prop => {
       // Get $ref (or undefined).
       if (prop.$ref)
@@ -74,8 +82,11 @@ Endpoint.prototype.list_missing_dtos = function() {
       if ('object' === prop.type)
         return prop.additionalProperties.$ref
     })
+    // Remove nulls.
     .filter(ref => ref)
+    // Extract short name from full name. Pop returns last element (DTP name).
     .map(ref => ref.split('.').pop())
+    // Return names not found in the _allDtos dict.
     .filter(name => !this._allDtos[name]);
 };
 
