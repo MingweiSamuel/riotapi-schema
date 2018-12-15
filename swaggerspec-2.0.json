@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "81e20a862a8e7b2ce85989ed9a2f78643e6ba59f"
+    "version": "ace084b449e147875eb9dd81d6ea137cd17b2f58"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -9642,8 +9642,30 @@
         }
       }
     },
-    "tournament-v4.undefined": {
+    "tournament-v4.LobbyEventDTO": {
       "type": "object",
+      "title": "LobbyEventDTO",
+      "properties": {
+        "eventType": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The type of event that was triggered"
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The summoner that triggered the event"
+        },
+        "timestamp": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Timestamp from the event"
+        }
+      }
+    },
+    "tournament-v4.TournamentCodeUpdateParameters": {
+      "type": "object",
+      "title": "TournamentCodeUpdateParameters",
       "properties": {
         "spectatorType": {
           "type": "string",
