@@ -14,9 +14,9 @@ knowing if you plan to use the generated schemas.
 
 - `tournament-stub-v4` and `tournament-v4`
 
-*TODO* Because these endpoints are closely connected, both of their DTOs
+*TODO* ~~Because these endpoints are closely connected, both of their DTOs
 are included under `tournament-v4`. This way there aren't duplicate copies of
-tournament DTOs. This behavior is specified by `src/data/mockEndpoints.json`.
+tournament DTOs. This behavior is specified by `src/data/mockEndpoints.json`.~~
 
 ### Previous Quirks
 

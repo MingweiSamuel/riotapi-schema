@@ -53,11 +53,16 @@ async function getEndpoints() {
     let endpointPageDom = new JSDOM(JSON.parse(endpointDetailJson).html);
     return new Endpoint(endpointPageDom, desc);
   }));
+  return endpoints;
+}
 
+
+async function fixMissingDtos(endpoints) {
   // Look back at previous version for any missing dtos.
   // TODO: doesn't check if added dtos in turn have their own missing dtos...
   let missingDtos = endpoints.flatMap(endpoint => endpoint.list_missing_dtos()
     .map(dtoName => ({ endpoint, dtoName })));
+  let missingDtoNames = [];
   if (missingDtos.length) {
     console.log();
     try {
@@ -72,6 +77,7 @@ async function getEndpoints() {
         // TODO: fullDtoName magic string.
         let fullDtoName = endpoint.name + '.' + dtoName;
         console.log('Missing DTO: ' + fullDtoName + '.');
+        missingDtoNames.push(fullDtoName);
 
         let oldDto = oldSchema.components.schemas[fullDtoName]
         if (oldDto) {
@@ -86,7 +92,7 @@ async function getEndpoints() {
       console.log('FAILED to get previous commit.', e);
     }
   }
-  return endpoints;
+  return missingDtoNames;
 }
 
 
@@ -149,6 +155,13 @@ module.exports = async function(rootDir) {
     getRegions()
   ]);
 
+  // Write missing dto names.
+  let missingDtoNames = await fixMissingDtos(endpoints);
+  missingDtoNames.sort();
+
   // Write output spec files.
-  await writeOutput(endpoints, regions);
+  await Promise.all([
+    writeOutput(endpoints, regions),
+    fs.writeFile("missing.json", JSON.stringify(missingDtoNames, null, 2))
+  ]);
 };
