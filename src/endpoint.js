@@ -91,9 +91,10 @@ Endpoint.prototype.list_missing_dtos = function() {
 };
 
 Endpoint.prototype.add_old_dto = function(oldDto) {
-  if (this._allDtos[oldDto.title])
-    throw Error('DTO with name ' + oldDto.title + 'already exists!');
-  this._allDtos[oldDto.name] = new Schema(this.name, oldDto.title, oldDto.description, oldDto.properties);
+  let name = oldDto.name || oldDto.title; // Not sure if Schema object or object from OpenAPI json.
+  if (this._allDtos[name])
+    throw Error('DTO with name ' + name + 'already exists!');
+  this._allDtos[name] = new Schema(this.name, name, oldDto.description, oldDto.properties);
 };
 
 module.exports = Endpoint;
