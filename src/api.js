@@ -24,6 +24,8 @@ const specs = [ openapi_300, swaggerspec_20 ];
 const BASE_URL = 'https://developer.riotgames.com/';
 const OUTPUT = 'out';
 
+const endpointSharedDtos = require('./data/endpointSharedDtos');
+
 
 async function cleanupOutput() {
   // Make output folder.
@@ -65,6 +67,10 @@ async function fixMissingDtos(endpoints) {
   let missingDtoNames = [];
   if (missingDtos.length) {
     console.log();
+
+    let endpointsByName = {};
+    endpoints.forEach(e => endpointsByName[e.name] = e);
+
     try {
       // Read old openapi json via process call to git.
       let { stdout, stderr } = await childProcess
@@ -73,7 +79,11 @@ async function fixMissingDtos(endpoints) {
         throw Error(stderr);
 
       let oldSchema = JSON.parse(stdout);
+
+      outer:
       for (let { endpoint, dtoName } of missingDtos) {
+        // Try finding DTO in previous spec.
+
         // TODO: fullDtoName magic string.
         let fullDtoName = endpoint.name + '.' + dtoName;
         console.log('Missing DTO: ' + fullDtoName + '.');
@@ -83,9 +93,29 @@ async function fixMissingDtos(endpoints) {
         if (oldDto) {
           console.log('  Using previous commit version.');
           endpoint.add_old_dto(oldDto);
+          continue outer;
         }
-        else
-          console.log('  FAILED to find dto for ' + fullDtoName + '.');
+
+        // Try finding DTO in endpointSharedDtos.
+        if (endpointSharedDtos[endpoint.name]) {
+          for (let otherName of endpointSharedDtos[endpoint.name]) {
+            let otherEndpoint = endpointsByName[otherName];
+            if (!otherEndpoint) {
+              console.log('  Endpoint alt not found: ' + otherName + '.');
+              continue;
+            }
+
+            let otherDto = otherEndpoint._allDtos[dtoName];
+            if (!otherDto)
+              continue;
+
+            console.log('  Using DTO from ' + otherName + '.');
+            endpoint.add_old_dto(otherDto);
+            continue outer;
+          }
+        }
+
+        console.log('  FAILED to find dto for ' + fullDtoName + '.');
       }
     }
     catch(e) {
