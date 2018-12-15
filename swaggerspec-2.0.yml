@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 25acadf052615f2486c0ef4c8223ef4a090d1b78
+  version: 81e20a862a8e7b2ce85989ed9a2f78643e6ba59f
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -7230,6 +7230,43 @@ definitions:
         type: string
         x-type: string
         description: 'The optional name of the tournament.'
+  tournament-v4.undefined:
+    type: object
+    title: null
+    properties:
+      spectatorType:
+        type: string
+        x-type: string
+        enum:
+          - NONE
+          - LOBBYONLY
+          - ALL
+        description: "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+      pickType:
+        type: string
+        x-type: string
+        enum:
+          - BLIND_PICK
+          - DRAFT_MODE
+          - ALL_RANDOM
+          - TOURNAMENT_DRAFT
+        description: "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+      allowedSummonerIds:
+        type: array
+        items:
+          type: integer
+          format: int64
+          x-type: long
+        x-type: 'Set[long]'
+        description: 'Optional list of participants in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
+      mapType:
+        type: string
+        x-type: string
+        enum:
+          - SUMMONERS_RIFT
+          - TWISTED_TREELINE
+          - HOWLING_ABYSS
+        description: "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
 securityDefinitions:
   api_key:
     type: apiKey
