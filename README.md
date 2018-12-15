@@ -12,13 +12,13 @@ knowing if you plan to use the generated schemas.
 
 Missing DTOs for the latest version are stored in [this JSON file](http://www.mingweisamuel.com/riotapi-schema/missing.json).
 
-- "DTO stealing"
+#### "DTO stealing"
 
 If a DTO is missing from one endpoint, it may be possible to find it in another
 endpoint. Which endpoints can "steal" from which other endpoints are listed in
 `src/data/endpointSharedDtos.json`. The file is updated as needed.
 
-- `tournament` Endpoints (`tournament-stub-v3/4` and `tournament-v3/4`)
+#### `tournament` Endpoints (`tournament-stub-v3/4` and `tournament-v3/4`)
 
 These endpoints share all the same DTOs. However, they each have a copy of each
 DTO, so there is duplicate data. This also means if you are generating classes
@@ -32,14 +32,14 @@ tournament DTOs. This behavior is specified by `src/data/mockEndpoints.json`.~~
 
 Quirks that may no longer be relevant.
 
-- `league-v3`'s `LeagueItemDTO` and `LeaguePositionDTO`
+#### `league-v3`'s `LeagueItemDTO` and `LeaguePositionDTO`
 
 This spec combines `LeagueItemDTO` and `LeaguePositionDTO` under the later name.
 This was a quetsionable choice because it results in fields with `null` values
 that users might expect to be filled in (when parsing a `LeagueItemDTO`).
 This behavior is removed for `league-v4`.
 
-- `static-data`'s DTO type overrides.
+#### `static-data`'s DTO type overrides.
 
 Static data had some DTO fields that could
 be multiple different types as specified in their description. These were
