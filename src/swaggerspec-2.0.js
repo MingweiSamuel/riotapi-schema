@@ -71,20 +71,22 @@ function toSpec({ endpoints, regions, description }) {
       }
     }
   };
-  endpoints.forEach(endpoint =>
-    endpoint.get_dtos()
-      .forEach(dto => {
-        let schema = schemas[endpoint.name + '.' + dto.name] = dto.toSchema();
-        Object.values(schema.properties).forEach(prop => {
-          // Override anyOf for v2.0.
-          if (!prop.type && prop.anyOf) {
-            // Use first anyOf value.
-            Object.assign(prop, prop.anyOf[0]);
-            delete prop.anyOf;
-          }
-        });
-      })
-  );
+  for (let endpoint of endpoints) {
+    let exportDtos = endpoint.exportDtos();
+    Object.assign(schemas, exportDtos);
+
+    // Extra bits to make sure meets swaggerspec-2.0 (instead of openapi-3.0.0).
+    for (let schema of Object.values(exportDtos)) {
+      Object.values(schema.properties).forEach(prop => {
+        // Override anyOf for v2.0.
+        if (!prop.type && prop.anyOf) {
+          // Use first anyOf value.
+          Object.assign(prop, prop.anyOf[0]);
+          delete prop.anyOf;
+        }
+      });
+    }
+  }
 
   let spec = {
     swagger: "2.0",

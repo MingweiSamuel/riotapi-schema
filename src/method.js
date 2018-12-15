@@ -3,8 +3,6 @@
 /// A method is a single REST API url with associated argument, return value,
 /// and response code information.
 
-const fs = require("fs-extra");
-
 const aliases = require('./data/dtoAliases');
 const Schema = require('./schema');
 const types = require('./types');
@@ -117,7 +115,7 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
     case 'path parameters':
     case 'query parameters':
       let inType = type.split(/\s+/, 1)[0];
-      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name).toParameters(inType);
+      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.getSchemaNamespace()).toParameters(inType);
       this.params.push(...params);
       break;
     case 'body parameters':
@@ -141,11 +139,12 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
 
 Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   // returnType may be null.
-  this.returnType = Schema.readReturnType(apiBlockHtml.children[1], this.endpoint.name);
-  let aliasMap = aliases[this.endpoint.name];
+  let namespace = this.endpoint.getSchemaNamespace();
+  this.returnType = Schema.readReturnType(apiBlockHtml.children[1], namespace);
+  let aliasMap = aliases[namespace];
   this.dtos.push(...Array.from(apiBlockHtml.children)
     .slice(2, -1)
-    .map(el => Schema.fromHtml(el, this.endpoint.name))
+    .map(el => Schema.fromHtml(el, namespace))
     .filter(s => !aliasMap || !aliasMap[s.name]));
 };
 
@@ -154,13 +153,14 @@ Method.prototype._handleBodyParameters = function(apiBlockHtml) {
   let tr = table.tBodies[0].children[0];
   let code = tr.children[0];
 
-  this.bodyType = types.getType(code.childNodes[0].textContent.trim(), this.endpoint.name);
+  let namespace = this.endpoint.getSchemaNamespace();
+  this.bodyType = types.getType(code.childNodes[0].textContent.trim(), namespace);
   this.bodyRequired = 'required' === code.children[0].textContent.trim().toLowerCase();
   this.bodyDesc = tr.children[3].textContent.trim();
 
   let block = apiBlockHtml;
   while ((block = block.nextElementSibling) && block.classList.contains('block')) {
-    this.dtos.push(Schema.fromHtml(block, this.endpoint.name));
+    this.dtos.push(Schema.fromHtml(block, namespace));
   }
 };
 

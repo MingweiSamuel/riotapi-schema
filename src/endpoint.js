@@ -5,7 +5,7 @@
 const Method = require('./method');
 const Schema = require('./schema');
 
-function Endpoint(dom, desc) {
+function Endpoint(dom, desc, parentEndpoint) {
   this.dom = dom;
   this.desc = desc;
   this.name = dom.window.document.body.children[0].children[0].getAttribute('api-name');
@@ -14,6 +14,7 @@ function Endpoint(dom, desc) {
   this.methods = null;
 
   this._allDtos = null;
+  this._parentEndpoint = parentEndpoint || null;
 
   this._compile();
 }
@@ -52,14 +53,37 @@ Endpoint.prototype._compile = function() {
       allDtos[dto.name] = dto;
     }
   }
-  this._allDtos = allDtos;
+  if (this._parentEndpoint) {
+    // Add to parent if have parent.
+    Object.assign(this._parentEndpoint._allDtos, allDtos);
+    this._allDtos = {};
+  }
+  else // Otherwise, keep for self.
+    this._allDtos = allDtos;
 };
 
-Endpoint.prototype.get_dtos = function() {
-  return Object.values(this._allDtos);
+
+Endpoint.prototype._getAllDtos = function() {
+  return this._parentEndpoint ?
+    this._parentEndpoint._getAllDtos() : this._allDtos;
 };
 
-Endpoint.prototype.list_missing_dtos = function() {
+
+Endpoint.prototype.getSchemaNamespace = function() {
+  return this._parentEndpoint ?
+    this._parentEndpoint.getSchemaNamespace() : this.name;
+};
+
+
+Endpoint.prototype.exportDtos = function() {
+  let schemas = {};
+  for (let dto of Object.values(this._allDtos))
+    schemas[this.name + '.' + dto.name] = dto.toSchema();
+  return schemas;
+};
+
+
+Endpoint.prototype.listMissingDtos = function() {
   // DTOs referenced by other DTOs.
   let dtoToDtoReferences = Object.values(this._allDtos)
     .flatMap(dto => Object.values(dto.properties));
@@ -69,6 +93,8 @@ Endpoint.prototype.list_missing_dtos = function() {
   let methodDtoReferences = this.methods
     .flatMap(method => [ method.returnType, method.bodyType ])
     .filter(dto => dto);
+
+  let existingDtos = this._getAllDtos();
 
   let allDtoReferences = dtoToDtoReferences.concat(methodDtoReferences);
   return allDtoReferences
@@ -87,12 +113,14 @@ Endpoint.prototype.list_missing_dtos = function() {
     // Extract short name from full name. Pop returns last element (DTP name).
     .map(ref => ref.split('.').pop())
     // Return names not found in the _allDtos dict.
-    .filter(name => !this._allDtos[name]);
+    .filter(name => !existingDtos[name]);
 };
 
-Endpoint.prototype.add_old_dto = function(oldDto) {
+Endpoint.prototype.addOldDto = function(oldDto) {
   if (this._allDtos[oldDto.title])
     throw Error('DTO with name ' + oldDto.title + 'already exists!');
+  if (this._parentEndpoint)
+    throw Error('Cannot add DTO to endpoint with parent.');
   this._allDtos[oldDto.name] = new Schema(this.name, oldDto.title, oldDto.description, oldDto.properties);
 };
 

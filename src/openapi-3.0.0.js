@@ -30,10 +30,8 @@ function toSpec({ endpoints, regions, description }) {
       }
     }
   };
-  endpoints.forEach(endpoint =>
-    endpoint.get_dtos()
-      .forEach(dto => schemas[endpoint.name + '.' + dto.name] = dto.toSchema())
-  );
+  // Add all schemas (DTOs) from each endpoint.
+  endpoints.forEach(endpoint => Object.assign(schemas, endpoint.exportDtos()));
 
   let spec = {
     openapi: "3.0.0",

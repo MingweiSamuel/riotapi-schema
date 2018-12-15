@@ -21,6 +21,9 @@ const openapi_300 = require('./openapi-3.0.0');
 const swaggerspec_20 = require('./swaggerspec-2.0');
 const specs = [ openapi_300, swaggerspec_20 ];
 
+const endpointParents = require('./data/endpointParents');
+const toposort = require('toposort');
+
 const BASE_URL = 'https://developer.riotgames.com/';
 const OUTPUT = 'out';
 
@@ -43,24 +46,41 @@ async function getEndpoints() {
   let endpointsPageDom = new JSDOM(await req(BASE_URL + 'api-methods/'));
   let endpointsElements = Array.from(
     endpointsPageDom.window.document.getElementsByClassName('api_option'));
-  // Create endpoint objects.
-  let endpoints = await Promise.all(endpointsElements.map(async endpointElement => {
-    // For each endpoint, get its detail page and parse it.
+
+  // Map endpoint elements by name.
+  let originalNameOrder = []
+  let endpointsElementsMap = {};
+  for (let endpointElement of endpointsElements) {
     let name = endpointElement.getAttribute('api-name');
+    originalNameOrder.push(name);
+    endpointsElementsMap[name] = endpointElement;
+  }
+
+  // Sort endpoints so we process parents before children.
+  let endpointNameOrder = toposort.array(
+    Object.keys(endpointsElementsMap), Object.entries(endpointParents));
+  endpointNameOrder.reverse();
+
+  // Create enpoints.
+  let endpointsMap = {};
+  for (let name of endpointNameOrder) {
+    let endpointElement = endpointsElementsMap[name];
     let desc = endpointElement.getElementsByClassName('api_desc')[0]
       .textContent.trim();
     let endpointDetailJson = await req(BASE_URL + 'api-details/' + name);
     let endpointPageDom = new JSDOM(JSON.parse(endpointDetailJson).html);
-    return new Endpoint(endpointPageDom, desc);
-  }));
-  return endpoints;
+    let parentEndpoint = endpointsMap[endpointParents[name]];
+    endpointsMap[name] = new Endpoint(endpointPageDom, desc, parentEndpoint);
+  }
+
+  return originalNameOrder.map(name => endpointsMap[name]);
 }
 
 
 async function fixMissingDtos(endpoints) {
   // Look back at previous version for any missing dtos.
   // TODO: doesn't check if added dtos in turn have their own missing dtos...
-  let missingDtos = endpoints.flatMap(endpoint => endpoint.list_missing_dtos()
+  let missingDtos = endpoints.flatMap(endpoint => endpoint.listMissingDtos()
     .map(dtoName => ({ endpoint, dtoName })));
   let missingDtoNames = [];
   if (missingDtos.length) {
@@ -82,7 +102,7 @@ async function fixMissingDtos(endpoints) {
         let oldDto = oldSchema.components.schemas[fullDtoName]
         if (oldDto) {
           console.log('  Using previous commit version.');
-          endpoint.add_old_dto(oldDto);
+          endpoint.addOldDto(oldDto);
         }
         else
           console.log('  FAILED to find dto for ' + fullDtoName + '.');

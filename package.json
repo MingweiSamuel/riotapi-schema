@@ -23,6 +23,7 @@
     "object-hash": "1.2.0",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
+    "toposort": "^2.0.2",
     "yamljs": "^0.3.0"
   }
 }
