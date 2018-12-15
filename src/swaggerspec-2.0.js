@@ -5,7 +5,7 @@ const hash = require('object-hash');
 // Riot API exclusively uses JSON.
 const MIME_JSON = 'application/json';
 
-function toSpec({ endpoints, regions, description }) {
+function toSpec({ endpoints, regions, description, schemaOverrides }) {
   let methods = endpoints.flatMap(endpoint => endpoint.methods);
   let paths = {};
   methods.forEach(method => {
@@ -74,7 +74,8 @@ function toSpec({ endpoints, regions, description }) {
   endpoints.forEach(endpoint =>
     endpoint.get_dtos()
       .forEach(dto => {
-        let schema = schemas[endpoint.name + '.' + dto.name] = dto.toSchema();
+        let fullName = endpoint.name + '.' + dto.name;
+        let schema = schemas[fullName] = schemaOverrides[fullName] || dto.toSchema();
         Object.values(schema.properties).forEach(prop => {
           // Override anyOf for v2.0.
           if (!prop.type && prop.anyOf) {

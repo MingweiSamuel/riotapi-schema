@@ -25,6 +25,7 @@ const BASE_URL = 'https://developer.riotgames.com/';
 const OUTPUT = 'out';
 
 const endpointSharedDtos = require('./data/endpointSharedDtos');
+const schemaOverrides = require('./data/schemaOverrides');
 
 
 async function cleanupOutput() {
@@ -138,7 +139,11 @@ async function getRegions() {
 
 
 async function writeOutput(endpoints, regions) {
-  let data = { endpoints, regions };
+  let data = { endpoints, regions, schemaOverrides };
+
+  let overrides = Object.keys(schemaOverrides);
+  if (overrides.length)
+    console.log('\nOverriding DTOs: ' + JSON.stringify(overrides));
 
   let names = specs.flatMap(s => [
     s.name + '.json',

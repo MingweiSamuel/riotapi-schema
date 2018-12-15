@@ -2,7 +2,7 @@
 
 const hash = require('object-hash');
 
-function toSpec({ endpoints, regions, description }) {
+function toSpec({ endpoints, regions, description, schemaOverrides }) {
   let paths = {};
   endpoints.forEach(endpoint => {
     endpoint.methods.forEach(method => {
@@ -34,6 +34,7 @@ function toSpec({ endpoints, regions, description }) {
     endpoint.get_dtos()
       .forEach(dto => schemas[endpoint.name + '.' + dto.name] = dto.toSchema())
   );
+  Object.assign(schemas, schemaOverrides);
 
   let spec = {
     openapi: "3.0.0",

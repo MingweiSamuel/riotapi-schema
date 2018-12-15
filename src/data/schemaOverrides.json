@@ -1,0 +1,39 @@
+{
+  "league-v4.LeagueItemDTO": {
+    "type": "object",
+    "title": "LeagueItemDTO",
+    "properties": {
+      "summonerName": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "miniSeries": {
+        "$ref": "#/components/schemas/league-v4.MiniSeriesDTO",
+        "x-type": "MiniSeriesDTO"
+      },
+      "wins": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "losses": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "rank": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "summonerId": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "leaguePoints": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      }
+    }
+  }
+}
