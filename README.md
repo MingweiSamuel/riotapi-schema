@@ -12,7 +12,11 @@ knowing if you plan to use the generated schemas.
 
 ### Current Quirks
 
-- `tournament-stub-v4` and `tournament-v4`
+- `tournament` Endpoints (`tournament-stub-v3/4` and `tournament-v3/4`)
+
+These endpoints share all the same DTOs. However, they each have a copy of each
+DTO, so there is duplicate data. This also means if you are generating classes
+from these endpoints, there will be duplicate issues.
 
 *TODO* ~~Because these endpoints are closely connected, both of their DTOs
 are included under `tournament-v4`. This way there aren't duplicate copies of
