@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 910c46942d00fe0d488cffc5d23261fe3b18a87b
+  version: 3be83a466fecb3bca7da6d863226f8630cd78dc5
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -1164,7 +1164,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: match-v3.getMatchlist
-      description: "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned."
+      description: "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then endTime defaults to the the current unix timestamp in milliseconds. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime."
       parameters:
         -
           name: accountId
@@ -1222,7 +1222,7 @@ paths:
             type: integer
             format: int64
             x-type: long
-          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
+          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then endTime defaults to the the current unix timestamp in milliseconds. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime.'
         -
           name: beginTime
           in: query
@@ -1231,7 +1231,7 @@ paths:
             type: integer
             format: int64
             x-type: long
-          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
+          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then endTime defaults to the the current unix timestamp in milliseconds. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime.'
         -
           name: endIndex
           in: query
@@ -1505,7 +1505,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: match-v4.getMatchlist
-      description: "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned."
+      description: "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then endTime defaults to the the current unix timestamp in milliseconds. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history. If both are specified, then endTime should be greater than beginTime."
       parameters:
         -
           name: encryptedAccountId
@@ -1562,7 +1562,7 @@ paths:
             type: integer
             format: int64
             x-type: long
-          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
+          description: 'The end time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then endTime defaults to the the current unix timestamp in milliseconds. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime.'
         -
           name: beginTime
           in: query
@@ -1571,7 +1571,7 @@ paths:
             type: integer
             format: int64
             x-type: long
-          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then these parameters are ignored. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.'
+          description: 'The begin time to use for filtering matchlist specified as epoch milliseconds. If beginTime is specified, but not endTime, then endTime defaults to the the current unix timestamp in milliseconds. If endTime is specified, but not beginTime, then beginTime defaults to the start of the account''s match history. If both are specified, then endTime should be greater than beginTime.'
         -
           name: endIndex
           in: query
@@ -4694,39 +4694,6 @@ components:
           type: integer
           format: int32
           x-type: int
-    match-v3.MatchReferenceDto:
-      type: object
-      title: MatchReferenceDto
-      properties:
-        lane:
-          type: string
-          x-type: string
-        gameId:
-          type: integer
-          format: int64
-          x-type: long
-        champion:
-          type: integer
-          format: int32
-          x-type: int
-        platformId:
-          type: string
-          x-type: string
-        season:
-          type: integer
-          format: int32
-          x-type: int
-        queue:
-          type: integer
-          format: int32
-          x-type: int
-        role:
-          type: string
-          x-type: string
-        timestamp:
-          type: integer
-          format: int64
-          x-type: long
     match-v3.MatchTimelineDto:
       type: object
       title: MatchTimelineDto
@@ -4921,6 +4888,39 @@ components:
           type: integer
           format: int32
           x-type: int
+    match-v3.MatchReferenceDto:
+      type: object
+      title: MatchReferenceDto
+      properties:
+        lane:
+          type: string
+          x-type: string
+        gameId:
+          type: integer
+          format: int64
+          x-type: long
+        champion:
+          type: integer
+          format: int32
+          x-type: int
+        platformId:
+          type: string
+          x-type: string
+        season:
+          type: integer
+          format: int32
+          x-type: int
+        queue:
+          type: integer
+          format: int32
+          x-type: int
+        role:
+          type: string
+          x-type: string
+        timestamp:
+          type: integer
+          format: int64
+          x-type: long
     match-v4.MatchDto:
       type: object
       title: MatchDto
@@ -5801,39 +5801,6 @@ components:
           type: integer
           format: int32
           x-type: int
-    match-v4.MatchReferenceDto:
-      type: object
-      title: MatchReferenceDto
-      properties:
-        lane:
-          type: string
-          x-type: string
-        gameId:
-          type: integer
-          format: int64
-          x-type: long
-        champion:
-          type: integer
-          format: int32
-          x-type: int
-        platformId:
-          type: string
-          x-type: string
-        season:
-          type: integer
-          format: int32
-          x-type: int
-        queue:
-          type: integer
-          format: int32
-          x-type: int
-        role:
-          type: string
-          x-type: string
-        timestamp:
-          type: integer
-          format: int64
-          x-type: long
     match-v4.MatchTimelineDto:
       type: object
       title: MatchTimelineDto
@@ -6028,6 +5995,39 @@ components:
           type: integer
           format: int32
           x-type: int
+    match-v4.MatchReferenceDto:
+      type: object
+      title: MatchReferenceDto
+      properties:
+        lane:
+          type: string
+          x-type: string
+        gameId:
+          type: integer
+          format: int64
+          x-type: long
+        champion:
+          type: integer
+          format: int32
+          x-type: int
+        platformId:
+          type: string
+          x-type: string
+        season:
+          type: integer
+          format: int32
+          x-type: int
+        queue:
+          type: integer
+          format: int32
+          x-type: int
+        role:
+          type: string
+          x-type: string
+        timestamp:
+          type: integer
+          format: int64
+          x-type: long
     spectator-v3.CurrentGameInfo:
       type: object
       title: CurrentGameInfo
