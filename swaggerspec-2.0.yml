@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 16d48f0a789337a4f2cf8197d4334e5ec508de83
+  version: 704d41e2f7494700139c2826861a697521254a0c
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -6585,7 +6585,7 @@ definitions:
       puuid:
         type: string
         x-type: string
-        description: PUUID
+        description: 'PUUID. (Encrypted)'
       summonerLevel:
         type: integer
         format: int64
@@ -6599,11 +6599,11 @@ definitions:
       id:
         type: string
         x-type: string
-        description: 'Summoner ID.'
+        description: 'Summoner ID. (Encrypted)'
       accountId:
         type: string
         x-type: string
-        description: 'Account ID.'
+        description: 'Account ID. (Encrypted)'
     description: 'represents a summoner'
   tournament-stub-v3.TournamentCodeParameters:
     type: object

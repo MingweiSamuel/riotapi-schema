@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "3be83a466fecb3bca7da6d863226f8630cd78dc5"
+    "version": "798ad41be3f921821ce619b4dc6c3e4f718b510b"
   },
   "servers": [
     {
@@ -9052,7 +9052,7 @@
           "puuid": {
             "type": "string",
             "x-type": "string",
-            "description": "PUUID"
+            "description": "PUUID. (Encrypted)"
           },
           "summonerLevel": {
             "type": "integer",
@@ -9069,12 +9069,12 @@
           "id": {
             "type": "string",
             "x-type": "string",
-            "description": "Summoner ID."
+            "description": "Summoner ID. (Encrypted)"
           },
           "accountId": {
             "type": "string",
             "x-type": "string",
-            "description": "Account ID."
+            "description": "Account ID. (Encrypted)"
           }
         },
         "description": "represents a summoner"
