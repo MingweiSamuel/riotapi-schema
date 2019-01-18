@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "704d41e2f7494700139c2826861a697521254a0c"
+    "version": "888443f45a8ca70b5ac4bfc9eedc6cc1b65b192f"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -973,7 +973,7 @@
         "tags": [
           "league-v4"
         ],
-        "summary": "Get the grandmaster league of a specific queue",
+        "summary": "Get the grandmaster league of a specific queue.",
         "externalDocs": {
           "description": "Official API Reference",
           "url": "https://developer.riotgames.com/api-methods/#league-v4/GET_getGrandmasterLeague"
@@ -1021,7 +1021,7 @@
           }
         },
         "operationId": "league-v4.getGrandmasterLeague",
-        "description": "Get the grandmaster league of a specific queue",
+        "description": "Get the grandmaster league of a specific queue.",
         "parameters": [
           {
             "name": "queue",
@@ -4945,77 +4945,11 @@
         }
       }
     },
-    "league-v4.LeagueItemDTO": {
-      "type": "object",
-      "title": "LeagueItemDTO",
-      "properties": {
-        "summonerName": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "miniSeries": {
-          "$ref": "#/definitions/league-v4.MiniSeriesDTO",
-          "x-type": "MiniSeriesDTO"
-        },
-        "wins": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "losses": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "rank": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "summonerId": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "leaguePoints": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        }
-      }
-    },
-    "league-v4.MiniSeriesDTO": {
-      "type": "object",
-      "title": "MiniSeriesDTO",
-      "properties": {
-        "wins": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "losses": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "target": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "progress": {
-          "type": "string",
-          "x-type": "string"
-        }
-      }
-    },
     "league-v4.LeaguePositionDTO": {
       "type": "object",
       "title": "LeaguePositionDTO",
       "properties": {
         "queueType": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "summonerName": {
           "type": "string",
           "x-type": "string"
         },
@@ -5045,7 +4979,7 @@
           "type": "boolean",
           "x-type": "boolean"
         },
-        "leagueId": {
+        "playerOrTeamName": {
           "type": "string",
           "x-type": "string"
         },
@@ -5057,11 +4991,65 @@
           "type": "string",
           "x-type": "string"
         },
-        "leagueName": {
+        "summonerId": {
           "type": "string",
           "x-type": "string"
         },
-        "tier": {
+        "leaguePoints": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      }
+    },
+    "league-v4.MiniSeriesDTO": {
+      "type": "object",
+      "title": "MiniSeriesDTO",
+      "properties": {
+        "progress": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "losses": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "target": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "wins": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      }
+    },
+    "league-v4.LeagueItemDTO": {
+      "type": "object",
+      "title": "LeagueItemDTO",
+      "properties": {
+        "summonerName": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "miniSeries": {
+          "$ref": "#/definitions/league-v4.MiniSeriesDTO",
+          "x-type": "MiniSeriesDTO"
+        },
+        "wins": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "losses": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "rank": {
           "type": "string",
           "x-type": "string"
         },

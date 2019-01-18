@@ -1,4 +1,5 @@
 [
+  "league-v4.LeagueItemDTO",
   "match-v3.MatchReferenceDto",
   "match-v4.MatchReferenceDto",
   "tournament-v4.LobbyEventDTO",
