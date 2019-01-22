@@ -17,10 +17,10 @@ Missing DTOs for the latest version are stored in [this JSON file](http://www.mi
 `league-v4.LeagueItemDTO` is completely manually overridden (see `src/data/schemaOverrides.json`).
 Due to https://github.com/RiotGames/developer-relations/issues/29
 
-#### "DTO stealing"
+#### "DTO borrowing"
 
 If a DTO is missing from one endpoint, it may be possible to find it in another
-endpoint. Which endpoints can "steal" from which other endpoints are listed in
+endpoint. Which endpoints can "borrow" from which other endpoints are listed in
 `src/data/endpointSharedDtos.json`. The file is updated as needed.
 
 #### `tournament` Endpoints (`tournament-stub-v3/4` and `tournament-v3/4`)
