@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 40d38b7f1eb05901ad3fd92aab3edbaa42b88d87
+  version: fc2a328292db8c42c94f3510ce5e0b14ab7b3624
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -865,6 +865,50 @@ paths:
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
     x-endpoint: league-v4
+  /lol/league/v4/positional-rank-queues:
+    get:
+      tags:
+        - league-v4
+      summary: 'Get the queues that have positional ranks enabled.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#league-v4/GET_getQueuesWithPositionRanks'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/league-v4.QueueType'
+                  x-type: QueueType
+                x-type: 'List[QueueType]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: league-v4.getQueuesWithPositionRanks
+      description: 'Get the queues that have positional ranks enabled.'
+    x-endpoint: league-v4
   '/lol/league/v4/positions/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -916,6 +960,111 @@ paths:
           schema:
             type: string
             x-type: string
+    x-endpoint: league-v4
+  '/lol/league/v4/positions/{positionalQueue}/{tier}/{division}/{position}/{page}':
+    get:
+      tags:
+        - league-v4
+      summary: 'Get all the positional league entries.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#league-v4/GET_getPositionalLeagueEntries'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/league-v4.LeaguePositionDTO'
+                  x-type: LeaguePositionDTO
+                x-type: 'Set[LeaguePositionDTO]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: league-v4.getPositionalLeagueEntries
+      description: 'Get all the positional league entries.'
+      parameters:
+        -
+          name: positionalQueue
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+            enum:
+              - RANKED_SOLO_5x5
+              - RANKED_FLEX_SR
+              - RANKED_FLEX_TT
+          description: 'Note that the queue value must be a valid positional queue.'
+        -
+          name: tier
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+            enum:
+              - DIAMOND
+              - PLATINUM
+              - GOLD
+              - SILVER
+              - BRONZE
+              - IRON
+        -
+          name: division
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+            enum:
+              - I
+              - II
+              - III
+              - IV
+        -
+          name: position
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+            enum:
+              - TOP
+              - MIDDLE
+              - BOTTOM
+              - JUNGLE
+              - UTILITY
+        -
+          name: page
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'Starts with page 0.'
     x-endpoint: league-v4
   /lol/status/v3/shard-data:
     get:
@@ -3513,25 +3662,6 @@ components:
         name:
           type: string
           x-type: string
-    league-v3.MiniSeriesDTO:
-      type: object
-      title: MiniSeriesDTO
-      properties:
-        wins:
-          type: integer
-          format: int32
-          x-type: int
-        losses:
-          type: integer
-          format: int32
-          x-type: int
-        target:
-          type: integer
-          format: int32
-          x-type: int
-        progress:
-          type: string
-          x-type: string
     league-v3.LeaguePositionDTO:
       type: object
       title: LeaguePositionDTO
@@ -3584,6 +3714,25 @@ components:
           type: integer
           format: int32
           x-type: int
+    league-v3.MiniSeriesDTO:
+      type: object
+      title: MiniSeriesDTO
+      properties:
+        wins:
+          type: integer
+          format: int32
+          x-type: int
+        losses:
+          type: integer
+          format: int32
+          x-type: int
+        target:
+          type: integer
+          format: int32
+          x-type: int
+        progress:
+          type: string
+          x-type: string
     league-v4.LeagueListDTO:
       type: object
       title: LeagueListDTO
@@ -3613,6 +3762,9 @@ components:
         queueType:
           type: string
           x-type: string
+        summonerName:
+          type: string
+          x-type: string
         hotStreak:
           type: boolean
           x-type: boolean
@@ -3630,15 +3782,52 @@ components:
           type: integer
           format: int32
           x-type: int
-        freshBlood:
-          type: boolean
-          x-type: boolean
-        playerOrTeamName:
+        rank:
           type: string
           x-type: string
+        leagueId:
+          $ref: '#/components/schemas/league-v4.UUID'
+          x-type: UUID
         inactive:
           type: boolean
           x-type: boolean
+        leaguePoints:
+          type: integer
+          format: int32
+          x-type: int
+        leagueName:
+          type: string
+          x-type: string
+        position:
+          type: string
+          x-type: string
+        tier:
+          type: string
+          x-type: string
+        summonerId:
+          type: string
+          x-type: string
+        vreshBlood:
+          type: boolean
+          x-type: boolean
+    league-v4.LeagueItemDTO:
+      type: object
+      title: LeagueItemDTO
+      properties:
+        summonerName:
+          type: string
+          x-type: string
+        miniSeries:
+          $ref: '#/components/schemas/league-v4.MiniSeriesDTO'
+          x-type: MiniSeriesDTO
+        wins:
+          type: integer
+          format: int32
+          x-type: int
+        losses:
+          type: integer
+          format: int32
+          x-type: int
         rank:
           type: string
           x-type: string
@@ -3665,34 +3854,6 @@ components:
           format: int32
           x-type: int
         wins:
-          type: integer
-          format: int32
-          x-type: int
-    league-v4.LeagueItemDTO:
-      type: object
-      title: LeagueItemDTO
-      properties:
-        summonerName:
-          type: string
-          x-type: string
-        miniSeries:
-          $ref: '#/components/schemas/league-v4.MiniSeriesDTO'
-          x-type: MiniSeriesDTO
-        wins:
-          type: integer
-          format: int32
-          x-type: int
-        losses:
-          type: integer
-          format: int32
-          x-type: int
-        rank:
-          type: string
-          x-type: string
-        summonerId:
-          type: string
-          x-type: string
-        leaguePoints:
           type: integer
           format: int32
           x-type: int

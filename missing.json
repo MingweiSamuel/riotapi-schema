@@ -1,5 +1,9 @@
 [
+  "league-v3.MiniSeriesDTO",
   "league-v4.LeagueItemDTO",
+  "league-v4.MiniSeriesDTO",
+  "league-v4.QueueType",
+  "league-v4.UUID",
   "match-v3.MatchReferenceDto",
   "match-v4.MatchReferenceDto",
   "tournament-v4.LobbyEventDTO",
