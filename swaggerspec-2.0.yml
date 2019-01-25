@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: ced05105a91c3960da8e7ba5e5800d4767ba06d9
+  version: 569efb1c071a5e617c5167253915da40fb83df18
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -850,9 +850,9 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/league-v4.QueueType'
-              x-type: QueueType
-            x-type: 'List[QueueType]'
+              type: string
+              x-type: String
+            x-type: 'List[String]'
         '400':
           description: 'Bad request'
         '401':
@@ -3570,6 +3570,25 @@ definitions:
       name:
         type: string
         x-type: string
+  league-v3.MiniSeriesDTO:
+    type: object
+    title: MiniSeriesDTO
+    properties:
+      progress:
+        type: string
+        x-type: string
+      losses:
+        type: integer
+        format: int32
+        x-type: int
+      target:
+        type: integer
+        format: int32
+        x-type: int
+      wins:
+        type: integer
+        format: int32
+        x-type: int
   league-v3.LeaguePositionDTO:
     type: object
     title: LeaguePositionDTO
@@ -3622,25 +3641,6 @@ definitions:
         type: integer
         format: int32
         x-type: int
-  league-v3.MiniSeriesDTO:
-    type: object
-    title: MiniSeriesDTO
-    properties:
-      wins:
-        type: integer
-        format: int32
-        x-type: int
-      losses:
-        type: integer
-        format: int32
-        x-type: int
-      target:
-        type: integer
-        format: int32
-        x-type: int
-      progress:
-        type: string
-        x-type: string
   league-v4.LeagueListDTO:
     type: object
     title: LeagueListDTO
@@ -3663,61 +3663,6 @@ definitions:
       name:
         type: string
         x-type: string
-  league-v4.LeaguePositionDTO:
-    type: object
-    title: LeaguePositionDTO
-    properties:
-      queueType:
-        type: string
-        x-type: string
-      summonerName:
-        type: string
-        x-type: string
-      hotStreak:
-        type: boolean
-        x-type: boolean
-      miniSeries:
-        $ref: '#/definitions/league-v4.MiniSeriesDTO'
-        x-type: MiniSeriesDTO
-      wins:
-        type: integer
-        format: int32
-        x-type: int
-      veteran:
-        type: boolean
-        x-type: boolean
-      losses:
-        type: integer
-        format: int32
-        x-type: int
-      rank:
-        type: string
-        x-type: string
-      leagueId:
-        $ref: '#/definitions/league-v4.UUID'
-        x-type: UUID
-      inactive:
-        type: boolean
-        x-type: boolean
-      leaguePoints:
-        type: integer
-        format: int32
-        x-type: int
-      leagueName:
-        type: string
-        x-type: string
-      position:
-        type: string
-        x-type: string
-      tier:
-        type: string
-        x-type: string
-      summonerId:
-        type: string
-        x-type: string
-      vreshBlood:
-        type: boolean
-        x-type: boolean
   league-v4.LeagueItemDTO:
     type: object
     title: LeagueItemDTO
@@ -3762,6 +3707,62 @@ definitions:
         format: int32
         x-type: int
       wins:
+        type: integer
+        format: int32
+        x-type: int
+  league-v4.LeaguePositionDTO:
+    type: object
+    title: LeaguePositionDTO
+    properties:
+      queueType:
+        type: string
+        x-type: string
+      summonerName:
+        type: string
+        x-type: string
+      hotStreak:
+        type: boolean
+        x-type: boolean
+      miniSeries:
+        $ref: '#/definitions/league-v4.MiniSeriesDTO'
+        x-type: MiniSeriesDTO
+      wins:
+        type: integer
+        format: int32
+        x-type: int
+      veteran:
+        type: boolean
+        x-type: boolean
+      losses:
+        type: integer
+        format: int32
+        x-type: int
+      rank:
+        type: string
+        x-type: string
+      leagueId:
+        type: string
+        x-type: string
+      inactive:
+        type: boolean
+        x-type: boolean
+      freshBlood:
+        type: boolean
+        x-type: boolean
+      leagueName:
+        type: string
+        x-type: string
+      position:
+        type: string
+        x-type: string
+      tier:
+        type: string
+        x-type: string
+      summonerId:
+        type: string
+        x-type: string
+        description: 'Player''s summonerId (Encrypted)'
+      leaguePoints:
         type: integer
         format: int32
         x-type: int
@@ -3891,6 +3892,7 @@ definitions:
         type: integer
         format: int64
         x-type: long
+        description: 'Game ID.'
       participantIdentities:
         type: array
         items:
@@ -4754,6 +4756,39 @@ definitions:
         type: integer
         format: int32
         x-type: int
+  match-v3.MatchReferenceDto:
+    type: object
+    title: MatchReferenceDto
+    properties:
+      lane:
+        type: string
+        x-type: string
+      gameId:
+        type: integer
+        format: int64
+        x-type: long
+      champion:
+        type: integer
+        format: int32
+        x-type: int
+      platformId:
+        type: string
+        x-type: string
+      season:
+        type: integer
+        format: int32
+        x-type: int
+      queue:
+        type: integer
+        format: int32
+        x-type: int
+      role:
+        type: string
+        x-type: string
+      timestamp:
+        type: integer
+        format: int64
+        x-type: long
   match-v3.MatchTimelineDto:
     type: object
     title: MatchTimelineDto
@@ -4948,39 +4983,6 @@ definitions:
         type: integer
         format: int32
         x-type: int
-  match-v3.MatchReferenceDto:
-    type: object
-    title: MatchReferenceDto
-    properties:
-      lane:
-        type: string
-        x-type: string
-      gameId:
-        type: integer
-        format: int64
-        x-type: long
-      champion:
-        type: integer
-        format: int32
-        x-type: int
-      platformId:
-        type: string
-        x-type: string
-      season:
-        type: integer
-        format: int32
-        x-type: int
-      queue:
-        type: integer
-        format: int32
-        x-type: int
-      role:
-        type: string
-        x-type: string
-      timestamp:
-        type: integer
-        format: int64
-        x-type: long
   match-v4.MatchDto:
     type: object
     title: MatchDto
@@ -5861,6 +5863,39 @@ definitions:
         type: integer
         format: int32
         x-type: int
+  match-v4.MatchReferenceDto:
+    type: object
+    title: MatchReferenceDto
+    properties:
+      lane:
+        type: string
+        x-type: string
+      gameId:
+        type: integer
+        format: int64
+        x-type: long
+      champion:
+        type: integer
+        format: int32
+        x-type: int
+      platformId:
+        type: string
+        x-type: string
+      season:
+        type: integer
+        format: int32
+        x-type: int
+      queue:
+        type: integer
+        format: int32
+        x-type: int
+      role:
+        type: string
+        x-type: string
+      timestamp:
+        type: integer
+        format: int64
+        x-type: long
   match-v4.MatchTimelineDto:
     type: object
     title: MatchTimelineDto
@@ -6055,39 +6090,6 @@ definitions:
         type: integer
         format: int32
         x-type: int
-  match-v4.MatchReferenceDto:
-    type: object
-    title: MatchReferenceDto
-    properties:
-      lane:
-        type: string
-        x-type: string
-      gameId:
-        type: integer
-        format: int64
-        x-type: long
-      champion:
-        type: integer
-        format: int32
-        x-type: int
-      platformId:
-        type: string
-        x-type: string
-      season:
-        type: integer
-        format: int32
-        x-type: int
-      queue:
-        type: integer
-        format: int32
-        x-type: int
-      role:
-        type: string
-        x-type: string
-      timestamp:
-        type: integer
-        format: int64
-        x-type: long
   spectator-v3.CurrentGameInfo:
     type: object
     title: CurrentGameInfo
@@ -6815,18 +6817,18 @@ definitions:
     type: object
     title: LobbyEventDTO
     properties:
-      eventType:
-        type: string
-        x-type: string
-        description: 'The type of event that was triggered'
-      summonerId:
-        type: string
-        x-type: string
-        description: 'The summoner that triggered the event'
       timestamp:
         type: string
         x-type: string
         description: 'Timestamp from the event'
+      summonerId:
+        type: string
+        x-type: string
+        description: 'The summoner that triggered the event'
+      eventType:
+        type: string
+        x-type: string
+        description: 'The type of event that was triggered'
   tournament-stub-v3.ProviderRegistrationParameters:
     type: object
     title: ProviderRegistrationParameters
@@ -6898,7 +6900,7 @@ definitions:
           type: string
           x-type: string
         x-type: 'Set[string]'
-        description: 'Optional list of participants in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
+        description: 'Optional list of encrypted summonerIds in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
       mapType:
         type: string
         x-type: string
@@ -6932,7 +6934,7 @@ definitions:
       summonerId:
         type: string
         x-type: string
-        description: 'The summoner that triggered the event'
+        description: 'The summonerId that triggered the event (Encrypted)'
       timestamp:
         type: string
         x-type: string
@@ -7148,18 +7150,18 @@ definitions:
     type: object
     title: LobbyEventDTO
     properties:
-      eventType:
-        type: string
-        x-type: string
-        description: 'The type of event that was triggered'
-      summonerId:
-        type: string
-        x-type: string
-        description: 'The summoner that triggered the event'
       timestamp:
         type: string
         x-type: string
         description: 'Timestamp from the event'
+      summonerId:
+        type: string
+        x-type: string
+        description: 'The summoner that triggered the event'
+      eventType:
+        type: string
+        x-type: string
+        description: 'The type of event that was triggered'
   tournament-v3.ProviderRegistrationParameters:
     type: object
     title: ProviderRegistrationParameters
@@ -7228,11 +7230,10 @@ definitions:
       allowedSummonerIds:
         type: array
         items:
-          type: integer
-          format: int64
-          x-type: long
-        x-type: 'Set[long]'
-        description: 'Optional list of participants in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
+          type: string
+          x-type: string
+        x-type: 'Set[string]'
+        description: 'Optional list of encrypted summonerIds in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
       mapType:
         type: string
         x-type: string
@@ -7293,6 +7294,7 @@ definitions:
           type: string
           x-type: string
         x-type: 'Set[string]'
+        description: 'The summonerIds of the participants (Encrypted)'
       pickType:
         type: string
         x-type: string
@@ -7319,6 +7321,42 @@ definitions:
         type: string
         x-type: string
         description: 'The metadata for tournament code.'
+  tournament-v4.TournamentCodeUpdateParameters:
+    type: object
+    title: TournamentCodeUpdateParameters
+    properties:
+      spectatorType:
+        type: string
+        x-type: string
+        enum:
+          - NONE
+          - LOBBYONLY
+          - ALL
+        description: "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+      pickType:
+        type: string
+        x-type: string
+        enum:
+          - BLIND_PICK
+          - DRAFT_MODE
+          - ALL_RANDOM
+          - TOURNAMENT_DRAFT
+        description: "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+      allowedSummonerIds:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'Set[string]'
+        description: 'Optional list of encrypted summonerIds in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
+      mapType:
+        type: string
+        x-type: string
+        enum:
+          - SUMMONERS_RIFT
+          - TWISTED_TREELINE
+          - HOWLING_ABYSS
+        description: "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
   tournament-v4.LobbyEventDTOWrapper:
     type: object
     title: LobbyEventDTOWrapper
@@ -7329,6 +7367,22 @@ definitions:
           $ref: '#/definitions/tournament-v4.LobbyEventDTO'
           x-type: LobbyEventDTO
         x-type: 'List[LobbyEventDTO]'
+  tournament-v4.LobbyEventDTO:
+    type: object
+    title: LobbyEventDTO
+    properties:
+      timestamp:
+        type: string
+        x-type: string
+        description: 'Timestamp from the event'
+      summonerId:
+        type: string
+        x-type: string
+        description: 'The summonerId that triggered the event (Encrypted)'
+      eventType:
+        type: string
+        x-type: string
+        description: 'The type of event that was triggered'
   tournament-v4.ProviderRegistrationParameters:
     type: object
     title: ProviderRegistrationParameters
@@ -7366,59 +7420,6 @@ definitions:
         type: string
         x-type: string
         description: 'The optional name of the tournament.'
-  tournament-v4.LobbyEventDTO:
-    type: object
-    title: LobbyEventDTO
-    properties:
-      eventType:
-        type: string
-        x-type: string
-        description: 'The type of event that was triggered'
-      summonerId:
-        type: string
-        x-type: string
-        description: 'The summoner that triggered the event'
-      timestamp:
-        type: string
-        x-type: string
-        description: 'Timestamp from the event'
-  tournament-v4.TournamentCodeUpdateParameters:
-    type: object
-    title: TournamentCodeUpdateParameters
-    properties:
-      spectatorType:
-        type: string
-        x-type: string
-        enum:
-          - NONE
-          - LOBBYONLY
-          - ALL
-        description: "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
-      pickType:
-        type: string
-        x-type: string
-        enum:
-          - BLIND_PICK
-          - DRAFT_MODE
-          - ALL_RANDOM
-          - TOURNAMENT_DRAFT
-        description: "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
-      allowedSummonerIds:
-        type: array
-        items:
-          type: integer
-          format: int64
-          x-type: long
-        x-type: 'Set[long]'
-        description: 'Optional list of participants in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
-      mapType:
-        type: string
-        x-type: string
-        enum:
-          - SUMMONERS_RIFT
-          - TWISTED_TREELINE
-          - HOWLING_ABYSS
-        description: "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
 securityDefinitions:
   api_key:
     type: apiKey
