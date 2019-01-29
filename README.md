@@ -23,7 +23,13 @@ If a DTO is missing from one endpoint, it may be possible to find it in another
 endpoint. Which endpoints can "borrow" from which other endpoints are listed in
 `src/data/endpointSharedDtos.json`. The file is updated as needed.
 
-#### `tournament` Endpoints (`tournament-stub-v3/4` and `tournament-v3/4`)
+#### `x-platforms-available`
+
+`x-platforms-available` is listed per path specifying which platforms are
+available. This only differs for the `tournament-v4` and `tournament-stub-v4`
+endpoints. Overrides are in `src/data/endpointPlatformsAvailableOverrides.json`.
+
+#### `tournament` Endpoints (`tournament-stub-v4` and `tournament-v4`)
 
 These endpoints share all the same DTOs. However, they each have a copy of each
 DTO, so there is duplicate data. This also means if you are generating classes

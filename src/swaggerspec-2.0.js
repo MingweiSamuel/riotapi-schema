@@ -9,7 +9,10 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
   let methods = endpoints.flatMap(endpoint => endpoint.methods);
   let paths = {};
   methods.forEach(method => {
-    let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
+    let path = paths[method.getPathUrl()] = paths[method.getPathUrl()] || {
+      'x-endpoint': method.endpoint.name,
+      'x-platforms-available': method.platformsAvailable
+    };
     let op = path[method.httpMethod] = method.getOperation();
     op.produces = [ MIME_JSON ];
     if (op.parameters) {
@@ -96,7 +99,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
     },
     // Use NA1 as default region.
     host: "na1.api.riotgames.com",
-    'x-host-platform': regions.service.map(r => r.hostPlatform),
+    'x-host-platform': regions.map(r => r.hostPlatform),
     schemes: [ "https" ],
     paths,
     definitions: schemas,

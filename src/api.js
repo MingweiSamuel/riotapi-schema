@@ -131,10 +131,15 @@ async function getRegions() {
   let regionsDom = new JSDOM(await req(BASE_URL + 'regional-endpoints.html'));
   let panel = regionsDom.window.document
     .getElementsByClassName('panel-content')[0];
-  let [ serviceTable, ] = panel.getElementsByTagName('table');
-  let service = Array.from(serviceTable.tBodies[0].children)
+  return Array.from(panel.getElementsByTagName('table'))
+    .flatMap(table => Array.from(table.tBodies[0].children))
     .map(tableRow => new Region(tableRow));
-  return { service };
+  // let [ serviceTable, regionalTable ] = panel.getElementsByTagName('table');
+  // let service = Array.from(serviceTable.tBodies[0].children)
+  //   .map(tableRow => new Region(tableRow));
+  // let regional = Array.from(regionalTable.tBodies[0].children)
+  //   .map(tableRow => new Region(tableRow));
+  // return { service, regional };
 }
 
 

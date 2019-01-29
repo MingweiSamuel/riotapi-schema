@@ -6,6 +6,7 @@
 const fs = require("fs-extra");
 
 const aliases = require('./data/dtoAliases');
+const platformsAvailableOverrides = require('./data/endpointPlatformsAvailableOverrides');
 const Schema = require('./schema');
 const types = require('./types');
 
@@ -35,12 +36,16 @@ function Method(endpoint, methodEl) {
   this.rateLimitNotes = null;
   this.implementationNotes = null;
 
+  this.platformsAvailable = null;
+
   console.log('  ' + this.name + ' - ' + this.httpMethod.toUpperCase() +
     (this.deprecated ? ' (DEPRECATED)'  : ''));
 
   let apiBlocks = this.methodEl.getElementsByClassName('api_block');
   Array.from(apiBlocks)
     .forEach(apiBlock => this._compileApiBlock(apiBlock));
+  let platformSelect = this.methodEl.querySelector('[name=execute_against]');
+  this._handlePlatformSelect(platformSelect);
 }
 
 // https://swagger.io/specification/#pathItemObject
@@ -162,6 +167,16 @@ Method.prototype._handleBodyParameters = function(apiBlockHtml) {
   while ((block = block.nextElementSibling) && block.classList.contains('block')) {
     this.dtos.push(Schema.fromHtml(block, this.endpoint.name));
   }
+};
+
+Method.prototype._handlePlatformSelect = function(platformSelect) {
+  if (platformsAvailableOverrides[this.endpoint.name]) {
+    this.platformsAvailable = platformsAvailableOverrides[this.endpoint.name];
+  }
+  if (!platformSelect)
+    return;
+  this.platformsAvailable = Array.from(platformSelect.children)
+    .map(opt => opt.value.toLowerCase());
 };
 
 module.exports = Method;

@@ -9,6 +9,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
       let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
       path[method.httpMethod] = method.getOperation();
       path['x-endpoint'] = endpoint.name;
+      path['x-platforms-available'] = method.platformsAvailable;
     });
   });
 
@@ -48,7 +49,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
         url: "https://{platform}.api.riotgames.com",
         variables: {
           platform: {
-            enum: regions.service.map(r => r.hostPlatform),
+            enum: regions.map(r => r.hostPlatform),
             default: "na1"
           }
         }
