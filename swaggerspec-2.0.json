@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "6a14ba2f10df27440fc08667d529bf2bd42b3946"
+    "version": "a58c39e2f4273011f3e505925700e6fe8167e123"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -19,13 +19,30 @@
     "oc1",
     "tr1",
     "ru",
-    "pbe1"
+    "pbe1",
+    "americas",
+    "europe",
+    "asia"
   ],
   "schemes": [
     "https"
   ],
   "paths": {
     "/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}": {
+      "x-endpoint": "champion-mastery-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "champion-mastery-v4"
@@ -99,6 +116,20 @@
       }
     },
     "/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/by-champion/{championId}": {
+      "x-endpoint": "champion-mastery-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "champion-mastery-v4"
@@ -177,6 +208,20 @@
       }
     },
     "/lol/champion-mastery/v4/scores/by-summoner/{encryptedSummonerId}": {
+      "x-endpoint": "champion-mastery-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "champion-mastery-v4"
@@ -247,6 +292,20 @@
       }
     },
     "/lol/platform/v3/champion-rotations": {
+      "x-endpoint": "champion-v3",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "champion-v3"
@@ -306,6 +365,20 @@
       }
     },
     "/lol/league/v4/challengerleagues/by-queue/{queue}": {
+      "x-endpoint": "league-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "league-v4"
@@ -380,6 +453,20 @@
       }
     },
     "/lol/league/v4/grandmasterleagues/by-queue/{queue}": {
+      "x-endpoint": "league-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "league-v4"
@@ -454,6 +541,20 @@
       }
     },
     "/lol/league/v4/leagues/{leagueId}": {
+      "x-endpoint": "league-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "league-v4"
@@ -523,6 +624,20 @@
       }
     },
     "/lol/league/v4/masterleagues/by-queue/{queue}": {
+      "x-endpoint": "league-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "league-v4"
@@ -597,6 +712,20 @@
       }
     },
     "/lol/league/v4/positional-rank-queues": {
+      "x-endpoint": "league-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "league-v4"
@@ -660,6 +789,20 @@
       }
     },
     "/lol/league/v4/positions/by-summoner/{encryptedSummonerId}": {
+      "x-endpoint": "league-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "league-v4"
@@ -733,6 +876,20 @@
       }
     },
     "/lol/league/v4/positions/{positionalQueue}/{tier}/{division}/{position}/{page}": {
+      "x-endpoint": "league-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "league-v4"
@@ -865,6 +1022,21 @@
       }
     },
     "/lol/status/v3/shard-data": {
+      "x-endpoint": "lol-status-v3",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "pbe1",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "lol-status-v3"
@@ -925,6 +1097,20 @@
       }
     },
     "/lol/match/v4/matches/by-tournament-code/{tournamentCode}/ids": {
+      "x-endpoint": "match-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "match-v4"
@@ -999,6 +1185,20 @@
       }
     },
     "/lol/match/v4/matches/{matchId}": {
+      "x-endpoint": "match-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "match-v4"
@@ -1069,6 +1269,20 @@
       }
     },
     "/lol/match/v4/matches/{matchId}/by-tournament-code/{tournamentCode}": {
+      "x-endpoint": "match-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "match-v4"
@@ -1147,6 +1361,20 @@
       }
     },
     "/lol/match/v4/matchlists/by-account/{encryptedAccountId}": {
+      "x-endpoint": "match-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "match-v4"
@@ -1291,6 +1519,20 @@
       }
     },
     "/lol/match/v4/timelines/by-match/{matchId}": {
+      "x-endpoint": "match-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "match-v4"
@@ -1361,6 +1603,20 @@
       }
     },
     "/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}": {
+      "x-endpoint": "spectator-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "spectator-v4"
@@ -1430,6 +1686,20 @@
       }
     },
     "/lol/spectator/v4/featured-games": {
+      "x-endpoint": "spectator-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "spectator-v4"
@@ -1489,6 +1759,20 @@
       }
     },
     "/lol/summoner/v4/summoners/by-account/{encryptedAccountId}": {
+      "x-endpoint": "summoner-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "summoner-v4"
@@ -1558,6 +1842,20 @@
       }
     },
     "/lol/summoner/v4/summoners/by-name/{summonerName}": {
+      "x-endpoint": "summoner-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "summoner-v4"
@@ -1627,6 +1925,20 @@
       }
     },
     "/lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}": {
+      "x-endpoint": "summoner-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "summoner-v4"
@@ -1696,6 +2008,20 @@
       }
     },
     "/lol/summoner/v4/summoners/{encryptedSummonerId}": {
+      "x-endpoint": "summoner-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "summoner-v4"
@@ -1765,6 +2091,20 @@
       }
     },
     "/lol/platform/v4/third-party-code/by-summoner/{encryptedSummonerId}": {
+      "x-endpoint": "third-party-code-v4",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
       "get": {
         "tags": [
           "third-party-code-v4"
@@ -1834,6 +2174,10 @@
       }
     },
     "/lol/tournament-stub/v4/codes": {
+      "x-endpoint": "tournament-stub-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "post": {
         "tags": [
           "tournament-stub-v4"
@@ -1930,6 +2274,10 @@
       }
     },
     "/lol/tournament-stub/v4/lobby-events/by-code/{tournamentCode}": {
+      "x-endpoint": "tournament-stub-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "get": {
         "tags": [
           "tournament-stub-v4"
@@ -1999,6 +2347,10 @@
       }
     },
     "/lol/tournament-stub/v4/providers": {
+      "x-endpoint": "tournament-stub-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "post": {
         "tags": [
           "tournament-stub-v4"
@@ -2074,6 +2426,10 @@
       }
     },
     "/lol/tournament-stub/v4/tournaments": {
+      "x-endpoint": "tournament-stub-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "post": {
         "tags": [
           "tournament-stub-v4"
@@ -2149,6 +2505,10 @@
       }
     },
     "/lol/tournament/v4/codes": {
+      "x-endpoint": "tournament-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "post": {
         "tags": [
           "tournament-v4"
@@ -2245,6 +2605,10 @@
       }
     },
     "/lol/tournament/v4/codes/{tournamentCode}": {
+      "x-endpoint": "tournament-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "get": {
         "tags": [
           "tournament-v4"
@@ -2390,6 +2754,10 @@
       }
     },
     "/lol/tournament/v4/lobby-events/by-code/{tournamentCode}": {
+      "x-endpoint": "tournament-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "get": {
         "tags": [
           "tournament-v4"
@@ -2459,6 +2827,10 @@
       }
     },
     "/lol/tournament/v4/providers": {
+      "x-endpoint": "tournament-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "post": {
         "tags": [
           "tournament-v4"
@@ -2534,6 +2906,10 @@
       }
     },
     "/lol/tournament/v4/tournaments": {
+      "x-endpoint": "tournament-v4",
+      "x-platforms-available": [
+        "americas"
+      ],
       "post": {
         "tags": [
           "tournament-v4"

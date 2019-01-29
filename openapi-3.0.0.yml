@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: e1a6403154c106cc0a05602153d3800f2f24e160
+  version: 982e91098a686b8d74fa86dfd0ef74c1725c2515
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -22,6 +22,9 @@ servers:
           - tr1
           - ru
           - pbe1
+          - americas
+          - europe
+          - asia
         default: na1
 paths:
   '/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}':
@@ -77,6 +80,18 @@ paths:
             x-type: string
           description: 'Summoner ID associated with the player'
     x-endpoint: champion-mastery-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/by-champion/{championId}':
     get:
       tags:
@@ -136,6 +151,18 @@ paths:
             x-type: string
           description: 'Summoner ID associated with the player'
     x-endpoint: champion-mastery-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/champion-mastery/v4/scores/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -187,6 +214,18 @@ paths:
             x-type: string
           description: 'Summoner ID associated with the player'
     x-endpoint: champion-mastery-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   /lol/platform/v3/champion-rotations:
     get:
       tags:
@@ -228,6 +267,18 @@ paths:
       operationId: champion-v3.getChampionInfo
       description: 'Returns champion rotations, including free-to-play and low-level free-to-play rotations (REST)'
     x-endpoint: champion-v3
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/league/v4/challengerleagues/by-queue/{queue}':
     get:
       tags:
@@ -281,6 +332,18 @@ paths:
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
     x-endpoint: league-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/league/v4/grandmasterleagues/by-queue/{queue}':
     get:
       tags:
@@ -334,6 +397,18 @@ paths:
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
     x-endpoint: league-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/league/v4/leagues/{leagueId}':
     get:
       tags:
@@ -384,6 +459,18 @@ paths:
             x-type: string
           description: 'The UUID of the league.'
     x-endpoint: league-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/league/v4/masterleagues/by-queue/{queue}':
     get:
       tags:
@@ -437,6 +524,18 @@ paths:
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
     x-endpoint: league-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   /lol/league/v4/positional-rank-queues:
     get:
       tags:
@@ -481,6 +580,18 @@ paths:
       operationId: league-v4.getQueuesWithPositionRanks
       description: 'Get the queues that have positional ranks enabled.'
     x-endpoint: league-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/league/v4/positions/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -533,6 +644,18 @@ paths:
             type: string
             x-type: string
     x-endpoint: league-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/league/v4/positions/{positionalQueue}/{tier}/{division}/{position}/{page}':
     get:
       tags:
@@ -638,6 +761,18 @@ paths:
             x-type: int
           description: 'Starts with page 0.'
     x-endpoint: league-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   /lol/status/v3/shard-data:
     get:
       tags:
@@ -680,6 +815,19 @@ paths:
       x-app-rate-limit-excluded: true
       description: "Get League of Legends status for the given shard.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
     x-endpoint: lol-status-v3
+    x-platforms-available:
+      - ru
+      - kr
+      - pbe1
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/match/v4/matches/by-tournament-code/{tournamentCode}/ids':
     get:
       tags:
@@ -734,6 +882,18 @@ paths:
             x-type: string
           description: 'The tournament code.'
     x-endpoint: match-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/match/v4/matches/{matchId}':
     get:
       tags:
@@ -785,6 +945,18 @@ paths:
             x-type: long
           description: 'The match ID.'
     x-endpoint: match-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/match/v4/matches/{matchId}/by-tournament-code/{tournamentCode}':
     get:
       tags:
@@ -844,6 +1016,18 @@ paths:
             x-type: long
           description: 'The match ID.'
     x-endpoint: match-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/match/v4/matchlists/by-account/{encryptedAccountId}':
     get:
       tags:
@@ -969,6 +1153,18 @@ paths:
             x-type: int
           description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
     x-endpoint: match-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/match/v4/timelines/by-match/{matchId}':
     get:
       tags:
@@ -1020,6 +1216,18 @@ paths:
             x-type: long
           description: 'The match ID.'
     x-endpoint: match-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -1070,6 +1278,18 @@ paths:
             x-type: string
           description: 'The ID of the summoner.'
     x-endpoint: spectator-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   /lol/spectator/v4/featured-games:
     get:
       tags:
@@ -1111,6 +1331,18 @@ paths:
       operationId: spectator-v4.getFeaturedGames
       description: 'Get list of featured games.'
     x-endpoint: spectator-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/summoner/v4/summoners/by-account/{encryptedAccountId}':
     get:
       tags:
@@ -1160,6 +1392,18 @@ paths:
             type: string
             x-type: string
     x-endpoint: summoner-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/summoner/v4/summoners/by-name/{summonerName}':
     get:
       tags:
@@ -1210,6 +1454,18 @@ paths:
             x-type: string
           description: 'Summoner Name'
     x-endpoint: summoner-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}':
     get:
       tags:
@@ -1260,6 +1516,18 @@ paths:
             x-type: string
           description: 'Summoner ID'
     x-endpoint: summoner-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/summoner/v4/summoners/{encryptedSummonerId}':
     get:
       tags:
@@ -1310,6 +1578,18 @@ paths:
             x-type: string
           description: 'Summoner ID'
     x-endpoint: summoner-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   '/lol/platform/v4/third-party-code/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -1359,6 +1639,18 @@ paths:
             type: string
             x-type: string
     x-endpoint: third-party-code-v4
+    x-platforms-available:
+      - ru
+      - kr
+      - br1
+      - oc1
+      - jp1
+      - na1
+      - eun1
+      - euw1
+      - tr1
+      - la1
+      - la2
   /lol/tournament-stub/v4/codes:
     post:
       tags:
@@ -1430,6 +1722,8 @@ paths:
             x-type: long
           description: 'The tournament ID'
     x-endpoint: tournament-stub-v4
+    x-platforms-available:
+      - americas
   '/lol/tournament-stub/v4/lobby-events/by-code/{tournamentCode}':
     get:
       tags:
@@ -1480,6 +1774,8 @@ paths:
             x-type: string
           description: 'The short code to look up lobby events for'
     x-endpoint: tournament-stub-v4
+    x-platforms-available:
+      - americas
   /lol/tournament-stub/v4/providers:
     post:
       tags:
@@ -1530,6 +1826,8 @@ paths:
         required: true
         description: 'The provider definition.'
     x-endpoint: tournament-stub-v4
+    x-platforms-available:
+      - americas
   /lol/tournament-stub/v4/tournaments:
     post:
       tags:
@@ -1580,6 +1878,8 @@ paths:
         required: true
         description: 'The tournament definition.'
     x-endpoint: tournament-stub-v4
+    x-platforms-available:
+      - americas
   /lol/tournament/v4/codes:
     post:
       tags:
@@ -1651,6 +1951,8 @@ paths:
             x-type: long
           description: 'The tournament ID'
     x-endpoint: tournament-v4
+    x-platforms-available:
+      - americas
   '/lol/tournament/v4/codes/{tournamentCode}':
     get:
       tags:
@@ -1701,6 +2003,8 @@ paths:
             x-type: string
           description: 'The tournament code string.'
     x-endpoint: tournament-v4
+    x-platforms-available:
+      - americas
     put:
       tags:
         - tournament-v4
@@ -1802,6 +2106,8 @@ paths:
             x-type: string
           description: 'The short code to look up lobby events for'
     x-endpoint: tournament-v4
+    x-platforms-available:
+      - americas
   /lol/tournament/v4/providers:
     post:
       tags:
@@ -1852,6 +2158,8 @@ paths:
         required: true
         description: 'The provider definition.'
     x-endpoint: tournament-v4
+    x-platforms-available:
+      - americas
   /lol/tournament/v4/tournaments:
     post:
       tags:
@@ -1902,6 +2210,8 @@ paths:
         required: true
         description: 'The tournament definition.'
     x-endpoint: tournament-v4
+    x-platforms-available:
+      - americas
 components:
   schemas:
     Error:
