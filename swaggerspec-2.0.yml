@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: a58c39e2f4273011f3e505925700e6fe8167e123
+  version: 9f4fbe884e722f886d04b529ea3b860c3c25b2a5
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -3928,7 +3928,7 @@ definitions:
       puuid:
         type: string
         x-type: string
-        description: 'PUUID. (Encrypted)'
+        description: 'Encrypted PUUID. Exact length of 78 characters.'
       summonerLevel:
         type: integer
         format: int64
@@ -3942,11 +3942,11 @@ definitions:
       id:
         type: string
         x-type: string
-        description: 'Summoner ID. (Encrypted)'
+        description: 'Encrypted summoner ID. Max length 63 characters.'
       accountId:
         type: string
         x-type: string
-        description: 'Account ID. (Encrypted)'
+        description: 'Encrypted account ID. Max length 56 characters.'
     description: 'represents a summoner'
   tournament-stub-v4.TournamentCodeParameters:
     type: object
