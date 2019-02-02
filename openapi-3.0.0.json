@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "21b3146635abe0cbb3fb9e9a075e8f62b65ef4f7"
+    "version": "f5a75a7dc4ff33d9c67079d03eb0e02ae8bbbffa"
   },
   "servers": [
     {
@@ -3226,6 +3226,10 @@
             "type": "string",
             "x-type": "string"
           },
+          "hotStreak": {
+            "type": "boolean",
+            "x-type": "boolean"
+          },
           "miniSeries": {
             "$ref": "#/components/schemas/league-v4.MiniSeriesDTO",
             "x-type": "MiniSeriesDTO"
@@ -3235,10 +3239,22 @@
             "format": "int32",
             "x-type": "int"
           },
+          "veteran": {
+            "type": "boolean",
+            "x-type": "boolean"
+          },
           "losses": {
             "type": "integer",
             "format": "int32",
             "x-type": "int"
+          },
+          "freshBlood": {
+            "type": "boolean",
+            "x-type": "boolean"
+          },
+          "inactive": {
+            "type": "boolean",
+            "x-type": "boolean"
           },
           "rank": {
             "type": "string",
@@ -3246,7 +3262,8 @@
           },
           "summonerId": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "description": "Player's summonerId (Encrypted)"
           },
           "leaguePoints": {
             "type": "integer",
@@ -3505,7 +3522,7 @@
             "type": "string",
             "x-type": "string"
           },
-          "updated_at": {
+          "heading": {
             "type": "string",
             "x-type": "string"
           }
