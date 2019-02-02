@@ -12,10 +12,9 @@ knowing if you plan to use the generated schemas.
 
 Missing DTOs for the latest version are stored in [this JSON file](http://www.mingweisamuel.com/riotapi-schema/missing.json).
 
-#### `league-v4.LeagueItemDTO`
+#### Manual Overrides
 
-`league-v4.LeagueItemDTO` is completely manually overridden (see `src/data/schemaOverrides.json`).
-Due to https://github.com/RiotGames/developer-relations/issues/29
+If the portal documentation is wrong, DTOs can be manually overridden (see `src/data/schemaOverrides.json`).
 
 #### "DTO borrowing"
 

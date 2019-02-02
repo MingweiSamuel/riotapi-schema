@@ -1,2 +1,20 @@
 {
+  "lol-status-v3.Translation": {
+    "type": "object",
+    "title": "Translation",
+    "properties": {
+      "locale": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "content": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "heading": {
+        "type": "string",
+        "x-type": "string"
+      }
+    }
+  }
 }
