@@ -89,8 +89,10 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
           }
         });
         Object.keys(schema.properties).forEach(prop => {
-          schema.required.push(prop);
+          if ((schema.properties[prop].description && !schema.properties[prop].description.toLowerCase().includes('optional')) || !schema.properties[prop].description) // Hack
+            schema.required.push(prop);
         });
+        if (schema.required.length == 0) delete schema.required;
       })
   );
 
