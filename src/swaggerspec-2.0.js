@@ -79,6 +79,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
       .forEach(dto => {
         let fullName = endpoint.name + '.' + dto.name;
         let schema = schemas[fullName] = schemaOverrides[fullName] || dto.toSchema();
+        schema.required = [];
         Object.values(schema.properties).forEach(prop => {
           // Override anyOf for v2.0.
           if (!prop.type && prop.anyOf) {
@@ -86,6 +87,9 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
             Object.assign(prop, prop.anyOf[0]);
             delete prop.anyOf;
           }
+        });
+        Object.keys(schema.properties).forEach(prop => {
+          schema.required.push(prop);
         });
       })
   );
