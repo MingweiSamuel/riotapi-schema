@@ -44,8 +44,13 @@ Endpoint.prototype._compile = function() {
         if (existing.isSubset(dto))
           allDtos[dto.name] = dto
         else {
-          console.error('  CONFLICTING DTO: ' + dto.name);
-          console.error('  existing', existing, 'new', dto);
+          console.error('    CONFLICTING DTO: ' + dto.name);
+          console.error('    ORIGINAL DTO:');
+          console.error('      ' + JSON.stringify(existing, null, 2)
+            .split('\n').join('\n      '));
+          console.error('    NEW DTO:');
+          console.error('      ' + JSON.stringify(dto, null, 2)
+            .split('\n').join('\n      '));
         }
         continue;
       }

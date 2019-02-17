@@ -6,7 +6,7 @@
 const descTypeOverrides = require('./data/dtoDescriptionTypeOverrides');
 
 const types = require('./types');
-const deepEqual = require('./deepEqual');
+const { subsetEqual } = require('./deepEqual');
 
 function Schema(endpointName, name, description, properties) {
   this.endpointName = endpointName;
@@ -77,7 +77,7 @@ Schema.prototype.isSubset = function(other) {
   if (this.name !== other.name || this.endpointName !== other.endpointName)
     return false;
   for (let key of Object.keys(this.properties)) {
-    if (!deepEqual(this.properties[key], other.properties[key]))
+    if (!subsetEqual(this.properties[key], other.properties[key]))
       return false;
   }
   return true;
