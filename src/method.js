@@ -165,7 +165,7 @@ Method.prototype._handleBodyParameters = function(apiBlockHtml) {
 
   let block = apiBlockHtml;
   while ((block = block.nextElementSibling) && block.classList.contains('block')) {
-    this.dtos.push(Schema.fromHtml(block, this.endpoint.name));
+    this.dtos.push(Schema.fromHtml(block, this.endpoint.name, true));
   }
 };
 

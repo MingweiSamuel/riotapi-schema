@@ -17,7 +17,7 @@ function Schema(endpointName, name, description, properties) {
   this.required = [];
 }
 
-Schema.fromHtml = function(schemaHtml, endpointName) {
+Schema.fromHtml = function(schemaHtml, endpointName, requiredByDefault = false) {
   let name = schemaHtml.firstElementChild.textContent.trim();
   let description = Array.from(schemaHtml.childNodes)
     .filter(node => node.nodeType === 3 /* Node.TEXT_NODE */)
@@ -28,6 +28,7 @@ Schema.fromHtml = function(schemaHtml, endpointName) {
   let schema = new Schema(endpointName, name, description, {});
 
   let table = schemaHtml.lastElementChild;
+  // Get header for indexing (accounts for column order).
   let headers = Array.from(table.tHead.firstElementChild.children)
     .map(th => th.textContent.toLowerCase())
     .map(s => s.replace(/\s+(\S)/g, c => c[1].toUpperCase()));
@@ -41,7 +42,11 @@ Schema.fromHtml = function(schemaHtml, endpointName) {
     let requiredStr;
     [ name, requiredStr ] = name.split(/\s+/, 2);
 
-    if (requiredStr === 'required')
+    if (requiredByDefault) {
+      if (!description.toLowerCase().includes('optional'))
+        schema.required.push(name);
+    }
+    else if (requiredStr === 'required')
       schema.required.push(name);
 
     let prop = types.getType(dataType, schema.endpointName);
