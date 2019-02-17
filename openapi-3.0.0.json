@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "f5a75a7dc4ff33d9c67079d03eb0e02ae8bbbffa"
+    "version": "027a54b2c59a0ca15a8838139a557a837c18d199"
   },
   "servers": [
     {
@@ -5401,7 +5401,13 @@
             "x-type": "string",
             "description": "Optional string that may contain any data in any format, if specified at all. Used to denote any custom information about the game."
           }
-        }
+        },
+        "required": [
+          "spectatorType",
+          "teamSize",
+          "pickType",
+          "mapType"
+        ]
       },
       "tournament-stub-v4.LobbyEventDTOWrapper": {
         "type": "object",
@@ -5465,7 +5471,11 @@
             ],
             "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
           }
-        }
+        },
+        "required": [
+          "url",
+          "region"
+        ]
       },
       "tournament-stub-v4.TournamentRegistrationParameters": {
         "type": "object",
@@ -5482,7 +5492,10 @@
             "x-type": "string",
             "description": "The optional name of the tournament."
           }
-        }
+        },
+        "required": [
+          "providerId"
+        ]
       },
       "tournament-v4.TournamentCodeParameters": {
         "type": "object",
@@ -5541,7 +5554,13 @@
             "x-type": "string",
             "description": "Optional string that may contain any data in any format, if specified at all. Used to denote any custom information about the game."
           }
-        }
+        },
+        "required": [
+          "spectatorType",
+          "teamSize",
+          "pickType",
+          "mapType"
+        ]
       },
       "tournament-v4.TournamentCodeDTO": {
         "type": "object",
@@ -5679,7 +5698,12 @@
             ],
             "description": "The map type\n             (Legal values:  SUMMONERS_RIFT,  TWISTED_TREELINE,  HOWLING_ABYSS)"
           }
-        }
+        },
+        "required": [
+          "spectatorType",
+          "pickType",
+          "mapType"
+        ]
       },
       "tournament-v4.LobbyEventDTOWrapper": {
         "type": "object",
@@ -5743,7 +5767,11 @@
             ],
             "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
           }
-        }
+        },
+        "required": [
+          "url",
+          "region"
+        ]
       },
       "tournament-v4.TournamentRegistrationParameters": {
         "type": "object",
@@ -5760,7 +5788,10 @@
             "x-type": "string",
             "description": "The optional name of the tournament."
           }
-        }
+        },
+        "required": [
+          "providerId"
+        ]
       }
     },
     "securitySchemes": {
