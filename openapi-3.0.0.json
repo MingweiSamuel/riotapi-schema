@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "975764a79eee387392831196fdd300baefa6f666"
+    "version": "7288193ad37acb44be404c38324c1530dd661b65"
   },
   "servers": [
     {
@@ -450,6 +450,7 @@
               "x-type": "string",
               "enum": [
                 "RANKED_SOLO_5x5",
+                "RANKED_TFT",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
               ]
@@ -665,6 +666,7 @@
               "x-type": "string",
               "enum": [
                 "RANKED_SOLO_5x5",
+                "RANKED_TFT",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
               ]
@@ -767,6 +769,7 @@
               "x-type": "string",
               "enum": [
                 "RANKED_SOLO_5x5",
+                "RANKED_TFT",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
               ]
@@ -943,6 +946,7 @@
               "x-type": "string",
               "enum": [
                 "RANKED_SOLO_5x5",
+                "RANKED_TFT",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
               ]
@@ -3143,7 +3147,8 @@
           "wins": {
             "type": "integer",
             "format": "int32",
-            "x-type": "int"
+            "x-type": "int",
+            "description": "Winning team on Summoners Rift. First placement in Teamfight Tactics."
           },
           "veteran": {
             "type": "boolean",
@@ -3152,7 +3157,8 @@
           "losses": {
             "type": "integer",
             "format": "int32",
-            "x-type": "int"
+            "x-type": "int",
+            "description": "Losing team on Summoners Rift. Second through eighth placement in Teamfight Tactics."
           },
           "freshBlood": {
             "type": "boolean",
