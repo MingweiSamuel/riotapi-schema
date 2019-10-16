@@ -15,13 +15,14 @@ const { JSDOM } = require("jsdom");
 require('./arrayFill');
 
 const Endpoint = require('./endpoint');
-const Region = require('./region');
+// const Region = require('./region');
 
 const openapi_300 = require('./openapi-3.0.0');
 const swaggerspec_20 = require('./swaggerspec-2.0');
 const specs = [ openapi_300, swaggerspec_20 ];
 
 const BASE_URL = 'https://developer.riotgames.com/';
+const DOCS_URL = BASE_URL + 'docs/lol';
 const OUTPUT = 'out';
 
 const endpointSharedDtos = require('./data/endpointSharedDtos');
@@ -128,18 +129,21 @@ async function fixMissingDtos(endpoints) {
 
 
 async function getRegions() {
-  let regionsDom = new JSDOM(await req(BASE_URL + 'regional-endpoints.html'));
-  let panel = regionsDom.window.document
-    .getElementsByClassName('panel-content')[0];
-  return Array.from(panel.getElementsByTagName('table'))
-    .flatMap(table => Array.from(table.tBodies[0].children))
-    .map(tableRow => new Region(tableRow));
-  // let [ serviceTable, regionalTable ] = panel.getElementsByTagName('table');
-  // let service = Array.from(serviceTable.tBodies[0].children)
+  // TODO
+  return require('./data/regions');
+
+  // let regionsDom = new JSDOM(await req(DOCS_URL));
+  // let panel = regionsDom.window.document
+  //   .getElementsByClassName('panel-content')[0];
+  // return Array.from(panel.getElementsByTagName('table'))
+  //   .flatMap(table => Array.from(table.tBodies[0].children))
   //   .map(tableRow => new Region(tableRow));
-  // let regional = Array.from(regionalTable.tBodies[0].children)
-  //   .map(tableRow => new Region(tableRow));
-  // return { service, regional };
+  // // let [ serviceTable, regionalTable ] = panel.getElementsByTagName('table');
+  // // let service = Array.from(serviceTable.tBodies[0].children)
+  // //   .map(tableRow => new Region(tableRow));
+  // // let regional = Array.from(regionalTable.tBodies[0].children)
+  // //   .map(tableRow => new Region(tableRow));
+  // // return { service, regional };
 }
 
 

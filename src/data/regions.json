@@ -1,0 +1,108 @@
+[
+  {
+    "region": "BR",
+    "platforms": [
+      "BR1"
+    ],
+    "hostPlatform": "br1"
+  },
+  {
+    "region": "EUNE",
+    "platforms": [
+      "EUN1"
+    ],
+    "hostPlatform": "eun1"
+  },
+  {
+    "region": "EUW",
+    "platforms": [
+      "EUW1"
+    ],
+    "hostPlatform": "euw1"
+  },
+  {
+    "region": "JP",
+    "platforms": [
+      "JP1"
+    ],
+    "hostPlatform": "jp1"
+  },
+  {
+    "region": "KR",
+    "platforms": [
+      "KR"
+    ],
+    "hostPlatform": "kr"
+  },
+  {
+    "region": "LAN",
+    "platforms": [
+      "LA1"
+    ],
+    "hostPlatform": "la1"
+  },
+  {
+    "region": "LAS",
+    "platforms": [
+      "LA2"
+    ],
+    "hostPlatform": "la2"
+  },
+  {
+    "region": "NA",
+    "platforms": [
+      "NA1",
+      "NA *"
+    ],
+    "hostPlatform": "na1"
+  },
+  {
+    "region": "OCE",
+    "platforms": [
+      "OC1"
+    ],
+    "hostPlatform": "oc1"
+  },
+  {
+    "region": "TR",
+    "platforms": [
+      "TR1"
+    ],
+    "hostPlatform": "tr1"
+  },
+  {
+    "region": "RU",
+    "platforms": [
+      "RU"
+    ],
+    "hostPlatform": "ru"
+  },
+  {
+    "region": "PBE",
+    "platforms": [
+      "PBE1"
+    ],
+    "hostPlatform": "pbe1"
+  },
+  {
+    "region": "Americas",
+    "platforms": [
+      "AMERICAS"
+    ],
+    "hostPlatform": "americas"
+  },
+  {
+    "region": "Europe",
+    "platforms": [
+      "EUROPE"
+    ],
+    "hostPlatform": "europe"
+  },
+  {
+    "region": "Asia",
+    "platforms": [
+      "ASIA"
+    ],
+    "hostPlatform": "asia"
+  }
+]
