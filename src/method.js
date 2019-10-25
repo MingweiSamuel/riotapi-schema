@@ -38,7 +38,7 @@ function Method(endpoint, methodEl) {
 
   this.platformsAvailable = null;
 
-  console.log('  ' + this.name + ' - ' + this.httpMethod.toUpperCase() +
+  console.log(`  ${this.name} - ${this.httpMethod.toUpperCase()}` +
     (this.deprecated ? ' (DEPRECATED)'  : ''));
 
   let apiBlocks = this.methodEl.getElementsByClassName('api_block');
@@ -98,11 +98,15 @@ Method.prototype.getOperation = function() {
     operation.deprecated = true;
 
   return operation;
-}
+};
 
 Method.prototype.getPathUrl = function() {
   return this.pathUrl;
-}
+};
+
+// Method.prototype.getCanonicalName = function() {
+//   return `${this.endpoint.name}.${this.name}`;
+// };
 
 Method.prototype._compileApiBlock = function(apiBlockHtml) {
   let typeH4 = apiBlockHtml.getElementsByTagName('h4')[0];
@@ -122,7 +126,7 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
     case 'path parameters':
     case 'query parameters':
       let inType = type.split(/\s+/, 1)[0];
-      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name).toParameters(inType);
+      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name, { methodName: this.name }).toParameters(inType);
       this.params.push(...params);
       break;
     case 'body parameters':
@@ -142,7 +146,7 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
     default:
       console.error('Unhandled api block: "' + type + '".');
   }
-}
+};
 
 Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   // returnType may be null.
@@ -150,7 +154,7 @@ Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   let aliasMap = aliases[this.endpoint.name];
   this.dtos.push(...Array.from(apiBlockHtml.children)
     .slice(2, -1)
-    .map(el => Schema.fromHtml(el, this.endpoint.name))
+    .map(el => Schema.fromHtml(el, this.endpoint.name, { source: 'responseClass' }))
     .filter(s => !aliasMap || !aliasMap[s.name]));
 };
 
@@ -165,7 +169,7 @@ Method.prototype._handleBodyParameters = function(apiBlockHtml) {
 
   let block = apiBlockHtml;
   while ((block = block.nextElementSibling) && block.classList.contains('block')) {
-    this.dtos.push(Schema.fromHtml(block, this.endpoint.name, true));
+    this.dtos.push(Schema.fromHtml(block, this.endpoint.name, { requiredByDefault: true }));
   }
 };
 

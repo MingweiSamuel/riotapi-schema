@@ -1,0 +1,16 @@
+{
+    "league-exp-v4.getLeagueEntries.queue": "queueType",
+    "league-v4.getChallengerLeague.queue": "queueType",
+    "league-v4.getLeagueEntriesForSummoner.queue": "queueType",
+    "league-v4.getLeagueEntries.queue": "queueType",
+    "league-v4.getGrandmasterLeague.queue": "queueType",
+    "league-v4.getMasterLeague.queue": "queueType",
+
+    "champion-mastery-v4.getChampionMastery.championId": "champion",
+
+    "league-exp-v4.getLeagueEntries.division": "division",
+    "league-v4.getLeagueEntries.division": "division",
+
+    "league-exp-v4.getLeagueEntries.tier": "tier",
+    "league-v4.getLeagueEntries.tier": "tier"
+}

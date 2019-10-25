@@ -1,0 +1,54 @@
+{
+  "league-exp-v4.LeagueEntryDTO.queueType": "queueType",
+  "league-v4.LeagueEntryDTO.queueType": "queueType",
+  "league-v4.LeagueListDTO.queue": "queueType",
+
+  "match-v4.MatchDto.queueId": "queueId",
+  "match-v4.MatchReferenceDto.queue": "queueId",
+  "spectator-v4.CurrentGameInfo.gameQueueConfigId": "queueId",
+  "spectator-v4.FeaturedGameInfo.gameQueueConfigId": "queueId",
+
+  "champion-mastery-v4.ChampionMasteryDTO.championId": "champion",
+  "champion-v4.ChampionInfo.freeChampionIdsForNewPlayers[]": "champion",
+  "champion-v4.ChampionInfo.freeChampionIds[]": "champion",
+  "match-v4.TeamBansDto.championId": "champion",
+  "match-v4.ParticipantDto.championId": "champion",
+  "match-v4.MatchReferenceDto.champion": "champion",
+  "spectator-v4.BannedChampion.championId": "champion",
+  "spectator-v4.CurrentGameParticipant.championId": "champion",
+  "spectator-v4.Participant.championId": "champion",
+
+  "league-exp-v4.LeagueEntryDTO.rank": "division",
+  "league-v4.LeagueItemDTO.rank": "division",
+  "league-v4.LeagueEntryDTO.rank": "division",
+
+  "league-exp-v4.LeagueEntryDTO.tier": "tier",
+  "league-v4.LeagueListDTO.tier": "tier",
+  "league-v4.LeagueEntryDTO.tier": "tier",
+  "match-v4.ParticipantDto.highestAchievedSeasonTier": "tier",
+
+  "match-v4.MatchDto.seasonId": "season",
+  "match-v4.MatchReferenceDTO.season": "season",
+
+  "match-v4.MatchDto.gameType": "gameType",
+  "spectator-v4.CurrentGameInfo.gameType": "gameType",
+  "spectator-v4.FeaturedGameInfo.gameType": "gameType",
+
+  "match-v4.MatchDto.gameMode": "gameMode",
+  "spectator-v4.CurrentGameInfo.gameMode": "gameMode",
+  "spectator-v4.FeaturedGameInfo.gameMode": "gameMode",
+
+  "match-v4.MatchDto.mapId": "map",
+  "spectator-v4.CurrentGameInfo.mapId": "map",
+  "spectator-v4.FeaturedGameInfo.mapId": "map",
+
+  "lol-status-v3.ShardStatus.locales[]": "locale",
+  "lol-status-v3.Translation.locale": "locale",
+
+  "match-v4.TeamStatsDto.teamId": "team",
+  "match-v4.ParticipantDto.teamId": "team",
+  "match-v4.MatchEventDto.teamId": "team",
+  "spectator-v4.BannedChampion.teamId": "team",
+  "spectator-v4.CurrentGameParticipant.teamId": "team",
+  "spectator-v4.Participant.teamId": "team"
+}

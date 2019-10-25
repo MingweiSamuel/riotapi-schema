@@ -5,7 +5,8 @@
     "properties": {
       "locale": {
         "type": "string",
-        "x-type": "string"
+        "x-type": "string",
+        "x-enum": "locale"
       },
       "content": {
         "type": "string",

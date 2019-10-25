@@ -5,6 +5,9 @@
 
 const descTypeOverrides = require('./data/dtoDescriptionTypeOverrides');
 
+const methodParamEnums = require('./data/methodParamEnums');
+const dtoEnums = require('./data/dtoEnums');
+
 const types = require('./types');
 const { subsetEqual } = require('./deepEqual');
 
@@ -17,15 +20,15 @@ function Schema(endpointName, name, description, properties) {
   this.required = [];
 }
 
-Schema.fromHtml = function(schemaHtml, endpointName, requiredByDefault = false) {
-  let name = schemaHtml.firstElementChild.textContent.trim();
+Schema.fromHtml = function(schemaHtml, endpointName, { requiredByDefault = false, methodName = null } = {}) {
+  let dtoName = schemaHtml.firstElementChild.textContent.trim();
   let description = Array.from(schemaHtml.childNodes)
     .filter(node => node.nodeType === 3 /* Node.TEXT_NODE */)
     .map(node => node.textContent.trim())
     .filter(str => str.length)
     .reduce((a, b) => a + ' ' + b, '')
     .replace(/^\s*-\s+/, '');
-  let schema = new Schema(endpointName, name, description, {});
+  let schema = new Schema(endpointName, dtoName, description, {});
 
   let table = schemaHtml.lastElementChild;
   // Get header for indexing (accounts for column order).
@@ -62,6 +65,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, requiredByDefault = false) 
       }
       prop.description = description;
     }
+    annotateEnums(prop, schema.endpointName, name, dtoName, methodName);
 
     let valueTd = tr.children[headers.indexOf('value')];
     if (valueTd && valueTd.firstElementChild.tagName.toLowerCase() === 'select') {
@@ -130,5 +134,28 @@ Schema.readReturnType = function(returnHtml, endpointName) {
   let returnType = types.getType(returnTypeString, endpointName);
   return returnType;
 };
+
+function annotateEnums(targetProp, endpointName, name, dtoName, methodName) {
+  let canonName;
+  let enumMap;
+  // methodParamEnums.json
+  if (methodName) {
+    canonName = `${endpointName}.${methodName}.${name}`;
+    enumMap = methodParamEnums;
+  }
+  // dtoEnums.json
+  else {
+    canonName = `${endpointName}.${dtoName}.${name}`;
+    enumMap = dtoEnums;
+  }
+
+  if ('array' === targetProp.type) {
+    canonName += '[]';
+    targetProp = targetProp.items;
+  }
+  const enumName = enumMap[canonName];
+  if (enumName)
+  targetProp['x-enum'] = enumName;
+}
 
 module.exports = Schema;
