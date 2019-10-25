@@ -3,10 +3,10 @@
   "league-v4.LeagueEntryDTO.queueType": "queueType",
   "league-v4.LeagueListDTO.queue": "queueType",
 
-  "match-v4.MatchDto.queueId": "queueId",
-  "match-v4.MatchReferenceDto.queue": "queueId",
-  "spectator-v4.CurrentGameInfo.gameQueueConfigId": "queueId",
-  "spectator-v4.FeaturedGameInfo.gameQueueConfigId": "queueId",
+  "match-v4.MatchDto.queueId": "queue",
+  "match-v4.MatchReferenceDto.queue": "queue",
+  "spectator-v4.CurrentGameInfo.gameQueueConfigId": "queue",
+  "spectator-v4.FeaturedGameInfo.gameQueueConfigId": "queue",
 
   "champion-mastery-v4.ChampionMasteryDTO.championId": "champion",
   "champion-v4.ChampionInfo.freeChampionIdsForNewPlayers[]": "champion",
