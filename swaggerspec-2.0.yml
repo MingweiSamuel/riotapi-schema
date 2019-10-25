@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 169d1018d34e7ba666dfe97ebeb3de419a0c54e9
+  version: 11e40fc602191756287221d06fb1706d0b73521e
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -148,6 +148,7 @@ paths:
           type: integer
           format: int64
           x-type: long
+          x-enum: champion
         -
           name: encryptedSummonerId
           in: path
@@ -334,6 +335,7 @@ paths:
           description: 'Note that the queue value must be a valid ranked queue.'
           type: string
           x-type: string
+          x-enum: queueType
           enum:
             - RANKED_SOLO_5x5
             - RANKED_TFT
@@ -345,6 +347,7 @@ paths:
           required: true
           type: string
           x-type: string
+          x-enum: tier
           enum:
             - CHALLENGER
             - GRANDMASTER
@@ -362,6 +365,7 @@ paths:
           required: true
           type: string
           x-type: string
+          x-enum: division
           enum:
             - I
             - II
@@ -436,6 +440,7 @@ paths:
           required: true
           type: string
           x-type: string
+          x-enum: queueType
           enum:
             - RANKED_SOLO_5x5
             - RANKED_TFT
@@ -569,6 +574,7 @@ paths:
           required: true
           type: string
           x-type: string
+          x-enum: division
           enum:
             - I
             - II
@@ -581,6 +587,7 @@ paths:
           required: true
           type: string
           x-type: string
+          x-enum: tier
           enum:
             - DIAMOND
             - PLATINUM
@@ -596,6 +603,7 @@ paths:
           description: 'Note that the queue value must be a valid ranked queue.'
           type: string
           x-type: string
+          x-enum: queueType
           enum:
             - RANKED_SOLO_5x5
             - RANKED_TFT
@@ -669,6 +677,7 @@ paths:
           required: true
           type: string
           x-type: string
+          x-enum: queueType
           enum:
             - RANKED_SOLO_5x5
             - RANKED_TFT
@@ -796,6 +805,7 @@ paths:
           required: true
           type: string
           x-type: string
+          x-enum: queueType
           enum:
             - RANKED_SOLO_5x5
             - RANKED_TFT
@@ -2269,6 +2279,7 @@ definitions:
         format: int64
         x-type: long
         description: 'Champion ID for this entry.'
+        x-enum: champion
       championPointsUntilNextLevel:
         type: integer
         format: int64
@@ -2323,6 +2334,7 @@ definitions:
       queueType:
         type: string
         x-type: string
+        x-enum: queueType
       summonerName:
         type: string
         x-type: string
@@ -2348,6 +2360,7 @@ definitions:
       rank:
         type: string
         x-type: string
+        x-enum: division
       leagueId:
         type: string
         x-type: string
@@ -2360,6 +2373,7 @@ definitions:
       tier:
         type: string
         x-type: string
+        x-enum: tier
       summonerId:
         type: string
         x-type: string
@@ -2397,6 +2411,7 @@ definitions:
       tier:
         type: string
         x-type: string
+        x-enum: tier
       entries:
         type: array
         items:
@@ -2406,6 +2421,7 @@ definitions:
       queue:
         type: string
         x-type: string
+        x-enum: queueType
       name:
         type: string
         x-type: string
@@ -2444,6 +2460,7 @@ definitions:
       rank:
         type: string
         x-type: string
+        x-enum: division
       summonerId:
         type: string
         x-type: string
@@ -2478,6 +2495,7 @@ definitions:
       queueType:
         type: string
         x-type: string
+        x-enum: queueType
       summonerName:
         type: string
         x-type: string
@@ -2503,6 +2521,7 @@ definitions:
       rank:
         type: string
         x-type: string
+        x-enum: division
       leagueId:
         type: string
         x-type: string
@@ -2515,6 +2534,7 @@ definitions:
       tier:
         type: string
         x-type: string
+        x-enum: tier
       summonerId:
         type: string
         x-type: string
@@ -2550,6 +2570,7 @@ definitions:
         items:
           type: string
           x-type: string
+          x-enum: locale
         x-type: 'List[string]'
   lol-status-v3.Service:
     type: object
@@ -2625,6 +2646,7 @@ definitions:
       locale:
         type: string
         x-type: string
+        x-enum: locale
       content:
         type: string
         x-type: string
@@ -2640,11 +2662,13 @@ definitions:
         format: int32
         x-type: int
         description: 'Please refer to the Game Constants documentation.'
+        x-enum: season
       queueId:
         type: integer
         format: int32
         x-type: int
         description: 'Please refer to the Game Constants documentation.'
+        x-enum: queueId
       gameId:
         type: integer
         format: int64
@@ -2668,15 +2692,18 @@ definitions:
         type: string
         x-type: string
         description: 'Please refer to the Game Constants documentation.'
+        x-enum: gameMode
       mapId:
         type: integer
         format: int32
         x-type: int
         description: 'Please refer to the Game Constants documentation.'
+        x-enum: map
       gameType:
         type: string
         x-type: string
         description: 'Please refer to the Game Constants documentation.'
+        x-enum: gameType
       teams:
         type: array
         items:
@@ -2792,6 +2819,7 @@ definitions:
         format: int32
         x-type: int
         description: '100 for blue side. 200 for red side.'
+        x-enum: team
       firstTower:
         type: boolean
         x-type: boolean
@@ -2842,6 +2870,7 @@ definitions:
         format: int32
         x-type: int
         description: 'Banned championId.'
+        x-enum: champion
   match-v4.ParticipantDto:
     type: object
     title: ParticipantDto
@@ -2870,6 +2899,7 @@ definitions:
         format: int32
         x-type: int
         description: '100 for blue side. 200 for red side.'
+        x-enum: team
       spell2Id:
         type: integer
         format: int32
@@ -2895,6 +2925,7 @@ definitions:
           - BRONZE
           - UNRANKED
         description: "Highest ranked tier achieved for the previous season in a specific subset of queueIds, if any, otherwise null. Used to display border in game loading screen. Please refer to the Ranked Info documentation.\n             (Legal values:  CHALLENGER,  MASTER,  DIAMOND,  PLATINUM,  GOLD,  SILVER,  BRONZE,  UNRANKED)"
+        x-enum: tier
       spell1Id:
         type: integer
         format: int32
@@ -2904,6 +2935,7 @@ definitions:
         type: integer
         format: int32
         x-type: int
+        x-enum: champion
   match-v4.ParticipantStatsDto:
     type: object
     title: ParticipantStatsDto
@@ -3526,6 +3558,7 @@ definitions:
         type: integer
         format: int32
         x-type: int
+        x-enum: champion
       platformId:
         type: string
         x-type: string
@@ -3537,6 +3570,7 @@ definitions:
         type: integer
         format: int32
         x-type: int
+        x-enum: queueId
       role:
         type: string
         x-type: string
@@ -3650,6 +3684,7 @@ definitions:
         type: integer
         format: int32
         x-type: int
+        x-enum: team
       ascendedType:
         type: string
         x-type: string
@@ -3760,15 +3795,18 @@ definitions:
         type: string
         x-type: string
         description: 'The game mode'
+        x-enum: gameMode
       mapId:
         type: integer
         format: int64
         x-type: long
         description: 'The ID of the map'
+        x-enum: map
       gameType:
         type: string
         x-type: string
         description: 'The game type'
+        x-enum: gameType
       bannedChampions:
         type: array
         items:
@@ -3797,6 +3835,7 @@ definitions:
         format: int64
         x-type: long
         description: 'The queue type (queue types are documented on the Game Constants page)'
+        x-enum: queueId
   spectator-v4.BannedChampion:
     type: object
     title: BannedChampion
@@ -3811,11 +3850,13 @@ definitions:
         format: int64
         x-type: long
         description: 'The ID of the banned champion'
+        x-enum: champion
       teamId:
         type: integer
         format: int64
         x-type: long
         description: 'The ID of the team that banned the champion'
+        x-enum: team
   spectator-v4.Observer:
     type: object
     title: Observer
@@ -3838,6 +3879,7 @@ definitions:
         format: int64
         x-type: long
         description: 'The ID of the champion played by this participant'
+        x-enum: champion
       summonerName:
         type: string
         x-type: string
@@ -3867,6 +3909,7 @@ definitions:
         format: int64
         x-type: long
         description: 'The team ID of this participant, indicating the participant''s team'
+        x-enum: team
       spell1Id:
         type: integer
         format: int64
@@ -3957,11 +4000,13 @@ definitions:
           - FIRSTBLOOD
           - KINGPORO
         description: "The game mode\n             (Legal values:  CLASSIC,  ODIN,  ARAM,  TUTORIAL,  ONEFORALL,  ASCENSION,  FIRSTBLOOD,  KINGPORO)"
+        x-enum: gameMode
       mapId:
         type: integer
         format: int64
         x-type: long
         description: 'The ID of the map'
+        x-enum: map
       gameType:
         type: string
         x-type: string
@@ -3970,6 +4015,7 @@ definitions:
           - MATCHED_GAME
           - TUTORIAL_GAME
         description: "The game type\n             (Legal values:  CUSTOM_GAME,  MATCHED_GAME,  TUTORIAL_GAME)"
+        x-enum: gameType
       bannedChampions:
         type: array
         items:
@@ -3998,6 +4044,7 @@ definitions:
         format: int64
         x-type: long
         description: 'The queue type (queue types are documented on the Game Constants page)'
+        x-enum: queueId
   spectator-v4.Participant:
     type: object
     title: Participant
@@ -4012,6 +4059,7 @@ definitions:
         format: int64
         x-type: long
         description: 'The ID of the champion played by this participant'
+        x-enum: champion
       summonerName:
         type: string
         x-type: string
@@ -4030,6 +4078,7 @@ definitions:
         format: int64
         x-type: long
         description: 'The team ID of this participant, indicating the participant''s team'
+        x-enum: team
       spell1Id:
         type: integer
         format: int64

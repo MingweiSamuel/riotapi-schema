@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "169d1018d34e7ba666dfe97ebeb3de419a0c54e9"
+    "version": "11e40fc602191756287221d06fb1706d0b73521e"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -191,7 +191,8 @@
             "description": "Champion ID to retrieve Champion Mastery for",
             "type": "integer",
             "format": "int64",
-            "x-type": "long"
+            "x-type": "long",
+            "x-enum": "champion"
           },
           {
             "name": "encryptedSummonerId",
@@ -444,6 +445,7 @@
             "description": "Note that the queue value must be a valid ranked queue.",
             "type": "string",
             "x-type": "string",
+            "x-enum": "queueType",
             "enum": [
               "RANKED_SOLO_5x5",
               "RANKED_TFT",
@@ -457,6 +459,7 @@
             "required": true,
             "type": "string",
             "x-type": "string",
+            "x-enum": "tier",
             "enum": [
               "CHALLENGER",
               "GRANDMASTER",
@@ -476,6 +479,7 @@
             "required": true,
             "type": "string",
             "x-type": "string",
+            "x-enum": "division",
             "enum": [
               "I",
               "II",
@@ -574,6 +578,7 @@
             "required": true,
             "type": "string",
             "x-type": "string",
+            "x-enum": "queueType",
             "enum": [
               "RANKED_SOLO_5x5",
               "RANKED_TFT",
@@ -754,6 +759,7 @@
             "required": true,
             "type": "string",
             "x-type": "string",
+            "x-enum": "division",
             "enum": [
               "I",
               "II",
@@ -768,6 +774,7 @@
             "required": true,
             "type": "string",
             "x-type": "string",
+            "x-enum": "tier",
             "enum": [
               "DIAMOND",
               "PLATINUM",
@@ -785,6 +792,7 @@
             "description": "Note that the queue value must be a valid ranked queue.",
             "type": "string",
             "x-type": "string",
+            "x-enum": "queueType",
             "enum": [
               "RANKED_SOLO_5x5",
               "RANKED_TFT",
@@ -882,6 +890,7 @@
             "required": true,
             "type": "string",
             "x-type": "string",
+            "x-enum": "queueType",
             "enum": [
               "RANKED_SOLO_5x5",
               "RANKED_TFT",
@@ -1054,6 +1063,7 @@
             "required": true,
             "type": "string",
             "x-type": "string",
+            "x-enum": "queueType",
             "enum": [
               "RANKED_SOLO_5x5",
               "RANKED_TFT",
@@ -3074,7 +3084,8 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "Champion ID for this entry."
+          "description": "Champion ID for this entry.",
+          "x-enum": "champion"
         },
         "championPointsUntilNextLevel": {
           "type": "integer",
@@ -3143,7 +3154,8 @@
       "properties": {
         "queueType": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "queueType"
         },
         "summonerName": {
           "type": "string",
@@ -3175,7 +3187,8 @@
         },
         "rank": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "division"
         },
         "leagueId": {
           "type": "string",
@@ -3191,7 +3204,8 @@
         },
         "tier": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "tier"
         },
         "summonerId": {
           "type": "string",
@@ -3240,7 +3254,8 @@
         },
         "tier": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "tier"
         },
         "entries": {
           "type": "array",
@@ -3252,7 +3267,8 @@
         },
         "queue": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "queueType"
         },
         "name": {
           "type": "string",
@@ -3302,7 +3318,8 @@
         },
         "rank": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "division"
         },
         "summonerId": {
           "type": "string",
@@ -3347,7 +3364,8 @@
       "properties": {
         "queueType": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "queueType"
         },
         "summonerName": {
           "type": "string",
@@ -3379,7 +3397,8 @@
         },
         "rank": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "division"
         },
         "leagueId": {
           "type": "string",
@@ -3395,7 +3414,8 @@
         },
         "tier": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "tier"
         },
         "summonerId": {
           "type": "string",
@@ -3441,7 +3461,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "x-enum": "locale"
           },
           "x-type": "List[string]"
         }
@@ -3544,7 +3565,8 @@
       "properties": {
         "locale": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "locale"
         },
         "content": {
           "type": "string",
@@ -3564,13 +3586,15 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "Please refer to the Game Constants documentation."
+          "description": "Please refer to the Game Constants documentation.",
+          "x-enum": "season"
         },
         "queueId": {
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "Please refer to the Game Constants documentation."
+          "description": "Please refer to the Game Constants documentation.",
+          "x-enum": "queueId"
         },
         "gameId": {
           "type": "integer",
@@ -3599,18 +3623,21 @@
         "gameMode": {
           "type": "string",
           "x-type": "string",
-          "description": "Please refer to the Game Constants documentation."
+          "description": "Please refer to the Game Constants documentation.",
+          "x-enum": "gameMode"
         },
         "mapId": {
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "Please refer to the Game Constants documentation."
+          "description": "Please refer to the Game Constants documentation.",
+          "x-enum": "map"
         },
         "gameType": {
           "type": "string",
           "x-type": "string",
-          "description": "Please refer to the Game Constants documentation."
+          "description": "Please refer to the Game Constants documentation.",
+          "x-enum": "gameType"
         },
         "teams": {
           "type": "array",
@@ -3757,7 +3784,8 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "100 for blue side. 200 for red side."
+          "description": "100 for blue side. 200 for red side.",
+          "x-enum": "team"
         },
         "firstTower": {
           "type": "boolean",
@@ -3819,7 +3847,8 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "Banned championId."
+          "description": "Banned championId.",
+          "x-enum": "champion"
         }
       }
     },
@@ -3855,7 +3884,8 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "100 for blue side. 200 for red side."
+          "description": "100 for blue side. 200 for red side.",
+          "x-enum": "team"
         },
         "spell2Id": {
           "type": "integer",
@@ -3885,7 +3915,8 @@
             "BRONZE",
             "UNRANKED"
           ],
-          "description": "Highest ranked tier achieved for the previous season in a specific subset of queueIds, if any, otherwise null. Used to display border in game loading screen. Please refer to the Ranked Info documentation.\n             (Legal values:  CHALLENGER,  MASTER,  DIAMOND,  PLATINUM,  GOLD,  SILVER,  BRONZE,  UNRANKED)"
+          "description": "Highest ranked tier achieved for the previous season in a specific subset of queueIds, if any, otherwise null. Used to display border in game loading screen. Please refer to the Ranked Info documentation.\n             (Legal values:  CHALLENGER,  MASTER,  DIAMOND,  PLATINUM,  GOLD,  SILVER,  BRONZE,  UNRANKED)",
+          "x-enum": "tier"
         },
         "spell1Id": {
           "type": "integer",
@@ -3896,7 +3927,8 @@
         "championId": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "x-enum": "champion"
         }
       }
     },
@@ -4676,7 +4708,8 @@
         "champion": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "x-enum": "champion"
         },
         "platformId": {
           "type": "string",
@@ -4690,7 +4723,8 @@
         "queue": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "x-enum": "queueId"
         },
         "role": {
           "type": "string",
@@ -4839,7 +4873,8 @@
         "teamId": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "x-enum": "team"
         },
         "ascendedType": {
           "type": "string",
@@ -4977,18 +5012,21 @@
         "gameMode": {
           "type": "string",
           "x-type": "string",
-          "description": "The game mode"
+          "description": "The game mode",
+          "x-enum": "gameMode"
         },
         "mapId": {
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The ID of the map"
+          "description": "The ID of the map",
+          "x-enum": "map"
         },
         "gameType": {
           "type": "string",
           "x-type": "string",
-          "description": "The game type"
+          "description": "The game type",
+          "x-enum": "gameType"
         },
         "bannedChampions": {
           "type": "array",
@@ -5023,7 +5061,8 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The queue type (queue types are documented on the Game Constants page)"
+          "description": "The queue type (queue types are documented on the Game Constants page)",
+          "x-enum": "queueId"
         }
       }
     },
@@ -5041,13 +5080,15 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The ID of the banned champion"
+          "description": "The ID of the banned champion",
+          "x-enum": "champion"
         },
         "teamId": {
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The ID of the team that banned the champion"
+          "description": "The ID of the team that banned the champion",
+          "x-enum": "team"
         }
       }
     },
@@ -5076,7 +5117,8 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The ID of the champion played by this participant"
+          "description": "The ID of the champion played by this participant",
+          "x-enum": "champion"
         },
         "summonerName": {
           "type": "string",
@@ -5112,7 +5154,8 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The team ID of this participant, indicating the participant's team"
+          "description": "The team ID of this participant, indicating the participant's team",
+          "x-enum": "team"
         },
         "spell1Id": {
           "type": "integer",
@@ -5226,13 +5269,15 @@
             "FIRSTBLOOD",
             "KINGPORO"
           ],
-          "description": "The game mode\n             (Legal values:  CLASSIC,  ODIN,  ARAM,  TUTORIAL,  ONEFORALL,  ASCENSION,  FIRSTBLOOD,  KINGPORO)"
+          "description": "The game mode\n             (Legal values:  CLASSIC,  ODIN,  ARAM,  TUTORIAL,  ONEFORALL,  ASCENSION,  FIRSTBLOOD,  KINGPORO)",
+          "x-enum": "gameMode"
         },
         "mapId": {
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The ID of the map"
+          "description": "The ID of the map",
+          "x-enum": "map"
         },
         "gameType": {
           "type": "string",
@@ -5242,7 +5287,8 @@
             "MATCHED_GAME",
             "TUTORIAL_GAME"
           ],
-          "description": "The game type\n             (Legal values:  CUSTOM_GAME,  MATCHED_GAME,  TUTORIAL_GAME)"
+          "description": "The game type\n             (Legal values:  CUSTOM_GAME,  MATCHED_GAME,  TUTORIAL_GAME)",
+          "x-enum": "gameType"
         },
         "bannedChampions": {
           "type": "array",
@@ -5277,7 +5323,8 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The queue type (queue types are documented on the Game Constants page)"
+          "description": "The queue type (queue types are documented on the Game Constants page)",
+          "x-enum": "queueId"
         }
       }
     },
@@ -5295,7 +5342,8 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The ID of the champion played by this participant"
+          "description": "The ID of the champion played by this participant",
+          "x-enum": "champion"
         },
         "summonerName": {
           "type": "string",
@@ -5317,7 +5365,8 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "The team ID of this participant, indicating the participant's team"
+          "description": "The team ID of this participant, indicating the participant's team",
+          "x-enum": "team"
         },
         "spell1Id": {
           "type": "integer",
