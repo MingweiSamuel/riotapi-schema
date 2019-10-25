@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "4cb33a0bc6837bf5a0437bbda465aeb155aa8064"
+    "version": "b2fb0513c3cdb6baa0ba78bd2a50b43670161980"
   },
   "servers": [
     {
@@ -3697,7 +3697,7 @@
             "format": "int32",
             "x-type": "int",
             "description": "Please refer to the Game Constants documentation.",
-            "x-enum": "queueId"
+            "x-enum": "queue"
           },
           "gameId": {
             "type": "integer",
@@ -4827,7 +4827,7 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-enum": "queueId"
+            "x-enum": "queue"
           },
           "role": {
             "type": "string",
@@ -5165,7 +5165,7 @@
             "format": "int64",
             "x-type": "long",
             "description": "The queue type (queue types are documented on the Game Constants page)",
-            "x-enum": "queueId"
+            "x-enum": "queue"
           }
         }
       },
@@ -5427,7 +5427,7 @@
             "format": "int64",
             "x-type": "long",
             "description": "The queue type (queue types are documented on the Game Constants page)",
-            "x-enum": "queueId"
+            "x-enum": "queue"
           }
         }
       },
