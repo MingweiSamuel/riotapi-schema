@@ -9,8 +9,8 @@
   "spectator-v4.FeaturedGameInfo.gameQueueConfigId": "queue",
 
   "champion-mastery-v4.ChampionMasteryDTO.championId": "champion",
-  "champion-v4.ChampionInfo.freeChampionIdsForNewPlayers[]": "champion",
-  "champion-v4.ChampionInfo.freeChampionIds[]": "champion",
+  "champion-v3.ChampionInfo.freeChampionIdsForNewPlayers[]": "champion",
+  "champion-v3.ChampionInfo.freeChampionIds[]": "champion",
   "match-v4.TeamBansDto.championId": "champion",
   "match-v4.ParticipantDto.championId": "champion",
   "match-v4.MatchReferenceDto.champion": "champion",
