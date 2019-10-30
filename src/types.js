@@ -18,6 +18,8 @@ function getTypeInternal(typeString, endpoint) {
       return { type: 'integer', format: 'int32' };
     case "long":
       return { type: 'integer', format: 'int64' };
+    case "float":
+      return { type: 'number', format: 'float' }
     case "double":
       return { type: 'number', format: 'double' };
     case "string":
