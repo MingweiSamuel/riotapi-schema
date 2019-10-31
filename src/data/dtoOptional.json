@@ -12,6 +12,13 @@
   "match-v4.ParticipantDto.highestAchievedSeasonTier": true,
 
 
+  "match-v4.ParticipantTimelineDto.*": true,
+  "match-v4.ParticipantTimelineDto.participantId": true,
+  "match-v4.ParticipantTimelineDto.lane": true,
+  "match-v4.ParticipantTimelineDto.role": true,
+
+
+
   "match-v4.ParticipantStatsDto.*": true,
 
   "match-v4.ParticipantStatsDto.participantId": false,
