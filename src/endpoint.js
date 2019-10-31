@@ -92,14 +92,21 @@ Endpoint.prototype.list_missing_dtos = function() {
     // Extract short name from full name. Pop returns last element (DTP name).
     .map(ref => ref.split('.').pop())
     // Return names not found in the _allDtos dict.
-    .filter(name => !this._allDtos[name]);
+    .filter(name => !this._allDtos[name])
+    .unique();
 };
 
 Endpoint.prototype.add_old_dto = function(oldDto) {
   let name = oldDto.name || oldDto.title; // Not sure if Schema object or object from OpenAPI json.
   if (this._allDtos[name])
-    throw Error('DTO with name ' + name + 'already exists!');
+    throw Error(`Dto with name ${name} already exists!`);
   this._allDtos[name] = new Schema(this.name, name, oldDto.description, oldDto.properties);
 };
+
+Endpoint.prototype.add_unknown_dto = function(name) {
+  if (this._allDtos[name])
+    throw Error(`Dto with name ${name} already exists!`);
+  this._allDtos[name] = new Schema(this.name, name, "UNKNOWN TYPE.", {});
+}
 
 module.exports = Endpoint;

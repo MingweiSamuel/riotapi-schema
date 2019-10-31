@@ -93,9 +93,12 @@ async function fixMissingDtos(endpoints) {
 
         let oldDto = oldSchema.components.schemas[fullDtoName]
         if (oldDto) {
-          console.log('  Using previous commit version.');
-          endpoint.add_old_dto(oldDto);
-          continue outer;
+          if (Object.keys(oldDto.properties).length) {
+            console.log('  Using previous commit version.');
+            endpoint.add_old_dto(oldDto);
+            continue outer;
+          }
+          console.log('  Not using previous commit version, is placeholder.')
         }
 
         // Try finding DTO in endpointSharedDtos.
@@ -118,6 +121,8 @@ async function fixMissingDtos(endpoints) {
         }
 
         console.log('  FAILED to find dto for ' + fullDtoName + '.');
+        // Include as empty object.
+        endpoint.add_unknown_dto(dtoName);
       }
     }
     catch(e) {
