@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "df67d7fc804d2cc2c5881d132d558d82a0c7d357"
+    "version": "8f737200b221a713c6ff08534909b5899254a791"
   },
   "servers": [
     {
@@ -181,6 +181,7 @@
           }
         },
         "operationId": "champion-mastery-v4.getChampionMastery",
+        "x-nullable-404": true,
         "description": "Get a champion mastery by player ID and champion ID.",
         "parameters": [
           {
@@ -1000,6 +1001,7 @@
           }
         },
         "operationId": "league-v4.getLeagueById",
+        "x-nullable-404": true,
         "description": "Get league with given ID, including inactive entries.",
         "parameters": [
           {
@@ -1345,6 +1347,7 @@
           }
         },
         "operationId": "match-v4.getMatch",
+        "x-nullable-404": true,
         "description": "Get match by match ID.",
         "parameters": [
           {
@@ -1529,6 +1532,7 @@
           }
         },
         "operationId": "match-v4.getMatchlist",
+        "x-nullable-404": true,
         "description": "Get matchlist for games played on given account ID and platform ID and filtered using given filter parameters, if any.\n## Implementation Notes\nA number of optional parameters are provided for filtering. It is up to the caller to ensure that the combination of filter parameters provided is valid for the requested account, otherwise, no matches may be returned.\n\nIf beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.\n\nIf beginTime is specified, but not endTime, then endTime defaults to the the current unix timestamp in milliseconds (the maximum time range limitation is not observed in this specific case). If endTime is specified, but not beginTime, then beginTime defaults to the start of the account's match history returning a 400 due to the maximum time range limitation. If both are specified, then endTime should be greater than beginTime. The maximum time range allowed is one week, otherwise a 400 error code is returned.",
         "parameters": [
           {
@@ -1710,6 +1714,7 @@
           }
         },
         "operationId": "match-v4.getMatchTimeline",
+        "x-nullable-404": true,
         "description": "Get match timeline by match ID.\n## Implementation Notes\nNot all matches have timeline data.",
         "parameters": [
           {
@@ -1797,6 +1802,7 @@
           }
         },
         "operationId": "spectator-v4.getCurrentGameInfoBySummoner",
+        "x-nullable-404": true,
         "description": "Get current game information for the given summoner ID.",
         "parameters": [
           {
@@ -2042,6 +2048,7 @@
           }
         },
         "operationId": "summoner-v4.getBySummonerName",
+        "x-nullable-404": true,
         "description": "Get a summoner by summoner name.",
         "parameters": [
           {
@@ -4244,7 +4251,18 @@
             "description": "Summoner ID for this entry. (Encrypted)"
           }
         },
-        "description": "This object contains single Champion Mastery information for player and champion combination."
+        "description": "This object contains single Champion Mastery information for player and champion combination.",
+        "required": [
+          "chestGranted",
+          "championLevel",
+          "championPoints",
+          "championId",
+          "championPointsUntilNextLevel",
+          "lastPlayTime",
+          "tokensEarned",
+          "championPointsSinceLastLevel",
+          "summonerId"
+        ]
       },
       "champion-v3.ChampionInfo": {
         "type": "object",
@@ -4275,7 +4293,12 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "freeChampionIdsForNewPlayers",
+          "freeChampionIds",
+          "maxNewPlayerLevel"
+        ]
       },
       "league-exp-v4.LeagueEntryDTO": {
         "type": "object",
@@ -4346,7 +4369,23 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "queueType",
+          "summonerName",
+          "hotStreak",
+          "miniSeries",
+          "wins",
+          "veteran",
+          "losses",
+          "rank",
+          "leagueId",
+          "inactive",
+          "freshBlood",
+          "tier",
+          "summonerId",
+          "leaguePoints"
+        ]
       },
       "league-exp-v4.MiniSeriesDTO": {
         "type": "object",
@@ -4371,7 +4410,13 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "progress",
+          "losses",
+          "target",
+          "wins"
+        ]
       },
       "league-v4.LeagueListDTO": {
         "type": "object",
@@ -4403,7 +4448,14 @@
             "type": "string",
             "x-type": "string"
           }
-        }
+        },
+        "required": [
+          "leagueId",
+          "tier",
+          "entries",
+          "queue",
+          "name"
+        ]
       },
       "league-v4.LeagueItemDTO": {
         "type": "object",
@@ -4460,7 +4512,19 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "summonerName",
+          "hotStreak",
+          "wins",
+          "veteran",
+          "losses",
+          "freshBlood",
+          "inactive",
+          "rank",
+          "summonerId",
+          "leaguePoints"
+        ]
       },
       "league-v4.MiniSeriesDTO": {
         "type": "object",
@@ -4485,7 +4549,13 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "progress",
+          "losses",
+          "target",
+          "wins"
+        ]
       },
       "league-v4.LeagueEntryDTO": {
         "type": "object",
@@ -4556,7 +4626,22 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "queueType",
+          "summonerName",
+          "hotStreak",
+          "wins",
+          "veteran",
+          "losses",
+          "rank",
+          "leagueId",
+          "inactive",
+          "freshBlood",
+          "tier",
+          "summonerId",
+          "leaguePoints"
+        ]
       },
       "lol-status-v3.ShardStatus": {
         "type": "object",
@@ -4595,7 +4680,15 @@
             },
             "x-type": "List[string]"
           }
-        }
+        },
+        "required": [
+          "name",
+          "region_tag",
+          "hostname",
+          "services",
+          "slug",
+          "locales"
+        ]
       },
       "lol-status-v3.Service": {
         "type": "object",
@@ -4621,7 +4714,13 @@
             "type": "string",
             "x-type": "string"
           }
-        }
+        },
+        "required": [
+          "status",
+          "incidents",
+          "name",
+          "slug"
+        ]
       },
       "lol-status-v3.Incident": {
         "type": "object",
@@ -4648,7 +4747,13 @@
             },
             "x-type": "List[Message]"
           }
-        }
+        },
+        "required": [
+          "active",
+          "created_at",
+          "id",
+          "updates"
+        ]
       },
       "lol-status-v3.Message": {
         "type": "object",
@@ -4686,7 +4791,16 @@
             "type": "string",
             "x-type": "string"
           }
-        }
+        },
+        "required": [
+          "severity",
+          "author",
+          "created_at",
+          "translations",
+          "updated_at",
+          "content",
+          "id"
+        ]
       },
       "lol-status-v3.Translation": {
         "type": "object",
@@ -4705,7 +4819,12 @@
             "type": "string",
             "x-type": "string"
           }
-        }
+        },
+        "required": [
+          "locale",
+          "content",
+          "heading"
+        ]
       },
       "match-v4.MatchDto": {
         "type": "object",
@@ -4798,7 +4917,22 @@
             "x-type": "long",
             "description": "Designates the timestamp when champion select ended and the loading screen appeared, NOT when the game timer was at 0:00."
           }
-        }
+        },
+        "required": [
+          "seasonId",
+          "queueId",
+          "gameId",
+          "participantIdentities",
+          "gameVersion",
+          "platformId",
+          "gameMode",
+          "mapId",
+          "gameType",
+          "teams",
+          "participants",
+          "gameDuration",
+          "gameCreation"
+        ]
       },
       "match-v4.ParticipantIdentityDto": {
         "type": "object",
@@ -4814,7 +4948,11 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "player",
+          "participantId"
+        ]
       },
       "match-v4.PlayerDto": {
         "type": "object",
@@ -4857,7 +4995,17 @@
             "x-type": "string",
             "description": "Player's original accountId (Encrypted)"
           }
-        }
+        },
+        "required": [
+          "currentPlatformId",
+          "summonerName",
+          "matchHistoryUri",
+          "platformId",
+          "currentAccountId",
+          "profileIcon",
+          "summonerId",
+          "accountId"
+        ]
       },
       "match-v4.TeamStatsDto": {
         "type": "object",
@@ -4960,7 +5108,25 @@
             "x-type": "int",
             "description": "Number of times the team killed Dragon."
           }
-        }
+        },
+        "required": [
+          "firstDragon",
+          "firstInhibitor",
+          "bans",
+          "baronKills",
+          "firstRiftHerald",
+          "firstBaron",
+          "riftHeraldKills",
+          "firstBlood",
+          "teamId",
+          "firstTower",
+          "vilemawKills",
+          "inhibitorKills",
+          "towerKills",
+          "dominionVictoryScore",
+          "win",
+          "dragonKills"
+        ]
       },
       "match-v4.TeamBansDto": {
         "type": "object",
@@ -4979,7 +5145,11 @@
             "description": "Banned championId.",
             "x-enum": "champion"
           }
-        }
+        },
+        "required": [
+          "pickTurn",
+          "championId"
+        ]
       },
       "match-v4.ParticipantDto": {
         "type": "object",
@@ -5059,7 +5229,16 @@
             "x-type": "int",
             "x-enum": "champion"
           }
-        }
+        },
+        "required": [
+          "stats",
+          "participantId",
+          "timeline",
+          "teamId",
+          "spell2Id",
+          "spell1Id",
+          "championId"
+        ]
       },
       "match-v4.ParticipantStatsDto": {
         "type": "object",
@@ -5624,7 +5803,61 @@
             "format": "int64",
             "x-type": "long"
           }
-        }
+        },
+        "required": [
+          "firstBloodAssist",
+          "magicDamageDealtToChampions",
+          "damageDealtToObjectives",
+          "totalTimeCrowdControlDealt",
+          "longestTimeSpentLiving",
+          "tripleKills",
+          "kills",
+          "neutralMinionsKilled",
+          "damageDealtToTurrets",
+          "physicalDamageDealtToChampions",
+          "largestMultiKill",
+          "totalUnitsHealed",
+          "wardsKilled",
+          "largestCriticalStrike",
+          "largestKillingSpree",
+          "quadraKills",
+          "magicDamageDealt",
+          "item2",
+          "item3",
+          "item0",
+          "neutralMinionsKilledTeamJungle",
+          "item6",
+          "item4",
+          "item5",
+          "damageSelfMitigated",
+          "magicalDamageTaken",
+          "trueDamageTaken",
+          "assists",
+          "goldSpent",
+          "trueDamageDealt",
+          "participantId",
+          "totalDamageTaken",
+          "physicalDamageDealt",
+          "totalDamageDealtToChampions",
+          "physicalDamageTaken",
+          "win",
+          "totalDamageDealt",
+          "item1",
+          "neutralMinionsKilledEnemyJungle",
+          "deaths",
+          "firstBloodKill",
+          "trueDamageDealtToChampions",
+          "goldEarned",
+          "killingSprees",
+          "unrealKills",
+          "champLevel",
+          "doubleKills",
+          "visionWardsBoughtInGame",
+          "pentaKills",
+          "totalHeal",
+          "totalMinionsKilled",
+          "timeCCingOthers"
+        ]
       },
       "match-v4.RuneDto": {
         "type": "object",
@@ -5640,7 +5873,11 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "runeId",
+          "rank"
+        ]
       },
       "match-v4.ParticipantTimelineDto": {
         "type": "object",
@@ -5774,7 +6011,19 @@
             "x-type": "Map[String, double]",
             "description": "Damage taken for a specified period."
           }
-        }
+        },
+        "required": [
+          "lane",
+          "participantId",
+          "csDiffPerMinDeltas",
+          "goldPerMinDeltas",
+          "xpDiffPerMinDeltas",
+          "creepsPerMinDeltas",
+          "xpPerMinDeltas",
+          "role",
+          "damageTakenDiffPerMinDeltas",
+          "damageTakenPerMinDeltas"
+        ]
       },
       "match-v4.MasteryDto": {
         "type": "object",
@@ -5790,7 +6039,11 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "masteryId",
+          "rank"
+        ]
       },
       "match-v4.MatchlistDto": {
         "type": "object",
@@ -5819,7 +6072,13 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "matches",
+          "totalGames",
+          "startIndex",
+          "endIndex"
+        ]
       },
       "match-v4.MatchReferenceDto": {
         "type": "object",
@@ -5864,7 +6123,17 @@
             "format": "int64",
             "x-type": "long"
           }
-        }
+        },
+        "required": [
+          "lane",
+          "gameId",
+          "champion",
+          "platformId",
+          "season",
+          "queue",
+          "role",
+          "timestamp"
+        ]
       },
       "match-v4.MatchTimelineDto": {
         "type": "object",
@@ -5883,7 +6152,11 @@
             "format": "int64",
             "x-type": "long"
           }
-        }
+        },
+        "required": [
+          "frames",
+          "frameInterval"
+        ]
       },
       "match-v4.MatchFrameDto": {
         "type": "object",
@@ -5914,7 +6187,12 @@
             },
             "x-type": "List[MatchEventDto]"
           }
-        }
+        },
+        "required": [
+          "timestamp",
+          "participantFrames",
+          "events"
+        ]
       },
       "match-v4.MatchParticipantFrameDto": {
         "type": "object",
@@ -5969,7 +6247,19 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "totalGold",
+          "teamScore",
+          "participantId",
+          "level",
+          "currentGold",
+          "minionsKilled",
+          "dominionScore",
+          "position",
+          "xp",
+          "jungleMinionsKilled"
+        ]
       },
       "match-v4.MatchPositionDto": {
         "type": "object",
@@ -5985,7 +6275,11 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "y",
+          "x"
+        ]
       },
       "match-v4.MatchEventDto": {
         "type": "object",
@@ -6115,7 +6409,32 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "eventType",
+          "towerType",
+          "teamId",
+          "ascendedType",
+          "killerId",
+          "levelUpType",
+          "pointCaptured",
+          "assistingParticipantIds",
+          "wardType",
+          "monsterType",
+          "type",
+          "skillSlot",
+          "victimId",
+          "timestamp",
+          "afterId",
+          "monsterSubType",
+          "laneType",
+          "itemId",
+          "participantId",
+          "buildingType",
+          "creatorId",
+          "position",
+          "beforeId"
+        ]
       },
       "spectator-v4.CurrentGameInfo": {
         "type": "object",
@@ -6193,7 +6512,20 @@
             "description": "The queue type (queue types are documented on the Game Constants page)",
             "x-enum": "queue"
           }
-        }
+        },
+        "required": [
+          "gameId",
+          "gameStartTime",
+          "platformId",
+          "gameMode",
+          "mapId",
+          "gameType",
+          "bannedChampions",
+          "observers",
+          "participants",
+          "gameLength",
+          "gameQueueConfigId"
+        ]
       },
       "spectator-v4.BannedChampion": {
         "type": "object",
@@ -6219,7 +6551,12 @@
             "description": "The ID of the team that banned the champion",
             "x-enum": "team"
           }
-        }
+        },
+        "required": [
+          "pickTurn",
+          "championId",
+          "teamId"
+        ]
       },
       "spectator-v4.Observer": {
         "type": "object",
@@ -6230,7 +6567,10 @@
             "x-type": "string",
             "description": "Key used to decrypt the spectator grid game data for playback"
           }
-        }
+        },
+        "required": [
+          "encryptionKey"
+        ]
       },
       "spectator-v4.CurrentGameParticipant": {
         "type": "object",
@@ -6297,7 +6637,19 @@
             "x-type": "string",
             "description": "The encrypted summoner ID of this participant"
           }
-        }
+        },
+        "required": [
+          "profileIconId",
+          "championId",
+          "summonerName",
+          "gameCustomizationObjects",
+          "bot",
+          "perks",
+          "spell2Id",
+          "teamId",
+          "spell1Id",
+          "summonerId"
+        ]
       },
       "spectator-v4.GameCustomizationObject": {
         "type": "object",
@@ -6313,7 +6665,11 @@
             "x-type": "string",
             "description": "Game Customization content"
           }
-        }
+        },
+        "required": [
+          "category",
+          "content"
+        ]
       },
       "spectator-v4.Perks": {
         "type": "object",
@@ -6341,7 +6697,12 @@
             "x-type": "long",
             "description": "Secondary runes path"
           }
-        }
+        },
+        "required": [
+          "perkStyle",
+          "perkIds",
+          "perkSubStyle"
+        ]
       },
       "spectator-v4.FeaturedGames": {
         "type": "object",
@@ -6362,7 +6723,11 @@
             "x-type": "List[FeaturedGameInfo]",
             "description": "The list of featured games"
           }
-        }
+        },
+        "required": [
+          "clientRefreshInterval",
+          "gameList"
+        ]
       },
       "spectator-v4.FeaturedGameInfo": {
         "type": "object",
@@ -6455,7 +6820,20 @@
             "description": "The queue type (queue types are documented on the Game Constants page)",
             "x-enum": "queue"
           }
-        }
+        },
+        "required": [
+          "gameId",
+          "gameStartTime",
+          "platformId",
+          "gameMode",
+          "mapId",
+          "gameType",
+          "bannedChampions",
+          "observers",
+          "participants",
+          "gameLength",
+          "gameQueueConfigId"
+        ]
       },
       "spectator-v4.Participant": {
         "type": "object",
@@ -6503,7 +6881,16 @@
             "x-type": "long",
             "description": "The ID of the first summoner spell used by this participant"
           }
-        }
+        },
+        "required": [
+          "profileIconId",
+          "championId",
+          "summonerName",
+          "bot",
+          "spell2Id",
+          "teamId",
+          "spell1Id"
+        ]
       },
       "summoner-v4.SummonerDTO": {
         "type": "object",
@@ -6548,7 +6935,16 @@
             "description": "Encrypted account ID. Max length 56 characters."
           }
         },
-        "description": "represents a summoner"
+        "description": "represents a summoner",
+        "required": [
+          "profileIconId",
+          "name",
+          "puuid",
+          "summonerLevel",
+          "revisionDate",
+          "id",
+          "accountId"
+        ]
       },
       "tft-league-v1.LeagueListDTO": {
         "type": "object",
@@ -6560,7 +6956,8 @@
           },
           "tier": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "x-enum": "tier"
           },
           "entries": {
             "type": "array",
@@ -6572,13 +6969,21 @@
           },
           "queue": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "x-enum": "queueType"
           },
           "name": {
             "type": "string",
             "x-type": "string"
           }
-        }
+        },
+        "required": [
+          "leagueId",
+          "tier",
+          "entries",
+          "queue",
+          "name"
+        ]
       },
       "tft-league-v1.LeagueItemDTO": {
         "type": "object",
@@ -6622,7 +7027,8 @@
           },
           "rank": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "x-enum": "division"
           },
           "summonerId": {
             "type": "string",
@@ -6634,7 +7040,19 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "summonerName",
+          "hotStreak",
+          "wins",
+          "veteran",
+          "losses",
+          "freshBlood",
+          "inactive",
+          "rank",
+          "summonerId",
+          "leaguePoints"
+        ]
       },
       "tft-league-v1.MiniSeriesDTO": {
         "type": "object",
@@ -6659,7 +7077,13 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "progress",
+          "losses",
+          "target",
+          "wins"
+        ]
       },
       "tft-league-v1.LeagueEntryDTO": {
         "type": "object",
@@ -6667,7 +7091,8 @@
         "properties": {
           "queueType": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "x-enum": "queueType"
           },
           "summonerName": {
             "type": "string",
@@ -6699,7 +7124,8 @@
           },
           "rank": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "x-enum": "division"
           },
           "leagueId": {
             "type": "string",
@@ -6715,7 +7141,8 @@
           },
           "tier": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "x-enum": "tier"
           },
           "summonerId": {
             "type": "string",
@@ -6727,7 +7154,22 @@
             "format": "int32",
             "x-type": "int"
           }
-        }
+        },
+        "required": [
+          "queueType",
+          "summonerName",
+          "hotStreak",
+          "wins",
+          "veteran",
+          "losses",
+          "rank",
+          "leagueId",
+          "inactive",
+          "freshBlood",
+          "tier",
+          "summonerId",
+          "leaguePoints"
+        ]
       },
       "tft-match-v1.MatchDto": {
         "type": "object",
@@ -6743,7 +7185,11 @@
             "x-type": "MetadataDto",
             "description": "Match metadata."
           }
-        }
+        },
+        "required": [
+          "info",
+          "metadata"
+        ]
       },
       "tft-match-v1.InfoDto": {
         "type": "object",
@@ -6787,7 +7233,15 @@
             "x-type": "string",
             "description": "Game client version."
           }
-        }
+        },
+        "required": [
+          "game_datetime",
+          "participants",
+          "tft_set_number",
+          "game_length",
+          "queue_id",
+          "game_version"
+        ]
       },
       "tft-match-v1.ParticipantDto": {
         "type": "object",
@@ -6863,7 +7317,20 @@
             "x-type": "int",
             "description": "Gold left after participant was eliminated."
           }
-        }
+        },
+        "required": [
+          "placement",
+          "level",
+          "last_round",
+          "time_eliminated",
+          "companion",
+          "traits",
+          "players_eliminated",
+          "puuid",
+          "total_damage_to_players",
+          "units",
+          "gold_left"
+        ]
       },
       "tft-match-v1.TraitDto": {
         "type": "object",
@@ -6892,7 +7359,13 @@
             "x-type": "int",
             "description": "Number of units with this trait."
           }
-        }
+        },
+        "required": [
+          "tier_total",
+          "name",
+          "tier_current",
+          "num_units"
+        ]
       },
       "tft-match-v1.UnitDto": {
         "type": "object",
@@ -6930,7 +7403,14 @@
             "x-type": "int",
             "description": "Unit rarity. This doesn't equate to the unit cost."
           }
-        }
+        },
+        "required": [
+          "tier",
+          "items",
+          "character_id",
+          "name",
+          "rarity"
+        ]
       },
       "tft-match-v1.MetadataDto": {
         "type": "object",
@@ -6955,7 +7435,12 @@
             "x-type": "string",
             "description": "Match id."
           }
-        }
+        },
+        "required": [
+          "data_version",
+          "participants",
+          "match_id"
+        ]
       },
       "tft-match-v1.CompanionDto": {
         "type": "object",
@@ -6974,7 +7459,12 @@
             "type": "string",
             "x-type": "string"
           }
-        }
+        },
+        "required": [
+          "skin_ID",
+          "content_ID",
+          "species"
+        ]
       },
       "tft-summoner-v1.SummonerDTO": {
         "type": "object",
@@ -7098,7 +7588,10 @@
             },
             "x-type": "List[LobbyEventDTO]"
           }
-        }
+        },
+        "required": [
+          "eventList"
+        ]
       },
       "tournament-stub-v4.LobbyEventDTO": {
         "type": "object",
@@ -7119,7 +7612,12 @@
             "x-type": "string",
             "description": "Timestamp from the event"
           }
-        }
+        },
+        "required": [
+          "eventType",
+          "summonerId",
+          "timestamp"
+        ]
       },
       "tournament-stub-v4.ProviderRegistrationParameters": {
         "type": "object",
@@ -7329,7 +7827,22 @@
             "x-type": "string",
             "description": "The metadata for tournament code."
           }
-        }
+        },
+        "required": [
+          "map",
+          "code",
+          "spectators",
+          "region",
+          "providerId",
+          "teamSize",
+          "participants",
+          "pickType",
+          "tournamentId",
+          "lobbyName",
+          "password",
+          "id",
+          "metaData"
+        ]
       },
       "tournament-v4.TournamentCodeUpdateParameters": {
         "type": "object",
@@ -7394,7 +7907,10 @@
             },
             "x-type": "List[LobbyEventDTO]"
           }
-        }
+        },
+        "required": [
+          "eventList"
+        ]
       },
       "tournament-v4.LobbyEventDTO": {
         "type": "object",
@@ -7415,7 +7931,12 @@
             "x-type": "string",
             "description": "The type of event that was triggered"
           }
-        }
+        },
+        "required": [
+          "timestamp",
+          "summonerId",
+          "eventType"
+        ]
       },
       "tournament-v4.ProviderRegistrationParameters": {
         "type": "object",
