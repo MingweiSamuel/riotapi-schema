@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "809bc276992d782f9bb8f52e653295a7cf8d8450"
+    "version": "9d1a16f0273b961d1793c8431f69952c5e1c0a57"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -6829,14 +6829,66 @@
     "tft-match-v1.CompanionDto": {
       "type": "object",
       "title": "CompanionDto",
-      "properties": {},
-      "description": "UNKNOWN TYPE."
+      "properties": {
+        "skin_ID": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "content_ID": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "species": {
+          "type": "string",
+          "x-type": "string"
+        }
+      }
     },
     "tft-summoner-v1.SummonerDTO": {
       "type": "object",
       "title": "SummonerDTO",
-      "properties": {},
-      "description": "UNKNOWN TYPE."
+      "properties": {
+        "profileIconId": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "ID of the summoner icon associated with the summoner."
+        },
+        "name": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Summoner name."
+        },
+        "puuid": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Encrypted PUUID. Exact length of 78 characters."
+        },
+        "summonerLevel": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Summoner level associated with the summoner."
+        },
+        "revisionDate": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change"
+        },
+        "id": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Encrypted summoner ID. Max length 63 characters."
+        },
+        "accountId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Encrypted account ID. Max length 56 characters."
+        }
+      },
+      "description": "represents a summoner"
     },
     "tournament-stub-v4.TournamentCodeParameters": {
       "type": "object",
