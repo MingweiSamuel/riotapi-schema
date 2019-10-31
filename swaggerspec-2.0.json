@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "03db3ec926c4e4e24935c806c7059894e53a96a2"
+    "version": "b8d70dc15f43bfd051c24b53cca3a6fb5aed19bf"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -2134,6 +2134,999 @@
           }
         },
         "operationId": "summoner-v4.getBySummonerId",
+        "description": "Get a summoner by summoner ID.",
+        "parameters": [
+          {
+            "name": "encryptedSummonerId",
+            "in": "path",
+            "required": true,
+            "description": "Summoner ID",
+            "type": "string",
+            "x-type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/league/v1/challenger": {
+      "x-endpoint": "tft-league-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-league-v1"
+        ],
+        "summary": "Get the challenger league.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-league-v1/GET_getChallengerLeague"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-league-v1.LeagueListDTO",
+              "x-type": "LeagueListDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-league-v1.getChallengerLeague",
+        "description": "Get the challenger league.",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/league/v1/entries/by-summoner/{encryptedSummonerId}": {
+      "x-endpoint": "tft-league-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-league-v1"
+        ],
+        "summary": "Get league entries for a given summoner ID.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-league-v1/GET_getLeagueEntriesForSummoner"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tft-league-v1.LeagueEntryDTO",
+                "x-type": "LeagueEntryDTO"
+              },
+              "x-type": "Set[LeagueEntryDTO]"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-league-v1.getLeagueEntriesForSummoner",
+        "description": "Get league entries for a given summoner ID.",
+        "parameters": [
+          {
+            "name": "encryptedSummonerId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "string",
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/league/v1/entries/{tier}/{division}": {
+      "x-endpoint": "tft-league-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-league-v1"
+        ],
+        "summary": "Get all the league entries.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-league-v1/GET_getLeagueEntries"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tft-league-v1.LeagueEntryDTO",
+                "x-type": "LeagueEntryDTO"
+              },
+              "x-type": "Set[LeagueEntryDTO]"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-league-v1.getLeagueEntries",
+        "description": "Get all the league entries.",
+        "parameters": [
+          {
+            "name": "tier",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "DIAMOND",
+              "PLATINUM",
+              "GOLD",
+              "SILVER",
+              "BRONZE",
+              "IRON"
+            ],
+            "description": ""
+          },
+          {
+            "name": "division",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "I",
+              "II",
+              "III",
+              "IV"
+            ],
+            "description": ""
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Starts with page 1.",
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/league/v1/grandmaster": {
+      "x-endpoint": "tft-league-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-league-v1"
+        ],
+        "summary": "Get the grandmaster league.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-league-v1/GET_getGrandmasterLeague"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-league-v1.LeagueListDTO",
+              "x-type": "LeagueListDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-league-v1.getGrandmasterLeague",
+        "description": "Get the grandmaster league.",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/league/v1/leagues/{leagueId}": {
+      "x-endpoint": "tft-league-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-league-v1"
+        ],
+        "summary": "Get league with given ID, including inactive entries.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-league-v1/GET_getLeagueById"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-league-v1.LeagueListDTO",
+              "x-type": "LeagueListDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-league-v1.getLeagueById",
+        "description": "Get league with given ID, including inactive entries.",
+        "parameters": [
+          {
+            "name": "leagueId",
+            "in": "path",
+            "required": true,
+            "description": "The UUID of the league.",
+            "type": "string",
+            "x-type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/league/v1/master": {
+      "x-endpoint": "tft-league-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-league-v1"
+        ],
+        "summary": "Get the master league.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-league-v1/GET_getMasterLeague"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-league-v1.LeagueListDTO",
+              "x-type": "LeagueListDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-league-v1.getMasterLeague",
+        "description": "Get the master league.",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/match/v1/matches/by-puuid/{encryptedPUUID}/ids": {
+      "x-endpoint": "tft-match-v1",
+      "x-platforms-available": [
+        "europe",
+        "asia",
+        "americas"
+      ],
+      "get": {
+        "tags": [
+          "tft-match-v1"
+        ],
+        "summary": "Get a list of match ids by PUUID.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-match-v1/GET_getMatchIdsByPUUID"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "List[string]"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-match-v1.getMatchIdsByPUUID",
+        "description": "Get a list of match ids by PUUID.",
+        "parameters": [
+          {
+            "name": "encryptedPUUID",
+            "in": "path",
+            "required": false,
+            "type": "string",
+            "x-type": "String",
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/match/v1/matches/{matchId}": {
+      "x-endpoint": "tft-match-v1",
+      "x-platforms-available": [
+        "europe",
+        "asia",
+        "americas"
+      ],
+      "get": {
+        "tags": [
+          "tft-match-v1"
+        ],
+        "summary": "Get a match by match id.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-match-v1/GET_getMatch"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-match-v1.MatchDto",
+              "x-type": "MatchDto"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-match-v1.getMatch",
+        "description": "Get a match by match id.",
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "String",
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/summoner/v1/summoners/by-account/{encryptedAccountId}": {
+      "x-endpoint": "tft-summoner-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-summoner-v1"
+        ],
+        "summary": "Get a summoner by account ID.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-summoner-v1/GET_getByAccountId"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-summoner-v1.SummonerDTO",
+              "x-type": "SummonerDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-summoner-v1.getByAccountId",
+        "description": "Get a summoner by account ID.",
+        "parameters": [
+          {
+            "name": "encryptedAccountId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "string",
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/summoner/v1/summoners/by-name/{summonerName}": {
+      "x-endpoint": "tft-summoner-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-summoner-v1"
+        ],
+        "summary": "Get a summoner by summoner name.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-summoner-v1/GET_getBySummonerName"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-summoner-v1.SummonerDTO",
+              "x-type": "SummonerDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-summoner-v1.getBySummonerName",
+        "description": "Get a summoner by summoner name.",
+        "parameters": [
+          {
+            "name": "summonerName",
+            "in": "path",
+            "required": true,
+            "description": "Summoner Name",
+            "type": "string",
+            "x-type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/summoner/v1/summoners/by-puuid/{encryptedPUUID}": {
+      "x-endpoint": "tft-summoner-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-summoner-v1"
+        ],
+        "summary": "Get a summoner by PUUID.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-summoner-v1/GET_getByPUUID"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-summoner-v1.SummonerDTO",
+              "x-type": "SummonerDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-summoner-v1.getByPUUID",
+        "description": "Get a summoner by PUUID.",
+        "parameters": [
+          {
+            "name": "encryptedPUUID",
+            "in": "path",
+            "required": true,
+            "description": "Summoner ID",
+            "type": "string",
+            "x-type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/tft/summoner/v1/summoners/{encryptedSummonerId}": {
+      "x-endpoint": "tft-summoner-v1",
+      "x-platforms-available": [
+        "ru",
+        "kr",
+        "br1",
+        "oc1",
+        "jp1",
+        "na1",
+        "eun1",
+        "euw1",
+        "tr1",
+        "la1",
+        "la2"
+      ],
+      "get": {
+        "tags": [
+          "tft-summoner-v1"
+        ],
+        "summary": "Get a summoner by summoner ID.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#tft-summoner-v1/GET_getBySummonerId"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/tft-summoner-v1.SummonerDTO",
+              "x-type": "SummonerDTO"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "tft-summoner-v1.getBySummonerId",
         "description": "Get a summoner by summoner ID.",
         "parameters": [
           {
@@ -5425,6 +6418,413 @@
         }
       },
       "description": "represents a summoner"
+    },
+    "tft-league-v1.LeagueListDTO": {
+      "type": "object",
+      "title": "LeagueListDTO",
+      "properties": {
+        "leagueId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "tier": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tft-league-v1.LeagueItemDTO",
+            "x-type": "LeagueItemDTO"
+          },
+          "x-type": "List[LeagueItemDTO]"
+        },
+        "queue": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "name": {
+          "type": "string",
+          "x-type": "string"
+        }
+      }
+    },
+    "tft-league-v1.LeagueItemDTO": {
+      "type": "object",
+      "title": "LeagueItemDTO",
+      "properties": {
+        "summonerName": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "hotStreak": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "miniSeries": {
+          "$ref": "#/definitions/tft-league-v1.MiniSeriesDTO",
+          "x-type": "MiniSeriesDTO"
+        },
+        "wins": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "First placement."
+        },
+        "veteran": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "losses": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Second through eighth placement."
+        },
+        "freshBlood": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "inactive": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "rank": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Player's encrypted summonerId."
+        },
+        "leaguePoints": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      }
+    },
+    "tft-league-v1.MiniSeriesDTO": {
+      "type": "object",
+      "title": "MiniSeriesDTO",
+      "properties": {
+        "progress": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "losses": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "target": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "wins": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      }
+    },
+    "tft-league-v1.LeagueEntryDTO": {
+      "type": "object",
+      "title": "LeagueEntryDTO",
+      "properties": {
+        "queueType": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "summonerName": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "hotStreak": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "miniSeries": {
+          "$ref": "#/definitions/tft-league-v1.MiniSeriesDTO",
+          "x-type": "MiniSeriesDTO"
+        },
+        "wins": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "First placement."
+        },
+        "veteran": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "losses": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Second through eighth placement."
+        },
+        "rank": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "leagueId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "inactive": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "freshBlood": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "tier": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Player's encrypted summonerId."
+        },
+        "leaguePoints": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      }
+    },
+    "tft-match-v1.MatchDto": {
+      "type": "object",
+      "title": "MatchDto",
+      "properties": {
+        "info": {
+          "$ref": "#/definitions/tft-match-v1.InfoDto",
+          "x-type": "InfoDto",
+          "description": "Match info."
+        },
+        "metadata": {
+          "$ref": "#/definitions/tft-match-v1.MetadataDto",
+          "x-type": "MetadataDto",
+          "description": "Match metadata."
+        }
+      }
+    },
+    "tft-match-v1.InfoDto": {
+      "type": "object",
+      "title": "InfoDto",
+      "properties": {
+        "game_datetime": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Unix timestamp."
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tft-match-v1.ParticipantDto",
+            "x-type": "ParticipantDto"
+          },
+          "x-type": "List[ParticipantDto]",
+          "description": "Participants."
+        },
+        "tft_set_number": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Teamfight Tactics set number."
+        },
+        "game_length": {
+          "type": "number",
+          "format": "float",
+          "x-type": "float",
+          "description": "Game length in seconds."
+        },
+        "queue_id": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Please refer to the League of Legends documentation."
+        },
+        "game_version": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Game client version."
+        }
+      }
+    },
+    "tft-match-v1.ParticipantDto": {
+      "type": "object",
+      "title": "ParticipantDto",
+      "properties": {
+        "placement": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Participant placement upon elimination."
+        },
+        "level": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Participant Little Legend level. Note: This is not the number of active units."
+        },
+        "last_round": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "The round the participant was eliminated in. Note: If the player was eliminated in stage 2-1 their last_round would be 5."
+        },
+        "time_eliminated": {
+          "type": "number",
+          "format": "float",
+          "x-type": "float",
+          "description": "The number of seconds before the participant was eliminated."
+        },
+        "companion": {
+          "$ref": "#/definitions/tft-match-v1.CompanionDto",
+          "x-type": "CompanionDto",
+          "description": "Participant's companion."
+        },
+        "traits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tft-match-v1.TraitDto",
+            "x-type": "TraitDto"
+          },
+          "x-type": "List[TraitDto]",
+          "description": "A complete list of traits for the participant's active units."
+        },
+        "players_eliminated": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Number of players the participant eliminated."
+        },
+        "puuid": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Encrypted PUUID."
+        },
+        "total_damage_to_players": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Damage the participant dealt to other players."
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tft-match-v1.UnitDto",
+            "x-type": "UnitDto"
+          },
+          "x-type": "List[UnitDto]",
+          "description": "A list of active units for the participant."
+        },
+        "gold_left": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Gold left after participant was eliminated."
+        }
+      }
+    },
+    "tft-match-v1.TraitDto": {
+      "type": "object",
+      "title": "TraitDto",
+      "properties": {
+        "tier_total": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Total tiers for the trait."
+        },
+        "name": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Trait name."
+        },
+        "tier_current": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Current active tier for the trait."
+        },
+        "num_units": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Number of units with this trait."
+        }
+      }
+    },
+    "tft-match-v1.UnitDto": {
+      "type": "object",
+      "title": "UnitDto",
+      "properties": {
+        "tier": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Unit tier."
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "x-type": "List[int]",
+          "description": "A list of the unit's items. Please refer to the Teamfight Tactics documentation for item ids."
+        },
+        "character_id": {
+          "type": "string",
+          "x-type": "string",
+          "description": "This field was introduced in patch 9.22 with data_version 2."
+        },
+        "name": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Unit name."
+        },
+        "rarity": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Unit rarity. This doesn't equate to the unit cost."
+        }
+      }
+    },
+    "tft-match-v1.MetadataDto": {
+      "type": "object",
+      "title": "MetadataDto",
+      "properties": {
+        "data_version": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Match data version."
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "x-type": "List[string]",
+          "description": "A list of encrypted participant PUUIDs."
+        },
+        "match_id": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Match id."
+        }
+      }
     },
     "tournament-stub-v4.TournamentCodeParameters": {
       "type": "object",
