@@ -154,7 +154,7 @@ Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   let aliasMap = aliases[this.endpoint.name];
   this.dtos.push(...Array.from(apiBlockHtml.children)
     .slice(2, -1)
-    .map(el => Schema.fromHtml(el, this.endpoint.name, { source: 'responseClass' }))
+    .map(el => Schema.fromHtml(el, this.endpoint.name, { requiredByDefault: true, useDtoOptional: true }))
     .filter(s => !aliasMap || !aliasMap[s.name]));
 };
 

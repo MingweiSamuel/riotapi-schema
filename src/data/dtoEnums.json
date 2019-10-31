@@ -2,6 +2,8 @@
   "league-exp-v4.LeagueEntryDTO.queueType": "queueType",
   "league-v4.LeagueEntryDTO.queueType": "queueType",
   "league-v4.LeagueListDTO.queue": "queueType",
+  "tft-league-v1.LeagueEntryDTO.queueType": "queueType",
+  "tft-league-v1.LeagueListDTO.queue": "queueType",
 
   "match-v4.MatchDto.queueId": "queue",
   "match-v4.MatchReferenceDto.queue": "queue",
@@ -21,10 +23,14 @@
   "league-exp-v4.LeagueEntryDTO.rank": "division",
   "league-v4.LeagueItemDTO.rank": "division",
   "league-v4.LeagueEntryDTO.rank": "division",
+  "tft-league-v1.LeagueItemDTO.rank": "division",
+  "tft-league-v1.LeagueEntryDTO.rank": "division",
 
   "league-exp-v4.LeagueEntryDTO.tier": "tier",
   "league-v4.LeagueListDTO.tier": "tier",
   "league-v4.LeagueEntryDTO.tier": "tier",
+  "tft-league-v1.LeagueListDTO.tier": "tier",
+  "tft-league-v1.LeagueEntryDTO.tier": "tier",
   "match-v4.ParticipantDto.highestAchievedSeasonTier": "tier",
 
   "match-v4.MatchDto.seasonId": "season",

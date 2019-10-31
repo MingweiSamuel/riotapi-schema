@@ -16,7 +16,12 @@
         "type": "string",
         "x-type": "string"
       }
-    }
+    },
+    "required": [
+      "locale",
+      "content",
+      "heading"
+    ]
   },
   "tft-match-v1.CompanionDto": {
     "type": "object",
@@ -35,6 +40,11 @@
         "type": "string",
         "x-type": "string"
       }
-    }
+    },
+    "required": [
+      "skin_ID",
+      "content_ID",
+      "species"
+    ]
   }
 }

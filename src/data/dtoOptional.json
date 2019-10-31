@@ -1,0 +1,81 @@
+{
+  "league-exp-v4.LeagueItemDTO.miniSeries": true,
+  "league-v4.LeagueItemDTO.miniSeries": true,
+  "league-v4.LeagueEntryDTO.miniSeries": true,
+  "tft-league-v1.LeagueItemDTO.miniSeries": true,
+  "tft-league-v1.LeagueEntryDTO.miniSeries": true,
+
+
+
+  "match-v4.ParticipantDto.runes": true,
+  "match-v4.ParticipantDto.masteries": true,
+  "match-v4.ParticipantDto.highestAchievedSeasonTier": true,
+
+
+  "match-v4.ParticipantStatsDto.*": true,
+
+  "match-v4.ParticipantStatsDto.participantId": false,
+  "match-v4.ParticipantStatsDto.champLevel": false,
+  "match-v4.ParticipantStatsDto.win": false,
+
+  "match-v4.ParticipantStatsDto.kills": false,
+  "match-v4.ParticipantStatsDto.deaths": false,
+  "match-v4.ParticipantStatsDto.assists": false,
+
+  "match-v4.ParticipantStatsDto.goldEarned": false,
+  "match-v4.ParticipantStatsDto.goldSpent": false,
+  "match-v4.ParticipantStatsDto.item0": false,
+  "match-v4.ParticipantStatsDto.item1": false,
+  "match-v4.ParticipantStatsDto.item2": false,
+  "match-v4.ParticipantStatsDto.item3": false,
+  "match-v4.ParticipantStatsDto.item4": false,
+  "match-v4.ParticipantStatsDto.item5": false,
+  "match-v4.ParticipantStatsDto.item6": false,
+
+  "match-v4.ParticipantStatsDto.visionWardsBoughtInGame": false,
+  "match-v4.ParticipantStatsDto.wardsKilled": false,
+
+  "match-v4.ParticipantStatsDto.totalHeal": false,
+  "match-v4.ParticipantStatsDto.totalUnitsHealed": false,
+  "match-v4.ParticipantStatsDto.damageSelfMitigated": false,
+
+  "match-v4.ParticipantStatsDto.firstBloodAssist": false,
+  "match-v4.ParticipantStatsDto.firstBloodKill": false,
+  "match-v4.ParticipantStatsDto.largestMultiKill": false,
+  "match-v4.ParticipantStatsDto.killingSprees": false,
+  "match-v4.ParticipantStatsDto.doubleKills": false,
+  "match-v4.ParticipantStatsDto.tripleKills": false,
+  "match-v4.ParticipantStatsDto.quadraKills": false,
+  "match-v4.ParticipantStatsDto.pentaKills": false,
+  "match-v4.ParticipantStatsDto.unrealKills": false,
+
+  "match-v4.ParticipantStatsDto.largestKillingSpree": false,
+  "match-v4.ParticipantStatsDto.largestCriticalStrike": false,
+
+  "match-v4.ParticipantStatsDto.totalDamageDealt": false,
+  "match-v4.ParticipantStatsDto.trueDamageDealt": false,
+  "match-v4.ParticipantStatsDto.magicDamageDealt": false,
+  "match-v4.ParticipantStatsDto.physicalDamageDealt": false,
+
+  "match-v4.ParticipantStatsDto.totalDamageDealtToChampions": false,
+  "match-v4.ParticipantStatsDto.trueDamageDealtToChampions": false,
+  "match-v4.ParticipantStatsDto.physicalDamageDealtToChampions": false,
+  "match-v4.ParticipantStatsDto.magicDamageDealtToChampions": false,
+
+  "match-v4.ParticipantStatsDto.damageDealtToObjectives": false,
+  "match-v4.ParticipantStatsDto.damageDealtToTurrets": false,
+
+  "match-v4.ParticipantStatsDto.totalDamageTaken": false,
+  "match-v4.ParticipantStatsDto.trueDamageTaken": false,
+  "match-v4.ParticipantStatsDto.magicalDamageTaken": false,
+  "match-v4.ParticipantStatsDto.physicalDamageTaken": false,
+
+  "match-v4.ParticipantStatsDto.timeCCingOthers": false,
+  "match-v4.ParticipantStatsDto.totalTimeCrowdControlDealt": false,
+  "match-v4.ParticipantStatsDto.longestTimeSpentLiving": false,
+
+  "match-v4.ParticipantStatsDto.totalMinionsKilled": false,
+  "match-v4.ParticipantStatsDto.neutralMinionsKilled": false,
+  "match-v4.ParticipantStatsDto.neutralMinionsKilledTeamJungle": false,
+  "match-v4.ParticipantStatsDto.neutralMinionsKilledEnemyJungle": false
+}

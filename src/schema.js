@@ -4,6 +4,7 @@
 /// and which endpoint it came from.
 
 const descTypeOverrides = require('./data/dtoDescriptionTypeOverrides');
+const dtoOptional = require('./data/dtoOptional');
 
 const methodParamEnums = require('./data/methodParamEnums');
 const dtoEnums = require('./data/dtoEnums');
@@ -20,7 +21,9 @@ function Schema(endpointName, name, description, properties) {
   this.required = [];
 }
 
-Schema.fromHtml = function(schemaHtml, endpointName, { requiredByDefault = false, methodName = null } = {}) {
+Schema.fromHtml = function(schemaHtml, endpointName,
+  { requiredByDefault = false, methodName = null, useDtoOptional = false } = {}) {
+
   let dtoName = schemaHtml.firstElementChild.textContent.trim();
   let description = Array.from(schemaHtml.childNodes)
     .filter(node => node.nodeType === 3 /* Node.TEXT_NODE */)
@@ -42,15 +45,30 @@ Schema.fromHtml = function(schemaHtml, endpointName, { requiredByDefault = false
     Array.from(tr.children)
       .map((el, i) => data[headers[i]] = el.textContent.trim());
     let { name, dataType, description } = data;
-    let requiredStr;
-    [ name, requiredStr ] = name.split(/\s+/, 2);
 
-    if (requiredByDefault) {
-      if (!description.toLowerCase().includes('optional'))
+    {
+      let isRequired = requiredByDefault;
+
+      let requiredStr;
+      [ name, requiredStr ] = name.split(/\s+/, 2);
+
+      if (description.toLowerCase().includes('optional'))
+        isRequired = false;
+      if (requiredStr === 'required')
+        isRequired = true;
+
+      if (useDtoOptional) {
+        const canonName = `${endpointName}.${dtoName}.${name}`;
+        const canonNameStar = `${endpointName}.${dtoName}.*`;
+        if (undefined !== dtoOptional[canonName])
+          isRequired = !dtoOptional[canonName];
+        else if (undefined !== dtoOptional[canonNameStar])
+          isRequired = !dtoOptional[canonNameStar];
+      }
+
+      if (isRequired)
         schema.required.push(name);
     }
-    else if (requiredStr === 'required')
-      schema.required.push(name);
 
     let prop = types.getType(dataType, schema.endpointName);
     if (description) {

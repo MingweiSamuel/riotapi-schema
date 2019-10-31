@@ -25,6 +25,13 @@ Override a DTO's field's type based on its description:
 }
 ```
 
+# `dtoEnums.json`
+List of fields in DTOs to be marked with `x-enum` values.
+
+# `dtoOptional.json`
+Mapping of what fields are optional (includeing `*` for blanket). All fields
+are required by default (optional = false).
+
 # `endpointPlatforms.json`:
 Per-endpoint region overrides.
 ```json
@@ -40,6 +47,13 @@ Per-endpoint region overrides.
 If a DTO is missing from one endpoint, it may be possible to find it in another
 endpoint. Which endpoints can "borrow" from which other endpoints are listed in
 `src/data/endpointSharedDtos.json`. The file is updated as needed.
+
+# `method404s.json`
+Methods that are reasonably likely to return 404s.
+
+# `methodParamEnums.json`
+Method parameters (URL and GET params, currently body is not considered (?))
+to be annotated with `x-enum` values.
 
 # `regions.json`
 Temp https://github.com/RiotGames/developer-relations/issues/171

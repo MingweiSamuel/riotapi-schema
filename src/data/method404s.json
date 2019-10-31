@@ -1,0 +1,9 @@
+[
+    "champion-mastery-v4.getChampionMastery",
+    "league-v4.getLeagueById",
+    "match-v4.getMatch",
+    "match-v4.getMatchTimeline",
+    "match-v4.getMatchlist",
+    "spectator-v4.getCurrentGameInfoBySummoner",
+    "summoner-v4.getBySummonerName"
+]
