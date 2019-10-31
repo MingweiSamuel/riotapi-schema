@@ -1,5 +1,8 @@
 {
     "tournament-v4": [
         "tournament-stub-v4", "tournament-v3"
+    ],
+    "tft-summoner-v1": [
+        "summoner-v4"
     ]
 }

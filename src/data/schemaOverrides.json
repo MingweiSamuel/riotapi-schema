@@ -17,5 +17,24 @@
         "x-type": "string"
       }
     }
+  },
+  "tft-match-v1.CompanionDto": {
+    "type": "object",
+    "title": "CompanionDto",
+    "properties": {
+      "skin_ID": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "content_ID": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "species": {
+        "type": "string",
+        "x-type": "string"
+      }
+    }
   }
 }
