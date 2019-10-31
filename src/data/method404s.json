@@ -1,9 +1,9 @@
-[
-    "champion-mastery-v4.getChampionMastery",
-    "league-v4.getLeagueById",
-    "match-v4.getMatch",
-    "match-v4.getMatchTimeline",
-    "match-v4.getMatchlist",
-    "spectator-v4.getCurrentGameInfoBySummoner",
-    "summoner-v4.getBySummonerName"
-]
+{
+    "champion-mastery-v4.getChampionMastery": true,
+    "league-v4.getLeagueById": true,
+    "match-v4.getMatch": true,
+    "match-v4.getMatchTimeline": true,
+    "match-v4.getMatchlist": true,
+    "spectator-v4.getCurrentGameInfoBySummoner": true,
+    "summoner-v4.getBySummonerName": true
+}

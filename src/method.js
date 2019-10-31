@@ -7,6 +7,8 @@ const fs = require("fs-extra");
 
 const aliases = require('./data/dtoAliases');
 const platformsAvailableOverrides = require('./data/endpointPlatformsAvailableOverrides');
+const method404s = require('./data/method404s');
+
 const Schema = require('./schema');
 const types = require('./types');
 
@@ -14,6 +16,7 @@ function Method(endpoint, methodEl) {
   this.endpoint = endpoint;
   this.methodEl = methodEl;
   this.name = methodEl.id.substring(1);
+  this.canonName = this.endpoint.name + '.' + this.name;
 
   let heading = methodEl.children[0];
   let method = heading.children[0].children[0];
@@ -38,7 +41,10 @@ function Method(endpoint, methodEl) {
 
   this.platformsAvailable = null;
 
+  this.nullable404 = method404s[this.canonName] || false;
+
   console.log(`  ${this.name} - ${this.httpMethod.toUpperCase()}` +
+    (this.nullable404 ? ' (nullable)' : '') +
     (this.deprecated ? ' (DEPRECATED)'  : ''));
 
   let apiBlocks = this.methodEl.getElementsByClassName('api_block');
@@ -70,8 +76,12 @@ Method.prototype.getOperation = function() {
       url: "https://developer.riotgames.com/api-methods/" + this.urlHash
     },
     responses: this.responses,
-    operationId: this.endpoint.name + '.' + this.name
+    operationId: this.canonName
   };
+
+  if (this.nullable404) // Can return 404.
+    operation['x-nullable-404'] = true;
+
   if (this.appRateLimitExcluded)
     operation['x-app-rate-limit-excluded'] = true;
 
