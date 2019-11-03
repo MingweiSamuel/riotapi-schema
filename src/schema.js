@@ -12,13 +12,13 @@ const dtoEnums = require('./data/dtoEnums');
 const types = require('./types');
 const { subsetEqual } = require('./deepEqual');
 
-function Schema(endpointName, name, description, properties) {
+function Schema(endpointName, name, description, properties, required = []) {
   this.endpointName = endpointName;
   this.name = name;
   this.description = description;
   this.properties = properties;
 
-  this.required = [];
+  this.required = required;
 }
 
 Schema.fromHtml = function(schemaHtml, endpointName,

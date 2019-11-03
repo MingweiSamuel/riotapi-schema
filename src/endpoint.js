@@ -100,7 +100,8 @@ Endpoint.prototype.add_old_dto = function(oldDto) {
   let name = oldDto.name || oldDto.title; // Not sure if Schema object or object from OpenAPI json.
   if (this._allDtos[name])
     throw Error(`Dto with name ${name} already exists!`);
-  this._allDtos[name] = new Schema(this.name, name, oldDto.description, oldDto.properties);
+  this._allDtos[name] = new Schema(
+    this.name, name, oldDto.description, oldDto.properties, oldDto.required || []);
 };
 
 Endpoint.prototype.add_unknown_dto = function(name) {
