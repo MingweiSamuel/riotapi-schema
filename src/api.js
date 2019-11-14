@@ -179,7 +179,7 @@ ${names.map(n => `- \`${n}\` ([download file](../${n}), [view ui](?${n}))`).join
 ## Source Code
 Source code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!
 ## Automatically Generated
-Rebuilt on [Travis CI](https://travis-ci.org/MingweiSamuel/riotapi-schema/builds) daily.
+Rebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.
 ***
 `;
 
