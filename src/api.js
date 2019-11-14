@@ -38,7 +38,13 @@ async function cleanupOutput() {
     .filter(file => !file.startsWith('.'))
     .map(file => fs.remove(OUTPUT + '/' + file)));
   // Copy swagger tool into output.
-  await fs.copy('swagger-ui-dist/', OUTPUT + '/tool');
+  await fs.copy('swagger-ui/dist/', OUTPUT + '/tool');
+
+  const index = OUTPUT + '/tool/index.html';
+  let indexContent = await fs.readFile(index, 'UTF-8');
+  indexContent = indexContent.replace('"https://petstore.swagger.io/v2/swagger.json"',
+    "'../' + (document.location.search.slice(1) || 'openapi-3.0.0.min.json')");
+  await fs.writeFile(index, indexContent);
 }
 
 
