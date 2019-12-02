@@ -6,6 +6,8 @@
   "tft-league-v1.LeagueEntryDTO.miniSeries": true,
 
 
+  "spectator-v4.CurrentGameInfo.gameQueueConfigId": true,
+
 
   "match-v4.ParticipantDto.runes": true,
   "match-v4.ParticipantDto.masteries": true,
