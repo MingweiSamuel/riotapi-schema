@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "8de91254196abf157d29b578bfe2d3d49b29ba8a"
+    "version": "1f82c41e2790c9090ed46ea9db54f0e5d653dda4"
   },
   "servers": [
     {
@@ -598,7 +598,6 @@
               "x-enum": "queueType",
               "enum": [
                 "RANKED_SOLO_5x5",
-                "RANKED_TFT",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
               ]
@@ -817,7 +816,6 @@
               "x-enum": "queueType",
               "enum": [
                 "RANKED_SOLO_5x5",
-                "RANKED_TFT",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
               ]
@@ -921,7 +919,6 @@
               "x-enum": "queueType",
               "enum": [
                 "RANKED_SOLO_5x5",
-                "RANKED_TFT",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
               ]
@@ -1100,7 +1097,6 @@
               "x-enum": "queueType",
               "enum": [
                 "RANKED_SOLO_5x5",
-                "RANKED_TFT",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
               ]
@@ -4469,7 +4465,7 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "Winning team on Summoners Rift. First placement in Teamfight Tactics."
+            "description": "Winning team on Summoners Rift."
           },
           "veteran": {
             "type": "boolean",
@@ -4479,7 +4475,7 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "Losing team on Summoners Rift. Second through eighth placement in Teamfight Tactics."
+            "description": "Losing team on Summoners Rift."
           },
           "freshBlood": {
             "type": "boolean",
@@ -4497,7 +4493,7 @@
           "summonerId": {
             "type": "string",
             "x-type": "string",
-            "description": "Player's summonerId (Encrypted)"
+            "description": "Player's encrypted summonerId."
           },
           "leaguePoints": {
             "type": "integer",
@@ -4574,7 +4570,7 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "Winning team on Summoners Rift. First placement in Teamfight Tactics."
+            "description": "Winning team on Summoners Rift."
           },
           "veteran": {
             "type": "boolean",
@@ -4584,7 +4580,7 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "Losing team on Summoners Rift. Second through eighth placement in Teamfight Tactics."
+            "description": "Losing team on Summoners Rift."
           },
           "rank": {
             "type": "string",
@@ -4611,7 +4607,7 @@
           "summonerId": {
             "type": "string",
             "x-type": "string",
-            "description": "Player's summonerId (Encrypted)"
+            "description": "Player's encrypted summonerId."
           },
           "leaguePoints": {
             "type": "integer",
