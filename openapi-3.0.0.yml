@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 6545743cde0c7cca11f9aaa96a9a145045fd399c
+  version: 66d2fb48666dc3be590d1860a2a57a53ffd70d0c
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -879,6 +879,51 @@ paths:
       - tr1
       - la1
       - la2
+  /lor/ranked/v1/leaderboards:
+    get:
+      tags:
+        - lor-ranked-v1
+      summary: 'Get the players in Master tier.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lor-ranked-v1/GET_getLeaderboards'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/lor-ranked-v1.LeaderboardDto'
+                x-type: LeaderboardDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lor-ranked-v1.getLeaderboards
+      description: 'Get the players in Master tier.'
+    x-endpoint: lor-ranked-v1
+    x-platforms-available:
+      - europe
+      - asia
+      - americas
   '/lol/match/v4/matches/by-tournament-code/{tournamentCode}/ids':
     get:
       tags:
@@ -3521,6 +3566,33 @@ components:
         - locale
         - content
         - heading
+    lor-ranked-v1.LeaderboardDto:
+      type: object
+      title: LeaderboardDto
+      properties:
+        players:
+          type: array
+          items:
+            $ref: '#/components/schemas/lor-ranked-v1.PlayerDto'
+            x-type: PlayerDto
+          x-type: 'List[PlayerDto]'
+          description: 'A list of players in Master tier.'
+      required:
+        - players
+    lor-ranked-v1.PlayerDto:
+      type: object
+      title: PlayerDto
+      properties:
+        name:
+          type: string
+          x-type: string
+        rank:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - name
+        - rank
     match-v4.MatchDto:
       type: object
       title: MatchDto
