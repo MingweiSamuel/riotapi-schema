@@ -48,8 +48,6 @@
   "match-v4.ParticipantStatsDto.totalUnitsHealed": false,
   "match-v4.ParticipantStatsDto.damageSelfMitigated": false,
 
-  "match-v4.ParticipantStatsDto.firstBloodAssist": false,
-  "match-v4.ParticipantStatsDto.firstBloodKill": false,
   "match-v4.ParticipantStatsDto.largestMultiKill": false,
   "match-v4.ParticipantStatsDto.killingSprees": false,
   "match-v4.ParticipantStatsDto.doubleKills": false,
