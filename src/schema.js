@@ -24,6 +24,9 @@ function Schema(endpointName, name, description, properties, required = []) {
 Schema.fromHtml = function(schemaHtml, endpointName,
   { requiredByDefault = false, methodName = null, useDtoOptional = false } = {}) {
 
+  if (null === schemaHtml.firstElementChild) {
+    console.log('!!!!', endpointName, methodName);
+  }
   let dtoName = schemaHtml.firstElementChild.textContent.trim();
   let description = Array.from(schemaHtml.childNodes)
     .filter(node => node.nodeType === 3 /* Node.TEXT_NODE */)

@@ -160,10 +160,10 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
 
 Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   // returnType may be null.
-  this.returnType = Schema.readReturnType(apiBlockHtml.children[1], this.endpoint.name);
+  const [ returnTypeBlock, ...schemaBlocks ] = apiBlockHtml.querySelectorAll('div.block.response_body');
+  this.returnType = Schema.readReturnType(returnTypeBlock, this.endpoint.name);
   let aliasMap = aliases[this.endpoint.name];
-  this.dtos.push(...Array.from(apiBlockHtml.children)
-    .slice(2, -1)
+  this.dtos.push(...schemaBlocks
     .map(el => Schema.fromHtml(el, this.endpoint.name, { requiredByDefault: true, useDtoOptional: true }))
     .filter(s => !aliasMap || !aliasMap[s.name]));
 };
