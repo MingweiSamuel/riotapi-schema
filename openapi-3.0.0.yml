@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: e22fa894666bc6e13ce9daac7c0c9272c1ff3aaa
+  version: e6e41d0047fc84845b0a0f5b0b9791d69e2d2502
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -82,16 +82,16 @@ paths:
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/by-champion/{championId}':
     get:
       tags:
@@ -155,16 +155,16 @@ paths:
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/champion-mastery/v4/scores/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -218,16 +218,16 @@ paths:
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   /lol/platform/v3/champion-rotations:
     get:
       tags:
@@ -271,16 +271,16 @@ paths:
     x-endpoint: champion-v3
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/league-exp/v4/entries/{queue}/{tier}/{division}':
     get:
       tags:
@@ -382,16 +382,16 @@ paths:
     x-endpoint: league-exp-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/league/v4/challengerleagues/by-queue/{queue}':
     get:
       tags:
@@ -448,16 +448,16 @@ paths:
     x-endpoint: league-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/league/v4/entries/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -512,16 +512,16 @@ paths:
     x-endpoint: league-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/league/v4/entries/{queue}/{tier}/{division}':
     get:
       tags:
@@ -619,16 +619,16 @@ paths:
     x-endpoint: league-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/league/v4/grandmasterleagues/by-queue/{queue}':
     get:
       tags:
@@ -685,16 +685,16 @@ paths:
     x-endpoint: league-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/league/v4/leagues/{leagueId}':
     get:
       tags:
@@ -748,16 +748,16 @@ paths:
     x-endpoint: league-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/league/v4/masterleagues/by-queue/{queue}':
     get:
       tags:
@@ -814,16 +814,16 @@ paths:
     x-endpoint: league-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   /lol/status/v3/shard-data:
     get:
       tags:
@@ -868,17 +868,17 @@ paths:
     x-endpoint: lol-status-v3
     x-platforms-available:
       - ru
-      - kr
+      - la2
+      - tr1
       - pbe1
-      - br1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   /lor/ranked/v1/leaderboards:
     get:
       tags:
@@ -980,16 +980,16 @@ paths:
     x-endpoint: match-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/match/v4/matches/{matchId}':
     get:
       tags:
@@ -1044,16 +1044,16 @@ paths:
     x-endpoint: match-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/match/v4/matches/{matchId}/by-tournament-code/{tournamentCode}':
     get:
       tags:
@@ -1115,16 +1115,16 @@ paths:
     x-endpoint: match-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/match/v4/matchlists/by-account/{encryptedAccountId}':
     get:
       tags:
@@ -1256,16 +1256,16 @@ paths:
     x-endpoint: match-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/match/v4/timelines/by-match/{matchId}':
     get:
       tags:
@@ -1320,16 +1320,16 @@ paths:
     x-endpoint: match-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -1383,16 +1383,16 @@ paths:
     x-endpoint: spectator-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   /lol/spectator/v4/featured-games:
     get:
       tags:
@@ -1436,16 +1436,16 @@ paths:
     x-endpoint: spectator-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/summoner/v4/summoners/by-account/{encryptedAccountId}':
     get:
       tags:
@@ -1497,16 +1497,16 @@ paths:
     x-endpoint: summoner-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/summoner/v4/summoners/by-name/{summonerName}':
     get:
       tags:
@@ -1560,16 +1560,16 @@ paths:
     x-endpoint: summoner-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}':
     get:
       tags:
@@ -1622,16 +1622,16 @@ paths:
     x-endpoint: summoner-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/summoner/v4/summoners/{encryptedSummonerId}':
     get:
       tags:
@@ -1684,16 +1684,16 @@ paths:
     x-endpoint: summoner-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   /tft/league/v1/challenger:
     get:
       tags:
@@ -1737,16 +1737,16 @@ paths:
     x-endpoint: tft-league-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/tft/league/v1/entries/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -1801,16 +1801,16 @@ paths:
     x-endpoint: tft-league-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/tft/league/v1/entries/{tier}/{division}':
     get:
       tags:
@@ -1893,16 +1893,16 @@ paths:
     x-endpoint: tft-league-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   /tft/league/v1/grandmaster:
     get:
       tags:
@@ -1946,16 +1946,16 @@ paths:
     x-endpoint: tft-league-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/tft/league/v1/leagues/{leagueId}':
     get:
       tags:
@@ -2008,16 +2008,16 @@ paths:
     x-endpoint: tft-league-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   /tft/league/v1/master:
     get:
       tags:
@@ -2061,16 +2061,16 @@ paths:
     x-endpoint: tft-league-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/tft/match/v1/matches/by-puuid/{puuid}/ids':
     get:
       tags:
@@ -2239,16 +2239,16 @@ paths:
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/tft/summoner/v1/summoners/by-name/{summonerName}':
     get:
       tags:
@@ -2301,16 +2301,16 @@ paths:
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/tft/summoner/v1/summoners/by-puuid/{encryptedPUUID}':
     get:
       tags:
@@ -2363,16 +2363,16 @@ paths:
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/tft/summoner/v1/summoners/{encryptedSummonerId}':
     get:
       tags:
@@ -2425,16 +2425,16 @@ paths:
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   '/lol/platform/v4/third-party-code/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -2486,16 +2486,16 @@ paths:
     x-endpoint: third-party-code-v4
     x-platforms-available:
       - ru
-      - kr
-      - br1
+      - la2
+      - tr1
       - oc1
-      - jp1
+      - br1
+      - kr
       - na1
       - eun1
-      - euw1
-      - tr1
+      - jp1
       - la1
-      - la2
+      - euw1
   /lol/tournament-stub/v4/codes:
     post:
       tags:
@@ -3098,11 +3098,10 @@ components:
           format: int64
           x-type: long
           description: 'Number of points needed to achieve next level. Zero if player reached maximum champion level for this champion.'
-        lastPlayTime:
-          type: integer
-          format: int64
-          x-type: long
-          description: 'Last time this champion was played by this player - in Unix milliseconds time format.'
+        summonerId:
+          type: string
+          x-type: string
+          description: 'Summoner ID for this entry. (Encrypted)'
         tokensEarned:
           type: integer
           format: int32
@@ -3113,10 +3112,11 @@ components:
           format: int64
           x-type: long
           description: 'Number of points earned since current level has been achieved.'
-        summonerId:
-          type: string
-          x-type: string
-          description: 'Summoner ID for this entry. (Encrypted)'
+        lastPlayTime:
+          type: integer
+          format: int64
+          x-type: long
+          description: 'Last time this champion was played by this player - in Unix milliseconds time format.'
       description: 'This object contains single Champion Mastery information for player and champion combination.'
       required:
         - chestGranted
@@ -3124,10 +3124,10 @@ components:
         - championPoints
         - championId
         - championPointsUntilNextLevel
-        - lastPlayTime
+        - summonerId
         - tokensEarned
         - championPointsSinceLastLevel
-        - summonerId
+        - lastPlayTime
     champion-v3.ChampionInfo:
       type: object
       title: ChampionInfo
@@ -3190,19 +3190,19 @@ components:
           type: string
           x-type: string
           x-enum: division
-        leagueId:
+        tier:
           type: string
           x-type: string
+          x-enum: tier
         inactive:
           type: boolean
           x-type: boolean
         freshBlood:
           type: boolean
           x-type: boolean
-        tier:
+        leagueId:
           type: string
           x-type: string
-          x-enum: tier
         summonerId:
           type: string
           x-type: string
@@ -3219,10 +3219,10 @@ components:
         - veteran
         - losses
         - rank
-        - leagueId
+        - tier
         - inactive
         - freshBlood
-        - tier
+        - leagueId
         - summonerId
         - leaguePoints
     league-exp-v4.MiniSeriesDTO:
@@ -3260,12 +3260,6 @@ components:
           type: string
           x-type: string
           x-enum: tier
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/league-v4.LeagueItemDTO'
-            x-type: LeagueItemDTO
-          x-type: 'List[LeagueItemDTO]'
         queue:
           type: string
           x-type: string
@@ -3273,12 +3267,18 @@ components:
         name:
           type: string
           x-type: string
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/league-v4.LeagueItemDTO'
+            x-type: LeagueItemDTO
+          x-type: 'List[LeagueItemDTO]'
       required:
         - leagueId
         - tier
-        - entries
         - queue
         - name
+        - entries
     league-v4.LeagueItemDTO:
       type: object
       title: LeagueItemDTO
@@ -3392,19 +3392,19 @@ components:
           type: string
           x-type: string
           x-enum: division
-        leagueId:
+        tier:
           type: string
           x-type: string
+          x-enum: tier
         inactive:
           type: boolean
           x-type: boolean
         freshBlood:
           type: boolean
           x-type: boolean
-        tier:
+        leagueId:
           type: string
           x-type: string
-          x-enum: tier
         summonerId:
           type: string
           x-type: string
@@ -3421,10 +3421,10 @@ components:
         - veteran
         - losses
         - rank
-        - leagueId
+        - tier
         - inactive
         - freshBlood
-        - tier
+        - leagueId
         - summonerId
         - leaguePoints
     lol-status-v3.ShardStatus:
@@ -3780,16 +3780,21 @@ components:
           type: boolean
           x-type: boolean
           description: 'Flag indicating whether or not the team scored the first blood.'
+        firstTower:
+          type: boolean
+          x-type: boolean
+          description: 'Flag indicating whether or not the team destroyed the first tower.'
         teamId:
           type: integer
           format: int32
           x-type: int
           description: '100 for blue side. 200 for red side.'
           x-enum: team
-        firstTower:
-          type: boolean
-          x-type: boolean
-          description: 'Flag indicating whether or not the team destroyed the first tower.'
+        dragonKills:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Number of times the team killed Dragon.'
         vilemawKills:
           type: integer
           format: int32
@@ -3817,11 +3822,6 @@ components:
             - Fail
             - Win
           description: "String indicating whether or not the team won. There are only two values visibile in public match history.\n             (Legal values:  Fail,  Win)"
-        dragonKills:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'Number of times the team killed Dragon.'
       required:
         - firstDragon
         - firstInhibitor
@@ -3831,14 +3831,14 @@ components:
         - firstBaron
         - riftHeraldKills
         - firstBlood
-        - teamId
         - firstTower
+        - teamId
+        - dragonKills
         - vilemawKills
         - inhibitorKills
         - towerKills
         - dominionVictoryScore
         - win
-        - dragonKills
     match-v4.TeamBansDto:
       type: object
       title: TeamBansDto
@@ -3861,6 +3861,11 @@ components:
       type: object
       title: ParticipantDto
       properties:
+        spell1Id:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'First Summoner Spell id.'
         stats:
           $ref: '#/components/schemas/match-v4.ParticipantStatsDto'
           x-type: ParticipantStatsDto
@@ -3880,17 +3885,6 @@ components:
           $ref: '#/components/schemas/match-v4.ParticipantTimelineDto'
           x-type: ParticipantTimelineDto
           description: 'Participant timeline data.'
-        teamId:
-          type: integer
-          format: int32
-          x-type: int
-          description: '100 for blue side. 200 for red side.'
-          x-enum: team
-        spell2Id:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'Second Summoner Spell id.'
         masteries:
           type: array
           items:
@@ -3898,6 +3892,17 @@ components:
             x-type: MasteryDto
           x-type: 'List[MasteryDto]'
           description: 'List of legacy Mastery information. Not included for matches played with Runes Reforged.'
+        spell2Id:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Second Summoner Spell id.'
+        teamId:
+          type: integer
+          format: int32
+          x-type: int
+          description: '100 for blue side. 200 for red side.'
+          x-enum: team
         highestAchievedSeasonTier:
           type: string
           x-type: string
@@ -3912,23 +3917,18 @@ components:
             - UNRANKED
           description: "Highest ranked tier achieved for the previous season in a specific subset of queueIds, if any, otherwise null. Used to display border in game loading screen. Please refer to the Ranked Info documentation.\n             (Legal values:  CHALLENGER,  MASTER,  DIAMOND,  PLATINUM,  GOLD,  SILVER,  BRONZE,  UNRANKED)"
           x-enum: tier
-        spell1Id:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'First Summoner Spell id.'
         championId:
           type: integer
           format: int32
           x-type: int
           x-enum: champion
       required:
+        - spell1Id
         - stats
         - participantId
         - timeline
-        - teamId
         - spell2Id
-        - spell1Id
+        - teamId
         - championId
     match-v4.ParticipantStatsDto:
       type: object
@@ -3949,7 +3949,7 @@ components:
           type: integer
           format: int64
           x-type: long
-        totalTimeCrowdControlDealt:
+        teamObjective:
           type: integer
           format: int32
           x-type: int
@@ -3976,20 +3976,20 @@ components:
           type: integer
           format: int32
           x-type: int
-        perk3Var3:
+        perk5:
           type: integer
           format: int32
           x-type: int
-          description: 'Post game rune stats.'
+          description: 'Secondary path rune.'
         nodeNeutralizeAssist:
           type: integer
           format: int32
           x-type: int
-        perk3Var2:
+        perk4:
           type: integer
           format: int32
           x-type: int
-          description: 'Post game rune stats.'
+          description: 'Secondary path rune.'
         playerScore9:
           type: integer
           format: int32
@@ -4087,21 +4087,19 @@ components:
           type: integer
           format: int32
           x-type: int
-        perk2Var1:
+        inhibitorKills:
           type: integer
           format: int32
           x-type: int
-          description: 'Post game rune stats.'
         perk4Var1:
           type: integer
           format: int32
           x-type: int
           description: 'Post game rune stats.'
-        perk4Var2:
+        totalDamageTaken:
           type: integer
-          format: int32
-          x-type: int
-          description: 'Post game rune stats.'
+          format: int64
+          x-type: long
         perk4Var3:
           type: integer
           format: int32
@@ -4123,7 +4121,7 @@ components:
           type: integer
           format: int32
           x-type: int
-        teamObjective:
+        totalTimeCrowdControlDealt:
           type: integer
           format: int32
           x-type: int
@@ -4179,16 +4177,16 @@ components:
           format: int32
           x-type: int
           description: 'Primary path rune.'
-        perk5:
+        perk3Var3:
           type: integer
           format: int32
           x-type: int
-          description: 'Secondary path rune.'
-        perk4:
+          description: 'Post game rune stats.'
+        perk3Var2:
           type: integer
           format: int32
           x-type: int
-          description: 'Secondary path rune.'
+          description: 'Post game rune stats.'
         perk3Var1:
           type: integer
           format: int32
@@ -4202,6 +4200,11 @@ components:
           type: integer
           format: int64
           x-type: long
+        perk0Var2:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
         firstInhibitorKill:
           type: boolean
           x-type: boolean
@@ -4217,15 +4220,11 @@ components:
           type: integer
           format: int32
           x-type: int
-        combatPlayerScore:
+        perk4Var2:
           type: integer
           format: int32
           x-type: int
-        perkPrimaryStyle:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'Primary rune path'
+          description: 'Post game rune stats.'
         goldSpent:
           type: integer
           format: int32
@@ -4238,10 +4237,6 @@ components:
           type: integer
           format: int32
           x-type: int
-        totalDamageTaken:
-          type: integer
-          format: int64
-          x-type: long
         physicalDamageDealt:
           type: integer
           format: int64
@@ -4265,6 +4260,11 @@ components:
         win:
           type: boolean
           x-type: boolean
+        perk2Var1:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Post game rune stats.'
         objectivePlayerScore:
           type: integer
           format: int32
@@ -4281,7 +4281,7 @@ components:
           type: integer
           format: int32
           x-type: int
-        deaths:
+        unrealKills:
           type: integer
           format: int32
           x-type: int
@@ -4289,6 +4289,11 @@ components:
           type: integer
           format: int32
           x-type: int
+        perkPrimaryStyle:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Primary rune path'
         perkSubStyle:
           type: integer
           format: int32
@@ -4313,7 +4318,7 @@ components:
           type: integer
           format: int32
           x-type: int
-        unrealKills:
+        deaths:
           type: integer
           format: int32
           x-type: int
@@ -4339,10 +4344,6 @@ components:
           type: integer
           format: int32
           x-type: int
-        inhibitorKills:
-          type: integer
-          format: int32
-          x-type: int
         firstInhibitorAssist:
           type: boolean
           x-type: boolean
@@ -4351,11 +4352,10 @@ components:
           format: int32
           x-type: int
           description: 'Post game rune stats.'
-        perk0Var2:
+        combatPlayerScore:
           type: integer
           format: int32
           x-type: int
-          description: 'Post game rune stats.'
         perk0Var3:
           type: integer
           format: int32
@@ -4388,7 +4388,6 @@ components:
       required:
         - magicDamageDealtToChampions
         - damageDealtToObjectives
-        - totalTimeCrowdControlDealt
         - longestTimeSpentLiving
         - tripleKills
         - kills
@@ -4397,10 +4396,12 @@ components:
         - physicalDamageDealtToChampions
         - largestMultiKill
         - totalUnitsHealed
+        - totalDamageTaken
         - wardsKilled
         - largestCriticalStrike
         - largestKillingSpree
         - quadraKills
+        - totalTimeCrowdControlDealt
         - magicDamageDealt
         - item2
         - item3
@@ -4416,7 +4417,6 @@ components:
         - goldSpent
         - trueDamageDealt
         - participantId
-        - totalDamageTaken
         - physicalDamageDealt
         - totalDamageDealtToChampions
         - physicalDamageTaken
@@ -4424,11 +4424,11 @@ components:
         - totalDamageDealt
         - item1
         - neutralMinionsKilledEnemyJungle
-        - deaths
+        - unrealKills
         - trueDamageDealtToChampions
         - goldEarned
         - killingSprees
-        - unrealKills
+        - deaths
         - champLevel
         - doubleKills
         - visionWardsBoughtInGame
@@ -4797,24 +4797,9 @@ components:
         monsterType:
           type: string
           x-type: string
-        type:
+        buildingType:
           type: string
           x-type: string
-          enum:
-            - CHAMPION_KILL
-            - WARD_PLACED
-            - WARD_KILL
-            - BUILDING_KILL
-            - ELITE_MONSTER_KILL
-            - ITEM_PURCHASED
-            - ITEM_SOLD
-            - ITEM_DESTROYED
-            - ITEM_UNDO
-            - SKILL_LEVEL_UP
-            - ASCENDED_EVENT
-            - CAPTURE_POINT
-            - PORO_KING_SUMMON
-          description: '(Legal values:  CHAMPION_KILL,  WARD_PLACED,  WARD_KILL,  BUILDING_KILL,  ELITE_MONSTER_KILL,  ITEM_PURCHASED,  ITEM_SOLD,  ITEM_DESTROYED,  ITEM_UNDO,  SKILL_LEVEL_UP,  ASCENDED_EVENT,  CAPTURE_POINT,  PORO_KING_SUMMON)'
         skillSlot:
           type: integer
           format: int32
@@ -4845,9 +4830,24 @@ components:
           type: integer
           format: int32
           x-type: int
-        buildingType:
+        type:
           type: string
           x-type: string
+          enum:
+            - CHAMPION_KILL
+            - WARD_PLACED
+            - WARD_KILL
+            - BUILDING_KILL
+            - ELITE_MONSTER_KILL
+            - ITEM_PURCHASED
+            - ITEM_SOLD
+            - ITEM_DESTROYED
+            - ITEM_UNDO
+            - SKILL_LEVEL_UP
+            - ASCENDED_EVENT
+            - CAPTURE_POINT
+            - PORO_KING_SUMMON
+          description: '(Legal values:  CHAMPION_KILL,  WARD_PLACED,  WARD_KILL,  BUILDING_KILL,  ELITE_MONSTER_KILL,  ITEM_PURCHASED,  ITEM_SOLD,  ITEM_DESTROYED,  ITEM_UNDO,  SKILL_LEVEL_UP,  ASCENDED_EVENT,  CAPTURE_POINT,  PORO_KING_SUMMON)'
         creatorId:
           type: integer
           format: int32
@@ -4870,7 +4870,7 @@ components:
         - assistingParticipantIds
         - wardType
         - monsterType
-        - type
+        - buildingType
         - skillSlot
         - victimId
         - timestamp
@@ -4879,7 +4879,7 @@ components:
         - laneType
         - itemId
         - participantId
-        - buildingType
+        - type
         - creatorId
         - position
         - beforeId
@@ -5022,21 +5022,21 @@ components:
           type: boolean
           x-type: boolean
           description: 'Flag indicating whether or not this participant is a bot'
-        perks:
-          $ref: '#/components/schemas/spectator-v4.Perks'
-          x-type: Perks
-          description: 'Perks/Runes Reforged Information'
-        spell2Id:
-          type: integer
-          format: int64
-          x-type: long
-          description: 'The ID of the second summoner spell used by this participant'
         teamId:
           type: integer
           format: int64
           x-type: long
           description: 'The team ID of this participant, indicating the participant''s team'
           x-enum: team
+        spell2Id:
+          type: integer
+          format: int64
+          x-type: long
+          description: 'The ID of the second summoner spell used by this participant'
+        perks:
+          $ref: '#/components/schemas/spectator-v4.Perks'
+          x-type: Perks
+          description: 'Perks/Runes Reforged Information'
         spell1Id:
           type: integer
           format: int64
@@ -5052,9 +5052,9 @@ components:
         - summonerName
         - gameCustomizationObjects
         - bot
-        - perks
-        - spell2Id
         - teamId
+        - spell2Id
+        - perks
         - spell1Id
         - summonerId
     spectator-v4.GameCustomizationObject:
@@ -5274,28 +5274,28 @@ components:
           format: int64
           x-type: long
           description: 'Summoner level associated with the summoner.'
+        accountId:
+          type: string
+          x-type: string
+          description: 'Encrypted account ID. Max length 56 characters.'
+        id:
+          type: string
+          x-type: string
+          description: 'Encrypted summoner ID. Max length 63 characters.'
         revisionDate:
           type: integer
           format: int64
           x-type: long
           description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change'
-        id:
-          type: string
-          x-type: string
-          description: 'Encrypted summoner ID. Max length 63 characters.'
-        accountId:
-          type: string
-          x-type: string
-          description: 'Encrypted account ID. Max length 56 characters.'
       description: 'represents a summoner'
       required:
         - profileIconId
         - name
         - puuid
         - summonerLevel
-        - revisionDate
-        - id
         - accountId
+        - id
+        - revisionDate
     tft-league-v1.LeagueListDTO:
       type: object
       title: LeagueListDTO
@@ -5307,12 +5307,6 @@ components:
           type: string
           x-type: string
           x-enum: tier
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/tft-league-v1.LeagueItemDTO'
-            x-type: LeagueItemDTO
-          x-type: 'List[LeagueItemDTO]'
         queue:
           type: string
           x-type: string
@@ -5320,12 +5314,18 @@ components:
         name:
           type: string
           x-type: string
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/tft-league-v1.LeagueItemDTO'
+            x-type: LeagueItemDTO
+          x-type: 'List[LeagueItemDTO]'
       required:
         - leagueId
         - tier
-        - entries
         - queue
         - name
+        - entries
     tft-league-v1.LeagueItemDTO:
       type: object
       title: LeagueItemDTO
@@ -5439,19 +5439,19 @@ components:
           type: string
           x-type: string
           x-enum: division
-        leagueId:
+        tier:
           type: string
           x-type: string
+          x-enum: tier
         inactive:
           type: boolean
           x-type: boolean
         freshBlood:
           type: boolean
           x-type: boolean
-        tier:
+        leagueId:
           type: string
           x-type: string
-          x-enum: tier
         summonerId:
           type: string
           x-type: string
@@ -5468,10 +5468,10 @@ components:
         - veteran
         - losses
         - rank
-        - leagueId
+        - tier
         - inactive
         - freshBlood
-        - tier
+        - leagueId
         - summonerId
         - leaguePoints
     tft-match-v1.MatchDto:
@@ -5927,10 +5927,11 @@ components:
       type: object
       title: TournamentCodeDTO
       properties:
-        map:
-          type: string
-          x-type: string
-          description: 'The game map for the tournament code game'
+        teamSize:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'The team size for the tournament code game.'
         code:
           type: string
           x-type: string
@@ -5939,6 +5940,10 @@ components:
           type: string
           x-type: string
           description: 'The spectator mode for the tournament code game.'
+        map:
+          type: string
+          x-type: string
+          description: 'The game map for the tournament code game'
         region:
           type: string
           x-type: string
@@ -5955,16 +5960,6 @@ components:
             - RU
             - TR
           description: "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR)"
-        providerId:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'The provider''s ID.'
-        teamSize:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'The team size for the tournament code game.'
         participants:
           type: array
           items:
@@ -5972,6 +5967,15 @@ components:
             x-type: string
           x-type: 'Set[string]'
           description: 'The summonerIds of the participants (Encrypted)'
+        lobbyName:
+          type: string
+          x-type: string
+          description: 'The lobby name for the tournament code game.'
+        providerId:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'The provider''s ID.'
         pickType:
           type: string
           x-type: string
@@ -5981,10 +5985,6 @@ components:
           format: int32
           x-type: int
           description: 'The tournament''s ID.'
-        lobbyName:
-          type: string
-          x-type: string
-          description: 'The lobby name for the tournament code game.'
         password:
           type: string
           x-type: string
@@ -5999,16 +5999,16 @@ components:
           x-type: string
           description: 'The metadata for tournament code.'
       required:
-        - map
+        - teamSize
         - code
         - spectators
+        - map
         - region
-        - providerId
-        - teamSize
         - participants
+        - lobbyName
+        - providerId
         - pickType
         - tournamentId
-        - lobbyName
         - password
         - id
         - metaData
