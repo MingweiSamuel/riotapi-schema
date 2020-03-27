@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: c04f6a87e27b871069e56958ba72032273ea3992
+  version: 81cbafdda73bea7af1aebd81294fa114150e22d8
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -269,6 +269,310 @@ paths:
       operationId: champion-v3.getChampionInfo
       description: 'Returns champion rotations, including free-to-play and low-level free-to-play rotations (REST)'
     x-endpoint: champion-v3
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - ru
+      - tr1
+  '/lol/clash/v1/players/by-summoner/{summonerId}':
+    get:
+      tags:
+        - clash-v1
+      summary: 'Get players by summoner ID.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#clash-v1/GET_getPlayersBySummoner'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/clash-v1.PlayerDto'
+                  x-type: PlayerDto
+                x-type: 'List[PlayerDto]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: clash-v1.getPlayersBySummoner
+      description: 'Get players by summoner ID.'
+      parameters:
+        -
+          name: summonerId
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+    x-endpoint: clash-v1
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - ru
+      - tr1
+  '/lol/clash/v1/teams/{teamId}':
+    get:
+      tags:
+        - clash-v1
+      summary: 'Get team by ID.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#clash-v1/GET_getTeamById'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/clash-v1.TeamDto'
+                x-type: TeamDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: clash-v1.getTeamById
+      description: 'Get team by ID.'
+      parameters:
+        -
+          name: teamId
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+    x-endpoint: clash-v1
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - ru
+      - tr1
+  /lol/clash/v1/tournaments:
+    get:
+      tags:
+        - clash-v1
+      summary: 'Get all active or upcoming tournaments.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#clash-v1/GET_getTournaments'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/clash-v1.TournamentDto'
+                  x-type: TournamentDto
+                x-type: 'List[TournamentDto]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: clash-v1.getTournaments
+      description: 'Get all active or upcoming tournaments.'
+    x-endpoint: clash-v1
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - ru
+      - tr1
+  '/lol/clash/v1/tournaments/by-team/{teamId}':
+    get:
+      tags:
+        - clash-v1
+      summary: 'Get tournament by team ID.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#clash-v1/GET_getTournamentByTeam'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/clash-v1.TournamentDto'
+                x-type: TournamentDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: clash-v1.getTournamentByTeam
+      description: 'Get tournament by team ID.'
+      parameters:
+        -
+          name: teamId
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+    x-endpoint: clash-v1
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - ru
+      - tr1
+  '/lol/clash/v1/tournaments/{tournamentId}':
+    get:
+      tags:
+        - clash-v1
+      summary: 'Get tournament by ID.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#clash-v1/GET_getTournamentById'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/clash-v1.TournamentDto'
+                x-type: TournamentDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: clash-v1.getTournamentById
+      description: 'Get tournament by ID.'
+      parameters:
+        -
+          name: tournamentId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+    x-endpoint: clash-v1
     x-platforms-available:
       - br1
       - eun1
@@ -3156,6 +3460,140 @@ components:
         - maxNewPlayerLevel
         - freeChampionIdsForNewPlayers
         - freeChampionIds
+    clash-v1.PlayerDto:
+      type: object
+      title: PlayerDto
+      properties:
+        summonerId:
+          type: string
+          x-type: string
+        teamId:
+          type: string
+          x-type: string
+        position:
+          type: string
+          x-type: string
+          enum:
+            - UNSELECTED
+            - FILL
+            - TOP
+            - JUNGLE
+            - MIDDLE
+            - BOTTOM
+            - UTILITY
+          description: '(Legal values:  UNSELECTED,  FILL,  TOP,  JUNGLE,  MIDDLE,  BOTTOM,  UTILITY)'
+        role:
+          type: string
+          x-type: string
+          enum:
+            - CAPTAIN
+            - MEMBER
+          description: '(Legal values:  CAPTAIN,  MEMBER)'
+      required:
+        - summonerId
+        - teamId
+        - position
+        - role
+    clash-v1.TeamDto:
+      type: object
+      title: TeamDto
+      properties:
+        id:
+          type: string
+          x-type: string
+        tournamentId:
+          type: integer
+          format: int32
+          x-type: int
+        name:
+          type: string
+          x-type: string
+        iconId:
+          type: integer
+          format: int32
+          x-type: int
+        tier:
+          type: integer
+          format: int32
+          x-type: int
+        captain:
+          type: string
+          x-type: string
+          description: 'Summoner ID of the team captain.'
+        abbreviation:
+          type: string
+          x-type: string
+        players:
+          type: array
+          items:
+            $ref: '#/components/schemas/clash-v1.PlayerDto'
+            x-type: PlayerDto
+          x-type: 'List[PlayerDto]'
+          description: 'Team members.'
+      required:
+        - id
+        - tournamentId
+        - name
+        - iconId
+        - tier
+        - captain
+        - abbreviation
+        - players
+    clash-v1.TournamentDto:
+      type: object
+      title: TournamentDto
+      properties:
+        id:
+          type: integer
+          format: int32
+          x-type: int
+        themeId:
+          type: integer
+          format: int32
+          x-type: int
+        nameKey:
+          type: string
+          x-type: string
+        nameKeySecondary:
+          type: string
+          x-type: string
+        schedule:
+          type: array
+          items:
+            $ref: '#/components/schemas/clash-v1.TournamentPhaseDto'
+            x-type: TournamentPhaseDto
+          x-type: 'List[TournamentPhaseDto]'
+          description: 'Tournament phase.'
+      required:
+        - id
+        - themeId
+        - nameKey
+        - nameKeySecondary
+        - schedule
+    clash-v1.TournamentPhaseDto:
+      type: object
+      title: TournamentPhaseDto
+      properties:
+        id:
+          type: integer
+          format: int32
+          x-type: int
+        registrationTime:
+          type: integer
+          format: int32
+          x-type: int
+        startTime:
+          type: integer
+          format: int32
+          x-type: int
+        cancelled:
+          type: boolean
+          x-type: boolean
+      required:
+        - id
+        - registrationTime
+        - startTime
+        - cancelled
     league-exp-v4.LeagueEntryDTO:
       type: object
       title: LeagueEntryDTO
