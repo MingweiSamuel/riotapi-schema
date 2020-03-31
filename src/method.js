@@ -7,7 +7,7 @@ const fs = require("fs-extra");
 
 const aliases = require('./data/dtoAliases');
 const platformsAvailableOverrides = require('./data/endpointPlatformsAvailableOverrides');
-const method404s = require('./data/method404s');
+const methodOptional = require('./data/methodOptional');
 
 const Schema = require('./schema');
 const types = require('./types');
@@ -41,7 +41,7 @@ function Method(endpoint, methodEl) {
 
   this.platformsAvailable = null;
 
-  this.nullable404 = method404s[this.canonName] || false;
+  this.nullable404 = methodOptional[this.canonName] || false;
 
   console.log(`  ${this.name} - ${this.httpMethod.toUpperCase()}` +
     (this.nullable404 ? ' (nullable)' : '') +

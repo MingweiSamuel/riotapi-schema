@@ -48,8 +48,8 @@ If a DTO is missing from one endpoint, it may be possible to find it in another
 endpoint. Which endpoints can "borrow" from which other endpoints are listed in
 `src/data/endpointSharedDtos.json`. The file is updated as needed.
 
-# `method404s.json`
-Methods that are reasonably likely to return 404s.
+# `methodOptional.json`
+Methods that are reasonably likely to return 404s or 204s.
 
 # `methodParamEnums.json`
 Method parameters (URL and GET params, currently body is not considered (?))
