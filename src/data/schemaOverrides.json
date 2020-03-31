@@ -22,5 +22,36 @@
       "content",
       "heading"
     ]
+  },
+  "clash-v1.TournamentPhaseDto": {
+    "type": "object",
+    "title": "TournamentPhaseDto",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "registrationTime": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "startTime": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "cancelled": {
+        "type": "boolean",
+        "x-type": "boolean"
+      }
+    },
+    "required": [
+      "id",
+      "registrationTime",
+      "startTime",
+      "cancelled"
+    ]
   }
 }
