@@ -121,6 +121,9 @@ Method.prototype.getPathUrl = function() {
 Method.prototype._compileApiBlock = function(apiBlockHtml) {
   let typeH4 = apiBlockHtml.getElementsByTagName('h4')[0];
   let type = typeH4.textContent.trim().toLowerCase();
+
+  let requiredByDefault = false;
+  let onlyUseRequiredByDefault = false;
   switch(type) {
     case 'response classes':
       this._handleResponseClasses(apiBlockHtml);
@@ -134,9 +137,14 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
         'Requests to this API are not counted against the application Rate Limits.'.toUpperCase()
       break;
     case 'path parameters':
+      requiredByDefault = true;
+      onlyUseRequiredByDefault = true;
+      // Fall through.
     case 'query parameters':
       let inType = type.split(/\s+/, 1)[0];
-      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name, { methodName: this.name }).toParameters(inType);
+      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name, {
+          methodName: this.name, requiredByDefault, onlyUseRequiredByDefault
+        }).toParameters(inType);
       this.params.push(...params);
       break;
     case 'body parameters':

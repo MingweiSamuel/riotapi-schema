@@ -22,7 +22,7 @@ function Schema(endpointName, name, description, properties, required = []) {
 }
 
 Schema.fromHtml = function(schemaHtml, endpointName,
-  { requiredByDefault = false, methodName = null, useDtoOptional = false } = {}) {
+  { requiredByDefault = false, onlyUseRequiredByDefault = false, methodName = null, useDtoOptional = false } = {}) {
 
   if (null === schemaHtml.firstElementChild) {
     console.log('!!!!', endpointName, methodName);
@@ -50,23 +50,28 @@ Schema.fromHtml = function(schemaHtml, endpointName,
     let { name, dataType, description } = data;
 
     {
+      if (onlyUseRequiredByDefault && useDtoOptional)
+        throw Error('Cannot only use required by default and use dto optional.');
+
       let isRequired = requiredByDefault;
 
       let requiredStr;
       [ name, requiredStr ] = name.split(/\s+/, 2);
 
-      if (description.toLowerCase().includes('optional'))
-        isRequired = false;
-      if (requiredStr === 'required')
-        isRequired = true;
+      if (!onlyUseRequiredByDefault) {
+        if (description.toLowerCase().includes('optional'))
+          isRequired = false;
+        if (requiredStr === 'required')
+          isRequired = true;
 
-      if (useDtoOptional) {
-        const canonName = `${endpointName}.${dtoName}.${name}`;
-        const canonNameStar = `${endpointName}.${dtoName}.*`;
-        if (undefined !== dtoOptional[canonName])
-          isRequired = !dtoOptional[canonName];
-        else if (undefined !== dtoOptional[canonNameStar])
-          isRequired = !dtoOptional[canonNameStar];
+        if (useDtoOptional) {
+          const canonName = `${endpointName}.${dtoName}.${name}`;
+          const canonNameStar = `${endpointName}.${dtoName}.*`;
+          if (undefined !== dtoOptional[canonName])
+            isRequired = !dtoOptional[canonName];
+          else if (undefined !== dtoOptional[canonNameStar])
+            isRequired = !dtoOptional[canonNameStar];
+        }
       }
 
       if (isRequired)
