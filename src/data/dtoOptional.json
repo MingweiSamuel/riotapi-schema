@@ -84,5 +84,8 @@
   "match-v4.ParticipantStatsDto.totalMinionsKilled": false,
   "match-v4.ParticipantStatsDto.neutralMinionsKilled": false,
   "match-v4.ParticipantStatsDto.neutralMinionsKilledTeamJungle": false,
-  "match-v4.ParticipantStatsDto.neutralMinionsKilledEnemyJungle": false
+  "match-v4.ParticipantStatsDto.neutralMinionsKilledEnemyJungle": false,
+
+
+  "tft-match-v1.TraitDto.tier_total": true
 }
