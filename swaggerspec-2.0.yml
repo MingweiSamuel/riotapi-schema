@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([download file](../openapi-3.0.0.json), [view ui](?openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([download file](../openapi-3.0.0.min.json), [view ui](?openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([download file](../openapi-3.0.0.yml), [view ui](?openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([download file](../openapi-3.0.0.min.yml), [view ui](?openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([download file](../swaggerspec-2.0.json), [view ui](?swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([download file](../swaggerspec-2.0.min.json), [view ui](?swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([download file](../swaggerspec-2.0.yml), [view ui](?swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([download file](../swaggerspec-2.0.min.yml), [view ui](?swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 14b52f0d73503c7eb3df321381fed9fcf3eeed7a
+  version: fce37d3c45f0ad8907fcfacd0487db674596b77d
 host: na1.api.riotgames.com
 x-host-platform:
   - br1
@@ -6072,7 +6072,6 @@ definitions:
       - name
       - num_units
       - tier_current
-      - tier_total
   tft-match-v1.UnitDto:
     type: object
     title: UnitDto
@@ -6163,6 +6162,14 @@ definitions:
         x-type: string
         description: 'Encrypted account ID. Max length 56 characters.'
     description: 'represents a summoner'
+    required:
+      - accountId
+      - profileIconId
+      - revisionDate
+      - name
+      - id
+      - puuid
+      - summonerLevel
   tournament-stub-v4.TournamentCodeParameters:
     type: object
     title: TournamentCodeParameters
