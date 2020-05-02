@@ -1,11 +1,20 @@
 {
     "champion-mastery-v4.getChampionMastery": true,
+
     "league-v4.getLeagueById": true,
+    "tft-league-v1.getLeagueById": true,
+
     "match-v4.getMatch": true,
+    "tft-match-v1.getMatch": true,
+
     "match-v4.getMatchTimeline": true,
     "match-v4.getMatchlist": true,
+
     "spectator-v4.getCurrentGameInfoBySummoner": true,
+
     "summoner-v4.getBySummonerName": true,
+    "tft-summoner-v1.getBySummonerName": true,
+
     "clash-v1.getTeamById": true,
     "clash-v1.getTournamentById": true,
     "clash-v1.getTournamentByTeam": true
