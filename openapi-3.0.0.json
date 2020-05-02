@@ -8202,7 +8202,16 @@
             "description": "Encrypted account ID. Max length 56 characters."
           }
         },
-        "description": "represents a summoner"
+        "description": "represents a summoner",
+        "required": [
+          "accountId",
+          "profileIconId",
+          "revisionDate",
+          "name",
+          "id",
+          "puuid",
+          "summonerLevel"
+        ]
       },
       "tournament-stub-v4.TournamentCodeParameters": {
         "type": "object",
