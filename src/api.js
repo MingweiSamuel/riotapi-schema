@@ -37,14 +37,25 @@ async function cleanupOutput() {
   await Promise.all(files
     .filter(file => !file.startsWith('.'))
     .map(file => fs.remove(OUTPUT + '/' + file)));
-  // Copy swagger tool into output.
-  await fs.copy('swagger-ui/dist/', OUTPUT + '/tool');
 
-  const index = OUTPUT + '/tool/index.html';
-  let indexContent = await fs.readFile(index, 'UTF-8');
-  indexContent = indexContent.replace('"https://petstore.swagger.io/v2/swagger.json"',
-    "'../' + (document.location.search.slice(1) || 'openapi-3.0.0.min.json')");
-  await fs.writeFile(index, indexContent);
+  // Copy swagger tool into output.
+  const copyPromise = (async () => {
+    await fs.copy('swagger-ui/dist/', OUTPUT + '/tool');
+
+    const index = OUTPUT + '/tool/index.html';
+    let indexContent = await fs.readFile(index, 'UTF-8');
+    indexContent = indexContent.replace('"https://petstore.swagger.io/v2/swagger.json"',
+      "'../' + (document.location.search.slice(1) || 'openapi-3.0.0.min.json')");
+
+    await fs.writeFile(index, indexContent);
+  })();
+
+  await Promise.all([
+    copyPromise,
+    fs.writeFile(OUTPUT + '/_config.yml', ''),
+    fs.writeFile(OUTPUT + '/index.md', '---\n---\n[Link to tool](tool/)'),
+    fs.writeFile(OUTPUT + '/hash.txt', '---\n---\n{{ site.github.build_revision }}'),
+  ]);
 }
 
 
