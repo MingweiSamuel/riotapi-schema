@@ -87,5 +87,12 @@
   "match-v4.ParticipantStatsDto.neutralMinionsKilledEnemyJungle": false,
 
 
+  "match-v4.MatchEventDto.*": true,
+
+  "match-v4.MatchEventDto.type": false,
+  "match-v4.MatchEventDto.timestamp": false,
+
+
+
   "tft-match-v1.TraitDto.tier_total": true
 }
