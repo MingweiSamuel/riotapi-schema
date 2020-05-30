@@ -88,9 +88,17 @@
 
 
   "match-v4.MatchEventDto.*": true,
-
   "match-v4.MatchEventDto.type": false,
   "match-v4.MatchEventDto.timestamp": false,
+
+  "match-v4.MatchParticipantFrameDto.*": true,
+  "match-v4.MatchParticipantFrameDto.participantId": false,
+  "match-v4.MatchParticipantFrameDto.currentGold": false,
+  "match-v4.MatchParticipantFrameDto.totalGold": false,
+  "match-v4.MatchParticipantFrameDto.level": false,
+  "match-v4.MatchParticipantFrameDto.xp": false,
+  "match-v4.MatchParticipantFrameDto.minionsKilled": false,
+  "match-v4.MatchParticipantFrameDto.jungleMinionsKilled": false,
 
 
 
