@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 909460d67267a0122544094d93120b50f8d0f5de
+  version: ef6be1735b0bc180c8f32dd2ba538793fdbe8ce6
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -1523,7 +1523,7 @@ paths:
               x-type: int
               x-enum: season
             x-type: 'Set[int]'
-          description: 'Set of season IDs for filtering the matchlist.'
+          description: '[DEPRECATED] This field should not be considered reliable for the purposes of filtering matches by season.'
           explode: true
         -
           name: endTime
@@ -4035,9 +4035,15 @@ components:
           type: integer
           format: int32
           x-type: int
+        lp:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'League points.'
       required:
         - name
         - rank
+        - lp
     match-v4.MatchDto:
       type: object
       title: MatchDto
@@ -4052,7 +4058,7 @@ components:
             $ref: '#/components/schemas/match-v4.ParticipantIdentityDto'
             x-type: ParticipantIdentityDto
           x-type: 'List[ParticipantIdentityDto]'
-          description: 'Participant identity information.'
+          description: 'Participant identity information. Participant identity information is purposefully excluded for custom games.'
         queueId:
           type: integer
           format: int32
@@ -4153,17 +4159,18 @@ components:
         accountId:
           type: string
           x-type: string
-          description: 'Player''s original accountId (Encrypted)'
+          description: 'Player''s original accountId.'
         matchHistoryUri:
           type: string
           x-type: string
         currentAccountId:
           type: string
           x-type: string
-          description: 'Player''s current accountId (Encrypted)'
+          description: 'Player''s current accountId when the match was played.'
         currentPlatformId:
           type: string
           x-type: string
+          description: 'Player''s current platformId when the match was played.'
         summonerName:
           type: string
           x-type: string
@@ -4174,7 +4181,7 @@ components:
         platformId:
           type: string
           x-type: string
-          description: 'Original platformId.'
+          description: 'Player''s original platformId.'
       required:
         - profileIcon
         - accountId
@@ -5029,6 +5036,7 @@ components:
           type: integer
           format: int32
           x-type: int
+          description: 'There is a known issue that this field doesn''t correctly return the total number of games that match the parameters of the request. Please paginate using beginIndex until you reach the end of a player''s matchlist.'
         endIndex:
           type: integer
           format: int32
@@ -5690,7 +5698,7 @@ components:
           type: integer
           format: int64
           x-type: long
-          description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change'
+          description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: summoner name change, summoner level change, or profile icon change.'
         name:
           type: string
           x-type: string
@@ -5950,7 +5958,7 @@ components:
         game_variation:
           type: string
           x-type: string
-          description: 'Game variation enum, i.e. "TFT3_GameVariation_BigLittleLegends", missing from official Riot API docs.'
+          description: 'Game variation key. Game variations documented in TFT static data.'
         game_version:
           type: string
           x-type: string
@@ -6137,15 +6145,28 @@ components:
       type: object
       title: SummonerDTO
       properties:
+        accountId:
+          type: string
+          x-type: string
+          description: 'Encrypted account ID. Max length 56 characters.'
         profileIconId:
           type: integer
           format: int32
           x-type: int
           description: 'ID of the summoner icon associated with the summoner.'
+        revisionDate:
+          type: integer
+          format: int64
+          x-type: long
+          description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: summoner name change, summoner level change, or profile icon change.'
         name:
           type: string
           x-type: string
           description: 'Summoner name.'
+        id:
+          type: string
+          x-type: string
+          description: 'Encrypted summoner ID. Max length 63 characters.'
         puuid:
           type: string
           x-type: string
@@ -6155,19 +6176,6 @@ components:
           format: int64
           x-type: long
           description: 'Summoner level associated with the summoner.'
-        revisionDate:
-          type: integer
-          format: int64
-          x-type: long
-          description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change'
-        id:
-          type: string
-          x-type: string
-          description: 'Encrypted summoner ID. Max length 63 characters.'
-        accountId:
-          type: string
-          x-type: string
-          description: 'Encrypted account ID. Max length 56 characters.'
       description: 'represents a summoner'
       required:
         - accountId
