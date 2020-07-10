@@ -103,5 +103,9 @@
 
 
   "tft-match-v1.InfoDto.game_variation": true,
-  "tft-match-v1.TraitDto.tier_total": true
+  "tft-match-v1.TraitDto.tier_total": true,
+
+
+
+  "val-content-v1.ContentItemDto.localizedNames": true
 }
