@@ -5,7 +5,7 @@
 
 const descTypeOverrides = require('./data/dtoDescriptionTypeOverrides');
 const dtoOptional = require('./data/dtoOptional');
-
+const methodDtoRenames = require('./data/methodDtoRenames');
 const methodParamEnums = require('./data/methodParamEnums');
 const dtoEnums = require('./data/dtoEnums');
 
@@ -21,20 +21,23 @@ function Schema(endpointName, name, description, properties, required = []) {
   this.required = required;
 }
 
-Schema.fromHtml = function(schemaHtml, endpointName,
-  { requiredByDefault = false, onlyUseRequiredByDefault = false, methodName = null, useDtoOptional = false } = {}) {
+Schema.fromHtml = function(schemaHtml, endpointName, methodName,
+  { requiredByDefault = false, onlyUseRequiredByDefault = false, isParam = false, useDtoOptional = false } = {}) {
 
   if (null === schemaHtml.firstElementChild) {
     console.log('!!!!', endpointName, methodName);
   }
-  let dtoName = schemaHtml.firstElementChild.textContent.trim();
+  const dtoName = schemaHtml.firstElementChild.textContent.trim();
+  const dtoRename = methodDtoRenames[`${endpointName}.${methodName}.${dtoName}`]; // May be undefined.
+
   let description = Array.from(schemaHtml.childNodes)
     .filter(node => node.nodeType === 3 /* Node.TEXT_NODE */)
     .map(node => node.textContent.trim())
     .filter(str => str.length)
     .reduce((a, b) => a + ' ' + b, '')
     .replace(/^\s*-\s+/, '');
-  let schema = new Schema(endpointName, dtoName, description, {});
+  // Use rename if available, but keep original in dtoName var.
+  let schema = new Schema(endpointName, dtoRename || dtoName, description, {});
 
   let table = schemaHtml.lastElementChild;
   // Get header for indexing (accounts for column order).
@@ -78,7 +81,7 @@ Schema.fromHtml = function(schemaHtml, endpointName,
         schema.required.push(name);
     }
 
-    let prop = types.getType(dataType, schema.endpointName);
+    let prop = types.getType(dataType, schema.endpointName, methodName);
     if (description) {
       let match;
       if (descTypeOverrides[description])
@@ -91,7 +94,7 @@ Schema.fromHtml = function(schemaHtml, endpointName,
       }
       prop.description = description;
     }
-    annotateEnums(prop, schema.endpointName, name, dtoName, methodName);
+    annotateEnums(prop, schema.endpointName, name, dtoName, methodName, isParam);
 
     let valueTd = tr.children[headers.indexOf('value')];
     if (valueTd && valueTd.firstElementChild.tagName.toLowerCase() === 'select') {
@@ -154,18 +157,21 @@ Schema.prototype.toParameters = function(inType) {
     });
 }
 
-Schema.readReturnType = function(returnHtml, endpointName) {
+Schema.readReturnType = function(returnHtml, endpointName, methodName) {
   let returnTypeString = returnHtml.textContent.trim().replace(/^Return value: /, '');
   if (!returnTypeString) return null;
-  let returnType = types.getType(returnTypeString, endpointName);
+  let returnType = types.getType(returnTypeString, endpointName, methodName);
   return returnType;
 };
 
-function annotateEnums(targetProp, endpointName, name, dtoName, methodName) {
+// Schema.renameRef = function()
+
+function annotateEnums(targetProp, endpointName, name, dtoName, methodName, isParam) {
   let canonName;
   let enumMap;
+
   // methodParamEnums.json
-  if (methodName) {
+  if (isParam) {
     canonName = `${endpointName}.${methodName}.${name}`;
     enumMap = methodParamEnums;
   }

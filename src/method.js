@@ -5,7 +5,6 @@
 
 const fs = require("fs-extra");
 
-const aliases = require('./data/dtoAliases');
 const platformsAvailableOverrides = require('./data/endpointPlatformsAvailableOverrides');
 const methodOptional = require('./data/methodOptional');
 
@@ -142,8 +141,8 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
       // Fall through.
     case 'query parameters':
       let inType = type.split(/\s+/, 1)[0];
-      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name, {
-          methodName: this.name, requiredByDefault, onlyUseRequiredByDefault
+      let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name, this.name, {
+          isParam: true, requiredByDefault, onlyUseRequiredByDefault
         }).toParameters(inType);
       this.params.push(...params);
       break;
@@ -169,11 +168,9 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
 Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   // returnType may be null.
   const [ returnTypeBlock, ...schemaBlocks ] = apiBlockHtml.querySelectorAll('div.block.response_body');
-  this.returnType = Schema.readReturnType(returnTypeBlock, this.endpoint.name);
-  let aliasMap = aliases[this.endpoint.name];
+  this.returnType = Schema.readReturnType(returnTypeBlock, this.endpoint.name, this.name);
   this.dtos.push(...schemaBlocks
-    .map(el => Schema.fromHtml(el, this.endpoint.name, { requiredByDefault: true, useDtoOptional: true }))
-    .filter(s => !aliasMap || !aliasMap[s.name]));
+    .map(el => Schema.fromHtml(el, this.endpoint.name, this.name, { requiredByDefault: true, useDtoOptional: true })));
 };
 
 Method.prototype._handleBodyParameters = function(apiBlockHtml) {
@@ -181,13 +178,13 @@ Method.prototype._handleBodyParameters = function(apiBlockHtml) {
   let tr = table.tBodies[0].children[0];
   let code = tr.children[0];
 
-  this.bodyType = types.getType(code.childNodes[0].textContent.trim(), this.endpoint.name);
+  this.bodyType = types.getType(code.childNodes[0].textContent.trim(), this.endpoint.name, this.name);
   this.bodyRequired = 'required' === code.children[0].textContent.trim().toLowerCase();
   this.bodyDesc = tr.children[3].textContent.trim();
 
   let block = apiBlockHtml;
   while ((block = block.nextElementSibling) && block.classList.contains('block')) {
-    this.dtos.push(Schema.fromHtml(block, this.endpoint.name, { requiredByDefault: true }));
+    this.dtos.push(Schema.fromHtml(block, this.endpoint.name, this.name, { requiredByDefault: true }));
   }
 };
 

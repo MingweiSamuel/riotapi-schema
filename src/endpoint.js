@@ -29,32 +29,39 @@ Endpoint.prototype._compile = function() {
   let methodEls = this.dom.window.document.getElementsByClassName('operation');
   this.methods = Array.from(methodEls)
     .map(methodEl => new Method(this, methodEl));
-  // Write dto files.
-  let methodDtos = this.methods
-    .map(method => method.dtos);
 
-  // Read dtos, check for conflicts.
+  // Get dtos, check for conflicts.
   let allDtos = {};
-  for (let dtoList of methodDtos) {
-    for (let dto of dtoList) {
+  for (const method of this.methods) {
+    for (let dto of method.dtos) {
       let existing = allDtos[dto.name];
-      if (existing) {
-        if (dto.isSubset(existing))
-          continue;
-        if (existing.isSubset(dto))
-          allDtos[dto.name] = dto
-        else {
-          console.error('    CONFLICTING DTO: ' + dto.name);
-          console.error('    ORIGINAL DTO:');
-          console.error('      ' + JSON.stringify(existing, null, 2)
-            .split('\n').join('\n      '));
-          console.error('    NEW DTO:');
-          console.error('      ' + JSON.stringify(dto, null, 2)
-            .split('\n').join('\n      '));
-        }
+      if (!existing) {
+        allDtos[dto.name] = dto;
         continue;
       }
-      allDtos[dto.name] = dto;
+
+      // Possible DTO conflict.
+      const sub = dto.isSubset(existing);
+      const sup = existing.isSubset(dto);
+      if (sub && sup) // Equal
+        continue;
+
+      if (sub)
+        console.log(`    Duplicate DTO ${dto.name} is subset of existing.`);
+      else if (sup) {
+        console.log(`    Duplicate DTO ${dto.name} is superset of existing, overwriting.`);
+        allDtos[dto.name] = dto;
+      }
+      else {
+        console.error(`    CONFLICTING DTO: ${dto.name}`);
+        console.error('    ORIGINAL DTO:');
+        console.error(`      ${JSON.stringify(existing, null, 2)
+          .split('\n').join('\n      ')}`);
+        console.error('    NEW DTO:');
+        console.error(`      ${JSON.stringify(dto, null, 2)
+          .split('\n').join('\n      ')}`);
+        throw Error(`DTO Conflict: ${dto.name}`);
+      }
     }
   }
   this._allDtos = allDtos;

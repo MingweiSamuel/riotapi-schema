@@ -1,16 +1,16 @@
 /// Type util functions for dealing with different variable types in
 /// JSON Schema / Swagger Spec / OpenAPI
 
-const aliases = require('./data/dtoAliases');
+const methodDtoRenames = require('./data/methodDtoRenames');
 
-function getType(typeString, endpoint) {
+function getType(typeString, endpoint, method = null) {
   typeString = typeString.trim();
-  let result = getTypeInternal(typeString, endpoint);
+  let result = getTypeInternal(typeString, endpoint, method);
   result["x-type"] = typeString;
   return result;
 }
 
-function getTypeInternal(typeString, endpoint) {
+function getTypeInternal(typeString, endpoint, method) {
   switch(typeString.toLowerCase()) {
     case "boolean":
       return { type: 'boolean' };
@@ -30,20 +30,21 @@ function getTypeInternal(typeString, endpoint) {
   if (typeString.startsWith('List[') || typeString.startsWith('Set[')) {
     return {
       type: 'array',
-      items: getType(typeString.slice(typeString.indexOf('[') + 1, -1), endpoint)
+      items: getType(typeString.slice(typeString.indexOf('[') + 1, -1), endpoint, method),
     };
   }
   if (typeString.startsWith('Map[')) {
     return {
       type: 'object',
-      "x-key": getType(typeString.slice(typeString.indexOf('[') + 1, typeString.indexOf(', ')), endpoint),
-      additionalProperties: getType(typeString.slice(typeString.indexOf(', ') + 1, -1), endpoint)
+      "x-key": getType(typeString.slice(typeString.indexOf('[') + 1, typeString.indexOf(', ')), endpoint, method),
+      additionalProperties: getType(typeString.slice(typeString.indexOf(', ') + 1, -1), endpoint, method),
     };
   }
-  let aliasMap = aliases[endpoint];
-  if (aliasMap && aliasMap[typeString]) {
-    console.log('    RENAME ' + typeString + ' to ' + aliasMap[typeString] + '.');
-    typeString = aliasMap[typeString];
+  // DTO $ref.
+  const rename = methodDtoRenames[`${endpoint}.${method}.${typeString}`];
+  if (rename) {
+    console.log(`    Renaming ${typeString} to ${rename}.`);
+    typeString = rename;
   }
   return {
     '$ref': '#/components/schemas/' + endpoint + '.' + typeString

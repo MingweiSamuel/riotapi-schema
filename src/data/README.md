@@ -1,13 +1,3 @@
-# `dtoAliases.json`
-Rename/combine DTOs:
-```json
-{
-  "league-v3": {
-    "LeagueItemDTO": "LeaguePositionDTO"
-  }
-}
-```
-
 # `dtoDescriptionTypeOverrides.json`
 Override a DTO's field's type based on its description:
 ```json
@@ -48,6 +38,9 @@ If a DTO is missing from one endpoint, it may be possible to find it in another
 endpoint. Which endpoints can "borrow" from which other endpoints are listed in
 `src/data/endpointSharedDtos.json`. The file is updated as needed.
 
+# `methodDtoRenames.json`
+DTOs that need to be renamed due to inter-method DTO conflicts.
+
 # `methodOptional.json`
 Methods that are reasonably likely to return 404s or 204s.
 
@@ -60,5 +53,19 @@ Temp https://github.com/RiotGames/developer-relations/issues/171
 
 # `schemaOverrides.json`
 Fully override a DTO's schema.
+
+---
+
+# ~~`dtoAliases.json`~~
+_Removed, partially replaced by `methodDtoRenames.json`_.
+
+Rename/combine DTOs:
+```json
+{
+  "league-v3": {
+    "LeagueItemDTO": "LeaguePositionDTO"
+  }
+}
+```
 
 
