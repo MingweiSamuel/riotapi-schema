@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "db97a9f589543429818f6ce6e84ec5b5dc6fb5c6"
+    "version": "f3b800ed3ad620cb10f3a4e18ff3f44664338b58"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -4534,6 +4534,243 @@
           }
         ]
       }
+    },
+    "/val/content/v1/contents": {
+      "x-endpoint": "val-content-v1",
+      "x-platforms-available": [
+        "apac",
+        "br",
+        "eu",
+        "kr",
+        "latam",
+        "na",
+        "pbe1"
+      ],
+      "get": {
+        "tags": [
+          "val-content-v1"
+        ],
+        "summary": "Get content optionally filtered by locale",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#val-content-v1/GET_getContent"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/val-content-v1.ContentDto",
+              "x-type": "ContentDto"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "val-content-v1.getContent",
+        "description": "Get content optionally filtered by locale",
+        "parameters": [
+          {
+            "name": "locale",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-type": "String",
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/val/match/v1/matches/{matchId}": {
+      "x-endpoint": "val-match-v1",
+      "x-platforms-available": [
+        "apac",
+        "br",
+        "eu",
+        "kr",
+        "latam",
+        "na",
+        "pbe1"
+      ],
+      "get": {
+        "tags": [
+          "val-match-v1"
+        ],
+        "summary": "Get match by id",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#val-match-v1/GET_getMatch"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/val-match-v1.MatchDto",
+              "x-type": "MatchDto"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "val-match-v1.getMatch",
+        "description": "Get match by id",
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "String",
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/val/match/v1/matchlists/by-puuid/{puuid}": {
+      "x-endpoint": "val-match-v1",
+      "x-platforms-available": [
+        "apac",
+        "br",
+        "eu",
+        "kr",
+        "latam",
+        "na",
+        "pbe1"
+      ],
+      "get": {
+        "tags": [
+          "val-match-v1"
+        ],
+        "summary": "Get matchlist for games played by puuid",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#val-match-v1/GET_getMatchlist"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/val-match-v1.MatchlistDto",
+              "x-type": "MatchlistDto"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "val-match-v1.getMatchlist",
+        "description": "Get matchlist for games played by puuid",
+        "parameters": [
+          {
+            "name": "puuid",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-type": "String",
+            "description": ""
+          }
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
     }
   },
   "definitions": {
@@ -8539,6 +8776,874 @@
       },
       "required": [
         "providerId"
+      ]
+    },
+    "val-content-v1.ContentDto": {
+      "type": "object",
+      "title": "ContentDto",
+      "properties": {
+        "version": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "characters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "maps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "chromas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "skins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "skinLevels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "equips": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "gameModes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "sprays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "sprayLevels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "charms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "charmLevels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "playerCards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "playerTitles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        }
+      },
+      "required": [
+        "version",
+        "characters",
+        "maps",
+        "chromas",
+        "skins",
+        "skinLevels",
+        "equips",
+        "gameModes",
+        "sprays",
+        "sprayLevels",
+        "charms",
+        "charmLevels",
+        "playerCards",
+        "playerTitles"
+      ]
+    },
+    "val-content-v1.ContentItemDto": {
+      "type": "object",
+      "title": "ContentItemDto",
+      "properties": {
+        "name": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "localizedNames": {
+          "$ref": "#/definitions/val-content-v1.LocalizedNamesDto",
+          "x-type": "LocalizedNamesDto",
+          "description": "This field is excluded from the response when a locale is set"
+        },
+        "assetName": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "localizedNames",
+        "assetName"
+      ]
+    },
+    "val-content-v1.LocalizedNamesDto": {
+      "type": "object",
+      "title": "LocalizedNamesDto",
+      "properties": {
+        "ar-AE": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "de-DE": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "en-GB": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "en-US": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "es-ES": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "es-MX": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "fr-FR": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "id-ID": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "it-IT": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "ja-JP": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "ko-KR": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "pl-PL": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "pt-BR": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "ru-RU": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "th-TH": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "tr-TR": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "vi-VN": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "zh-CN": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "zh-TW": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "ar-AE",
+        "de-DE",
+        "en-GB",
+        "en-US",
+        "es-ES",
+        "es-MX",
+        "fr-FR",
+        "id-ID",
+        "it-IT",
+        "ja-JP",
+        "ko-KR",
+        "pl-PL",
+        "pt-BR",
+        "ru-RU",
+        "th-TH",
+        "tr-TR",
+        "vi-VN",
+        "zh-CN",
+        "zh-TW"
+      ]
+    },
+    "val-match-v1.MatchDto": {
+      "type": "object",
+      "title": "MatchDto",
+      "properties": {
+        "matchInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.MatchInfoDto",
+            "x-type": "MatchInfoDto"
+          },
+          "x-type": "List[MatchInfoDto]"
+        },
+        "players": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.PlayerDto",
+            "x-type": "PlayerDto"
+          },
+          "x-type": "List[PlayerDto]"
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.TeamDto",
+            "x-type": "TeamDto"
+          },
+          "x-type": "List[TeamDto]"
+        },
+        "roundResults": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.RoundResultDto",
+            "x-type": "RoundResultDto"
+          },
+          "x-type": "List[RoundResultDto]"
+        }
+      },
+      "required": [
+        "matchInfo",
+        "players",
+        "teams",
+        "roundResults"
+      ]
+    },
+    "val-match-v1.MatchInfoDto": {
+      "type": "object",
+      "title": "MatchInfoDto",
+      "properties": {
+        "matchId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "mapId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "gameLengthMillis": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "gameStartMillis": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "provisioningFlowId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "isCompleted": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "customGameName": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "queueId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "gameMode": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "isRanked": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "seasonId": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "matchId",
+        "mapId",
+        "gameLengthMillis",
+        "gameStartMillis",
+        "provisioningFlowId",
+        "isCompleted",
+        "customGameName",
+        "queueId",
+        "gameMode",
+        "isRanked",
+        "seasonId"
+      ]
+    },
+    "val-match-v1.PlayerDto": {
+      "type": "object",
+      "title": "PlayerDto",
+      "properties": {
+        "puuid": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "teamId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "partyId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "characterId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "stats": {
+          "$ref": "#/definitions/val-match-v1.PlayerStatsDto",
+          "x-type": "PlayerStatsDto"
+        },
+        "competitiveTier": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "playerCard": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "playerTitle": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "puuid",
+        "teamId",
+        "partyId",
+        "characterId",
+        "stats",
+        "competitiveTier",
+        "playerCard",
+        "playerTitle"
+      ]
+    },
+    "val-match-v1.PlayerStatsDto": {
+      "type": "object",
+      "title": "PlayerStatsDto",
+      "properties": {
+        "puuid": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "kills": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.KillDto",
+            "x-type": "KillDto"
+          },
+          "x-type": "List[KillDto]"
+        },
+        "damage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.DamageDto",
+            "x-type": "DamageDto"
+          },
+          "x-type": "List[DamageDto]"
+        },
+        "score": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "economy": {
+          "$ref": "#/definitions/val-match-v1.EconomyDto",
+          "x-type": "EconomyDto"
+        },
+        "ability": {
+          "$ref": "#/definitions/val-match-v1.AbilityDto",
+          "x-type": "AbilityDto"
+        }
+      },
+      "required": [
+        "puuid",
+        "kills",
+        "damage",
+        "score",
+        "economy",
+        "ability"
+      ]
+    },
+    "val-match-v1.KillDto": {
+      "type": "object",
+      "title": "KillDto",
+      "properties": {
+        "gameTime": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "roundTime": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "killer": {
+          "type": "string",
+          "x-type": "string",
+          "description": "PUUID"
+        },
+        "victim": {
+          "type": "string",
+          "x-type": "string",
+          "description": "PUUID"
+        },
+        "victimLocation": {
+          "$ref": "#/definitions/val-match-v1.LocationDto",
+          "x-type": "LocationDto"
+        },
+        "assistants": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "x-type": "List[string]",
+          "description": "List of PUUIDs"
+        },
+        "playerLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.PlayerLocationsDto",
+            "x-type": "PlayerLocationsDto"
+          },
+          "x-type": "List[PlayerLocationsDto]"
+        },
+        "finishingDamage": {
+          "$ref": "#/definitions/val-match-v1.FinishingDamageDto",
+          "x-type": "FinishingDamageDto"
+        }
+      },
+      "required": [
+        "gameTime",
+        "roundTime",
+        "killer",
+        "victim",
+        "victimLocation",
+        "assistants",
+        "playerLocations",
+        "finishingDamage"
+      ]
+    },
+    "val-match-v1.LocationDto": {
+      "type": "object",
+      "title": "LocationDto",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "y": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ]
+    },
+    "val-match-v1.PlayerLocationsDto": {
+      "type": "object",
+      "title": "PlayerLocationsDto",
+      "properties": {
+        "puuid": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "viewRadians": {
+          "type": "number",
+          "format": "float",
+          "x-type": "float"
+        },
+        "location": {
+          "$ref": "#/definitions/val-match-v1.LocationDto",
+          "x-type": "LocationDto"
+        }
+      },
+      "required": [
+        "puuid",
+        "viewRadians",
+        "location"
+      ]
+    },
+    "val-match-v1.FinishingDamageDto": {
+      "type": "object",
+      "title": "FinishingDamageDto",
+      "properties": {
+        "damageType": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "damageItem": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "isSecondaryFireMode": {
+          "type": "boolean",
+          "x-type": "boolean"
+        }
+      },
+      "required": [
+        "damageType",
+        "damageItem",
+        "isSecondaryFireMode"
+      ]
+    },
+    "val-match-v1.DamageDto": {
+      "type": "object",
+      "title": "DamageDto",
+      "properties": {
+        "receiver": {
+          "type": "string",
+          "x-type": "string",
+          "description": "PUUID"
+        },
+        "damage": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "legshots": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "bodyshots": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "headshots": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      },
+      "required": [
+        "receiver",
+        "damage",
+        "legshots",
+        "bodyshots",
+        "headshots"
+      ]
+    },
+    "val-match-v1.EconomyDto": {
+      "type": "object",
+      "title": "EconomyDto",
+      "properties": {
+        "loadoutValue": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "weapon": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "armor": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "remaining": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "spent": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      },
+      "required": [
+        "loadoutValue",
+        "weapon",
+        "armor",
+        "remaining",
+        "spent"
+      ]
+    },
+    "val-match-v1.AbilityDto": {
+      "type": "object",
+      "title": "AbilityDto",
+      "properties": {
+        "grenadeEffects": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "ability1Effects": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "ability2Effects": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "ultimateEffects": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "grenadeEffects",
+        "ability1Effects",
+        "ability2Effects",
+        "ultimateEffects"
+      ]
+    },
+    "val-match-v1.TeamDto": {
+      "type": "object",
+      "title": "TeamDto",
+      "properties": {
+        "teamId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "won": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "roundsPlayed": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "roundsWon": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      },
+      "required": [
+        "teamId",
+        "won",
+        "roundsPlayed",
+        "roundsWon"
+      ]
+    },
+    "val-match-v1.RoundResultDto": {
+      "type": "object",
+      "title": "RoundResultDto",
+      "properties": {
+        "roundNum": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "roundResult": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "roundCeremony": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "winningTeam": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "bombPlanter": {
+          "type": "string",
+          "x-type": "string",
+          "description": "PUUID of player"
+        },
+        "bombDefuser": {
+          "type": "string",
+          "x-type": "string",
+          "description": "PUUID of player"
+        },
+        "plantRoundTime": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "plantPlayerLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.PlayerLocationsDto",
+            "x-type": "PlayerLocationsDto"
+          },
+          "x-type": "List[PlayerLocationsDto]"
+        },
+        "plantLocation": {
+          "$ref": "#/definitions/val-match-v1.LocationDto",
+          "x-type": "LocationDto"
+        },
+        "plantSite": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "defuseRoundTime": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "defusePlayerLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.PlayerLocationsDto",
+            "x-type": "PlayerLocationsDto"
+          },
+          "x-type": "List[PlayerLocationsDto]"
+        },
+        "defuseLocation": {
+          "$ref": "#/definitions/val-match-v1.LocationDto",
+          "x-type": "LocationDto"
+        },
+        "playerStats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.PlayerStatsDto",
+            "x-type": "PlayerStatsDto"
+          },
+          "x-type": "List[PlayerStatsDto]"
+        },
+        "roundResultCode": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "roundNum",
+        "roundResult",
+        "roundCeremony",
+        "winningTeam",
+        "bombPlanter",
+        "bombDefuser",
+        "plantRoundTime",
+        "plantPlayerLocations",
+        "plantLocation",
+        "plantSite",
+        "defuseRoundTime",
+        "defusePlayerLocations",
+        "defuseLocation",
+        "playerStats",
+        "roundResultCode"
+      ]
+    },
+    "val-match-v1.MatchlistDto": {
+      "type": "object",
+      "title": "MatchlistDto",
+      "properties": {
+        "puuid": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-match-v1.MatchReferenceDto",
+            "x-type": "MatchDto"
+          },
+          "x-type": "List[MatchDto]"
+        }
+      },
+      "required": [
+        "puuid",
+        "history"
+      ]
+    },
+    "val-match-v1.MatchReferenceDto": {
+      "type": "object",
+      "title": "MatchReferenceDto",
+      "properties": {
+        "matchId": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "gameStartTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "teamId": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "matchId",
+        "gameStartTime",
+        "teamId"
       ]
     }
   },
