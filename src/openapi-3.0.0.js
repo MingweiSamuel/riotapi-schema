@@ -3,17 +3,17 @@
 const hash = require('object-hash');
 
 function toSpec({ endpoints, regions, description, schemaOverrides }) {
-  let paths = {};
+  const paths = {};
   endpoints.forEach(endpoint => {
     endpoint.methods.forEach(method => {
-      let path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
+      const path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
       path[method.httpMethod] = method.getOperation();
       path['x-endpoint'] = endpoint.name;
       path['x-platforms-available'] = method.platformsAvailable;
     });
   });
 
-  let schemas = {
+  const schemas = {
     Error: {
       "type": "object",
       "properties": {
@@ -37,7 +37,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
   );
   Object.assign(schemas, schemaOverrides);
 
-  let spec = {
+  const spec = {
     openapi: "3.0.0",
     info: {
       title: "Riot API",
@@ -49,8 +49,8 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
         url: "https://{platform}.api.riotgames.com",
         variables: {
           platform: {
-            enum: regions.map(r => r.hostPlatform),
-            default: "na1"
+            enum: regions,
+            default: regions[0]
           }
         }
       }
@@ -80,8 +80,8 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
   };
 
   const ignored = [ 'info', 'tags' ];
-  let versioned = {};
-  for (let [ key, value ] of Object.entries(spec)) {
+  const versioned = {};
+  for (const [ key, value ] of Object.entries(spec)) {
     if (!ignored.includes(key))
       versioned[key] = value;
   }

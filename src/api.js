@@ -150,33 +150,20 @@ async function fixMissingDtos(endpoints) {
 }
 
 
-async function getRegions() {
-  // TODO
-  return require('./data/regions');
+async function writeOutput(endpoints) {
 
-  // let regionsDom = new JSDOM(await req(DOCS_URL));
-  // let panel = regionsDom.window.document
-  //   .getElementsByClassName('panel-content')[0];
-  // return Array.from(panel.getElementsByTagName('table'))
-  //   .flatMap(table => Array.from(table.tBodies[0].children))
-  //   .map(tableRow => new Region(tableRow));
-  // // let [ serviceTable, regionalTable ] = panel.getElementsByTagName('table');
-  // // let service = Array.from(serviceTable.tBodies[0].children)
-  // //   .map(tableRow => new Region(tableRow));
-  // // let regional = Array.from(regionalTable.tBodies[0].children)
-  // //   .map(tableRow => new Region(tableRow));
-  // // return { service, regional };
-}
+  const regions = [];
+  endpoints.forEach(endpoint =>
+    endpoint.methods.forEach(method =>
+      method.platformsAvailable.forEach(region => regions.includes(region) || regions.push(region))));
 
+  const data = { endpoints, regions, schemaOverrides };
 
-async function writeOutput(endpoints, regions) {
-  let data = { endpoints, regions, schemaOverrides };
-
-  let overrides = Object.keys(schemaOverrides);
+  const overrides = Object.keys(schemaOverrides);
   if (overrides.length)
     console.log('\nOverriding DTOs: ' + JSON.stringify(overrides));
 
-  let names = specs.flatMap(s => [
+  const names = specs.flatMap(s => [
     s.name + '.json',
     s.name + '.min.json',
     s.name + '.yml',
@@ -216,18 +203,16 @@ module.exports = async function(rootDir) {
 
   // Get endpoints.
   // Get regions.
-  let [ endpoints, regions ] = await Promise.all([
-    getEndpoints(),
-    getRegions()
-  ]);
+  const endpoints = await getEndpoints();
 
   // Write missing dto names.
+  // Must finish running before calling writeOutput.
   let missingDtoNames = await fixMissingDtos(endpoints);
   missingDtoNames.sort();
 
   // Write output spec files.
   await Promise.all([
-    writeOutput(endpoints, regions),
+    writeOutput(endpoints),
     fs.writeFile("missing.json", JSON.stringify(missingDtoNames, null, 2))
   ]);
 };

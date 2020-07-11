@@ -99,7 +99,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
     },
     // Use NA1 as default region.
     host: "na1.api.riotgames.com",
-    'x-host-platform': regions.map(r => r.hostPlatform),
+    'x-host-platform': regions,
     schemes: [ "https" ],
     paths,
     definitions: schemas,

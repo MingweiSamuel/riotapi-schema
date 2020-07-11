@@ -48,9 +48,6 @@ Methods that are reasonably likely to return 404s or 204s.
 Method parameters (URL and GET params, currently body is not considered (?))
 to be annotated with `x-enum` values.
 
-# `regions.json`
-Temp https://github.com/RiotGames/developer-relations/issues/171
-
 # `schemaOverrides.json`
 Fully override a DTO's schema.
 
@@ -67,5 +64,9 @@ Rename/combine DTOs:
   }
 }
 ```
+
+# ~~`regions.json`~~
+_Removed in favor of obtaining regions from union of endpoints' regions._
+Temp https://github.com/RiotGames/developer-relations/issues/171
 
 
