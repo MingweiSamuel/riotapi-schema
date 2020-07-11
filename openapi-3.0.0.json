@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "af29e140a03aabbd77664b926746eecaae877d2b"
+    "version": "a5b01fc25c1ca5adff831c8331955f33ba0fdcf3"
   },
   "servers": [
     {
@@ -21,14 +21,20 @@
             "la2",
             "na1",
             "oc1",
-            "tr1",
             "ru",
+            "tr1",
             "pbe1",
             "americas",
+            "asia",
             "europe",
-            "asia"
+            "sea",
+            "apac",
+            "br",
+            "eu",
+            "latam",
+            "na"
           ],
-          "default": "na1"
+          "default": "br1"
         }
       }
     }
@@ -4753,8 +4759,7 @@
         "eu",
         "kr",
         "latam",
-        "na",
-        "pbe1"
+        "na"
       ]
     },
     "/val/match/v1/matches/{matchId}": {
@@ -4834,8 +4839,7 @@
         "eu",
         "kr",
         "latam",
-        "na",
-        "pbe1"
+        "na"
       ]
     },
     "/val/match/v1/matchlists/by-puuid/{puuid}": {
@@ -4915,8 +4919,7 @@
         "eu",
         "kr",
         "latam",
-        "na",
-        "pbe1"
+        "na"
       ]
     }
   },
