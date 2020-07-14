@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## Download OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "a5b01fc25c1ca5adff831c8331955f33ba0fdcf3"
+    "version": "ce249d47e5205e2141923e8dade20ac0ac4fc33c"
   },
   "servers": [
     {
@@ -12,6 +12,9 @@
       "variables": {
         "platform": {
           "enum": [
+            "americas",
+            "asia",
+            "europe",
             "br1",
             "eun1",
             "euw1",
@@ -24,22 +27,272 @@
             "ru",
             "tr1",
             "pbe1",
-            "americas",
-            "asia",
-            "europe",
             "sea",
-            "apac",
+            "ap",
             "br",
             "eu",
             "latam",
             "na"
           ],
-          "default": "br1"
+          "default": "americas"
         }
       }
     }
   ],
   "paths": {
+    "/riot/account/v1/accounts/by-puuid/{puuid}": {
+      "get": {
+        "tags": [
+          "account-v1"
+        ],
+        "summary": "Get account by puuid",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByPuuid"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/account-v1.AccountDto",
+                  "x-type": "AccountDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "account-v1.getByPuuid",
+        "description": "Get account by puuid",
+        "parameters": [
+          {
+            "name": "puuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            }
+          }
+        ]
+      },
+      "x-endpoint": "account-v1",
+      "x-platforms-available": [
+        "americas",
+        "asia",
+        "europe"
+      ]
+    },
+    "/riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}": {
+      "get": {
+        "tags": [
+          "account-v1"
+        ],
+        "summary": "Get account by riot id",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByRiotId"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "x-type": "String"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "account-v1.getByRiotId",
+        "description": "Get account by riot id",
+        "parameters": [
+          {
+            "name": "tagLine",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            }
+          },
+          {
+            "name": "gameName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            }
+          }
+        ]
+      },
+      "x-endpoint": "account-v1",
+      "x-platforms-available": [
+        "americas",
+        "asia",
+        "europe"
+      ]
+    },
+    "/riot/account/v1/active-shards/by-game/{game}/by-puuid/{puuid}": {
+      "get": {
+        "tags": [
+          "account-v1"
+        ],
+        "summary": "Get active shard for a player",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getActiveShard"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/account-v1.ActiveShardDto",
+                  "x-type": "ActiveShardDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "account-v1.getActiveShard",
+        "description": "Get active shard for a player",
+        "parameters": [
+          {
+            "name": "puuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            }
+          },
+          {
+            "name": "game",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string",
+              "enum": [
+                "val",
+                "lor"
+              ]
+            }
+          }
+        ]
+      },
+      "x-endpoint": "account-v1",
+      "x-platforms-available": [
+        "americas",
+        "asia",
+        "europe"
+      ]
+    },
     "/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}": {
       "get": {
         "tags": [
@@ -4754,7 +5007,7 @@
       },
       "x-endpoint": "val-content-v1",
       "x-platforms-available": [
-        "apac",
+        "ap",
         "br",
         "eu",
         "kr",
@@ -4834,7 +5087,7 @@
       },
       "x-endpoint": "val-match-v1",
       "x-platforms-available": [
-        "apac",
+        "ap",
         "br",
         "eu",
         "kr",
@@ -4914,7 +5167,7 @@
       },
       "x-endpoint": "val-match-v1",
       "x-platforms-available": [
-        "apac",
+        "ap",
         "br",
         "eu",
         "kr",
@@ -4940,6 +5193,52 @@
             }
           }
         }
+      },
+      "account-v1.AccountDto": {
+        "type": "object",
+        "title": "AccountDto",
+        "properties": {
+          "puuid": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "gameName": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "tagLine": {
+            "type": "string",
+            "x-type": "string"
+          }
+        },
+        "required": [
+          "puuid",
+          "gameName",
+          "tagLine"
+        ]
+      },
+      "account-v1.ActiveShardDto": {
+        "type": "object",
+        "title": "ActiveShardDto",
+        "properties": {
+          "puuid": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "game": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "activeShard": {
+            "type": "string",
+            "x-type": "string"
+          }
+        },
+        "required": [
+          "puuid",
+          "game",
+          "activeShard"
+        ]
       },
       "champion-mastery-v4.ChampionMasteryDTO": {
         "type": "object",
