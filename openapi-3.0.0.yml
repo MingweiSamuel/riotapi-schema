@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: f7ed42d3edcc27be803ab549be5d44e52ef108db
+  version: 275eac5d2a33402ae07dbd9ba9c0c595af0accb7
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -81,6 +81,12 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: account-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+      x-route-enum: regional
     x-endpoint: account-v1
     x-platforms-available:
       - americas
@@ -143,6 +149,12 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: account-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+      x-route-enum: regional
     x-endpoint: account-v1
     x-platforms-available:
       - americas
@@ -208,6 +220,12 @@ paths:
             enum:
               - val
               - lor
+      x-endpoint: account-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+      x-route-enum: regional
     x-endpoint: account-v1
     x-platforms-available:
       - americas
@@ -266,6 +284,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID associated with the player'
+      x-endpoint: champion-mastery-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - br1
@@ -340,6 +372,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID associated with the player'
+      x-endpoint: champion-mastery-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - br1
@@ -404,6 +450,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID associated with the player'
+      x-endpoint: champion-mastery-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - br1
@@ -458,6 +518,20 @@ paths:
           description: 'Gateway timeout'
       operationId: champion-v3.getChampionInfo
       description: 'Returns champion rotations, including free-to-play and low-level free-to-play rotations (REST)'
+      x-endpoint: champion-v3
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: champion-v3
     x-platforms-available:
       - br1
@@ -523,6 +597,20 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: clash-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -586,6 +674,20 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: clash-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -643,6 +745,20 @@ paths:
           description: 'Gateway timeout'
       operationId: clash-v1.getTournaments
       description: 'Get all active or upcoming tournaments.'
+      x-endpoint: clash-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -706,6 +822,20 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: clash-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -770,6 +900,20 @@ paths:
             type: integer
             format: int32
             x-type: int
+      x-endpoint: clash-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -882,6 +1026,20 @@ paths:
             format: int32
             x-type: int
           description: 'Starts with page 1.'
+      x-endpoint: league-exp-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: league-exp-v4
     x-platforms-available:
       - br1
@@ -949,6 +1107,20 @@ paths:
               - RANKED_SOLO_5x5
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
+      x-endpoint: league-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1014,6 +1186,20 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: league-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1122,6 +1308,20 @@ paths:
             format: int32
             x-type: int
           description: 'Starts with page 1.'
+      x-endpoint: league-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1189,6 +1389,20 @@ paths:
               - RANKED_SOLO_5x5
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
+      x-endpoint: league-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1253,6 +1467,20 @@ paths:
             type: string
             x-type: string
           description: 'The UUID of the league.'
+      x-endpoint: league-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1320,6 +1548,20 @@ paths:
               - RANKED_SOLO_5x5
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
+      x-endpoint: league-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1375,6 +1617,21 @@ paths:
       operationId: lol-status-v3.getShardData
       x-app-rate-limit-excluded: true
       description: "Get League of Legends status for the given shard.\n## Rate Limit Notes\nRequests to this API are not counted against the application Rate Limits."
+      x-endpoint: lol-status-v3
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - pbe1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: lol-status-v3
     x-platforms-available:
       - br1
@@ -1430,6 +1687,13 @@ paths:
           description: 'Gateway timeout'
       operationId: lor-ranked-v1.getLeaderboards
       description: 'Get the players in Master tier.'
+      x-endpoint: lor-ranked-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+        - sea
+      x-route-enum: regional
     x-endpoint: lor-ranked-v1
     x-platforms-available:
       - americas
@@ -1490,6 +1754,20 @@ paths:
             type: string
             x-type: string
           description: 'The tournament code.'
+      x-endpoint: match-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: match-v4
     x-platforms-available:
       - br1
@@ -1555,6 +1833,20 @@ paths:
             format: int64
             x-type: long
           description: 'The match ID.'
+      x-endpoint: match-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: match-v4
     x-platforms-available:
       - br1
@@ -1627,6 +1919,20 @@ paths:
             format: int64
             x-type: long
           description: 'The match ID.'
+      x-endpoint: match-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: match-v4
     x-platforms-available:
       - br1
@@ -1769,6 +2075,20 @@ paths:
             format: int32
             x-type: int
           description: 'The begin index to use for filtering matchlist.  If beginIndex is specified, but not endIndex, then endIndex defaults to beginIndex+100. If endIndex is specified, but not beginIndex, then beginIndex defaults to 0. If both are specified, then endIndex must be greater than beginIndex. The maximum range allowed is 100, otherwise a 400 error code is returned.'
+      x-endpoint: match-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: match-v4
     x-platforms-available:
       - br1
@@ -1834,6 +2154,20 @@ paths:
             format: int64
             x-type: long
           description: 'The match ID.'
+      x-endpoint: match-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: match-v4
     x-platforms-available:
       - br1
@@ -1898,6 +2232,20 @@ paths:
             type: string
             x-type: string
           description: 'The ID of the summoner.'
+      x-endpoint: spectator-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: spectator-v4
     x-platforms-available:
       - br1
@@ -1952,6 +2300,20 @@ paths:
           description: 'Gateway timeout'
       operationId: spectator-v4.getFeaturedGames
       description: 'Get list of featured games.'
+      x-endpoint: spectator-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: spectator-v4
     x-platforms-available:
       - br1
@@ -2014,6 +2376,20 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: summoner-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -2078,6 +2454,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner Name'
+      x-endpoint: summoner-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -2141,6 +2531,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID'
+      x-endpoint: summoner-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -2204,6 +2608,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID'
+      x-endpoint: summoner-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -2258,6 +2676,20 @@ paths:
           description: 'Gateway timeout'
       operationId: tft-league-v1.getChallengerLeague
       description: 'Get the challenger league.'
+      x-endpoint: tft-league-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -2323,6 +2755,20 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: tft-league-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -2416,6 +2862,20 @@ paths:
             format: int32
             x-type: int
           description: 'Starts with page 1.'
+      x-endpoint: tft-league-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -2470,6 +2930,20 @@ paths:
           description: 'Gateway timeout'
       operationId: tft-league-v1.getGrandmasterLeague
       description: 'Get the grandmaster league.'
+      x-endpoint: tft-league-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -2534,6 +3008,20 @@ paths:
             type: string
             x-type: string
           description: 'The UUID of the league.'
+      x-endpoint: tft-league-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -2588,6 +3076,20 @@ paths:
           description: 'Gateway timeout'
       operationId: tft-league-v1.getMasterLeague
       description: 'Get the master league.'
+      x-endpoint: tft-league-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -2661,6 +3163,12 @@ paths:
             type: integer
             format: int32
             x-type: int
+      x-endpoint: tft-match-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+      x-route-enum: regional
     x-endpoint: tft-match-v1
     x-platforms-available:
       - americas
@@ -2716,6 +3224,12 @@ paths:
           schema:
             type: string
             x-type: String
+      x-endpoint: tft-match-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+      x-route-enum: regional
     x-endpoint: tft-match-v1
     x-platforms-available:
       - americas
@@ -2770,6 +3284,20 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: tft-summoner-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - br1
@@ -2834,6 +3362,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner Name'
+      x-endpoint: tft-summoner-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - br1
@@ -2897,6 +3439,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID'
+      x-endpoint: tft-summoner-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - br1
@@ -2960,6 +3516,20 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID'
+      x-endpoint: tft-summoner-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - br1
@@ -3022,6 +3592,20 @@ paths:
           schema:
             type: string
             x-type: string
+      x-endpoint: third-party-code-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
     x-endpoint: third-party-code-v4
     x-platforms-available:
       - br1
@@ -3106,6 +3690,10 @@ paths:
             format: int64
             x-type: long
           description: 'The tournament ID'
+      x-endpoint: tournament-stub-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-stub-v4
     x-platforms-available:
       - americas
@@ -3159,6 +3747,10 @@ paths:
             type: string
             x-type: string
           description: 'The short code to look up lobby events for'
+      x-endpoint: tournament-stub-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-stub-v4
     x-platforms-available:
       - americas
@@ -3212,6 +3804,10 @@ paths:
               x-type: ProviderRegistrationParameters
         required: true
         description: 'The provider definition.'
+      x-endpoint: tournament-stub-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-stub-v4
     x-platforms-available:
       - americas
@@ -3265,6 +3861,10 @@ paths:
               x-type: TournamentRegistrationParameters
         required: true
         description: 'The tournament definition.'
+      x-endpoint: tournament-stub-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-stub-v4
     x-platforms-available:
       - americas
@@ -3339,6 +3939,10 @@ paths:
             format: int64
             x-type: long
           description: 'The tournament ID'
+      x-endpoint: tournament-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-v4
     x-platforms-available:
       - americas
@@ -3392,6 +3996,10 @@ paths:
             type: string
             x-type: string
           description: 'The tournament code string.'
+      x-endpoint: tournament-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-v4
     x-platforms-available:
       - americas
@@ -3447,6 +4055,10 @@ paths:
             type: string
             x-type: string
           description: 'The tournament code to update'
+      x-endpoint: tournament-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
   '/lol/tournament/v4/lobby-events/by-code/{tournamentCode}':
     get:
       tags:
@@ -3496,6 +4108,10 @@ paths:
             type: string
             x-type: string
           description: 'The short code to look up lobby events for'
+      x-endpoint: tournament-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-v4
     x-platforms-available:
       - americas
@@ -3549,6 +4165,10 @@ paths:
               x-type: ProviderRegistrationParameters
         required: true
         description: 'The provider definition.'
+      x-endpoint: tournament-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-v4
     x-platforms-available:
       - americas
@@ -3602,6 +4222,10 @@ paths:
               x-type: TournamentRegistrationParameters
         required: true
         description: 'The tournament definition.'
+      x-endpoint: tournament-v4
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
     x-endpoint: tournament-v4
     x-platforms-available:
       - americas
@@ -3654,6 +4278,15 @@ paths:
           schema:
             type: string
             x-type: String
+      x-endpoint: val-content-v1
+      x-platforms-available:
+        - ap
+        - br
+        - eu
+        - kr
+        - latam
+        - na
+      x-route-enum: val-platform
     x-endpoint: val-content-v1
     x-platforms-available:
       - ap
@@ -3711,6 +4344,15 @@ paths:
           schema:
             type: string
             x-type: String
+      x-endpoint: val-match-v1
+      x-platforms-available:
+        - ap
+        - br
+        - eu
+        - kr
+        - latam
+        - na
+      x-route-enum: val-platform
     x-endpoint: val-match-v1
     x-platforms-available:
       - ap
@@ -3768,6 +4410,15 @@ paths:
           schema:
             type: string
             x-type: String
+      x-endpoint: val-match-v1
+      x-platforms-available:
+        - ap
+        - br
+        - eu
+        - kr
+        - latam
+        - na
+      x-route-enum: val-platform
     x-endpoint: val-match-v1
     x-platforms-available:
       - ap
