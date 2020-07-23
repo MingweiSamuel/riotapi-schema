@@ -1,4 +1,7 @@
 {
+    "account-v1.getByRiotId": true,
+    "account-v1.getActiveShard": true,
+
     "champion-mastery-v4.getChampionMastery": true,
 
     "league-v4.getLeagueById": true,
