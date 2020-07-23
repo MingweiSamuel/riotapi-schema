@@ -6,8 +6,8 @@
     "notes": null,
     "x-value": 0,
     "x-deprecated": false,
-    "x-desc": "Custom games",
-    "x-name": "CUSTOM_GAMES"
+    "x-desc": "Games on Custom games",
+    "x-name": "CUSTOM"
   },
   {
     "queueId": 2,
@@ -16,8 +16,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 430",
     "x-value": 2,
     "x-deprecated": true,
-    "x-desc": "5v5 Blind Pick games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_BLIND_PICK_GAMES_DEPRECATED_2"
+    "x-desc": "5v5 Blind Pick games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_BLIND_PICK_DEPRECATED_2"
   },
   {
     "queueId": 4,
@@ -26,8 +26,8 @@
     "notes": "Deprecated in favor of queueId 420",
     "x-value": 4,
     "x-deprecated": true,
-    "x-desc": "5v5 Ranked Solo games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_RANKED_SOLO_GAMES_DEPRECATED_4"
+    "x-desc": "5v5 Ranked Solo games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_RANKED_SOLO_DEPRECATED_4"
   },
   {
     "queueId": 6,
@@ -36,8 +36,8 @@
     "notes": "Game mode deprecated",
     "x-value": 6,
     "x-deprecated": true,
-    "x-desc": "5v5 Ranked Premade games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_RANKED_PREMADE_GAMES"
+    "x-desc": "5v5 Ranked Premade games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_RANKED_PREMADE"
   },
   {
     "queueId": 7,
@@ -46,8 +46,8 @@
     "notes": "Deprecated in favor of queueId 32 and 33",
     "x-value": 7,
     "x-deprecated": true,
-    "x-desc": "Co-op vs AI games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_GAMES"
+    "x-desc": "Co-op vs AI games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI"
   },
   {
     "queueId": 8,
@@ -56,8 +56,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 460",
     "x-value": 8,
     "x-deprecated": true,
-    "x-desc": "3v3 Normal games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_3V3_NORMAL_GAMES"
+    "x-desc": "3v3 Normal games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_3V3_NORMAL"
   },
   {
     "queueId": 9,
@@ -66,8 +66,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 470",
     "x-value": 9,
     "x-deprecated": true,
-    "x-desc": "3v3 Ranked Flex games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_3V3_RANKED_FLEX_GAMES_DEPRECATED_9"
+    "x-desc": "3v3 Ranked Flex games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_3V3_RANKED_FLEX_DEPRECATED_9"
   },
   {
     "queueId": 14,
@@ -76,8 +76,8 @@
     "notes": "Deprecated in favor of queueId 400",
     "x-value": 14,
     "x-deprecated": true,
-    "x-desc": "5v5 Draft Pick games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_DRAFT_PICK_GAMES_DEPRECATED_14"
+    "x-desc": "5v5 Draft Pick games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_DRAFT_PICK_DEPRECATED_14"
   },
   {
     "queueId": 16,
@@ -86,8 +86,8 @@
     "notes": "Game mode deprecated",
     "x-value": 16,
     "x-deprecated": true,
-    "x-desc": "5v5 Dominion Blind Pick games games on Crystal Scar",
-    "x-name": "CRYSTAL_SCAR_5V5_DOMINION_BLIND_PICK_GAMES"
+    "x-desc": "5v5 Dominion Blind Pick games on Crystal Scar",
+    "x-name": "CRYSTAL_SCAR_5V5_DOMINION_BLIND_PICK"
   },
   {
     "queueId": 17,
@@ -96,8 +96,8 @@
     "notes": "Game mode deprecated",
     "x-value": 17,
     "x-deprecated": true,
-    "x-desc": "5v5 Dominion Draft Pick games games on Crystal Scar",
-    "x-name": "CRYSTAL_SCAR_5V5_DOMINION_DRAFT_PICK_GAMES"
+    "x-desc": "5v5 Dominion Draft Pick games on Crystal Scar",
+    "x-name": "CRYSTAL_SCAR_5V5_DOMINION_DRAFT_PICK"
   },
   {
     "queueId": 25,
@@ -106,8 +106,8 @@
     "notes": "Game mode deprecated",
     "x-value": 25,
     "x-deprecated": true,
-    "x-desc": "Dominion Co-op vs AI games games on Crystal Scar",
-    "x-name": "CRYSTAL_SCAR_DOMINION_CO_OP_VS_AI_GAMES"
+    "x-desc": "Dominion Co-op vs AI games on Crystal Scar",
+    "x-name": "CRYSTAL_SCAR_DOMINION_CO_OP_VS_AI"
   },
   {
     "queueId": 31,
@@ -116,8 +116,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 830",
     "x-value": 31,
     "x-deprecated": true,
-    "x-desc": "Co-op vs AI Intro Bot games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTRO_BOT_GAMES_DEPRECATED_31"
+    "x-desc": "Co-op vs AI Intro Bot games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTRO_BOT_DEPRECATED_31"
   },
   {
     "queueId": 32,
@@ -126,8 +126,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 840",
     "x-value": 32,
     "x-deprecated": true,
-    "x-desc": "Co-op vs AI Beginner Bot games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_BEGINNER_BOT_GAMES_DEPRECATED_32"
+    "x-desc": "Co-op vs AI Beginner Bot games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_BEGINNER_BOT_DEPRECATED_32"
   },
   {
     "queueId": 33,
@@ -136,8 +136,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 850",
     "x-value": 33,
     "x-deprecated": true,
-    "x-desc": "Co-op vs AI Intermediate Bot games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTERMEDIATE_BOT_GAMES_DEPRECATED_33"
+    "x-desc": "Co-op vs AI Intermediate Bot games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTERMEDIATE_BOT_DEPRECATED_33"
   },
   {
     "queueId": 41,
@@ -146,8 +146,8 @@
     "notes": "Game mode deprecated",
     "x-value": 41,
     "x-deprecated": true,
-    "x-desc": "3v3 Ranked Team games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_3V3_RANKED_TEAM_GAMES"
+    "x-desc": "3v3 Ranked Team games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_3V3_RANKED_TEAM"
   },
   {
     "queueId": 42,
@@ -156,8 +156,8 @@
     "notes": "Game mode deprecated",
     "x-value": 42,
     "x-deprecated": true,
-    "x-desc": "5v5 Ranked Team games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_RANKED_TEAM_GAMES"
+    "x-desc": "5v5 Ranked Team games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_RANKED_TEAM"
   },
   {
     "queueId": 52,
@@ -166,8 +166,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 800",
     "x-value": 52,
     "x-deprecated": true,
-    "x-desc": "Co-op vs AI games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_CO_OP_VS_AI_GAMES"
+    "x-desc": "Co-op vs AI games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_CO_OP_VS_AI"
   },
   {
     "queueId": 61,
@@ -176,8 +176,8 @@
     "notes": "Game mode deprecated",
     "x-value": 61,
     "x-deprecated": true,
-    "x-desc": "5v5 Team Builder games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_TEAM_BUILDER_GAMES"
+    "x-desc": "5v5 Team Builder games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_TEAM_BUILDER"
   },
   {
     "queueId": 65,
@@ -186,8 +186,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 450",
     "x-value": 65,
     "x-deprecated": true,
-    "x-desc": "5v5 ARAM games games on Howling Abyss",
-    "x-name": "HOWLING_ABYSS_5V5_ARAM_GAMES_DEPRECATED_65"
+    "x-desc": "5v5 ARAM games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_5V5_ARAM_DEPRECATED_65"
   },
   {
     "queueId": 67,
@@ -196,8 +196,8 @@
     "notes": "Game mode deprecated",
     "x-value": 67,
     "x-deprecated": true,
-    "x-desc": "ARAM Co-op vs AI games games on Howling Abyss",
-    "x-name": "HOWLING_ABYSS_ARAM_CO_OP_VS_AI_GAMES"
+    "x-desc": "ARAM Co-op vs AI games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_ARAM_CO_OP_VS_AI"
   },
   {
     "queueId": 70,
@@ -206,8 +206,8 @@
     "notes": "Deprecated in patch 8.6 in favor of queueId 1020",
     "x-value": 70,
     "x-deprecated": true,
-    "x-desc": "One for All games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_ONE_FOR_ALL_GAMES_DEPRECATED_70"
+    "x-desc": "One for All games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_ONE_FOR_ALL_DEPRECATED_70"
   },
   {
     "queueId": 72,
@@ -216,8 +216,8 @@
     "notes": null,
     "x-value": 72,
     "x-deprecated": false,
-    "x-desc": "1v1 Snowdown Showdown games games on Howling Abyss",
-    "x-name": "HOWLING_ABYSS_1V1_SNOWDOWN_SHOWDOWN_GAMES"
+    "x-desc": "1v1 Snowdown Showdown games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_1V1_SNOWDOWN_SHOWDOWN"
   },
   {
     "queueId": 73,
@@ -226,8 +226,8 @@
     "notes": null,
     "x-value": 73,
     "x-deprecated": false,
-    "x-desc": "2v2 Snowdown Showdown games games on Howling Abyss",
-    "x-name": "HOWLING_ABYSS_2V2_SNOWDOWN_SHOWDOWN_GAMES"
+    "x-desc": "2v2 Snowdown Showdown games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_2V2_SNOWDOWN_SHOWDOWN"
   },
   {
     "queueId": 75,
@@ -236,8 +236,8 @@
     "notes": null,
     "x-value": 75,
     "x-deprecated": false,
-    "x-desc": "6v6 Hexakill games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_6V6_HEXAKILL_GAMES"
+    "x-desc": "6v6 Hexakill games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_6V6_HEXAKILL"
   },
   {
     "queueId": 76,
@@ -246,8 +246,8 @@
     "notes": null,
     "x-value": 76,
     "x-deprecated": false,
-    "x-desc": "Ultra Rapid Fire games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_ULTRA_RAPID_FIRE_GAMES"
+    "x-desc": "Ultra Rapid Fire games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_ULTRA_RAPID_FIRE"
   },
   {
     "queueId": 78,
@@ -256,8 +256,8 @@
     "notes": null,
     "x-value": 78,
     "x-deprecated": false,
-    "x-desc": "One For All: Mirror Mode games games on Howling Abyss",
-    "x-name": "HOWLING_ABYSS_ONE_FOR_ALL_MIRROR_MODE_GAMES"
+    "x-desc": "One For All: Mirror Mode games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_ONE_FOR_ALL_MIRROR_MODE"
   },
   {
     "queueId": 83,
@@ -266,8 +266,8 @@
     "notes": null,
     "x-value": 83,
     "x-deprecated": false,
-    "x-desc": "Co-op vs AI Ultra Rapid Fire games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_ULTRA_RAPID_FIRE_GAMES"
+    "x-desc": "Co-op vs AI Ultra Rapid Fire games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_ULTRA_RAPID_FIRE"
   },
   {
     "queueId": 91,
@@ -276,8 +276,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 950",
     "x-value": 91,
     "x-deprecated": true,
-    "x-desc": "Doom Bots Rank 1 games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_RANK1_GAMES"
+    "x-desc": "Doom Bots Rank 1 games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_RANK_1"
   },
   {
     "queueId": 92,
@@ -286,8 +286,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 950",
     "x-value": 92,
     "x-deprecated": true,
-    "x-desc": "Doom Bots Rank 2 games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_RANK2_GAMES"
+    "x-desc": "Doom Bots Rank 2 games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_RANK_2"
   },
   {
     "queueId": 93,
@@ -296,8 +296,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 950",
     "x-value": 93,
     "x-deprecated": true,
-    "x-desc": "Doom Bots Rank 5 games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_RANK5_GAMES"
+    "x-desc": "Doom Bots Rank 5 games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_RANK_5"
   },
   {
     "queueId": 96,
@@ -306,8 +306,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 910",
     "x-value": 96,
     "x-deprecated": true,
-    "x-desc": "Ascension games games on Crystal Scar",
-    "x-name": "CRYSTAL_SCAR_ASCENSION_GAMES_DEPRECATED_96"
+    "x-desc": "Ascension games on Crystal Scar",
+    "x-name": "CRYSTAL_SCAR_ASCENSION_DEPRECATED_96"
   },
   {
     "queueId": 98,
@@ -316,8 +316,8 @@
     "notes": null,
     "x-value": 98,
     "x-deprecated": false,
-    "x-desc": "6v6 Hexakill games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_6V6_HEXAKILL_GAMES"
+    "x-desc": "6v6 Hexakill games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_6V6_HEXAKILL"
   },
   {
     "queueId": 100,
@@ -326,8 +326,8 @@
     "notes": null,
     "x-value": 100,
     "x-deprecated": false,
-    "x-desc": "5v5 ARAM games games on Butcher's Bridge",
-    "x-name": "BUTCHERS_BRIDGE_5V5_ARAM_GAMES"
+    "x-desc": "5v5 ARAM games on Butcher's Bridge",
+    "x-name": "BUTCHERS_BRIDGE_5V5_ARAM"
   },
   {
     "queueId": 300,
@@ -336,8 +336,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 920",
     "x-value": 300,
     "x-deprecated": true,
-    "x-desc": "Legend of the Poro King games games on Howling Abyss",
-    "x-name": "HOWLING_ABYSS_LEGEND_OF_THE_PORO_KING_GAMES_DEPRECATED_300"
+    "x-desc": "Legend of the Poro King games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_LEGEND_OF_THE_PORO_KING_DEPRECATED_300"
   },
   {
     "queueId": 310,
@@ -346,8 +346,8 @@
     "notes": null,
     "x-value": 310,
     "x-deprecated": false,
-    "x-desc": "Nemesis games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_NEMESIS_GAMES"
+    "x-desc": "Nemesis games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_NEMESIS"
   },
   {
     "queueId": 313,
@@ -356,8 +356,8 @@
     "notes": null,
     "x-value": 313,
     "x-deprecated": false,
-    "x-desc": "Black Market Brawlers games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_BLACK_MARKET_BRAWLERS_GAMES"
+    "x-desc": "Black Market Brawlers games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_BLACK_MARKET_BRAWLERS"
   },
   {
     "queueId": 315,
@@ -366,8 +366,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 940",
     "x-value": 315,
     "x-deprecated": true,
-    "x-desc": "Nexus Siege games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_NEXUS_SIEGE_GAMES_DEPRECATED_315"
+    "x-desc": "Nexus Siege games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_NEXUS_SIEGE_DEPRECATED_315"
   },
   {
     "queueId": 317,
@@ -376,8 +376,8 @@
     "notes": null,
     "x-value": 317,
     "x-deprecated": false,
-    "x-desc": "Definitely Not Dominion games games on Crystal Scar",
-    "x-name": "CRYSTAL_SCAR_DEFINITELY_NOT_DOMINION_GAMES"
+    "x-desc": "Definitely Not Dominion games on Crystal Scar",
+    "x-name": "CRYSTAL_SCAR_DEFINITELY_NOT_DOMINION"
   },
   {
     "queueId": 318,
@@ -386,8 +386,8 @@
     "notes": "Deprecated in patch 7.19 in favor of queueId 900",
     "x-value": 318,
     "x-deprecated": true,
-    "x-desc": "ARURF games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_ARURF_GAMES"
+    "x-desc": "ARURF games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_ARURF"
   },
   {
     "queueId": 325,
@@ -396,8 +396,8 @@
     "notes": null,
     "x-value": 325,
     "x-deprecated": false,
-    "x-desc": "All Random games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_ALL_RANDOM_GAMES"
+    "x-desc": "All Random games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_ALL_RANDOM"
   },
   {
     "queueId": 400,
@@ -406,8 +406,8 @@
     "notes": null,
     "x-value": 400,
     "x-deprecated": false,
-    "x-desc": "5v5 Draft Pick games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_DRAFT_PICK_GAMES"
+    "x-desc": "5v5 Draft Pick games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_DRAFT_PICK"
   },
   {
     "queueId": 410,
@@ -416,8 +416,8 @@
     "notes": "Game mode deprecated in patch 6.22",
     "x-value": 410,
     "x-deprecated": true,
-    "x-desc": "5v5 Ranked Dynamic games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_RANKED_DYNAMIC_GAMES"
+    "x-desc": "5v5 Ranked Dynamic games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_RANKED_DYNAMIC"
   },
   {
     "queueId": 420,
@@ -426,8 +426,8 @@
     "notes": null,
     "x-value": 420,
     "x-deprecated": false,
-    "x-desc": "5v5 Ranked Solo games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_RANKED_SOLO_GAMES"
+    "x-desc": "5v5 Ranked Solo games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_RANKED_SOLO"
   },
   {
     "queueId": 430,
@@ -436,8 +436,8 @@
     "notes": null,
     "x-value": 430,
     "x-deprecated": false,
-    "x-desc": "5v5 Blind Pick games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_BLIND_PICK_GAMES"
+    "x-desc": "5v5 Blind Pick games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_BLIND_PICK"
   },
   {
     "queueId": 440,
@@ -446,8 +446,8 @@
     "notes": null,
     "x-value": 440,
     "x-deprecated": false,
-    "x-desc": "5v5 Ranked Flex games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_5V5_RANKED_FLEX_GAMES"
+    "x-desc": "5v5 Ranked Flex games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_5V5_RANKED_FLEX"
   },
   {
     "queueId": 450,
@@ -456,8 +456,8 @@
     "notes": null,
     "x-value": 450,
     "x-deprecated": false,
-    "x-desc": "5v5 ARAM games games on Howling Abyss",
-    "x-name": "HOWLING_ABYSS_5V5_ARAM_GAMES"
+    "x-desc": "5v5 ARAM games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_5V5_ARAM"
   },
   {
     "queueId": 460,
@@ -466,8 +466,8 @@
     "notes": "Deprecated in patch 9.23",
     "x-value": 460,
     "x-deprecated": true,
-    "x-desc": "3v3 Blind Pick games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_3V3_BLIND_PICK_GAMES"
+    "x-desc": "3v3 Blind Pick games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_3V3_BLIND_PICK"
   },
   {
     "queueId": 470,
@@ -476,8 +476,8 @@
     "notes": "Deprecated in patch 9.23",
     "x-value": 470,
     "x-deprecated": true,
-    "x-desc": "3v3 Ranked Flex games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_3V3_RANKED_FLEX_GAMES_DEPRECATED_470"
+    "x-desc": "3v3 Ranked Flex games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_3V3_RANKED_FLEX_DEPRECATED_470"
   },
   {
     "queueId": 600,
@@ -486,8 +486,8 @@
     "notes": null,
     "x-value": 600,
     "x-deprecated": false,
-    "x-desc": "Blood Hunt Assassin games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_BLOOD_HUNT_ASSASSIN_GAMES"
+    "x-desc": "Blood Hunt Assassin games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_BLOOD_HUNT_ASSASSIN"
   },
   {
     "queueId": 610,
@@ -496,8 +496,8 @@
     "notes": null,
     "x-value": 610,
     "x-deprecated": false,
-    "x-desc": "Dark Star: Singularity games games on Cosmic Ruins",
-    "x-name": "COSMIC_RUINS_DARK_STAR_SINGULARITY_GAMES"
+    "x-desc": "Dark Star: Singularity games on Cosmic Ruins",
+    "x-name": "COSMIC_RUINS_DARK_STAR_SINGULARITY"
   },
   {
     "queueId": 700,
@@ -506,8 +506,8 @@
     "notes": null,
     "x-value": 700,
     "x-deprecated": false,
-    "x-desc": "Clash games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CLASH_GAMES"
+    "x-desc": "Clash games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CLASH"
   },
   {
     "queueId": 800,
@@ -516,8 +516,8 @@
     "notes": "Deprecated in patch 9.23",
     "x-value": 800,
     "x-deprecated": true,
-    "x-desc": "Co-op vs. AI Intermediate Bot games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_CO_OP_VS_AI_INTERMEDIATE_BOT_GAMES"
+    "x-desc": "Co-op vs. AI Intermediate Bot games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_CO_OP_VS_AI_INTERMEDIATE_BOT"
   },
   {
     "queueId": 810,
@@ -526,8 +526,8 @@
     "notes": "Deprecated in patch 9.23",
     "x-value": 810,
     "x-deprecated": true,
-    "x-desc": "Co-op vs. AI Intro Bot games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_CO_OP_VS_AI_INTRO_BOT_GAMES"
+    "x-desc": "Co-op vs. AI Intro Bot games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_CO_OP_VS_AI_INTRO_BOT"
   },
   {
     "queueId": 820,
@@ -536,8 +536,8 @@
     "notes": null,
     "x-value": 820,
     "x-deprecated": false,
-    "x-desc": "Co-op vs. AI Beginner Bot games games on Twisted Treeline",
-    "x-name": "TWISTED_TREELINE_CO_OP_VS_AI_BEGINNER_BOT_GAMES"
+    "x-desc": "Co-op vs. AI Beginner Bot games on Twisted Treeline",
+    "x-name": "TWISTED_TREELINE_CO_OP_VS_AI_BEGINNER_BOT"
   },
   {
     "queueId": 830,
@@ -546,8 +546,8 @@
     "notes": null,
     "x-value": 830,
     "x-deprecated": false,
-    "x-desc": "Co-op vs. AI Intro Bot games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTRO_BOT_GAMES"
+    "x-desc": "Co-op vs. AI Intro Bot games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTRO_BOT"
   },
   {
     "queueId": 840,
@@ -556,8 +556,8 @@
     "notes": null,
     "x-value": 840,
     "x-deprecated": false,
-    "x-desc": "Co-op vs. AI Beginner Bot games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_BEGINNER_BOT_GAMES"
+    "x-desc": "Co-op vs. AI Beginner Bot games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_BEGINNER_BOT"
   },
   {
     "queueId": 850,
@@ -566,8 +566,8 @@
     "notes": null,
     "x-value": 850,
     "x-deprecated": false,
-    "x-desc": "Co-op vs. AI Intermediate Bot games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTERMEDIATE_BOT_GAMES"
+    "x-desc": "Co-op vs. AI Intermediate Bot games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTERMEDIATE_BOT"
   },
   {
     "queueId": 900,
@@ -576,8 +576,8 @@
     "notes": null,
     "x-value": 900,
     "x-deprecated": false,
-    "x-desc": "URF games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_URF_GAMES"
+    "x-desc": "URF games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_URF"
   },
   {
     "queueId": 910,
@@ -586,8 +586,8 @@
     "notes": null,
     "x-value": 910,
     "x-deprecated": false,
-    "x-desc": "Ascension games games on Crystal Scar",
-    "x-name": "CRYSTAL_SCAR_ASCENSION_GAMES"
+    "x-desc": "Ascension games on Crystal Scar",
+    "x-name": "CRYSTAL_SCAR_ASCENSION"
   },
   {
     "queueId": 920,
@@ -596,8 +596,8 @@
     "notes": null,
     "x-value": 920,
     "x-deprecated": false,
-    "x-desc": "Legend of the Poro King games games on Howling Abyss",
-    "x-name": "HOWLING_ABYSS_LEGEND_OF_THE_PORO_KING_GAMES"
+    "x-desc": "Legend of the Poro King games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_LEGEND_OF_THE_PORO_KING"
   },
   {
     "queueId": 940,
@@ -606,8 +606,8 @@
     "notes": null,
     "x-value": 940,
     "x-deprecated": false,
-    "x-desc": "Nexus Siege games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_NEXUS_SIEGE_GAMES"
+    "x-desc": "Nexus Siege games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_NEXUS_SIEGE"
   },
   {
     "queueId": 950,
@@ -616,8 +616,8 @@
     "notes": null,
     "x-value": 950,
     "x-deprecated": false,
-    "x-desc": "Doom Bots Voting games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_VOTING_GAMES"
+    "x-desc": "Doom Bots Voting games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_VOTING"
   },
   {
     "queueId": 960,
@@ -626,8 +626,8 @@
     "notes": null,
     "x-value": 960,
     "x-deprecated": false,
-    "x-desc": "Doom Bots Standard games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_STANDARD_GAMES"
+    "x-desc": "Doom Bots Standard games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_DOOM_BOTS_STANDARD"
   },
   {
     "queueId": 980,
@@ -636,8 +636,8 @@
     "notes": null,
     "x-value": 980,
     "x-deprecated": false,
-    "x-desc": "Star Guardian Invasion: Normal games games on Valoran City Park",
-    "x-name": "VALORAN_CITY_PARK_STAR_GUARDIAN_INVASION_NORMAL_GAMES"
+    "x-desc": "Star Guardian Invasion: Normal games on Valoran City Park",
+    "x-name": "VALORAN_CITY_PARK_STAR_GUARDIAN_INVASION_NORMAL"
   },
   {
     "queueId": 990,
@@ -646,8 +646,8 @@
     "notes": null,
     "x-value": 990,
     "x-deprecated": false,
-    "x-desc": "Star Guardian Invasion: Onslaught games games on Valoran City Park",
-    "x-name": "VALORAN_CITY_PARK_STAR_GUARDIAN_INVASION_ONSLAUGHT_GAMES"
+    "x-desc": "Star Guardian Invasion: Onslaught games on Valoran City Park",
+    "x-name": "VALORAN_CITY_PARK_STAR_GUARDIAN_INVASION_ONSLAUGHT"
   },
   {
     "queueId": 1000,
@@ -656,8 +656,8 @@
     "notes": null,
     "x-value": 1000,
     "x-deprecated": false,
-    "x-desc": "PROJECT: Hunters games games on Overcharge",
-    "x-name": "OVERCHARGE_PROJECT_HUNTERS_GAMES"
+    "x-desc": "PROJECT: Hunters games on Overcharge",
+    "x-name": "OVERCHARGE_PROJECT_HUNTERS"
   },
   {
     "queueId": 1010,
@@ -666,8 +666,8 @@
     "notes": null,
     "x-value": 1010,
     "x-deprecated": false,
-    "x-desc": "Snow ARURF games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_SNOW_ARURF_GAMES"
+    "x-desc": "Snow ARURF games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_SNOW_ARURF"
   },
   {
     "queueId": 1020,
@@ -676,8 +676,8 @@
     "notes": null,
     "x-value": 1020,
     "x-deprecated": false,
-    "x-desc": "One for All games games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_ONE_FOR_ALL_GAMES"
+    "x-desc": "One for All games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_ONE_FOR_ALL"
   },
   {
     "queueId": 1030,
@@ -686,8 +686,8 @@
     "notes": null,
     "x-value": 1030,
     "x-deprecated": false,
-    "x-desc": "Odyssey Extraction: Intro games games on Crash Site",
-    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_INTRO_GAMES"
+    "x-desc": "Odyssey Extraction: Intro games on Crash Site",
+    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_INTRO"
   },
   {
     "queueId": 1040,
@@ -696,8 +696,8 @@
     "notes": null,
     "x-value": 1040,
     "x-deprecated": false,
-    "x-desc": "Odyssey Extraction: Cadet games games on Crash Site",
-    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_CADET_GAMES"
+    "x-desc": "Odyssey Extraction: Cadet games on Crash Site",
+    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_CADET"
   },
   {
     "queueId": 1050,
@@ -706,8 +706,8 @@
     "notes": null,
     "x-value": 1050,
     "x-deprecated": false,
-    "x-desc": "Odyssey Extraction: Crewmember games games on Crash Site",
-    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_CREWMEMBER_GAMES"
+    "x-desc": "Odyssey Extraction: Crewmember games on Crash Site",
+    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_CREWMEMBER"
   },
   {
     "queueId": 1060,
@@ -716,8 +716,8 @@
     "notes": null,
     "x-value": 1060,
     "x-deprecated": false,
-    "x-desc": "Odyssey Extraction: Captain games games on Crash Site",
-    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_CAPTAIN_GAMES"
+    "x-desc": "Odyssey Extraction: Captain games on Crash Site",
+    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_CAPTAIN"
   },
   {
     "queueId": 1070,
@@ -726,8 +726,8 @@
     "notes": null,
     "x-value": 1070,
     "x-deprecated": false,
-    "x-desc": "Odyssey Extraction: Onslaught games games on Crash Site",
-    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_ONSLAUGHT_GAMES"
+    "x-desc": "Odyssey Extraction: Onslaught games on Crash Site",
+    "x-name": "CRASH_SITE_ODYSSEY_EXTRACTION_ONSLAUGHT"
   },
   {
     "queueId": 1090,
@@ -736,8 +736,8 @@
     "notes": null,
     "x-value": 1090,
     "x-deprecated": false,
-    "x-desc": "Teamfight Tactics games games on Convergence",
-    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_GAMES"
+    "x-desc": "Teamfight Tactics games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS"
   },
   {
     "queueId": 1100,
@@ -746,8 +746,8 @@
     "notes": null,
     "x-value": 1100,
     "x-deprecated": false,
-    "x-desc": "Ranked Teamfight Tactics games games on Convergence",
-    "x-name": "CONVERGENCE_RANKED_TEAMFIGHT_TACTICS_GAMES"
+    "x-desc": "Ranked Teamfight Tactics games on Convergence",
+    "x-name": "CONVERGENCE_RANKED_TEAMFIGHT_TACTICS"
   },
   {
     "queueId": 1110,
@@ -756,8 +756,8 @@
     "notes": null,
     "x-value": 1110,
     "x-deprecated": false,
-    "x-desc": "Teamfight Tactics 1v0 testing games games on Convergence",
-    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS1V0_TESTING_GAMES"
+    "x-desc": "Teamfight Tactics 1v0 testing games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_1V0_TESTING"
   },
   {
     "queueId": 1200,
@@ -766,8 +766,8 @@
     "notes": "Deprecated in patch 9.2 in favor of queueId 1300",
     "x-value": 1200,
     "x-deprecated": true,
-    "x-desc": "Nexus Blitz games games on Nexus Blitz",
-    "x-name": "NEXUS_BLITZ_NEXUS_BLITZ_GAMES_DEPRECATED_1200"
+    "x-desc": "Nexus Blitz games on Nexus Blitz",
+    "x-name": "NEXUS_BLITZ_NEXUS_BLITZ_DEPRECATED_1200"
   },
   {
     "queueId": 1300,
@@ -776,8 +776,8 @@
     "notes": null,
     "x-value": 1300,
     "x-deprecated": false,
-    "x-desc": "Nexus Blitz games games on Nexus Blitz",
-    "x-name": "NEXUS_BLITZ_NEXUS_BLITZ_GAMES"
+    "x-desc": "Nexus Blitz games on Nexus Blitz",
+    "x-name": "NEXUS_BLITZ_NEXUS_BLITZ"
   },
   {
     "queueId": 2000,
@@ -787,7 +787,7 @@
     "x-value": 2000,
     "x-deprecated": false,
     "x-desc": "Tutorial 1 games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_TUTORIAL1"
+    "x-name": "SUMMONERS_RIFT_TUTORIAL_1"
   },
   {
     "queueId": 2010,
@@ -797,7 +797,7 @@
     "x-value": 2010,
     "x-deprecated": false,
     "x-desc": "Tutorial 2 games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_TUTORIAL2"
+    "x-name": "SUMMONERS_RIFT_TUTORIAL_2"
   },
   {
     "queueId": 2020,
@@ -807,6 +807,6 @@
     "x-value": 2020,
     "x-deprecated": false,
     "x-desc": "Tutorial 3 games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_TUTORIAL3"
+    "x-name": "SUMMONERS_RIFT_TUTORIAL_3"
   }
 ]
