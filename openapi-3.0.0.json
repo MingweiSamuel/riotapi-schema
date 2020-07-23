@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "68c641b76b78b0c2ef9cab2a8d4ccd43b08ae71a"
+    "version": "f7ed42d3edcc27be803ab549be5d44e52ef108db"
   },
   "servers": [
     {
@@ -115,7 +115,8 @@
         "americas",
         "asia",
         "europe"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}": {
       "get": {
@@ -202,7 +203,8 @@
         "americas",
         "asia",
         "europe"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/riot/account/v1/active-shards/by-game/{game}/by-puuid/{puuid}": {
       "get": {
@@ -293,7 +295,8 @@
         "americas",
         "asia",
         "europe"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -383,7 +386,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/by-champion/{championId}": {
       "get": {
@@ -482,7 +486,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/champion-mastery/v4/scores/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -569,7 +574,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/platform/v3/champion-rotations": {
       "get": {
@@ -643,7 +649,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/clash/v1/players/by-summoner/{summonerId}": {
       "get": {
@@ -732,7 +739,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/clash/v1/teams/{teamId}": {
       "get": {
@@ -818,7 +826,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/clash/v1/tournaments": {
       "get": {
@@ -896,7 +905,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/clash/v1/tournaments/by-team/{teamId}": {
       "get": {
@@ -982,7 +992,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/clash/v1/tournaments/{tournamentId}": {
       "get": {
@@ -1069,7 +1080,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/league-exp/v4/entries/{queue}/{tier}/{division}": {
       "get": {
@@ -1214,7 +1226,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/league/v4/challengerleagues/by-queue/{queue}": {
       "get": {
@@ -1305,7 +1318,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/league/v4/entries/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -1394,7 +1408,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/league/v4/entries/{queue}/{tier}/{division}": {
       "get": {
@@ -1535,7 +1550,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/league/v4/grandmasterleagues/by-queue/{queue}": {
       "get": {
@@ -1626,7 +1642,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/league/v4/leagues/{leagueId}": {
       "get": {
@@ -1713,7 +1730,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/league/v4/masterleagues/by-queue/{queue}": {
       "get": {
@@ -1804,7 +1822,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/status/v3/shard-data": {
       "get": {
@@ -1880,7 +1899,8 @@
         "pbe1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lor/ranked/v1/leaderboards": {
       "get": {
@@ -1947,7 +1967,8 @@
         "asia",
         "europe",
         "sea"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/match/v4/matches/by-tournament-code/{tournamentCode}/ids": {
       "get": {
@@ -2038,7 +2059,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/match/v4/matches/{matchId}": {
       "get": {
@@ -2126,7 +2148,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/match/v4/matches/{matchId}/by-tournament-code/{tournamentCode}": {
       "get": {
@@ -2223,7 +2246,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/match/v4/matchlists/by-account/{encryptedAccountId}": {
       "get": {
@@ -2405,7 +2429,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/match/v4/timelines/by-match/{matchId}": {
       "get": {
@@ -2493,7 +2518,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -2580,7 +2606,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/spectator/v4/featured-games": {
       "get": {
@@ -2654,7 +2681,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/summoner/v4/summoners/by-account/{encryptedAccountId}": {
       "get": {
@@ -2739,7 +2767,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/summoner/v4/summoners/by-name/{summonerName}": {
       "get": {
@@ -2826,7 +2855,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}": {
       "get": {
@@ -2912,7 +2942,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/summoner/v4/summoners/{encryptedSummonerId}": {
       "get": {
@@ -2998,7 +3029,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/league/v1/challenger": {
       "get": {
@@ -3072,7 +3104,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/league/v1/entries/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -3161,7 +3194,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/league/v1/entries/{tier}/{division}": {
       "get": {
@@ -3284,7 +3318,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/league/v1/grandmaster": {
       "get": {
@@ -3358,7 +3393,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/league/v1/leagues/{leagueId}": {
       "get": {
@@ -3445,7 +3481,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/league/v1/master": {
       "get": {
@@ -3519,7 +3556,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/match/v1/matches/by-puuid/{puuid}/ids": {
       "get": {
@@ -3610,7 +3648,8 @@
         "americas",
         "asia",
         "europe"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/tft/match/v1/matches/{matchId}": {
       "get": {
@@ -3688,7 +3727,8 @@
         "americas",
         "asia",
         "europe"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/tft/summoner/v1/summoners/by-account/{encryptedAccountId}": {
       "get": {
@@ -3773,7 +3813,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/summoner/v1/summoners/by-name/{summonerName}": {
       "get": {
@@ -3860,7 +3901,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/summoner/v1/summoners/by-puuid/{encryptedPUUID}": {
       "get": {
@@ -3946,7 +3988,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/tft/summoner/v1/summoners/{encryptedSummonerId}": {
       "get": {
@@ -4032,7 +4075,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/platform/v4/third-party-code/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -4117,7 +4161,8 @@
         "oc1",
         "ru",
         "tr1"
-      ]
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/tournament-stub/v4/codes": {
       "post": {
@@ -4221,7 +4266,8 @@
       "x-endpoint": "tournament-stub-v4",
       "x-platforms-available": [
         "americas"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/tournament-stub/v4/lobby-events/by-code/{tournamentCode}": {
       "get": {
@@ -4297,7 +4343,8 @@
       "x-endpoint": "tournament-stub-v4",
       "x-platforms-available": [
         "americas"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/tournament-stub/v4/providers": {
       "post": {
@@ -4374,7 +4421,8 @@
       "x-endpoint": "tournament-stub-v4",
       "x-platforms-available": [
         "americas"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/tournament-stub/v4/tournaments": {
       "post": {
@@ -4451,7 +4499,8 @@
       "x-endpoint": "tournament-stub-v4",
       "x-platforms-available": [
         "americas"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/tournament/v4/codes": {
       "post": {
@@ -4555,7 +4604,8 @@
       "x-endpoint": "tournament-v4",
       "x-platforms-available": [
         "americas"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/tournament/v4/codes/{tournamentCode}": {
       "get": {
@@ -4632,6 +4682,7 @@
       "x-platforms-available": [
         "americas"
       ],
+      "x-route-enum": "regional",
       "put": {
         "tags": [
           "tournament-v4"
@@ -4781,7 +4832,8 @@
       "x-endpoint": "tournament-v4",
       "x-platforms-available": [
         "americas"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/tournament/v4/providers": {
       "post": {
@@ -4858,7 +4910,8 @@
       "x-endpoint": "tournament-v4",
       "x-platforms-available": [
         "americas"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/lol/tournament/v4/tournaments": {
       "post": {
@@ -4935,7 +4988,8 @@
       "x-endpoint": "tournament-v4",
       "x-platforms-available": [
         "americas"
-      ]
+      ],
+      "x-route-enum": "regional"
     },
     "/val/content/v1/contents": {
       "get": {
@@ -5015,7 +5069,8 @@
         "kr",
         "latam",
         "na"
-      ]
+      ],
+      "x-route-enum": "val-platform"
     },
     "/val/match/v1/matches/{matchId}": {
       "get": {
@@ -5095,7 +5150,8 @@
         "kr",
         "latam",
         "na"
-      ]
+      ],
+      "x-route-enum": "val-platform"
     },
     "/val/match/v1/matchlists/by-puuid/{puuid}": {
       "get": {
@@ -5175,7 +5231,8 @@
         "kr",
         "latam",
         "na"
-      ]
+      ],
+      "x-route-enum": "val-platform"
     }
   },
   "components": {
