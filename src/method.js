@@ -6,6 +6,7 @@
 const fs = require("fs-extra");
 
 const platformsAvailableOverrides = require('./data/endpointPlatformsAvailableOverrides');
+const routesTable = require('./data/routesTable');
 const methodOptional = require('./data/methodOptional');
 
 const Schema = require('./schema');
@@ -39,6 +40,7 @@ function Method(endpoint, methodEl) {
   this.implementationNotes = null;
 
   this.platformsAvailable = null;
+  this.routeEnumName = null;
 
   this.nullable404 = methodOptional[this.canonName] || false;
 
@@ -192,10 +194,18 @@ Method.prototype._handlePlatformSelect = function(platformSelect) {
   if (platformsAvailableOverrides[this.endpoint.name]) {
     this.platformsAvailable = platformsAvailableOverrides[this.endpoint.name];
   }
-  if (!platformSelect)
-    return;
-  this.platformsAvailable = Array.from(platformSelect.children)
-    .map(opt => opt.value.toLowerCase());
+  else if (platformSelect) {
+    this.platformsAvailable = Array.from(platformSelect.children)
+      .map(opt => opt.value.toLowerCase());
+  }
+  
+  // Find route enum based on routesTable.
+  for (const [ routeEnumName, routes ] of Object.entries(routesTable)) {
+    if (this.platformsAvailable.every(r => routes.includes(r))) {
+      this.routeEnumName = routeEnumName;
+      break;
+    }
+  }
 };
 
 module.exports = Method;

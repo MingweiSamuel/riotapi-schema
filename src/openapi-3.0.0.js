@@ -7,9 +7,14 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
   endpoints.forEach(endpoint => {
     endpoint.methods.forEach(method => {
       const path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
-      path[method.httpMethod] = method.getOperation();
-      path['x-endpoint'] = endpoint.name;
-      path['x-platforms-available'] = method.platformsAvailable;
+      const op = path[method.httpMethod] = method.getOperation();
+      const xData = {
+        'x-endpoint': endpoint.name,
+        'x-platforms-available': method.platformsAvailable,
+        'x-route-enum': method.routeEnumName,
+      };
+      Object.assign(path, xData);
+      Object.assign(op, xData);
     });
   });
 

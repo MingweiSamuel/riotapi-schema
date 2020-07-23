@@ -6,14 +6,20 @@ const hash = require('object-hash');
 const MIME_JSON = 'application/json';
 
 function toSpec({ endpoints, regions, description, schemaOverrides }) {
-  let methods = endpoints.flatMap(endpoint => endpoint.methods);
-  let paths = {};
+  const methods = endpoints.flatMap(endpoint => endpoint.methods);
+  const paths = {};
   methods.forEach(method => {
-    let path = paths[method.getPathUrl()] = paths[method.getPathUrl()] || {
+    const path = paths[method.getPathUrl()] = paths[method.getPathUrl()] || {};
+    const op = path[method.httpMethod] = method.getOperation();
+
+    const xData = {
       'x-endpoint': method.endpoint.name,
-      'x-platforms-available': method.platformsAvailable
+      'x-platforms-available': method.platformsAvailable,
+      'x-route-enum': method.routeEnumName,
     };
-    let op = path[method.httpMethod] = method.getOperation();
+    Object.assign(path, xData);
+    Object.assign(op, xData);
+
     op.produces = [ MIME_JSON ];
     if (op.parameters) {
       op.parameters.forEach(param => {
