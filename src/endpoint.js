@@ -82,17 +82,18 @@ Endpoint.prototype.list_missing_dtos = function() {
     .flatMap(method => [ method.returnType, method.bodyType ])
     .filter(dto => dto);
 
-  let allDtoReferences = dtoToDtoReferences.concat(methodDtoReferences);
-  return allDtoReferences
+  const missingDtos = new Set();
+
+  const allDtoReferences = dtoToDtoReferences.concat(methodDtoReferences);
+  allDtoReferences
     // Extract full name out of references.
     .map(prop => {
-      // Get $ref (or undefined).
-      if (prop.$ref)
-        return prop.$ref;
       if ('array' === prop.type)
         return prop.items.$ref;
       if ('object' === prop.type)
         return prop.additionalProperties.$ref
+      // Get $ref (or undefined).
+      return prop.$ref;
     })
     // Remove nulls.
     .filter(ref => ref)
@@ -100,7 +101,8 @@ Endpoint.prototype.list_missing_dtos = function() {
     .map(ref => ref.split('.').pop())
     // Return names not found in the _allDtos dict.
     .filter(name => !this._allDtos[name])
-    .unique();
+    .forEach(name => missingDtos.add(name));
+  return Array.from(missingDtos);
 };
 
 Endpoint.prototype.add_old_dto = function(oldDto) {
