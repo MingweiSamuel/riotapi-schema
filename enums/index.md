@@ -1,0 +1,5 @@
+- [seasons.json](seasons.json)
+- [queues.json](queues.json)
+- [maps.json](maps.json)
+- [gameModes.json](gameModes.json)
+- [gameTypes.json](gameTypes.json)
