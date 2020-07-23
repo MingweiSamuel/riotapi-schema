@@ -186,17 +186,18 @@ async function writeEnums() {
         enumb['x-name'] = enumb.season.replace(/\s+/g, '_');
     }),
     getEnumData("http://static.developer.riotgames.com/docs/lol/queues.json", 'queueId', enums => {
+      const noGames = s => s.replace(/\s+GAMES$/i, '');
       const groups = {};
       for (const enumb of enums) {
         const { map, description } = enumb;
-        const groupName = (map || '').replace(/'/g, '').replace(/\W+/g, '_').toUpperCase() +
-            (description ? '_' + description.replace(/\s+(?=\d)/g, '').replace(/\W+/g, '_').toUpperCase() : '');
+        const groupName = noGames(map).replace(/'/g, '').replace(/\W+/g, '_').toUpperCase() +
+            (description ? '_' + noGames(description).replace(/\W+/g, '_').toUpperCase() : '');
         (groups[groupName] || (groups[groupName] = [])).push(enumb);
       };
       for (const [ groupName, groupEnums ] of Object.entries(groups)) {
         for (const enumb of groupEnums) {
           const { queueId, map, description, notes } = enumb;
-          const desc = (description ? description + ' games on ' : '') + map;
+          const desc = (description ? noGames(description) + ' games on ' : 'Games on ') + map;
           const deprecated = !!(notes && notes.toUpperCase().includes('DEPRECATED'));
           const name = groupName + ((groupEnums.length > 1 && deprecated) ? `_DEPRECATED_${queueId}` : '');
 
