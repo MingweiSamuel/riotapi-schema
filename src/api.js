@@ -22,7 +22,7 @@ const swaggerspec_20 = require('./swaggerspec-2.0');
 const specs = [ openapi_300, swaggerspec_20 ];
 
 const BASE_URL = 'https://developer.riotgames.com/';
-const DOCS_URL = BASE_URL + 'docs/lol';
+// const DOCS_URL = BASE_URL + 'docs/lol';
 const OUTPUT = 'out';
 
 const endpointSharedDtos = require('./data/endpointSharedDtos');
@@ -150,6 +150,116 @@ async function fixMissingDtos(endpoints) {
 }
 
 
+async function writeEnums() {
+  async function getEnumData(enumUrl, valKey, enumModifier) {
+    const filename = enumUrl.slice(1 + enumUrl.lastIndexOf('/'));
+    const enumLists = await Promise.all([
+      fs.readFile(`${__dirname}/enums/${filename}`).then(JSON.parse), // From local enums folder.
+      req(enumUrl).then(JSON.parse), // From Riot.
+    ]);
+
+    const allVals = new Set();
+    const enums = [];
+    for (const enumList of enumLists) {
+      for (const enumb of enumList) {
+        const val = enumb[valKey];
+        if (!allVals.has(val)) {
+          allVals.add(val);
+          enums.push(enumb);
+          enumb['x-value'] = val;
+        }
+      }
+    }
+
+    // Sort alphabetically or numerically.
+    enums.sort((a, b) => 'string' === typeof a[valKey]
+      ? a[valKey].localeCompare(b[valKey])
+      : a[valKey] - b[valKey]);
+
+    enumModifier(enums);
+
+    return { filename, enums };
+  }
+  const enumDatas = await Promise.all([
+    getEnumData("http://static.developer.riotgames.com/docs/lol/seasons.json", 'id', enums => {
+      for (const enumb of enums)
+        enumb['x-name'] = enumb.season.replace(/\s+/g, '_');
+    }),
+    getEnumData("http://static.developer.riotgames.com/docs/lol/queues.json", 'queueId', enums => {
+      const groups = {};
+      for (const enumb of enums) {
+        const { map, description } = enumb;
+        const groupName = (map || '').replace(/'/g, '').replace(/\W+/g, '_').toUpperCase()
+            + '_' + (description || '').replace(/\s+(?=\d)/g, '').replace(/\W+/g, '_').toUpperCase();
+        (groups[groupName] || (groups[groupName] = [])).push(enumb);
+      };
+      for (const [ groupName, groupEnums ] of Object.entries(groups)) {
+        for (const enumb of groupEnums) {
+          const { queueId, map, description, notes } = enumb;
+          const desc = (description ? description + ' games on ' : '') + map;
+          const deprecated = !!(notes && notes.toUpperCase().includes('DEPRECATED'));
+          const name = groupName + ((groupEnums.length > 1 && deprecated) ? `_DEPRECATED_${queueId}` : '');
+
+          enumb['x-deprecated'] = deprecated;
+          enumb['x-desc'] = desc;
+          enumb['x-name'] = name;
+        }
+      }
+    }),
+    getEnumData("http://static.developer.riotgames.com/docs/lol/maps.json", 'mapId', enums => {
+      const groups = {};
+      for (const enumb of enums) {
+        const { mapName } = enumb;
+        const groupName = mapName.replace(/'/g, '').replace(/\s+/g, '_').toUpperCase();
+        (groups[groupName] || (groups[groupName] = [])).push(enumb);
+      }
+      for (const [ groupName, groupEnums ] of Object.entries(groups)) {
+        for (const [ i, enumb ] of groupEnums.entries()) {
+          const { mapName, notes } = enumb;
+          let name = groupName;
+          let deprecated = false;
+          if (i !== groupEnums.length - 1) {
+            name += '_' + notes.replace(/[^\s\w]+/g, '').replace(/\s+/g, '_').toUpperCase();
+            deprecated = true;
+          }
+
+          enumb['x-deprecated'] = deprecated;
+          enumb['x-desc'] = `${mapName}\n${notes}`
+          enumb['x-name'] = name;
+        }
+      }
+    }),
+    getEnumData("http://static.developer.riotgames.com/docs/lol/gameModes.json", 'gameMode', enums => {
+      for (const enumb of enums) {
+        const { gameMode, description } = enumb;
+        enumb['x-name'] = gameMode;
+        enumb['x-desc'] = description;
+      }
+    }),
+    getEnumData("http://static.developer.riotgames.com/docs/lol/gameTypes.json", 'gametype', enums => {
+      for (const enumb of enums) {
+        const { gametype, description } = enumb;
+        enumb['x-name'] = gametype;
+        enumb['x-desc'] = description;
+      }
+    }),
+  ]);
+
+  await fs.mkdir('enums');
+
+  const writeEnumsPromises = enumDatas.map(({ filename, enums }) =>
+    fs.writeFile(`enums/${filename}`, JSON.stringify(enums, null, 2)));
+
+  const writeIndexPromise = fs.writeFile('enums/index.md',
+    enumDatas.map(({ filename }) => `- [${filename}](${filename})`).join('\n'));
+
+  await Promise.all([
+    writeIndexPromise,
+    ...writeEnumsPromises
+  ]);
+}
+
+
 async function writeOutput(endpoints) {
 
   const regions = [];
@@ -171,9 +281,12 @@ async function writeOutput(endpoints) {
   ]);
   data.description = `
 OpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.
-## Download OpenAPI Spec File
+## OpenAPI Spec File
 The following versions of the Riot API spec file are available:
 ${names.map(n => `- \`${n}\` ([view file](../${n}), [ui select](?url=../${n}))`).join('\n')}
+## Other Files
+- Missing DTOs: [\`missing.json\`](../missing.json)
+- [Enum Files](../enums/)
 ## Source Code
 Source code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!
 ## Automatically Generated
@@ -199,6 +312,9 @@ module.exports = async function(rootDir) {
   // Cleanup output folder.
   await cleanupOutput();
 
+  // Write enums.
+  const writeEnumsPromise = writeEnums();
+
   process.chdir(rootDir + '/' + OUTPUT);
 
   // Get endpoints.
@@ -212,6 +328,7 @@ module.exports = async function(rootDir) {
 
   // Write output spec files.
   await Promise.all([
+    writeEnumsPromise,
     writeOutput(endpoints),
     fs.writeFile("missing.json", JSON.stringify(missingDtoNames, null, 2))
   ]);
