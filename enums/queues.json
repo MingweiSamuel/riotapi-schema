@@ -752,9 +752,19 @@
   {
     "queueId": 1110,
     "map": "Convergence",
-    "description": "Teamfight Tactics 1v0 testing games",
+    "description": "Teamfight Tactics Tutorial games",
     "notes": null,
     "x-value": 1110,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics Tutorial games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_TUTORIAL"
+  },
+  {
+    "queueId": 1111,
+    "map": "Convergence",
+    "description": "Teamfight Tactics 1v0 testing games",
+    "notes": null,
+    "x-value": 1111,
     "x-deprecated": false,
     "x-desc": "Teamfight Tactics 1v0 testing games on Convergence",
     "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_1V0_TESTING"
