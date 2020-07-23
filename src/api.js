@@ -189,8 +189,8 @@ async function writeEnums() {
       const groups = {};
       for (const enumb of enums) {
         const { map, description } = enumb;
-        const groupName = (map || '').replace(/'/g, '').replace(/\W+/g, '_').toUpperCase()
-            + '_' + (description || '').replace(/\s+(?=\d)/g, '').replace(/\W+/g, '_').toUpperCase();
+        const groupName = (map || '').replace(/'/g, '').replace(/\W+/g, '_').toUpperCase() +
+            (description ? '_' + description.replace(/\s+(?=\d)/g, '').replace(/\W+/g, '_').toUpperCase() : '');
         (groups[groupName] || (groups[groupName] = [])).push(enumb);
       };
       for (const [ groupName, groupEnums ] of Object.entries(groups)) {
