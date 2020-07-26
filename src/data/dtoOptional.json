@@ -87,6 +87,9 @@
   "match-v4.ParticipantStatsDto.neutralMinionsKilledEnemyJungle": false,
 
 
+  "match-v4.PlayerDto.summonerId": true,
+
+
   "match-v4.MatchEventDto.*": true,
   "match-v4.MatchEventDto.type": false,
   "match-v4.MatchEventDto.timestamp": false,
