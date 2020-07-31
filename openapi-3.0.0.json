@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "cd61c61525459ebc71babfa892fc8c92c8e9f3a8"
+    "version": "ae788d19c63d356f53849f87be4d4b49b01c11de"
   },
   "servers": [
     {
@@ -10413,6 +10413,261 @@
         "type": "object",
         "title": "PlayerStatsDto",
         "properties": {
+          "score": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "roundsPlayed": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "kills": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "deaths": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "assists": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "playtimeMillis": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "abilityCasts": {
+            "$ref": "#/components/schemas/val-match-v1.AbilityCastsDto",
+            "x-type": "AbilityCastsDto"
+          }
+        },
+        "required": [
+          "score",
+          "roundsPlayed",
+          "kills",
+          "deaths",
+          "assists",
+          "playtimeMillis",
+          "abilityCasts"
+        ]
+      },
+      "val-match-v1.AbilityCastsDto": {
+        "type": "object",
+        "title": "AbilityCastsDto",
+        "properties": {
+          "grenadeCasts": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "ability1Casts": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "ability2Casts": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "ultimateCasts": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          }
+        },
+        "required": [
+          "grenadeCasts",
+          "ability1Casts",
+          "ability2Casts",
+          "ultimateCasts"
+        ]
+      },
+      "val-match-v1.TeamDto": {
+        "type": "object",
+        "title": "TeamDto",
+        "properties": {
+          "teamId": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "won": {
+            "type": "boolean",
+            "x-type": "boolean"
+          },
+          "roundsPlayed": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "roundsWon": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          }
+        },
+        "required": [
+          "teamId",
+          "won",
+          "roundsPlayed",
+          "roundsWon"
+        ]
+      },
+      "val-match-v1.RoundResultDto": {
+        "type": "object",
+        "title": "RoundResultDto",
+        "properties": {
+          "roundNum": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "roundResult": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "roundCeremony": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "winningTeam": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "bombPlanter": {
+            "type": "string",
+            "x-type": "string",
+            "description": "PUUID of player"
+          },
+          "bombDefuser": {
+            "type": "string",
+            "x-type": "string",
+            "description": "PUUID of player"
+          },
+          "plantRoundTime": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "plantPlayerLocations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/val-match-v1.PlayerLocationsDto",
+              "x-type": "PlayerLocationsDto"
+            },
+            "x-type": "List[PlayerLocationsDto]"
+          },
+          "plantLocation": {
+            "$ref": "#/components/schemas/val-match-v1.LocationDto",
+            "x-type": "LocationDto"
+          },
+          "plantSite": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "defuseRoundTime": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "defusePlayerLocations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/val-match-v1.PlayerLocationsDto",
+              "x-type": "PlayerLocationsDto"
+            },
+            "x-type": "List[PlayerLocationsDto]"
+          },
+          "defuseLocation": {
+            "$ref": "#/components/schemas/val-match-v1.LocationDto",
+            "x-type": "LocationDto"
+          },
+          "playerStats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/val-match-v1.PlayerRoundStatsDto",
+              "x-type": "PlayerRoundStatsDto"
+            },
+            "x-type": "List[PlayerRoundStatsDto]"
+          },
+          "roundResultCode": {
+            "type": "string",
+            "x-type": "string"
+          }
+        },
+        "required": [
+          "roundNum",
+          "roundResult",
+          "roundCeremony",
+          "winningTeam",
+          "bombPlanter",
+          "bombDefuser",
+          "plantRoundTime",
+          "plantPlayerLocations",
+          "plantLocation",
+          "plantSite",
+          "defuseRoundTime",
+          "defusePlayerLocations",
+          "defuseLocation",
+          "playerStats",
+          "roundResultCode"
+        ]
+      },
+      "val-match-v1.PlayerLocationsDto": {
+        "type": "object",
+        "title": "PlayerLocationsDto",
+        "properties": {
+          "puuid": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "viewRadians": {
+            "type": "number",
+            "format": "float",
+            "x-type": "float"
+          },
+          "location": {
+            "$ref": "#/components/schemas/val-match-v1.LocationDto",
+            "x-type": "LocationDto"
+          }
+        },
+        "required": [
+          "puuid",
+          "viewRadians",
+          "location"
+        ]
+      },
+      "val-match-v1.LocationDto": {
+        "type": "object",
+        "title": "LocationDto",
+        "properties": {
+          "x": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "y": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          }
+        },
+        "required": [
+          "x",
+          "y"
+        ]
+      },
+      "val-match-v1.PlayerRoundStatsDto": {
+        "type": "object",
+        "title": "PlayerRoundStatsDto",
+        "properties": {
           "puuid": {
             "type": "string",
             "x-type": "string"
@@ -10515,50 +10770,6 @@
           "assistants",
           "playerLocations",
           "finishingDamage"
-        ]
-      },
-      "val-match-v1.LocationDto": {
-        "type": "object",
-        "title": "LocationDto",
-        "properties": {
-          "x": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "y": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          }
-        },
-        "required": [
-          "x",
-          "y"
-        ]
-      },
-      "val-match-v1.PlayerLocationsDto": {
-        "type": "object",
-        "title": "PlayerLocationsDto",
-        "properties": {
-          "puuid": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "viewRadians": {
-            "type": "number",
-            "format": "float",
-            "x-type": "float"
-          },
-          "location": {
-            "$ref": "#/components/schemas/val-match-v1.LocationDto",
-            "x-type": "LocationDto"
-          }
-        },
-        "required": [
-          "puuid",
-          "viewRadians",
-          "location"
         ]
       },
       "val-match-v1.FinishingDamageDto": {
@@ -10684,136 +10895,6 @@
           "ability1Effects",
           "ability2Effects",
           "ultimateEffects"
-        ]
-      },
-      "val-match-v1.TeamDto": {
-        "type": "object",
-        "title": "TeamDto",
-        "properties": {
-          "teamId": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "won": {
-            "type": "boolean",
-            "x-type": "boolean"
-          },
-          "roundsPlayed": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "roundsWon": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          }
-        },
-        "required": [
-          "teamId",
-          "won",
-          "roundsPlayed",
-          "roundsWon"
-        ]
-      },
-      "val-match-v1.RoundResultDto": {
-        "type": "object",
-        "title": "RoundResultDto",
-        "properties": {
-          "roundNum": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "roundResult": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "roundCeremony": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "winningTeam": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "bombPlanter": {
-            "type": "string",
-            "x-type": "string",
-            "description": "PUUID of player"
-          },
-          "bombDefuser": {
-            "type": "string",
-            "x-type": "string",
-            "description": "PUUID of player"
-          },
-          "plantRoundTime": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "plantPlayerLocations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/val-match-v1.PlayerLocationsDto",
-              "x-type": "PlayerLocationsDto"
-            },
-            "x-type": "List[PlayerLocationsDto]"
-          },
-          "plantLocation": {
-            "$ref": "#/components/schemas/val-match-v1.LocationDto",
-            "x-type": "LocationDto"
-          },
-          "plantSite": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "defuseRoundTime": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "defusePlayerLocations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/val-match-v1.PlayerLocationsDto",
-              "x-type": "PlayerLocationsDto"
-            },
-            "x-type": "List[PlayerLocationsDto]"
-          },
-          "defuseLocation": {
-            "$ref": "#/components/schemas/val-match-v1.LocationDto",
-            "x-type": "LocationDto"
-          },
-          "playerStats": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/val-match-v1.PlayerStatsDto",
-              "x-type": "PlayerStatsDto"
-            },
-            "x-type": "List[PlayerStatsDto]"
-          },
-          "roundResultCode": {
-            "type": "string",
-            "x-type": "string"
-          }
-        },
-        "required": [
-          "roundNum",
-          "roundResult",
-          "roundCeremony",
-          "winningTeam",
-          "bombPlanter",
-          "bombDefuser",
-          "plantRoundTime",
-          "plantPlayerLocations",
-          "plantLocation",
-          "plantSite",
-          "defuseRoundTime",
-          "defusePlayerLocations",
-          "defuseLocation",
-          "playerStats",
-          "roundResultCode"
         ]
       },
       "val-match-v1.MatchlistDto": {
