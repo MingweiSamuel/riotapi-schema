@@ -6,5 +6,17 @@
     {
         "gameMode": "NEXUSBLITZ",
         "description": "Nexus Blitz games."
+    },
+    {
+        "gameMode": "TUTORIAL_MODULE_1",
+        "description": "Tutorial: Welcome to League."
+    },
+    {
+        "gameMode": "TUTORIAL_MODULE_2",
+        "description": "Tutorial: Power Up."
+    },
+    {
+        "gameMode": "TUTORIAL_MODULE_3",
+        "description": "Tutorial: Shop for Gear."
     }
 ]
