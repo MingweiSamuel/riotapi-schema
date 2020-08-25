@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "be350f798f6f90933b06da8ea4b5cf3418d04753"
+    "version": "8456401a333e155d7ebbe4b8faf9faa8d08268c0"
   },
   "servers": [
     {
@@ -9374,6 +9374,12 @@
             "x-type": "int",
             "description": "Number of units with this trait."
           },
+          "style": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "Current style for this trait. (0 = No style, 1 = Bronze, 2 = Silver, 3 = Gold, 4 = Chromatic)"
+          },
           "tier_current": {
             "type": "integer",
             "format": "int32",
@@ -9390,6 +9396,7 @@
         "required": [
           "name",
           "num_units",
+          "style",
           "tier_current"
         ]
       },
@@ -10497,7 +10504,8 @@
         "properties": {
           "teamId": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "description": "This is an arbitrary string. Red and Blue in bomb modes. The puuid of the player in deathmatch."
           },
           "won": {
             "type": "boolean",
@@ -10512,13 +10520,20 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int"
+          },
+          "numPoints": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "Team points scored. Number of kills in deathmatch."
           }
         },
         "required": [
           "teamId",
           "won",
           "roundsPlayed",
-          "roundsWon"
+          "roundsWon",
+          "numPoints"
         ]
       },
       "val-match-v1.RoundResultDto": {
