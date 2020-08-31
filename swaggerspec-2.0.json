@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "50eccffd5a6f2005761379cdeaa505d47fc23b4a"
+    "version": "2cd740aee89a7b031fcd9a1710b686311b365a22"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -10763,10 +10763,10 @@
         "history": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/val-match-v1.MatchReferenceDto",
-            "x-type": "MatchDto"
+            "$ref": "#/definitions/val-match-v1.MatchlistEntryDto",
+            "x-type": "MatchlistEntryDto"
           },
-          "x-type": "List[MatchDto]"
+          "x-type": "List[MatchlistEntryDto]"
         }
       },
       "required": [
@@ -10774,9 +10774,9 @@
         "history"
       ]
     },
-    "val-match-v1.MatchReferenceDto": {
+    "val-match-v1.MatchlistEntryDto": {
       "type": "object",
-      "title": "MatchReferenceDto",
+      "title": "MatchlistEntryDto",
       "properties": {
         "matchId": {
           "type": "string",
