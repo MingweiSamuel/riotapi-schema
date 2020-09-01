@@ -20,5 +20,7 @@
 
     "clash-v1.getTeamById": true,
     "clash-v1.getTournamentById": true,
-    "clash-v1.getTournamentByTeam": true
+    "clash-v1.getTournamentByTeam": true,
+
+    "val-match-v1.getMatch": true
 }
