@@ -22,5 +22,74 @@
       "content",
       "heading"
     ]
+  },
+  "val-match-v1.KillDto": {
+    "type": "object",
+    "title": "KillDto",
+    "properties": {
+      "gameTime": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "roundTime": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "timeSinceGameStartMillis": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "timeSinceRoundStartMillis": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "killer": {
+        "type": "string",
+        "x-type": "string",
+        "description": "PUUID"
+      },
+      "victim": {
+        "type": "string",
+        "x-type": "string",
+        "description": "PUUID"
+      },
+      "victimLocation": {
+        "$ref": "#/components/schemas/val-match-v1.LocationDto",
+        "x-type": "LocationDto"
+      },
+      "assistants": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "x-type": "List[string]",
+        "description": "List of PUUIDs"
+      },
+      "playerLocations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-match-v1.PlayerLocationsDto",
+          "x-type": "PlayerLocationsDto"
+        },
+        "x-type": "List[PlayerLocationsDto]"
+      },
+      "finishingDamage": {
+        "$ref": "#/components/schemas/val-match-v1.FinishingDamageDto",
+        "x-type": "FinishingDamageDto"
+      }
+    },
+    "required": [
+      "killer",
+      "victim",
+      "victimLocation",
+      "assistants",
+      "playerLocations",
+      "finishingDamage"
+    ]
   }
 }
