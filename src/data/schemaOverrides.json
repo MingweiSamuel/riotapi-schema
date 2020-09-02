@@ -91,5 +91,640 @@
       "playerLocations",
       "finishingDamage"
     ]
+  },
+  "match-v4.ParticipantStatsDto": {
+    "type": "object",
+    "title": "ParticipantStatsDto",
+    "properties": {
+      "item0": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "item2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "totalUnitsHealed": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "item1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "largestMultiKill": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "goldEarned": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "firstInhibitorKill": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "physicalDamageTaken": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "nodeNeutralizeAssist": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "totalPlayerScore": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "champLevel": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "damageDealtToObjectives": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "totalDamageTaken": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "neutralMinionsKilled": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "deaths": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "tripleKills": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "magicDamageDealtToChampions": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "wardsKilled": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "pentaKills": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "damageSelfMitigated": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "largestCriticalStrike": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "nodeNeutralize": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "totalTimeCrowdControlDealt": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "firstTowerKill": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "magicDamageDealt": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "totalScoreRank": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "nodeCapture": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "wardsPlaced": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "totalDamageDealt": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "timeCCingOthers": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "magicalDamageTaken": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "largestKillingSpree": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "totalDamageDealtToChampions": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "physicalDamageDealtToChampions": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "neutralMinionsKilledTeamJungle": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "totalMinionsKilled": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "firstInhibitorAssist": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "visionWardsBoughtInGame": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "objectivePlayerScore": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "kills": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "firstTowerAssist": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "combatPlayerScore": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "inhibitorKills": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "turretKills": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "participantId": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "trueDamageTaken": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "firstBloodAssist": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "nodeCaptureAssist": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "assists": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "teamObjective": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "altarsNeutralized": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "goldSpent": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "damageDealtToTurrets": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "altarsCaptured": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "win": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "totalHeal": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "unrealKills": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "visionScore": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "physicalDamageDealt": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "firstBloodKill": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "longestTimeSpentLiving": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "killingSprees": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "sightWardsBoughtInGame": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "trueDamageDealtToChampions": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "neutralMinionsKilledEnemyJungle": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "doubleKills": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "trueDamageDealt": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "quadraKills": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "item4": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "item3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "item6": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "item5": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore0": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore4": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore5": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore6": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore7": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore8": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerScore9": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "perk0": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Primary path keystone rune."
+      },
+      "perk0Var1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk0Var2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk0Var3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Primary path rune."
+      },
+      "perk1Var1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk1Var2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk1Var3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Primary path rune."
+      },
+      "perk2Var1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk2Var2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk2Var3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Primary path rune."
+      },
+      "perk3Var1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk3Var2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk3Var3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk4": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Secondary path rune."
+      },
+      "perk4Var1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk4Var2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk4Var3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk5": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Secondary path rune."
+      },
+      "perk5Var1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk5Var2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perk5Var3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Post game rune stats."
+      },
+      "perkPrimaryStyle": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Primary rune path"
+      },
+      "perkSubStyle": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Secondary rune path"
+      },
+      "statPerk0": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "First stat rune."
+      },
+      "statPerk1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Second stat rune."
+      },
+      "statPerk2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Third stat rune."
+      }
+    },
+    "required": [
+      "item0",
+      "item2",
+      "totalUnitsHealed",
+      "item1",
+      "largestMultiKill",
+      "goldEarned",
+      "physicalDamageTaken",
+      "champLevel",
+      "damageDealtToObjectives",
+      "totalDamageTaken",
+      "neutralMinionsKilled",
+      "deaths",
+      "tripleKills",
+      "magicDamageDealtToChampions",
+      "wardsKilled",
+      "pentaKills",
+      "damageSelfMitigated",
+      "largestCriticalStrike",
+      "totalTimeCrowdControlDealt",
+      "magicDamageDealt",
+      "totalDamageDealt",
+      "timeCCingOthers",
+      "magicalDamageTaken",
+      "largestKillingSpree",
+      "totalDamageDealtToChampions",
+      "physicalDamageDealtToChampions",
+      "neutralMinionsKilledTeamJungle",
+      "totalMinionsKilled",
+      "visionWardsBoughtInGame",
+      "kills",
+      "participantId",
+      "trueDamageTaken",
+      "assists",
+      "goldSpent",
+      "damageDealtToTurrets",
+      "win",
+      "totalHeal",
+      "unrealKills",
+      "physicalDamageDealt",
+      "longestTimeSpentLiving",
+      "killingSprees",
+      "trueDamageDealtToChampions",
+      "neutralMinionsKilledEnemyJungle",
+      "doubleKills",
+      "trueDamageDealt",
+      "quadraKills",
+      "item4",
+      "item3",
+      "item6",
+      "item5"
+    ]
   }
 }
