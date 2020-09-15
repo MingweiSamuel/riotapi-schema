@@ -82,9 +82,13 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
   };
   endpoints.forEach(endpoint =>
     endpoint.get_dtos()
-      .forEach(dto => {
-        let fullName = endpoint.name + '.' + dto.name;
-        let schema = schemas[fullName] = schemaOverrides[fullName] || dto.toSchema();
+      .map(dto => {
+        const fullName = `${endpoint.name}.${dto.name}`;
+        const schema = dto.toSchema();
+        return [ fullName, schema ]
+      })
+      .concat(Object.entries(schemaOverrides))
+      .forEach(([ fullName, schema ]) => {
         Object.values(schema.properties).forEach(prop => {
           // Override anyOf for v2.0.
           if (!prop.type && prop.anyOf) {
@@ -93,6 +97,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
             delete prop.anyOf;
           }
         });
+        schemas[fullName] = schema;
       })
   );
 

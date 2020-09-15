@@ -49,7 +49,8 @@ Method parameters (URL and GET params, currently body is not considered (?))
 to be annotated with `x-enum` values.
 
 # `schemaOverrides.json`
-Fully override a DTO's schema.
+These are additional schemas that are included in the output. If any of these
+DTOs exist from the scraping these schemas will override those.
 
 ---
 
