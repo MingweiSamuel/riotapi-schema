@@ -1,3 +1,4 @@
 [
-  "tft-match-v1.CompanionDto"
+  "tft-match-v1.CompanionDto",
+  "val-match-v1.RecentMatchesDto"
 ]
