@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: e9fad555098e217edc088cc4b1ecc6fe095ba6cb
+  version: 84a62148727a855c0735ac1515aa8113d4916591
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -4411,6 +4411,76 @@ paths:
           schema:
             type: string
             x-type: String
+      x-endpoint: val-match-v1
+      x-platforms-available:
+        - ap
+        - br
+        - eu
+        - kr
+        - latam
+        - na
+      x-route-enum: val-platform
+    x-endpoint: val-match-v1
+    x-platforms-available:
+      - ap
+      - br
+      - eu
+      - kr
+      - latam
+      - na
+    x-route-enum: val-platform
+  '/val/match/v1/recent-matches/by-queue/{queue}':
+    get:
+      tags:
+        - val-match-v1
+      summary: 'Get recent matches'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#val-match-v1/GET_getRecent'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                x-type: string
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: val-match-v1.getRecent
+      description: "Get recent matches\n## Implementation Notes\nReturns a list of match ids that have completed in the last 10 minutes. NA/LATAM/BR share a match history deployment. As such, recent matches will return a combined list of matches from those three regions. Requests are load balanced so you may see some inconsistencies as matches are added/removed from the list."
+      parameters:
+        -
+          name: queue
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+            enum:
+              - competitive
+              - unrated
+              - spikerush
       x-endpoint: val-match-v1
       x-platforms-available:
         - ap
