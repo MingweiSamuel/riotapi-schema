@@ -726,5 +726,26 @@
       "item6",
       "item5"
     ]
+  },
+  "val-match-v1.RecentMatchesDto": {
+    "type": "object",
+    "title": "RecentMatchesDto",
+    "properties": {
+      "currentTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Current time in epoch seconds."
+      },
+      "matchIds": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "x-type": "List[string]",
+        "description": "List of match IDs."
+      }
+    }
   }
 }

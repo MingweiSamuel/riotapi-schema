@@ -48,6 +48,17 @@ Methods that are reasonably likely to return 404s or 204s.
 Method parameters (URL and GET params, currently body is not considered (?))
 to be annotated with `x-enum` values.
 
+# `methodReturnOverrides.json`
+Override a method's return type:
+```json
+{
+  "val-match-v1.getRecent": {
+    "$ref": "#/components/schemas/val-match-v1.RecentMatchesDto",
+    "x-type": "RecentMatchesDto"
+  }
+}
+```
+
 # `schemaOverrides.json`
 These are additional schemas that are included in the output. If any of these
 DTOs exist from the scraping these schemas will override those.

@@ -3,9 +3,8 @@
 /// A method is a single REST API url with associated argument, return value,
 /// and response code information.
 
-const fs = require("fs-extra");
-
 const platformsAvailableOverrides = require('./data/endpointPlatformsAvailableOverrides');
+const methodReturnOverrides = require('./data/methodReturnOverrides');
 const routesTable = require('./data/routesTable');
 const methodOptional = require('./data/methodOptional');
 
@@ -16,7 +15,7 @@ function Method(endpoint, methodEl) {
   this.endpoint = endpoint;
   this.methodEl = methodEl;
   this.name = methodEl.id.substring(1);
-  this.canonName = this.endpoint.name + '.' + this.name;
+  this.canonName = `${this.endpoint.name}.${this.name}`;
 
   let heading = methodEl.children[0];
   let method = heading.children[0].children[0];
@@ -31,7 +30,7 @@ function Method(endpoint, methodEl) {
 
   this.bodyType = null;
   this.bodyRequired = null;
-  this.returnType = null;
+  this.returnType = methodReturnOverrides[this.canonName] || null;
   this.dtos = [];
   this.params = [];
   this.responses = {};
@@ -46,7 +45,8 @@ function Method(endpoint, methodEl) {
 
   console.log(`  ${this.name} - ${this.httpMethod.toUpperCase()}` +
     (this.nullable404 ? ' (nullable)' : '') +
-    (this.deprecated ? ' (DEPRECATED)'  : ''));
+    (this.deprecated ? ' (DEPRECATED)'  : '') +
+    (this.returnType ? ` [return override ${this.returnType['x-type']}]` : ''));
 
   let apiBlocks = this.methodEl.getElementsByClassName('api_block');
   Array.from(apiBlocks)
@@ -170,7 +170,8 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
 Method.prototype._handleResponseClasses = function(apiBlockHtml) {
   // returnType may be null.
   const [ returnTypeBlock, ...schemaBlocks ] = apiBlockHtml.querySelectorAll('div.block.response_body');
-  this.returnType = Schema.readReturnType(returnTypeBlock, this.endpoint.name, this.name);
+  this.returnType || (this.returnType =
+    Schema.readReturnType(returnTypeBlock, this.endpoint.name, this.name));
   this.dtos.push(...schemaBlocks
     .map(el => Schema.fromHtml(el, this.endpoint.name, this.name, { requiredByDefault: true, useDtoOptional: true })));
 };

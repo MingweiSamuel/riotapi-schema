@@ -1,0 +1,6 @@
+{
+  "val-match-v1.getRecent": {
+    "$ref": "#/components/schemas/val-match-v1.RecentMatchesDto",
+    "x-type": "RecentMatchesDto"
+  }
+}
