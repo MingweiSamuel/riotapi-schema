@@ -91,7 +91,7 @@
 
 
   "match-v4.PlayerDto.summonerId": true,
-  
+
   "match-v4.TeamStatsDto.win": true,
 
 
