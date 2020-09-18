@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "4f435e7af82eeaf1d2f97e14c912cd2e3cfb2cef"
+    "version": "7d6e5f8f2bf9bc51dfd9e5532aa1671ced79d59d"
   },
   "servers": [
     {
@@ -6776,14 +6776,6 @@
         "type": "object",
         "title": "Service",
         "properties": {
-          "incidents": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/lol-status-v3.Incident",
-              "x-type": "Incident"
-            },
-            "x-type": "List[Incident]"
-          },
           "name": {
             "type": "string",
             "x-type": "string"
@@ -6795,19 +6787,32 @@
           "status": {
             "type": "string",
             "x-type": "string"
+          },
+          "incidents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/lol-status-v3.Incident",
+              "x-type": "Incident"
+            },
+            "x-type": "List[Incident]"
           }
         },
         "required": [
-          "incidents",
           "name",
           "slug",
-          "status"
+          "status",
+          "incidents"
         ]
       },
       "lol-status-v3.Incident": {
         "type": "object",
         "title": "Incident",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
           "active": {
             "type": "boolean",
             "x-type": "boolean"
@@ -6815,11 +6820,6 @@
           "created_at": {
             "type": "string",
             "x-type": "string"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
           },
           "updates": {
             "type": "array",
@@ -6831,9 +6831,9 @@
           }
         },
         "required": [
+          "id",
           "active",
           "created_at",
-          "id",
           "updates"
         ]
       },
@@ -6841,15 +6841,31 @@
         "type": "object",
         "title": "Message",
         "properties": {
-          "severity": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "updated_at": {
+          "id": {
             "type": "string",
             "x-type": "string"
           },
           "author": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "heading": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "content": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "updated_at": {
             "type": "string",
             "x-type": "string"
           },
@@ -6860,34 +6876,27 @@
               "x-type": "Translation"
             },
             "x-type": "List[Translation]"
-          },
-          "created_at": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "id": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "content": {
-            "type": "string",
-            "x-type": "string"
           }
         },
         "required": [
-          "severity",
-          "updated_at",
-          "author",
-          "translations",
-          "created_at",
           "id",
-          "content"
+          "author",
+          "heading",
+          "content",
+          "severity",
+          "created_at",
+          "updated_at",
+          "translations"
         ]
       },
       "lol-status-v3.Translation": {
         "type": "object",
         "title": "Translation",
         "properties": {
+          "updated_at": {
+            "type": "string",
+            "x-type": "string"
+          },
           "locale": {
             "type": "string",
             "x-type": "string",
@@ -6896,16 +6905,12 @@
           "content": {
             "type": "string",
             "x-type": "string"
-          },
-          "heading": {
-            "type": "string",
-            "x-type": "string"
           }
         },
         "required": [
+          "updated_at",
           "locale",
-          "content",
-          "heading"
+          "content"
         ]
       },
       "lor-ranked-v1.LeaderboardDto": {
@@ -7952,19 +7957,19 @@
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "First stat rune."
+            "description": "Stat rune"
           },
           "statPerk1": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "Second stat rune."
+            "description": "Stat rune"
           },
           "statPerk2": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "description": "Third stat rune."
+            "description": "Stat rune"
           }
         },
         "required": [
@@ -10258,14 +10263,25 @@
             "x-type": "LocalizedNamesDto",
             "description": "This field is excluded from the response when a locale is set"
           },
+          "id": {
+            "type": "string",
+            "x-type": "string"
+          },
           "assetName": {
             "type": "string",
             "x-type": "string"
+          },
+          "assetPath": {
+            "type": "string",
+            "x-type": "string",
+            "description": "This field is only included for maps and game modes. These values are used in the match response."
           }
         },
         "required": [
           "name",
-          "assetName"
+          "id",
+          "assetName",
+          "assetPath"
         ]
       },
       "val-content-v1.LocalizedNamesDto": {
@@ -10839,16 +10855,6 @@
         "type": "object",
         "title": "KillDto",
         "properties": {
-          "gameTime": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "roundTime": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
           "timeSinceGameStartMillis": {
             "type": "integer",
             "format": "int32",
@@ -10896,6 +10902,8 @@
           }
         },
         "required": [
+          "timeSinceGameStartMillis",
+          "timeSinceRoundStartMillis",
           "killer",
           "victim",
           "victimLocation",
@@ -11082,8 +11090,7 @@
           "currentTime": {
             "type": "integer",
             "format": "int64",
-            "x-type": "long",
-            "description": "Current time in epoch seconds."
+            "x-type": "long"
           },
           "matchIds": {
             "type": "array",
@@ -11092,9 +11099,13 @@
               "x-type": "string"
             },
             "x-type": "List[string]",
-            "description": "List of match IDs."
+            "description": "A list of recent match ids."
           }
-        }
+        },
+        "required": [
+          "currentTime",
+          "matchIds"
+        ]
       }
     },
     "securitySchemes": {
