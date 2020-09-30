@@ -22,7 +22,8 @@
   "match-v4.ParticipantTimelineDto.lane": true,
   "match-v4.ParticipantTimelineDto.role": true,
 
-
+  "match-v4.MatchReferenceDto.lane": true,
+  "match-v4.MatchReferenceDto.role": true,
 
   "match-v4.ParticipantStatsDto.*": true,
 
