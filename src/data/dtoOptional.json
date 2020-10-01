@@ -17,12 +17,14 @@
   "match-v4.ParticipantDto.highestAchievedSeasonTier": true,
 
 
+  "match-v4.ParticipantDto.timeline": true,
   "match-v4.ParticipantTimelineDto.*": true,
   "match-v4.ParticipantTimelineDto.participantId": true,
   "match-v4.ParticipantTimelineDto.lane": true,
   "match-v4.ParticipantTimelineDto.role": true,
 
-
+  "match-v4.MatchReferenceDto.lane": true,
+  "match-v4.MatchReferenceDto.role": true,
 
   "match-v4.ParticipantStatsDto.*": true,
 
@@ -45,7 +47,6 @@
   "match-v4.ParticipantStatsDto.item6": false,
 
   "match-v4.ParticipantStatsDto.visionWardsBoughtInGame": false,
-  "match-v4.ParticipantStatsDto.wardsKilled": false,
 
   "match-v4.ParticipantStatsDto.totalHeal": false,
   "match-v4.ParticipantStatsDto.totalUnitsHealed": false,
@@ -86,8 +87,6 @@
 
   "match-v4.ParticipantStatsDto.totalMinionsKilled": false,
   "match-v4.ParticipantStatsDto.neutralMinionsKilled": false,
-  "match-v4.ParticipantStatsDto.neutralMinionsKilledTeamJungle": false,
-  "match-v4.ParticipantStatsDto.neutralMinionsKilledEnemyJungle": false,
 
 
   "match-v4.PlayerDto.summonerId": true,
