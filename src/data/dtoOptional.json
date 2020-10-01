@@ -47,7 +47,6 @@
   "match-v4.ParticipantStatsDto.item6": false,
 
   "match-v4.ParticipantStatsDto.visionWardsBoughtInGame": false,
-  "match-v4.ParticipantStatsDto.wardsKilled": true,
 
   "match-v4.ParticipantStatsDto.totalHeal": false,
   "match-v4.ParticipantStatsDto.totalUnitsHealed": false,
@@ -88,8 +87,6 @@
 
   "match-v4.ParticipantStatsDto.totalMinionsKilled": false,
   "match-v4.ParticipantStatsDto.neutralMinionsKilled": false,
-  "match-v4.ParticipantStatsDto.neutralMinionsKilledTeamJungle": true,
-  "match-v4.ParticipantStatsDto.neutralMinionsKilledEnemyJungle": true,
 
 
   "match-v4.PlayerDto.summonerId": true,
