@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 7d6e5f8f2bf9bc51dfd9e5532aa1671ced79d59d
+  version: c3b3f5733c36c6f30546aa9ed598c05d39c670be
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -5546,7 +5546,6 @@ components:
         - championId
         - stats
         - teamId
-        - timeline
         - spell1Id
         - spell2Id
     match-v4.RuneDto:
@@ -6049,7 +6048,6 @@ components:
         - deaths
         - tripleKills
         - magicDamageDealtToChampions
-        - wardsKilled
         - pentaKills
         - damageSelfMitigated
         - largestCriticalStrike
@@ -6061,7 +6059,6 @@ components:
         - largestKillingSpree
         - totalDamageDealtToChampions
         - physicalDamageDealtToChampions
-        - neutralMinionsKilledTeamJungle
         - totalMinionsKilled
         - visionWardsBoughtInGame
         - kills
@@ -6077,7 +6074,6 @@ components:
         - longestTimeSpentLiving
         - killingSprees
         - trueDamageDealtToChampions
-        - neutralMinionsKilledEnemyJungle
         - doubleKills
         - trueDamageDealt
         - quadraKills
@@ -6271,12 +6267,10 @@ components:
           x-type: long
       required:
         - gameId
-        - role
         - season
         - platformId
         - champion
         - queue
-        - lane
         - timestamp
     match-v4.MatchTimelineDto:
       type: object
