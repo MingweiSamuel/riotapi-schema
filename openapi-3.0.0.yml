@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 1e9109fffa63af60b9ed1c7df47486c7bdf58a0f
+  version: 5aeaf3fd13c4a91f0fc65318334dd1247b8376cd
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -5306,8 +5306,124 @@ components:
     lor-match-v1.MatchDto:
       type: object
       title: MatchDto
-      properties: {}
-      description: 'UNKNOWN TYPE.'
+      properties:
+        metadata:
+          $ref: '#/components/schemas/lor-match-v1.MetadataDto'
+          x-type: MetadataDto
+          description: 'Match metadata.'
+        info:
+          $ref: '#/components/schemas/lor-match-v1.InfoDto'
+          x-type: InfoDto
+          description: 'Match info.'
+      required:
+        - metadata
+        - info
+    lor-match-v1.MetadataDto:
+      type: object
+      title: MetadataDto
+      properties:
+        data_version:
+          type: string
+          x-type: string
+          description: 'Match data version.'
+        match_id:
+          type: string
+          x-type: string
+          description: 'Match id.'
+        participants:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+          description: 'A list of encrypted participant PUUIDs.'
+      required:
+        - data_version
+        - match_id
+        - participants
+    lor-match-v1.InfoDto:
+      type: object
+      title: InfoDto
+      properties:
+        game_mode:
+          type: string
+          x-type: string
+          enum:
+            - Constructed
+            - Expeditions
+            - Tutorial
+          description: '(Legal values:  Constructed,  Expeditions,  Tutorial)'
+        game_type:
+          type: string
+          x-type: string
+          enum:
+            - Ranked
+            - Normal
+            - AI
+            - Tutorial
+            - VanillaTrial
+            - Singleton
+            - StandardGauntlet
+          description: '(Legal values:  Ranked,  Normal,  AI,  Tutorial,  VanillaTrial,  Singleton,  StandardGauntlet)'
+        game_start_time_utc:
+          type: string
+          x-type: string
+        game_version:
+          type: string
+          x-type: string
+        players:
+          type: array
+          items:
+            $ref: '#/components/schemas/lor-match-v1.PlayerDto'
+            x-type: PlayerDto
+          x-type: 'List[PlayerDto]'
+        total_turn_count:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Total turns taken by both players.'
+      required:
+        - game_mode
+        - game_type
+        - game_start_time_utc
+        - game_version
+        - players
+        - total_turn_count
+    lor-match-v1.PlayerDto:
+      type: object
+      title: PlayerDto
+      properties:
+        puuid:
+          type: string
+          x-type: string
+        deck_id:
+          type: string
+          x-type: string
+        deck_code:
+          type: string
+          x-type: string
+          description: 'Code for the deck played. Refer to LOR documentation for details on deck codes.'
+        factions:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+        game_outcome:
+          type: string
+          x-type: string
+        order_of_play:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'The order in which the players took turns.'
+      required:
+        - puuid
+        - deck_id
+        - deck_code
+        - factions
+        - game_outcome
+        - order_of_play
     lor-ranked-v1.LeaderboardDto:
       type: object
       title: LeaderboardDto
@@ -7240,7 +7356,7 @@ components:
             type: string
             x-type: string
           x-type: 'List[string]'
-          description: 'A list of encrypted participant PUUIDs.'
+          description: 'A list of participant PUUIDs.'
       required:
         - data_version
         - match_id
@@ -7273,7 +7389,6 @@ components:
             $ref: '#/components/schemas/tft-match-v1.ParticipantDto'
             x-type: ParticipantDto
           x-type: 'List[ParticipantDto]'
-          description: Participants.
         queue_id:
           type: integer
           format: int32
@@ -7327,7 +7442,6 @@ components:
         puuid:
           type: string
           x-type: string
-          description: 'Encrypted PUUID.'
         time_eliminated:
           type: number
           format: float
