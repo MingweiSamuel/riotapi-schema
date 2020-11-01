@@ -113,6 +113,7 @@
   "tft-match-v1.TraitDto.tier_total": true,
   "tft-match-v1.TraitDto.style": true,
   "tft-match-v1.TeamDto.numPoints": true,
+  "tft-match-v1.UnitDto.chosen": true,
 
 
 
