@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 46d6543508faf7f5f800259caddca32c99565c64
+  version: d593d1ca0f203b80a7e431484f65455a8d9c08dc
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -7526,10 +7526,14 @@ components:
           type: string
           x-type: string
           description: 'This field was introduced in patch 9.22 with data_version 2.'
+        chosen:
+          type: string
+          x-type: string
+          description: 'If a unit is chosen as part of the Fates set mechanic, the chosen trait will be indicated by this field. Otherwise this field is excluded from the response.'
         name:
           type: string
           x-type: string
-          description: 'Unit name.'
+          description: 'Unit name. This field is often left blank.'
         rarity:
           type: integer
           format: int32
@@ -7540,9 +7544,6 @@ components:
           format: int32
           x-type: int
           description: 'Unit tier.'
-        chosen:
-          type: string
-          x-type: string
       required:
         - items
         - character_id
@@ -8077,6 +8078,12 @@ components:
             $ref: '#/components/schemas/val-content-v1.ContentItemDto'
             x-type: ContentItemDto
           x-type: 'List[ContentItemDto]'
+        acts:
+          type: array
+          items:
+            $ref: '#/components/schemas/val-content-v1.ActDto'
+            x-type: ActDto
+          x-type: 'List[ActDto]'
       required:
         - version
         - characters
@@ -8092,6 +8099,7 @@ components:
         - charmLevels
         - playerCards
         - playerTitles
+        - acts
     val-content-v1.ContentItemDto:
       type: object
       title: ContentItemDto
@@ -8199,6 +8207,28 @@ components:
         - vi-VN
         - zh-CN
         - zh-TW
+    val-content-v1.ActDto:
+      type: object
+      title: ActDto
+      properties:
+        name:
+          type: string
+          x-type: string
+        localizedNames:
+          $ref: '#/components/schemas/val-content-v1.LocalizedNamesDto'
+          x-type: LocalizedNamesDto
+          description: 'This field is excluded from the response when a locale is set'
+        id:
+          type: string
+          x-type: string
+        isActive:
+          type: boolean
+          x-type: boolean
+      required:
+        - name
+        - localizedNames
+        - id
+        - isActive
     val-match-v1.MatchDto:
       type: object
       title: MatchDto

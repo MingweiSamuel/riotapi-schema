@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 221b078599ea8c19031bedf462fc18451928d3e0
+  version: 1388a843291f4e68c22bbf6f0c4125909730bdf4
 host: na1.api.riotgames.com
 x-host-platform:
   - americas
@@ -4642,45 +4642,6 @@ definitions:
       - puuid
       - game
       - activeShard
-  tft-match-v1.UnitDto:
-    type: object
-    title: UnitDto
-    properties:
-      items:
-        type: array
-        items:
-          type: integer
-          format: int32
-          x-type: int
-        x-type: 'List[int]'
-        description: 'A list of the unit''s items. Please refer to the Teamfight Tactics documentation for item ids.'
-      character_id:
-        type: string
-        x-type: string
-        description: 'This field was introduced in patch 9.22 with data_version 2.'
-      name:
-        type: string
-        x-type: string
-        description: 'Unit name.'
-      rarity:
-        type: integer
-        format: int32
-        x-type: int
-        description: 'Unit rarity. This doesn''t equate to the unit cost.'
-      tier:
-        type: integer
-        format: int32
-        x-type: int
-        description: 'Unit tier.'
-      chosen:
-        type: string
-        x-type: string
-    required:
-      - items
-      - character_id
-      - name
-      - rarity
-      - tier
   champion-mastery-v4.ChampionMasteryDTO:
     type: object
     title: ChampionMasteryDTO
@@ -7523,6 +7484,46 @@ definitions:
       - name
       - num_units
       - tier_current
+  tft-match-v1.UnitDto:
+    type: object
+    title: UnitDto
+    properties:
+      items:
+        type: array
+        items:
+          type: integer
+          format: int32
+          x-type: int
+        x-type: 'List[int]'
+        description: 'A list of the unit''s items. Please refer to the Teamfight Tactics documentation for item ids.'
+      character_id:
+        type: string
+        x-type: string
+        description: 'This field was introduced in patch 9.22 with data_version 2.'
+      chosen:
+        type: string
+        x-type: string
+        description: 'If a unit is chosen as part of the Fates set mechanic, the chosen trait will be indicated by this field. Otherwise this field is excluded from the response.'
+      name:
+        type: string
+        x-type: string
+        description: 'Unit name. This field is often left blank.'
+      rarity:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'Unit rarity. This doesn''t equate to the unit cost.'
+      tier:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'Unit tier.'
+    required:
+      - items
+      - character_id
+      - name
+      - rarity
+      - tier
   tft-match-v1.CompanionDto:
     type: object
     title: CompanionDto
@@ -8051,6 +8052,12 @@ definitions:
           $ref: '#/definitions/val-content-v1.ContentItemDto'
           x-type: ContentItemDto
         x-type: 'List[ContentItemDto]'
+      acts:
+        type: array
+        items:
+          $ref: '#/definitions/val-content-v1.ActDto'
+          x-type: ActDto
+        x-type: 'List[ActDto]'
     required:
       - version
       - characters
@@ -8066,6 +8073,7 @@ definitions:
       - charmLevels
       - playerCards
       - playerTitles
+      - acts
   val-content-v1.ContentItemDto:
     type: object
     title: ContentItemDto
@@ -8173,6 +8181,28 @@ definitions:
       - vi-VN
       - zh-CN
       - zh-TW
+  val-content-v1.ActDto:
+    type: object
+    title: ActDto
+    properties:
+      name:
+        type: string
+        x-type: string
+      localizedNames:
+        $ref: '#/definitions/val-content-v1.LocalizedNamesDto'
+        x-type: LocalizedNamesDto
+        description: 'This field is excluded from the response when a locale is set'
+      id:
+        type: string
+        x-type: string
+      isActive:
+        type: boolean
+        x-type: boolean
+    required:
+      - name
+      - localizedNames
+      - id
+      - isActive
   val-match-v1.MatchDto:
     type: object
     title: MatchDto
