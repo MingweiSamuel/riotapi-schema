@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: 1388a843291f4e68c22bbf6f0c4125909730bdf4
+  version: 8cc4cb0019a341c0a1892f13fcae680edd0b452b
 host: na1.api.riotgames.com
 x-host-platform:
   - americas
@@ -1635,6 +1635,76 @@ paths:
       - ru
       - tr1
     x-route-enum: platform
+  /lol/status/v4/platform-data:
+    get:
+      tags:
+        - lol-status-v4
+      summary: 'Get League of Legends status for the given platform.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lol-status-v4/GET_getPlatformData'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/lol-status-v4.PlatformDataDto'
+            x-type: PlatformDataDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lol-status-v4.getPlatformData
+      description: 'Get League of Legends status for the given platform.'
+      x-endpoint: lol-status-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - pbe1
+        - ru
+        - tr1
+      x-route-enum: platform
+      produces:
+        - application/json
+    x-endpoint: lol-status-v4
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - pbe1
+      - ru
+      - tr1
+    x-route-enum: platform
   '/lor/match/v1/matches/by-puuid/{puuid}/ids':
     get:
       tags:
@@ -1806,6 +1876,60 @@ paths:
       produces:
         - application/json
     x-endpoint: lor-ranked-v1
+    x-platforms-available:
+      - americas
+      - asia
+      - europe
+      - sea
+    x-route-enum: regional
+  /lor/status/v1/platform-data:
+    get:
+      tags:
+        - lor-status-v1
+      summary: 'Get Legends of Runeterra status for the given platform.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lor-status-v1/GET_getPlatformData'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/lor-status-v1.PlatformDataDto'
+            x-type: PlatformDataDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lor-status-v1.getPlatformData
+      description: 'Get Legends of Runeterra status for the given platform.'
+      x-endpoint: lor-status-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+        - sea
+      x-route-enum: regional
+      produces:
+        - application/json
+    x-endpoint: lor-status-v1
     x-platforms-available:
       - americas
       - asia
@@ -4597,6 +4721,64 @@ paths:
       - latam
       - na
     x-route-enum: val-platform
+  /val/status/v1/platform-data:
+    get:
+      tags:
+        - val-status-v1
+      summary: 'Get VALORANT status for the given platform.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#val-status-v1/GET_getPlatformData'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/val-status-v1.PlatformDataDto'
+            x-type: PlatformDataDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: val-status-v1.getPlatformData
+      description: 'Get VALORANT status for the given platform.'
+      x-endpoint: val-status-v1
+      x-platforms-available:
+        - ap
+        - br
+        - eu
+        - kr
+        - latam
+        - na
+      x-route-enum: val-platform
+      produces:
+        - application/json
+    x-endpoint: val-status-v1
+    x-platforms-available:
+      - ap
+      - br
+      - eu
+      - kr
+      - latam
+      - na
+    x-route-enum: val-platform
 definitions:
   Error:
     type: object
@@ -5277,6 +5459,168 @@ definitions:
       - updated_at
       - locale
       - content
+  lol-status-v4.PlatformDataDto:
+    type: object
+    title: PlatformDataDto
+    properties:
+      id:
+        type: string
+        x-type: string
+      name:
+        type: string
+        x-type: string
+      locales:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+      maintenances:
+        type: array
+        items:
+          $ref: '#/definitions/lol-status-v4.StatusDto'
+          x-type: StatusDto
+        x-type: 'List[StatusDto]'
+      incidents:
+        type: array
+        items:
+          $ref: '#/definitions/lol-status-v4.StatusDto'
+          x-type: StatusDto
+        x-type: 'List[StatusDto]'
+    required:
+      - id
+      - name
+      - locales
+      - maintenances
+      - incidents
+  lol-status-v4.StatusDto:
+    type: object
+    title: StatusDto
+    properties:
+      id:
+        type: integer
+        format: int32
+        x-type: int
+      maintenance_status:
+        type: string
+        x-type: string
+        enum:
+          - scheduled
+          - in_progress
+          - complete
+        description: '(Legal values:  scheduled,  in_progress,  complete)'
+      incident_severity:
+        type: string
+        x-type: string
+        enum:
+          - info
+          - warning
+          - critical
+        description: '(Legal values:  info,  warning,  critical)'
+      titles:
+        type: array
+        items:
+          $ref: '#/definitions/lol-status-v4.ContentDto'
+          x-type: ContentDto
+        x-type: 'List[ContentDto]'
+      updates:
+        type: array
+        items:
+          $ref: '#/definitions/lol-status-v4.UpdateDto'
+          x-type: UpdateDto
+        x-type: 'List[UpdateDto]'
+      created_at:
+        type: string
+        x-type: string
+      archive_at:
+        type: string
+        x-type: string
+      updated_at:
+        type: string
+        x-type: string
+      platforms:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+        enum:
+          - windows
+          - macos
+          - android
+          - ios
+          - ps4
+          - xbone
+          - switch
+        description: '(Legal values: windows, macos, android, ios, ps4, xbone, switch)'
+    required:
+      - id
+      - maintenance_status
+      - incident_severity
+      - titles
+      - updates
+      - created_at
+      - archive_at
+      - updated_at
+      - platforms
+  lol-status-v4.ContentDto:
+    type: object
+    title: ContentDto
+    properties:
+      locale:
+        type: string
+        x-type: string
+      content:
+        type: string
+        x-type: string
+    required:
+      - locale
+      - content
+  lol-status-v4.UpdateDto:
+    type: object
+    title: UpdateDto
+    properties:
+      id:
+        type: integer
+        format: int32
+        x-type: int
+      author:
+        type: string
+        x-type: string
+      publish:
+        type: boolean
+        x-type: boolean
+      publish_locations:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+        enum:
+          - riotclient
+          - riotstatus
+          - game
+        description: '(Legal values: riotclient, riotstatus, game)'
+      translations:
+        type: array
+        items:
+          $ref: '#/definitions/lol-status-v4.ContentDto'
+          x-type: ContentDto
+        x-type: 'List[ContentDto]'
+      created_at:
+        type: string
+        x-type: string
+      updated_at:
+        type: string
+        x-type: string
+    required:
+      - id
+      - author
+      - publish
+      - publish_locations
+      - translations
+      - created_at
+      - updated_at
   lor-match-v1.MatchDto:
     type: object
     title: MatchDto
@@ -5431,6 +5775,168 @@ definitions:
       - name
       - rank
       - lp
+  lor-status-v1.PlatformDataDto:
+    type: object
+    title: PlatformDataDto
+    properties:
+      id:
+        type: string
+        x-type: string
+      name:
+        type: string
+        x-type: string
+      locales:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+      maintenances:
+        type: array
+        items:
+          $ref: '#/definitions/lor-status-v1.StatusDto'
+          x-type: StatusDto
+        x-type: 'List[StatusDto]'
+      incidents:
+        type: array
+        items:
+          $ref: '#/definitions/lor-status-v1.StatusDto'
+          x-type: StatusDto
+        x-type: 'List[StatusDto]'
+    required:
+      - id
+      - name
+      - locales
+      - maintenances
+      - incidents
+  lor-status-v1.StatusDto:
+    type: object
+    title: StatusDto
+    properties:
+      id:
+        type: integer
+        format: int32
+        x-type: int
+      maintenance_status:
+        type: string
+        x-type: string
+        enum:
+          - scheduled
+          - in_progress
+          - complete
+        description: '(Legal values:  scheduled,  in_progress,  complete)'
+      incident_severity:
+        type: string
+        x-type: string
+        enum:
+          - info
+          - warning
+          - critical
+        description: '(Legal values:  info,  warning,  critical)'
+      titles:
+        type: array
+        items:
+          $ref: '#/definitions/lor-status-v1.ContentDto'
+          x-type: ContentDto
+        x-type: 'List[ContentDto]'
+      updates:
+        type: array
+        items:
+          $ref: '#/definitions/lor-status-v1.UpdateDto'
+          x-type: UpdateDto
+        x-type: 'List[UpdateDto]'
+      created_at:
+        type: string
+        x-type: string
+      archive_at:
+        type: string
+        x-type: string
+      updated_at:
+        type: string
+        x-type: string
+      platforms:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+        enum:
+          - windows
+          - macos
+          - android
+          - ios
+          - ps4
+          - xbone
+          - switch
+        description: '(Legal values: windows, macos, android, ios, ps4, xbone, switch)'
+    required:
+      - id
+      - maintenance_status
+      - incident_severity
+      - titles
+      - updates
+      - created_at
+      - archive_at
+      - updated_at
+      - platforms
+  lor-status-v1.ContentDto:
+    type: object
+    title: ContentDto
+    properties:
+      locale:
+        type: string
+        x-type: string
+      content:
+        type: string
+        x-type: string
+    required:
+      - locale
+      - content
+  lor-status-v1.UpdateDto:
+    type: object
+    title: UpdateDto
+    properties:
+      id:
+        type: integer
+        format: int32
+        x-type: int
+      author:
+        type: string
+        x-type: string
+      publish:
+        type: boolean
+        x-type: boolean
+      publish_locations:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+        enum:
+          - riotclient
+          - riotstatus
+          - game
+        description: '(Legal values: riotclient, riotstatus, game)'
+      translations:
+        type: array
+        items:
+          $ref: '#/definitions/lor-status-v1.ContentDto'
+          x-type: ContentDto
+        x-type: 'List[ContentDto]'
+      created_at:
+        type: string
+        x-type: string
+      updated_at:
+        type: string
+        x-type: string
+    required:
+      - id
+      - author
+      - publish
+      - publish_locations
+      - translations
+      - created_at
+      - updated_at
   match-v4.MatchDto:
     type: object
     title: MatchDto
@@ -8760,6 +9266,168 @@ definitions:
     required:
       - currentTime
       - matchIds
+  val-status-v1.PlatformDataDto:
+    type: object
+    title: PlatformDataDto
+    properties:
+      id:
+        type: string
+        x-type: string
+      name:
+        type: string
+        x-type: string
+      locales:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+      maintenances:
+        type: array
+        items:
+          $ref: '#/definitions/val-status-v1.StatusDto'
+          x-type: StatusDto
+        x-type: 'List[StatusDto]'
+      incidents:
+        type: array
+        items:
+          $ref: '#/definitions/val-status-v1.StatusDto'
+          x-type: StatusDto
+        x-type: 'List[StatusDto]'
+    required:
+      - id
+      - name
+      - locales
+      - maintenances
+      - incidents
+  val-status-v1.StatusDto:
+    type: object
+    title: StatusDto
+    properties:
+      id:
+        type: integer
+        format: int32
+        x-type: int
+      maintenance_status:
+        type: string
+        x-type: string
+        enum:
+          - scheduled
+          - in_progress
+          - complete
+        description: '(Legal values:  scheduled,  in_progress,  complete)'
+      incident_severity:
+        type: string
+        x-type: string
+        enum:
+          - info
+          - warning
+          - critical
+        description: '(Legal values:  info,  warning,  critical)'
+      titles:
+        type: array
+        items:
+          $ref: '#/definitions/val-status-v1.ContentDto'
+          x-type: ContentDto
+        x-type: 'List[ContentDto]'
+      updates:
+        type: array
+        items:
+          $ref: '#/definitions/val-status-v1.UpdateDto'
+          x-type: UpdateDto
+        x-type: 'List[UpdateDto]'
+      created_at:
+        type: string
+        x-type: string
+      archive_at:
+        type: string
+        x-type: string
+      updated_at:
+        type: string
+        x-type: string
+      platforms:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+        enum:
+          - windows
+          - macos
+          - android
+          - ios
+          - ps4
+          - xbone
+          - switch
+        description: '(Legal values: windows, macos, android, ios, ps4, xbone, switch)'
+    required:
+      - id
+      - maintenance_status
+      - incident_severity
+      - titles
+      - updates
+      - created_at
+      - archive_at
+      - updated_at
+      - platforms
+  val-status-v1.ContentDto:
+    type: object
+    title: ContentDto
+    properties:
+      locale:
+        type: string
+        x-type: string
+      content:
+        type: string
+        x-type: string
+    required:
+      - locale
+      - content
+  val-status-v1.UpdateDto:
+    type: object
+    title: UpdateDto
+    properties:
+      id:
+        type: integer
+        format: int32
+        x-type: int
+      author:
+        type: string
+        x-type: string
+      publish:
+        type: boolean
+        x-type: boolean
+      publish_locations:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'List[string]'
+        enum:
+          - riotclient
+          - riotstatus
+          - game
+        description: '(Legal values: riotclient, riotstatus, game)'
+      translations:
+        type: array
+        items:
+          $ref: '#/definitions/val-status-v1.ContentDto'
+          x-type: ContentDto
+        x-type: 'List[ContentDto]'
+      created_at:
+        type: string
+        x-type: string
+      updated_at:
+        type: string
+        x-type: string
+    required:
+      - id
+      - author
+      - publish
+      - publish_locations
+      - translations
+      - created_at
+      - updated_at
 securityDefinitions:
   api_key:
     type: apiKey
