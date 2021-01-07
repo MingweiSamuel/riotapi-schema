@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "8cc4cb0019a341c0a1892f13fcae680edd0b452b"
+    "version": "4a8c86dca0e29675015c65cd1ae0800486525911"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -321,10 +321,10 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/champion-mastery-v4.ChampionMasteryDTO",
-                "x-type": "ChampionMasteryDTO"
+                "$ref": "#/definitions/champion-mastery-v4.ChampionMasteryDto",
+                "x-type": "ChampionMasteryDto"
               },
-              "x-type": "List[ChampionMasteryDTO]"
+              "x-type": "List[ChampionMasteryDto]"
             }
           },
           "400": {
@@ -422,8 +422,8 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/champion-mastery-v4.ChampionMasteryDTO",
-              "x-type": "ChampionMasteryDTO"
+              "$ref": "#/definitions/champion-mastery-v4.ChampionMasteryDto",
+              "x-type": "ChampionMasteryDto"
             }
           },
           "400": {
@@ -6362,9 +6362,9 @@
         "activeShard"
       ]
     },
-    "champion-mastery-v4.ChampionMasteryDTO": {
+    "champion-mastery-v4.ChampionMasteryDto": {
       "type": "object",
-      "title": "ChampionMasteryDTO",
+      "title": "ChampionMasteryDto",
       "properties": {
         "championPointsUntilNextLevel": {
           "type": "integer",
@@ -6381,8 +6381,7 @@
           "type": "integer",
           "format": "int64",
           "x-type": "long",
-          "description": "Champion ID for this entry.",
-          "x-enum": "champion"
+          "description": "Champion ID for this entry."
         },
         "lastPlayTime": {
           "type": "integer",
@@ -6417,7 +6416,7 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "The token earned for this champion to levelup."
+          "description": "The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0."
         }
       },
       "description": "This object contains single Champion Mastery information for player and champion combination.",
