@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms-and-conditions.html",
-    "version": "c7a5b32392b72da9acbf5db4159055526189a063"
+    "version": "983d402068c2751dc3f26d403fc3e1148787e620"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -6219,6 +6219,113 @@
       ],
       "x-route-enum": "val-platform"
     },
+    "/val/ranked/v1/leaderboards/by-act/{actId}": {
+      "get": {
+        "tags": [
+          "val-ranked-v1"
+        ],
+        "summary": "Get leaderboard for the competitive queue",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#val-ranked-v1/GET_getLeaderboard"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/val-ranked-v1.LeaderboardDto",
+              "x-type": "LeaderboardDto"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "val-ranked-v1.getLeaderboard",
+        "description": "Get leaderboard for the competitive queue",
+        "parameters": [
+          {
+            "name": "actId",
+            "in": "path",
+            "required": true,
+            "description": "Act ids can be found using the val-content API.",
+            "type": "string",
+            "x-type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": ""
+          },
+          {
+            "name": "startIndex",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": ""
+          }
+        ],
+        "x-endpoint": "val-ranked-v1",
+        "x-platforms-available": [
+          "ap",
+          "br",
+          "eu",
+          "kr",
+          "latam",
+          "na"
+        ],
+        "x-route-enum": "val-platform",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "x-endpoint": "val-ranked-v1",
+      "x-platforms-available": [
+        "ap",
+        "br",
+        "eu",
+        "kr",
+        "latam",
+        "na"
+      ],
+      "x-route-enum": "val-platform"
+    },
     "/val/status/v1/platform-data": {
       "get": {
         "tags": [
@@ -11970,6 +12077,83 @@
       "required": [
         "currentTime",
         "matchIds"
+      ]
+    },
+    "val-ranked-v1.LeaderboardDto": {
+      "type": "object",
+      "title": "LeaderboardDto",
+      "properties": {
+        "shard": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The shard for the given leaderboard."
+        },
+        "actId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The act id for the given leaderboard. Act ids can be found using the val-content API."
+        },
+        "totalPlayers": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The total number of players in the leaderboard."
+        },
+        "players": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-ranked-v1.PlayerDto",
+            "x-type": "PlayerDto"
+          },
+          "x-type": "List[PlayerDto]"
+        }
+      },
+      "required": [
+        "shard",
+        "actId",
+        "totalPlayers",
+        "players"
+      ]
+    },
+    "val-ranked-v1.PlayerDto": {
+      "type": "object",
+      "title": "PlayerDto",
+      "properties": {
+        "puuid": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "gameName": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "tagLine": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "leaderboardRank": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "rankedRating": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "numberOfWins": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        }
+      },
+      "required": [
+        "puuid",
+        "gameName",
+        "tagLine",
+        "leaderboardRank",
+        "rankedRating",
+        "numberOfWins"
       ]
     },
     "val-status-v1.PlatformDataDto": {
