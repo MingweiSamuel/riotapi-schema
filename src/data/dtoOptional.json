@@ -10,6 +10,7 @@
 
 
   "spectator-v4.CurrentGameInfo.gameQueueConfigId": true,
+  "spectator-v4.CurrentGameParticipant.perks": true,
 
 
   "match-v4.ParticipantDto.runes": true,
@@ -117,5 +118,6 @@
 
 
 
-  "val-content-v1.ContentItemDto.localizedNames": true
+  "val-content-v1.ContentItemDto.localizedNames": true,
+  "val-content-v1.ActDto.localizedNames": true
 }
