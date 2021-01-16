@@ -22,5 +22,6 @@
     "clash-v1.getTournamentById": true,
     "clash-v1.getTournamentByTeam": true,
 
-    "val-match-v1.getMatch": true
+    "val-match-v1.getMatch": true,
+    "val-ranked-v1.getLeaderboard": true
 }

@@ -119,5 +119,6 @@
 
 
   "val-content-v1.ContentItemDto.localizedNames": true,
+  "val-content-v1.ContentItemDto.assetPath": true,
   "val-content-v1.ActDto.localizedNames": true
 }
