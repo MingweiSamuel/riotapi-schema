@@ -106,7 +106,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
     info: {
       title: "Riot API",
       description,
-      termsOfService: "https://developer.riotgames.com/terms-and-conditions.html"
+      termsOfService: "https://developer.riotgames.com/terms"
     },
     // Use NA1 as default region.
     host: "na1.api.riotgames.com",
