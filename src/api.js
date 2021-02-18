@@ -11,6 +11,7 @@ const req = (function(req) {
 const process = require('process');
 const childProcess = require('child-process-es6-promise')
 const { JSDOM } = require("jsdom");
+const swaggerUiAssetPath = require("swagger-ui-dist").getAbsoluteFSPath();
 
 require('./arrayFill');
 
@@ -40,7 +41,7 @@ async function cleanupOutput() {
 
   // Copy swagger tool into output.
   const copyPromise = (async () => {
-    await fs.copy('swagger-ui/dist/', OUTPUT + '/tool');
+    await fs.copy(swaggerUiAssetPath, OUTPUT + '/tool');
 
     const index = OUTPUT + '/tool/index.html';
     let indexContent = await fs.readFile(index, 'UTF-8');
