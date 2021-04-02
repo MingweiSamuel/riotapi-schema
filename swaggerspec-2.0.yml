@@ -2,8 +2,8 @@ swagger: '2.0'
 info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
-  termsOfService: 'https://developer.riotgames.com/terms-and-conditions.html'
-  version: daee86818a99adaad02583744cc4e012c7ef961f
+  termsOfService: 'https://developer.riotgames.com/terms'
+  version: b1cf3e628d295daadd68cfdaaf60a9ba62333136
 host: na1.api.riotgames.com
 x-host-platform:
   - americas
@@ -134,16 +134,16 @@ paths:
           name: tagLine
           in: path
           required: true
+          description: 'When querying for a player by their riot id, the gameName and tagLine query params are required. However not all accounts have a gameName and tagLine associated so these fields may not be included in the response.'
           type: string
           x-type: string
-          description: ""
         -
           name: gameName
           in: path
           required: true
+          description: 'When querying for a player by their riot id, the gameName and tagLine query params are required. However not all accounts have a gameName and tagLine associated so these fields may not be included in the response.'
           type: string
           x-type: string
-          description: ""
       x-endpoint: account-v1
       x-platforms-available:
         - americas
@@ -3321,7 +3321,7 @@ paths:
     get:
       tags:
         - tft-match-v1
-      summary: 'Get a list of match ids by PUUID.'
+      summary: 'Get a list of match ids by PUUID'
       externalDocs:
         description: 'Official API Reference'
         url: 'https://developer.riotgames.com/api-methods/#tft-match-v1/GET_getMatchIdsByPUUID'
@@ -3357,7 +3357,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: tft-match-v1.getMatchIdsByPUUID
-      description: 'Get a list of match ids by PUUID.'
+      description: 'Get a list of match ids by PUUID'
       parameters:
         -
           name: puuid
@@ -3392,7 +3392,7 @@ paths:
     get:
       tags:
         - tft-match-v1
-      summary: 'Get a match by match id.'
+      summary: 'Get a match by match id'
       externalDocs:
         description: 'Official API Reference'
         url: 'https://developer.riotgames.com/api-methods/#tft-match-v1/GET_getMatch'
@@ -3426,7 +3426,7 @@ paths:
           description: 'Gateway timeout'
       operationId: tft-match-v1.getMatch
       x-nullable-404: true
-      description: 'Get a match by match id.'
+      description: 'Get a match by match id'
       parameters:
         -
           name: matchId
@@ -4775,6 +4775,10 @@ paths:
           type: integer
           format: int32
           x-type: int
+          enum:
+            - '200'
+            - '1'
+            - RANGE
           description: ""
         -
           name: startIndex
@@ -4883,11 +4887,11 @@ definitions:
       gameName:
         type: string
         x-type: string
-        description: 'This field may be excluded if the account doesn''t have a gameName'
+        description: 'This field may be excluded from the response if the account doesn''t have a gameName.'
       tagLine:
         type: string
         x-type: string
-        description: 'This field may be excluded if the account doesn''t have a tagLine'
+        description: 'This field may be excluded from the response if the account doesn''t have a tagLine.'
     required:
       - puuid
   account-v1.ActiveShardDto:
@@ -5737,7 +5741,7 @@ definitions:
           type: string
           x-type: string
         x-type: 'List[string]'
-        description: 'A list of encrypted participant PUUIDs.'
+        description: 'A list of participant PUUIDs.'
     required:
       - data_version
       - match_id
@@ -8877,6 +8881,12 @@ definitions:
       puuid:
         type: string
         x-type: string
+      gameName:
+        type: string
+        x-type: string
+      tagLine:
+        type: string
+        x-type: string
       teamId:
         type: string
         x-type: string
@@ -8901,6 +8911,8 @@ definitions:
         x-type: string
     required:
       - puuid
+      - gameName
+      - tagLine
       - teamId
       - partyId
       - characterId
@@ -9381,12 +9393,15 @@ definitions:
       puuid:
         type: string
         x-type: string
+        description: 'This field may be omitted if the player has been anonymized.'
       gameName:
         type: string
         x-type: string
+        description: 'This field may be omitted if the player has been anonymized.'
       tagLine:
         type: string
         x-type: string
+        description: 'This field may be omitted if the player has been anonymized.'
       leaderboardRank:
         type: integer
         format: int64
