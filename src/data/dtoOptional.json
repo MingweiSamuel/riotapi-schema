@@ -120,5 +120,9 @@
 
   "val-content-v1.ContentItemDto.localizedNames": true,
   "val-content-v1.ContentItemDto.assetPath": true,
-  "val-content-v1.ActDto.localizedNames": true
+  "val-content-v1.ActDto.localizedNames": true,
+
+  "val-ranked-v1.PlayerDto.puuid": true,
+  "val-ranked-v1.PlayerDto.gameName": true,
+  "val-ranked-v1.PlayerDto.tagLine": true
 }
