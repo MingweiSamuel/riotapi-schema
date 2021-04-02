@@ -1,0 +1,48 @@
+name: CI
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: '58 0 * * *'
+
+jobs:
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout sources
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # Need gh-pages history for script to run.
+        submodules: true
+
+    - name: Setup node
+      uses: actions/setup-node@v2
+    
+    - name: Install NPM dependencies
+      run: npm ci
+
+    - name: Run update
+      run: node index.js
+
+    - name: Deploy to gh-pages
+      shell: bash
+      run: |
+        git -C out init -q
+        git -C out remote add origin "$(git remote get-url origin)"
+        git -C out fetch origin gh-pages:gh-pages
+        git -C out config credential.helper "$(git config credential.helper)"
+        git -C out config 'http.https://github.com/.extraheader' "$(git config 'http.https://github.com/.extraheader')"
+        git -C out config core.autocrlf input
+        git -C out config core.safecrlf false
+        git -C out symbolic-ref HEAD refs/heads/gh-pages
+        git -C out reset
+        git -C out add -A
+        if git -C out -c 'user.name=github-actions[bot]' -c 'user.email=41898282+github-actions[bot]@users.noreply.github.com' \
+          commit -m "Deploy $(date -I) $(git rev-parse HEAD)";
+        then
+          git -C out push -u origin gh-pages --quiet
+        else
+          echo 'No changes to commit'
+        fi
