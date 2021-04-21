@@ -17,15 +17,15 @@ function Method(endpoint, methodEl) {
   this.name = methodEl.id.substring(1);
   this.canonName = `${this.endpoint.name}.${this.name}`;
 
-  let heading = methodEl.children[0];
-  let method = heading.children[0].children[0];
+  const heading = methodEl.children[0];
+  const method = heading.children[0].children[0];
   this.httpMethod = method.textContent.trim().toLowerCase();
   this.urlHash = method.getAttribute("href");
   this.pathUrl = heading.children[1].textContent.trim();
   this.summary = heading.children[2].textContent.trim();
 
-  let content = methodEl.children[1];
-  let methodMeta = content.getElementsByClassName('method_meta')[0];
+  const content = methodEl.children[1];
+  const methodMeta = content.getElementsByClassName('method_meta')[0];
   this.deprecated = methodMeta && methodMeta.textContent.toLowerCase().includes('deprecated');
 
   this.bodyType = null;

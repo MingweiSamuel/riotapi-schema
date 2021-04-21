@@ -3,7 +3,9 @@
         "americas",
         "asia",
         "europe",
-        "sea"
+        "sea",
+
+        "esports"
     ],
     "platform": [
         "br1",
@@ -25,6 +27,8 @@
         "eu",
         "kr",
         "latam",
-        "na"
+        "na",
+
+        "esports"
     ]
 }

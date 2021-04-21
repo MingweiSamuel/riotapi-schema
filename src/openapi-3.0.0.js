@@ -8,6 +8,8 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
     endpoint.methods.forEach(method => {
       const path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
       const op = path[method.httpMethod] = method.getOperation();
+      if (null == method.routeEnumName)
+        console.error(`Failed to determine routeEnumName for method ${method.canonName}.`);
       const xData = {
         'x-endpoint': endpoint.name,
         'x-platforms-available': method.platformsAvailable,

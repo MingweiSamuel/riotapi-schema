@@ -144,7 +144,7 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
 
   // Update `$ref`s.
   function ref(obj) {
-    if ('object' !== typeof obj)
+    if ('object' !== typeof obj || null == obj)
       return;
     Object.keys(obj).forEach(key => {
       if ('$ref' === key) {
