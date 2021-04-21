@@ -1,0 +1,22 @@
+{
+  "name": "swagger-ui-dist",
+  "version": "3.43.0",
+  "main": "index.js",
+  "repository": "git@github.com:swagger-api/swagger-ui.git",
+  "contributors": [
+    "(in alphabetical order)",
+    "Anna Bodnia <anna.bodnia@gmail.com>",
+    "Buu Nguyen <buunguyen@gmail.com>",
+    "Josh Ponelat <jponelat@gmail.com>",
+    "Kyle Shockey <kyleshockey1@gmail.com>",
+    "Robert Barnwell <robert@robertismy.name>",
+    "Sahar Jafari <shr.jafari@gmail.com>"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {}
+
+,"_resolved": "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-3.43.0.tgz"
+,"_integrity": "sha512-PtE+g23bNbYv8qqAVoPBqNQth8hU5Sl5ZsQ7gHXlO5jlCt31dVTiKI9ArHIT1b23ZzUYTnKsFgPYYFoiWyNCAw=="
+,"_from": "swagger-ui-dist@3.43.0"
+}
