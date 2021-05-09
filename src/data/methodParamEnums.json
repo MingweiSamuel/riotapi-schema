@@ -16,5 +16,7 @@
 
     "match-v4.getMatchlist.queue[]": "queue",
     "match-v4.getMatchlist.champion[]": "champion",
-    "match-v4.getMatchlist.season[]": "season"
+    "match-v4.getMatchlist.season[]": "season",
+
+    "tft-league-v1.getTopRatedLadder.queue": "queueType"
 }
