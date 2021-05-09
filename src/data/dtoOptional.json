@@ -118,6 +118,15 @@
 
 
 
+  "tft-league-v1.LeagueEntryDTO.*": true,
+  "tft-league-v1.LeagueEntryDTO.summonerId": false,
+  "tft-league-v1.LeagueEntryDTO.summonerName": false,
+  "tft-league-v1.LeagueEntryDTO.queueType": false,
+  "tft-league-v1.LeagueEntryDTO.wins": false,
+  "tft-league-v1.LeagueEntryDTO.losses": false,
+
+
+
   "val-content-v1.ContentItemDto.localizedNames": true,
   "val-content-v1.ContentItemDto.assetPath": true,
   "val-content-v1.ActDto.localizedNames": true,
