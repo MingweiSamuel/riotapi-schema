@@ -50,13 +50,13 @@ Endpoint.prototype._compile = function() {
 
       const canonName = `${dto.endpointName}.${dto.name}`;
       if (sub)
-        console.log(`    Duplicate DTO '${canonName}' is subset of existing.`);
+        console.log(`    Duplicate DTO '${canonName}' (from method '${method.canonName}') is subset of existing.`);
       else if (sup) {
-        console.log(`    Duplicate DTO '${canonName}' is superset of existing, overwriting.`);
+        console.log(`    Duplicate DTO '${canonName}' (from method '${method.canonName}') is superset of existing, overwriting.`);
         allDtos[dto.name] = dto;
       }
       else {
-        console.error(`    CONFLICTING DTO: '${canonName}'`);
+        console.error(`    CONFLICTING DTO: '${canonName}' (from method '${method.canonName}')`);
         if (schemaOverrides[canonName]) {
           console.error('    Conflicting DTO is overridden, continuing.');
         }
