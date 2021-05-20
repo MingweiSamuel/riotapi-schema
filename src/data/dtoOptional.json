@@ -2,6 +2,10 @@
   "account-v1.AccountDto.gameName": true,
   "account-v1.AccountDto.tagLine": true,
 
+
+  "clash-v1.PlayerDto.teamId": true,
+
+
   "league-exp-v4.LeagueEntryDTO.miniSeries": true,
   "league-v4.LeagueItemDTO.miniSeries": true,
   "league-v4.LeagueEntryDTO.miniSeries": true,
