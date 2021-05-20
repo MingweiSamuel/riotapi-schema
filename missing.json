@@ -3,6 +3,5 @@
   "lor-deck-v1.deck",
   "match-v5.MatchDto",
   "match-v5.MatchTimelineDto",
-  "tft-match-v1.CompanionDto",
-  "tft-summoner-v1.SummonerDto"
+  "tft-match-v1.CompanionDto"
 ]

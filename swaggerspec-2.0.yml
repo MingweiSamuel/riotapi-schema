@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: a3fb4b5c6dba89f0f021ea7385591dc3870c2d83
+  version: 1e3032bc50fa8880c1cf3490bd4ea938f2487ccb
 host: na1.api.riotgames.com
 x-host-platform:
   - americas
@@ -4270,8 +4270,8 @@ paths:
         '200':
           description: Success
           schema:
-            $ref: '#/definitions/tft-summoner-v1.SummonerDto'
-            x-type: SummonerDto
+            $ref: '#/definitions/tft-summoner-v1.SummonerDTO'
+            x-type: SummonerDTO
         '400':
           description: 'Bad request'
         '401':
@@ -8947,11 +8947,6 @@ definitions:
       - id
       - puuid
       - summonerLevel
-  tft-summoner-v1.SummonerDto:
-    type: object
-    title: SummonerDto
-    properties: {}
-    description: 'UNKNOWN TYPE.'
   tournament-stub-v4.TournamentCodeParameters:
     type: object
     title: TournamentCodeParameters
