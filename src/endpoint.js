@@ -2,6 +2,8 @@
 /// i.e. https://developer.riotgames.com/api-methods/#champion-mastery-v4
 /// An endpoint is the top-level collection of methods.
 
+const schemaOverrides = require('./data/schemaOverrides');
+
 const Method = require('./method');
 const Schema = require('./schema');
 
@@ -46,21 +48,27 @@ Endpoint.prototype._compile = function() {
       if (sub && sup) // Equal
         continue;
 
+      const canonName = `${dto.endpointName}.${dto.name}`;
       if (sub)
-        console.log(`    Duplicate DTO ${dto.name} is subset of existing.`);
+        console.log(`    Duplicate DTO '${canonName}' is subset of existing.`);
       else if (sup) {
-        console.log(`    Duplicate DTO ${dto.name} is superset of existing, overwriting.`);
+        console.log(`    Duplicate DTO '${canonName}' is superset of existing, overwriting.`);
         allDtos[dto.name] = dto;
       }
       else {
-        console.error(`    CONFLICTING DTO: ${dto.name}`);
-        console.error('    ORIGINAL DTO:');
-        console.error(`      ${JSON.stringify(existing, null, 2)
-          .split('\n').join('\n      ')}`);
-        console.error('    NEW DTO:');
-        console.error(`      ${JSON.stringify(dto, null, 2)
-          .split('\n').join('\n      ')}`);
-        throw Error(`DTO Conflict: ${dto.name}`);
+        console.error(`    CONFLICTING DTO: '${canonName}'`);
+        if (schemaOverrides[canonName]) {
+          console.error('    Conflicting DTO is overridden, continuing.');
+        }
+        else {
+          console.error('    ORIGINAL DTO:');
+          console.error(`      ${JSON.stringify(existing, null, 2)
+            .split('\n').join('\n      ')}`);
+          console.error('    NEW DTO:');
+          console.error(`      ${JSON.stringify(dto, null, 2)
+            .split('\n').join('\n      ')}`);
+          throw Error(`DTO Conflict: '${canonName}'`);
+        }
       }
     }
   }
