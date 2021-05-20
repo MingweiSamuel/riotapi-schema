@@ -25,7 +25,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
   { requiredByDefault = false, onlyUseRequiredByDefault = false, isParam = false, useDtoOptional = false } = {}) {
 
   if (null === schemaHtml.firstElementChild) {
-    console.log('!!!!', endpointName, methodName);
+    console.error('!!!!', endpointName, methodName);
   }
   const dtoName = schemaHtml.firstElementChild.textContent.trim();
   const dtoRename = methodDtoRenames[`${endpointName}.${methodName}.${dtoName}`]; // May be undefined.

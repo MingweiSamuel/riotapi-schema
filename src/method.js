@@ -141,6 +141,7 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
       requiredByDefault = true;
       onlyUseRequiredByDefault = true;
       // Fall through.
+    case 'header parameters': // Fall through.
     case 'query parameters':
       let inType = type.split(/\s+/, 1)[0];
       let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name, this.name, {
@@ -163,7 +164,7 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
         });
       break;
     default:
-      console.error('Unhandled api block: "' + type + '".');
+      console.error('    UNHANDLED API BLOCK: "' + type + '".');
   }
 };
 
