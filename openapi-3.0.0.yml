@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 740b69dba1cb8ebf40b4184aa0523becd4133916
+  version: 4885054846b9c9eaca86c5d964a9ec180a2e76ee
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -154,6 +154,60 @@ paths:
             type: string
             x-type: string
           description: 'When querying for a player by their riot id, the gameName and tagLine query params are required. However not all accounts have a gameName and tagLine associated so these fields may not be included in the response.'
+      x-endpoint: account-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - esports
+        - europe
+      x-route-enum: regional
+    x-endpoint: account-v1
+    x-platforms-available:
+      - americas
+      - asia
+      - esports
+      - europe
+    x-route-enum: regional
+  /riot/account/v1/accounts/me:
+    get:
+      tags:
+        - account-v1
+      summary: 'Get account by access token'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#account-v1/GET_getByAccessToken'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/account-v1.AccountDto'
+                x-type: AccountDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: account-v1.getByAccessToken
+      description: 'Get account by access token'
       x-endpoint: account-v1
       x-platforms-available:
         - americas
@@ -1726,6 +1780,173 @@ paths:
       - ru
       - tr1
     x-route-enum: platform
+  /lor/deck/v1/decks/me:
+    get:
+      tags:
+        - lor-deck-v1
+      summary: 'Get a list of the calling user''s decks.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lor-deck-v1/GET_getDecks'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/lor-deck-v1.DeckDto'
+                  x-type: DeckDto
+                x-type: 'List[DeckDto]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lor-deck-v1.getDecks
+      description: 'Get a list of the calling user''s decks.'
+      x-endpoint: lor-deck-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+        - sea
+      x-route-enum: regional
+    x-endpoint: lor-deck-v1
+    x-platforms-available:
+      - americas
+      - asia
+      - europe
+      - sea
+    x-route-enum: regional
+    post:
+      tags:
+        - lor-deck-v1
+      summary: 'Create a new deck for the calling user.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lor-deck-v1/POST_createDeck'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                x-type: String
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lor-deck-v1.createDeck
+      description: 'Create a new deck for the calling user.'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/lor-deck-v1.deck'
+              x-type: deck
+        required: true
+      x-endpoint: lor-deck-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+        - sea
+      x-route-enum: regional
+  /lor/inventory/v1/cards/me:
+    get:
+      tags:
+        - lor-inventory-v1
+      summary: 'Return a list of cards owned by the calling user.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lor-inventory-v1/GET_getCards'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/lor-inventory-v1.CardDto'
+                  x-type: CardDto
+                x-type: 'List[CardDto]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lor-inventory-v1.getCards
+      description: 'Return a list of cards owned by the calling user.'
+      x-endpoint: lor-inventory-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+        - sea
+      x-route-enum: regional
+    x-endpoint: lor-inventory-v1
+    x-platforms-available:
+      - americas
+      - asia
+      - europe
+      - sea
+    x-route-enum: regional
   '/lor/match/v1/matches/by-puuid/{puuid}/ids':
     get:
       tags:
@@ -3016,6 +3237,74 @@ paths:
       - ru
       - tr1
     x-route-enum: platform
+  /lol/summoner/v4/summoners/me:
+    get:
+      tags:
+        - summoner-v4
+      summary: 'Get a summoner by access token.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#summoner-v4/GET_getByAccessToken'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/summoner-v4.SummonerDTO'
+                x-type: SummonerDTO
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: summoner-v4.getByAccessToken
+      description: 'Get a summoner by access token.'
+      x-endpoint: summoner-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
+    x-endpoint: summoner-v4
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - ru
+      - tr1
+    x-route-enum: platform
   '/lol/summoner/v4/summoners/{encryptedSummonerId}':
     get:
       tags:
@@ -3979,6 +4268,74 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID'
+      x-endpoint: tft-summoner-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
+    x-endpoint: tft-summoner-v1
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - ru
+      - tr1
+    x-route-enum: platform
+  /tft/summoner/v1/summoners/me:
+    get:
+      tags:
+        - tft-summoner-v1
+      summary: 'Get a summoner by access token.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tft-summoner-v1/GET_getByAccessToken'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tft-summoner-v1.SummonerDto'
+                x-type: SummonerDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tft-summoner-v1.getByAccessToken
+      description: 'Get a summoner by access token.'
       x-endpoint: tft-summoner-v1
       x-platforms-available:
         - br1
@@ -6037,6 +6394,54 @@ components:
         - translations
         - created_at
         - updated_at
+    lor-deck-v1.DeckDto:
+      type: object
+      title: DeckDto
+      properties:
+        id:
+          type: string
+          x-type: string
+        name:
+          type: string
+          x-type: string
+        code:
+          type: string
+          x-type: string
+      required:
+        - id
+        - name
+        - code
+    lor-deck-v1.NewDeckDto:
+      type: object
+      title: NewDeckDto
+      properties:
+        name:
+          type: string
+          x-type: string
+        code:
+          type: string
+          x-type: string
+      required:
+        - name
+        - code
+    lor-deck-v1.deck:
+      type: object
+      title: deck
+      properties: {}
+      description: 'UNKNOWN TYPE.'
+    lor-inventory-v1.CardDto:
+      type: object
+      title: CardDto
+      properties:
+        code:
+          type: string
+          x-type: string
+        count:
+          type: string
+          x-type: string
+      required:
+        - code
+        - count
     lor-match-v1.MatchDto:
       type: object
       title: MatchDto
@@ -8007,8 +8412,9 @@ components:
         - teamId
         - spell1Id
     summoner-v4.SummonerDTO:
-      type: object
-      title: SummonerDTO
+      endpointName: summoner-v4
+      name: SummonerDTO
+      description: 'represents a summoner'
       properties:
         accountId:
           type: string
@@ -8023,7 +8429,7 @@ components:
           type: integer
           format: int64
           x-type: long
-          description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: summoner name change, summoner level change, or profile icon change.'
+          description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change'
         name:
           type: string
           x-type: string
@@ -8041,7 +8447,6 @@ components:
           format: int64
           x-type: long
           description: 'Summoner level associated with the summoner.'
-      description: 'represents a summoner'
       required:
         - accountId
         - profileIconId
@@ -8573,6 +8978,11 @@ components:
         - id
         - puuid
         - summonerLevel
+    tft-summoner-v1.SummonerDto:
+      type: object
+      title: SummonerDto
+      properties: {}
+      description: 'UNKNOWN TYPE.'
     tournament-stub-v4.TournamentCodeParameters:
       type: object
       title: TournamentCodeParameters
