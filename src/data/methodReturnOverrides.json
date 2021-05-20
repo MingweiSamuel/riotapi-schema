@@ -1,1 +1,6 @@
-{}
+{
+  "tft-summoner-v1.getByAccessToken": {
+    "$ref": "#/components/schemas/tft-summoner-v1.SummonerDTO",
+    "x-type": "SummonerDTO"
+  }
+}
