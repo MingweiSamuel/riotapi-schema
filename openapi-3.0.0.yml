@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 186c2e7defcb8e235e83db7797182b61866c35dc
+  version: 81a8d64a9d751b3cb28b7da6c5836c7c6c3485fe
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -208,6 +208,14 @@ paths:
           description: 'Gateway timeout'
       operationId: account-v1.getByAccessToken
       description: 'Get account by access token'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            x-type: string
       x-endpoint: account-v1
       x-platforms-available:
         - americas
@@ -1823,6 +1831,14 @@ paths:
           description: 'Gateway timeout'
       operationId: lor-deck-v1.getDecks
       description: 'Get a list of the calling user''s decks.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            x-type: String
       x-endpoint: lor-deck-v1
       x-platforms-available:
         - americas
@@ -1883,6 +1899,14 @@ paths:
               $ref: '#/components/schemas/lor-deck-v1.deck'
               x-type: deck
         required: true
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            x-type: String
       x-endpoint: lor-deck-v1
       x-platforms-available:
         - americas
@@ -1933,6 +1957,14 @@ paths:
           description: 'Gateway timeout'
       operationId: lor-inventory-v1.getCards
       description: 'Return a list of cards owned by the calling user.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            x-type: String
       x-endpoint: lor-inventory-v1
       x-platforms-available:
         - americas
@@ -3277,6 +3309,15 @@ paths:
           description: 'Gateway timeout'
       operationId: summoner-v4.getByAccessToken
       description: 'Get a summoner by access token.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+            x-type: string
+          description: 'Bearer token'
       x-endpoint: summoner-v4
       x-platforms-available:
         - br1
@@ -4336,6 +4377,15 @@ paths:
           description: 'Gateway timeout'
       operationId: tft-summoner-v1.getByAccessToken
       description: 'Get a summoner by access token.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: false
+          schema:
+            type: string
+            x-type: string
+          description: 'Bearer token.'
       x-endpoint: tft-summoner-v1
       x-platforms-available:
         - br1

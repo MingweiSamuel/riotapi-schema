@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 1e3032bc50fa8880c1cf3490bd4ea938f2487ccb
+  version: 8568f290ce6c7dea6f6f0a49c1a0250ded243022
 host: na1.api.riotgames.com
 x-host-platform:
   - americas
@@ -201,6 +201,14 @@ paths:
           description: 'Gateway timeout'
       operationId: account-v1.getByAccessToken
       description: 'Get account by access token'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: true
+          type: string
+          x-type: string
+          description: ""
       x-endpoint: account-v1
       x-platforms-available:
         - americas
@@ -1807,6 +1815,14 @@ paths:
           description: 'Gateway timeout'
       operationId: lor-deck-v1.getDecks
       description: 'Get a list of the calling user''s decks.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: true
+          type: string
+          x-type: String
+          description: ""
       x-endpoint: lor-deck-v1
       x-platforms-available:
         - americas
@@ -1860,6 +1876,21 @@ paths:
           description: 'Gateway timeout'
       operationId: lor-deck-v1.createDeck
       description: 'Create a new deck for the calling user.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: true
+          type: string
+          x-type: String
+          description: ""
+        -
+          required: true
+          schema:
+            $ref: '#/definitions/lor-deck-v1.deck'
+            x-type: deck
+          in: body
+          name: deck
       x-endpoint: lor-deck-v1
       x-platforms-available:
         - americas
@@ -1871,14 +1902,6 @@ paths:
         - application/json
       consumes:
         - application/json
-      parameters:
-        -
-          required: true
-          schema:
-            $ref: '#/definitions/lor-deck-v1.deck'
-            x-type: deck
-          in: body
-          name: deck
   /lor/inventory/v1/cards/me:
     get:
       tags:
@@ -1920,6 +1943,14 @@ paths:
           description: 'Gateway timeout'
       operationId: lor-inventory-v1.getCards
       description: 'Return a list of cards owned by the calling user.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: true
+          type: string
+          x-type: String
+          description: ""
       x-endpoint: lor-inventory-v1
       x-platforms-available:
         - americas
@@ -3243,6 +3274,14 @@ paths:
           description: 'Gateway timeout'
       operationId: summoner-v4.getByAccessToken
       description: 'Get a summoner by access token.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: false
+          description: 'Bearer token'
+          type: string
+          x-type: string
       x-endpoint: summoner-v4
       x-platforms-available:
         - br1
@@ -4296,6 +4335,14 @@ paths:
           description: 'Gateway timeout'
       operationId: tft-summoner-v1.getByAccessToken
       description: 'Get a summoner by access token.'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          required: false
+          description: 'Bearer token.'
+          type: string
+          x-type: string
       x-endpoint: tft-summoner-v1
       x-platforms-available:
         - br1
