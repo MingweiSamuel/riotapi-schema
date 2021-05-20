@@ -180,10 +180,9 @@ Method.prototype._handleResponseClasses = function(apiBlockHtml) {
 Method.prototype._handleBodyParameters = function(apiBlockHtml) {
   let table = apiBlockHtml.children[1];
   let tr = table.tBodies[0].children[0];
-  let code = tr.children[0];
 
-  this.bodyType = types.getType(code.childNodes[0].textContent.trim(), this.endpoint.name, this.name);
-  this.bodyRequired = 'required' === code.children[0].textContent.trim().toLowerCase();
+  this.bodyType = types.getType(tr.children[2].children[0].firstChild.textContent.trim(), this.endpoint.name, this.name);
+  this.bodyRequired = 'required' === tr.children[0].children[0].textContent.trim().toLowerCase();
   this.bodyDesc = tr.children[3].textContent.trim();
 
   let block = apiBlockHtml;
