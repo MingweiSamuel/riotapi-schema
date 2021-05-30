@@ -597,8 +597,8 @@
       "pickTurn"
     ]
   },
-  "match-v5.MatchInfoTeamObjectivesBaron": {
-    "title": "MatchInfoTeamObjectivesTower",
+  "match-v5.MatchInfoTeamObjective": {
+    "title": "MatchInfoTeamObjective",
     "type": "object",
     "properties": {
       "first": {
@@ -618,22 +618,22 @@
     "type": "object",
     "properties": {
       "baron": {
-        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron"
+        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjective"
       },
       "champion": {
-        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron"
+        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjective"
       },
       "dragon": {
-        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron"
+        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjective"
       },
       "inhibitor": {
-        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron"
+        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjective"
       },
       "riftHerald": {
-        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron"
+        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjective"
       },
       "tower": {
-        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron"
+        "$ref": "#/components/schemas/match-v5.MatchInfoTeamObjective"
       }
     },
     "required": [
