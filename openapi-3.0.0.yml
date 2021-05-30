@@ -3,7 +3,7 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: bbfb64a2ef9111c6610a823da800b0335587831d
+  version: ab7e7c1b08dd25a4f1bbffb952158d015006d741
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -8078,15 +8078,27 @@ components:
         - type
         - timestamp
     match-v5.MatchDto:
+      title: Match
       type: object
-      title: MatchDto
-      properties: {}
-      description: 'UNKNOWN TYPE.'
+      properties:
+        metadata:
+          $ref: '#/components/schemas/match-v5.MatchMetadata'
+        info:
+          $ref: '#/components/schemas/match-v5.MatchInfo'
+      required:
+        - metadata
+        - info
     match-v5.MatchTimelineDto:
+      title: MatchTimeline
       type: object
-      title: MatchTimelineDto
-      properties: {}
-      description: 'UNKNOWN TYPE.'
+      properties:
+        metadata:
+          $ref: '#/components/schemas/match-v5.MatchMetadata'
+        info:
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfo'
+      required:
+        - metadata
+        - info
     spectator-v4.CurrentGameInfo:
       type: object
       title: CurrentGameInfo
@@ -10444,6 +10456,884 @@ components:
         - translations
         - created_at
         - updated_at
+    match-v5.MatchMetadata:
+      title: MatchMetadata
+      type: object
+      properties:
+        dataVersion:
+          type: string
+        matchId:
+          type: string
+        participants:
+          type: array
+          items:
+            type: string
+      required:
+        - dataVersion
+        - matchId
+        - participants
+    match-v5.MatchInfoParticipantPerksStatPerks:
+      title: MatchInfoParticipantPerksStatPerks
+      type: object
+      properties:
+        defense:
+          type: integer
+        flex:
+          type: integer
+        offense:
+          type: integer
+      required:
+        - defense
+        - flex
+        - offense
+    match-v5.MatchInfoParticipantPerksStyleSelection:
+      title: MatchInfoParticipantPerksStyleSelection
+      type: object
+      properties:
+        perk:
+          type: integer
+        var1:
+          type: integer
+        var2:
+          type: integer
+        var3:
+          type: integer
+      required:
+        - perk
+        - var1
+        - var2
+        - var3
+    match-v5.MatchInfoParticipantPerksStyle:
+      title: MatchInfoParticipantPerksStyle
+      type: object
+      properties:
+        description:
+          type: string
+        selections:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchInfoParticipantPerksStyleSelection'
+        style:
+          type: integer
+      required:
+        - description
+        - selections
+        - style
+    match-v5.MatchInfoParticipantPerks:
+      title: MatchInfoParticipantPerks
+      type: object
+      properties:
+        statPerks:
+          $ref: '#/components/schemas/match-v5.MatchInfoParticipantPerksStatPerks'
+        styles:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchInfoParticipantPerksStyle'
+      required:
+        - statPerks
+        - styles
+    match-v5.MatchInfoParticipant:
+      title: MatchInfoParticipant
+      type: object
+      properties:
+        assists:
+          type: integer
+        baronKills:
+          type: integer
+        bountyLevel:
+          type: integer
+        champExperience:
+          type: integer
+        champLevel:
+          type: integer
+        championId:
+          type: integer
+          x-enum: champion
+        championName:
+          type: string
+        championTransform:
+          type: integer
+        consumablesPurchased:
+          type: integer
+        damageDealtToBuildings:
+          type: integer
+        damageDealtToObjectives:
+          type: integer
+        damageDealtToTurrets:
+          type: integer
+        damageSelfMitigated:
+          type: integer
+        deaths:
+          type: integer
+        detectorWardsPlaced:
+          type: integer
+        doubleKills:
+          type: integer
+        dragonKills:
+          type: integer
+        firstBloodAssist:
+          type: boolean
+        firstBloodKill:
+          type: boolean
+        firstTowerAssist:
+          type: boolean
+        firstTowerKill:
+          type: boolean
+        gameEndedInEarlySurrender:
+          type: boolean
+        gameEndedInSurrender:
+          type: boolean
+        goldEarned:
+          type: integer
+        goldSpent:
+          type: integer
+        individualPosition:
+          type: string
+        inhibitorKills:
+          type: integer
+        inhibitorsLost:
+          type: integer
+        item0:
+          type: integer
+        item1:
+          type: integer
+        item2:
+          type: integer
+        item3:
+          type: integer
+        item4:
+          type: integer
+        item5:
+          type: integer
+        item6:
+          type: integer
+        itemsPurchased:
+          type: integer
+        killingSprees:
+          type: integer
+        kills:
+          type: integer
+        lane:
+          type: string
+        largestCriticalStrike:
+          type: integer
+        largestKillingSpree:
+          type: integer
+        largestMultiKill:
+          type: integer
+        longestTimeSpentLiving:
+          type: integer
+        magicDamageDealt:
+          type: integer
+        magicDamageDealtToChampions:
+          type: integer
+        magicDamageTaken:
+          type: integer
+        neutralMinionsKilled:
+          type: integer
+        nexusKills:
+          type: integer
+        nexusLost:
+          type: integer
+        objectivesStolen:
+          type: integer
+        objectivesStolenAssists:
+          type: integer
+        participantId:
+          type: integer
+        pentaKills:
+          type: integer
+        perks:
+          $ref: '#/components/schemas/match-v5.MatchInfoParticipantPerks'
+        physicalDamageDealt:
+          type: integer
+        physicalDamageDealtToChampions:
+          type: integer
+        physicalDamageTaken:
+          type: integer
+        profileIcon:
+          type: integer
+        puuid:
+          type: string
+        quadraKills:
+          type: integer
+        riotIdName:
+          type: string
+        riotIdTagline:
+          type: string
+        role:
+          type: string
+        sightWardsBoughtInGame:
+          type: integer
+        spell1Casts:
+          type: integer
+        spell2Casts:
+          type: integer
+        spell3Casts:
+          type: integer
+        spell4Casts:
+          type: integer
+        summoner1Casts:
+          type: integer
+        summoner1Id:
+          type: integer
+        summoner2Casts:
+          type: integer
+        summoner2Id:
+          type: integer
+        summonerId:
+          type: string
+        summonerLevel:
+          type: integer
+        summonerName:
+          type: string
+        teamEarlySurrendered:
+          type: boolean
+        teamId:
+          type: integer
+          x-enum: team
+        teamPosition:
+          type: string
+        timeCCingOthers:
+          type: integer
+        timePlayed:
+          type: integer
+        totalDamageDealt:
+          type: integer
+        totalDamageDealtToChampions:
+          type: integer
+        totalDamageShieldedOnTeammates:
+          type: integer
+        totalDamageTaken:
+          type: integer
+        totalHeal:
+          type: integer
+        totalHealsOnTeammates:
+          type: integer
+        totalMinionsKilled:
+          type: integer
+        totalTimeCCDealt:
+          type: integer
+        totalTimeSpentDead:
+          type: integer
+        totalUnitsHealed:
+          type: integer
+        tripleKills:
+          type: integer
+        trueDamageDealt:
+          type: integer
+        trueDamageDealtToChampions:
+          type: integer
+        trueDamageTaken:
+          type: integer
+        turretKills:
+          type: integer
+        turretsLost:
+          type: integer
+        unrealKills:
+          type: integer
+        visionScore:
+          type: integer
+        visionWardsBoughtInGame:
+          type: integer
+        wardsKilled:
+          type: integer
+        wardsPlaced:
+          type: integer
+        win:
+          type: boolean
+      required:
+        - assists
+        - baronKills
+        - bountyLevel
+        - champExperience
+        - champLevel
+        - championId
+        - championName
+        - championTransform
+        - consumablesPurchased
+        - damageDealtToBuildings
+        - damageDealtToObjectives
+        - damageDealtToTurrets
+        - damageSelfMitigated
+        - deaths
+        - detectorWardsPlaced
+        - doubleKills
+        - dragonKills
+        - firstBloodAssist
+        - firstBloodKill
+        - firstTowerAssist
+        - firstTowerKill
+        - gameEndedInEarlySurrender
+        - gameEndedInSurrender
+        - goldEarned
+        - goldSpent
+        - individualPosition
+        - inhibitorKills
+        - inhibitorsLost
+        - item0
+        - item1
+        - item2
+        - item3
+        - item4
+        - item5
+        - item6
+        - itemsPurchased
+        - killingSprees
+        - kills
+        - lane
+        - largestCriticalStrike
+        - largestKillingSpree
+        - largestMultiKill
+        - longestTimeSpentLiving
+        - magicDamageDealt
+        - magicDamageDealtToChampions
+        - magicDamageTaken
+        - neutralMinionsKilled
+        - nexusKills
+        - nexusLost
+        - objectivesStolen
+        - objectivesStolenAssists
+        - participantId
+        - pentaKills
+        - perks
+        - physicalDamageDealt
+        - physicalDamageDealtToChampions
+        - physicalDamageTaken
+        - profileIcon
+        - puuid
+        - quadraKills
+        - riotIdName
+        - riotIdTagline
+        - role
+        - sightWardsBoughtInGame
+        - spell1Casts
+        - spell2Casts
+        - spell3Casts
+        - spell4Casts
+        - summoner1Casts
+        - summoner1Id
+        - summoner2Casts
+        - summoner2Id
+        - summonerId
+        - summonerLevel
+        - summonerName
+        - teamEarlySurrendered
+        - teamId
+        - teamPosition
+        - timeCCingOthers
+        - timePlayed
+        - totalDamageDealt
+        - totalDamageDealtToChampions
+        - totalDamageShieldedOnTeammates
+        - totalDamageTaken
+        - totalHeal
+        - totalHealsOnTeammates
+        - totalMinionsKilled
+        - totalTimeCCDealt
+        - totalTimeSpentDead
+        - totalUnitsHealed
+        - tripleKills
+        - trueDamageDealt
+        - trueDamageDealtToChampions
+        - trueDamageTaken
+        - turretKills
+        - turretsLost
+        - unrealKills
+        - visionScore
+        - visionWardsBoughtInGame
+        - wardsKilled
+        - wardsPlaced
+        - win
+    match-v5.MatchInfoTeamBan:
+      title: MatchInfoTeamBan
+      type: object
+      properties:
+        championId:
+          type: integer
+          x-enum: champion
+        pickTurn:
+          type: integer
+      required:
+        - championId
+        - pickTurn
+    match-v5.MatchInfoTeamObjectivesBaron:
+      title: MatchInfoTeamObjectivesTower
+      type: object
+      properties:
+        first:
+          type: boolean
+        kills:
+          type: integer
+      required:
+        - first
+        - kills
+    match-v5.MatchInfoTeamObjectives:
+      title: MatchInfoTeamObjectives
+      type: object
+      properties:
+        baron:
+          $ref: '#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron'
+        champion:
+          $ref: '#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron'
+        dragon:
+          $ref: '#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron'
+        inhibitor:
+          $ref: '#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron'
+        riftHerald:
+          $ref: '#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron'
+        tower:
+          $ref: '#/components/schemas/match-v5.MatchInfoTeamObjectivesBaron'
+      required:
+        - baron
+        - champion
+        - dragon
+        - inhibitor
+        - riftHerald
+        - tower
+    match-v5.MatchInfoTeam:
+      title: MatchInfoTeam
+      type: object
+      properties:
+        bans:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchInfoTeamBan'
+        objectives:
+          $ref: '#/components/schemas/match-v5.MatchInfoTeamObjectives'
+        teamId:
+          type: integer
+          x-enum: team
+        win:
+          type: boolean
+      required:
+        - bans
+        - objectives
+        - teamId
+        - win
+    match-v5.MatchInfo:
+      title: MatchInfo
+      type: object
+      properties:
+        gameCreation:
+          type: integer
+        gameDuration:
+          type: integer
+        gameId:
+          type: integer
+        gameMode:
+          type: string
+          x-enum: gameMode
+        gameName:
+          type: string
+        gameStartTimestamp:
+          type: integer
+        gameType:
+          type: string
+          x-enum: gameType
+        gameVersion:
+          type: string
+        mapId:
+          type: integer
+          x-enum: map
+        participants:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchInfoParticipant'
+        platformId:
+          type: string
+        queueId:
+          type: integer
+          x-enum: queue
+        teams:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchInfoTeam'
+      required:
+        - gameCreation
+        - gameDuration
+        - gameId
+        - gameMode
+        - gameName
+        - gameStartTimestamp
+        - gameType
+        - gameVersion
+        - mapId
+        - participants
+        - platformId
+        - queueId
+        - teams
+    match-v5.MatchTimelineInfoFrameEvent:
+      title: MatchTimelineInfoFrameEvent
+      type: object
+      properties:
+        realTimestamp:
+          type: integer
+        timestamp:
+          type: integer
+        type:
+          type: string
+        itemId:
+          type: integer
+        participantId:
+          type: integer
+        levelUpType:
+          type: string
+        skillSlot:
+          type: integer
+        creatorId:
+          type: integer
+        wardType:
+          type: string
+        level:
+          type: integer
+        assistingParticipantIds:
+          type: array
+          items:
+            type: integer
+        bounty:
+          type: integer
+        killStreakLength:
+          type: integer
+        killerId:
+          type: integer
+        position:
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFramePosition'
+        victimDamageDealt:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameEventVictimDamageDealt'
+        victimDamageReceived:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameEventVictimDamageDealt'
+        victimId:
+          type: integer
+        killType:
+          type: string
+        laneType:
+          type: string
+        teamId:
+          type: integer
+          x-enum: team
+        multiKillLength:
+          type: integer
+        killerTeamId:
+          type: integer
+          x-enum: team
+        monsterType:
+          type: string
+        monsterSubType:
+          type: string
+        buildingType:
+          type: string
+        towerType:
+          type: string
+        afterId:
+          type: integer
+        beforeId:
+          type: integer
+        goldGain:
+          type: integer
+        gameId:
+          type: integer
+        winningTeam:
+          type: integer
+        transformType:
+          type: string
+        name:
+          type: string
+      required:
+        - timestamp
+        - type
+    match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats:
+      title: MatchTimelineInfoFrameParticipantFrameChampionStats
+      type: object
+      properties:
+        abilityHaste:
+          type: integer
+        abilityPower:
+          type: integer
+        armor:
+          type: integer
+        armorPen:
+          type: integer
+        armorPenPercent:
+          type: integer
+        attackDamage:
+          type: integer
+        attackSpeed:
+          type: integer
+        bonusArmorPenPercent:
+          type: integer
+        bonusMagicPenPercent:
+          type: integer
+        ccReduction:
+          type: integer
+        cooldownReduction:
+          type: integer
+        health:
+          type: integer
+        healthMax:
+          type: integer
+        healthRegen:
+          type: integer
+        lifesteal:
+          type: integer
+        magicPen:
+          type: integer
+        magicPenPercent:
+          type: integer
+        magicResist:
+          type: integer
+        movementSpeed:
+          type: integer
+        omnivamp:
+          type: integer
+        physicalVamp:
+          type: integer
+        power:
+          type: integer
+        powerMax:
+          type: integer
+        powerRegen:
+          type: integer
+        spellVamp:
+          type: integer
+      required:
+        - abilityHaste
+        - abilityPower
+        - armor
+        - armorPen
+        - armorPenPercent
+        - attackDamage
+        - attackSpeed
+        - bonusArmorPenPercent
+        - bonusMagicPenPercent
+        - ccReduction
+        - cooldownReduction
+        - health
+        - healthMax
+        - healthRegen
+        - lifesteal
+        - magicPen
+        - magicPenPercent
+        - magicResist
+        - movementSpeed
+        - omnivamp
+        - physicalVamp
+        - power
+        - powerMax
+        - powerRegen
+        - spellVamp
+    match-v5.MatchTimelineInfoFrameParticipantFrameDamageStats:
+      title: MatchTimelineInfoFrameParticipantFrameDamageStats
+      type: object
+      properties:
+        magicDamageDone:
+          type: integer
+        magicDamageDoneToChampions:
+          type: integer
+        magicDamageTaken:
+          type: integer
+        physicalDamageDone:
+          type: integer
+        physicalDamageDoneToChampions:
+          type: integer
+        physicalDamageTaken:
+          type: integer
+        totalDamageDone:
+          type: integer
+        totalDamageDoneToChampions:
+          type: integer
+        totalDamageTaken:
+          type: integer
+        trueDamageDone:
+          type: integer
+        trueDamageDoneToChampions:
+          type: integer
+        trueDamageTaken:
+          type: integer
+      required:
+        - magicDamageDone
+        - magicDamageDoneToChampions
+        - magicDamageTaken
+        - physicalDamageDone
+        - physicalDamageDoneToChampions
+        - physicalDamageTaken
+        - totalDamageDone
+        - totalDamageDoneToChampions
+        - totalDamageTaken
+        - trueDamageDone
+        - trueDamageDoneToChampions
+        - trueDamageTaken
+    match-v5.MatchTimelineInfoFrameParticipantFramePosition:
+      title: MatchTimelineInfoFrameParticipantFramePosition
+      type: object
+      properties:
+        x:
+          type: integer
+        y:
+          type: integer
+      required:
+        - x
+        - y
+    match-v5.MatchTimelineInfoFrameParticipantFrame:
+      title: MatchTimelineInfoFrameParticipantFrame
+      type: object
+      properties:
+        championStats:
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats'
+        currentGold:
+          type: integer
+        damageStats:
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrameDamageStats'
+        goldPerSecond:
+          type: integer
+        jungleMinionsKilled:
+          type: integer
+        level:
+          type: integer
+        minionsKilled:
+          type: integer
+        participantId:
+          type: integer
+        position:
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFramePosition'
+        timeEnemySpentControlled:
+          type: integer
+        totalGold:
+          type: integer
+        xp:
+          type: integer
+      required:
+        - championStats
+        - currentGold
+        - damageStats
+        - goldPerSecond
+        - jungleMinionsKilled
+        - level
+        - minionsKilled
+        - participantId
+        - position
+        - timeEnemySpentControlled
+        - totalGold
+        - xp
+    match-v5.MatchTimelineInfoFrameParticipantFrames:
+      title: MatchTimelineInfoFrameParticipantFrames
+      type: object
+      properties:
+        '1':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '2':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '3':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '4':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '5':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '6':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '7':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '8':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '9':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+        '10':
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame'
+      required:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+        - '6'
+        - '7'
+        - '8'
+        - '9'
+        - '10'
+    match-v5.MatchTimelineInfoFrame:
+      title: MatchTimelineInfoFrame
+      type: object
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameEvent'
+        participantFrames:
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrames'
+        timestamp:
+          type: integer
+      required:
+        - events
+        - participantFrames
+        - timestamp
+    match-v5.MatchTimelineInfoFrameEventVictimDamageDealt:
+      title: MatchTimelineInfoFrameEventVictimDamageReceived
+      type: object
+      properties:
+        basic:
+          type: boolean
+        magicDamage:
+          type: integer
+        name:
+          type: string
+        participantId:
+          type: integer
+        physicalDamage:
+          type: integer
+        spellName:
+          type: string
+        spellSlot:
+          type: integer
+        trueDamage:
+          type: integer
+        type:
+          type: string
+      required:
+        - basic
+        - magicDamage
+        - name
+        - participantId
+        - physicalDamage
+        - spellName
+        - spellSlot
+        - trueDamage
+        - type
+    match-v5.MatchTimelineInfoParticipant:
+      title: MatchTimelineInfoParticipant
+      type: object
+      properties:
+        participantId:
+          type: integer
+        puuid:
+          type: string
+      required:
+        - participantId
+        - puuid
+    match-v5.MatchTimelineInfo:
+      title: MatchTimelineInfo
+      type: object
+      properties:
+        frameInterval:
+          type: integer
+        frames:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrame'
+        gameId:
+          type: integer
+        participants:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchTimelineInfoParticipant'
+      required:
+        - frameInterval
+        - frames
+        - gameId
+        - participants
   securitySchemes:
     api_key:
       type: apiKey
