@@ -744,7 +744,7 @@
     ]
   },
   "match-v5.MatchDto": {
-    "title": "Match",
+    "title": "MatchDto",
     "type": "object",
     "properties": {
       "metadata": {
@@ -1280,7 +1280,7 @@
     ]
   },
   "match-v5.MatchTimelineDto": {
-    "title": "MatchTimeline",
+    "title": "MatchTimelineDto",
     "type": "object",
     "properties": {
       "metadata": {
