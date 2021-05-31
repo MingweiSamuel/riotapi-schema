@@ -7,11 +7,15 @@
     "league-v4.getLeagueById": true,
     "tft-league-v1.getLeagueById": true,
 
-    "match-v4.getMatch": true,
-    "tft-match-v1.getMatch": true,
 
+    "match-v4.getMatch": true,
     "match-v4.getMatchTimeline": true,
     "match-v4.getMatchlist": true,
+
+    "match-v5.getMatch": true,
+    "match-v5.getTimeline": true,
+
+    "tft-match-v1.getMatch": true,
 
     "spectator-v4.getCurrentGameInfoBySummoner": true,
 
