@@ -4,7 +4,7 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "257d4d2c35e8ebeb6656c4c0e3291a0706714f04"
+    "version": "7682ab4d74eadbac9f6283fbfdb26450118d0df8"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -362,6 +362,7 @@
             "type": "string",
             "x-type": "string",
             "enum": [
+              "",
               "val",
               "lor"
             ],
@@ -1364,6 +1365,7 @@
             "x-type": "string",
             "x-enum": "queueType",
             "enum": [
+              "",
               "RANKED_SOLO_5x5",
               "RANKED_TFT",
               "RANKED_FLEX_SR",
@@ -1378,6 +1380,7 @@
             "x-type": "string",
             "x-enum": "tier",
             "enum": [
+              "",
               "CHALLENGER",
               "GRANDMASTER",
               "MASTER",
@@ -1398,6 +1401,7 @@
             "x-type": "string",
             "x-enum": "division",
             "enum": [
+              "",
               "I",
               "II",
               "III",
@@ -1513,6 +1517,7 @@
             "x-type": "string",
             "x-enum": "queueType",
             "enum": [
+              "",
               "RANKED_SOLO_5x5",
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT"
@@ -1725,6 +1730,7 @@
             "x-type": "string",
             "x-enum": "division",
             "enum": [
+              "",
               "I",
               "II",
               "III",
@@ -1740,6 +1746,7 @@
             "x-type": "string",
             "x-enum": "tier",
             "enum": [
+              "",
               "DIAMOND",
               "PLATINUM",
               "GOLD",
@@ -1758,6 +1765,7 @@
             "x-type": "string",
             "x-enum": "queueType",
             "enum": [
+              "",
               "RANKED_SOLO_5x5",
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT"
@@ -1871,6 +1879,7 @@
             "x-type": "string",
             "x-enum": "queueType",
             "enum": [
+              "",
               "RANKED_SOLO_5x5",
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT"
@@ -2076,6 +2085,7 @@
             "x-type": "string",
             "x-enum": "queueType",
             "enum": [
+              "",
               "RANKED_SOLO_5x5",
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT"
@@ -3546,6 +3556,30 @@
             "description": ""
           },
           {
+            "name": "queue",
+            "in": "query",
+            "required": false,
+            "description": "Filter the list of match ids by a specific queue id. This filter is mutually inclusive of the type filter meaning any match ids returned must match both the queue and type filters.",
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Filter the list of match ids by the type of match. This filter is mutually inclusive of the queue filter meaning any match ids returned must match both the queue and type filters.",
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "",
+              "ranked",
+              "normal",
+              "tourney",
+              "tutorial"
+            ]
+          },
+          {
             "name": "start",
             "in": "query",
             "required": false,
@@ -3558,7 +3592,7 @@
             "name": "count",
             "in": "query",
             "required": false,
-            "description": "Defaults to 20. Valid values: 0 to 100. Match id count.",
+            "description": "Defaults to 20. Valid values: 0 to 100. Number of match ids to return.",
             "type": "integer",
             "format": "int32",
             "x-type": "int"
@@ -4694,6 +4728,7 @@
             "type": "string",
             "x-type": "string",
             "enum": [
+              "",
               "DIAMOND",
               "PLATINUM",
               "GOLD",
@@ -4710,6 +4745,7 @@
             "type": "string",
             "x-type": "string",
             "enum": [
+              "",
               "I",
               "II",
               "III",
@@ -5107,6 +5143,7 @@
             "x-type": "string",
             "x-enum": "queueType",
             "enum": [
+              "",
               "RANKED_TFT_TURBO"
             ],
             "description": ""
@@ -7128,6 +7165,7 @@
             "type": "string",
             "x-type": "string",
             "enum": [
+              "",
               "competitive",
               "unrated",
               "spikerush",
