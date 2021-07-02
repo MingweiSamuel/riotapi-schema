@@ -725,6 +725,9 @@
         "items": {
           "$ref": "#/components/schemas/match-v5.MatchInfoTeam"
         }
+      },
+      "tournamentCode": {
+        "type": "string"
       }
     },
     "required": [
