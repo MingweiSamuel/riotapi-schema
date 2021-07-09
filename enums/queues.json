@@ -790,6 +790,16 @@
     "x-name": "NEXUS_BLITZ_NEXUS_BLITZ"
   },
   {
+    "queueId": 1400,
+    "map": "Summoner's Rift",
+    "description": "Ultimate Spellbook",
+    "notes": null,
+    "x-value": 1400,
+    "x-deprecated": false,
+    "x-desc": "Ultimate Spellbook games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_ULTIMATE_SPELLBOOK"
+  },
+  {
     "queueId": 2000,
     "map": "Summoner's Rift",
     "description": "Tutorial 1",
