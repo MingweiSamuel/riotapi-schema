@@ -17,5 +17,11 @@
         "map": "Nexus Blitz",
         "description": "Nexus Blitz games",
         "notes": null
+    },
+    {
+        "queueId": 1400,
+        "map": "Summoner's Rift",
+        "description": "Ultimate Spellbook",
+        "notes": null
     }
 ]
