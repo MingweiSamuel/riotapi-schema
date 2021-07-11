@@ -1,5 +1,9 @@
 [
     {
+        "gameMode": "ULTBOOK",
+        "description": "Ultimate Spellbook games."
+    },
+    {
         "gameMode": "GAMEMODEX",
         "description": "Nexus Blitz games, deprecated in patch 9.2 in favor of gameMode NEXUSBLITZ."
     },
