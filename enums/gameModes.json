@@ -147,6 +147,13 @@
     "x-desc": "Tutorial: Shop for Gear."
   },
   {
+    "gameMode": "ULTBOOK",
+    "description": "Ultimate Spellbook games.",
+    "x-value": "ULTBOOK",
+    "x-name": "ULTBOOK",
+    "x-desc": "Ultimate Spellbook games."
+  },
+  {
     "gameMode": "URF",
     "description": "URF games",
     "x-value": "URF",
