@@ -5,7 +5,7 @@ const hash = require('object-hash');
 // Riot API exclusively uses JSON.
 const MIME_JSON = 'application/json';
 
-function toSpec({ endpoints, regions, description, schemaOverrides }) {
+function toSpec({ endpoints, regions, description, schemaOverrides, enumsHash }) {
   const methods = endpoints.flatMap(endpoint => endpoint.methods);
   const paths = {};
   methods.forEach(method => {
@@ -141,6 +141,8 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
       versioned[key] = value;
   }
   spec.info.version = hash(versioned);
+  spec.info['x-hash'] = spec.info.version + enumsHash;
+  spec.info['x-enumsHash'] = enumsHash;
 
   // Update `$ref`s.
   function ref(obj) {

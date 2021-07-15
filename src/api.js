@@ -2,6 +2,7 @@
 
 const fs = require("fs-extra");
 const YAML = require('yamljs');
+const hash = require('object-hash');
 
 // Two-try request function.
 const req = (function(req) {
@@ -181,6 +182,7 @@ async function writeEnums() {
 
     return { filename, enums };
   }
+
   const enumDatas = await Promise.all([
     getEnumData("http://static.developer.riotgames.com/docs/lol/seasons.json", 'id', enums => {
       for (const enumb of enums)
@@ -259,10 +261,16 @@ async function writeEnums() {
     writeIndexPromise,
     ...writeEnumsPromises
   ]);
+
+  const hashObj = {}
+  for (const { filename, enums } of enumDatas) {
+    hashObj[filename] = enums;
+  }
+  return hash(hashObj);
 }
 
 
-async function writeOutput(endpoints) {
+async function writeOutput(endpoints, enumsHash) {
 
   const regions = [];
   endpoints.forEach(endpoint =>
@@ -296,6 +304,9 @@ Rebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds
 ***
 `;
 
+  // Add enumsHash.
+  data.enumsHash = enumsHash;
+
   // Write specs.
   await Promise.all(specs.map(spec => {
     let out = spec.toSpec(data);
@@ -328,10 +339,12 @@ module.exports = async function(rootDir) {
   let missingDtoNames = await fixMissingDtos(endpoints);
   missingDtoNames.sort();
 
+  // Hash version of enums.
+  const enumsHash = await writeEnumsPromise;
+
   // Write output spec files.
   await Promise.all([
-    writeEnumsPromise,
-    writeOutput(endpoints),
+    writeOutput(endpoints, enumsHash),
     fs.writeFile("missing.json", JSON.stringify(missingDtoNames, null, 2))
   ]);
 };

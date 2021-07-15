@@ -2,7 +2,7 @@
 
 const hash = require('object-hash');
 
-function toSpec({ endpoints, regions, description, schemaOverrides }) {
+function toSpec({ endpoints, regions, description, schemaOverrides, enumsHash }) {
   const paths = {};
   endpoints.forEach(endpoint => {
     endpoint.methods.forEach(method => {
@@ -93,6 +93,9 @@ function toSpec({ endpoints, regions, description, schemaOverrides }) {
       versioned[key] = value;
   }
   spec.info.version = hash(versioned);
+  spec.info['x-hash'] = spec.info.version + enumsHash;
+  spec.info['x-enumsHash'] = enumsHash;
+
   return spec;
 };
 
