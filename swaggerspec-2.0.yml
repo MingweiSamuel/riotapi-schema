@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 9bdea9a06ab258f2a4828744b14204397f30ef85
-  x-hash: 9bdea9a06ab258f2a4828744b14204397f30ef85c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
+  version: 854c75d05e5a7766bf42c8801fe339a707cbff54
+  x-hash: 854c75d05e5a7766bf42c8801fe339a707cbff54c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
   x-enumsHash: c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
 host: na1.api.riotgames.com
 x-host-platform:
@@ -5716,10 +5716,13 @@ definitions:
     properties:
       defense:
         type: integer
+        format: int32
       flex:
         type: integer
+        format: int32
       offense:
         type: integer
+        format: int32
     required:
       - defense
       - flex
@@ -5730,12 +5733,16 @@ definitions:
     properties:
       perk:
         type: integer
+        format: int32
       var1:
         type: integer
+        format: int32
       var2:
         type: integer
+        format: int32
       var3:
         type: integer
+        format: int32
     required:
       - perk
       - var1
@@ -5753,6 +5760,7 @@ definitions:
           $ref: '#/definitions/match-v5.MatchInfoParticipantPerksStyleSelection'
       style:
         type: integer
+        format: int32
     required:
       - description
       - selections
@@ -5776,39 +5784,55 @@ definitions:
     properties:
       assists:
         type: integer
+        format: int32
       baronKills:
         type: integer
+        format: int32
       bountyLevel:
         type: integer
+        format: int32
       champExperience:
         type: integer
+        format: int32
       champLevel:
         type: integer
+        format: int32
       championId:
         type: integer
+        format: int32
         x-enum: champion
       championName:
         type: string
       championTransform:
         type: integer
+        format: int32
       consumablesPurchased:
         type: integer
+        format: int32
       damageDealtToBuildings:
         type: integer
+        format: int32
       damageDealtToObjectives:
         type: integer
+        format: int32
       damageDealtToTurrets:
         type: integer
+        format: int32
       damageSelfMitigated:
         type: integer
+        format: int32
       deaths:
         type: integer
+        format: int32
       detectorWardsPlaced:
         type: integer
+        format: int32
       doubleKills:
         type: integer
+        format: int32
       dragonKills:
         type: integer
+        format: int32
       firstBloodAssist:
         type: boolean
       firstBloodKill:
@@ -5823,78 +5847,111 @@ definitions:
         type: boolean
       goldEarned:
         type: integer
+        format: int32
       goldSpent:
         type: integer
+        format: int32
       individualPosition:
         type: string
       inhibitorKills:
         type: integer
+        format: int32
       inhibitorsLost:
         type: integer
+        format: int32
       item0:
         type: integer
+        format: int32
       item1:
         type: integer
+        format: int32
       item2:
         type: integer
+        format: int32
       item3:
         type: integer
+        format: int32
       item4:
         type: integer
+        format: int32
       item5:
         type: integer
+        format: int32
       item6:
         type: integer
+        format: int32
       itemsPurchased:
         type: integer
+        format: int32
       killingSprees:
         type: integer
+        format: int32
       kills:
         type: integer
+        format: int32
       lane:
         type: string
       largestCriticalStrike:
         type: integer
+        format: int32
       largestKillingSpree:
         type: integer
+        format: int32
       largestMultiKill:
         type: integer
+        format: int32
       longestTimeSpentLiving:
         type: integer
+        format: int32
       magicDamageDealt:
         type: integer
+        format: int32
       magicDamageDealtToChampions:
         type: integer
+        format: int32
       magicDamageTaken:
         type: integer
+        format: int32
       neutralMinionsKilled:
         type: integer
+        format: int32
       nexusKills:
         type: integer
+        format: int32
       nexusLost:
         type: integer
+        format: int32
       objectivesStolen:
         type: integer
+        format: int32
       objectivesStolenAssists:
         type: integer
+        format: int32
       participantId:
         type: integer
+        format: int32
       pentaKills:
         type: integer
+        format: int32
       perks:
         $ref: '#/definitions/match-v5.MatchInfoParticipantPerks'
       physicalDamageDealt:
         type: integer
+        format: int32
       physicalDamageDealtToChampions:
         type: integer
+        format: int32
       physicalDamageTaken:
         type: integer
+        format: int32
       profileIcon:
         type: integer
+        format: int32
       puuid:
         type: string
       quadraKills:
         type: integer
+        format: int32
       riotIdName:
         type: string
       riotIdTagline:
@@ -5903,81 +5960,115 @@ definitions:
         type: string
       sightWardsBoughtInGame:
         type: integer
+        format: int32
       spell1Casts:
         type: integer
+        format: int32
       spell2Casts:
         type: integer
+        format: int32
       spell3Casts:
         type: integer
+        format: int32
       spell4Casts:
         type: integer
+        format: int32
       summoner1Casts:
         type: integer
+        format: int32
       summoner1Id:
         type: integer
+        format: int32
       summoner2Casts:
         type: integer
+        format: int32
       summoner2Id:
         type: integer
+        format: int32
       summonerId:
         type: string
       summonerLevel:
         type: integer
+        format: int32
       summonerName:
         type: string
       teamEarlySurrendered:
         type: boolean
       teamId:
         type: integer
+        format: int32
         x-enum: team
       teamPosition:
         type: string
       timeCCingOthers:
         type: integer
+        format: int32
       timePlayed:
         type: integer
+        format: int32
       totalDamageDealt:
         type: integer
+        format: int32
       totalDamageDealtToChampions:
         type: integer
+        format: int32
       totalDamageShieldedOnTeammates:
         type: integer
+        format: int32
       totalDamageTaken:
         type: integer
+        format: int32
       totalHeal:
         type: integer
+        format: int32
       totalHealsOnTeammates:
         type: integer
+        format: int32
       totalMinionsKilled:
         type: integer
+        format: int32
       totalTimeCCDealt:
         type: integer
+        format: int32
       totalTimeSpentDead:
         type: integer
+        format: int32
       totalUnitsHealed:
         type: integer
+        format: int32
       tripleKills:
         type: integer
+        format: int32
       trueDamageDealt:
         type: integer
+        format: int32
       trueDamageDealtToChampions:
         type: integer
+        format: int32
       trueDamageTaken:
         type: integer
+        format: int32
       turretKills:
         type: integer
+        format: int32
       turretsLost:
         type: integer
+        format: int32
       unrealKills:
         type: integer
+        format: int32
       visionScore:
         type: integer
+        format: int32
       visionWardsBoughtInGame:
         type: integer
+        format: int32
       wardsKilled:
         type: integer
+        format: int32
       wardsPlaced:
         type: integer
+        format: int32
       win:
         type: boolean
     required:
@@ -6089,9 +6180,11 @@ definitions:
     properties:
       championId:
         type: integer
+        format: int32
         x-enum: champion
       pickTurn:
         type: integer
+        format: int32
     required:
       - championId
       - pickTurn
@@ -6103,6 +6196,7 @@ definitions:
         type: boolean
       kills:
         type: integer
+        format: int32
     required:
       - first
       - kills
@@ -6141,6 +6235,7 @@ definitions:
         $ref: '#/definitions/match-v5.MatchInfoTeamObjectives'
       teamId:
         type: integer
+        format: int32
         x-enum: team
       win:
         type: boolean
@@ -6155,10 +6250,13 @@ definitions:
     properties:
       gameCreation:
         type: integer
+        format: int64
       gameDuration:
         type: integer
+        format: int32
       gameId:
         type: integer
+        format: int64
       gameMode:
         type: string
         x-enum: gameMode
@@ -6166,6 +6264,7 @@ definitions:
         type: string
       gameStartTimestamp:
         type: integer
+        format: int64
       gameType:
         type: string
         x-enum: gameType
@@ -6173,6 +6272,7 @@ definitions:
         type: string
       mapId:
         type: integer
+        format: int32
         x-enum: map
       participants:
         type: array
@@ -6182,6 +6282,7 @@ definitions:
         type: string
       queueId:
         type: integer
+        format: int32
         x-enum: queue
       teams:
         type: array
@@ -6220,34 +6321,45 @@ definitions:
     properties:
       realTimestamp:
         type: integer
+        format: int32
       timestamp:
         type: integer
+        format: int32
       type:
         type: string
       itemId:
         type: integer
+        format: int32
       participantId:
         type: integer
+        format: int32
       levelUpType:
         type: string
       skillSlot:
         type: integer
+        format: int32
       creatorId:
         type: integer
+        format: int32
       wardType:
         type: string
       level:
         type: integer
+        format: int32
       assistingParticipantIds:
         type: array
         items:
           type: integer
+          format: int32
       bounty:
         type: integer
+        format: int32
       killStreakLength:
         type: integer
+        format: int32
       killerId:
         type: integer
+        format: int32
       position:
         $ref: '#/definitions/match-v5.MatchTimelineInfoFrameParticipantFramePosition'
       victimDamageDealt:
@@ -6260,17 +6372,21 @@ definitions:
           $ref: '#/definitions/match-v5.MatchTimelineInfoFrameEventVictimDamageDealt'
       victimId:
         type: integer
+        format: int32
       killType:
         type: string
       laneType:
         type: string
       teamId:
         type: integer
+        format: int32
         x-enum: team
       multiKillLength:
         type: integer
+        format: int32
       killerTeamId:
         type: integer
+        format: int32
         x-enum: team
       monsterType:
         type: string
@@ -6282,14 +6398,19 @@ definitions:
         type: string
       afterId:
         type: integer
+        format: int32
       beforeId:
         type: integer
+        format: int32
       goldGain:
         type: integer
+        format: int32
       gameId:
         type: integer
+        format: int32
       winningTeam:
         type: integer
+        format: int32
       transformType:
         type: string
       name:
@@ -6303,54 +6424,79 @@ definitions:
     properties:
       abilityHaste:
         type: integer
+        format: int32
       abilityPower:
         type: integer
+        format: int32
       armor:
         type: integer
+        format: int32
       armorPen:
         type: integer
+        format: int32
       armorPenPercent:
         type: integer
+        format: int32
       attackDamage:
         type: integer
+        format: int32
       attackSpeed:
         type: integer
+        format: int32
       bonusArmorPenPercent:
         type: integer
+        format: int32
       bonusMagicPenPercent:
         type: integer
+        format: int32
       ccReduction:
         type: integer
+        format: int32
       cooldownReduction:
         type: integer
+        format: int32
       health:
         type: integer
+        format: int32
       healthMax:
         type: integer
+        format: int32
       healthRegen:
         type: integer
+        format: int32
       lifesteal:
         type: integer
+        format: int32
       magicPen:
         type: integer
+        format: int32
       magicPenPercent:
         type: integer
+        format: int32
       magicResist:
         type: integer
+        format: int32
       movementSpeed:
         type: integer
+        format: int32
       omnivamp:
         type: integer
+        format: int32
       physicalVamp:
         type: integer
+        format: int32
       power:
         type: integer
+        format: int32
       powerMax:
         type: integer
+        format: int32
       powerRegen:
         type: integer
+        format: int32
       spellVamp:
         type: integer
+        format: int32
     required:
       - abilityHaste
       - abilityPower
@@ -6383,28 +6529,40 @@ definitions:
     properties:
       magicDamageDone:
         type: integer
+        format: int32
       magicDamageDoneToChampions:
         type: integer
+        format: int32
       magicDamageTaken:
         type: integer
+        format: int32
       physicalDamageDone:
         type: integer
+        format: int32
       physicalDamageDoneToChampions:
         type: integer
+        format: int32
       physicalDamageTaken:
         type: integer
+        format: int32
       totalDamageDone:
         type: integer
+        format: int32
       totalDamageDoneToChampions:
         type: integer
+        format: int32
       totalDamageTaken:
         type: integer
+        format: int32
       trueDamageDone:
         type: integer
+        format: int32
       trueDamageDoneToChampions:
         type: integer
+        format: int32
       trueDamageTaken:
         type: integer
+        format: int32
     required:
       - magicDamageDone
       - magicDamageDoneToChampions
@@ -6424,8 +6582,10 @@ definitions:
     properties:
       x:
         type: integer
+        format: int32
       y:
         type: integer
+        format: int32
     required:
       - x
       - y
@@ -6437,26 +6597,35 @@ definitions:
         $ref: '#/definitions/match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats'
       currentGold:
         type: integer
+        format: int32
       damageStats:
         $ref: '#/definitions/match-v5.MatchTimelineInfoFrameParticipantFrameDamageStats'
       goldPerSecond:
         type: integer
+        format: int32
       jungleMinionsKilled:
         type: integer
+        format: int32
       level:
         type: integer
+        format: int32
       minionsKilled:
         type: integer
+        format: int32
       participantId:
         type: integer
+        format: int32
       position:
         $ref: '#/definitions/match-v5.MatchTimelineInfoFrameParticipantFramePosition'
       timeEnemySpentControlled:
         type: integer
+        format: int32
       totalGold:
         type: integer
+        format: int32
       xp:
         type: integer
+        format: int32
     required:
       - championStats
       - currentGold
@@ -6517,6 +6686,7 @@ definitions:
         $ref: '#/definitions/match-v5.MatchTimelineInfoFrameParticipantFrames'
       timestamp:
         type: integer
+        format: int32
     required:
       - events
       - participantFrames
@@ -6529,18 +6699,23 @@ definitions:
         type: boolean
       magicDamage:
         type: integer
+        format: int32
       name:
         type: string
       participantId:
         type: integer
+        format: int32
       physicalDamage:
         type: integer
+        format: int32
       spellName:
         type: string
       spellSlot:
         type: integer
+        format: int32
       trueDamage:
         type: integer
+        format: int32
       type:
         type: string
     required:
@@ -6559,6 +6734,7 @@ definitions:
     properties:
       participantId:
         type: integer
+        format: int32
       puuid:
         type: string
     required:
@@ -6570,12 +6746,14 @@ definitions:
     properties:
       frameInterval:
         type: integer
+        format: int32
       frames:
         type: array
         items:
           $ref: '#/definitions/match-v5.MatchTimelineInfoFrame'
       gameId:
         type: integer
+        format: int32
       participants:
         type: array
         items:
