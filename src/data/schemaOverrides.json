@@ -275,6 +275,10 @@
         "type": "integer",
         "format": "int32"
       },
+      "inhibitorTakedowns": {
+        "type": "integer",
+        "format": "int32"
+      },
       "inhibitorsLost": {
         "type": "integer",
         "format": "int32"
@@ -355,6 +359,10 @@
         "format": "int32"
       },
       "nexusKills": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "nexusTakedowns": {
         "type": "integer",
         "format": "int32"
       },
@@ -538,6 +546,10 @@
         "type": "integer",
         "format": "int32"
       },
+      "turretTakedowns": {
+        "type": "integer",
+        "format": "int32"
+      },
       "turretsLost": {
         "type": "integer",
         "format": "int32"
@@ -593,7 +605,6 @@
       "goldEarned",
       "goldSpent",
       "individualPosition",
-      "inhibitorKills",
       "inhibitorsLost",
       "item0",
       "item1",
@@ -614,7 +625,6 @@
       "magicDamageDealtToChampions",
       "magicDamageTaken",
       "neutralMinionsKilled",
-      "nexusKills",
       "nexusLost",
       "objectivesStolen",
       "objectivesStolenAssists",
@@ -661,7 +671,6 @@
       "trueDamageDealt",
       "trueDamageDealtToChampions",
       "trueDamageTaken",
-      "turretKills",
       "turretsLost",
       "unrealKills",
       "visionScore",
@@ -869,7 +878,7 @@
     "properties": {
       "realTimestamp": {
         "type": "integer",
-        "format": "int32"
+        "format": "int64"
       },
       "timestamp": {
         "type": "integer",
@@ -988,7 +997,7 @@
       },
       "gameId": {
         "type": "integer",
-        "format": "int32"
+        "format": "int64"
       },
       "winningTeam": {
         "type": "integer",
@@ -1444,7 +1453,7 @@
       },
       "gameId": {
         "type": "integer",
-        "format": "int32"
+        "format": "int64"
       },
       "participants": {
         "type": "array",
