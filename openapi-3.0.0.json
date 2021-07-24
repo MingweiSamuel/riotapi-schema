@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "653f68e2d03da44548ff93bc4ffe558e5e70e906",
-    "x-hash": "653f68e2d03da44548ff93bc4ffe558e5e70e906c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9",
+    "version": "eab955d7179367cf69fa01cbfe19a17e63651484",
+    "x-hash": "eab955d7179367cf69fa01cbfe19a17e63651484c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9",
     "x-enumsHash": "c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9"
   },
   "servers": [
@@ -13971,6 +13971,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "inhibitorTakedowns": {
+            "type": "integer",
+            "format": "int32"
+          },
           "inhibitorsLost": {
             "type": "integer",
             "format": "int32"
@@ -14051,6 +14055,10 @@
             "format": "int32"
           },
           "nexusKills": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nexusTakedowns": {
             "type": "integer",
             "format": "int32"
           },
@@ -14234,6 +14242,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "turretTakedowns": {
+            "type": "integer",
+            "format": "int32"
+          },
           "turretsLost": {
             "type": "integer",
             "format": "int32"
@@ -14289,7 +14301,6 @@
           "goldEarned",
           "goldSpent",
           "individualPosition",
-          "inhibitorKills",
           "inhibitorsLost",
           "item0",
           "item1",
@@ -14310,7 +14321,6 @@
           "magicDamageDealtToChampions",
           "magicDamageTaken",
           "neutralMinionsKilled",
-          "nexusKills",
           "nexusLost",
           "objectivesStolen",
           "objectivesStolenAssists",
@@ -14357,7 +14367,6 @@
           "trueDamageDealt",
           "trueDamageDealtToChampions",
           "trueDamageTaken",
-          "turretKills",
           "turretsLost",
           "unrealKills",
           "visionScore",
@@ -14549,7 +14558,7 @@
         "properties": {
           "realTimestamp": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           "timestamp": {
             "type": "integer",
@@ -14668,7 +14677,7 @@
           },
           "gameId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           "winningTeam": {
             "type": "integer",
@@ -15124,7 +15133,7 @@
           },
           "gameId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           "participants": {
             "type": "array",
