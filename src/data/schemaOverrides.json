@@ -681,7 +681,8 @@
       "wardsKilled",
       "wardsPlaced",
       "win"
-    ]
+    ],
+    "description": "individualPosition vs teamPosition:\n\nBoth individualPosition and teamPosition are computed by the game server and are different versions of the most likely position played by a player.\n\nThe individualPosition is the best guess for which position the player actually played in isolation of anything else.\nThe teamPosition is the best guess for which position the player actually played if we add the constraint that each team must have one top player, one jungle, one middle, et cetera.\n\nGenerally the recommendation is to use the teamPosition field for things relating to which position the player actually played.\n\n(https://gist.github.com/RiotTuxedo/758ee4d88693b768a880ece93cd78663)"
   },
   "match-v5.MatchInfoTeamBan": {
     "title": "MatchInfoTeamBan",
