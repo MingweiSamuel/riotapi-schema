@@ -960,7 +960,7 @@
         "format": "int32"
       },
       "position": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFramePosition"
+        "$ref": "#/components/schemas/match-v5.MatchTimelinePosition"
       },
       "victimDamageDealt": {
         "type": "array",
@@ -1243,8 +1243,8 @@
       "trueDamageTaken"
     ]
   },
-  "match-v5.MatchTimelineInfoFrameParticipantFramePosition": {
-    "title": "MatchTimelineInfoFrameParticipantFramePosition",
+  "match-v5.MatchTimelinePosition": {
+    "title": "MatchTimelinePosition",
     "type": "object",
     "properties": {
       "x": {
@@ -1296,7 +1296,7 @@
         "format": "int32"
       },
       "position": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFramePosition"
+        "$ref": "#/components/schemas/match-v5.MatchTimelinePosition"
       },
       "timeEnemySpentControlled": {
         "type": "integer",
