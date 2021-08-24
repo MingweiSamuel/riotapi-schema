@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: eab955d7179367cf69fa01cbfe19a17e63651484
-  x-hash: eab955d7179367cf69fa01cbfe19a17e63651484c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
+  version: 55f7b56950a40b9d3ecfeb6b3f9d166ec0824f4a
+  x-hash: 55f7b56950a40b9d3ecfeb6b3f9d166ec0824f4ac8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
   x-enumsHash: c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
 servers:
   -
@@ -10910,6 +10910,7 @@ components:
         - goldEarned
         - goldSpent
         - individualPosition
+        - inhibitorKills
         - inhibitorsLost
         - item0
         - item1
@@ -10930,6 +10931,7 @@ components:
         - magicDamageDealtToChampions
         - magicDamageTaken
         - neutralMinionsKilled
+        - nexusKills
         - nexusLost
         - objectivesStolen
         - objectivesStolenAssists
@@ -10976,6 +10978,7 @@ components:
         - trueDamageDealt
         - trueDamageDealtToChampions
         - trueDamageTaken
+        - turretKills
         - turretsLost
         - unrealKills
         - visionScore
@@ -10983,6 +10986,7 @@ components:
         - wardsKilled
         - wardsPlaced
         - win
+      description: "individualPosition vs teamPosition:\n\nBoth individualPosition and teamPosition are computed by the game server and are different versions of the most likely position played by a player.\n\nThe individualPosition is the best guess for which position the player actually played in isolation of anything else.\nThe teamPosition is the best guess for which position the player actually played if we add the constraint that each team must have one top player, one jungle, one middle, et cetera.\n\nGenerally the recommendation is to use the teamPosition field for things relating to which position the player actually played.\n\n(https://gist.github.com/RiotTuxedo/758ee4d88693b768a880ece93cd78663)"
     match-v5.MatchInfoTeamBan:
       title: MatchInfoTeamBan
       type: object
@@ -11125,6 +11129,28 @@ components:
           format: int32
         type:
           type: string
+          enum:
+            - ASCENDED_EVENT
+            - BUILDING_KILL
+            - CAPTURE_POINT
+            - CHAMPION_KILL
+            - CHAMPION_SPECIAL_KILL
+            - CHAMPION_TRANSFORM
+            - DRAGON_SOUL_GIVEN
+            - ELITE_MONSTER_KILL
+            - GAME_END
+            - ITEM_DESTROYED
+            - ITEM_PURCHASED
+            - ITEM_SOLD
+            - ITEM_UNDO
+            - LEVEL_UP
+            - PAUSE_END
+            - PAUSE_START
+            - SKILL_LEVEL_UP
+            - TURRET_PLATE_DESTROYED
+            - WARD_KILL
+            - WARD_PLACED
+          description: "Timeline event type.\n(Known legal values: ASCENDED_EVENT, BUILDING_KILL, CAPTURE_POINT, CHAMPION_KILL, CHAMPION_SPECIAL_KILL, CHAMPION_TRANSFORM, DRAGON_SOUL_GIVEN, ELITE_MONSTER_KILL, GAME_END, ITEM_DESTROYED, ITEM_PURCHASED, ITEM_SOLD, ITEM_UNDO, LEVEL_UP, PAUSE_END, PAUSE_START, SKILL_LEVEL_UP, TURRET_PLATE_DESTROYED, WARD_KILL, WARD_PLACED)"
         itemId:
           type: integer
           format: int32
@@ -11159,7 +11185,7 @@ components:
           type: integer
           format: int32
         position:
-          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFramePosition'
+          $ref: '#/components/schemas/match-v5.MatchTimelinePosition'
         victimDamageDealt:
           type: array
           items:
@@ -11374,8 +11400,8 @@ components:
         - trueDamageDone
         - trueDamageDoneToChampions
         - trueDamageTaken
-    match-v5.MatchTimelineInfoFrameParticipantFramePosition:
-      title: MatchTimelineInfoFrameParticipantFramePosition
+    match-v5.MatchTimelinePosition:
+      title: MatchTimelinePosition
       type: object
       properties:
         x:
@@ -11414,7 +11440,7 @@ components:
           type: integer
           format: int32
         position:
-          $ref: '#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFramePosition'
+          $ref: '#/components/schemas/match-v5.MatchTimelinePosition'
         timeEnemySpentControlled:
           type: integer
           format: int32
