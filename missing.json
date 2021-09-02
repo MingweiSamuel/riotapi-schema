@@ -1,6 +1,5 @@
 [
   "account-v1.ActiveShardDto",
-  "match-v5.MatchDto",
   "match-v5.MatchTimelineDto",
   "tft-match-v1.CompanionDto"
 ]
