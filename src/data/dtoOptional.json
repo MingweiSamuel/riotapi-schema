@@ -113,6 +113,16 @@
   "match-v4.MatchParticipantFrameDto.jungleMinionsKilled": false,
 
 
+  "match-v5.ParticipantDto.inhibitorTakedowns": true,
+  "match-v5.ParticipantDto.nexusTakedowns": true,
+  "match-v5.ParticipantDto.turretTakedowns": true,
+  "match-v5.InfoDto.tournamentCode": true,
+
+  "TODO__match-v5.MatchTimelineInfoFrameEvent.*": true,
+  "TODO__match-v5.MatchTimelineInfoFrameEvent.timestamp": false,
+  "TODO__match-v5.MatchTimelineInfoFrameEvent.type": false,
+
+
 
   "tft-match-v1.InfoDto.game_variation": true,
   "tft-match-v1.TraitDto.tier_total": true,
