@@ -678,7 +678,7 @@
     "type": "object",
     "properties": {
       "metadata": {
-        "$ref": "#/components/schemas/match-v5.MatchMetadata"
+        "$ref": "#/components/schemas/match-v5.MetadataDto"
       },
       "info": {
         "$ref": "#/components/schemas/match-v5.MatchTimelineInfo"
