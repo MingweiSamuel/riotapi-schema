@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "c7fc45404e1a52ee9650bd2a9b67e3e0a5823872",
-    "x-hash": "c7fc45404e1a52ee9650bd2a9b67e3e0a5823872c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9",
+    "version": "1981e8c0dc408e75053d72445f0388b0fc231b14",
+    "x-hash": "1981e8c0dc408e75053d72445f0388b0fc231b14c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9",
     "x-enumsHash": "c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9"
   },
   "host": "na1.api.riotgames.com",
@@ -6934,6 +6934,36 @@
         "summonerLevel"
       ]
     },
+    "match-v5.MetadataDto": {
+      "type": "object",
+      "title": "MetadataDto",
+      "properties": {
+        "dataVersion": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Match data version."
+        },
+        "matchId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Match id."
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "x-type": "List[string]",
+          "description": "A list of participant PUUIDs."
+        }
+      },
+      "required": [
+        "dataVersion",
+        "matchId",
+        "participants"
+      ]
+    },
     "match-v5.MatchTimelineInfoFrameEvent": {
       "title": "MatchTimelineInfoFrameEvent",
       "type": "object",
@@ -9073,36 +9103,6 @@
       "required": [
         "metadata",
         "info"
-      ]
-    },
-    "match-v5.MetadataDto": {
-      "type": "object",
-      "title": "MetadataDto",
-      "properties": {
-        "data_version": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Match data version."
-        },
-        "match_id": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Match id."
-        },
-        "participants": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "x-type": "string"
-          },
-          "x-type": "List[string]",
-          "description": "A list of participant PUUIDs."
-        }
-      },
-      "required": [
-        "data_version",
-        "match_id",
-        "participants"
       ]
     },
     "match-v5.InfoDto": {
