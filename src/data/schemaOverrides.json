@@ -53,6 +53,36 @@
       "summonerLevel"
     ]
   },
+  "match-v5.MetadataDto": {
+    "type": "object",
+    "title": "MetadataDto",
+    "properties": {
+      "dataVersion": {
+        "type": "string",
+        "x-type": "string",
+        "description": "Match data version."
+      },
+      "matchId": {
+        "type": "string",
+        "x-type": "string",
+        "description": "Match id."
+      },
+      "participants": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "x-type": "List[string]",
+        "description": "A list of participant PUUIDs."
+      }
+    },
+    "required": [
+      "dataVersion",
+      "matchId",
+      "participants"
+    ]
+  },
   "match-v5.MatchTimelineInfoFrameEvent": {
     "title": "MatchTimelineInfoFrameEvent",
     "type": "object",
