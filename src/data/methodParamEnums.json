@@ -14,9 +14,10 @@
     "league-exp-v4.getLeagueEntries.tier": "tier",
     "league-v4.getLeagueEntries.tier": "tier",
 
-    "match-v4.getMatchlist.queue[]": "queue",
-    "match-v4.getMatchlist.champion[]": "champion",
-    "match-v4.getMatchlist.season[]": "season",
+    "tft-league-v1.getTopRatedLadder.queue": "queueType",
+    "tft-league-v1.getLeagueEntries.tier": "tier",
 
-    "tft-league-v1.getTopRatedLadder.queue": "queueType"
+    "match-v5.getMatchIdsByPUUID.queue": "queue",
+
+    "val-content-v1.getContent.locale": "locale"
 }
