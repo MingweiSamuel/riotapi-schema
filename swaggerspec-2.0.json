@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "8ecd3977d0a64a4776d22c061726081e2a542b0e",
-    "x-hash": "8ecd3977d0a64a4776d22c061726081e2a542b0ec8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9",
+    "version": "bcb779dcc7f1f4031a28071dccb38a31c8deebc9",
+    "x-hash": "bcb779dcc7f1f4031a28071dccb38a31c8deebc9c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9",
     "x-enumsHash": "c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9"
   },
   "host": "na1.api.riotgames.com",
@@ -2990,7 +2990,8 @@
             "description": "Filter the list of match ids by a specific queue id. This filter is mutually inclusive of the type filter meaning any match ids returned must match both the queue and type filters.",
             "type": "integer",
             "format": "int32",
-            "x-type": "int"
+            "x-type": "int",
+            "x-enum": "queue"
           },
           {
             "name": "type",
@@ -4155,6 +4156,7 @@
             "required": true,
             "type": "string",
             "x-type": "string",
+            "x-enum": "tier",
             "enum": [
               "",
               "DIAMOND",
@@ -6318,6 +6320,7 @@
             "required": false,
             "type": "string",
             "x-type": "String",
+            "x-enum": "locale",
             "description": ""
           }
         ],
@@ -8395,7 +8398,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "x-enum": "locale"
           },
           "x-type": "List[string]"
         },
@@ -9135,7 +9139,8 @@
         "gameMode": {
           "type": "string",
           "x-type": "string",
-          "description": "Refer to the Game Constants documentation."
+          "description": "Refer to the Game Constants documentation.",
+          "x-enum": "gameMode"
         },
         "gameName": {
           "type": "string",
@@ -9149,7 +9154,8 @@
         },
         "gameType": {
           "type": "string",
-          "x-type": "string"
+          "x-type": "string",
+          "x-enum": "gameType"
         },
         "gameVersion": {
           "type": "string",
@@ -9160,7 +9166,8 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "Refer to the Game Constants documentation."
+          "description": "Refer to the Game Constants documentation.",
+          "x-enum": "map"
         },
         "participants": {
           "type": "array",
@@ -9179,7 +9186,8 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "Refer to the Game Constants documentation."
+          "description": "Refer to the Game Constants documentation.",
+          "x-enum": "queue"
         },
         "teams": {
           "type": "array",
@@ -9244,7 +9252,8 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int",
-          "description": "Prior to patch 11.4, on Feb 9th, 2021, this field returned invalid championIds. We recommend determining the champion based on the championName field."
+          "description": "Prior to patch 11.4, on Feb 9th, 2021, this field returned invalid championIds. We recommend determining the champion based on the championName field.",
+          "x-enum": "champion"
         },
         "championName": {
           "type": "string",
@@ -9594,7 +9603,8 @@
         "teamId": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "x-enum": "team"
         },
         "teamPosition": {
           "type": "string",
@@ -9958,7 +9968,8 @@
         "teamId": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "x-enum": "team"
         },
         "win": {
           "type": "boolean",
@@ -9979,7 +9990,8 @@
         "championId": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "x-enum": "champion"
         },
         "pickTurn": {
           "type": "integer",

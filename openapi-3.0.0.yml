@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: e2256839626b09f465df7f5a1def1f74c5d073a5
-  x-hash: e2256839626b09f465df7f5a1def1f74c5d073a5c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
+  version: 1f61128ea79f3d07bd47c2f585e9f22905bed753
+  x-hash: 1f61128ea79f3d07bd47c2f585e9f22905bed753c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
   x-enumsHash: c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9
 servers:
   -
@@ -2299,6 +2299,7 @@ paths:
             type: integer
             format: int32
             x-type: int
+            x-enum: queue
           description: 'Filter the list of match ids by a specific queue id. This filter is mutually inclusive of the type filter meaning any match ids returned must match both the queue and type filters.'
         -
           name: type
@@ -3195,6 +3196,7 @@ paths:
           schema:
             type: string
             x-type: string
+            x-enum: tier
             enum:
               - ""
               - DIAMOND
@@ -4802,6 +4804,7 @@ paths:
           schema:
             type: string
             x-type: String
+            x-enum: locale
       x-endpoint: val-content-v1
       x-platforms-available:
         - ap
@@ -5874,6 +5877,7 @@ components:
           items:
             type: string
             x-type: string
+            x-enum: locale
           x-type: 'List[string]'
         maintenances:
           type: array
@@ -6445,6 +6449,7 @@ components:
           type: string
           x-type: string
           description: 'Refer to the Game Constants documentation.'
+          x-enum: gameMode
         gameName:
           type: string
           x-type: string
@@ -6456,6 +6461,7 @@ components:
         gameType:
           type: string
           x-type: string
+          x-enum: gameType
         gameVersion:
           type: string
           x-type: string
@@ -6465,6 +6471,7 @@ components:
           format: int32
           x-type: int
           description: 'Refer to the Game Constants documentation.'
+          x-enum: map
         participants:
           type: array
           items:
@@ -6480,6 +6487,7 @@ components:
           format: int32
           x-type: int
           description: 'Refer to the Game Constants documentation.'
+          x-enum: queue
         teams:
           type: array
           items:
@@ -6533,6 +6541,7 @@ components:
           format: int32
           x-type: int
           description: 'Prior to patch 11.4, on Feb 9th, 2021, this field returned invalid championIds. We recommend determining the champion based on the championName field.'
+          x-enum: champion
         championName:
           type: string
           x-type: string
@@ -6810,6 +6819,7 @@ components:
           type: integer
           format: int32
           x-type: int
+          x-enum: team
         teamPosition:
           type: string
           x-type: string
@@ -7115,6 +7125,7 @@ components:
           type: integer
           format: int32
           x-type: int
+          x-enum: team
         win:
           type: boolean
           x-type: boolean
@@ -7131,6 +7142,7 @@ components:
           type: integer
           format: int32
           x-type: int
+          x-enum: champion
         pickTurn:
           type: integer
           format: int32
