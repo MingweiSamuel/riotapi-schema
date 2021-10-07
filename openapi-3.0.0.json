@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "f4a77c89fedf1b9e2d8ff0897e2779ef549aaccf",
-    "x-hash": "f4a77c89fedf1b9e2d8ff0897e2779ef549aaccfc8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9",
+    "version": "cf65a34ff84813d55e76a82a69c97f0f1d775097",
+    "x-hash": "cf65a34ff84813d55e76a82a69c97f0f1d775097c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9",
     "x-enumsHash": "c8c941dd94e4ffc441a7a82f0cb5c90ee9d1e0f9"
   },
   "servers": [
@@ -8597,13 +8597,19 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "Unix timestamp for when the game is created (i.e., the loading screen)."
+            "description": "Unix timestamp for when the game is created on the game server (i.e., the loading screen)."
           },
           "gameDuration": {
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "Game length in milliseconds."
+            "description": "Prior to patch 11.20, this field returns the game length in milliseconds calculated from gameEndTimestamp - gameStartTimestamp. Post patch 11.20, this field returns the max timePlayed of any participant in the game in seconds, which makes the behavior of this field consistent with that of match-v4. The best way to handling the change in this field is to treat the value as milliseconds if the gameEndTimestamp field isn't in the response and to treat the value as seconds if gameEndTimestamp is in the response."
+          },
+          "gameEndTimestamp": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long",
+            "description": "Unix timestamp for when match ends on the game server. This timestamp can occasionally be significantly longer than when the match \"ends\". The most reliable way of determining the timestamp for the end of the match would be to add the max time played of any participant to the gameStartTimestamp. This field was added to match-v5 in patch 11.20 on Oct 5th, 2021."
           },
           "gameId": {
             "type": "integer",
@@ -8623,7 +8629,7 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "Unix timestamp for when match actually starts."
+            "description": "Unix timestamp for when match starts on the game server."
           },
           "gameType": {
             "type": "string",
@@ -8676,6 +8682,7 @@
         "required": [
           "gameCreation",
           "gameDuration",
+          "gameEndTimestamp",
           "gameId",
           "gameMode",
           "gameName",
@@ -8721,7 +8728,8 @@
           "championId": {
             "type": "integer",
             "format": "int32",
-            "x-type": "int"
+            "x-type": "int",
+            "description": "Prior to patch 11.4, on Feb 9th, 2021, this field returned invalid championIds. We recommend determining the champion based on the championName field."
           },
           "championName": {
             "type": "string",
