@@ -117,6 +117,7 @@
   "match-v5.ParticipantDto.nexusTakedowns": true,
   "match-v5.ParticipantDto.turretTakedowns": true,
   "match-v5.InfoDto.tournamentCode": true,
+  "match-v5.InfoDto.gameEndTimestamp": true,
 
   "TODO__match-v5.MatchTimelineInfoFrameEvent.*": true,
   "TODO__match-v5.MatchTimelineInfoFrameEvent.timestamp": false,
