@@ -46,8 +46,9 @@ async function cleanupOutput() {
 
     const index = OUTPUT + '/tool/index.html';
     let indexContent = await fs.readFile(index, 'UTF-8');
-    indexContent = indexContent.replace('"https://petstore.swagger.io/v2/swagger.json"',
-      "'../' + (document.location.search.slice(1) || 'openapi-3.0.0.min.json')");
+    indexContent = indexContent.replace(
+      '"https://petstore.swagger.io/v2/swagger.json"',
+      "'../openapi-3.0.0.min.json'");
 
     await fs.writeFile(index, indexContent);
   })();
