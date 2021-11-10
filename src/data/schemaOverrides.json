@@ -325,7 +325,6 @@
       }
     },
     "required": [
-      "abilityHaste",
       "abilityPower",
       "armor",
       "armorPen",
@@ -344,8 +343,6 @@
       "magicPenPercent",
       "magicResist",
       "movementSpeed",
-      "omnivamp",
-      "physicalVamp",
       "power",
       "powerMax",
       "powerRegen",
@@ -668,9 +665,7 @@
     },
     "required": [
       "frameInterval",
-      "frames",
-      "gameId",
-      "participants"
+      "frames"
     ]
   },
   "match-v5.MatchTimelineDto": {

@@ -119,9 +119,17 @@
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
 
+
+  "TODO__match-v5.MatchTimelineInfo.gameId": true,
+  "TODO__match-v5.MatchTimelineInfo.participants": true,
+
   "TODO__match-v5.MatchTimelineInfoFrameEvent.*": true,
   "TODO__match-v5.MatchTimelineInfoFrameEvent.timestamp": false,
   "TODO__match-v5.MatchTimelineInfoFrameEvent.type": false,
+
+  "TODO__match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats.abilityHaste": true,
+  "TODO__match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats.omnivamp": true,
+  "TODO__match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats.physicalVamp": true,
 
 
 
