@@ -1,0 +1,37 @@
+[
+    {
+        "queueType": "RANKED_SOLO_5x5",
+        "queueId": 420,
+        "description": "5v5 Ranked Solo games",
+        "notes": null
+    },
+    {
+        "queueType": "RANKED_FLEX_SR",
+        "queueId": 440,
+        "description": "5v5 Ranked Flex games",
+        "notes": null
+    },
+    {
+        "queueType": "RANKED_FLEX_TT",
+        "queueId": 470,
+        "description": "3v3 Ranked Flex games",
+        "notes": "Deprecated in patch 9.23"
+    },
+    {
+        "queueType": "RANKED_TFT",
+        "queueId": 1100,
+        "description": "Ranked Teamfight Tactics games",
+        "notes": null
+    },    {
+        "queueType": "RANKED_TFT_TURBO",
+        "queueId": 1130,
+        "description": "Ranked Teamfight Tactics (Hyper Roll) games",
+        "notes": null
+    },
+    {
+        "queueType": "RANKED_TFT_PAIRS",
+        "queueId": 1150,
+        "description": "Ranked Teamfight Tactics (Double Up Beta) games",
+        "notes": null
+    }
+]
