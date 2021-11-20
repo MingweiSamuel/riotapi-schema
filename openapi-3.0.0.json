@@ -4,9 +4,9 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "f7d7b8c90243fcb043ffe81c5b08b0925be83bdf",
-    "x-hash": "f7d7b8c90243fcb043ffe81c5b08b0925be83bdf308293d20c7b556216f777a6cbf1f00fb0e7bab1",
-    "x-enumsHash": "308293d20c7b556216f777a6cbf1f00fb0e7bab1"
+    "version": "462f8adbab4c7df3e2fd3981fec03ad9a712db6e",
+    "x-hash": "462f8adbab4c7df3e2fd3981fec03ad9a712db6ece0d7aa05f096b072a60d368555134fcfa053c95",
+    "x-enumsHash": "ce0d7aa05f096b072a60d368555134fcfa053c95"
   },
   "servers": [
     {
@@ -384,7 +384,6 @@
               "type": "string",
               "x-type": "string",
               "enum": [
-                "",
                 "val",
                 "lor"
               ]
@@ -1410,7 +1409,6 @@
               "x-type": "string",
               "x-enum": "queueType",
               "enum": [
-                "",
                 "RANKED_SOLO_5x5",
                 "RANKED_TFT",
                 "RANKED_FLEX_SR",
@@ -1428,7 +1426,6 @@
               "x-type": "string",
               "x-enum": "tier",
               "enum": [
-                "",
                 "CHALLENGER",
                 "GRANDMASTER",
                 "MASTER",
@@ -1450,7 +1447,6 @@
               "x-type": "string",
               "x-enum": "division",
               "enum": [
-                "",
                 "I",
                 "II",
                 "III",
@@ -1570,7 +1566,6 @@
               "x-type": "string",
               "x-enum": "queueType",
               "enum": [
-                "",
                 "RANKED_SOLO_5x5",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
@@ -1787,7 +1782,6 @@
               "x-type": "string",
               "x-enum": "division",
               "enum": [
-                "",
                 "I",
                 "II",
                 "III",
@@ -1804,7 +1798,6 @@
               "x-type": "string",
               "x-enum": "tier",
               "enum": [
-                "",
                 "DIAMOND",
                 "PLATINUM",
                 "GOLD",
@@ -1823,7 +1816,6 @@
               "x-type": "string",
               "x-enum": "queueType",
               "enum": [
-                "",
                 "RANKED_SOLO_5x5",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
@@ -1943,7 +1935,6 @@
               "x-type": "string",
               "x-enum": "queueType",
               "enum": [
-                "",
                 "RANKED_SOLO_5x5",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
@@ -2154,7 +2145,6 @@
               "x-type": "string",
               "x-enum": "queueType",
               "enum": [
-                "",
                 "RANKED_SOLO_5x5",
                 "RANKED_FLEX_SR",
                 "RANKED_FLEX_TT"
@@ -3089,7 +3079,6 @@
               "type": "string",
               "x-type": "string",
               "enum": [
-                "",
                 "ranked",
                 "normal",
                 "tourney",
@@ -4279,7 +4268,6 @@
               "x-type": "string",
               "x-enum": "tier",
               "enum": [
-                "",
                 "DIAMOND",
                 "PLATINUM",
                 "GOLD",
@@ -4297,7 +4285,6 @@
               "type": "string",
               "x-type": "string",
               "enum": [
-                "",
                 "I",
                 "II",
                 "III",
@@ -4704,7 +4691,6 @@
               "x-type": "string",
               "x-enum": "queueType",
               "enum": [
-                "",
                 "RANKED_TFT_TURBO"
               ]
             }
@@ -6764,7 +6750,6 @@
               "type": "string",
               "x-type": "string",
               "enum": [
-                "",
                 "competitive",
                 "unrated",
                 "spikerush",

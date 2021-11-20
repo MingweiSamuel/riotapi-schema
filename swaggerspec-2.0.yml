@@ -3,9 +3,9 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 6998ee852c5036e5be5bbe4f40f0d687ec452beb
-  x-hash: 6998ee852c5036e5be5bbe4f40f0d687ec452beb308293d20c7b556216f777a6cbf1f00fb0e7bab1
-  x-enumsHash: 308293d20c7b556216f777a6cbf1f00fb0e7bab1
+  version: 74921bfb104eb24a9030c80484ce5aeabbad1414
+  x-hash: 74921bfb104eb24a9030c80484ce5aeabbad1414ce0d7aa05f096b072a60d368555134fcfa053c95
+  x-enumsHash: ce0d7aa05f096b072a60d368555134fcfa053c95
 host: na1.api.riotgames.com
 x-host-platform:
   - americas
@@ -274,7 +274,6 @@ paths:
           type: string
           x-type: string
           enum:
-            - ""
             - val
             - lor
           description: ""
@@ -1044,7 +1043,6 @@ paths:
           x-type: string
           x-enum: queueType
           enum:
-            - ""
             - RANKED_SOLO_5x5
             - RANKED_TFT
             - RANKED_FLEX_SR
@@ -1057,7 +1055,6 @@ paths:
           x-type: string
           x-enum: tier
           enum:
-            - ""
             - CHALLENGER
             - GRANDMASTER
             - MASTER
@@ -1076,7 +1073,6 @@ paths:
           x-type: string
           x-enum: division
           enum:
-            - ""
             - I
             - II
             - III
@@ -1167,7 +1163,6 @@ paths:
           x-type: string
           x-enum: queueType
           enum:
-            - ""
             - RANKED_SOLO_5x5
             - RANKED_FLEX_SR
             - RANKED_FLEX_TT
@@ -1331,7 +1326,6 @@ paths:
           x-type: string
           x-enum: division
           enum:
-            - ""
             - I
             - II
             - III
@@ -1345,7 +1339,6 @@ paths:
           x-type: string
           x-enum: tier
           enum:
-            - ""
             - DIAMOND
             - PLATINUM
             - GOLD
@@ -1362,7 +1355,6 @@ paths:
           x-type: string
           x-enum: queueType
           enum:
-            - ""
             - RANKED_SOLO_5x5
             - RANKED_FLEX_SR
             - RANKED_FLEX_TT
@@ -1451,7 +1443,6 @@ paths:
           x-type: string
           x-enum: queueType
           enum:
-            - ""
             - RANKED_SOLO_5x5
             - RANKED_FLEX_SR
             - RANKED_FLEX_TT
@@ -1610,7 +1601,6 @@ paths:
           x-type: string
           x-enum: queueType
           enum:
-            - ""
             - RANKED_SOLO_5x5
             - RANKED_FLEX_SR
             - RANKED_FLEX_TT
@@ -2292,7 +2282,6 @@ paths:
           type: string
           x-type: string
           enum:
-            - ""
             - ranked
             - normal
             - tourney
@@ -3172,7 +3161,6 @@ paths:
           x-type: string
           x-enum: tier
           enum:
-            - ""
             - DIAMOND
             - PLATINUM
             - GOLD
@@ -3187,7 +3175,6 @@ paths:
           type: string
           x-type: string
           enum:
-            - ""
             - I
             - II
             - III
@@ -3494,7 +3481,6 @@ paths:
           x-type: string
           x-enum: queueType
           enum:
-            - ""
             - RANKED_TFT_TURBO
           description: ""
       x-endpoint: tft-league-v1
@@ -4990,7 +4976,6 @@ paths:
           type: string
           x-type: string
           enum:
-            - ""
             - competitive
             - unrated
             - spikerush

@@ -3,3 +3,4 @@
 - [maps.json](maps.json)
 - [gameModes.json](gameModes.json)
 - [gameTypes.json](gameTypes.json)
+- [queueTypes.json](queueTypes.json)
