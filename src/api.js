@@ -154,13 +154,7 @@ async function fixMissingDtos(endpoints) {
 
 
 async function writeEnums() {
-  async function getEnumData(enumUrl, valKey, enumModifier) {
-    const filename = enumUrl.slice(1 + enumUrl.lastIndexOf('/'));
-    const enumLists = await Promise.all([
-      fs.readFile(`${__dirname}/enums/${filename}`).then(JSON.parse), // From local enums folder.
-      req(enumUrl).then(JSON.parse), // From Riot.
-    ]);
-
+  function setEnumXValues(enumLists, valKey) {
     const allVals = new Set();
     const enums = [];
     for (const enumList of enumLists) {
@@ -173,6 +167,16 @@ async function writeEnums() {
         }
       }
     }
+    return enums;
+  }
+  async function getEnumData(enumUrl, valKey, enumModifier) {
+    const filename = enumUrl.slice(1 + enumUrl.lastIndexOf('/'));
+    const enumLists = await Promise.all([
+      fs.readFile(`${__dirname}/enums/${filename}`).then(JSON.parse), // From local enums folder.
+      req(enumUrl).then(JSON.parse), // From Riot.
+    ]);
+
+    const enums = setEnumXValues(enumLists, valKey);
 
     // Sort alphabetically or numerically.
     enums.sort((a, b) => 'string' === typeof a[valKey]
@@ -185,11 +189,11 @@ async function writeEnums() {
   }
 
   const enumDatas = await Promise.all([
-    getEnumData("http://static.developer.riotgames.com/docs/lol/seasons.json", 'id', enums => {
+    getEnumData("https://static.developer.riotgames.com/docs/lol/seasons.json", 'id', enums => {
       for (const enumb of enums)
         enumb['x-name'] = enumb.season.replace(/\s+/g, '_');
     }),
-    getEnumData("http://static.developer.riotgames.com/docs/lol/queues.json", 'queueId', enums => {
+    getEnumData("https://static.developer.riotgames.com/docs/lol/queues.json", 'queueId', enums => {
       const noGames = s => s.replace(/\s+GAMES$/i, '');
       const groups = {};
       for (const enumb of enums) {
@@ -211,7 +215,7 @@ async function writeEnums() {
         }
       }
     }),
-    getEnumData("http://static.developer.riotgames.com/docs/lol/maps.json", 'mapId', enums => {
+    getEnumData("https://static.developer.riotgames.com/docs/lol/maps.json", 'mapId', enums => {
       const groups = {};
       for (const enumb of enums) {
         const { mapName } = enumb;
@@ -234,20 +238,32 @@ async function writeEnums() {
         }
       }
     }),
-    getEnumData("http://static.developer.riotgames.com/docs/lol/gameModes.json", 'gameMode', enums => {
+    getEnumData("https://static.developer.riotgames.com/docs/lol/gameModes.json", 'gameMode', enums => {
       for (const enumb of enums) {
         const { gameMode, description } = enumb;
         enumb['x-name'] = gameMode;
         enumb['x-desc'] = description;
       }
     }),
-    getEnumData("http://static.developer.riotgames.com/docs/lol/gameTypes.json", 'gametype', enums => {
+    getEnumData("https://static.developer.riotgames.com/docs/lol/gameTypes.json", 'gametype', enums => {
       for (const enumb of enums) {
         const { gametype, description } = enumb;
         enumb['x-name'] = gametype;
         enumb['x-desc'] = description;
       }
     }),
+    (async () => {
+      const filename = 'queueTypes.json';
+      const valKey = 'queueId'; // TODO: val is set to queueId, but all serialization is a STRING. Tricky.
+      const enumDict = await fs.readFile(`${__dirname}/enums/${filename}`).then(JSON.parse);
+      const enums = setEnumXValues([ enumDict ], valKey);
+      for (const enumb of enums) {
+        const { queueType, description } = enumb;
+        enumb['x-name'] = queueType;
+        enumb['x-desc'] = description;
+      }
+      return { filename, enums };
+    })(),
   ]);
 
   await fs.mkdir('enums');
