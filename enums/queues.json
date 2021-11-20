@@ -740,6 +740,26 @@
     "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS"
   },
   {
+    "queueId": 1091,
+    "map": "Convergence",
+    "description": "Teamfight Tactics 1v0 games",
+    "notes": null,
+    "x-value": 1091,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics 1v0 games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_1V0"
+  },
+  {
+    "queueId": 1092,
+    "map": "Convergence",
+    "description": "Teamfight Tactics 2v0 games",
+    "notes": null,
+    "x-value": 1092,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics 2v0 games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_2V0"
+  },
+  {
     "queueId": 1100,
     "map": "Convergence",
     "description": "Ranked Teamfight Tactics games",
@@ -762,12 +782,32 @@
   {
     "queueId": 1111,
     "map": "Convergence",
-    "description": "Teamfight Tactics 1v0 testing games",
+    "description": "Teamfight Tactics Simluation games",
     "notes": null,
     "x-value": 1111,
     "x-deprecated": false,
-    "x-desc": "Teamfight Tactics 1v0 testing games on Convergence",
-    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_1V0_TESTING"
+    "x-desc": "Teamfight Tactics Simluation games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_SIMLUATION"
+  },
+  {
+    "queueId": 1130,
+    "map": "Convergence",
+    "description": "Ranked Teamfight Tactics (Hyper Roll) games",
+    "notes": null,
+    "x-value": 1130,
+    "x-deprecated": false,
+    "x-desc": "Ranked Teamfight Tactics (Hyper Roll) games on Convergence",
+    "x-name": "CONVERGENCE_RANKED_TEAMFIGHT_TACTICS_HYPER_ROLL_"
+  },
+  {
+    "queueId": 1150,
+    "map": "Convergence",
+    "description": "Ranked Teamfight Tactics (Double Up Beta) games",
+    "notes": null,
+    "x-value": 1150,
+    "x-deprecated": false,
+    "x-desc": "Ranked Teamfight Tactics (Double Up Beta) games on Convergence",
+    "x-name": "CONVERGENCE_RANKED_TEAMFIGHT_TACTICS_DOUBLE_UP_BETA_"
   },
   {
     "queueId": 1200,
@@ -792,7 +832,7 @@
   {
     "queueId": 1400,
     "map": "Summoner's Rift",
-    "description": "Ultimate Spellbook",
+    "description": "Ultimate Spellbook games",
     "notes": null,
     "x-value": 1400,
     "x-deprecated": false,
