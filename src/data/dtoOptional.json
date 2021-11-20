@@ -9,6 +9,12 @@
   "league-exp-v4.LeagueEntryDTO.miniSeries": true,
   "league-v4.LeagueItemDTO.miniSeries": true,
   "league-v4.LeagueEntryDTO.miniSeries": true,
+
+  "!!https://github.com/RiotGames/developer-relations/issues/572": null,
+  "league-v4.LeagueEntryDTO.leagueId": true,
+  "league-v4.LeagueEntryDTO.tier": true,
+  "league-v4.LeagueEntryDTO.rank": true,
+
   "tft-league-v1.LeagueItemDTO.miniSeries": true,
   "tft-league-v1.LeagueEntryDTO.miniSeries": true,
 
