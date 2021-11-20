@@ -99,7 +99,8 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
     let valueTd = tr.children[headers.indexOf('value')];
     if (valueTd && valueTd.firstElementChild.tagName.toLowerCase() === 'select') {
       prop.enum = Array.from(valueTd.firstElementChild.children)
-        .map(option => option.textContent.trim());
+        .map(option => option.textContent.trim())
+        .filter(str => 0 < str.length);
     }
     schema.properties[name] = prop;
   });
