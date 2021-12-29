@@ -119,8 +119,12 @@
   "match-v4.MatchParticipantFrameDto.jungleMinionsKilled": false,
 
 
+  "match-v5.ParticipantDto.damageDealtToBuildings": true,
+  "match-v5.ParticipantDto.inhibitorsLost": true,
   "match-v5.ParticipantDto.inhibitorTakedowns": true,
+  "match-v5.ParticipantDto.nexusLost": true,
   "match-v5.ParticipantDto.nexusTakedowns": true,
+  "match-v5.ParticipantDto.turretsLost": true,
   "match-v5.ParticipantDto.turretTakedowns": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
