@@ -387,7 +387,7 @@
     "x-value": 318,
     "x-deprecated": true,
     "x-desc": "ARURF games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_ARURF"
+    "x-name": "SUMMONERS_RIFT_ARURF_DEPRECATED_318"
   },
   {
     "queueId": 325,
@@ -572,12 +572,12 @@
   {
     "queueId": 900,
     "map": "Summoner's Rift",
-    "description": "URF games",
+    "description": "ARURF games",
     "notes": null,
     "x-value": 900,
     "x-deprecated": false,
-    "x-desc": "URF games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_URF"
+    "x-desc": "ARURF games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_ARURF"
   },
   {
     "queueId": 910,
@@ -838,6 +838,16 @@
     "x-deprecated": false,
     "x-desc": "Ultimate Spellbook games on Summoner's Rift",
     "x-name": "SUMMONERS_RIFT_ULTIMATE_SPELLBOOK"
+  },
+  {
+    "queueId": 1900,
+    "map": "Summoner's Rift",
+    "description": "Pick URF games",
+    "notes": null,
+    "x-value": 1900,
+    "x-deprecated": false,
+    "x-desc": "Pick URF games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_PICK_URF"
   },
   {
     "queueId": 2000,
