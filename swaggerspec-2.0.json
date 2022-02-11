@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "c3598cf644c8522243ad3d4431d057994d38c164",
-    "x-hash": "c3598cf644c8522243ad3d4431d057994d38c16427386b8f1825183e8474993f19a5a7df46153503",
+    "version": "1204088e856eb584981020b19fc622eb1b0a5ddd",
+    "x-hash": "1204088e856eb584981020b19fc622eb1b0a5ddd27386b8f1825183e8474993f19a5a7df46153503",
     "x-enumsHash": "27386b8f1825183e8474993f19a5a7df46153503"
   },
   "host": "na1.api.riotgames.com",
@@ -8710,6 +8710,187 @@
         "info"
       ]
     },
+    "val-content-v1.ActDto": {
+      "type": "object",
+      "title": "ActDto",
+      "properties": {
+        "name": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "localizedNames": {
+          "$ref": "#/definitions/val-content-v1.LocalizedNamesDto",
+          "x-type": "LocalizedNamesDto",
+          "description": "This field is excluded from the response when a locale is set"
+        },
+        "id": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "isActive": {
+          "type": "boolean",
+          "x-type": "boolean"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "id",
+        "isActive"
+      ]
+    },
+    "val-content-v1.ContentDto": {
+      "type": "object",
+      "title": "ContentDto",
+      "properties": {
+        "version": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "characters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "maps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "chromas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "skins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "skinLevels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "equips": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "gameModes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "sprays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "sprayLevels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "charms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "charmLevels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "playerCards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "playerTitles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        },
+        "acts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ActDto",
+            "x-type": "ActDto"
+          },
+          "x-type": "List[ActDto]"
+        },
+        "ceremonies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/val-content-v1.ContentItemDto",
+            "x-type": "ContentItemDto"
+          },
+          "x-type": "List[ContentItemDto]"
+        }
+      },
+      "required": [
+        "version",
+        "characters",
+        "maps",
+        "chromas",
+        "skins",
+        "skinLevels",
+        "equips",
+        "gameModes",
+        "sprays",
+        "sprayLevels",
+        "charms",
+        "charmLevels",
+        "playerCards",
+        "playerTitles",
+        "acts"
+      ]
+    },
     "champion-mastery-v4.ChampionMasteryDto": {
       "type": "object",
       "title": "ChampionMasteryDto",
@@ -12163,145 +12344,6 @@
         "providerId"
       ]
     },
-    "val-content-v1.ContentDto": {
-      "type": "object",
-      "title": "ContentDto",
-      "properties": {
-        "version": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "characters": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "maps": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "chromas": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "skins": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "skinLevels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "equips": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "gameModes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "sprays": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "sprayLevels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "charms": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "charmLevels": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "playerCards": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "playerTitles": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ContentItemDto",
-            "x-type": "ContentItemDto"
-          },
-          "x-type": "List[ContentItemDto]"
-        },
-        "acts": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/val-content-v1.ActDto",
-            "x-type": "ActDto"
-          },
-          "x-type": "List[ActDto]"
-        }
-      },
-      "required": [
-        "version",
-        "characters",
-        "maps",
-        "chromas",
-        "skins",
-        "skinLevels",
-        "equips",
-        "gameModes",
-        "sprays",
-        "sprayLevels",
-        "charms",
-        "charmLevels",
-        "playerCards",
-        "playerTitles",
-        "acts"
-      ]
-    },
     "val-content-v1.ContentItemDto": {
       "type": "object",
       "title": "ContentItemDto",
@@ -12436,34 +12478,6 @@
         "vi-VN",
         "zh-CN",
         "zh-TW"
-      ]
-    },
-    "val-content-v1.ActDto": {
-      "type": "object",
-      "title": "ActDto",
-      "properties": {
-        "name": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "localizedNames": {
-          "$ref": "#/definitions/val-content-v1.LocalizedNamesDto",
-          "x-type": "LocalizedNamesDto",
-          "description": "This field is excluded from the response when a locale is set"
-        },
-        "id": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "isActive": {
-          "type": "boolean",
-          "x-type": "boolean"
-        }
-      },
-      "required": [
-        "name",
-        "id",
-        "isActive"
       ]
     },
     "val-match-v1.MatchDto": {
