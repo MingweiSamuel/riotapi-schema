@@ -2039,6 +2039,106 @@
     ]
   },
 
+  "val-ranked-v1.LeaderboardDto": {
+    "type": "object",
+    "title": "LeaderboardDto",
+    "properties": {
+      "shard": {
+        "type": "string",
+        "x-type": "string",
+        "description": "The shard for the given leaderboard."
+      },
+      "actId": {
+        "type": "string",
+        "x-type": "string",
+        "description": "The act id for the given leaderboard. Act ids can be found using the val-content API."
+      },
+      "totalPlayers": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long",
+        "description": "The total number of players in the leaderboard."
+      },
+      "players": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-ranked-v1.PlayerDto",
+          "x-type": "PlayerDto"
+        },
+        "x-type": "List[PlayerDto]"
+      },
+
+      "immortalStartingPage": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "immortalStartingIndex": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "topTierRRThreshold": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "tierDetails": {
+        "type": "object",
+        "x-key": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/val-ranked-v1.TierDetailDto",
+          "x-type": "TierDetailDto"
+        },
+        "x-type": "Map[long, TierDetailDto]"
+      },
+      "startIndex": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "query": {
+        "type": "string",
+        "x-type": "string"
+      }
+    },
+    "required": [
+      "shard",
+      "actId",
+      "totalPlayers",
+      "players"
+    ]
+  },
+  "val-ranked-v1.TierDetailDto": {
+    "type": "object",
+    "title": "TierDetailDto",
+    "properties": {
+      "rankedRatingThreshold": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "startingPage": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "startingIndex": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      }
+    },
+    "required": [
+      "rankedRatingThreshold",
+      "startingPage",
+      "startingIndex"
+    ]
+  },
   "val-ranked-v1.PlayerDto": {
     "type": "object",
     "title": "PlayerDto",
