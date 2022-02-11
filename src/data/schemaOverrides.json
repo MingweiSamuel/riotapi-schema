@@ -1373,6 +1373,15 @@
       },
       "name": {
         "type": "string"
+      },
+
+      "shutdownBounty": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "actualStartTime": {
+        "type": "integer",
+        "format": "int64"
       }
     },
     "required": [
