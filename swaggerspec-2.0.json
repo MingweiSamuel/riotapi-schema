@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "e8a6f88f374c60de5f460b52dfb015209a7a7acd",
-    "x-hash": "e8a6f88f374c60de5f460b52dfb015209a7a7acd27386b8f1825183e8474993f19a5a7df46153503",
+    "version": "940f669c36325b58943e129a0bd7258032fcd8d7",
+    "x-hash": "940f669c36325b58943e129a0bd7258032fcd8d727386b8f1825183e8474993f19a5a7df46153503",
     "x-enumsHash": "27386b8f1825183e8474993f19a5a7df46153503"
   },
   "host": "na1.api.riotgames.com",
@@ -8891,6 +8891,52 @@
         "acts"
       ]
     },
+    "val-ranked-v1.PlayerDto": {
+      "type": "object",
+      "title": "PlayerDto",
+      "properties": {
+        "puuid": {
+          "type": "string",
+          "x-type": "string",
+          "description": "This field may be omitted if the player has been anonymized."
+        },
+        "gameName": {
+          "type": "string",
+          "x-type": "string",
+          "description": "This field may be omitted if the player has been anonymized."
+        },
+        "tagLine": {
+          "type": "string",
+          "x-type": "string",
+          "description": "This field may be omitted if the player has been anonymized."
+        },
+        "leaderboardRank": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "rankedRating": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "numberOfWins": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "competitiveTier": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        }
+      },
+      "required": [
+        "leaderboardRank",
+        "rankedRating",
+        "numberOfWins"
+      ]
+    },
     "champion-mastery-v4.ChampionMasteryDto": {
       "type": "object",
       "title": "ChampionMasteryDto",
@@ -13271,47 +13317,6 @@
         "actId",
         "totalPlayers",
         "players"
-      ]
-    },
-    "val-ranked-v1.PlayerDto": {
-      "type": "object",
-      "title": "PlayerDto",
-      "properties": {
-        "puuid": {
-          "type": "string",
-          "x-type": "string",
-          "description": "This field may be omitted if the player has been anonymized."
-        },
-        "gameName": {
-          "type": "string",
-          "x-type": "string",
-          "description": "This field may be omitted if the player has been anonymized."
-        },
-        "tagLine": {
-          "type": "string",
-          "x-type": "string",
-          "description": "This field may be omitted if the player has been anonymized."
-        },
-        "leaderboardRank": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long"
-        },
-        "rankedRating": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long"
-        },
-        "numberOfWins": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long"
-        }
-      },
-      "required": [
-        "leaderboardRank",
-        "rankedRating",
-        "numberOfWins"
       ]
     },
     "val-status-v1.PlatformDataDto": {
