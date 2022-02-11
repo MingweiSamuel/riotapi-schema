@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 940f669c36325b58943e129a0bd7258032fcd8d7
-  x-hash: 940f669c36325b58943e129a0bd7258032fcd8d727386b8f1825183e8474993f19a5a7df46153503
+  version: 63dbf5df36ca6fe1e79ece23527550a0c5179b72
+  x-hash: 63dbf5df36ca6fe1e79ece23527550a0c5179b7227386b8f1825183e8474993f19a5a7df46153503
   x-enumsHash: 27386b8f1825183e8474993f19a5a7df46153503
 host: na1.api.riotgames.com
 x-host-platform:
@@ -6785,6 +6785,83 @@ definitions:
       - playerCards
       - playerTitles
       - acts
+  val-ranked-v1.LeaderboardDto:
+    type: object
+    title: LeaderboardDto
+    properties:
+      shard:
+        type: string
+        x-type: string
+        description: 'The shard for the given leaderboard.'
+      actId:
+        type: string
+        x-type: string
+        description: 'The act id for the given leaderboard. Act ids can be found using the val-content API.'
+      totalPlayers:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The total number of players in the leaderboard.'
+      players:
+        type: array
+        items:
+          $ref: '#/definitions/val-ranked-v1.PlayerDto'
+          x-type: PlayerDto
+        x-type: 'List[PlayerDto]'
+      immortalStartingPage:
+        type: integer
+        format: int64
+        x-type: long
+      immortalStartingIndex:
+        type: integer
+        format: int64
+        x-type: long
+      topTierRRThreshold:
+        type: integer
+        format: int64
+        x-type: long
+      tierDetails:
+        type: object
+        x-key:
+          type: integer
+          format: int64
+          x-type: long
+        additionalProperties:
+          $ref: '#/definitions/val-ranked-v1.TierDetailDto'
+          x-type: TierDetailDto
+        x-type: 'Map[long, TierDetailDto]'
+      startIndex:
+        type: integer
+        format: int64
+        x-type: long
+      query:
+        type: string
+        x-type: string
+    required:
+      - shard
+      - actId
+      - totalPlayers
+      - players
+  val-ranked-v1.TierDetailDto:
+    type: object
+    title: TierDetailDto
+    properties:
+      rankedRatingThreshold:
+        type: integer
+        format: int64
+        x-type: long
+      startingPage:
+        type: integer
+        format: int64
+        x-type: long
+      startingIndex:
+        type: integer
+        format: int64
+        x-type: long
+    required:
+      - rankedRatingThreshold
+      - startingPage
+      - startingIndex
   val-ranked-v1.PlayerDto:
     type: object
     title: PlayerDto
@@ -10234,34 +10311,6 @@ definitions:
     required:
       - currentTime
       - matchIds
-  val-ranked-v1.LeaderboardDto:
-    type: object
-    title: LeaderboardDto
-    properties:
-      shard:
-        type: string
-        x-type: string
-        description: 'The shard for the given leaderboard.'
-      actId:
-        type: string
-        x-type: string
-        description: 'The act id for the given leaderboard. Act ids can be found using the val-content API.'
-      totalPlayers:
-        type: integer
-        format: int64
-        x-type: long
-        description: 'The total number of players in the leaderboard.'
-      players:
-        type: array
-        items:
-          $ref: '#/definitions/val-ranked-v1.PlayerDto'
-          x-type: PlayerDto
-        x-type: 'List[PlayerDto]'
-    required:
-      - shard
-      - actId
-      - totalPlayers
-      - players
   val-status-v1.PlatformDataDto:
     type: object
     title: PlatformDataDto
