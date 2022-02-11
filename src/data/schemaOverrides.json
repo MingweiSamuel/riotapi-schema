@@ -1,7 +1,7 @@
 {
   "summoner-v4.SummonerDTO": {
-    "endpointName": "summoner-v4",
-    "name": "SummonerDTO",
+    "title": "SummonerDTO",
+    "type": "object",
     "description": "represents a summoner",
     "properties": {
       "accountId": {
