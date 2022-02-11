@@ -19,5 +19,5 @@
 
     "match-v5.getMatchIdsByPUUID.queue": "queue",
 
-    "val-content-v1.getContent.locale": "locale"
+    "__REQUIRES_HYPENATED_LOCALES val-content-v1.getContent.locale": "locale"
 }
