@@ -1853,5 +1853,189 @@
       "metadata",
       "info"
     ]
+  },
+
+  "val-content-v1.ActDto": {
+    "type": "object",
+    "title": "ActDto",
+    "properties": {
+      "name": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "localizedNames": {
+        "$ref": "#/components/schemas/val-content-v1.LocalizedNamesDto",
+        "x-type": "LocalizedNamesDto",
+        "description": "This field is excluded from the response when a locale is set"
+      },
+      "id": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "isActive": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+
+      "parentId": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "id",
+      "isActive"
+    ]
+  },
+  "val-content-v1.ContentDto": {
+    "type": "object",
+    "title": "ContentDto",
+    "properties": {
+      "version": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "characters": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "maps": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "chromas": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "skins": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "skinLevels": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "equips": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "gameModes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "sprays": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "sprayLevels": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "charms": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "charmLevels": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "playerCards": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "playerTitles": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      },
+      "acts": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ActDto",
+          "x-type": "ActDto"
+        },
+        "x-type": "List[ActDto]"
+      },
+
+      "ceremonies": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+          "x-type": "ContentItemDto"
+        },
+        "x-type": "List[ContentItemDto]"
+      }
+    },
+    "required": [
+      "version",
+      "characters",
+      "maps",
+      "chromas",
+      "skins",
+      "skinLevels",
+      "equips",
+      "gameModes",
+      "sprays",
+      "sprayLevels",
+      "charms",
+      "charmLevels",
+      "playerCards",
+      "playerTitles",
+      "acts"
+    ]
   }
 }
