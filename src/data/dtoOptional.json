@@ -166,6 +166,7 @@
   "val-content-v1.ActDto.localizedNames": true,
   "val-content-v1.ActDto.parentId": true,
   "val-content-v1.ActDto.type": true,
+  "val-content-v1.LocalizedNamesDto.en-GB": true,
 
   "val-ranked-v1.PlayerDto.puuid": true,
   "val-ranked-v1.PlayerDto.gameName": true,
