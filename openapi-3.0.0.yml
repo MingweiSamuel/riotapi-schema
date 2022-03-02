@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: f39889bb065756353b782af3b7a26b4572015c90
-  x-hash: f39889bb065756353b782af3b7a26b4572015c9027386b8f1825183e8474993f19a5a7df46153503
+  version: b6f9ef0162a44c89308cdb3a04c16f2ee3802256
+  x-hash: b6f9ef0162a44c89308cdb3a04c16f2ee380225627386b8f1825183e8474993f19a5a7df46153503
   x-enumsHash: 27386b8f1825183e8474993f19a5a7df46153503
 servers:
   -
@@ -9619,6 +9619,10 @@ components:
           type: number
           format: double
           x-type: double
+        completeSupportQuestInTime:
+          type: number
+          format: double
+          x-type: double
         controlWardsPlaced:
           type: number
           format: double
@@ -9640,6 +9644,10 @@ components:
           format: double
           x-type: double
         deathsByEnemyChamps:
+          type: number
+          format: double
+          x-type: double
+        dodgeSkillShotsSmallWindow:
           type: number
           format: double
           x-type: double
@@ -9696,6 +9704,14 @@ components:
           format: double
           x-type: double
         epicMonsterSteals:
+          type: number
+          format: double
+          x-type: double
+        epicMonsterStolenWithoutSmite:
+          type: number
+          format: double
+          x-type: double
+        fasterSupportQuestCompletion:
           type: number
           format: double
           x-type: double
@@ -9799,6 +9815,14 @@ components:
           type: number
           format: double
           x-type: double
+        kTurretsDestroyedBeforePlatesFall:
+          type: number
+          format: double
+          x-type: double
+        landSkillShotsEarlyGame:
+          type: number
+          format: double
+          x-type: double
         laneMinionsFirst10Minutes:
           type: number
           format: double
@@ -9847,6 +9871,10 @@ components:
           type: number
           format: double
           x-type: double
+        multiTurretRiftHeraldCount:
+          type: number
+          format: double
+          x-type: double
         mythicItemUsed:
           type: number
           format: double
@@ -9872,6 +9900,18 @@ components:
           format: double
           x-type: double
         poroExplosions:
+          type: number
+          format: double
+          x-type: double
+        quickCleanse:
+          type: number
+          format: double
+          x-type: double
+        quickFirstTurret:
+          type: number
+          format: double
+          x-type: double
+        quickSoloKills:
           type: number
           format: double
           x-type: double
@@ -9904,6 +9944,10 @@ components:
           format: double
           x-type: double
         soloKills:
+          type: number
+          format: double
+          x-type: double
+        soloTurretsLategame:
           type: number
           format: double
           x-type: double
@@ -9964,6 +10008,10 @@ components:
           format: double
           x-type: double
         thirdInhibitorDestroyedTime:
+          type: number
+          format: double
+          x-type: double
+        threeWardsOneSweeperCount:
           type: number
           format: double
           x-type: double
