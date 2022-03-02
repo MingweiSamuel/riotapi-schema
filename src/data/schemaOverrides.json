@@ -726,6 +726,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "completeSupportQuestInTime": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "controlWardsPlaced": {
         "type": "number",
         "format": "double",
@@ -752,6 +757,11 @@
         "x-type": "double"
       },
       "deathsByEnemyChamps": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "dodgeSkillShotsSmallWindow": {
         "type": "number",
         "format": "double",
         "x-type": "double"
@@ -822,6 +832,16 @@
         "x-type": "double"
       },
       "epicMonsterSteals": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "epicMonsterStolenWithoutSmite": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "fasterSupportQuestCompletion": {
         "type": "number",
         "format": "double",
         "x-type": "double"
@@ -951,6 +971,16 @@
         "format": "double",
         "x-type": "double"
       },
+      "kTurretsDestroyedBeforePlatesFall": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "landSkillShotsEarlyGame": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "laneMinionsFirst10Minutes": {
         "type": "number",
         "format": "double",
@@ -1011,6 +1041,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "multiTurretRiftHeraldCount": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "mythicItemUsed": {
         "type": "number",
         "format": "double",
@@ -1042,6 +1077,21 @@
         "x-type": "double"
       },
       "poroExplosions": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "quickCleanse": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "quickFirstTurret": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "quickSoloKills": {
         "type": "number",
         "format": "double",
         "x-type": "double"
@@ -1082,6 +1132,11 @@
         "x-type": "double"
       },
       "soloKills": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "soloTurretsLategame": {
         "type": "number",
         "format": "double",
         "x-type": "double"
@@ -1157,6 +1212,11 @@
         "x-type": "double"
       },
       "thirdInhibitorDestroyedTime": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "threeWardsOneSweeperCount": {
         "type": "number",
         "format": "double",
         "x-type": "double"

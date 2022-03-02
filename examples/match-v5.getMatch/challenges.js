@@ -12,7 +12,7 @@ async function main() {
     allChallengesKeys.sort((a, b) => a.localeCompare(b));
 
     console.log(allChallengesKeys.length);
-    console.log(JSON.stringify(allChallengesKeys));
+    console.log(JSON.stringify(allChallengesKeys, null, 2));
 
     const format = {
         "type": "number",
