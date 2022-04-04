@@ -906,6 +906,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "immobilizeAndKillWithAlly": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "initialBuffCount": {
         "type": "number",
         "format": "double",
@@ -932,6 +937,16 @@
         "x-type": "double"
       },
       "kda": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "killAfterHiddenWithAlly": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "killedChampTookFullTeamDamageSurvived": {
         "type": "number",
         "format": "double",
         "x-type": "double"
@@ -967,6 +982,11 @@
         "x-type": "double"
       },
       "killsWithHelpFromEpicMonster": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "knockEnemyIntoTeamAndKill": {
         "type": "number",
         "format": "double",
         "x-type": "double"
@@ -1076,6 +1096,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "pickKillWithAlly": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "poroExplosions": {
         "type": "number",
         "format": "double",
@@ -1097,6 +1122,11 @@
         "x-type": "double"
       },
       "riftHeraldTakedowns": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "saveAllyFromDeath": {
         "type": "number",
         "format": "double",
         "x-type": "double"
@@ -1147,6 +1177,11 @@
         "x-type": "double"
       },
       "survivedSingleDigitHpCount": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "survivedThreeImmobilizesInFight": {
         "type": "number",
         "format": "double",
         "x-type": "double"
@@ -1217,6 +1252,11 @@
         "x-type": "double"
       },
       "threeWardsOneSweeperCount": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "tookLargeDamageSurvived": {
         "type": "number",
         "format": "double",
         "x-type": "double"
