@@ -1036,6 +1036,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "mejaisFullStackInTime": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "moreEnemyJungleThanOpponent": {
         "type": "number",
         "format": "double",
