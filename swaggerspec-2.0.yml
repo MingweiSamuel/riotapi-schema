@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 6a1f41d2a90f516cc455be7b008d32a2d5ad9b5c
-  x-hash: 6a1f41d2a90f516cc455be7b008d32a2d5ad9b5c27386b8f1825183e8474993f19a5a7df46153503
+  version: e1039e8e5e7bb741513f54d7e52021bd861fa2cb
+  x-hash: e1039e8e5e7bb741513f54d7e52021bd861fa2cb27386b8f1825183e8474993f19a5a7df46153503
   x-enumsHash: 27386b8f1825183e8474993f19a5a7df46153503
 host: na1.api.riotgames.com
 x-host-platform:
@@ -5920,6 +5920,10 @@ definitions:
         type: number
         format: double
         x-type: double
+      immobilizeAndKillWithAlly:
+        type: number
+        format: double
+        x-type: double
       initialBuffCount:
         type: number
         format: double
@@ -5941,6 +5945,14 @@ definitions:
         format: double
         x-type: double
       kda:
+        type: number
+        format: double
+        x-type: double
+      killAfterHiddenWithAlly:
+        type: number
+        format: double
+        x-type: double
+      killedChampTookFullTeamDamageSurvived:
         type: number
         format: double
         x-type: double
@@ -5969,6 +5981,10 @@ definitions:
         format: double
         x-type: double
       killsWithHelpFromEpicMonster:
+        type: number
+        format: double
+        x-type: double
+      knockEnemyIntoTeamAndKill:
         type: number
         format: double
         x-type: double
@@ -6056,6 +6072,10 @@ definitions:
         type: number
         format: double
         x-type: double
+      pickKillWithAlly:
+        type: number
+        format: double
+        x-type: double
       poroExplosions:
         type: number
         format: double
@@ -6073,6 +6093,10 @@ definitions:
         format: double
         x-type: double
       riftHeraldTakedowns:
+        type: number
+        format: double
+        x-type: double
+      saveAllyFromDeath:
         type: number
         format: double
         x-type: double
@@ -6113,6 +6137,10 @@ definitions:
         format: double
         x-type: double
       survivedSingleDigitHpCount:
+        type: number
+        format: double
+        x-type: double
+      survivedThreeImmobilizesInFight:
         type: number
         format: double
         x-type: double
@@ -6169,6 +6197,10 @@ definitions:
         format: double
         x-type: double
       threeWardsOneSweeperCount:
+        type: number
+        format: double
+        x-type: double
+      tookLargeDamageSurvived:
         type: number
         format: double
         x-type: double
