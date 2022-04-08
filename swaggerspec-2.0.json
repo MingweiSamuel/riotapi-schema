@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "c2a660698b7a5199d4f235ac22638588e08a902e",
-    "x-hash": "c2a660698b7a5199d4f235ac22638588e08a902e27386b8f1825183e8474993f19a5a7df46153503",
+    "version": "0f9e8e4544429a8a9170717cea8007ae2fd5fd6a",
+    "x-hash": "0f9e8e4544429a8a9170717cea8007ae2fd5fd6a27386b8f1825183e8474993f19a5a7df46153503",
     "x-enumsHash": "27386b8f1825183e8474993f19a5a7df46153503"
   },
   "host": "na1.api.riotgames.com",
@@ -5252,105 +5252,6 @@
         ]
       },
       "x-endpoint": "tft-summoner-v1",
-      "x-platforms-available": [
-        "br1",
-        "eun1",
-        "euw1",
-        "jp1",
-        "kr",
-        "la1",
-        "la2",
-        "na1",
-        "oc1",
-        "ru",
-        "tr1"
-      ],
-      "x-route-enum": "platform"
-    },
-    "/lol/platform/v4/third-party-code/by-summoner/{encryptedSummonerId}": {
-      "get": {
-        "tags": [
-          "third-party-code-v4"
-        ],
-        "summary": "Get third party code for a given summoner ID.",
-        "externalDocs": {
-          "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#third-party-code-v4/GET_getThirdPartyCodeBySummonerId"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "type": "string",
-              "x-type": "String"
-            }
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Data not found"
-          },
-          "405": {
-            "description": "Method not allowed"
-          },
-          "415": {
-            "description": "Unsupported media type"
-          },
-          "429": {
-            "description": "Rate limit exceeded"
-          },
-          "500": {
-            "description": "Internal server error"
-          },
-          "502": {
-            "description": "Bad gateway"
-          },
-          "503": {
-            "description": "Service unavailable"
-          },
-          "504": {
-            "description": "Gateway timeout"
-          }
-        },
-        "operationId": "third-party-code-v4.getThirdPartyCodeBySummonerId",
-        "description": "Get third party code for a given summoner ID.",
-        "parameters": [
-          {
-            "name": "encryptedSummonerId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-type": "string",
-            "description": ""
-          }
-        ],
-        "x-endpoint": "third-party-code-v4",
-        "x-platforms-available": [
-          "br1",
-          "eun1",
-          "euw1",
-          "jp1",
-          "kr",
-          "la1",
-          "la2",
-          "na1",
-          "oc1",
-          "ru",
-          "tr1"
-        ],
-        "x-route-enum": "platform",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "x-endpoint": "third-party-code-v4",
       "x-platforms-available": [
         "br1",
         "eun1",
