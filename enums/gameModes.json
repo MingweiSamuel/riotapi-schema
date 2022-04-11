@@ -57,10 +57,10 @@
   },
   {
     "gameMode": "GAMEMODEX",
-    "description": "Nexus Blitz games, deprecated in patch 9.2 in favor of gameMode NEXUSBLITZ.",
+    "description": "Nexus Blitz games",
     "x-value": "GAMEMODEX",
     "x-name": "GAMEMODEX",
-    "x-desc": "Nexus Blitz games, deprecated in patch 9.2 in favor of gameMode NEXUSBLITZ."
+    "x-desc": "Nexus Blitz games"
   },
   {
     "gameMode": "KINGPORO",
@@ -71,10 +71,10 @@
   },
   {
     "gameMode": "NEXUSBLITZ",
-    "description": "Nexus Blitz games.",
+    "description": "Nexus Blitz games",
     "x-value": "NEXUSBLITZ",
     "x-name": "NEXUSBLITZ",
-    "x-desc": "Nexus Blitz games."
+    "x-desc": "Nexus Blitz games"
   },
   {
     "gameMode": "ODIN",
@@ -155,10 +155,10 @@
   },
   {
     "gameMode": "ULTBOOK",
-    "description": "Ultimate Spellbook games.",
+    "description": "Ultimate Spellbook games",
     "x-value": "ULTBOOK",
     "x-name": "ULTBOOK",
-    "x-desc": "Ultimate Spellbook games."
+    "x-desc": "Ultimate Spellbook games"
   },
   {
     "gameMode": "URF",
