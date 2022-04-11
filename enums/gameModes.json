@@ -98,6 +98,13 @@
     "x-desc": "One for All games"
   },
   {
+    "gameMode": "PRACTICETOOL",
+    "description": "Practice tool training games.",
+    "x-value": "PRACTICETOOL",
+    "x-name": "PRACTICETOOL",
+    "x-desc": "Practice tool training games."
+  },
+  {
     "gameMode": "PROJECT",
     "description": "PROJECT: Hunters games",
     "x-value": "PROJECT",
