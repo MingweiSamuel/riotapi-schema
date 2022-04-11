@@ -1,17 +1,5 @@
 [
     {
-        "gameMode": "ULTBOOK",
-        "description": "Ultimate Spellbook games."
-    },
-    {
-        "gameMode": "GAMEMODEX",
-        "description": "Nexus Blitz games, deprecated in patch 9.2 in favor of gameMode NEXUSBLITZ."
-    },
-    {
-        "gameMode": "NEXUSBLITZ",
-        "description": "Nexus Blitz games."
-    },
-    {
         "gameMode": "PRACTICETOOL",
         "description": "Practice tool training games."
     },
