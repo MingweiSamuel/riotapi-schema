@@ -12,6 +12,10 @@
         "description": "Nexus Blitz games."
     },
     {
+        "gameMode": "PRACTICETOOL",
+        "description": "Practice tool training games."
+    },
+    {
         "gameMode": "TUTORIAL_MODULE_1",
         "description": "Tutorial: Welcome to League."
     },
