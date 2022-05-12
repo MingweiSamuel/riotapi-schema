@@ -1,5 +1,8 @@
 [
   "account-v1.ActiveShardDto",
+  "lol-challenges-v1.ChallengeInfo",
+  "lol-challenges-v1.ChallengePoints",
+  "lol-challenges-v1.PlayerClientPreferences",
   "match-v5.MatchTimelineDto",
   "tft-match-v1.CompanionDto"
 ]

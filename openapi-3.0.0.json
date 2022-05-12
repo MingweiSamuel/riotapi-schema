@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "776d4c1040dcc7b76d07c73c511251515aa49c67",
-    "x-hash": "776d4c1040dcc7b76d07c73c511251515aa49c67a2eae7cd7c77aaf421618831fc1652d3020e16d0",
+    "version": "5cdf804f070115424afb74e0bbe977dcf6148dc3",
+    "x-hash": "5cdf804f070115424afb74e0bbe977dcf6148dc3a2eae7cd7c77aaf421618831fc1652d3020e16d0",
     "x-enumsHash": "a2eae7cd7c77aaf421618831fc1652d3020e16d0"
   },
   "servers": [
@@ -2179,6 +2179,682 @@
         "la2",
         "na1",
         "oc1",
+        "ru",
+        "tr1"
+      ],
+      "x-route-enum": "platform"
+    },
+    "/lol/challenges/v1/challenges/config": {
+      "get": {
+        "tags": [
+          "lol-challenges-v1"
+        ],
+        "summary": "List of all basic challenge configuration information (includes all translations for names and descriptions)",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-challenges-v1/GET_getAllChallengeConfigs"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/lol-challenges-v1.ChallengeConfigInfoDto",
+                    "x-type": "ChallengeConfigInfoDto"
+                  },
+                  "x-type": "List[ChallengeConfigInfoDto]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-challenges-v1.getAllChallengeConfigs",
+        "description": "List of all basic challenge configuration information (includes all translations for names and descriptions)",
+        "x-endpoint": "lol-challenges-v1",
+        "x-platforms-available": [
+          "br1",
+          "eun1",
+          "euw1",
+          "jp1",
+          "kr",
+          "la1",
+          "la2",
+          "na1",
+          "oc1",
+          "pbe1",
+          "ru",
+          "tr1"
+        ],
+        "x-route-enum": "platform"
+      },
+      "x-endpoint": "lol-challenges-v1",
+      "x-platforms-available": [
+        "br1",
+        "eun1",
+        "euw1",
+        "jp1",
+        "kr",
+        "la1",
+        "la2",
+        "na1",
+        "oc1",
+        "pbe1",
+        "ru",
+        "tr1"
+      ],
+      "x-route-enum": "platform"
+    },
+    "/lol/challenges/v1/challenges/percentiles": {
+      "get": {
+        "tags": [
+          "lol-challenges-v1"
+        ],
+        "summary": "Map of level to percentile of players who have achieved it - keys: ChallengeId -> Season -> Level -> percentile of players who achieved it",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-challenges-v1/GET_getAllChallengePercentiles"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-key": {
+                    "type": "integer",
+                    "format": "int64",
+                    "x-type": "Long"
+                  },
+                  "additionalProperties": {
+                    "type": "object",
+                    "x-key": {
+                      "$ref": "#/components/schemas/lol-challenges-v1.Integer",
+                      "x-type": "Integer"
+                    },
+                    "additionalProperties": {
+                      "type": "object",
+                      "x-key": {
+                        "$ref": "#/components/schemas/lol-challenges-v1.Level",
+                        "x-type": "Level"
+                      },
+                      "additionalProperties": {
+                        "type": "number",
+                        "format": "double",
+                        "x-type": "Double"
+                      },
+                      "x-type": "Map[Level, Double]"
+                    },
+                    "x-type": "Map[Integer, Map[Level, Double]]"
+                  },
+                  "x-type": "Map[Long, Map[Integer, Map[Level, Double]]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-challenges-v1.getAllChallengePercentiles",
+        "description": "Map of level to percentile of players who have achieved it - keys: ChallengeId -> Season -> Level -> percentile of players who achieved it",
+        "x-endpoint": "lol-challenges-v1",
+        "x-platforms-available": [
+          "br1",
+          "eun1",
+          "euw1",
+          "jp1",
+          "kr",
+          "la1",
+          "la2",
+          "na1",
+          "oc1",
+          "pbe1",
+          "ru",
+          "tr1"
+        ],
+        "x-route-enum": "platform"
+      },
+      "x-endpoint": "lol-challenges-v1",
+      "x-platforms-available": [
+        "br1",
+        "eun1",
+        "euw1",
+        "jp1",
+        "kr",
+        "la1",
+        "la2",
+        "na1",
+        "oc1",
+        "pbe1",
+        "ru",
+        "tr1"
+      ],
+      "x-route-enum": "platform"
+    },
+    "/lol/challenges/v1/challenges/{challengeId}/config": {
+      "get": {
+        "tags": [
+          "lol-challenges-v1"
+        ],
+        "summary": "Get challenge configuration (REST)",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-challenges-v1/GET_getChallengeConfigs"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/lol-challenges-v1.ChallengeConfigInfoDto",
+                  "x-type": "ChallengeConfigInfoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-challenges-v1.getChallengeConfigs",
+        "description": "Get challenge configuration (REST)",
+        "parameters": [
+          {
+            "name": "challengeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            }
+          }
+        ],
+        "x-endpoint": "lol-challenges-v1",
+        "x-platforms-available": [
+          "br1",
+          "eun1",
+          "euw1",
+          "jp1",
+          "kr",
+          "la1",
+          "la2",
+          "na1",
+          "oc1",
+          "pbe1",
+          "ru",
+          "tr1"
+        ],
+        "x-route-enum": "platform"
+      },
+      "x-endpoint": "lol-challenges-v1",
+      "x-platforms-available": [
+        "br1",
+        "eun1",
+        "euw1",
+        "jp1",
+        "kr",
+        "la1",
+        "la2",
+        "na1",
+        "oc1",
+        "pbe1",
+        "ru",
+        "tr1"
+      ],
+      "x-route-enum": "platform"
+    },
+    "/lol/challenges/v1/challenges/{challengeId}/leaderboards/by-level/{level}": {
+      "get": {
+        "tags": [
+          "lol-challenges-v1"
+        ],
+        "summary": "Return top players for each level. Level must be MASTER, GRANDMASTER or CHALLENGER.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-challenges-v1/GET_getChallengeLeaderboards"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/lol-challenges-v1.ApexPlayerInfoDto",
+                    "x-type": "ApexPlayerInfoDto"
+                  },
+                  "x-type": "List[ApexPlayerInfoDto]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-challenges-v1.getChallengeLeaderboards",
+        "description": "Return top players for each level. Level must be MASTER, GRANDMASTER or CHALLENGER.",
+        "parameters": [
+          {
+            "name": "level",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string",
+              "enum": [
+                "NONE",
+                "IRON",
+                "BRONZE",
+                "SILVER",
+                "GOLD",
+                "PLATINUM",
+                "DIAMOND",
+                "MASTER",
+                "GRANDMASTER",
+                "CHALLENGER",
+                "HIGHEST_NOT_LEADERBOARD_ONLY",
+                "HIGHEST",
+                "LOWEST"
+              ]
+            }
+          },
+          {
+            "name": "challengeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "x-type": "int"
+            }
+          }
+        ],
+        "x-endpoint": "lol-challenges-v1",
+        "x-platforms-available": [
+          "br1",
+          "eun1",
+          "euw1",
+          "jp1",
+          "kr",
+          "la1",
+          "la2",
+          "na1",
+          "oc1",
+          "pbe1",
+          "ru",
+          "tr1"
+        ],
+        "x-route-enum": "platform"
+      },
+      "x-endpoint": "lol-challenges-v1",
+      "x-platforms-available": [
+        "br1",
+        "eun1",
+        "euw1",
+        "jp1",
+        "kr",
+        "la1",
+        "la2",
+        "na1",
+        "oc1",
+        "pbe1",
+        "ru",
+        "tr1"
+      ],
+      "x-route-enum": "platform"
+    },
+    "/lol/challenges/v1/challenges/{challengeId}/percentiles": {
+      "get": {
+        "tags": [
+          "lol-challenges-v1"
+        ],
+        "summary": "Map of level to percentile of players who have achieved it",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-challenges-v1/GET_getChallengePercentiles"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-key": {
+                    "$ref": "#/components/schemas/lol-challenges-v1.Level",
+                    "x-type": "Level"
+                  },
+                  "additionalProperties": {
+                    "type": "number",
+                    "format": "double",
+                    "x-type": "double"
+                  },
+                  "x-type": "Map[Level, double]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-challenges-v1.getChallengePercentiles",
+        "description": "Map of level to percentile of players who have achieved it",
+        "parameters": [
+          {
+            "name": "challengeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "x-type": "long"
+            }
+          }
+        ],
+        "x-endpoint": "lol-challenges-v1",
+        "x-platforms-available": [
+          "br1",
+          "eun1",
+          "euw1",
+          "jp1",
+          "kr",
+          "la1",
+          "la2",
+          "na1",
+          "oc1",
+          "pbe1",
+          "ru",
+          "tr1"
+        ],
+        "x-route-enum": "platform"
+      },
+      "x-endpoint": "lol-challenges-v1",
+      "x-platforms-available": [
+        "br1",
+        "eun1",
+        "euw1",
+        "jp1",
+        "kr",
+        "la1",
+        "la2",
+        "na1",
+        "oc1",
+        "pbe1",
+        "ru",
+        "tr1"
+      ],
+      "x-route-enum": "platform"
+    },
+    "/lol/challenges/v1/player-data/{puuid}": {
+      "get": {
+        "tags": [
+          "lol-challenges-v1"
+        ],
+        "summary": "Returns player information with list of all progressed challenges (REST)",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#lol-challenges-v1/GET_getPlayerData"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/lol-challenges-v1.PlayerInfoDto",
+                  "x-type": "PlayerInfoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "lol-challenges-v1.getPlayerData",
+        "description": "Returns player information with list of all progressed challenges (REST)",
+        "parameters": [
+          {
+            "name": "puuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            }
+          }
+        ],
+        "x-endpoint": "lol-challenges-v1",
+        "x-platforms-available": [
+          "br1",
+          "eun1",
+          "euw1",
+          "jp1",
+          "kr",
+          "la1",
+          "la2",
+          "na1",
+          "oc1",
+          "pbe1",
+          "ru",
+          "tr1"
+        ],
+        "x-route-enum": "platform"
+      },
+      "x-endpoint": "lol-challenges-v1",
+      "x-platforms-available": [
+        "br1",
+        "eun1",
+        "euw1",
+        "jp1",
+        "kr",
+        "la1",
+        "la2",
+        "na1",
+        "oc1",
+        "pbe1",
         "ru",
         "tr1"
       ],
@@ -7548,6 +8224,183 @@
           "freshBlood",
           "inactive"
         ]
+      },
+      "lol-challenges-v1.ChallengeConfigInfoDto": {
+        "type": "object",
+        "title": "ChallengeConfigInfoDto",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "localizedNames": {
+            "type": "object",
+            "x-key": {
+              "type": "string",
+              "x-type": "String"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "x-key": {
+                "type": "string",
+                "x-type": "String"
+              },
+              "additionalProperties": {
+                "type": "string",
+                "x-type": "string"
+              },
+              "x-type": "Map[String, string]"
+            },
+            "x-type": "Map[String, Map[String, string]]"
+          },
+          "state": {
+            "$ref": "#/components/schemas/lol-challenges-v1.State",
+            "x-type": "State"
+          },
+          "tracking": {
+            "$ref": "#/components/schemas/lol-challenges-v1.Tracking",
+            "x-type": "Tracking"
+          },
+          "startTimestamp": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "endTimestamp": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "leaderboard": {
+            "type": "boolean",
+            "x-type": "boolean"
+          },
+          "thresholds": {
+            "type": "object",
+            "x-key": {
+              "type": "string",
+              "x-type": "String"
+            },
+            "additionalProperties": {
+              "type": "number",
+              "format": "double",
+              "x-type": "double"
+            },
+            "x-type": "Map[String, double]"
+          }
+        },
+        "required": [
+          "id",
+          "localizedNames",
+          "state",
+          "tracking",
+          "startTimestamp",
+          "endTimestamp",
+          "leaderboard",
+          "thresholds"
+        ]
+      },
+      "lol-challenges-v1.State": {
+        "type": "object",
+        "title": "State",
+        "properties": {},
+        "description": "DISABLED - not visible and not calculated,\nHIDDEN - not visible, but calculated,\nENABLED - visible and calculated,\nARCHIVED - visible, but not calculated"
+      },
+      "lol-challenges-v1.Tracking": {
+        "type": "object",
+        "title": "Tracking",
+        "properties": {},
+        "description": "LIFETIME - stats are incremented without reset,\nSEASON - stats are accumulated by season and reset at the beginning of new season"
+      },
+      "lol-challenges-v1.ApexPlayerInfoDto": {
+        "type": "object",
+        "title": "ApexPlayerInfoDto",
+        "properties": {
+          "puuid": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "value": {
+            "type": "number",
+            "format": "double",
+            "x-type": "double"
+          },
+          "position": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          }
+        },
+        "required": [
+          "puuid",
+          "value",
+          "position"
+        ]
+      },
+      "lol-challenges-v1.Level": {
+        "type": "object",
+        "title": "Level",
+        "properties": {},
+        "description": "0 NONE,\n1 IRON,\n2 BRONZE,\n3 SILVER,\n4 GOLD,\n5 PLATINUM,\n6 DIAMOND,\n7 MASTER,\n8 GRANDMASTER,\n9 CHALLENGER"
+      },
+      "lol-challenges-v1.PlayerInfoDto": {
+        "type": "object",
+        "title": "PlayerInfoDto",
+        "properties": {
+          "challenges": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/lol-challenges-v1.ChallengeInfo",
+              "x-type": "ChallengeInfo"
+            },
+            "x-type": "List[ChallengeInfo]"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/lol-challenges-v1.PlayerClientPreferences",
+            "x-type": "PlayerClientPreferences"
+          },
+          "totalPoints": {
+            "$ref": "#/components/schemas/lol-challenges-v1.ChallengePoints",
+            "x-type": "ChallengePoints"
+          },
+          "categoryPoints": {
+            "type": "object",
+            "x-key": {
+              "type": "string",
+              "x-type": "String"
+            },
+            "additionalProperties": {
+              "$ref": "#/components/schemas/lol-challenges-v1.ChallengePoints",
+              "x-type": "ChallengePoints"
+            },
+            "x-type": "Map[String, ChallengePoints]"
+          }
+        },
+        "required": [
+          "challenges",
+          "preferences",
+          "totalPoints",
+          "categoryPoints"
+        ]
+      },
+      "lol-challenges-v1.ChallengeInfo": {
+        "type": "object",
+        "title": "ChallengeInfo",
+        "properties": {},
+        "description": "UNKNOWN TYPE."
+      },
+      "lol-challenges-v1.PlayerClientPreferences": {
+        "type": "object",
+        "title": "PlayerClientPreferences",
+        "properties": {},
+        "description": "UNKNOWN TYPE."
+      },
+      "lol-challenges-v1.ChallengePoints": {
+        "type": "object",
+        "title": "ChallengePoints",
+        "properties": {},
+        "description": "UNKNOWN TYPE."
       },
       "lol-status-v3.ShardStatus": {
         "type": "object",
