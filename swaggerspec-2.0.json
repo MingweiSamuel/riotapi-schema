@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "2bf6b81d64c2a3b058848d8053d46a0682911f52",
-    "x-hash": "2bf6b81d64c2a3b058848d8053d46a0682911f52a2eae7cd7c77aaf421618831fc1652d3020e16d0",
+    "version": "1e2b79d34aabe50623f655dfc856fb2ecbea70ca",
+    "x-hash": "1e2b79d34aabe50623f655dfc856fb2ecbea70caa2eae7cd7c77aaf421618831fc1652d3020e16d0",
     "x-enumsHash": "a2eae7cd7c77aaf421618831fc1652d3020e16d0"
   },
   "host": "na1.api.riotgames.com",
@@ -27,6 +27,7 @@
     "tr1",
     "pbe1",
     "sea",
+    "apac",
     "ap",
     "br",
     "eu",
@@ -3298,10 +3299,12 @@
         "x-endpoint": "lor-match-v1",
         "x-platforms-available": [
           "americas",
+          "apac",
+          "asia",
           "europe",
           "sea"
         ],
-        "x-route-enum": "regional",
+        "x-route-enum": null,
         "produces": [
           "application/json"
         ]
@@ -3309,10 +3312,12 @@
       "x-endpoint": "lor-match-v1",
       "x-platforms-available": [
         "americas",
+        "apac",
+        "asia",
         "europe",
         "sea"
       ],
-      "x-route-enum": "regional"
+      "x-route-enum": null
     },
     "/lor/match/v1/matches/{matchId}": {
       "get": {
@@ -3381,10 +3386,12 @@
         "x-endpoint": "lor-match-v1",
         "x-platforms-available": [
           "americas",
+          "apac",
+          "asia",
           "europe",
           "sea"
         ],
-        "x-route-enum": "regional",
+        "x-route-enum": null,
         "produces": [
           "application/json"
         ]
@@ -3392,10 +3399,12 @@
       "x-endpoint": "lor-match-v1",
       "x-platforms-available": [
         "americas",
+        "apac",
+        "asia",
         "europe",
         "sea"
       ],
-      "x-route-enum": "regional"
+      "x-route-enum": null
     },
     "/lor/ranked/v1/leaderboards": {
       "get": {
@@ -5323,10 +5332,37 @@
             "description": ""
           },
           {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "description": "Defaults to 0. Start index.",
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "required": false,
+            "description": "Epoch timestamp in seconds.",
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "required": false,
+            "description": "Epoch timestamp in seconds. The matchlist started storing timestamps on June 16th, 2021. Any matches played before June 16th, 2021 won't be included in the results if the startTime filter is set.",
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          {
             "name": "count",
             "in": "query",
             "required": false,
-            "description": "Defaults to 20.",
+            "description": "Defaults to 20. Number of match ids to return.",
             "type": "integer",
             "format": "int32",
             "x-type": "int"
