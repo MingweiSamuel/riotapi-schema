@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 1cc6170c4acf6d7f422fdd7185334922edfbbcb7
-  x-hash: 1cc6170c4acf6d7f422fdd7185334922edfbbcb7a2eae7cd7c77aaf421618831fc1652d3020e16d0
+  version: c68a5cea00f664dfe5ee5d63004affc831a079b6
+  x-hash: c68a5cea00f664dfe5ee5d63004affc831a079b6a2eae7cd7c77aaf421618831fc1652d3020e16d0
   x-enumsHash: a2eae7cd7c77aaf421618831fc1652d3020e16d0
 host: na1.api.riotgames.com
 x-host-platform:
@@ -1721,28 +1721,22 @@ paths:
         '200':
           description: Success
           schema:
+            x-type: 'Map[Long, Map[Level, Double]]'
             type: object
             x-key:
+              x-type: long
               type: integer
               format: int64
-              x-type: Long
             additionalProperties:
               type: object
               x-key:
-                $ref: '#/definitions/lol-challenges-v1.Integer'
-                x-type: Integer
+                type: string
+                x-type: string
+                x-enum: tier
               additionalProperties:
-                type: object
-                x-key:
-                  $ref: '#/definitions/lol-challenges-v1.Level'
-                  x-type: Level
-                additionalProperties:
-                  type: number
-                  format: double
-                  x-type: Double
-                x-type: 'Map[Level, Double]'
-              x-type: 'Map[Integer, Map[Level, Double]]'
-            x-type: 'Map[Long, Map[Integer, Map[Level, Double]]]'
+                type: number
+                format: double
+                x-type: double
         '400':
           description: 'Bad request'
         '401':
