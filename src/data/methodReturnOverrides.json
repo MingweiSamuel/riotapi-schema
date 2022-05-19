@@ -13,6 +13,7 @@
       "format": "int64"
     },
     "additionalProperties": {
+      "x-type": "Map[Level, Double]",
       "type": "object",
       "x-key": {
         "type": "string",
@@ -24,6 +25,20 @@
         "format": "double",
         "x-type": "double"
       }
+    }
+  },
+  "lol-challenges-v1.getChallengePercentiles": {
+    "x-type": "Map[Level, Double]",
+    "type": "object",
+    "x-key": {
+      "type": "string",
+      "x-type": "string",
+      "x-enum": "tier"
+    },
+    "additionalProperties": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
     }
   }
 }
