@@ -2,5 +2,28 @@
   "tft-summoner-v1.getByAccessToken": {
     "$ref": "#/components/schemas/tft-summoner-v1.SummonerDTO",
     "x-type": "SummonerDTO"
+  },
+
+  "lol-challenges-v1.getAllChallengePercentiles": {
+    "x-type": "Map[Long, Map[Level, Double]]",
+    "type": "object",
+    "x-key": {
+      "x-type": "long",
+      "type": "integer",
+      "format": "int64"
+    },
+    "additionalProperties": {
+      "type": "object",
+      "x-key": {
+        "type": "string",
+        "x-type": "string",
+        "x-enum": "tier"
+      },
+      "additionalProperties": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      }
+    }
   }
 }
