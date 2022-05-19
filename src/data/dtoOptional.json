@@ -142,6 +142,11 @@
   "TODO__match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats.physicalVamp": true,
 
 
+  "lol-challenges-v1.ChallengeConfigInfoDto.tracking": true,
+  "lol-challenges-v1.ChallengeConfigInfoDto.startTimestamp": true,
+  "lol-challenges-v1.ChallengeConfigInfoDto.endTimestamp": true,
+
+
 
   "tft-match-v1.InfoDto.game_variation": true,
   "tft-match-v1.TraitDto.tier_total": true,

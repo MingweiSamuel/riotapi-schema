@@ -2376,9 +2376,6 @@
       "id",
       "localizedNames",
       "state",
-      "tracking",
-      "startTimestamp",
-      "endTimestamp",
       "leaderboard",
       "thresholds"
     ]
