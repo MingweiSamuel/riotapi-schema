@@ -13,6 +13,7 @@
 
     "league-exp-v4.getLeagueEntries.tier": "tier",
     "league-v4.getLeagueEntries.tier": "tier",
+    "lol-challenges-v1.getChallengeLeaderboards.level": "tier",
 
     "tft-league-v1.getTopRatedLadder.queue": "queueType",
     "tft-league-v1.getLeagueEntries.tier": "tier",
