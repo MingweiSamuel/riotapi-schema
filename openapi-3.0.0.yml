@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: d9acc86d8227657f21f3642c537cf1fd02de27e5
-  x-hash: d9acc86d8227657f21f3642c537cf1fd02de27e5a2eae7cd7c77aaf421618831fc1652d3020e16d0
+  version: 0b5a84369662d4608d074a246d1f44f8f7cbd1fd
+  x-hash: 0b5a84369662d4608d074a246d1f44f8f7cbd1fda2eae7cd7c77aaf421618831fc1652d3020e16d0
   x-enumsHash: a2eae7cd7c77aaf421618831fc1652d3020e16d0
 servers:
   -
@@ -6297,13 +6297,56 @@ components:
     lol-challenges-v1.ChallengeInfo:
       type: object
       title: ChallengeInfo
-      properties: {}
-      description: 'UNKNOWN TYPE.'
+      properties:
+        challengeId:
+          x-type: long
+          type: integer
+          format: int64
+        percentile:
+          x-type: double
+          type: number
+          format: double
+        level:
+          x-type: string
+          type: string
+          x-enum: tier
+        value:
+          x-type: double
+          type: number
+          format: double
+        achievedTime:
+          x-type: long
+          type: integer
+          format: int64
+      required:
+        - challengeId
+        - percentile
+        - level
+        - value
+        - achievedTime
     lol-challenges-v1.PlayerClientPreferences:
       type: object
       title: PlayerClientPreferences
-      properties: {}
-      description: 'UNKNOWN TYPE.'
+      properties:
+        bannerAccent:
+          x-type: string
+          type: string
+        title:
+          x-type: string
+          type: string
+        challengeIds:
+          x-type: 'List[long]'
+          type: array
+          items:
+            type: integer
+            format: int64
+            x-type: long
+      required:
+        - challengeId
+        - percentile
+        - level
+        - value
+        - achievedTime
     lol-challenges-v1.ChallengePoints:
       type: object
       title: ChallengePoints
@@ -6320,6 +6363,10 @@ components:
           x-type: long
           type: integer
           format: int64
+        percentile:
+          x-type: double
+          type: number
+          format: double
       required:
         - level
         - current
