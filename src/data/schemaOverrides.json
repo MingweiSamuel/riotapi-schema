@@ -2410,5 +2410,73 @@
       "current",
       "max"
     ]
+  },
+  "lol-challenges-v1.ChallengeInfo": {
+    "type": "object",
+    "title": "ChallengeInfo",
+    "properties": {
+      "challengeId": {
+        "x-type": "long",
+        "type": "integer",
+        "format": "int64"
+      },
+      "percentile": {
+        "x-type": "double",
+        "type": "number",
+        "format": "double"
+      },
+      "level": {
+        "x-type": "string",
+        "type": "string",
+        "x-enum": "tier"
+      },
+      "value": {
+        "x-type": "double",
+        "type": "number",
+        "format": "double"
+      },
+      "achievedTime": {
+        "x-type": "long",
+        "type": "integer",
+        "format": "int64"
+      }
+    },
+    "required": [
+      "challengeId",
+      "percentile",
+      "level",
+      "value",
+      "achievedTime"
+    ]
+  },
+  "lol-challenges-v1.PlayerClientPreferences": {
+    "type": "object",
+    "title": "PlayerClientPreferences",
+    "properties": {
+      "bannerAccent": {
+        "x-type": "string",
+        "type": "string"
+      },
+      "title": {
+        "x-type": "string",
+        "type": "string"
+      },
+      "challengeIds": {
+        "x-type": "List[long]",
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        }
+      }
+    },
+    "required": [
+      "challengeId",
+      "percentile",
+      "level",
+      "value",
+      "achievedTime"
+    ]
   }
 }
