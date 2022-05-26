@@ -2439,6 +2439,16 @@
         "x-type": "long",
         "type": "integer",
         "format": "int64"
+      },
+      "position": {
+        "x-type": "long",
+        "type": "integer",
+        "format": "int64"
+      },
+      "playersInLevel": {
+        "x-type": "long",
+        "type": "integer",
+        "format": "int64"
       }
     },
     "required": [
