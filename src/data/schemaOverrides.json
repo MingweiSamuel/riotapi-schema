@@ -2379,5 +2379,36 @@
       "leaderboard",
       "thresholds"
     ]
+  },
+  "lol-challenges-v1.ChallengePoints": {
+    "type": "object",
+    "title": "ChallengePoints",
+    "properties": {
+      "level": {
+        "x-type": "string",
+        "type": "string",
+        "x-enum": "tier"
+      },
+      "current": {
+        "x-type": "long",
+        "type": "integer",
+        "format": "int64"
+      },
+      "max": {
+        "x-type": "long",
+        "type": "integer",
+        "format": "int64"
+      },
+      "percentile": {
+        "x-type": "double",
+        "type": "number",
+        "format": "double"
+      }
+    },
+    "required": [
+      "level",
+      "current",
+      "max"
+    ]
   }
 }
