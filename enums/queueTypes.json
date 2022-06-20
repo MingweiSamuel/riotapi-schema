@@ -47,10 +47,19 @@
   {
     "queueType": "RANKED_TFT_PAIRS",
     "queueId": 1150,
-    "description": "Ranked Teamfight Tactics (Double Up Beta) games",
-    "notes": null,
+    "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
+    "notes": "Deprecated in patch 12.11 in favor of queueId 1160",
     "x-value": 1150,
     "x-name": "RANKED_TFT_PAIRS",
-    "x-desc": "Ranked Teamfight Tactics (Double Up Beta) games"
+    "x-desc": "Ranked Teamfight Tactics (Double Up Workshop) games"
+  },
+  {
+    "queueType": "RANKED_TFT_DOUBLE_UP",
+    "queueId": 1160,
+    "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
+    "notes": null,
+    "x-value": 1160,
+    "x-name": "RANKED_TFT_DOUBLE_UP",
+    "x-desc": "Ranked Teamfight Tactics (Double Up Workshop) games"
   }
 ]

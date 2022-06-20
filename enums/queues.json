@@ -802,12 +802,22 @@
   {
     "queueId": 1150,
     "map": "Convergence",
-    "description": "Ranked Teamfight Tactics (Double Up Beta) games",
-    "notes": null,
+    "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
+    "notes": "Deprecated in patch 12.11 in favor of queueId 1160",
     "x-value": 1150,
+    "x-deprecated": true,
+    "x-desc": "Ranked Teamfight Tactics (Double Up Workshop) games on Convergence",
+    "x-name": "CONVERGENCE_RANKED_TEAMFIGHT_TACTICS_DOUBLE_UP_WORKSHOP__DEPRECATED_1150"
+  },
+  {
+    "queueId": 1160,
+    "map": "Convergence",
+    "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
+    "notes": null,
+    "x-value": 1160,
     "x-deprecated": false,
-    "x-desc": "Ranked Teamfight Tactics (Double Up Beta) games on Convergence",
-    "x-name": "CONVERGENCE_RANKED_TEAMFIGHT_TACTICS_DOUBLE_UP_BETA_"
+    "x-desc": "Ranked Teamfight Tactics (Double Up Workshop) games on Convergence",
+    "x-name": "CONVERGENCE_RANKED_TEAMFIGHT_TACTICS_DOUBLE_UP_WORKSHOP_"
   },
   {
     "queueId": 1200,
