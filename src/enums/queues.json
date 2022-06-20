@@ -26,7 +26,13 @@
     {
         "queueId": 1150,
         "map": "Convergence",
-        "description": "Ranked Teamfight Tactics (Double Up Beta) games",
+        "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
+        "notes": "Deprecated in patch 12.11 in favor of queueId 1160"
+    },
+    {
+        "queueId": 1160,
+        "map": "Convergence",
+        "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
         "notes": null
     },
     {
