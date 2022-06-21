@@ -258,7 +258,11 @@ async function writeEnums() {
       const enumDict = await fs.readFile(`${__dirname}/enums/${filename}`).then(JSON.parse);
       const enums = setEnumXValues([ enumDict ], valKey);
       for (const enumb of enums) {
-        const { queueType, description } = enumb;
+        const { queueType, description, notes } = enumb;
+
+        const deprecated = !!(notes && notes.toUpperCase().includes('DEPRECATED'));
+
+        enumb['x-deprecated'] = deprecated;
         enumb['x-name'] = queueType;
         enumb['x-desc'] = description;
       }
