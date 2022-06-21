@@ -5,6 +5,7 @@
     "description": "5v5 Ranked Solo games",
     "notes": null,
     "x-value": 420,
+    "x-deprecated": false,
     "x-name": "RANKED_SOLO_5x5",
     "x-desc": "5v5 Ranked Solo games"
   },
@@ -14,6 +15,7 @@
     "description": "5v5 Ranked Flex games",
     "notes": null,
     "x-value": 440,
+    "x-deprecated": false,
     "x-name": "RANKED_FLEX_SR",
     "x-desc": "5v5 Ranked Flex games"
   },
@@ -23,6 +25,7 @@
     "description": "3v3 Ranked Flex games",
     "notes": "Deprecated in patch 9.23",
     "x-value": 470,
+    "x-deprecated": true,
     "x-name": "RANKED_FLEX_TT",
     "x-desc": "3v3 Ranked Flex games"
   },
@@ -32,6 +35,7 @@
     "description": "Ranked Teamfight Tactics games",
     "notes": null,
     "x-value": 1100,
+    "x-deprecated": false,
     "x-name": "RANKED_TFT",
     "x-desc": "Ranked Teamfight Tactics games"
   },
@@ -41,6 +45,7 @@
     "description": "Ranked Teamfight Tactics (Hyper Roll) games",
     "notes": null,
     "x-value": 1130,
+    "x-deprecated": false,
     "x-name": "RANKED_TFT_TURBO",
     "x-desc": "Ranked Teamfight Tactics (Hyper Roll) games"
   },
@@ -50,6 +55,7 @@
     "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
     "notes": "Deprecated in patch 12.11 in favor of queueId 1160",
     "x-value": 1150,
+    "x-deprecated": true,
     "x-name": "RANKED_TFT_PAIRS",
     "x-desc": "Ranked Teamfight Tactics (Double Up Workshop) games"
   },
@@ -59,6 +65,7 @@
     "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
     "notes": null,
     "x-value": 1160,
+    "x-deprecated": false,
     "x-name": "RANKED_TFT_DOUBLE_UP",
     "x-desc": "Ranked Teamfight Tactics (Double Up Workshop) games"
   }
