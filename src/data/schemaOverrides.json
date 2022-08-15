@@ -2455,8 +2455,7 @@
       "challengeId",
       "percentile",
       "level",
-      "value",
-      "achievedTime"
+      "value"
     ]
   },
   "lol-challenges-v1.PlayerClientPreferences": {

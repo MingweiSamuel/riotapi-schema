@@ -145,6 +145,7 @@
   "lol-challenges-v1.ChallengeConfigInfoDto.tracking": true,
   "lol-challenges-v1.ChallengeConfigInfoDto.startTimestamp": true,
   "lol-challenges-v1.ChallengeConfigInfoDto.endTimestamp": true,
+  "lol-challenges-v1.ChallengeInfo.achievedTime": true,
 
 
 
