@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 8a566197138131c2b213eb659d7dfb6de69bac17
-  x-hash: 8a566197138131c2b213eb659d7dfb6de69bac1749cbd2f8f64c11e7e829083e1d90752024f53f06
+  version: 9feea34747e12682de71e90132cb52a8c2815f48
+  x-hash: 9feea34747e12682de71e90132cb52a8c2815f4849cbd2f8f64c11e7e829083e1d90752024f53f06
   x-enumsHash: 49cbd2f8f64c11e7e829083e1d90752024f53f06
 servers:
   -
@@ -14,6 +14,7 @@ servers:
         enum:
           - americas
           - asia
+          - esports
           - europe
           - br1
           - eun1
@@ -31,7 +32,6 @@ servers:
           - apac
           - ap
           - br
-          - esports
           - eu
           - latam
           - na
@@ -89,12 +89,14 @@ paths:
       x-platforms-available:
         - americas
         - asia
+        - esports
         - europe
       x-route-enum: regional
     x-endpoint: account-v1
     x-platforms-available:
       - americas
       - asia
+      - esports
       - europe
     x-route-enum: regional
   '/riot/account/v1/accounts/by-riot-id/{gameName}/{tagLine}':
@@ -159,12 +161,14 @@ paths:
       x-platforms-available:
         - americas
         - asia
+        - esports
         - europe
       x-route-enum: regional
     x-endpoint: account-v1
     x-platforms-available:
       - americas
       - asia
+      - esports
       - europe
     x-route-enum: regional
   /riot/account/v1/accounts/me:
@@ -219,12 +223,14 @@ paths:
       x-platforms-available:
         - americas
         - asia
+        - esports
         - europe
       x-route-enum: regional
     x-endpoint: account-v1
     x-platforms-available:
       - americas
       - asia
+      - esports
       - europe
     x-route-enum: regional
   '/riot/account/v1/active-shards/by-game/{game}/by-puuid/{puuid}':
@@ -290,12 +296,14 @@ paths:
       x-platforms-available:
         - americas
         - asia
+        - esports
         - europe
       x-route-enum: regional
     x-endpoint: account-v1
     x-platforms-available:
       - americas
       - asia
+      - esports
       - europe
     x-route-enum: regional
   '/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}':
@@ -438,6 +446,95 @@ paths:
             type: string
             x-type: string
           description: 'Summoner ID associated with the player'
+      x-endpoint: champion-mastery-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - ru
+        - tr1
+      x-route-enum: platform
+    x-endpoint: champion-mastery-v4
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - ru
+      - tr1
+    x-route-enum: platform
+  '/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/top':
+    get:
+      tags:
+        - champion-mastery-v4
+      summary: 'Get specified number of top champion mastery entries sorted by number of champion points descending.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#champion-mastery-v4/GET_getTopChampionMasteries'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/champion-mastery-v4.ChampionMasteryDto'
+                  x-type: ChampionMasteryDto
+                x-type: 'List[ChampionMasteryDto]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: champion-mastery-v4.getTopChampionMasteries
+      description: 'Get specified number of top champion mastery entries sorted by number of champion points descending.'
+      parameters:
+        -
+          name: encryptedSummonerId
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+          description: 'Summoner ID associated with the player'
+        -
+          name: count
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'Number of entries to retrieve, defaults to 3'
       x-endpoint: champion-mastery-v4
       x-platforms-available:
         - br1
@@ -4213,6 +4310,76 @@ paths:
       - europe
       - sea
     x-route-enum: regional
+  /tft/status/v1/platform-data:
+    get:
+      tags:
+        - tft-status-v1
+      summary: 'Get Teamfight Tactics status for the given platform.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tft-status-v1/GET_getPlatformData'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tft-status-v1.PlatformDataDto'
+                x-type: PlatformDataDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tft-status-v1.getPlatformData
+      description: 'Get Teamfight Tactics status for the given platform.'
+      x-endpoint: tft-status-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - na1
+        - oc1
+        - pbe1
+        - ru
+        - tr1
+      x-route-enum: platform
+    x-endpoint: tft-status-v1
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - na1
+      - oc1
+      - pbe1
+      - ru
+      - tr1
+    x-route-enum: platform
   '/tft/summoner/v1/summoners/by-account/{encryptedAccountId}':
     get:
       tags:
@@ -8761,6 +8928,168 @@ components:
         - skin_ID
         - content_ID
         - species
+    tft-status-v1.PlatformDataDto:
+      type: object
+      title: PlatformDataDto
+      properties:
+        id:
+          type: string
+          x-type: string
+        name:
+          type: string
+          x-type: string
+        locales:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+        maintenances:
+          type: array
+          items:
+            $ref: '#/components/schemas/tft-status-v1.StatusDto'
+            x-type: StatusDto
+          x-type: 'List[StatusDto]'
+        incidents:
+          type: array
+          items:
+            $ref: '#/components/schemas/tft-status-v1.StatusDto'
+            x-type: StatusDto
+          x-type: 'List[StatusDto]'
+      required:
+        - id
+        - name
+        - locales
+        - maintenances
+        - incidents
+    tft-status-v1.StatusDto:
+      type: object
+      title: StatusDto
+      properties:
+        id:
+          type: integer
+          format: int32
+          x-type: int
+        maintenance_status:
+          type: string
+          x-type: string
+          enum:
+            - scheduled
+            - in_progress
+            - complete
+          description: '(Legal values:  scheduled,  in_progress,  complete)'
+        incident_severity:
+          type: string
+          x-type: string
+          enum:
+            - info
+            - warning
+            - critical
+          description: '(Legal values:  info,  warning,  critical)'
+        titles:
+          type: array
+          items:
+            $ref: '#/components/schemas/tft-status-v1.ContentDto'
+            x-type: ContentDto
+          x-type: 'List[ContentDto]'
+        updates:
+          type: array
+          items:
+            $ref: '#/components/schemas/tft-status-v1.UpdateDto'
+            x-type: UpdateDto
+          x-type: 'List[UpdateDto]'
+        created_at:
+          type: string
+          x-type: string
+        archive_at:
+          type: string
+          x-type: string
+        updated_at:
+          type: string
+          x-type: string
+        platforms:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+          enum:
+            - windows
+            - macos
+            - android
+            - ios
+            - ps4
+            - xbone
+            - switch
+          description: '(Legal values: windows, macos, android, ios, ps4, xbone, switch)'
+      required:
+        - id
+        - maintenance_status
+        - incident_severity
+        - titles
+        - updates
+        - created_at
+        - archive_at
+        - updated_at
+        - platforms
+    tft-status-v1.ContentDto:
+      type: object
+      title: ContentDto
+      properties:
+        locale:
+          type: string
+          x-type: string
+        content:
+          type: string
+          x-type: string
+      required:
+        - locale
+        - content
+    tft-status-v1.UpdateDto:
+      type: object
+      title: UpdateDto
+      properties:
+        id:
+          type: integer
+          format: int32
+          x-type: int
+        author:
+          type: string
+          x-type: string
+        publish:
+          type: boolean
+          x-type: boolean
+        publish_locations:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+          enum:
+            - riotclient
+            - riotstatus
+            - game
+          description: '(Legal values: riotclient, riotstatus, game)'
+        translations:
+          type: array
+          items:
+            $ref: '#/components/schemas/tft-status-v1.ContentDto'
+            x-type: ContentDto
+          x-type: 'List[ContentDto]'
+        created_at:
+          type: string
+          x-type: string
+        updated_at:
+          type: string
+          x-type: string
+      required:
+        - id
+        - author
+        - publish
+        - publish_locations
+        - translations
+        - created_at
+        - updated_at
     tft-summoner-v1.SummonerDTO:
       type: object
       title: SummonerDTO
