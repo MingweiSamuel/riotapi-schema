@@ -142,6 +142,12 @@
   "TODO__match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats.physicalVamp": true,
 
 
+  "lol-status-v4.StatusDto.archive_at": true,
+  "lol-status-v4.StatusDto.incident_severity": true,
+  "lol-status-v4.StatusDto.maintenance_status": true,
+  "lol-status-v4.StatusDto.updated_at": true,
+
+
   "lol-challenges-v1.ChallengeConfigInfoDto.tracking": true,
   "lol-challenges-v1.ChallengeConfigInfoDto.startTimestamp": true,
   "lol-challenges-v1.ChallengeConfigInfoDto.endTimestamp": true,
