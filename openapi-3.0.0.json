@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "e6d5ee83ebfecb473fbf9f71303e2d84c917d3d0",
-    "x-hash": "e6d5ee83ebfecb473fbf9f71303e2d84c917d3d049cbd2f8f64c11e7e829083e1d90752024f53f06",
+    "version": "852a71c093f668f69cf339c719a9ba1ac1569fa8",
+    "x-hash": "852a71c093f668f69cf339c719a9ba1ac1569fa849cbd2f8f64c11e7e829083e1d90752024f53f06",
     "x-enumsHash": "49cbd2f8f64c11e7e829083e1d90752024f53f06"
   },
   "servers": [
@@ -27,8 +27,13 @@
             "la2",
             "na1",
             "oc1",
+            "ph2",
             "ru",
+            "sg2",
+            "th2",
             "tr1",
+            "tw2",
+            "vn2",
             "pbe1",
             "sea",
             "apac",
@@ -503,10 +508,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "champion-mastery-v4",
       "x-platforms-available": [
@@ -519,10 +529,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/by-champion/{championId}": {
       "get": {
@@ -618,10 +633,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "champion-mastery-v4",
       "x-platforms-available": [
@@ -634,10 +654,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/top": {
       "get": {
@@ -735,10 +760,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "champion-mastery-v4",
       "x-platforms-available": [
@@ -751,10 +781,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/champion-mastery/v4/scores/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -838,10 +873,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "champion-mastery-v4",
       "x-platforms-available": [
@@ -854,10 +894,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/platform/v3/champion-rotations": {
       "get": {
@@ -928,10 +973,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "champion-v3",
       "x-platforms-available": [
@@ -944,10 +994,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/clash/v1/players/by-summoner/{summonerId}": {
       "get": {
@@ -1033,10 +1088,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "clash-v1",
       "x-platforms-available": [
@@ -1049,10 +1109,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/clash/v1/teams/{teamId}": {
       "get": {
@@ -1135,10 +1200,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "clash-v1",
       "x-platforms-available": [
@@ -1151,10 +1221,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/clash/v1/tournaments": {
       "get": {
@@ -1229,10 +1304,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "clash-v1",
       "x-platforms-available": [
@@ -1245,10 +1325,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/clash/v1/tournaments/by-team/{teamId}": {
       "get": {
@@ -1331,10 +1416,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "clash-v1",
       "x-platforms-available": [
@@ -1347,10 +1437,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/clash/v1/tournaments/{tournamentId}": {
       "get": {
@@ -1434,10 +1529,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "clash-v1",
       "x-platforms-available": [
@@ -1450,10 +1550,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/league-exp/v4/entries/{queue}/{tier}/{division}": {
       "get": {
@@ -1595,10 +1700,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "league-exp-v4",
       "x-platforms-available": [
@@ -1611,10 +1721,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/league/v4/challengerleagues/by-queue/{queue}": {
       "get": {
@@ -1702,10 +1817,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "league-v4",
       "x-platforms-available": [
@@ -1718,10 +1838,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/league/v4/entries/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -1807,10 +1932,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "league-v4",
       "x-platforms-available": [
@@ -1823,10 +1953,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/league/v4/entries/{queue}/{tier}/{division}": {
       "get": {
@@ -1964,10 +2099,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "league-v4",
       "x-platforms-available": [
@@ -1980,10 +2120,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/league/v4/grandmasterleagues/by-queue/{queue}": {
       "get": {
@@ -2071,10 +2216,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "league-v4",
       "x-platforms-available": [
@@ -2087,10 +2237,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/league/v4/leagues/{leagueId}": {
       "get": {
@@ -2174,10 +2329,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "league-v4",
       "x-platforms-available": [
@@ -2190,10 +2350,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/league/v4/masterleagues/by-queue/{queue}": {
       "get": {
@@ -2281,10 +2446,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "league-v4",
       "x-platforms-available": [
@@ -2297,10 +2467,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/challenges/v1/challenges/config": {
       "get": {
@@ -2376,10 +2551,15 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "lol-challenges-v1",
       "x-platforms-available": [
@@ -2393,10 +2573,15 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/challenges/v1/challenges/percentiles": {
       "get": {
@@ -2487,10 +2672,15 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "lol-challenges-v1",
       "x-platforms-available": [
@@ -2504,10 +2694,15 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/challenges/v1/challenges/{challengeId}/config": {
       "get": {
@@ -2592,10 +2787,15 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "lol-challenges-v1",
       "x-platforms-available": [
@@ -2609,10 +2809,15 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/challenges/v1/challenges/{challengeId}/leaderboards/by-level/{level}": {
       "get": {
@@ -2736,10 +2941,15 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "lol-challenges-v1",
       "x-platforms-available": [
@@ -2753,10 +2963,15 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/challenges/v1/challenges/{challengeId}/percentiles": {
       "get": {
@@ -2851,10 +3066,15 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "lol-challenges-v1",
       "x-platforms-available": [
@@ -2868,10 +3088,15 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/challenges/v1/player-data/{puuid}": {
       "get": {
@@ -2954,10 +3179,15 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "lol-challenges-v1",
       "x-platforms-available": [
@@ -2971,10 +3201,15 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/status/v3/shard-data": {
       "get": {
@@ -3047,10 +3282,15 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "lol-status-v3",
       "x-platforms-available": [
@@ -3064,10 +3304,15 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/status/v4/platform-data": {
       "get": {
@@ -3139,10 +3384,14 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "lol-status-v4",
       "x-platforms-available": [
@@ -3156,10 +3405,14 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lor/deck/v1/decks/me": {
       "get": {
@@ -4289,7 +4542,7 @@
         "tags": [
           "summoner-v4"
         ],
-        "summary": "Get a summoner by it's RSO encrypted PUUID.",
+        "summary": "Get a summoner by its RSO encrypted PUUID.",
         "externalDocs": {
           "description": "Official API Reference",
           "url": "https://developer.riotgames.com/api-methods/#summoner-v4/GET_getByRSOPUUID"
@@ -4341,7 +4594,7 @@
           }
         },
         "operationId": "summoner-v4.getByRSOPUUID",
-        "description": "Get a summoner by it's RSO encrypted PUUID.",
+        "description": "Get a summoner by its RSO encrypted PUUID.",
         "parameters": [
           {
             "name": "rsoPUUID",
@@ -4365,10 +4618,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "summoner-v4",
       "x-platforms-available": [
@@ -4381,10 +4639,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/summoner/v4/summoners/by-account/{encryptedAccountId}": {
       "get": {
@@ -4466,10 +4729,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "summoner-v4",
       "x-platforms-available": [
@@ -4482,10 +4750,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/summoner/v4/summoners/by-name/{summonerName}": {
       "get": {
@@ -4569,10 +4842,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "summoner-v4",
       "x-platforms-available": [
@@ -4585,10 +4863,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}": {
       "get": {
@@ -4671,10 +4954,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "summoner-v4",
       "x-platforms-available": [
@@ -4687,10 +4975,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/summoner/v4/summoners/me": {
       "get": {
@@ -4773,10 +5066,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "summoner-v4",
       "x-platforms-available": [
@@ -4789,10 +5087,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/summoner/v4/summoners/{encryptedSummonerId}": {
       "get": {
@@ -4875,10 +5178,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "summoner-v4",
       "x-platforms-available": [
@@ -4891,10 +5199,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/league/v1/challenger": {
       "get": {
@@ -4965,10 +5278,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-league-v1",
       "x-platforms-available": [
@@ -4981,10 +5299,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/league/v1/entries/by-summoner/{summonerId}": {
       "get": {
@@ -5070,10 +5393,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-league-v1",
       "x-platforms-available": [
@@ -5086,10 +5414,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/league/v1/entries/{tier}/{division}": {
       "get": {
@@ -5210,10 +5543,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-league-v1",
       "x-platforms-available": [
@@ -5226,10 +5564,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/league/v1/grandmaster": {
       "get": {
@@ -5300,10 +5643,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-league-v1",
       "x-platforms-available": [
@@ -5316,10 +5664,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/league/v1/leagues/{leagueId}": {
       "get": {
@@ -5403,10 +5756,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-league-v1",
       "x-platforms-available": [
@@ -5419,10 +5777,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/league/v1/master": {
       "get": {
@@ -5493,10 +5856,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-league-v1",
       "x-platforms-available": [
@@ -5509,10 +5877,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/league/v1/rated-ladders/{queue}/top": {
       "get": {
@@ -5602,10 +5975,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-league-v1",
       "x-platforms-available": [
@@ -5618,10 +5996,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/match/v1/matches/by-puuid/{puuid}/ids": {
       "get": {
@@ -5916,10 +6299,15 @@
           "na1",
           "oc1",
           "pbe1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-status-v1",
       "x-platforms-available": [
@@ -5933,10 +6321,15 @@
         "na1",
         "oc1",
         "pbe1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/summoner/v1/summoners/by-account/{encryptedAccountId}": {
       "get": {
@@ -6018,10 +6411,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-summoner-v1",
       "x-platforms-available": [
@@ -6034,10 +6432,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/summoner/v1/summoners/by-name/{summonerName}": {
       "get": {
@@ -6121,10 +6524,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-summoner-v1",
       "x-platforms-available": [
@@ -6137,10 +6545,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/summoner/v1/summoners/by-puuid/{encryptedPUUID}": {
       "get": {
@@ -6223,10 +6636,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-summoner-v1",
       "x-platforms-available": [
@@ -6239,10 +6657,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/summoner/v1/summoners/me": {
       "get": {
@@ -6325,10 +6748,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-summoner-v1",
       "x-platforms-available": [
@@ -6341,10 +6769,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/tft/summoner/v1/summoners/{encryptedSummonerId}": {
       "get": {
@@ -6427,10 +6860,15 @@
           "la2",
           "na1",
           "oc1",
+          "ph2",
           "ru",
-          "tr1"
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
         ],
-        "x-route-enum": "platform"
+        "x-route-enum": null
       },
       "x-endpoint": "tft-summoner-v1",
       "x-platforms-available": [
@@ -6443,10 +6881,15 @@
         "la2",
         "na1",
         "oc1",
+        "ph2",
         "ru",
-        "tr1"
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
       ],
-      "x-route-enum": "platform"
+      "x-route-enum": null
     },
     "/lol/tournament-stub/v4/codes": {
       "post": {
