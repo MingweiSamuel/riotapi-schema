@@ -199,10 +199,10 @@ Method.prototype._handlePlatformSelect = function(platformSelect) {
     this.platformsAvailable = Array.from(platformSelect.children)
       .map(opt => opt.value.toLowerCase());
   }
-  
+
   // Find route enum based on routesTable.
   for (const [ routeEnumName, routes ] of Object.entries(routesTable)) {
-    if (this.platformsAvailable.every(r => routes.includes(r))) {
+    if (this.platformsAvailable.every(r => routes[r])) {
       this.routeEnumName = routeEnumName;
       break;
     }

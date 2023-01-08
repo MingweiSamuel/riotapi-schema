@@ -1,42 +1,173 @@
 {
-    "regional": [
-        "americas",
-        "asia",
-        "europe",
-        "sea",
-        "apac",
-
-        "esports"
-    ],
-    "platform": [
-        "br1",
-        "eun1",
-        "euw1",
-        "jp1",
-        "kr",
-        "la1",
-        "la2",
-        "na1",
-        "oc1",
-        "ph2",
-        "ru",
-        "sg2",
-        "th2",
-        "tr1",
-        "tw1",
-        "tw2",
-        "vn2",
-
-        "pbe1"
-    ],
-    "val-platform": [
-        "ap",
-        "br",
-        "eu",
-        "kr",
-        "latam",
-        "na",
-
-        "esports"
-    ]
+    "regional": {
+        "americas": {
+            "id": 1,
+            "description": "North and South America."
+        },
+        "asia": {
+            "id": 2,
+            "description": "Asia, used for LoL matches (`match-v5`) and TFT matches (`tft-match-v1`)."
+        },
+        "europe": {
+            "id": 3,
+            "description": "Europe."
+        },
+        "sea": {
+            "id": 4,
+            "description": "South East Asia, used for LoR, LoL matches (`match-v5`), and TFT matches (`tft-match-v1`)."
+        },
+        "apac": {
+            "id": 10,
+            "description": "Asia-Pacific, deprecated, for some old matches in `lor-match-v1`.",
+            "deprecated": true
+        },
+        "esports": {
+            "id": 11,
+            "description": "Special esports platform for `account-v1`. Do not confuse with the `esports` Valorant platform route."
+        }
+    },
+    "platform": {
+        "br1": {
+            "id": 16,
+            "description": "Brazil.",
+            "altName": "BR",
+            "regionalRoute": "americas",
+            "regionalRouteLor": "americas"
+        },
+        "eun1": {
+            "id": 17,
+            "description": "Europe, Northeast.",
+            "altName": "EUNE",
+            "regionalRoute": "europe",
+            "regionalRouteLor": "europe"
+        },
+        "euw1": {
+            "id": 18,
+            "description": "Europe, West.",
+            "altName": "EUW",
+            "regionalRoute": "europe",
+            "regionalRouteLor": "europe"
+        },
+        "jp1": {
+            "id": 19,
+            "description": "Japan.",
+            "altName": "JP",
+            "regionalRoute": "asia",
+            "regionalRouteLor": "asia"
+        },
+        "kr": {
+            "id": 20,
+            "description": "Korea.",
+            "regionalRoute": "asia",
+            "regionalRouteLor": "asia"
+        },
+        "la1": {
+            "id": 21,
+            "description": "Latin America, North.",
+            "altName": "LAN",
+            "regionalRoute": "americas",
+            "regionalRouteLor": "americas"
+        },
+        "la2": {
+            "id": 22,
+            "description": "Latin America, South.",
+            "altName": "LAS",
+            "regionalRoute": "americas",
+            "regionalRouteLor": "americas"
+        },
+        "na1": {
+            "id": 23,
+            "description": "North America.",
+            "altName": "NA",
+            "regionalRoute": "americas",
+            "regionalRouteLor": "americas"
+        },
+        "oc1": {
+            "id": 24,
+            "description": "Oceana.",
+            "altName": "OCE",
+            "regionalRoute": "sea",
+            "regionalRouteLor": "sea"
+        },
+        "ph2": {
+            "id": 32,
+            "description": "Philippines",
+            "regionalRoute": "sea",
+            "regionalRouteLor": "sea"
+        },
+        "ru": {
+            "id": 25,
+            "description": "Russia",
+            "regionalRoute": "europe",
+            "regionalRouteLor": "sea"
+        },
+        "sg2": {
+            "id": 33,
+            "description": "Singapore",
+            "regionalRoute": "sea",
+            "regionalRouteLor": "sea"
+        },
+        "th2": {
+            "id": 34,
+            "description": "Thailand",
+            "regionalRoute": "sea",
+            "regionalRouteLor": "sea"
+        },
+        "tr1": {
+            "id": 26,
+            "description": "Turkey",
+            "altName": "TR",
+            "regionalRoute": "europe",
+            "regionalRouteLor": "sea"
+        },
+        "tw2": {
+            "id": 35,
+            "description": "Taiwan",
+            "regionalRoute": "sea",
+            "regionalRouteLor": "sea"
+        },
+        "vn2": {
+            "id": 36,
+            "description": "Vietnam",
+            "regionalRoute": "sea",
+            "regionalRouteLor": "sea"
+        },
+        "pbe1": {
+            "id": 31,
+            "description": "Public Beta Environment, special beta testing platform. Located in North America.",
+            "altName": "PBE",
+            "regionalRoute": "americas",
+            "regionalRouteLor": "americas"
+        }
+    },
+    "val-platform": {
+        "ap": {
+            "id": 64,
+            "description": "Asia-Pacific."
+        },
+        "br": {
+            "id": 65,
+            "description": "Brazil."
+        },
+        "eu": {
+            "id": 66,
+            "description": "Europe."
+        },
+        "kr": {
+            "id": 70,
+            "description": "Korea."
+        },
+        "latam": {
+            "id": 68,
+            "description": "Latin America."
+        },
+        "na": {
+            "id": 69,
+            "description": "North America."
+        },
+        "esports": {
+            "id": 95,
+            "description": "Special esports platform."
+        }
+    }
 }

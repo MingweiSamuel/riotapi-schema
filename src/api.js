@@ -291,6 +291,12 @@ async function writeEnums() {
 }
 
 
+async function writeRoutesTable() {
+  const routesTable = require('./data/routesTable');
+  await fs.writeFile('routesTable.json', JSON.stringify(routesTable, null, 2));
+}
+
+
 async function writeOutput(endpoints, enumsHash) {
 
   const regions = [];
@@ -317,6 +323,7 @@ The following versions of the Riot API spec file are available:
 ${names.map(n => `- \`${n}\` ([view file](../${n}), [ui select](?url=../${n}))`).join('\n')}
 ## Other Files
 - Missing DTOs: [\`missing.json\`](../missing.json)
+- Routes Table: [\`routesTable.json\`](../routesTable.json)
 - [Enum Files](../enums/)
 ## Source Code
 Source code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!
@@ -341,18 +348,17 @@ Rebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds
 }
 
 module.exports = async function(rootDir) {
-  process.chdir(rootDir);
-
   // Cleanup output folder.
+  process.chdir(rootDir);
   await cleanupOutput();
+  process.chdir(rootDir + '/' + OUTPUT);
 
   // Write enums.
   const writeEnumsPromise = writeEnums();
-
-  process.chdir(rootDir + '/' + OUTPUT);
+  // Write routesTable.json.
+  const writeRoutesTablePromise = writeRoutesTable();
 
   // Get endpoints.
-  // Get regions.
   const endpoints = await getEndpoints();
 
   // Write missing dto names.
@@ -365,7 +371,8 @@ module.exports = async function(rootDir) {
 
   // Write output spec files.
   await Promise.all([
+    writeRoutesTablePromise,
     writeOutput(endpoints, enumsHash),
-    fs.writeFile("missing.json", JSON.stringify(missingDtoNames, null, 2))
+    fs.writeFile("missing.json", JSON.stringify(missingDtoNames, null, 2)),
   ]);
 };
