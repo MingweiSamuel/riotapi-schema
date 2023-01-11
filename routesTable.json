@@ -92,6 +92,7 @@
     "ph2": {
       "id": 32,
       "description": "Philippines",
+      "altName": "PH",
       "regionalRoute": "sea",
       "regionalRouteLor": "sea"
     },
@@ -104,12 +105,14 @@
     "sg2": {
       "id": 33,
       "description": "Singapore",
+      "altName": "SG",
       "regionalRoute": "sea",
       "regionalRouteLor": "sea"
     },
     "th2": {
       "id": 34,
       "description": "Thailand",
+      "altName": "TH",
       "regionalRoute": "sea",
       "regionalRouteLor": "sea"
     },
@@ -123,12 +126,14 @@
     "tw2": {
       "id": 35,
       "description": "Taiwan",
+      "altName": "TW",
       "regionalRoute": "sea",
       "regionalRouteLor": "sea"
     },
     "vn2": {
       "id": 36,
       "description": "Vietnam",
+      "altName": "VN",
       "regionalRoute": "sea",
       "regionalRouteLor": "sea"
     },
