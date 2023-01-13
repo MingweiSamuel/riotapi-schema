@@ -502,12 +502,22 @@
   {
     "queueId": 700,
     "map": "Summoner's Rift",
-    "description": "Clash games",
+    "description": "Summoner's Rift Clash games",
     "notes": null,
     "x-value": 700,
     "x-deprecated": false,
-    "x-desc": "Clash games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CLASH"
+    "x-desc": "Summoner's Rift Clash games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_SUMMONER_S_RIFT_CLASH"
+  },
+  {
+    "queueId": 720,
+    "map": "Howling Abyss",
+    "description": "ARAM Clash games",
+    "notes": null,
+    "x-value": 720,
+    "x-deprecated": false,
+    "x-desc": "ARAM Clash games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_ARAM_CLASH"
   },
   {
     "queueId": 800,
