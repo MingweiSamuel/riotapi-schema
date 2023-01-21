@@ -63,5 +63,9 @@
   "match-v5.BanDto.championId": "champion",
 
   "TODO__match-v5.MatchTimelineInfoFrameEvent.teamId": "team",
-  "TODO__match-v5.MatchTimelineInfoFrameEvent.killerTeamId": "team"
+  "TODO__match-v5.MatchTimelineInfoFrameEvent.killerTeamId": "team",
+
+
+  "tournament-stub-v4.ProviderRegistrationParameters.region": "tournamentRegion",
+  "tournament-v4.ProviderRegistrationParameters.region": "tournamentRegion"
 }
