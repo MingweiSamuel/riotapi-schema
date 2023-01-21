@@ -837,7 +837,7 @@
     "x-value": 1200,
     "x-deprecated": true,
     "x-desc": "Nexus Blitz games on Nexus Blitz",
-    "x-name": "NEXUS_BLITZ_GAMES_DEPRECATED_1200"
+    "x-name": "NEXUS_BLITZ_DEPRECATED_1200"
   },
   {
     "queueId": 1300,
@@ -847,7 +847,7 @@
     "x-value": 1300,
     "x-deprecated": false,
     "x-desc": "Nexus Blitz games on Nexus Blitz",
-    "x-name": "NEXUS_BLITZ_GAMES"
+    "x-name": "NEXUS_BLITZ"
   },
   {
     "queueId": 1400,
