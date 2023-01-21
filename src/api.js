@@ -194,7 +194,7 @@ async function writeEnums() {
         enumb['x-name'] = enumb.season.replace(/\s+/g, '_');
     }),
     getEnumData("https://static.developer.riotgames.com/docs/lol/queues.json", 'queueId', enums => {
-      const noGames = s => s.replace(/\s+GAMES$/i, '');
+      const noGames = s => s.replace(/\s*\bGAMES$/i, '');
       const formatName = s => noGames(s.trim()).replace(/'/g, '').replace(/\W+/g, '_').toUpperCase();
 
       const groups = {};
@@ -204,10 +204,11 @@ async function writeEnums() {
         let descName = description || '';
         // Trim any repeated prefix of the description.
         if (0 === descName.indexOf(map))
-          descName = descName.slice(map.length + 1);
+          descName = descName.slice(map.length);
         // Append description if any.
+        descName = formatName(descName);
         if (0 < descName.length)
-          groupName += '_' + formatName(descName);
+          groupName += '_' + descName;
         (groups[groupName] || (groups[groupName] = [])).push(enumb);
       };
       for (const [ groupName, groupEnums ] of Object.entries(groups)) {
