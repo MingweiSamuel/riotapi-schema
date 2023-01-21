@@ -30,6 +30,7 @@
     "br1": {
       "id": 16,
       "description": "Brazil.",
+      "tournamentRegion": "BR",
       "altName": "BR",
       "regionalRoute": "americas",
       "regionalRouteLor": "americas"
@@ -37,6 +38,7 @@
     "eun1": {
       "id": 17,
       "description": "Europe, Northeast.",
+      "tournamentRegion": "EUNE",
       "altName": "EUNE",
       "regionalRoute": "europe",
       "regionalRouteLor": "europe"
@@ -44,6 +46,7 @@
     "euw1": {
       "id": 18,
       "description": "Europe, West.",
+      "tournamentRegion": "EUW",
       "altName": "EUW",
       "regionalRoute": "europe",
       "regionalRouteLor": "europe"
@@ -51,6 +54,7 @@
     "jp1": {
       "id": 19,
       "description": "Japan.",
+      "tournamentRegion": "JP",
       "altName": "JP",
       "regionalRoute": "asia",
       "regionalRouteLor": "asia"
@@ -64,6 +68,7 @@
     "la1": {
       "id": 21,
       "description": "Latin America, North.",
+      "tournamentRegion": "LAN",
       "altName": "LAN",
       "regionalRoute": "americas",
       "regionalRouteLor": "americas"
@@ -71,6 +76,7 @@
     "la2": {
       "id": 22,
       "description": "Latin America, South.",
+      "tournamentRegion": "LAS",
       "altName": "LAS",
       "regionalRoute": "americas",
       "regionalRouteLor": "americas"
@@ -78,6 +84,7 @@
     "na1": {
       "id": 23,
       "description": "North America.",
+      "tournamentRegion": "NA",
       "altName": "NA",
       "regionalRoute": "americas",
       "regionalRouteLor": "americas"
@@ -85,6 +92,7 @@
     "oc1": {
       "id": 24,
       "description": "Oceana.",
+      "tournamentRegion": "OCE",
       "altName": "OCE",
       "regionalRoute": "sea",
       "regionalRouteLor": "sea"
@@ -119,6 +127,7 @@
     "tr1": {
       "id": 26,
       "description": "Turkey",
+      "tournamentRegion": "TR",
       "altName": "TR",
       "regionalRoute": "europe",
       "regionalRouteLor": "sea"
@@ -140,6 +149,7 @@
     "pbe1": {
       "id": 31,
       "description": "Public Beta Environment, special beta testing platform. Located in North America.",
+      "tournamentRegion": "PBE",
       "altName": "PBE",
       "regionalRoute": "americas",
       "regionalRouteLor": "americas"
