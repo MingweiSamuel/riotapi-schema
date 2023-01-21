@@ -507,7 +507,7 @@
     "x-value": 700,
     "x-deprecated": false,
     "x-desc": "Summoner's Rift Clash games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_SUMMONER_S_RIFT_CLASH"
+    "x-name": "SUMMONERS_RIFT_CLASH"
   },
   {
     "queueId": 720,
@@ -837,7 +837,7 @@
     "x-value": 1200,
     "x-deprecated": true,
     "x-desc": "Nexus Blitz games on Nexus Blitz",
-    "x-name": "NEXUS_BLITZ_NEXUS_BLITZ_DEPRECATED_1200"
+    "x-name": "NEXUS_BLITZ_GAMES_DEPRECATED_1200"
   },
   {
     "queueId": 1300,
@@ -847,7 +847,7 @@
     "x-value": 1300,
     "x-deprecated": false,
     "x-desc": "Nexus Blitz games on Nexus Blitz",
-    "x-name": "NEXUS_BLITZ_NEXUS_BLITZ"
+    "x-name": "NEXUS_BLITZ_GAMES"
   },
   {
     "queueId": 1400,
