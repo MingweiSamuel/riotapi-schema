@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "d9133c31439c2d38263002fad5fa824f2ea0cb8b",
-    "x-hash": "d9133c31439c2d38263002fad5fa824f2ea0cb8be7d9c8a4534bae2ae2b4682a070cecc85c004dcb",
+    "version": "1feccea85f61ea185e4f1533327013f18d4e1b03",
+    "x-hash": "1feccea85f61ea185e4f1533327013f18d4e1b03e7d9c8a4534bae2ae2b4682a070cecc85c004dcb",
     "x-enumsHash": "e7d9c8a4534bae2ae2b4682a070cecc85c004dcb"
   },
   "servers": [
@@ -11903,7 +11903,7 @@
           "rank": {
             "type": "string",
             "x-type": "string",
-            "description": "A player's division within a tier. Not included for the RANKED_TFT_TURBO queueType.",
+            "description": "The player's division within a tier. Not included for the RANKED_TFT_TURBO queueType.",
             "x-enum": "division"
           },
           "leaguePoints": {
