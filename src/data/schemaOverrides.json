@@ -2735,7 +2735,6 @@
       }
     },
     "required": [
-      "items",
       "character_id",
       "name",
       "rarity",

@@ -164,6 +164,7 @@
   "tft-match-v1.ParticipantDto.augments": true,
   "tft-match-v1.ParticipantDto.partner_group_id": true,
   "tft-match-v1.Companion.item_ID": true,
+  "tft-match-v1.UnitDto.items": true,
   "tft-match-v1.UnitDto.itemNames": true,
   "tft-match-v1.UnitDto.chosen": true,
 
