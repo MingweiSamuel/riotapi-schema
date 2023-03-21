@@ -126,6 +126,10 @@
   "match-v5.ParticipantDto.nexusTakedowns": true,
   "match-v5.ParticipantDto.turretsLost": true,
   "match-v5.ParticipantDto.turretTakedowns": true,
+  "match-v5.ParticipantDto.allInPings": true,
+  "match-v5.ParticipantDto.assistMePings": true,
+  "match-v5.ParticipantDto.baitPings": true,
+  "match-v5.ParticipantDto.basicPings": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
 

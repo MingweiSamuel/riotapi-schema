@@ -572,6 +572,27 @@
         "x-type": "boolean"
       },
 
+      "allInPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "assistMePings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "baitPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "basicPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+
       "challenges": {
         "$ref": "#/components/schemas/match-v5.ParticipantChallenges",
         "x-type": "ParticipantChallenges"
