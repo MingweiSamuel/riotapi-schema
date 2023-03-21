@@ -973,6 +973,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "killingSprees": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "killParticipation": {
         "type": "number",
         "format": "double",
@@ -1128,6 +1133,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "playedChampSelectPosition": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "poroExplosions": {
         "type": "number",
         "format": "double",
@@ -1234,6 +1244,11 @@
         "x-type": "double"
       },
       "takedownsFirst25Minutes": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
+      "takedownsFirstXMinutes": {
         "type": "number",
         "format": "double",
         "x-type": "double"
