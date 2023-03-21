@@ -592,6 +592,61 @@
         "format": "int32",
         "x-type": "int"
       },
+      "commandPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "dangerPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "enemyMissingPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "enemyVisionPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "getBackPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "holdPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "needVisionPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "onMyWayPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "pushPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "visionClearedPings": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+
+      "eligibleForProgression": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
 
       "challenges": {
         "$ref": "#/components/schemas/match-v5.ParticipantChallenges",
