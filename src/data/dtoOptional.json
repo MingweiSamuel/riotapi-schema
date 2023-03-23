@@ -184,6 +184,10 @@
 
 
 
+  "tft-league-v1.LeagueListDTO.*": true,
+  "tft-league-v1.LeagueListDTO.tier": false,
+  "tft-league-v1.LeagueListDTO.entries": false,
+
   "tft-league-v1.LeagueEntryDTO.*": true,
   "tft-league-v1.LeagueEntryDTO.summonerId": false,
   "tft-league-v1.LeagueEntryDTO.summonerName": false,
