@@ -167,6 +167,8 @@
   "lol-challenges-v1.ChallengeConfigInfoDto.endTimestamp": true,
   "lol-challenges-v1.ChallengeInfo.achievedTime": true,
 
+  "lol-challenges-v1.PlayerClientPreferences.*": true,
+
 
 
   "tft-match-v1.InfoDto.game_variation": true,

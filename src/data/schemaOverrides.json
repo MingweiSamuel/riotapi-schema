@@ -2569,15 +2569,18 @@
           "format": "int64",
           "x-type": "long"
         }
+      },
+      "crestBorder": {
+        "x-type": "string",
+        "type": "string"
+      },
+      "prestigeCrestBorderLevel": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
       }
     },
-    "required": [
-      "challengeId",
-      "percentile",
-      "level",
-      "value",
-      "achievedTime"
-    ]
+    "required": []
   },
 
 

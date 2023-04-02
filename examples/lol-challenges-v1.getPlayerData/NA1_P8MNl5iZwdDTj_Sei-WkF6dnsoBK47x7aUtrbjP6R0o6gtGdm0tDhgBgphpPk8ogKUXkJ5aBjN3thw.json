@@ -1,0 +1,36 @@
+{
+    "totalPoints": {
+        "level": "NONE",
+        "current": 0,
+        "max": 28780
+    },
+    "categoryPoints": {
+        "COLLECTION": {
+            "level": "NONE",
+            "current": 0,
+            "max": 4200
+        },
+        "TEAMWORK": {
+            "level": "NONE",
+            "current": 0,
+            "max": 7835
+        },
+        "VETERANCY": {
+            "level": "NONE",
+            "current": 0,
+            "max": 5700
+        },
+        "IMAGINATION": {
+            "level": "NONE",
+            "current": 0,
+            "max": 4330
+        },
+        "EXPERTISE": {
+            "level": "NONE",
+            "current": 0,
+            "max": 6715
+        }
+    },
+    "challenges": [],
+    "preferences": {}
+}
