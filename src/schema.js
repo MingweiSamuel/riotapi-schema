@@ -84,13 +84,21 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
     let prop = types.getType(dataType, schema.endpointName, methodName);
     if (description) {
       let match;
-      if (descTypeOverrides[description])
+      if (descTypeOverrides[description]) {
         prop = JSON.parse(JSON.stringify(descTypeOverrides[description]));
-      else if ((match = /\(Legal values:\s*(\S+(?:,\s*\S+)*)\)$/.exec(description)))
-        prop.enum = match[1].split(/,\s*/);
-      else if ((match = /Valid values are (\d+)-(\d+)\.?$/.exec(description))) {
-        prop.minimum = +match[1];
-        prop.maximum = +match[2];
+      } else {
+        let typeToUpdate;
+        if (prop.type === 'array') {
+          typeToUpdate = prop.items;
+        } else {
+          typeToUpdate = prop;
+        }
+        if ((match = /\(Legal values:\s*(\S+(?:,\s*\S+)*)\)$/.exec(description)))
+          typeToUpdate.enum = match[1].split(/,\s*/);
+        else if ((match = /Valid values are (\d+)-(\d+)\.?$/.exec(description))) {
+          typeToUpdate.minimum = +match[1];
+          typeToUpdate.maximum = +match[2];
+        }
       }
       prop.description = description;
     }
