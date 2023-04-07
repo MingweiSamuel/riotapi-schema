@@ -928,6 +928,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "firstTurretKilled": {
+        "type": "number",
+        "format": "double",
+        "x-type": "double"
+      },
       "firstTurretKilledTime": {
         "type": "number",
         "format": "double",
