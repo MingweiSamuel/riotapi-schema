@@ -1,7 +1,5 @@
 [
   "account-v1.ActiveShardDto",
-  "leagueplus-val-match-v1.MatchDto",
-  "leagueplus-val-match-v1.MatchlistDto",
   "lol-challenges-v1.ChallengeInfo",
   "lol-challenges-v1.ChallengePoints",
   "lol-challenges-v1.PlayerClientPreferences",
