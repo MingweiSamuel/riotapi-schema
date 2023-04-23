@@ -651,6 +651,18 @@
       "challenges": {
         "$ref": "#/components/schemas/match-v5.ParticipantChallenges",
         "x-type": "ParticipantChallenges"
+      },
+
+      "totalAllyJungleMinionsKilled": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "totalEnemyJungleMinionsKilled": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+
       }
     },
     "required": [

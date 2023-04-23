@@ -140,6 +140,8 @@
   "match-v5.ParticipantDto.pushPings": true,
   "match-v5.ParticipantDto.visionClearedPings": true,
   "match-v5.ParticipantDto.eligibleForProgression": true,
+  "match-v5.ParticipantDto.totalAllyJungleMinionsKilled": true,
+  "match-v5.ParticipantDto.totalEnemyJungleMinionsKilled": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
 
