@@ -55,6 +55,84 @@
   },
 
 
+  "champion-mastery-v4.ChampionMasteryDto": {
+    "type": "object",
+    "title": "ChampionMasteryDto",
+    "properties": {
+      "championPointsUntilNextLevel": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long",
+        "description": "Number of points needed to achieve next level. Zero if player reached maximum champion level for this champion."
+      },
+      "chestGranted": {
+        "type": "boolean",
+        "x-type": "boolean",
+        "description": "Is chest granted for this champion or not in current season."
+      },
+      "championId": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long",
+        "description": "Champion ID for this entry.",
+        "x-enum": "champion"
+      },
+      "lastPlayTime": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long",
+        "description": "Last time this champion was played by this player - in Unix milliseconds time format."
+      },
+      "championLevel": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Champion level for specified player and champion combination."
+      },
+      "summonerId": {
+        "type": "string",
+        "x-type": "string",
+        "description": "Summoner ID for this entry. (Encrypted)"
+      },
+      "championPoints": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Total number of champion points for this player and champion combination - they are used to determine championLevel."
+      },
+      "championPointsSinceLastLevel": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long",
+        "description": "Number of points earned since current level has been achieved."
+      },
+      "tokensEarned": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0."
+      },
+
+      "puuid": {
+        "type": "string",
+        "x-type": "string"
+      }
+    },
+    "description": "This object contains single Champion Mastery information for player and champion combination.",
+    "required": [
+      "championPointsUntilNextLevel",
+      "chestGranted",
+      "championId",
+      "lastPlayTime",
+      "championLevel",
+      "summonerId",
+      "championPoints",
+      "championPointsSinceLastLevel",
+      "tokensEarned"
+    ]
+  },
+
+
   "match-v5.ParticipantDto": {
     "type": "object",
     "title": "ParticipantDto",
