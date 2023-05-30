@@ -147,6 +147,7 @@
   "match-v5.ParticipantDto.totalEnemyJungleMinionsKilled": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
+  "match-v5.ParticipantChallenges.*": true,
 
 
   "TODO__match-v5.MatchTimelineInfo.gameId": true,

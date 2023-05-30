@@ -1473,6 +1473,11 @@
         "format": "double",
         "x-type": "double"
       },
+      "twoWardsOneSweeperCount": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
       "unseenRecalls": {
         "type": "number",
         "format": "double",
