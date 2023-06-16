@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "53047997154f06fee9b093eeea848152a36f9d3e",
-    "x-hash": "53047997154f06fee9b093eeea848152a36f9d3ee7d9c8a4534bae2ae2b4682a070cecc85c004dcb",
+    "version": "8bce90b68c376dab7e1daa9a34a169c641a96d73",
+    "x-hash": "8bce90b68c376dab7e1daa9a34a169c641a96d73e7d9c8a4534bae2ae2b4682a070cecc85c004dcb",
     "x-enumsHash": "e7d9c8a4534bae2ae2b4682a070cecc85c004dcb"
   },
   "host": "na1.api.riotgames.com",
@@ -9535,6 +9535,36 @@
           "x-type": "int"
         },
         "totalEnemyJungleMinionsKilled": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "playerAugment1": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "playerAugment2": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "playerAugment3": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "playerAugment4": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "playerSubteamId": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "subteamPlacement": {
           "type": "integer",
           "format": "int32",
           "x-type": "int"
