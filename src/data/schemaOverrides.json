@@ -740,7 +740,37 @@
         "type": "integer",
         "format": "int32",
         "x-type": "int"
+      },
 
+      "playerAugment1": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerAugment2": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerAugment3": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerAugment4": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerSubteamId": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "subteamPlacement": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
       }
     },
     "required": [
