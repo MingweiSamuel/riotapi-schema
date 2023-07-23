@@ -14,5 +14,9 @@
     {
         "gameMode": "TUTORIAL_MODULE_3",
         "description": "Tutorial: Shop for Gear."
+    },
+    {
+        "gameMode": "CHERRY",
+        "description": "2v2v2v2"
     }
 ]
