@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "bd47a23f561be62a8cd6abbd70d29ea4e84d107d",
-    "x-hash": "bd47a23f561be62a8cd6abbd70d29ea4e84d107df41a797cc8bddf09f0bbd46c4190ccf6055dbcec",
+    "version": "55e76c61b6feb1298719d6f55d89f2229e88e4eb",
+    "x-hash": "55e76c61b6feb1298719d6f55d89f2229e88e4ebf41a797cc8bddf09f0bbd46c4190ccf6055dbcec",
     "x-enumsHash": "f41a797cc8bddf09f0bbd46c4190ccf6055dbcec"
   },
   "servers": [
@@ -15884,10 +15884,12 @@
             "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
           },
           "9": {
-            "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
+            "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame",
+            "description": "Possibly null for the Arena 2v2v2v2 (`CHERRY`) game mode."
           },
           "10": {
-            "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
+            "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame",
+            "description": "Possibly null for the Arena 2v2v2v2 (`CHERRY`) game mode."
           }
         },
         "required": [
@@ -15898,9 +15900,7 @@
           "5",
           "6",
           "7",
-          "8",
-          "9",
-          "10"
+          "8"
         ]
       },
       "match-v5.MatchTimelineInfoFrame": {
