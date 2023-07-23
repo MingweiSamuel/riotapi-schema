@@ -771,6 +771,11 @@
         "type": "integer",
         "format": "int32",
         "x-type": "int"
+      },
+      "placement": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
       }
     },
     "required": [

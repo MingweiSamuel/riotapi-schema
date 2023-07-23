@@ -153,6 +153,7 @@
   "match-v5.ParticipantDto.playerAugment4": true,
   "match-v5.ParticipantDto.playerSubteamId": true,
   "match-v5.ParticipantDto.subteamPlacement": true,
+  "match-v5.ParticipantDto.placement": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.ParticipantChallenges.*": true,
