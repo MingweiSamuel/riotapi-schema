@@ -860,6 +860,16 @@
     "x-name": "SUMMONERS_RIFT_ULTIMATE_SPELLBOOK"
   },
   {
+    "queueId": 1700,
+    "map": "Arena",
+    "description": "2v2v2v2 `CHERRY` games",
+    "notes": null,
+    "x-value": 1700,
+    "x-deprecated": false,
+    "x-desc": "2v2v2v2 `CHERRY` games on Arena",
+    "x-name": "ARENA_2V2V2V2_CHERRY_"
+  },
+  {
     "queueId": 1900,
     "map": "Summoner's Rift",
     "description": "Pick URF games",

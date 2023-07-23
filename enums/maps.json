@@ -133,5 +133,14 @@
     "x-deprecated": false,
     "x-desc": "Convergence\nTeamfight Tactics map",
     "x-name": "CONVERGENCE"
+  },
+  {
+    "mapId": 30,
+    "mapName": "Arena",
+    "notes": "Map for 2v2v2v2 (`CHERRY`). Team up with a friend or venture solo in this new game mode. Face against multiple teams in chaotic battles across diverse arenas",
+    "x-value": 30,
+    "x-deprecated": false,
+    "x-desc": "Arena\nMap for 2v2v2v2 (`CHERRY`). Team up with a friend or venture solo in this new game mode. Face against multiple teams in chaotic battles across diverse arenas",
+    "x-name": "ARENA"
   }
 ]
