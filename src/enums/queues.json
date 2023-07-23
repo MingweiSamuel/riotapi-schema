@@ -40,5 +40,11 @@
         "map": "Nexus Blitz",
         "description": "Nexus Blitz games",
         "notes": "Deprecated in patch 9.2 in favor of queueId 1300"
+    },
+    {
+        "queueId": 1700,
+        "map": "Arena",
+        "description": "2v2v2v2 `CHERRY` games",
+        "notes": null
     }
 ]
