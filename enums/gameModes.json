@@ -28,6 +28,13 @@
     "x-desc": "Blood Hunt Assassin games"
   },
   {
+    "gameMode": "CHERRY",
+    "description": "2v2v2v2",
+    "x-value": "CHERRY",
+    "x-name": "CHERRY",
+    "x-desc": "2v2v2v2"
+  },
+  {
     "gameMode": "CLASSIC",
     "description": "Classic Summoner's Rift and Twisted Treeline games",
     "x-value": "CLASSIC",
