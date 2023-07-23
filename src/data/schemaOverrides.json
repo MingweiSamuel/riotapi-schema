@@ -2031,10 +2031,12 @@
         "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
       },
       "9": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
+        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame",
+        "description": "Possibly null for the Arena 2v2v2v2 (`CHERRY`) game mode."
       },
       "10": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
+        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame",
+        "description": "Possibly null for the Arena 2v2v2v2 (`CHERRY`) game mode."
       }
     },
     "required": [
@@ -2045,9 +2047,7 @@
       "5",
       "6",
       "7",
-      "8",
-      "9",
-      "10"
+      "8"
     ]
   },
   "match-v5.MatchTimelineInfoFrame": {
