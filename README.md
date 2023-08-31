@@ -7,7 +7,7 @@ Automatically generated daily from the [Riot Games API Reference](https://develo
 ## Quirks/Hacks
 
 The RG API Reference has many quirks and often has small errors or missing
-DTO specs. This project conaints many hacks to deal with them which are worth
+DTO specs. This project contains many hacks to deal with them which are worth
 knowing if you plan to use the generated schemas.
 
 Missing DTOs for the latest version are stored in [this JSON file](http://www.mingweisamuel.com/riotapi-schema/missing.json).
@@ -45,7 +45,7 @@ Quirks that may no longer be relevant.
 #### `league-v3`'s `LeagueItemDTO` and `LeaguePositionDTO`
 
 This spec combines `LeagueItemDTO` and `LeaguePositionDTO` under the later name.
-This was a quetsionable choice because it results in fields with `null` values
+This was a questionable choice because it results in fields with `null` values
 that users might expect to be filled in (when parsing a `LeagueItemDTO`).
 This behavior is removed for `league-v4`.
 
