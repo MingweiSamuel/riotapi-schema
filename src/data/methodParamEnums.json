@@ -1,5 +1,6 @@
 {
     "champion-mastery-v4.getChampionMastery.championId": "champion",
+    "champion-mastery-v4.getChampionMasteryByPUUID.championId": "champion",
 
     "league-exp-v4.getLeagueEntries.division": "division",
     "league-v4.getLeagueEntries.division": "division",
