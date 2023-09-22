@@ -2351,6 +2351,15 @@
           "x-type": "ContentItemDto"
         },
         "x-type": "List[ContentItemDto]"
+      },
+      "totems": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "description": "Unknown type, this is a placeholder subject to change.",
+        "x-type": "List[string]"
       }
     },
     "required": [

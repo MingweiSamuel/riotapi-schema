@@ -219,6 +219,7 @@
 
 
   "val-content-v1.ContentDto.ceremonies": true,
+  "val-content-v1.ContentDto.totems": true,
   "val-content-v1.ContentItemDto.localizedNames": true,
   "val-content-v1.ContentItemDto.assetPath": true,
   "val-content-v1.ActDto.localizedNames": true,
