@@ -199,6 +199,9 @@ Method.prototype._handlePlatformSelect = function(platformSelect) {
     this.platformsAvailable = Array.from(platformSelect.children)
       .map(opt => opt.value.toLowerCase());
   }
+  else if (null == this.platformsAvailable) {
+    throw Error(`Failed to get platforms for ${this.canonName}.`);
+  }
 
   // Find route enum based on routesTable.
   for (const [ routeEnumName, routes ] of Object.entries(routesTable)) {
