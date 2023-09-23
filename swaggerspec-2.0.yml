@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: e635ebf41d804655715bd35e33c79bb334deb4d8
-  x-hash: e635ebf41d804655715bd35e33c79bb334deb4d8f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
+  version: 7307f87ea9de692298ab1ee422b62672f63883f2
+  x-hash: 7307f87ea9de692298ab1ee422b62672f63883f2f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
   x-enumsHash: f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
 host: na1.api.riotgames.com
 x-host-platform:
@@ -6659,6 +6659,374 @@ paths:
     x-platforms-available:
       - americas
     x-route-enum: regional
+  /lol/tournament/v5/codes:
+    post:
+      tags:
+        - tournament-v5
+      summary: 'Create a tournament code for the given tournament.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tournament-v5/POST_createTournamentCode'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              type: string
+              x-type: string
+            x-type: 'List[string]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tournament-v5.createTournamentCode
+      description: 'Create a tournament code for the given tournament.'
+      parameters:
+        -
+          name: tournamentId
+          in: query
+          required: true
+          description: 'The tournament ID'
+          type: integer
+          format: int64
+          x-type: long
+        -
+          name: count
+          in: query
+          required: false
+          description: 'The number of codes to create (max 1000)'
+          type: integer
+          format: int32
+          x-type: int
+        -
+          required: true
+          description: 'Metadata for the generated code'
+          schema:
+            $ref: '#/definitions/tournament-v5.TournamentCodeParametersV5'
+            x-type: TournamentCodeParametersV5
+          in: body
+          name: TournamentCodeParametersV5
+      x-endpoint: tournament-v5
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
+      produces:
+        - application/json
+      consumes:
+        - application/json
+    x-endpoint: tournament-v5
+    x-platforms-available:
+      - americas
+    x-route-enum: regional
+  '/lol/tournament/v5/codes/{tournamentCode}':
+    get:
+      tags:
+        - tournament-v5
+      summary: 'Returns the tournament code DTO associated with a tournament code string.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tournament-v5/GET_getTournamentCode'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/tournament-v5.TournamentCodeV5DTO'
+            x-type: TournamentCodeV5DTO
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tournament-v5.getTournamentCode
+      description: 'Returns the tournament code DTO associated with a tournament code string.'
+      parameters:
+        -
+          name: tournamentCode
+          in: path
+          required: true
+          description: 'The tournament code string.'
+          type: string
+          x-type: string
+      x-endpoint: tournament-v5
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
+      produces:
+        - application/json
+    x-endpoint: tournament-v5
+    x-platforms-available:
+      - americas
+    x-route-enum: regional
+    put:
+      tags:
+        - tournament-v5
+      summary: 'Update the pick type, map, spectator type, or allowed puuids for a code.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tournament-v5/PUT_updateCode'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tournament-v5.updateCode
+      description: 'Update the pick type, map, spectator type, or allowed puuids for a code.'
+      parameters:
+        -
+          name: tournamentCode
+          in: path
+          required: true
+          description: 'The tournament code to update'
+          type: string
+          x-type: string
+        -
+          required: false
+          description: 'The fields to update'
+          schema:
+            $ref: '#/definitions/tournament-v5.TournamentCodeUpdateParametersV5'
+            x-type: TournamentCodeUpdateParametersV5
+          in: body
+          name: TournamentCodeUpdateParametersV5
+      x-endpoint: tournament-v5
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
+      produces:
+        - application/json
+      consumes:
+        - application/json
+  '/lol/tournament/v5/lobby-events/by-code/{tournamentCode}':
+    get:
+      tags:
+        - tournament-v5
+      summary: 'Gets a list of lobby events by tournament code.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tournament-v5/GET_getLobbyEventsByCode'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/tournament-v5.LobbyEventV5DTOWrapper'
+            x-type: LobbyEventV5DTOWrapper
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tournament-v5.getLobbyEventsByCode
+      description: 'Gets a list of lobby events by tournament code.'
+      parameters:
+        -
+          name: tournamentCode
+          in: path
+          required: true
+          description: 'The short code to look up lobby events for'
+          type: string
+          x-type: string
+      x-endpoint: tournament-v5
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
+      produces:
+        - application/json
+    x-endpoint: tournament-v5
+    x-platforms-available:
+      - americas
+    x-route-enum: regional
+  /lol/tournament/v5/providers:
+    post:
+      tags:
+        - tournament-v5
+      summary: 'Creates a tournament provider and returns its ID.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tournament-v5/POST_registerProviderData'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tournament-v5.registerProviderData
+      description: "Creates a tournament provider and returns its ID.\n## Implementation Notes\nProviders will need to call this endpoint first to register their callback URL and their API key with the tournament system before any other tournament provider endpoints will work."
+      x-endpoint: tournament-v5
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        -
+          required: true
+          description: 'The provider definition.'
+          schema:
+            $ref: '#/definitions/tournament-v5.ProviderRegistrationParametersV5'
+            x-type: ProviderRegistrationParametersV5
+          in: body
+          name: ProviderRegistrationParametersV5
+    x-endpoint: tournament-v5
+    x-platforms-available:
+      - americas
+    x-route-enum: regional
+  /lol/tournament/v5/tournaments:
+    post:
+      tags:
+        - tournament-v5
+      summary: 'Creates a tournament and returns its ID.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tournament-v5/POST_registerTournament'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tournament-v5.registerTournament
+      description: 'Creates a tournament and returns its ID.'
+      x-endpoint: tournament-v5
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        -
+          required: true
+          description: 'The tournament definition.'
+          schema:
+            $ref: '#/definitions/tournament-v5.TournamentRegistrationParametersV5'
+            x-type: TournamentRegistrationParametersV5
+          in: body
+          name: TournamentRegistrationParametersV5
+    x-endpoint: tournament-v5
+    x-platforms-available:
+      - americas
+    x-route-enum: regional
   /val/content/v1/contents:
     get:
       tags:
@@ -12386,6 +12754,266 @@ definitions:
   tournament-v4.TournamentRegistrationParameters:
     type: object
     title: TournamentRegistrationParameters
+    properties:
+      providerId:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The provider ID to specify the regional registered provider data to associate this tournament.'
+      name:
+        type: string
+        x-type: string
+        description: 'The optional name of the tournament.'
+    required:
+      - providerId
+  tournament-v5.TournamentCodeParametersV5:
+    type: object
+    title: TournamentCodeParametersV5
+    properties:
+      allowedParticipants:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'Set[string]'
+        description: 'Optional list of encrypted puuids in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
+      metadata:
+        type: string
+        x-type: string
+        description: 'Optional string that may contain any data in any format, if specified at all. Used to denote any custom information about the game.'
+      teamSize:
+        type: integer
+        format: int32
+        x-type: int
+        minimum: 1
+        maximum: 5
+        description: 'The team size of the game. Valid values are 1-5.'
+      pickType:
+        type: string
+        x-type: string
+        enum:
+          - BLIND_PICK
+          - DRAFT_MODE
+          - ALL_RANDOM
+          - TOURNAMENT_DRAFT
+        description: "The pick type of the game.\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+      mapType:
+        type: string
+        x-type: string
+        enum:
+          - SUMMONERS_RIFT
+          - HOWLING_ABYSS
+        description: "The map type of the game.\n             (Legal values:  SUMMONERS_RIFT,  HOWLING_ABYSS)"
+      spectatorType:
+        type: string
+        x-type: string
+        enum:
+          - NONE
+          - LOBBYONLY
+          - ALL
+        description: "The spectator type of the game.\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+      enoughPlayers:
+        type: boolean
+        x-type: boolean
+        description: 'Checks if allowed participants are enough to make full teams.'
+    required:
+      - teamSize
+      - pickType
+      - mapType
+      - spectatorType
+      - enoughPlayers
+  tournament-v5.TournamentCodeV5DTO:
+    type: object
+    title: TournamentCodeV5DTO
+    properties:
+      code:
+        type: string
+        x-type: string
+        description: 'The tournament code.'
+      spectators:
+        type: string
+        x-type: string
+        description: 'The spectator mode for the tournament code game.'
+      lobbyName:
+        type: string
+        x-type: string
+        description: 'The lobby name for the tournament code game.'
+      metaData:
+        type: string
+        x-type: string
+        description: 'The metadata for tournament code.'
+      password:
+        type: string
+        x-type: string
+        description: 'The password for the tournament code game.'
+      teamSize:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The team size for the tournament code game.'
+      providerId:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The provider''s ID.'
+      pickType:
+        type: string
+        x-type: string
+        description: 'The pick mode for tournament code game.'
+      tournamentId:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The tournament''s ID.'
+      id:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The tournament code''s ID.'
+      region:
+        type: string
+        x-type: string
+        enum:
+          - BR
+          - EUNE
+          - EUW
+          - JP
+          - LAN
+          - LAS
+          - NA
+          - OCE
+          - PBE
+          - RU
+          - TR
+          - KR
+        description: "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR)"
+      map:
+        type: string
+        x-type: string
+        description: 'The game map for the tournament code game'
+      participants:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'Set[string]'
+        description: 'The puuids of the participants (Encrypted)'
+    required:
+      - code
+      - spectators
+      - lobbyName
+      - metaData
+      - password
+      - teamSize
+      - providerId
+      - pickType
+      - tournamentId
+      - id
+      - region
+      - map
+      - participants
+  tournament-v5.TournamentCodeUpdateParametersV5:
+    type: object
+    title: TournamentCodeUpdateParametersV5
+    properties:
+      allowedParticipants:
+        type: array
+        items:
+          type: string
+          x-type: string
+        x-type: 'Set[string]'
+        description: 'Optional list of encrypted puuids in order to validate the players eligible to join the lobby. NOTE: We currently do not enforce participants at the team level, but rather the aggregate of teamOne and teamTwo. We may add the ability to enforce at the team level in the future.'
+      pickType:
+        type: string
+        x-type: string
+        enum:
+          - BLIND_PICK
+          - DRAFT_MODE
+          - ALL_RANDOM
+          - TOURNAMENT_DRAFT
+        description: "The pick type\n             (Legal values:  BLIND_PICK,  DRAFT_MODE,  ALL_RANDOM,  TOURNAMENT_DRAFT)"
+      mapType:
+        type: string
+        x-type: string
+        enum:
+          - SUMMONERS_RIFT
+          - HOWLING_ABYSS
+        description: "The map type\n             (Legal values:  SUMMONERS_RIFT,  HOWLING_ABYSS)"
+      spectatorType:
+        type: string
+        x-type: string
+        enum:
+          - NONE
+          - LOBBYONLY
+          - ALL
+        description: "The spectator type\n             (Legal values:  NONE,  LOBBYONLY,  ALL)"
+    required:
+      - pickType
+      - mapType
+      - spectatorType
+  tournament-v5.LobbyEventV5DTOWrapper:
+    type: object
+    title: LobbyEventV5DTOWrapper
+    properties:
+      eventList:
+        type: array
+        items:
+          $ref: '#/definitions/tournament-v5.LobbyEventV5DTO'
+          x-type: LobbyEventV5DTO
+        x-type: 'List[LobbyEventV5DTO]'
+    required:
+      - eventList
+  tournament-v5.LobbyEventV5DTO:
+    type: object
+    title: LobbyEventV5DTO
+    properties:
+      timestamp:
+        type: string
+        x-type: string
+        description: 'Timestamp from the event'
+      eventType:
+        type: string
+        x-type: string
+        description: 'The type of event that was triggered'
+      puuid:
+        type: string
+        x-type: string
+        description: 'The puuid that triggered the event (Encrypted)'
+    required:
+      - timestamp
+      - eventType
+      - puuid
+  tournament-v5.ProviderRegistrationParametersV5:
+    type: object
+    title: ProviderRegistrationParametersV5
+    properties:
+      region:
+        type: string
+        x-type: string
+        enum:
+          - BR
+          - EUNE
+          - EUW
+          - JP
+          - LAN
+          - LAS
+          - NA
+          - OCE
+          - PBE
+          - RU
+          - TR
+          - KR
+        description: "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR)"
+      url:
+        type: string
+        x-type: string
+        description: 'The provider''s callback URL to which tournament game results in this region should be posted. The URL must be well-formed, use the http or https protocol, and use the default port for the protocol (http URLs must use port 80, https URLs must use port 443).'
+    required:
+      - region
+      - url
+  tournament-v5.TournamentRegistrationParametersV5:
+    type: object
+    title: TournamentRegistrationParametersV5
     properties:
       providerId:
         type: integer
