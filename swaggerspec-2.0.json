@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "7307f87ea9de692298ab1ee422b62672f63883f2",
-    "x-hash": "7307f87ea9de692298ab1ee422b62672f63883f2f41a797cc8bddf09f0bbd46c4190ccf6055dbcec",
+    "version": "63701726429c08694d81807f6091c0025a2bab1f",
+    "x-hash": "63701726429c08694d81807f6091c0025a2bab1ff41a797cc8bddf09f0bbd46c4190ccf6055dbcec",
     "x-enumsHash": "f41a797cc8bddf09f0bbd46c4190ccf6055dbcec"
   },
   "host": "na1.api.riotgames.com",
@@ -5728,6 +5728,20 @@
         },
         "operationId": "tft-league-v1.getChallengerLeague",
         "description": "Get the challenger league.",
+        "parameters": [
+          {
+            "name": "queue",
+            "in": "query",
+            "required": false,
+            "description": "Defaults to RANKED_TFT.",
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "RANKED_TFT",
+              "RANKED_TFT_DOUBLE_UP"
+            ]
+          }
+        ],
         "x-endpoint": "tft-league-v1",
         "x-platforms-available": [
           "br1",
@@ -5977,6 +5991,18 @@
             "description": ""
           },
           {
+            "name": "queue",
+            "in": "query",
+            "required": false,
+            "description": "Defaults to RANKED_TFT.",
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "RANKED_TFT",
+              "RANKED_TFT_DOUBLE_UP"
+            ]
+          },
+          {
             "name": "page",
             "in": "query",
             "required": false,
@@ -6085,6 +6111,20 @@
         },
         "operationId": "tft-league-v1.getGrandmasterLeague",
         "description": "Get the grandmaster league.",
+        "parameters": [
+          {
+            "name": "queue",
+            "in": "query",
+            "required": false,
+            "description": "Defaults to RANKED_TFT.",
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "RANKED_TFT",
+              "RANKED_TFT_DOUBLE_UP"
+            ]
+          }
+        ],
         "x-endpoint": "tft-league-v1",
         "x-platforms-available": [
           "br1",
@@ -6294,6 +6334,20 @@
         },
         "operationId": "tft-league-v1.getMasterLeague",
         "description": "Get the master league.",
+        "parameters": [
+          {
+            "name": "queue",
+            "in": "query",
+            "required": false,
+            "description": "Defaults to RANKED_TFT.",
+            "type": "string",
+            "x-type": "string",
+            "enum": [
+              "RANKED_TFT",
+              "RANKED_TFT_DOUBLE_UP"
+            ]
+          }
+        ],
         "x-endpoint": "tft-league-v1",
         "x-platforms-available": [
           "br1",
