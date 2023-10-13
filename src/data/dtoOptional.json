@@ -158,6 +158,9 @@
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.ParticipantChallenges.*": true,
 
+  "__": "https://github.com/RiotGames/developer-relations/issues/829",
+  "match-v5.ObjectivesDto.horde": true,
+
 
   "TODO__match-v5.MatchTimelineInfo.gameId": true,
   "TODO__match-v5.MatchTimelineInfo.participants": true,
