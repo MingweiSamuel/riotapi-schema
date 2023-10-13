@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 0a55a61ff7c6b8c7919934c316d4a78f2d092b64
-  x-hash: 0a55a61ff7c6b8c7919934c316d4a78f2d092b64f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
+  version: 5b5ceda174ed782d6e9a60f743e888822c710be1
+  x-hash: 5b5ceda174ed782d6e9a60f743e888822c710be1f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
   x-enumsHash: f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
 servers:
   -
@@ -9810,6 +9810,9 @@ components:
           $ref: '#/components/schemas/match-v5.ObjectiveDto'
           x-type: ObjectiveDto
         tower:
+          $ref: '#/components/schemas/match-v5.ObjectiveDto'
+          x-type: ObjectiveDto
+        horde:
           $ref: '#/components/schemas/match-v5.ObjectiveDto'
           x-type: ObjectiveDto
       required:
