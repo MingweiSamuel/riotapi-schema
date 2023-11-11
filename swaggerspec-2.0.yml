@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: c618209592e5e43e652d83dcd7979aa26d355d0b
-  x-hash: c618209592e5e43e652d83dcd7979aa26d355d0bf41a797cc8bddf09f0bbd46c4190ccf6055dbcec
+  version: 70f290686a2461c3315ac8c63361e9aeb0d6d588
+  x-hash: 70f290686a2461c3315ac8c63361e9aeb0d6d588f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
   x-enumsHash: f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
 host: na1.api.riotgames.com
 x-host-platform:
@@ -6272,6 +6272,65 @@ paths:
         - application/json
       consumes:
         - application/json
+  '/lol/tournament/v5/games/by-code/{tournamentCode}':
+    get:
+      tags:
+        - tournament-v5
+      summary: 'Get games details'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tournament-v5/GET_getGames'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tournament-v5.TournamentGamesV5'
+              x-type: TournamentGamesV5
+            x-type: 'Set[TournamentGamesV5]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tournament-v5.getGames
+      description: "Get games details\n## Implementation Notes\nAdditional endpoint to get tournament games. From this endpoint you are able to get participants puuid (callback doesn't contain this info).\n\nAlso use it to check if the game was recorded and validate callbacks. If the endpoint returns the game it means a callback was attempted."
+      parameters:
+        -
+          name: tournamentCode
+          in: path
+          required: true
+          type: string
+          x-type: string
+          description: ""
+      x-endpoint: tournament-v5
+      x-platforms-available:
+        - americas
+      x-route-enum: regional
+      produces:
+        - application/json
+    x-endpoint: tournament-v5
+    x-platforms-available:
+      - americas
+    x-route-enum: regional
   '/lol/tournament/v5/lobby-events/by-code/{tournamentCode}':
     get:
       tags:
@@ -11992,6 +12051,73 @@ definitions:
       - pickType
       - mapType
       - spectatorType
+  tournament-v5.TournamentGamesV5:
+    type: object
+    title: TournamentGamesV5
+    properties:
+      winningTeam:
+        type: array
+        items:
+          $ref: '#/definitions/tournament-v5.TournamentTeamV5'
+          x-type: TournamentTeamV5
+        x-type: 'List[TournamentTeamV5]'
+      losingTeam:
+        type: array
+        items:
+          $ref: '#/definitions/tournament-v5.TournamentTeamV5'
+          x-type: TournamentTeamV5
+        x-type: 'List[TournamentTeamV5]'
+      shortCode:
+        type: string
+        x-type: string
+        description: 'Tournament Code'
+      metaData:
+        type: string
+        x-type: string
+        description: 'Metadata for the TournamentCode'
+      gameId:
+        type: integer
+        format: int64
+        x-type: long
+      gameName:
+        type: string
+        x-type: string
+      gameType:
+        type: string
+        x-type: string
+      gameMap:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'Game Map ID'
+      gameMode:
+        type: string
+        x-type: string
+      region:
+        type: string
+        x-type: string
+        description: 'Region of the game'
+    required:
+      - winningTeam
+      - losingTeam
+      - shortCode
+      - metaData
+      - gameId
+      - gameName
+      - gameType
+      - gameMap
+      - gameMode
+      - region
+  tournament-v5.TournamentTeamV5:
+    type: object
+    title: TournamentTeamV5
+    properties:
+      puuid:
+        type: string
+        x-type: string
+        description: 'Player Unique UUID (Encrypted)'
+    required:
+      - puuid
   tournament-v5.LobbyEventV5DTOWrapper:
     type: object
     title: LobbyEventV5DTOWrapper
