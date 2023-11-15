@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "70f290686a2461c3315ac8c63361e9aeb0d6d588",
-    "x-hash": "70f290686a2461c3315ac8c63361e9aeb0d6d588f41a797cc8bddf09f0bbd46c4190ccf6055dbcec",
+    "version": "0e603345f7b769d1c25400f0d17900ce028d9acf",
+    "x-hash": "0e603345f7b769d1c25400f0d17900ce028d9acff41a797cc8bddf09f0bbd46c4190ccf6055dbcec",
     "x-enumsHash": "f41a797cc8bddf09f0bbd46c4190ccf6055dbcec"
   },
   "host": "na1.api.riotgames.com",
@@ -188,7 +188,7 @@
             "name": "tagLine",
             "in": "path",
             "required": true,
-            "description": "When querying for a player by their riot id, the gameName and tagLine query params are required. However not all accounts have a gameName and tagLine associated so these fields may not be included in the response.",
+            "description": "When querying for a player by their riot id, the gameName and tagLine query params are required.",
             "type": "string",
             "x-type": "string"
           },
@@ -196,7 +196,7 @@
             "name": "gameName",
             "in": "path",
             "required": true,
-            "description": "When querying for a player by their riot id, the gameName and tagLine query params are required. However not all accounts have a gameName and tagLine associated so these fields may not be included in the response.",
+            "description": "When querying for a player by their riot id, the gameName and tagLine query params are required.",
             "type": "string",
             "x-type": "string"
           }

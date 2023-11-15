@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: ed83574d1b85ef4c52f267ee5558e3c1c3ffb412
-  x-hash: ed83574d1b85ef4c52f267ee5558e3c1c3ffb412f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
+  version: cb1a80f3666aaa5737372137e04ffa9d1d062535
+  x-hash: cb1a80f3666aaa5737372137e04ffa9d1d062535f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
   x-enumsHash: f41a797cc8bddf09f0bbd46c4190ccf6055dbcec
 servers:
   -
@@ -153,7 +153,7 @@ paths:
           schema:
             type: string
             x-type: string
-          description: 'When querying for a player by their riot id, the gameName and tagLine query params are required. However not all accounts have a gameName and tagLine associated so these fields may not be included in the response.'
+          description: 'When querying for a player by their riot id, the gameName and tagLine query params are required.'
         -
           name: gameName
           in: path
@@ -161,7 +161,7 @@ paths:
           schema:
             type: string
             x-type: string
-          description: 'When querying for a player by their riot id, the gameName and tagLine query params are required. However not all accounts have a gameName and tagLine associated so these fields may not be included in the response.'
+          description: 'When querying for a player by their riot id, the gameName and tagLine query params are required.'
       x-endpoint: account-v1
       x-platforms-available:
         - americas
