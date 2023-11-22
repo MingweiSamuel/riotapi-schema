@@ -166,6 +166,7 @@
   "match-v5.ParticipantDto.playerScore7": true,
   "match-v5.ParticipantDto.playerScore8": true,
   "match-v5.ParticipantDto.playerScore9": true,
+  "match-v5.ParticipantDto.riotIdName": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.ParticipantChallenges.*": true,
