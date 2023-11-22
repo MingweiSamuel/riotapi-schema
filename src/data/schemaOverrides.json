@@ -444,6 +444,10 @@
         "type": "string",
         "x-type": "string"
       },
+      "riotIdGameName": {
+        "type": "string",
+        "x-type": "string"
+      },
       "riotIdTagline": {
         "type": "string",
         "x-type": "string"
