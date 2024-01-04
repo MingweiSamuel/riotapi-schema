@@ -53,7 +53,7 @@
     "queueType": "RANKED_TFT_PAIRS",
     "queueId": 1150,
     "description": "Ranked Teamfight Tactics (Double Up Workshop) games",
-    "notes": "Deprecated in patch 12.11 in favor of queueId 1160",
+    "notes": "Deprecated in patch 12.11 in favor of queueId 1160 (`RANKED_TFT_DOUBLE_UP`)",
     "x-value": 1150,
     "x-deprecated": true,
     "x-name": "RANKED_TFT_PAIRS",
@@ -68,5 +68,15 @@
     "x-deprecated": false,
     "x-name": "RANKED_TFT_DOUBLE_UP",
     "x-desc": "Ranked Teamfight Tactics (Double Up Workshop) games"
+  },
+  {
+    "queueType": "CHERRY",
+    "queueId": 1700,
+    "description": "2v2v2v2 \"Arena\" games",
+    "notes": null,
+    "x-value": 1700,
+    "x-deprecated": false,
+    "x-name": "CHERRY",
+    "x-desc": "2v2v2v2 \"Arena\" games"
   }
 ]
