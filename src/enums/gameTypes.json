@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "gametype": "CUSTOM",
+        "description": "Custom games"
+    },
+    {
+        "gametype": "TUTORIAL",
+        "description": "Tutorial games"
+    },
+    {
+        "gametype": "MATCHED",
+        "description": "all other games"
+    }
+]
