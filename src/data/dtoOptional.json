@@ -245,5 +245,9 @@
 
   "val-ranked-v1.PlayerDto.puuid": true,
   "val-ranked-v1.PlayerDto.gameName": true,
-  "val-ranked-v1.PlayerDto.tagLine": true
+  "val-ranked-v1.PlayerDto.tagLine": true,
+
+
+  "spectator-v4.Participant.puuid": true,
+  "spectator-v4.Participant.summonerId": true
 }
