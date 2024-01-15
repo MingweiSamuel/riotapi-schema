@@ -18,5 +18,9 @@
     {
         "gameMode": "CHERRY",
         "description": "2v2v2v2"
+    },
+    {
+        "gameMode": "TFT",
+        "description": "Teamfight Tactics, used in `spectator-v4` endpoints."
     }
 ]
