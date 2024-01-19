@@ -251,5 +251,8 @@
   "spectator-v4.Participant.puuid": true,
   "spectator-v4.Participant.summonerId": true,
   "spectator-v4.CurrentGameParticipant.puuid": true,
-  "spectator-v4.FeaturedGameInfo.gameStartTime": true
+  "spectator-v4.FeaturedGameInfo.gameStartTime": true,
+
+
+  "tournament-v5.TournamentGamesV5.metaData": true
 }
