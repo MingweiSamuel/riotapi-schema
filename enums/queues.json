@@ -918,5 +918,15 @@
     "x-deprecated": false,
     "x-desc": "Tutorial 3 games on Summoner's Rift",
     "x-name": "SUMMONERS_RIFT_TUTORIAL_3"
+  },
+  {
+    "queueId": 6000,
+    "map": "Convergence",
+    "description": "Teamfight Tactics Set 3.5 Revival games",
+    "notes": null,
+    "x-value": 6000,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics Set 3.5 Revival games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_SET_3_5_REVIVAL"
   }
 ]
