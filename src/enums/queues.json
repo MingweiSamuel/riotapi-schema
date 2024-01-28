@@ -52,5 +52,11 @@
         "map": "Arena",
         "description": "2v2v2v2 `CHERRY` games",
         "notes": null
+    },
+    {
+        "queueId": 6000,
+        "map": "Convergence",
+        "description": "Teamfight Tactics Set 3.5 Revival games",
+        "notes": null
     }
 ]
