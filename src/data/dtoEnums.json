@@ -7,6 +7,7 @@
 
   "spectator-v4.CurrentGameInfo.gameQueueConfigId": "queue",
   "spectator-v4.FeaturedGameInfo.gameQueueConfigId": "queue",
+  "tft-match-v1.InfoDto.queue_id": "queue",
 
   "champion-mastery-v4.ChampionMasteryDto.championId": "champion",
   "champion-v3.ChampionInfo.freeChampionIdsForNewPlayers[]": "champion",
@@ -54,9 +55,7 @@
   "match-v5.InfoDto.gameType": "gameType",
   "match-v5.InfoDto.gameMode": "gameMode",
   "match-v5.InfoDto.mapId": "map",
-
   "match-v5.TeamDto.teamId": "team",
-
   "match-v5.ParticipantDto.championId": "champion",
   "match-v5.ParticipantDto.teamId": "team",
 

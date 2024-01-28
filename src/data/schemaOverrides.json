@@ -2975,7 +2975,8 @@
         "type": "integer",
         "format": "int32",
         "x-type": "int",
-        "description": "Please refer to the League of Legends documentation."
+        "description": "Please refer to the League of Legends documentation.",
+        "x-enum": "queue"
       },
       "tft_set_number": {
         "type": "integer",
