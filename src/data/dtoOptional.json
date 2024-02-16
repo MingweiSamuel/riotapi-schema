@@ -169,6 +169,7 @@
   "match-v5.ParticipantDto.riotIdName": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
+  "match-v5.InfoDto.endOfGameResult": true,
   "match-v5.ParticipantChallenges.*": true,
 
   "__": "https://github.com/RiotGames/developer-relations/issues/829",
