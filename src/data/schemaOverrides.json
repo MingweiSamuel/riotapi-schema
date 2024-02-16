@@ -2321,6 +2321,9 @@
         "items": {
           "$ref": "#/components/schemas/match-v5.MatchTimelineInfoParticipant"
         }
+      },
+      "endOfGameResult": {
+        "type": "string"
       }
     },
     "required": [
