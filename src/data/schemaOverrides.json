@@ -2986,6 +2986,9 @@
         "format": "int32",
         "x-type": "int",
         "description": "Teamfight Tactics set number."
+      },
+      "endOfGameResult": {
+        "type": "string"
       }
     },
     "required": [
