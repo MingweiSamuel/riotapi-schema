@@ -255,6 +255,10 @@
   "spectator-v4.Participant.summonerId": true,
   "spectator-v4.FeaturedGames.clientRefreshInterval": true,
   "spectator-v4.CurrentGameParticipant.puuid": true,
+  "spectator-v5.Participant.puuid": true,
+  "spectator-v5.Participant.summonerId": true,
+  "spectator-v5.FeaturedGames.clientRefreshInterval": true,
+  "spectator-v5.CurrentGameParticipant.puuid": true,
 
 
   "tournament-v5.TournamentGamesV5.metaData": true

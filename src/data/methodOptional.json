@@ -23,6 +23,7 @@
     "tft-match-v1.getMatch": true,
 
     "spectator-v4.getCurrentGameInfoBySummoner": true,
+    "spectator-v5.getCurrentGameInfoByPuuid": true,
 
     "summoner-v4.getBySummonerName": true,
     "tft-summoner-v1.getBySummonerName": true,
