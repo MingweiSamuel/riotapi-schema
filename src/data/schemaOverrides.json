@@ -2341,7 +2341,6 @@
     },
     "required": [
       "events",
-      "participantFrames",
       "timestamp"
     ]
   },
