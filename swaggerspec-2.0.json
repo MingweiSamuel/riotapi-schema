@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "d213d033a52f7ecf630b38e91052a370279c02a2",
-    "x-hash": "d213d033a52f7ecf630b38e91052a370279c02a2d2c961bcd2ebd21c9093dc14f92461677b8d87ae",
+    "version": "865292c593e7fc3f783228e8a7159b922ec3b70e",
+    "x-hash": "865292c593e7fc3f783228e8a7159b922ec3b70ed2c961bcd2ebd21c9093dc14f92461677b8d87ae",
     "x-enumsHash": "d2c961bcd2ebd21c9093dc14f92461677b8d87ae"
   },
   "host": "na1.api.riotgames.com",
@@ -11842,6 +11842,10 @@
           },
           "x-type": "List[UnitDto]",
           "description": "A list of active units for the participant."
+        },
+        "missions": {
+          "$ref": "#/definitions/tft-match-v1.ParticipantMissionsDto",
+          "x-type": "ParticipantMissionsDto"
         }
       },
       "required": [
@@ -11942,6 +11946,209 @@
         "name",
         "rarity",
         "tier"
+      ]
+    },
+    "tft-match-v1.ParticipantMissionsDto": {
+      "type": "object",
+      "title": "ParticipantMissionsDto",
+      "properties": {
+        "Assists": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "DamageDealt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "DamageDealtToObjectives": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "DamageDealtToTurrets": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "DamageTaken": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "DoubleKills": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "GoldEarned": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "GoldSpent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "InhibitorsDestroyed": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Kills": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "LargestKillingSpree": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "LargestMultiKill": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MagicDamageDealt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "MagicDamageDealtToChampions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "NeutralMinionsKilledTeamJungle": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PhysicalDamageDealt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PhysicalDamageTaken": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore0": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore2": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore3": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore4": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore5": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore6": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore9": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore10": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PlayerScore11": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "QuadraKills": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Spell1Casts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Spell2Casts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Spell3Casts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "Spell4Casts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "SummonerSpell1Casts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "TimeCCOthers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "TotalMinionsKilled": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "TrueDamageDealtToChampions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "UnrealKills": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "VisionScore": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "WardsKilled": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "Assists",
+        "DamageDealt",
+        "DamageDealtToObjectives",
+        "DamageDealtToTurrets",
+        "DamageTaken",
+        "DoubleKills",
+        "GoldEarned",
+        "GoldSpent",
+        "InhibitorsDestroyed",
+        "Kills",
+        "LargestKillingSpree",
+        "LargestMultiKill",
+        "MagicDamageDealt",
+        "MagicDamageDealtToChampions",
+        "NeutralMinionsKilledTeamJungle",
+        "PhysicalDamageDealt",
+        "PhysicalDamageTaken",
+        "PlayerScore0",
+        "PlayerScore1",
+        "PlayerScore10",
+        "PlayerScore11",
+        "PlayerScore2",
+        "PlayerScore3",
+        "PlayerScore4",
+        "PlayerScore5",
+        "PlayerScore6",
+        "PlayerScore9",
+        "QuadraKills",
+        "Spell1Casts",
+        "Spell2Casts",
+        "Spell3Casts",
+        "Spell4Casts",
+        "SummonerSpell1Casts",
+        "TimeCCOthers",
+        "TotalMinionsKilled",
+        "TrueDamageDealtToChampions",
+        "UnrealKills",
+        "VisionScore",
+        "WardsKilled"
       ]
     },
     "spectator-v4.Participant": {
