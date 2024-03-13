@@ -3738,7 +3738,6 @@
     },
     "required": [
       "championId",
-      "perks",
       "profileIconId",
       "bot",
       "teamId",
@@ -3826,7 +3825,6 @@
     },
     "required": [
       "championId",
-      "perks",
       "profileIconId",
       "bot",
       "teamId",

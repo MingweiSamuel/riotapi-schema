@@ -24,10 +24,6 @@
   "league-v4.LeagueEntryDTO.rank": true,
 
 
-  "spectator-v4.CurrentGameInfo.gameQueueConfigId": true,
-  "spectator-v4.CurrentGameParticipant.perks": true,
-
-
   "match-v4.ParticipantDto.runes": true,
   "match-v4.ParticipantDto.masteries": true,
   "match-v4.ParticipantDto.highestAchievedSeasonTier": true,
@@ -261,12 +257,16 @@
   "spectator-v4.Participant.summonerId": true,
   "spectator-v4.Participant.riotId": true,
   "spectator-v4.FeaturedGames.clientRefreshInterval": true,
+  "spectator-v4.CurrentGameInfo.gameQueueConfigId": true,
+  "spectator-v4.CurrentGameParticipant.perks": true,
   "spectator-v4.CurrentGameParticipant.puuid": true,
   "spectator-v4.CurrentGameParticipant.riotId": true,
   "spectator-v5.Participant.puuid": true,
   "spectator-v5.Participant.summonerId": true,
   "spectator-v5.Participant.riotId": true,
   "spectator-v5.FeaturedGames.clientRefreshInterval": true,
+  "spectator-v5.CurrentGameInfo.gameQueueConfigId": true,
+  "spectator-v5.CurrentGameParticipant.perks": true,
   "spectator-v5.CurrentGameParticipant.puuid": true,
   "spectator-v5.CurrentGameParticipant.riotId": true,
 
