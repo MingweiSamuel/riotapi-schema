@@ -3101,6 +3101,10 @@
       },
       "endOfGameResult": {
         "type": "string"
+      },
+      "gameCreation": {
+        "type": "integer",
+        "format": "int64"
       }
     },
     "required": [

@@ -213,6 +213,7 @@
   "tft-match-v1.InfoDto.tft_game_type": true,
   "tft-match-v1.InfoDto.tft_set_core_name": true,
   "tft-match-v1.InfoDto.endOfGameResult": true,
+  "tft-match-v1.InfoDto.gameCreation": true,
   "tft-match-v1.TraitDto.style": true,
   "tft-match-v1.TraitDto.tier_total": true,
   "tft-match-v1.TeamDto.numPoints": true,
