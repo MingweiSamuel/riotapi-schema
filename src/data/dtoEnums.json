@@ -10,6 +10,7 @@
   "spectator-v5.CurrentGameInfo.gameQueueConfigId": "queue",
   "spectator-v5.FeaturedGameInfo.gameQueueConfigId": "queue",
   "tft-match-v1.InfoDto.queue_id": "queue",
+  "tft-match-v1.InfoDto.queueId": "queue",
 
   "champion-mastery-v4.ChampionMasteryDto.championId": "champion",
   "champion-v3.ChampionInfo.freeChampionIdsForNewPlayers[]": "champion",

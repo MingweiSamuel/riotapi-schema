@@ -3113,6 +3113,13 @@
       "mapId": {
         "type": "integer",
         "format": "int64"
+      },
+      "queueId": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int",
+        "description": "Please refer to the League of Legends documentation.",
+        "x-enum": "queue"
       }
     },
     "required": [
