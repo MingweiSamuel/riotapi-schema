@@ -3105,6 +3105,14 @@
       "gameCreation": {
         "type": "integer",
         "format": "int64"
+      },
+      "gameId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "mapId": {
+        "type": "integer",
+        "format": "int64"
       }
     },
     "required": [
