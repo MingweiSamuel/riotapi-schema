@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 031d3e7fc343bd86d82c45559fc79d3a87fa1b82
-  x-hash: 031d3e7fc343bd86d82c45559fc79d3a87fa1b82d2c961bcd2ebd21c9093dc14f92461677b8d87ae
+  version: 4c86f68ce4c7d2a60c36799e28421ce69d288fca
+  x-hash: 4c86f68ce4c7d2a60c36799e28421ce69d288fcad2c961bcd2ebd21c9093dc14f92461677b8d87ae
   x-enumsHash: d2c961bcd2ebd21c9093dc14f92461677b8d87ae
 servers:
   -
@@ -9428,6 +9428,9 @@ components:
           format: int64
           x-type: long
           description: 'The ID of the first summoner spell used by this participant'
+        riotId:
+          type: string
+          x-type: string
       required:
         - bot
         - spell2Id
@@ -9803,6 +9806,9 @@ components:
           format: int64
           x-type: long
           description: 'The ID of the first summoner spell used by this participant'
+        riotId:
+          type: string
+          x-type: string
       required:
         - bot
         - spell2Id
@@ -10175,6 +10181,9 @@ components:
           description: 'Teamfight Tactics set number.'
         endOfGameResult:
           type: string
+        gameCreation:
+          type: integer
+          format: int64
       required:
         - game_datetime
         - game_length
