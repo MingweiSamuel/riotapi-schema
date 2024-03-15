@@ -3672,11 +3672,6 @@
     "type": "object",
     "title": "Participant",
     "properties": {
-      "bot": {
-        "type": "boolean",
-        "x-type": "boolean",
-        "description": "Flag indicating whether or not this participant is a bot"
-      },
       "spell2Id": {
         "type": "integer",
         "format": "int64",
@@ -3730,7 +3725,6 @@
       }
     },
     "required": [
-      "bot",
       "spell2Id",
       "profileIconId",
       "summonerName",
@@ -3935,11 +3929,6 @@
         "x-type": "long",
         "description": "The ID of the profile icon used by this participant"
       },
-      "bot": {
-        "type": "boolean",
-        "x-type": "boolean",
-        "description": "Flag indicating whether or not this participant is a bot"
-      },
       "teamId": {
         "type": "integer",
         "format": "int64",
@@ -3991,7 +3980,6 @@
     "required": [
       "championId",
       "profileIconId",
-      "bot",
       "teamId",
       "summonerName",
       "summonerId",
