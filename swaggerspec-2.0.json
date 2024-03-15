@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "ef9cfe0413782615f91a34a3d46c525a539f328c",
-    "x-hash": "ef9cfe0413782615f91a34a3d46c525a539f328cd2c961bcd2ebd21c9093dc14f92461677b8d87ae",
+    "version": "e59607812dd23804e5ef6d820619a6d668e5bcae",
+    "x-hash": "e59607812dd23804e5ef6d820619a6d668e5bcaed2c961bcd2ebd21c9093dc14f92461677b8d87ae",
     "x-enumsHash": "d2c961bcd2ebd21c9093dc14f92461677b8d87ae"
   },
   "host": "na1.api.riotgames.com",
@@ -586,8 +586,8 @@
             "in": "path",
             "required": true,
             "description": "Champion ID to retrieve Champion Mastery.",
-            "type": "string",
-            "x-type": "string",
+            "$ref": "#/definitions/champion-mastery-v4.integer",
+            "x-type": "integer",
             "x-enum": "champion"
           }
         ],
@@ -4231,6 +4231,214 @@
         "sea"
       ],
       "x-route-enum": "regional"
+    },
+    "/lol/spectator/tft/v5/active-games/by-puuid/{encryptedPUUID}": {
+      "get": {
+        "tags": [
+          "spectator-tft-v5"
+        ],
+        "summary": "Get current game information for the given puuid.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#spectator-tft-v5/GET_getCurrentGameInfoByPuuid"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/spectator-tft-v5.CurrentGameInfo",
+              "x-type": "CurrentGameInfo"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "spectator-tft-v5.getCurrentGameInfoByPuuid",
+        "description": "Get current game information for the given puuid.",
+        "parameters": [
+          {
+            "name": "encryptedPUUID",
+            "in": "path",
+            "required": true,
+            "description": "The puuid of the summoner.",
+            "type": "string",
+            "x-type": "string"
+          }
+        ],
+        "x-endpoint": "spectator-tft-v5",
+        "x-platforms-available": [
+          "br1",
+          "eun1",
+          "euw1",
+          "jp1",
+          "kr",
+          "la1",
+          "la2",
+          "na1",
+          "oc1",
+          "ph2",
+          "ru",
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
+        ],
+        "x-route-enum": "platform",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "x-endpoint": "spectator-tft-v5",
+      "x-platforms-available": [
+        "br1",
+        "eun1",
+        "euw1",
+        "jp1",
+        "kr",
+        "la1",
+        "la2",
+        "na1",
+        "oc1",
+        "ph2",
+        "ru",
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
+      ],
+      "x-route-enum": "platform"
+    },
+    "/lol/spectator/tft/v5/featured-games": {
+      "get": {
+        "tags": [
+          "spectator-tft-v5"
+        ],
+        "summary": "Get list of featured games.",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#spectator-tft-v5/GET_getFeaturedGames"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/spectator-tft-v5.FeaturedGames",
+              "x-type": "FeaturedGames"
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "spectator-tft-v5.getFeaturedGames",
+        "description": "Get list of featured games.",
+        "x-endpoint": "spectator-tft-v5",
+        "x-platforms-available": [
+          "br1",
+          "eun1",
+          "euw1",
+          "jp1",
+          "kr",
+          "la1",
+          "la2",
+          "na1",
+          "oc1",
+          "ph2",
+          "ru",
+          "sg2",
+          "th2",
+          "tr1",
+          "tw2",
+          "vn2"
+        ],
+        "x-route-enum": "platform",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "x-endpoint": "spectator-tft-v5",
+      "x-platforms-available": [
+        "br1",
+        "eun1",
+        "euw1",
+        "jp1",
+        "kr",
+        "la1",
+        "la2",
+        "na1",
+        "oc1",
+        "ph2",
+        "ru",
+        "sg2",
+        "th2",
+        "tr1",
+        "tw2",
+        "vn2"
+      ],
+      "x-route-enum": "platform"
     },
     "/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}": {
       "get": {
@@ -14205,6 +14413,438 @@
       "required": [
         "first",
         "kills"
+      ]
+    },
+    "spectator-tft-v5.CurrentGameInfo": {
+      "type": "object",
+      "title": "CurrentGameInfo",
+      "properties": {
+        "gameId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the game"
+        },
+        "gameType": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The game type"
+        },
+        "gameStartTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The game start time represented in epoch milliseconds"
+        },
+        "mapId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the map"
+        },
+        "gameLength": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The amount of time in seconds that has passed since the game started"
+        },
+        "platformId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The ID of the platform on which the game is being played"
+        },
+        "gameMode": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The game mode"
+        },
+        "bannedChampions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/spectator-tft-v5.BannedChampion",
+            "x-type": "BannedChampion"
+          },
+          "x-type": "List[BannedChampion]",
+          "description": "Banned champion information"
+        },
+        "gameQueueConfigId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The queue type (queue types are documented on the Game Constants page)"
+        },
+        "observers": {
+          "$ref": "#/definitions/spectator-tft-v5.Observer",
+          "x-type": "Observer",
+          "description": "The observer information"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/spectator-tft-v5.CurrentGameParticipant",
+            "x-type": "CurrentGameParticipant"
+          },
+          "x-type": "List[CurrentGameParticipant]",
+          "description": "The participant information"
+        }
+      },
+      "required": [
+        "gameId",
+        "gameType",
+        "gameStartTime",
+        "mapId",
+        "gameLength",
+        "platformId",
+        "gameMode",
+        "bannedChampions",
+        "gameQueueConfigId",
+        "observers",
+        "participants"
+      ]
+    },
+    "spectator-tft-v5.BannedChampion": {
+      "type": "object",
+      "title": "BannedChampion",
+      "properties": {
+        "pickTurn": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "The turn during which the champion was banned"
+        },
+        "championId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the banned champion"
+        },
+        "teamId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the team that banned the champion"
+        }
+      },
+      "required": [
+        "pickTurn",
+        "championId",
+        "teamId"
+      ]
+    },
+    "spectator-tft-v5.Observer": {
+      "type": "object",
+      "title": "Observer",
+      "properties": {
+        "encryptionKey": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Key used to decrypt the spectator grid game data for playback"
+        }
+      },
+      "required": [
+        "encryptionKey"
+      ]
+    },
+    "spectator-tft-v5.CurrentGameParticipant": {
+      "type": "object",
+      "title": "CurrentGameParticipant",
+      "properties": {
+        "championId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the champion played by this participant"
+        },
+        "perks": {
+          "$ref": "#/definitions/spectator-tft-v5.Perks",
+          "x-type": "Perks",
+          "description": "Perks/Runes Reforged Information"
+        },
+        "profileIconId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the profile icon used by this participant"
+        },
+        "teamId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The team ID of this participant, indicating the participant's team"
+        },
+        "summonerName": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The summoner name of this participant"
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The encrypted summoner ID of this participant"
+        },
+        "puuid": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The encrypted puuid of this participant"
+        },
+        "spell1Id": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the first summoner spell used by this participant"
+        },
+        "spell2Id": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the second summoner spell used by this participant"
+        },
+        "gameCustomizationObjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/spectator-tft-v5.GameCustomizationObject",
+            "x-type": "GameCustomizationObject"
+          },
+          "x-type": "List[GameCustomizationObject]",
+          "description": "List of Game Customizations"
+        }
+      },
+      "required": [
+        "championId",
+        "perks",
+        "profileIconId",
+        "teamId",
+        "summonerName",
+        "summonerId",
+        "puuid",
+        "spell1Id",
+        "spell2Id",
+        "gameCustomizationObjects"
+      ]
+    },
+    "spectator-tft-v5.Perks": {
+      "type": "object",
+      "title": "Perks",
+      "properties": {
+        "perkIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "x-type": "List[long]",
+          "description": "IDs of the perks/runes assigned."
+        },
+        "perkStyle": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Primary runes path"
+        },
+        "perkSubStyle": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Secondary runes path"
+        }
+      },
+      "required": [
+        "perkIds",
+        "perkStyle",
+        "perkSubStyle"
+      ]
+    },
+    "spectator-tft-v5.GameCustomizationObject": {
+      "type": "object",
+      "title": "GameCustomizationObject",
+      "properties": {
+        "category": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Category identifier for Game Customization"
+        },
+        "content": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Game Customization content"
+        }
+      },
+      "required": [
+        "category",
+        "content"
+      ]
+    },
+    "spectator-tft-v5.FeaturedGames": {
+      "type": "object",
+      "title": "FeaturedGames",
+      "properties": {
+        "gameList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/spectator-tft-v5.FeaturedGameInfo",
+            "x-type": "FeaturedGameInfo"
+          },
+          "x-type": "List[FeaturedGameInfo]",
+          "description": "The list of featured games"
+        },
+        "clientRefreshInterval": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The suggested interval to wait before requesting FeaturedGames again"
+        }
+      },
+      "required": [
+        "gameList",
+        "clientRefreshInterval"
+      ]
+    },
+    "spectator-tft-v5.FeaturedGameInfo": {
+      "type": "object",
+      "title": "FeaturedGameInfo",
+      "properties": {
+        "gameMode": {
+          "type": "string",
+          "x-type": "string",
+          "enum": [
+            "TFT"
+          ],
+          "description": "The game mode\n             (Legal values:  TFT)"
+        },
+        "gameLength": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The amount of time in seconds that has passed since the game started"
+        },
+        "mapId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the map"
+        },
+        "gameType": {
+          "type": "string",
+          "x-type": "string",
+          "enum": [
+            "MATCHED"
+          ],
+          "description": "The game type\n             (Legal values:  MATCHED)"
+        },
+        "bannedChampions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/spectator-tft-v5.BannedChampion",
+            "x-type": "BannedChampion"
+          },
+          "x-type": "List[BannedChampion]",
+          "description": "Banned champion information"
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the game"
+        },
+        "observers": {
+          "$ref": "#/definitions/spectator-tft-v5.Observer",
+          "x-type": "Observer",
+          "description": "The observer information"
+        },
+        "gameQueueConfigId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The queue type (queue types are documented on the Game Constants page)"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/spectator-tft-v5.Participant",
+            "x-type": "Participant"
+          },
+          "x-type": "List[Participant]",
+          "description": "The participant information"
+        },
+        "platformId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The ID of the platform on which the game is being played"
+        }
+      },
+      "required": [
+        "gameMode",
+        "gameLength",
+        "mapId",
+        "gameType",
+        "bannedChampions",
+        "gameId",
+        "observers",
+        "gameQueueConfigId",
+        "participants",
+        "platformId"
+      ]
+    },
+    "spectator-tft-v5.Participant": {
+      "type": "object",
+      "title": "Participant",
+      "properties": {
+        "spell2Id": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the second summoner spell used by this participant"
+        },
+        "profileIconId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the profile icon used by this participant"
+        },
+        "summonerName": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The summoner name of this participant"
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Encrypted summoner ID of this participant"
+        },
+        "puuid": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Encrypted puuid of this participant"
+        },
+        "championId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the champion played by this participant"
+        },
+        "teamId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The team ID of this participant, indicating the participant's team"
+        },
+        "spell1Id": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the first summoner spell used by this participant"
+        }
+      },
+      "required": [
+        "spell2Id",
+        "profileIconId",
+        "summonerName",
+        "summonerId",
+        "puuid",
+        "championId",
+        "teamId",
+        "spell1Id"
       ]
     },
     "spectator-v4.CurrentGameInfo": {
