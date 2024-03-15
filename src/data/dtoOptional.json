@@ -269,6 +269,14 @@
   "spectator-v5.CurrentGameParticipant.perks": true,
   "spectator-v5.CurrentGameParticipant.puuid": true,
   "spectator-v5.CurrentGameParticipant.riotId": true,
+  "spectator-tft-v5.Participant.puuid": true,
+  "spectator-tft-v5.Participant.summonerId": true,
+  "spectator-tft-v5.Participant.riotId": true,
+  "spectator-tft-v5.FeaturedGames.clientRefreshInterval": true,
+  "spectator-tft-v5.CurrentGameInfo.gameQueueConfigId": true,
+  "spectator-tft-v5.CurrentGameParticipant.perks": true,
+  "spectator-tft-v5.CurrentGameParticipant.puuid": true,
+  "spectator-tft-v5.CurrentGameParticipant.riotId": true,
 
 
   "tournament-v5.TournamentGamesV5.metaData": true

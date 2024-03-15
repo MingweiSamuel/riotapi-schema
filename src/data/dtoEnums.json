@@ -9,6 +9,8 @@
   "spectator-v4.FeaturedGameInfo.gameQueueConfigId": "queue",
   "spectator-v5.CurrentGameInfo.gameQueueConfigId": "queue",
   "spectator-v5.FeaturedGameInfo.gameQueueConfigId": "queue",
+  "spectator-tft-v5.CurrentGameInfo.gameQueueConfigId": "queue",
+  "spectator-tft-v5.FeaturedGameInfo.gameQueueConfigId": "queue",
   "tft-match-v1.InfoDto.queue_id": "queue",
   "tft-match-v1.InfoDto.queueId": "queue",
 
@@ -21,6 +23,9 @@
   "spectator-v5.BannedChampion.championId": "champion",
   "spectator-v5.CurrentGameParticipant.championId": "champion",
   "spectator-v5.Participant.championId": "champion",
+  "spectator-tft-v5.BannedChampion.championId": "champion",
+  "spectator-tft-v5.CurrentGameParticipant.championId": "champion",
+  "spectator-tft-v5.Participant.championId": "champion",
 
   "league-exp-v4.LeagueEntryDTO.rank": "division",
   "league-v4.LeagueItemDTO.rank": "division",
@@ -38,16 +43,22 @@
   "spectator-v4.FeaturedGameInfo.gameType": "gameType",
   "spectator-v5.CurrentGameInfo.gameType": "gameType",
   "spectator-v5.FeaturedGameInfo.gameType": "gameType",
+  "spectator-tft-v5.CurrentGameInfo.gameType": "gameType",
+  "spectator-tft-v5.FeaturedGameInfo.gameType": "gameType",
 
   "spectator-v4.CurrentGameInfo.gameMode": "gameMode",
   "spectator-v4.FeaturedGameInfo.gameMode": "gameMode",
   "spectator-v5.CurrentGameInfo.gameMode": "gameMode",
   "spectator-v5.FeaturedGameInfo.gameMode": "gameMode",
+  "spectator-tft-v5.CurrentGameInfo.gameMode": "gameMode",
+  "spectator-tft-v5.FeaturedGameInfo.gameMode": "gameMode",
 
   "spectator-v4.CurrentGameInfo.mapId": "map",
   "spectator-v4.FeaturedGameInfo.mapId": "map",
   "spectator-v5.CurrentGameInfo.mapId": "map",
   "spectator-v5.FeaturedGameInfo.mapId": "map",
+  "spectator-tft-v5.CurrentGameInfo.mapId": "map",
+  "spectator-tft-v5.FeaturedGameInfo.mapId": "map",
 
   "lol-status-v3.ShardStatus.locales[]": "locale",
   "lol-status-v3.Translation.locale": "locale",
@@ -64,6 +75,9 @@
   "spectator-v5.BannedChampion.teamId": "team",
   "spectator-v5.CurrentGameParticipant.teamId": "team",
   "spectator-v5.Participant.teamId": "team",
+  "spectator-tft-v5.BannedChampion.teamId": "team",
+  "spectator-tft-v5.CurrentGameParticipant.teamId": "team",
+  "spectator-tft-v5.Participant.teamId": "team",
 
 
   "match-v5.InfoDto.queueId": "queue",
