@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "6ee12ed6ee6fc3c87b27c012b6b47d50ae414ca0",
-    "x-hash": "6ee12ed6ee6fc3c87b27c012b6b47d50ae414ca0d2c961bcd2ebd21c9093dc14f92461677b8d87ae",
+    "version": "66b8ef08237daea97f80dc10d9da0b6b90a20a4c",
+    "x-hash": "66b8ef08237daea97f80dc10d9da0b6b90a20a4cd2c961bcd2ebd21c9093dc14f92461677b8d87ae",
     "x-enumsHash": "d2c961bcd2ebd21c9093dc14f92461677b8d87ae"
   },
   "servers": [
@@ -4397,6 +4397,7 @@
           }
         },
         "operationId": "spectator-tft-v5.getCurrentGameInfoByPuuid",
+        "x-nullable-404": true,
         "description": "Get current game information for the given puuid.",
         "parameters": [
           {
@@ -12078,7 +12079,8 @@
           "gameType": {
             "type": "string",
             "x-type": "string",
-            "description": "The game type"
+            "description": "The game type",
+            "x-enum": "gameType"
           },
           "gameStartTime": {
             "type": "integer",
@@ -12090,7 +12092,8 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The ID of the map"
+            "description": "The ID of the map",
+            "x-enum": "map"
           },
           "gameLength": {
             "type": "integer",
@@ -12106,7 +12109,8 @@
           "gameMode": {
             "type": "string",
             "x-type": "string",
-            "description": "The game mode"
+            "description": "The game mode",
+            "x-enum": "gameMode"
           },
           "bannedChampions": {
             "type": "array",
@@ -12121,7 +12125,8 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The queue type (queue types are documented on the Game Constants page)"
+            "description": "The queue type (queue types are documented on the Game Constants page)",
+            "x-enum": "queue"
           },
           "observers": {
             "$ref": "#/components/schemas/spectator-tft-v5.Observer",
@@ -12147,7 +12152,6 @@
           "platformId",
           "gameMode",
           "bannedChampions",
-          "gameQueueConfigId",
           "observers",
           "participants"
         ]
@@ -12166,13 +12170,15 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The ID of the banned champion"
+            "description": "The ID of the banned champion",
+            "x-enum": "champion"
           },
           "teamId": {
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The ID of the team that banned the champion"
+            "description": "The ID of the team that banned the champion",
+            "x-enum": "team"
           }
         },
         "required": [
@@ -12203,7 +12209,8 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The ID of the champion played by this participant"
+            "description": "The ID of the champion played by this participant",
+            "x-enum": "champion"
           },
           "perks": {
             "$ref": "#/components/schemas/spectator-tft-v5.Perks",
@@ -12220,7 +12227,8 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The team ID of this participant, indicating the participant's team"
+            "description": "The team ID of this participant, indicating the participant's team",
+            "x-enum": "team"
           },
           "summonerName": {
             "type": "string",
@@ -12261,12 +12269,10 @@
         },
         "required": [
           "championId",
-          "perks",
           "profileIconId",
           "teamId",
           "summonerName",
           "summonerId",
-          "puuid",
           "spell1Id",
           "spell2Id",
           "gameCustomizationObjects"
@@ -12346,8 +12352,7 @@
           }
         },
         "required": [
-          "gameList",
-          "clientRefreshInterval"
+          "gameList"
         ]
       },
       "spectator-tft-v5.FeaturedGameInfo": {
@@ -12360,7 +12365,8 @@
             "enum": [
               "TFT"
             ],
-            "description": "The game mode\n             (Legal values:  TFT)"
+            "description": "The game mode\n             (Legal values:  TFT)",
+            "x-enum": "gameMode"
           },
           "gameLength": {
             "type": "integer",
@@ -12372,7 +12378,8 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The ID of the map"
+            "description": "The ID of the map",
+            "x-enum": "map"
           },
           "gameType": {
             "type": "string",
@@ -12380,7 +12387,8 @@
             "enum": [
               "MATCHED"
             ],
-            "description": "The game type\n             (Legal values:  MATCHED)"
+            "description": "The game type\n             (Legal values:  MATCHED)",
+            "x-enum": "gameType"
           },
           "bannedChampions": {
             "type": "array",
@@ -12406,7 +12414,8 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The queue type (queue types are documented on the Game Constants page)"
+            "description": "The queue type (queue types are documented on the Game Constants page)",
+            "x-enum": "queue"
           },
           "participants": {
             "type": "array",
@@ -12471,13 +12480,15 @@
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The ID of the champion played by this participant"
+            "description": "The ID of the champion played by this participant",
+            "x-enum": "champion"
           },
           "teamId": {
             "type": "integer",
             "format": "int64",
             "x-type": "long",
-            "description": "The team ID of this participant, indicating the participant's team"
+            "description": "The team ID of this participant, indicating the participant's team",
+            "x-enum": "team"
           },
           "spell1Id": {
             "type": "integer",
@@ -12490,8 +12501,6 @@
           "spell2Id",
           "profileIconId",
           "summonerName",
-          "summonerId",
-          "puuid",
           "championId",
           "teamId",
           "spell1Id"
