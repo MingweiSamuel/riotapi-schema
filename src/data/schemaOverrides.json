@@ -1846,6 +1846,7 @@
           "ITEM_SOLD",
           "ITEM_UNDO",
           "LEVEL_UP",
+          "OBJECTIVE_BOUNTY_FINISH",
           "OBJECTIVE_BOUNTY_PRESTART",
           "PAUSE_END",
           "PAUSE_START",
