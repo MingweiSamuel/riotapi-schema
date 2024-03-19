@@ -15,6 +15,7 @@ function getTypeInternal(typeString, endpoint, method) {
     case "boolean":
       return { type: 'boolean' };
     case "int":
+    case "integer":
       return { type: 'integer', format: 'int32' };
     case "long":
       return { type: 'integer', format: 'int64' };
