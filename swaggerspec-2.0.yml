@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 8d4b932064bbbd29b2f6b7263e79e0e3fed433d0
-  x-hash: 8d4b932064bbbd29b2f6b7263e79e0e3fed433d0d2c961bcd2ebd21c9093dc14f92461677b8d87ae
+  version: 507b487b9c80e98a80ad75cc596be32755c425a5
+  x-hash: 507b487b9c80e98a80ad75cc596be32755c425a5d2c961bcd2ebd21c9093dc14f92461677b8d87ae
   x-enumsHash: d2c961bcd2ebd21c9093dc14f92461677b8d87ae
 host: na1.api.riotgames.com
 x-host-platform:
@@ -446,7 +446,8 @@ paths:
           in: path
           required: true
           description: 'Champion ID to retrieve Champion Mastery.'
-          $ref: '#/definitions/champion-mastery-v4.integer'
+          type: integer
+          format: int32
           x-type: integer
           x-enum: champion
       x-endpoint: champion-mastery-v4
