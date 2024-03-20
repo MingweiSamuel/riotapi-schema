@@ -3495,6 +3495,15 @@
       "WardsKilled": {
         "type": "integer",
         "format": "int32"
+      },
+
+      "Deaths": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "KillingSprees": {
+        "type": "integer",
+        "format": "int32"
       }
     },
     "required": [

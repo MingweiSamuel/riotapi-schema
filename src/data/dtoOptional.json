@@ -218,6 +218,8 @@
   "tft-match-v1.ParticipantDto.augments": true,
   "tft-match-v1.ParticipantDto.partner_group_id": true,
   "tft-match-v1.ParticipantDto.missions": true,
+  "tft-match-v1.ParticipantMissionsDto.Deaths": true,
+  "tft-match-v1.ParticipantMissionsDto.KillingSprees": true,
   "tft-match-v1.Companion.item_ID": true,
   "tft-match-v1.UnitDto.items": true,
   "tft-match-v1.UnitDto.itemNames": true,
