@@ -1743,62 +1743,74 @@
       "playerScore0": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore0"
       },
       "playerScore1": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore1"
       },
       "playerScore10": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore10"
       },
       "playerScore11": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore11"
       },
       "playerScore2": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore2"
       },
       "playerScore3": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore3"
       },
       "playerScore4": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore4"
       },
       "playerScore5": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore5"
       },
       "playerScore6": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore6"
       },
       "playerScore7": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore7"
       },
       "playerScore8": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore8"
       },
       "playerScore9": {
         "type": "integer",
         "format": "int32",
-        "x-type": "int"
+        "x-type": "int",
+        "x-alias": "PlayerScore9"
       }
     },
     "required": [
