@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "17d2130981b1c9afd7f3143bff7d109f23910066",
-    "x-hash": "17d2130981b1c9afd7f3143bff7d109f23910066d2c961bcd2ebd21c9093dc14f92461677b8d87ae",
+    "version": "d2ce38240b6853d9611caa0c641f37ae1289727b",
+    "x-hash": "d2ce38240b6853d9611caa0c641f37ae1289727bd2c961bcd2ebd21c9093dc14f92461677b8d87ae",
     "x-enumsHash": "d2c961bcd2ebd21c9093dc14f92461677b8d87ae"
   },
   "servers": [
@@ -17210,92 +17210,92 @@
         "type": "object",
         "title": "ParticipantMissions",
         "properties": {
-          "playerScore0": {
+          "PlayerScore0": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore0"
+            "x-alias": "playerScore0"
           },
-          "playerScore1": {
+          "PlayerScore1": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore1"
+            "x-alias": "playerScore1"
           },
-          "playerScore10": {
+          "PlayerScore10": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore10"
+            "x-alias": "playerScore10"
           },
-          "playerScore11": {
+          "PlayerScore11": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore11"
+            "x-alias": "playerScore11"
           },
-          "playerScore2": {
+          "PlayerScore2": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore2"
+            "x-alias": "playerScore2"
           },
-          "playerScore3": {
+          "PlayerScore3": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore3"
+            "x-alias": "playerScore3"
           },
-          "playerScore4": {
+          "PlayerScore4": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore4"
+            "x-alias": "playerScore4"
           },
-          "playerScore5": {
+          "PlayerScore5": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore5"
+            "x-alias": "playerScore5"
           },
-          "playerScore6": {
+          "PlayerScore6": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore6"
+            "x-alias": "playerScore6"
           },
-          "playerScore7": {
+          "PlayerScore7": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore7"
+            "x-alias": "playerScore7"
           },
-          "playerScore8": {
+          "PlayerScore8": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore8"
+            "x-alias": "playerScore8"
           },
-          "playerScore9": {
+          "PlayerScore9": {
             "type": "integer",
             "format": "int32",
             "x-type": "int",
-            "x-alias": "PlayerScore9"
+            "x-alias": "playerScore9"
           }
         },
         "required": [
-          "playerScore0",
-          "playerScore1",
-          "playerScore10",
-          "playerScore11",
-          "playerScore2",
-          "playerScore3",
-          "playerScore4",
-          "playerScore5",
-          "playerScore6",
-          "playerScore7",
-          "playerScore8",
-          "playerScore9"
+          "PlayerScore0",
+          "PlayerScore1",
+          "PlayerScore10",
+          "PlayerScore11",
+          "PlayerScore2",
+          "PlayerScore3",
+          "PlayerScore4",
+          "PlayerScore5",
+          "PlayerScore6",
+          "PlayerScore7",
+          "PlayerScore8",
+          "PlayerScore9"
         ]
       },
       "match-v5.MatchTimelineInfoFrameEvent": {
