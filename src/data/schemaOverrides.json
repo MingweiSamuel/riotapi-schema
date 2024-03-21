@@ -3504,6 +3504,34 @@
       "KillingSprees": {
         "type": "integer",
         "format": "int32"
+      },
+      "MagicDamageTaken": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "PentaKills": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "PhysicalDamageDealtToChampions": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "TotalDamageDealtToChampions": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "TripleKills": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "TrueDamageDealt": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "TrueDamageTaken": {
+        "type": "integer",
+        "format": "int32"
       }
     },
     "required": [
