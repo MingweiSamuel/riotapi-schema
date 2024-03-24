@@ -555,11 +555,13 @@
       },
       "riotIdName": {
         "type": "string",
-        "x-type": "string"
+        "x-type": "string",
+        "description": "Replaced by `riotIdGameName` in games played in patch 14.5 and after."
       },
       "riotIdGameName": {
         "type": "string",
-        "x-type": "string"
+        "x-type": "string",
+        "description": "Use `riotIdName` for games before patch 14.5."
       },
       "riotIdTagline": {
         "type": "string",
