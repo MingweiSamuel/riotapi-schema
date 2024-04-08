@@ -21,6 +21,6 @@
     },
     {
         "gameMode": "TFT",
-        "description": "Teamfight Tactics, used in `spectator-v4` endpoints."
+        "description": "Teamfight Tactics."
     }
 ]
