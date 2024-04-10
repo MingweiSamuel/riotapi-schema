@@ -3594,11 +3594,6 @@
         "x-type": "long",
         "description": "The ID of the profile icon used by this participant"
       },
-      "summonerName": {
-        "type": "string",
-        "x-type": "string",
-        "description": "The summoner name of this participant"
-      },
       "summonerId": {
         "type": "string",
         "x-type": "string",
@@ -3638,7 +3633,6 @@
       "bot",
       "spell2Id",
       "profileIconId",
-      "summonerName",
       "championId",
       "teamId",
       "spell1Id"
@@ -3659,11 +3653,6 @@
         "format": "int64",
         "x-type": "long",
         "description": "The ID of the profile icon used by this participant"
-      },
-      "summonerName": {
-        "type": "string",
-        "x-type": "string",
-        "description": "The summoner name of this participant"
       },
       "summonerId": {
         "type": "string",
@@ -3703,7 +3692,6 @@
     "required": [
       "spell2Id",
       "profileIconId",
-      "summonerName",
       "championId",
       "teamId",
       "spell1Id"
