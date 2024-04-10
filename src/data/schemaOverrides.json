@@ -3731,11 +3731,6 @@
         "description": "The team ID of this participant, indicating the participant's team",
         "x-enum": "team"
       },
-      "summonerName": {
-        "type": "string",
-        "x-type": "string",
-        "description": "The summoner name of this participant"
-      },
       "summonerId": {
         "type": "string",
         "x-type": "string",
@@ -3777,7 +3772,6 @@
       "profileIconId",
       "bot",
       "teamId",
-      "summonerName",
       "summonerId",
       "spell1Id",
       "spell2Id",
@@ -3812,11 +3806,6 @@
         "x-type": "long",
         "description": "The team ID of this participant, indicating the participant's team",
         "x-enum": "team"
-      },
-      "summonerName": {
-        "type": "string",
-        "x-type": "string",
-        "description": "The summoner name of this participant"
       },
       "summonerId": {
         "type": "string",
@@ -3858,7 +3847,6 @@
       "championId",
       "profileIconId",
       "teamId",
-      "summonerName",
       "summonerId",
       "spell1Id",
       "spell2Id",
