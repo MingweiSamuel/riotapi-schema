@@ -21,11 +21,6 @@
         "x-type": "long",
         "description": "Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change"
       },
-      "name": {
-        "type": "string",
-        "x-type": "string",
-        "description": "Summoner name."
-      },
       "id": {
         "type": "string",
         "x-type": "string",
@@ -47,7 +42,6 @@
       "accountId",
       "profileIconId",
       "revisionDate",
-      "name",
       "id",
       "puuid",
       "summonerLevel"
