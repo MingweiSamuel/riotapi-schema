@@ -4,9 +4,9 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "63e4cf3d53384b00e92235bf71894a7ecb7e9622",
-    "x-hash": "63e4cf3d53384b00e92235bf71894a7ecb7e962264700fbe34607bae21cd699af3b03b8754d21972",
-    "x-enumsHash": "64700fbe34607bae21cd699af3b03b8754d21972"
+    "version": "ea9e6d288846db974047a872e19776f5e5f00a79",
+    "x-hash": "ea9e6d288846db974047a872e19776f5e5f00a79d2c961bcd2ebd21c9093dc14f92461677b8d87ae",
+    "x-enumsHash": "d2c961bcd2ebd21c9093dc14f92461677b8d87ae"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
@@ -8581,11 +8581,6 @@
           "x-type": "long",
           "description": "Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change"
         },
-        "name": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Summoner name."
-        },
         "id": {
           "type": "string",
           "x-type": "string",
@@ -8607,7 +8602,6 @@
         "accountId",
         "profileIconId",
         "revisionDate",
-        "name",
         "id",
         "puuid",
         "summonerLevel"
@@ -9110,13 +9104,11 @@
         },
         "riotIdName": {
           "type": "string",
-          "x-type": "string",
-          "description": "Replaced by `riotIdGameName` in games played in patch 14.5 and after."
+          "x-type": "string"
         },
         "riotIdGameName": {
           "type": "string",
-          "x-type": "string",
-          "description": "Use `riotIdName` for games before patch 14.5."
+          "x-type": "string"
         },
         "riotIdTagline": {
           "type": "string",
@@ -12111,6 +12103,77 @@
         "WardsKilled"
       ]
     },
+    "spectator-v4.Participant": {
+      "type": "object",
+      "title": "Participant",
+      "properties": {
+        "bot": {
+          "type": "boolean",
+          "x-type": "boolean",
+          "description": "Flag indicating whether or not this participant is a bot"
+        },
+        "spell2Id": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the second summoner spell used by this participant"
+        },
+        "profileIconId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the profile icon used by this participant"
+        },
+        "summonerName": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The summoner name of this participant"
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Encrypted summoner ID of this participant"
+        },
+        "puuid": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Encrypted puuid of this participant"
+        },
+        "championId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the champion played by this participant",
+          "x-enum": "champion"
+        },
+        "teamId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The team ID of this participant, indicating the participant's team",
+          "x-enum": "team"
+        },
+        "spell1Id": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the first summoner spell used by this participant"
+        },
+        "riotId": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "bot",
+        "spell2Id",
+        "profileIconId",
+        "summonerName",
+        "championId",
+        "teamId",
+        "spell1Id"
+      ]
+    },
     "spectator-v5.Participant": {
       "type": "object",
       "title": "Participant",
@@ -12245,6 +12308,93 @@
         "championId",
         "teamId",
         "spell1Id"
+      ]
+    },
+    "spectator-v4.CurrentGameParticipant": {
+      "type": "object",
+      "title": "CurrentGameParticipant",
+      "properties": {
+        "championId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the champion played by this participant",
+          "x-enum": "champion"
+        },
+        "perks": {
+          "$ref": "#/definitions/spectator-v5.Perks",
+          "x-type": "Perks",
+          "description": "Perks/Runes Reforged Information"
+        },
+        "profileIconId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the profile icon used by this participant"
+        },
+        "bot": {
+          "type": "boolean",
+          "x-type": "boolean",
+          "description": "Flag indicating whether or not this participant is a bot"
+        },
+        "teamId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The team ID of this participant, indicating the participant's team",
+          "x-enum": "team"
+        },
+        "summonerName": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The summoner name of this participant"
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The encrypted summoner ID of this participant"
+        },
+        "puuid": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The encrypted puuid of this participant"
+        },
+        "spell1Id": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the first summoner spell used by this participant"
+        },
+        "spell2Id": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "The ID of the second summoner spell used by this participant"
+        },
+        "gameCustomizationObjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/spectator-v5.GameCustomizationObject",
+            "x-type": "GameCustomizationObject"
+          },
+          "x-type": "List[GameCustomizationObject]",
+          "description": "List of Game Customizations"
+        },
+        "riotId": {
+          "type": "string",
+          "x-type": "string"
+        }
+      },
+      "required": [
+        "championId",
+        "profileIconId",
+        "bot",
+        "teamId",
+        "summonerName",
+        "summonerId",
+        "spell1Id",
+        "spell2Id",
+        "gameCustomizationObjects"
       ]
     },
     "spectator-v5.CurrentGameParticipant": {
@@ -12634,10 +12784,6 @@
           "x-type": "string",
           "description": "Player's summonerId (Encrypted)"
         },
-        "summonerName": {
-          "type": "string",
-          "x-type": "string"
-        },
         "queueType": {
           "type": "string",
           "x-type": "string",
@@ -12695,7 +12841,6 @@
       "required": [
         "leagueId",
         "summonerId",
-        "summonerName",
         "queueType",
         "tier",
         "rank",
@@ -12789,10 +12934,6 @@
           "x-type": "int",
           "description": "Winning team on Summoners Rift."
         },
-        "summonerName": {
-          "type": "string",
-          "x-type": "string"
-        },
         "miniSeries": {
           "$ref": "#/definitions/league-v4.MiniSeriesDTO",
           "x-type": "MiniSeriesDTO"
@@ -12834,7 +12975,6 @@
       "required": [
         "freshBlood",
         "wins",
-        "summonerName",
         "inactive",
         "veteran",
         "hotStreak",
@@ -12887,10 +13027,6 @@
           "type": "string",
           "x-type": "string",
           "description": "Player's encrypted summonerId."
-        },
-        "summonerName": {
-          "type": "string",
-          "x-type": "string"
         },
         "queueType": {
           "type": "string",
@@ -12948,7 +13084,6 @@
       },
       "required": [
         "summonerId",
-        "summonerName",
         "queueType",
         "leaguePoints",
         "wins",
@@ -14623,10 +14758,6 @@
           "x-type": "int",
           "description": "First placement."
         },
-        "summonerName": {
-          "type": "string",
-          "x-type": "string"
-        },
         "miniSeries": {
           "$ref": "#/definitions/tft-league-v1.MiniSeriesDTO",
           "x-type": "MiniSeriesDTO"
@@ -14668,7 +14799,6 @@
       "required": [
         "freshBlood",
         "wins",
-        "summonerName",
         "inactive",
         "veteran",
         "hotStreak",
@@ -14727,10 +14857,6 @@
           "type": "string",
           "x-type": "string",
           "description": "Player's encrypted summonerId."
-        },
-        "summonerName": {
-          "type": "string",
-          "x-type": "string"
         },
         "queueType": {
           "type": "string",
@@ -14813,7 +14939,6 @@
       },
       "required": [
         "summonerId",
-        "summonerName",
         "queueType",
         "wins",
         "losses"
@@ -14824,10 +14949,6 @@
       "title": "TopRatedLadderEntryDto",
       "properties": {
         "summonerId": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "summonerName": {
           "type": "string",
           "x-type": "string"
         },
@@ -14862,7 +14983,6 @@
       },
       "required": [
         "summonerId",
-        "summonerName",
         "ratedTier",
         "ratedRating",
         "wins",
@@ -15189,11 +15309,6 @@
           "x-type": "long",
           "description": "Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: summoner name change, summoner level change, or profile icon change."
         },
-        "name": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Summoner name."
-        },
         "id": {
           "type": "string",
           "x-type": "string",
@@ -15216,7 +15331,6 @@
         "accountId",
         "profileIconId",
         "revisionDate",
-        "name",
         "id",
         "puuid",
         "summonerLevel"

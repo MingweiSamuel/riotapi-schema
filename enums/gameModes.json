@@ -134,10 +134,10 @@
   },
   {
     "gameMode": "TFT",
-    "description": "Teamfight Tactics.",
+    "description": "Teamfight Tactics, used in `spectator-v4` endpoints.",
     "x-value": "TFT",
     "x-name": "TFT",
-    "x-desc": "Teamfight Tactics."
+    "x-desc": "Teamfight Tactics, used in `spectator-v4` endpoints."
   },
   {
     "gameMode": "TUTORIAL",
