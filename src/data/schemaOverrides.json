@@ -53,6 +53,10 @@
     "type": "object",
     "title": "ChampionMasteryDto",
     "properties": {
+      "puuid": {
+        "type": "string",
+        "x-type": "string"
+      },
       "championPointsUntilNextLevel": {
         "type": "integer",
         "format": "int64",
@@ -107,13 +111,20 @@
         "description": "The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0."
       },
 
-      "puuid": {
-        "type": "string",
-        "x-type": "string"
+      "markRequiredForNextLevel": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "championSeasonMilestone": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
       }
     },
     "description": "This object contains single Champion Mastery information for player and champion combination.",
     "required": [
+      "puuid",
       "championPointsUntilNextLevel",
       "chestGranted",
       "championId",
@@ -122,7 +133,10 @@
       "summonerId",
       "championPoints",
       "championPointsSinceLastLevel",
-      "tokensEarned"
+      "tokensEarned",
+
+      "markRequiredForNextLevel",
+      "championSeasonMilestone"
     ]
   },
 
