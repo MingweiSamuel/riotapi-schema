@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "3ec94d23fb5d98706fbbb55a038f47798cf14813",
-    "x-hash": "3ec94d23fb5d98706fbbb55a038f47798cf1481364700fbe34607bae21cd699af3b03b8754d21972",
+    "version": "476b88d4eab4128e0842db0ab6ded999e00f6ae5",
+    "x-hash": "476b88d4eab4128e0842db0ab6ded999e00f6ae564700fbe34607bae21cd699af3b03b8754d21972",
     "x-enumsHash": "64700fbe34607bae21cd699af3b03b8754d21972"
   },
   "servers": [
@@ -8774,6 +8774,10 @@
         "type": "object",
         "title": "ChampionMasteryDto",
         "properties": {
+          "puuid": {
+            "type": "string",
+            "x-type": "string"
+          },
           "championPointsUntilNextLevel": {
             "type": "integer",
             "format": "int64",
@@ -8827,13 +8831,20 @@
             "x-type": "int",
             "description": "The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0."
           },
-          "puuid": {
-            "type": "string",
-            "x-type": "string"
+          "markRequiredForNextLevel": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "championSeasonMilestone": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
           }
         },
         "description": "This object contains single Champion Mastery information for player and champion combination.",
         "required": [
+          "puuid",
           "championPointsUntilNextLevel",
           "chestGranted",
           "championId",
@@ -8842,7 +8853,9 @@
           "summonerId",
           "championPoints",
           "championPointsSinceLastLevel",
-          "tokensEarned"
+          "tokensEarned",
+          "markRequiredForNextLevel",
+          "championSeasonMilestone"
         ]
       },
       "champion-v3.ChampionInfo": {
