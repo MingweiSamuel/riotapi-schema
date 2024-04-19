@@ -3866,5 +3866,153 @@
       "spell2Id",
       "gameCustomizationObjects"
     ]
+  },
+
+
+  "val-match-v1.MatchInfoDto": {
+    "type": "object",
+    "title": "MatchInfoDto",
+    "properties": {
+      "matchId": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "mapId": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "gameLengthMillis": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "gameStartMillis": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "provisioningFlowId": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "isCompleted": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "customGameName": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "queueId": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "gameMode": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "isRanked": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "seasonId": {
+        "type": "string",
+        "x-type": "string"
+      },
+
+      "gameVersion": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "region": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "premierMatchInfo": {
+        "type": "object"
+      }
+    },
+    "required": [
+      "matchId",
+      "mapId",
+      "gameLengthMillis",
+      "gameStartMillis",
+      "provisioningFlowId",
+      "isCompleted",
+      "customGameName",
+      "queueId",
+      "gameMode",
+      "isRanked",
+      "seasonId"
+    ]
+  },
+  "val-match-v1.PlayerDto": {
+    "type": "object",
+    "title": "PlayerDto",
+    "properties": {
+      "puuid": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "gameName": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "tagLine": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "teamId": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "partyId": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "characterId": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "stats": {
+        "$ref": "#/components/schemas/val-match-v1.PlayerStatsDto",
+        "x-type": "PlayerStatsDto"
+      },
+      "competitiveTier": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "playerCard": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "playerTitle": {
+        "type": "string",
+        "x-type": "string"
+      },
+
+      "isObserver": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "accountLevel": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      }
+    },
+    "required": [
+      "puuid",
+      "gameName",
+      "tagLine",
+      "teamId",
+      "partyId",
+      "characterId",
+      "stats",
+      "competitiveTier",
+      "playerCard",
+      "playerTitle"
+    ]
   }
 }
