@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: b1aa9a744cd35e4f6721b9e895ada4b4f64942ec
-  x-hash: b1aa9a744cd35e4f6721b9e895ada4b4f64942ec64700fbe34607bae21cd699af3b03b8754d21972
+  version: edb87d93f4dacb9822cbce567fce3b369cd7f76b
+  x-hash: edb87d93f4dacb9822cbce567fce3b369cd7f76b64700fbe34607bae21cd699af3b03b8754d21972
   x-enumsHash: 64700fbe34607bae21cd699af3b03b8754d21972
 host: na1.api.riotgames.com
 x-host-platform:
@@ -9652,6 +9652,118 @@ definitions:
       - spell1Id
       - spell2Id
       - gameCustomizationObjects
+  val-match-v1.MatchInfoDto:
+    type: object
+    title: MatchInfoDto
+    properties:
+      matchId:
+        type: string
+        x-type: string
+      mapId:
+        type: string
+        x-type: string
+      gameLengthMillis:
+        type: integer
+        format: int32
+        x-type: int
+      gameStartMillis:
+        type: integer
+        format: int64
+        x-type: long
+      provisioningFlowId:
+        type: string
+        x-type: string
+      isCompleted:
+        type: boolean
+        x-type: boolean
+      customGameName:
+        type: string
+        x-type: string
+      queueId:
+        type: string
+        x-type: string
+      gameMode:
+        type: string
+        x-type: string
+      isRanked:
+        type: boolean
+        x-type: boolean
+      seasonId:
+        type: string
+        x-type: string
+      gameVersion:
+        type: string
+        x-type: string
+      region:
+        type: string
+        x-type: string
+      premierMatchInfo:
+        type: object
+    required:
+      - matchId
+      - mapId
+      - gameLengthMillis
+      - gameStartMillis
+      - provisioningFlowId
+      - isCompleted
+      - customGameName
+      - queueId
+      - gameMode
+      - isRanked
+      - seasonId
+  val-match-v1.PlayerDto:
+    type: object
+    title: PlayerDto
+    properties:
+      puuid:
+        type: string
+        x-type: string
+      gameName:
+        type: string
+        x-type: string
+      tagLine:
+        type: string
+        x-type: string
+      teamId:
+        type: string
+        x-type: string
+      partyId:
+        type: string
+        x-type: string
+      characterId:
+        type: string
+        x-type: string
+      stats:
+        $ref: '#/definitions/val-match-v1.PlayerStatsDto'
+        x-type: PlayerStatsDto
+      competitiveTier:
+        type: integer
+        format: int32
+        x-type: int
+      playerCard:
+        type: string
+        x-type: string
+      playerTitle:
+        type: string
+        x-type: string
+      isObserver:
+        type: boolean
+        x-type: boolean
+      accountLevel:
+        type: integer
+        format: int32
+        x-type: int
+    required:
+      - puuid
+      - gameName
+      - tagLine
+      - teamId
+      - partyId
+      - characterId
+      - stats
+      - competitiveTier
+      - playerCard
+      - playerTitle
   champion-v3.ChampionInfo:
     type: object
     title: ChampionInfo
@@ -12521,103 +12633,6 @@ definitions:
       - coaches
       - teams
       - roundResults
-  val-match-v1.MatchInfoDto:
-    type: object
-    title: MatchInfoDto
-    properties:
-      matchId:
-        type: string
-        x-type: string
-      mapId:
-        type: string
-        x-type: string
-      gameLengthMillis:
-        type: integer
-        format: int32
-        x-type: int
-      gameStartMillis:
-        type: integer
-        format: int64
-        x-type: long
-      provisioningFlowId:
-        type: string
-        x-type: string
-      isCompleted:
-        type: boolean
-        x-type: boolean
-      customGameName:
-        type: string
-        x-type: string
-      queueId:
-        type: string
-        x-type: string
-      gameMode:
-        type: string
-        x-type: string
-      isRanked:
-        type: boolean
-        x-type: boolean
-      seasonId:
-        type: string
-        x-type: string
-    required:
-      - matchId
-      - mapId
-      - gameLengthMillis
-      - gameStartMillis
-      - provisioningFlowId
-      - isCompleted
-      - customGameName
-      - queueId
-      - gameMode
-      - isRanked
-      - seasonId
-  val-match-v1.PlayerDto:
-    type: object
-    title: PlayerDto
-    properties:
-      puuid:
-        type: string
-        x-type: string
-      gameName:
-        type: string
-        x-type: string
-      tagLine:
-        type: string
-        x-type: string
-      teamId:
-        type: string
-        x-type: string
-      partyId:
-        type: string
-        x-type: string
-      characterId:
-        type: string
-        x-type: string
-      stats:
-        $ref: '#/definitions/val-match-v1.PlayerStatsDto'
-        x-type: PlayerStatsDto
-      competitiveTier:
-        type: integer
-        format: int32
-        x-type: int
-      playerCard:
-        type: string
-        x-type: string
-      playerTitle:
-        type: string
-        x-type: string
-    required:
-      - puuid
-      - gameName
-      - tagLine
-      - teamId
-      - partyId
-      - characterId
-      - stats
-      - competitiveTier
-      - playerCard
-      - playerTitle
   val-match-v1.PlayerStatsDto:
     type: object
     title: PlayerStatsDto
