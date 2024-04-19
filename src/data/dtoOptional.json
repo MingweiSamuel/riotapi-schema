@@ -257,6 +257,12 @@
   "val-content-v1.ActDto.type": true,
   "val-content-v1.LocalizedNamesDto.en-GB": true,
 
+  "val-match-v1.RoundResultDto.bombPlanter": true,
+  "val-match-v1.RoundResultDto.bombDefuser": true,
+  "val-match-v1.RoundResultDto.plantPlayerLocations": true,
+  "val-match-v1.RoundResultDto.defusePlayerLocations": true,
+  "val-match-v1.AbilityDto.*": true,
+
   "val-ranked-v1.PlayerDto.puuid": true,
   "val-ranked-v1.PlayerDto.gameName": true,
   "val-ranked-v1.PlayerDto.tagLine": true,
