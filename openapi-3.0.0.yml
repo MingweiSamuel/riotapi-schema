@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 476b88d4eab4128e0842db0ab6ded999e00f6ae5
-  x-hash: 476b88d4eab4128e0842db0ab6ded999e00f6ae564700fbe34607bae21cd699af3b03b8754d21972
+  version: 3b2bce6f6deb89c8a0aab149801be6e09fbac9d6
+  x-hash: 3b2bce6f6deb89c8a0aab149801be6e09fbac9d664700fbe34607bae21cd699af3b03b8754d21972
   x-enumsHash: 64700fbe34607bae21cd699af3b03b8754d21972
 servers:
   -
@@ -11432,14 +11432,10 @@ components:
         - roundResult
         - roundCeremony
         - winningTeam
-        - bombPlanter
-        - bombDefuser
         - plantRoundTime
-        - plantPlayerLocations
         - plantLocation
         - plantSite
         - defuseRoundTime
-        - defusePlayerLocations
         - defuseLocation
         - playerStats
         - roundResultCode
@@ -11651,11 +11647,6 @@ components:
         ultimateEffects:
           type: string
           x-type: string
-      required:
-        - grenadeEffects
-        - ability1Effects
-        - ability2Effects
-        - ultimateEffects
     val-match-v1.MatchlistDto:
       type: object
       title: MatchlistDto
