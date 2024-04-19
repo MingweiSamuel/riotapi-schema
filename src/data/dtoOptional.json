@@ -262,6 +262,7 @@
   "val-match-v1.RoundResultDto.plantPlayerLocations": true,
   "val-match-v1.RoundResultDto.defusePlayerLocations": true,
   "val-match-v1.AbilityDto.*": true,
+  "val-match-v1.PlayerStatsDto.abilityCasts": true,
 
   "val-ranked-v1.PlayerDto.puuid": true,
   "val-ranked-v1.PlayerDto.gameName": true,
