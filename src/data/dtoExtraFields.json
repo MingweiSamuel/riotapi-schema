@@ -1,1 +1,26 @@
-{}
+{
+    "val-match-v1.PlayerDto": {
+        "isObserver": {
+            "type": "boolean",
+            "x-type": "boolean"
+        },
+        "accountLevel": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+        }
+    },
+    "val-match-v1.MatchInfoDto": {
+        "gameVersion": {
+            "type": "string",
+            "x-type": "string"
+        },
+        "region": {
+            "type": "string",
+            "x-type": "string"
+        },
+        "premierMatchInfo": {
+            "type": "object"
+        }
+    }
+}
