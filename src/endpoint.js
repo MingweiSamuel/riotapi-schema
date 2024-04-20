@@ -98,7 +98,7 @@ Endpoint.prototype.list_missing_dtos = function() {
     .map(prop => {
       if ('array' === prop.type)
         return prop.items.$ref;
-      if ('object' === prop.type)
+      if ('object' === prop.type && null != prop.additionalProperties)
         return prop.additionalProperties.$ref
       // Get $ref (or undefined).
       return prop.$ref;

@@ -16,6 +16,8 @@ Missing DTOs for the latest version are stored in [this JSON file](http://www.mi
 
 If the portal documentation is wrong, DTOs can be manually overridden (see `src/data/schemaOverrides.json`).
 
+Or if the portal documentation is missing a field, DTO fields can be added with `src/data/dtoExtraFields.json`.
+
 #### "DTO borrowing"
 
 If a DTO is missing from one endpoint, it may be possible to find it in another

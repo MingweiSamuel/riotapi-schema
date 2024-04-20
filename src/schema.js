@@ -8,6 +8,7 @@ const dtoOptional = require('./data/dtoOptional');
 const methodDtoRenames = require('./data/methodDtoRenames');
 const methodParamEnums = require('./data/methodParamEnums');
 const dtoEnums = require('./data/dtoEnums');
+const dtoExtraFields = require('./data/dtoExtraFields');
 
 const types = require('./types');
 const { subsetEqual } = require('./deepEqual');
@@ -50,7 +51,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
     let data = {}
     Array.from(tr.children)
       .map((el, i) => data[headers[i]] = el.textContent.trim());
-    let { name, dataType, description } = data;
+    let { name: fieldName, dataType, description } = data;
 
     {
       if (onlyUseRequiredByDefault && useDtoOptional)
@@ -59,7 +60,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
       let isRequired = requiredByDefault;
 
       let requiredStr;
-      [ name, requiredStr ] = name.split(/\s+/, 2);
+      [ fieldName, requiredStr ] = fieldName.split(/\s+/, 2);
 
       if (!onlyUseRequiredByDefault) {
         if (description.toLowerCase().includes('optional'))
@@ -68,20 +69,16 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
           isRequired = true;
 
         if (useDtoOptional) {
-          const canonName = `${endpointName}.${dtoName}.${name}`;
-          const canonNameStar = `${endpointName}.${dtoName}.*`;
-          if (undefined !== dtoOptional[canonName])
-            isRequired = !dtoOptional[canonName];
-          else if (undefined !== dtoOptional[canonNameStar])
-            isRequired = !dtoOptional[canonNameStar];
+          isRequired = !Schema.isFieldInDtoOptional(endpointName, dtoName, fieldName);
         }
       }
 
-      if (isRequired)
-        schema.required.push(name);
+      if (isRequired) {
+        schema.required.push(fieldName);
+      }
     }
 
-    let prop = types.getType(dataType, schema.endpointName, methodName);
+    const prop = types.getType(dataType, endpointName, methodName);
     if (description) {
       let match;
       if (descTypeOverrides[description]) {
@@ -102,7 +99,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
       }
       prop.description = description;
     }
-    annotateEnums(prop, schema.endpointName, name, dtoName, methodName, isParam);
+    annotateEnums(prop, endpointName, fieldName, dtoName, methodName, isParam);
 
     let valueTd = tr.children[headers.indexOf('value')];
     if (valueTd && valueTd.firstElementChild.tagName.toLowerCase() === 'select') {
@@ -110,8 +107,23 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
         .map(option => option.textContent.trim())
         .filter(str => 0 < str.length);
     }
-    schema.properties[name] = prop;
+    schema.properties[fieldName] = prop;
   });
+
+  // Add dto extra fields.
+  const extraFields = dtoExtraFields[`${endpointName}.${dtoName}`];
+  if (null != extraFields) {
+    console.log(`    Adding fields to DTO '${endpointName}.${dtoName}': ${JSON.stringify(Object.keys(extraFields))}.`)
+    for (const [fieldName, extraProp] of Object.entries(extraFields)) {
+      const prop = JSON.parse(JSON.stringify(extraProp));
+      const isRequired = !Schema.isFieldInDtoOptional(endpointName, dtoName, fieldName);
+      if (isRequired) {
+        schema.required.push(fieldName);
+      }
+      annotateEnums(prop, endpointName, fieldName, methodName, isParam);
+      schema.properties[fieldName] = JSON.parse(JSON.stringify(prop));
+    }
+  }
 
   return schema;
 };
@@ -164,6 +176,16 @@ Schema.prototype.toParameters = function(inType) {
         res.explode = true;
       return res;
     });
+}
+
+Schema.isFieldInDtoOptional = function(endpointName, dtoName, fieldName) {
+  const canonName = `${endpointName}.${dtoName}.${fieldName}`;
+  const canonNameStar = `${endpointName}.${dtoName}.*`;
+  if (null != dtoOptional[canonName])
+    return dtoOptional[canonName];
+  else if (null != dtoOptional[canonNameStar])
+    return dtoOptional[canonNameStar];
+  return false;
 }
 
 Schema.readReturnType = function(returnHtml, endpointName, methodName) {
