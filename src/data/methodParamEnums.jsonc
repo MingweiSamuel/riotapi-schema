@@ -1,0 +1,25 @@
+{
+    "champion-mastery-v4.getChampionMastery.championId": "champion",
+    "champion-mastery-v4.getChampionMasteryByPUUID.championId": "champion",
+
+    "league-exp-v4.getLeagueEntries.division": "division",
+    "league-v4.getLeagueEntries.division": "division",
+
+    "league-exp-v4.getLeagueEntries.queue": "queueType",
+    "league-v4.getChallengerLeague.queue": "queueType",
+    "league-v4.getLeagueEntriesForSummoner.queue": "queueType",
+    "league-v4.getLeagueEntries.queue": "queueType",
+    "league-v4.getGrandmasterLeague.queue": "queueType",
+    "league-v4.getMasterLeague.queue": "queueType",
+
+    "league-exp-v4.getLeagueEntries.tier": "tier",
+    "league-v4.getLeagueEntries.tier": "tier",
+    "lol-challenges-v1.getChallengeLeaderboards.level": "tier",
+
+    "tft-league-v1.getTopRatedLadder.queue": "queueType",
+    "tft-league-v1.getLeagueEntries.tier": "tier",
+
+    "match-v5.getMatchIdsByPUUID.queue": "queue",
+
+    "__REQUIRES_HYPENATED_LOCALES val-content-v1.getContent.locale": "locale"
+}

@@ -3,12 +3,14 @@
 /// properties a particular Schema contains, as well as it's name, description,
 /// and which endpoint it came from.
 
-const descTypeOverrides = require('./data/dtoDescriptionTypeOverrides');
-const dtoOptional = require('./data/dtoOptional');
-const methodDtoRenames = require('./data/methodDtoRenames');
-const methodParamEnums = require('./data/methodParamEnums');
-const dtoEnums = require('./data/dtoEnums');
-const dtoExtraFields = require('./data/dtoExtraFields');
+const jsonc = require('jsonc');
+
+const DESC_TYPE_OVERRIDES = jsonc.readSync(__dirname + '/data/dtoDescriptionTypeOverrides.jsonc');
+const DTO_OPTIONAL = jsonc.readSync(__dirname + '/data/dtoOptional.jsonc');
+const METHOD_DTO_RENAMES = jsonc.readSync(__dirname + '/data/methodDtoRenames.jsonc');
+const METHOD_PARAM_ENUMS = jsonc.readSync(__dirname + '/data/methodParamEnums.jsonc');
+const DTO_ENUMS = jsonc.readSync(__dirname + '/data/dtoEnums.jsonc');
+const DTO_EXTRA_FIELDS = jsonc.readSync(__dirname + '/data/dtoExtraFields.jsonc');
 
 const types = require('./types');
 const { subsetEqual } = require('./deepEqual');
@@ -29,7 +31,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
     console.error('!!!!', endpointName, methodName);
   }
   const dtoName = schemaHtml.firstElementChild.textContent.trim();
-  const dtoRename = methodDtoRenames[`${endpointName}.${methodName}.${dtoName}`]; // May be undefined.
+  const dtoRename = METHOD_DTO_RENAMES[`${endpointName}.${methodName}.${dtoName}`]; // May be undefined.
 
   let description = Array.from(schemaHtml.childNodes)
     .filter(node => node.nodeType === 3 /* Node.TEXT_NODE */)
@@ -81,8 +83,8 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
     const prop = types.getType(dataType, endpointName, methodName);
     if (description) {
       let match;
-      if (descTypeOverrides[description]) {
-        prop = JSON.parse(JSON.stringify(descTypeOverrides[description]));
+      if (DESC_TYPE_OVERRIDES[description]) {
+        prop = JSON.parse(JSON.stringify(DESC_TYPE_OVERRIDES[description]));
       } else {
         let typeToUpdate;
         if (prop.type === 'array') {
@@ -111,7 +113,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
   });
 
   // Add dto extra fields.
-  const extraFields = dtoExtraFields[`${endpointName}.${dtoName}`];
+  const extraFields = DTO_EXTRA_FIELDS[`${endpointName}.${dtoName}`];
   if (null != extraFields) {
     console.log(`    Adding fields to DTO '${endpointName}.${dtoName}': ${JSON.stringify(Object.keys(extraFields))}.`)
     for (const [fieldName, extraProp] of Object.entries(extraFields)) {
@@ -181,10 +183,10 @@ Schema.prototype.toParameters = function(inType) {
 Schema.isFieldInDtoOptional = function(endpointName, dtoName, fieldName) {
   const canonName = `${endpointName}.${dtoName}.${fieldName}`;
   const canonNameStar = `${endpointName}.${dtoName}.*`;
-  if (null != dtoOptional[canonName])
-    return dtoOptional[canonName];
-  else if (null != dtoOptional[canonNameStar])
-    return dtoOptional[canonNameStar];
+  if (null != DTO_OPTIONAL[canonName])
+    return DTO_OPTIONAL[canonName];
+  else if (null != DTO_OPTIONAL[canonNameStar])
+    return DTO_OPTIONAL[canonNameStar];
   return false;
 }
 
@@ -201,15 +203,15 @@ function annotateEnums(targetProp, endpointName, name, dtoName, methodName, isPa
   let canonName;
   let enumMap;
 
-  // methodParamEnums.json
+  // methodParamEnums.jsonc
   if (isParam) {
     canonName = `${endpointName}.${methodName}.${name}`;
-    enumMap = methodParamEnums;
+    enumMap = METHOD_PARAM_ENUMS;
   }
-  // dtoEnums.json
+  // dtoEnums.jsonc
   else {
     canonName = `${endpointName}.${dtoName}.${name}`;
-    enumMap = dtoEnums;
+    enumMap = DTO_ENUMS;
   }
 
   if ('array' === targetProp.type) {

@@ -49,6 +49,7 @@
   },
 
 
+  // https://github.com/RiotGames/developer-relations/issues/754
   "match-v5.ParticipantChallenges": {
     "type": "object",
     "title": "ParticipantChallenges",
@@ -725,6 +726,7 @@
       }
     }
   },
+  // https://github.com/RiotGames/developer-relations/issues/754
   "match-v5.ParticipantMissions": {
     "type": "object",
     "title": "ParticipantMissions",
@@ -818,6 +820,7 @@
     ]
   },
 
+  // https://github.com/RiotGames/developer-relations/issues/539
   "match-v5.MatchTimelineInfoFrameEvent": {
     "title": "MatchTimelineInfoFrameEvent",
     "type": "object",

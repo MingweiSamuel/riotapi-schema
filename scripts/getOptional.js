@@ -1,4 +1,4 @@
-// node scripts/getOptional.js src/data/schemaOverrides.json
+// node scripts/getOptional.js src/data/schemaOverrides.jsonc
 const path = require('path');
 
 const json = process.argv[2];

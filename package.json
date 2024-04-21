@@ -20,6 +20,7 @@
     "child-process-es6-promise": "^1.2.0",
     "fs-extra": "^4.0.2",
     "jsdom": "^11.3.0",
+    "jsonc": "^2.0.0",
     "object-hash": "1.2.0",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",

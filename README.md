@@ -12,23 +12,21 @@ knowing if you plan to use the generated schemas.
 
 Missing DTOs for the latest version are stored in [this JSON file](http://www.mingweisamuel.com/riotapi-schema/missing.json).
 
-#### Manual Overrides
+#### Manual overrides, additional fields, fields marked optional, etc.
 
-If the portal documentation is wrong, DTOs can be manually overridden (see `src/data/schemaOverrides.json`).
-
-Or if the portal documentation is missing a field, DTO fields can be added with `src/data/dtoExtraFields.json`.
+See [`src/data/README.md`](https://github.com/MingweiSamuel/riotapi-schema/tree/master/src/data#readme).
 
 #### "DTO borrowing"
 
 If a DTO is missing from one endpoint, it may be possible to find it in another
 endpoint. Which endpoints can "borrow" from which other endpoints are listed in
-`src/data/endpointSharedDtos.json`. The file is updated as needed.
+`src/data/endpointSharedDtos.jsonc`. The file is updated as needed.
 
 #### `x-platforms-available`
 
 `x-platforms-available` is listed per path specifying which platforms are
-available. This only differs for the `tournament-v4` and `tournament-stub-v4`
-endpoints. Overrides are in `src/data/endpointPlatformsAvailableOverrides.json`.
+available. This only differs for the `tournament-v5` and `tournament-stub-v5`
+endpoints. Overrides are in `src/data/endpointPlatformsAvailableOverrides.jsonc`.
 
 #### `tournament` Endpoints (`tournament-stub-v4` and `tournament-v4`)
 
@@ -55,5 +53,5 @@ This behavior is removed for `league-v4`.
 
 Static data had some DTO fields that could
 be multiple different types as specified in their description. These were
-overridden using the dict in `src/data/dtoDescriptionTypeOverrides.json`
+overridden using the dict in `src/data/dtoDescriptionTypeOverrides.jsonc`
 Because the static data endpoints are removed, this is no longer an issue.

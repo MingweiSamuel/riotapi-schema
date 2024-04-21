@@ -1,7 +1,9 @@
 /// Type util functions for dealing with different variable types in
 /// JSON Schema / Swagger Spec / OpenAPI
 
-const methodDtoRenames = require('./data/methodDtoRenames');
+const jsonc = require('jsonc');
+
+const METHOD_DTO_RENAMES = jsonc.readSync(__dirname + '/data/methodDtoRenames.jsonc');
 
 function getType(typeString, endpoint, method = null) {
   typeString = typeString.trim();
@@ -42,7 +44,7 @@ function getTypeInternal(typeString, endpoint, method) {
     };
   }
   // DTO $ref.
-  const rename = methodDtoRenames[`${endpoint}.${method}.${typeString}`];
+  const rename = METHOD_DTO_RENAMES[`${endpoint}.${method}.${typeString}`];
   if (rename) {
     console.log(`    Renaming ${typeString} to ${rename}.`);
     typeString = rename;

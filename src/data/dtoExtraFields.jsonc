@@ -1,4 +1,5 @@
 {
+  // https://github.com/RiotGames/developer-relations/issues/915
   "champion-mastery-v4.ChampionMasteryDto": {
     "markRequiredForNextLevel": {
       "type": "integer",
@@ -11,7 +12,8 @@
       "x-type": "int"
     }
   },
-
+  //
+  // https://github.com/RiotGames/developer-relations/issues/754
   "match-v5.ParticipantDto": {
     "riotIdName": {
       "type": "string",
@@ -23,7 +25,6 @@
       "x-type": "string",
       "description": "Use `riotIdName` for games before patch 14.5."
     },
-
     "allInPings": {
       "type": "integer",
       "format": "int32",
@@ -94,17 +95,14 @@
       "format": "int32",
       "x-type": "int"
     },
-
     "eligibleForProgression": {
       "type": "boolean",
       "x-type": "boolean"
     },
-
     "challenges": {
       "$ref": "#/components/schemas/match-v5.ParticipantChallenges",
       "x-type": "ParticipantChallenges"
     },
-
     "totalAllyJungleMinionsKilled": {
       "type": "integer",
       "format": "int32",
@@ -115,7 +113,6 @@
       "format": "int32",
       "x-type": "int"
     },
-
     "playerAugment1": {
       "type": "integer",
       "format": "int32",
@@ -151,7 +148,6 @@
       "format": "int32",
       "x-type": "int"
     },
-
     "missions": {
       "$ref": "#/components/schemas/match-v5.ParticipantMissions",
       "x-type": "ParticipantMissions"
@@ -217,13 +213,16 @@
       "x-type": "int"
     }
   },
+  //
+  // https://github.com/RiotGames/developer-relations/issues/829
   "match-v5.ObjectivesDto": {
     "horde": {
       "$ref": "#/components/schemas/match-v5.ObjectiveDto",
       "x-type": "ObjectiveDto"
     }
   },
-
+  //
+  // https://github.com/RiotGames/developer-relations/issues/916
   "val-match-v1.PlayerDto": {
     "isObserver": {
       "type": "boolean",

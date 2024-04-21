@@ -3,6 +3,7 @@
 const fs = require("fs-extra");
 const YAML = require('yamljs');
 const hash = require('object-hash');
+const jsonc = require('jsonc');
 
 // Two-try request function.
 const req = (function(req) {
@@ -27,8 +28,8 @@ const BASE_URL = 'https://developer.riotgames.com/';
 // const DOCS_URL = BASE_URL + 'docs/lol';
 const OUTPUT = 'out';
 
-const endpointSharedDtos = require('./data/endpointSharedDtos');
-const schemaOverrides = require('./data/schemaOverrides');
+const ENDPOINT_SHARED_DTOS = jsonc.readSync(__dirname + '/data/endpointSharedDtos.jsonc');
+const SCHEMA_OVERRIDES = jsonc.readSync(__dirname + '/data/schemaOverrides.jsonc');
 
 
 async function cleanupOutput() {
@@ -122,8 +123,8 @@ async function fixMissingDtos(endpoints) {
         }
 
         // Try finding DTO in endpointSharedDtos.
-        if (endpointSharedDtos[endpoint.name]) {
-          for (let otherName of endpointSharedDtos[endpoint.name]) {
+        if (ENDPOINT_SHARED_DTOS[endpoint.name]) {
+          for (let otherName of ENDPOINT_SHARED_DTOS[endpoint.name]) {
             let otherEndpoint = endpointsByName[otherName];
             if (!otherEndpoint) {
               console.log('  Endpoint alt not found: ' + otherName + '.');
@@ -313,9 +314,9 @@ async function writeOutput(endpoints, enumsHash) {
     endpoint.methods.forEach(method =>
       method.platformsAvailable.forEach(region => regions.includes(region) || regions.push(region))));
 
-  const data = { endpoints, regions, schemaOverrides };
+  const data = { endpoints, regions, schemaOverrides: SCHEMA_OVERRIDES };
 
-  const overrides = Object.keys(schemaOverrides);
+  const overrides = Object.keys(SCHEMA_OVERRIDES);
   if (overrides.length)
     console.log('\nOverriding DTOs: ' + JSON.stringify(overrides));
 

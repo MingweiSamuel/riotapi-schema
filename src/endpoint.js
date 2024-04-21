@@ -2,7 +2,9 @@
 /// i.e. https://developer.riotgames.com/api-methods/#champion-mastery-v4
 /// An endpoint is the top-level collection of methods.
 
-const schemaOverrides = require('./data/schemaOverrides');
+const jsonc = require('jsonc');
+
+const SCHEMA_OVERRIDES = jsonc.readSync(__dirname + '/data/schemaOverrides.jsonc');
 
 const Method = require('./method');
 const Schema = require('./schema');
@@ -57,7 +59,7 @@ Endpoint.prototype._compile = function() {
       }
       else {
         console.error(`    CONFLICTING DTO: '${canonName}' (from method '${method.canonName}')`);
-        if (schemaOverrides[canonName]) {
+        if (SCHEMA_OVERRIDES[canonName]) {
           console.error('    Conflicting DTO is overridden, continuing.');
         }
         else {

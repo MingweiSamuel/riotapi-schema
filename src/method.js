@@ -3,10 +3,12 @@
 /// A method is a single REST API url with associated argument, return value,
 /// and response code information.
 
-const platformsAvailableOverrides = require('./data/endpointPlatformsAvailableOverrides');
-const methodReturnOverrides = require('./data/methodReturnOverrides');
-const routesTable = require('./data/routesTable');
-const methodOptional = require('./data/methodOptional');
+const jsonc = require('jsonc');
+
+const PLATFORM_AVAILABLE_OVERRIDES = jsonc.readSync(__dirname + '/data/endpointPlatformsAvailableOverrides.jsonc');
+const METHOD_RETURN_OVERRIDES = jsonc.readSync(__dirname + '/data/methodReturnOverrides.jsonc');
+const ROUTES_TABLE = require('./data/routesTable');
+const METHOD_OPTIONAL = jsonc.readSync(__dirname + '/data/methodOptional.jsonc');
 
 const Schema = require('./schema');
 const types = require('./types');
@@ -30,7 +32,7 @@ function Method(endpoint, methodEl) {
 
   this.bodyType = null;
   this.bodyRequired = null;
-  this.returnType = methodReturnOverrides[this.canonName] || null;
+  this.returnType = METHOD_RETURN_OVERRIDES[this.canonName] || null;
   this.dtos = [];
   this.params = [];
   this.responses = {};
@@ -41,7 +43,7 @@ function Method(endpoint, methodEl) {
   this.platformsAvailable = null;
   this.routeEnumName = null;
 
-  this.nullable404 = methodOptional[this.canonName] || false;
+  this.nullable404 = METHOD_OPTIONAL[this.canonName] || false;
 
   console.log(`  ${this.name} - ${this.httpMethod.toUpperCase()}` +
     (this.nullable404 ? ' (nullable)' : '') +
@@ -192,8 +194,8 @@ Method.prototype._handleBodyParameters = function(apiBlockHtml) {
 };
 
 Method.prototype._handlePlatformSelect = function(platformSelect) {
-  if (platformsAvailableOverrides[this.endpoint.name]) {
-    this.platformsAvailable = platformsAvailableOverrides[this.endpoint.name];
+  if (PLATFORM_AVAILABLE_OVERRIDES[this.endpoint.name]) {
+    this.platformsAvailable = PLATFORM_AVAILABLE_OVERRIDES[this.endpoint.name];
   }
   else if (platformSelect) {
     this.platformsAvailable = Array.from(platformSelect.children)
@@ -203,8 +205,8 @@ Method.prototype._handlePlatformSelect = function(platformSelect) {
     throw Error(`Failed to get platforms for ${this.canonName}.`);
   }
 
-  // Find route enum based on routesTable.
-  for (const [ routeEnumName, routes ] of Object.entries(routesTable)) {
+  // Find route enum based on `routesTable`.
+  for (const [ routeEnumName, routes ] of Object.entries(ROUTES_TABLE)) {
     if (this.platformsAvailable.every(r => routes[r])) {
       this.routeEnumName = routeEnumName;
       break;
