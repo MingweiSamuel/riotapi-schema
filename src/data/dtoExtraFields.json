@@ -217,6 +217,12 @@
       "x-type": "int"
     }
   },
+  "match-v5.ObjectivesDto": {
+    "horde": {
+      "$ref": "#/components/schemas/match-v5.ObjectiveDto",
+      "x-type": "ObjectiveDto"
+    }
+  },
 
   "val-match-v1.PlayerDto": {
     "isObserver": {

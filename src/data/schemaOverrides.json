@@ -1463,49 +1463,6 @@
     ]
   },
 
-  "match-v5.ObjectivesDto": {
-    "type": "object",
-    "title": "ObjectivesDto",
-    "properties": {
-      "baron": {
-        "$ref": "#/components/schemas/match-v5.ObjectiveDto",
-        "x-type": "ObjectiveDto"
-      },
-      "champion": {
-        "$ref": "#/components/schemas/match-v5.ObjectiveDto",
-        "x-type": "ObjectiveDto"
-      },
-      "dragon": {
-        "$ref": "#/components/schemas/match-v5.ObjectiveDto",
-        "x-type": "ObjectiveDto"
-      },
-      "inhibitor": {
-        "$ref": "#/components/schemas/match-v5.ObjectiveDto",
-        "x-type": "ObjectiveDto"
-      },
-      "riftHerald": {
-        "$ref": "#/components/schemas/match-v5.ObjectiveDto",
-        "x-type": "ObjectiveDto"
-      },
-      "tower": {
-        "$ref": "#/components/schemas/match-v5.ObjectiveDto",
-        "x-type": "ObjectiveDto"
-      },
-      "horde": {
-        "$ref": "#/components/schemas/match-v5.ObjectiveDto",
-        "x-type": "ObjectiveDto"
-      }
-    },
-    "required": [
-      "baron",
-      "champion",
-      "dragon",
-      "inhibitor",
-      "riftHerald",
-      "tower"
-    ]
-  },
-
 
   "val-content-v1.ActDto": {
     "type": "object",
