@@ -8236,6 +8236,26 @@ components:
           type: integer
           format: int32
           x-type: int
+        playerAugment1:
+          type: integer
+          format: int32
+          x-type: int
+        playerAugment2:
+          type: integer
+          format: int32
+          x-type: int
+        playerAugment3:
+          type: integer
+          format: int32
+          x-type: int
+        playerAugment4:
+          type: integer
+          format: int32
+          x-type: int
+        playerSubteamId:
+          type: integer
+          format: int32
+          x-type: int
         profileIcon:
           type: integer
           format: int32
@@ -8251,10 +8271,6 @@ components:
           type: string
           x-type: string
           description: 'Replaced by `riotIdGameName` in games played in patch 14.5 and after.'
-        riotIdGameName:
-          type: string
-          x-type: string
-          description: 'Use `riotIdName` for games before patch 14.5.'
         riotIdTagline:
           type: string
           x-type: string
@@ -8418,6 +8434,10 @@ components:
         win:
           type: boolean
           x-type: boolean
+        riotIdGameName:
+          type: string
+          x-type: string
+          description: 'Use `riotIdName` for games before patch 14.5.'
         allInPings:
           type: integer
           format: int32
@@ -8485,26 +8505,6 @@ components:
           format: int32
           x-type: int
         totalEnemyJungleMinionsKilled:
-          type: integer
-          format: int32
-          x-type: int
-        playerAugment1:
-          type: integer
-          format: int32
-          x-type: int
-        playerAugment2:
-          type: integer
-          format: int32
-          x-type: int
-        playerAugment3:
-          type: integer
-          format: int32
-          x-type: int
-        playerAugment4:
-          type: integer
-          format: int32
-          x-type: int
-        playerSubteamId:
           type: integer
           format: int32
           x-type: int
@@ -8835,6 +8835,622 @@ components:
       required:
         - first
         - kills
+    match-v5.ParticipantChallenges:
+      type: object
+      title: ParticipantChallenges
+      properties:
+        12AssistStreakCount:
+          type: number
+          format: double
+          x-type: double
+        abilityUses:
+          type: number
+          format: double
+          x-type: double
+        acesBefore15Minutes:
+          type: number
+          format: double
+          x-type: double
+        alliedJungleMonsterKills:
+          type: number
+          format: double
+          x-type: double
+        baronBuffGoldAdvantageOverThreshold:
+          type: number
+          format: double
+          x-type: double
+        baronTakedowns:
+          type: number
+          format: double
+          x-type: double
+        blastConeOppositeOpponentCount:
+          type: number
+          format: double
+          x-type: double
+        bountyGold:
+          type: number
+          format: double
+          x-type: double
+        buffsStolen:
+          type: number
+          format: double
+          x-type: double
+        completeSupportQuestInTime:
+          type: number
+          format: double
+          x-type: double
+        controlWardsPlaced:
+          type: number
+          format: double
+          x-type: double
+        controlWardTimeCoverageInRiverOrEnemyHalf:
+          type: number
+          format: double
+          x-type: double
+        damagePerMinute:
+          type: number
+          format: double
+          x-type: double
+        damageTakenOnTeamPercentage:
+          type: number
+          format: double
+          x-type: double
+        dancedWithRiftHerald:
+          type: number
+          format: double
+          x-type: double
+        deathsByEnemyChamps:
+          type: number
+          format: double
+          x-type: double
+        dodgeSkillShotsSmallWindow:
+          type: number
+          format: double
+          x-type: double
+        doubleAces:
+          type: number
+          format: double
+          x-type: double
+        dragonTakedowns:
+          type: number
+          format: double
+          x-type: double
+        earliestBaron:
+          type: number
+          format: double
+          x-type: double
+        earliestDragonTakedown:
+          type: number
+          format: double
+          x-type: double
+        earliestElderDragon:
+          type: number
+          format: double
+          x-type: double
+        earlyLaningPhaseGoldExpAdvantage:
+          type: number
+          format: double
+          x-type: double
+        effectiveHealAndShielding:
+          type: number
+          format: double
+          x-type: double
+        elderDragonKillsWithOpposingSoul:
+          type: number
+          format: double
+          x-type: double
+        elderDragonMultikills:
+          type: number
+          format: double
+          x-type: double
+        enemyChampionImmobilizations:
+          type: number
+          format: double
+          x-type: double
+        enemyJungleMonsterKills:
+          type: number
+          format: double
+          x-type: double
+        epicMonsterKillsNearEnemyJungler:
+          type: number
+          format: double
+          x-type: double
+        epicMonsterKillsWithin30SecondsOfSpawn:
+          type: number
+          format: double
+          x-type: double
+        epicMonsterSteals:
+          type: number
+          format: double
+          x-type: double
+        epicMonsterStolenWithoutSmite:
+          type: number
+          format: double
+          x-type: double
+        fasterSupportQuestCompletion:
+          type: number
+          format: double
+          x-type: double
+        fastestLegendary:
+          type: number
+          format: double
+          x-type: double
+        firstTurretKilled:
+          type: number
+          format: double
+          x-type: double
+        firstTurretKilledTime:
+          type: number
+          format: double
+          x-type: double
+        flawlessAces:
+          type: number
+          format: double
+          x-type: double
+        fullTeamTakedown:
+          type: number
+          format: double
+          x-type: double
+        gameLength:
+          type: number
+          format: double
+          x-type: double
+        getTakedownsInAllLanesEarlyJungleAsLaner:
+          type: number
+          format: double
+          x-type: double
+        goldPerMinute:
+          type: number
+          format: double
+          x-type: double
+        hadAfkTeammate:
+          type: number
+          format: double
+          x-type: double
+        hadOpenNexus:
+          type: number
+          format: double
+          x-type: double
+        highestChampionDamage:
+          type: number
+          format: double
+          x-type: double
+        highestCrowdControlScore:
+          type: number
+          format: double
+          x-type: double
+        highestWardKills:
+          type: number
+          format: double
+          x-type: double
+        immobilizeAndKillWithAlly:
+          type: number
+          format: double
+          x-type: double
+        initialBuffCount:
+          type: number
+          format: double
+          x-type: double
+        initialCrabCount:
+          type: number
+          format: double
+          x-type: double
+        jungleCsBefore10Minutes:
+          type: number
+          format: double
+          x-type: double
+        junglerKillsEarlyJungle:
+          type: number
+          format: double
+          x-type: double
+        junglerTakedownsNearDamagedEpicMonster:
+          type: number
+          format: double
+          x-type: double
+        kda:
+          type: number
+          format: double
+          x-type: double
+        killAfterHiddenWithAlly:
+          type: number
+          format: double
+          x-type: double
+        killedChampTookFullTeamDamageSurvived:
+          type: number
+          format: double
+          x-type: double
+        killingSprees:
+          type: number
+          format: double
+          x-type: double
+        killParticipation:
+          type: number
+          format: double
+          x-type: double
+        killsNearEnemyTurret:
+          type: number
+          format: double
+          x-type: double
+        killsOnLanersEarlyJungleAsJungler:
+          type: number
+          format: double
+          x-type: double
+        killsOnOtherLanesEarlyJungleAsLaner:
+          type: number
+          format: double
+          x-type: double
+        killsOnRecentlyHealedByAramPack:
+          type: number
+          format: double
+          x-type: double
+        killsUnderOwnTurret:
+          type: number
+          format: double
+          x-type: double
+        killsWithHelpFromEpicMonster:
+          type: number
+          format: double
+          x-type: double
+        knockEnemyIntoTeamAndKill:
+          type: number
+          format: double
+          x-type: double
+        kTurretsDestroyedBeforePlatesFall:
+          type: number
+          format: double
+          x-type: double
+        landSkillShotsEarlyGame:
+          type: number
+          format: double
+          x-type: double
+        laneMinionsFirst10Minutes:
+          type: number
+          format: double
+          x-type: double
+        laningPhaseGoldExpAdvantage:
+          type: number
+          format: double
+          x-type: double
+        legendaryCount:
+          type: number
+          format: double
+          x-type: double
+        lostAnInhibitor:
+          type: number
+          format: double
+          x-type: double
+        maxCsAdvantageOnLaneOpponent:
+          type: number
+          format: double
+          x-type: double
+        maxKillDeficit:
+          type: number
+          format: double
+          x-type: double
+        maxLevelLeadLaneOpponent:
+          type: number
+          format: double
+          x-type: double
+        mejaisFullStackInTime:
+          type: number
+          format: double
+          x-type: double
+        moreEnemyJungleThanOpponent:
+          type: number
+          format: double
+          x-type: double
+        mostWardsDestroyedOneSweeper:
+          type: number
+          format: double
+          x-type: double
+        multiKillOneSpell:
+          type: number
+          format: double
+          x-type: double
+        multikills:
+          type: number
+          format: double
+          x-type: double
+        multikillsAfterAggressiveFlash:
+          type: number
+          format: double
+          x-type: double
+        multiTurretRiftHeraldCount:
+          type: number
+          format: double
+          x-type: double
+        mythicItemUsed:
+          type: number
+          format: double
+          x-type: double
+        outerTurretExecutesBefore10Minutes:
+          type: number
+          format: double
+          x-type: double
+        outnumberedKills:
+          type: number
+          format: double
+          x-type: double
+        outnumberedNexusKill:
+          type: number
+          format: double
+          x-type: double
+        perfectDragonSoulsTaken:
+          type: number
+          format: double
+          x-type: double
+        perfectGame:
+          type: number
+          format: double
+          x-type: double
+        pickKillWithAlly:
+          type: number
+          format: double
+          x-type: double
+        playedChampSelectPosition:
+          type: number
+          format: double
+          x-type: double
+        poroExplosions:
+          type: number
+          format: double
+          x-type: double
+        quickCleanse:
+          type: number
+          format: double
+          x-type: double
+        quickFirstTurret:
+          type: number
+          format: double
+          x-type: double
+        quickSoloKills:
+          type: number
+          format: double
+          x-type: double
+        riftHeraldTakedowns:
+          type: number
+          format: double
+          x-type: double
+        saveAllyFromDeath:
+          type: number
+          format: double
+          x-type: double
+        scuttleCrabKills:
+          type: number
+          format: double
+          x-type: double
+        shortestTimeToAceFromFirstTakedown:
+          type: number
+          format: double
+          x-type: double
+        skillshotsDodged:
+          type: number
+          format: double
+          x-type: double
+        skillshotsHit:
+          type: number
+          format: double
+          x-type: double
+        snowballsHit:
+          type: number
+          format: double
+          x-type: double
+        soloBaronKills:
+          type: number
+          format: double
+          x-type: double
+        soloKills:
+          type: number
+          format: double
+          x-type: double
+        soloTurretsLategame:
+          type: number
+          format: double
+          x-type: double
+        stealthWardsPlaced:
+          type: number
+          format: double
+          x-type: double
+        survivedSingleDigitHpCount:
+          type: number
+          format: double
+          x-type: double
+        survivedThreeImmobilizesInFight:
+          type: number
+          format: double
+          x-type: double
+        takedownOnFirstTurret:
+          type: number
+          format: double
+          x-type: double
+        takedowns:
+          type: number
+          format: double
+          x-type: double
+        takedownsAfterGainingLevelAdvantage:
+          type: number
+          format: double
+          x-type: double
+        takedownsBeforeJungleMinionSpawn:
+          type: number
+          format: double
+          x-type: double
+        takedownsFirst25Minutes:
+          type: number
+          format: double
+          x-type: double
+        takedownsFirstXMinutes:
+          type: number
+          format: double
+          x-type: double
+        takedownsInAlcove:
+          type: number
+          format: double
+          x-type: double
+        takedownsInEnemyFountain:
+          type: number
+          format: double
+          x-type: double
+        teamBaronKills:
+          type: number
+          format: double
+          x-type: double
+        teamDamagePercentage:
+          type: number
+          format: double
+          x-type: double
+        teamElderDragonKills:
+          type: number
+          format: double
+          x-type: double
+        teamRiftHeraldKills:
+          type: number
+          format: double
+          x-type: double
+        teleportTakedowns:
+          type: number
+          format: double
+          x-type: double
+        thirdInhibitorDestroyedTime:
+          type: number
+          format: double
+          x-type: double
+        threeWardsOneSweeperCount:
+          type: number
+          format: double
+          x-type: double
+        tookLargeDamageSurvived:
+          type: number
+          format: double
+          x-type: double
+        turretPlatesTaken:
+          type: number
+          format: double
+          x-type: double
+        turretsTakenWithRiftHerald:
+          type: number
+          format: double
+          x-type: double
+        turretTakedowns:
+          type: number
+          format: double
+          x-type: double
+        twentyMinionsIn3SecondsCount:
+          type: number
+          format: double
+          x-type: double
+        twoWardsOneSweeperCount:
+          type: integer
+          format: int32
+          x-type: int
+        unseenRecalls:
+          type: number
+          format: double
+          x-type: double
+        visionScoreAdvantageLaneOpponent:
+          type: number
+          format: double
+          x-type: double
+        visionScorePerMinute:
+          type: number
+          format: double
+          x-type: double
+        wardsGuarded:
+          type: number
+          format: double
+          x-type: double
+        wardTakedowns:
+          type: number
+          format: double
+          x-type: double
+        wardTakedownsBefore20M:
+          type: number
+          format: double
+          x-type: double
+        legendaryItemUsed:
+          type: array
+          items:
+            type: integer
+            format: int32
+            x-type: int
+          x-type: 'List[int]'
+    match-v5.ParticipantMissions:
+      type: object
+      title: ParticipantMissions
+      properties:
+        PlayerScore0:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore0
+        PlayerScore1:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore1
+        PlayerScore10:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore10
+        PlayerScore11:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore11
+        PlayerScore2:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore2
+        PlayerScore3:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore3
+        PlayerScore4:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore4
+        PlayerScore5:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore5
+        PlayerScore6:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore6
+        PlayerScore7:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore7
+        PlayerScore8:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore8
+        PlayerScore9:
+          type: integer
+          format: int32
+          x-type: int
+          x-alias: playerScore9
+      required:
+        - PlayerScore0
+        - PlayerScore1
+        - PlayerScore10
+        - PlayerScore11
+        - PlayerScore2
+        - PlayerScore3
+        - PlayerScore4
+        - PlayerScore5
+        - PlayerScore6
+        - PlayerScore7
+        - PlayerScore8
+        - PlayerScore9
     match-v5.MatchTimelineDto:
       title: MatchTimelineDto
       type: object
@@ -11978,622 +12594,6 @@ components:
         - translations
         - created_at
         - updated_at
-    match-v5.ParticipantChallenges:
-      type: object
-      title: ParticipantChallenges
-      properties:
-        12AssistStreakCount:
-          type: number
-          format: double
-          x-type: double
-        abilityUses:
-          type: number
-          format: double
-          x-type: double
-        acesBefore15Minutes:
-          type: number
-          format: double
-          x-type: double
-        alliedJungleMonsterKills:
-          type: number
-          format: double
-          x-type: double
-        baronBuffGoldAdvantageOverThreshold:
-          type: number
-          format: double
-          x-type: double
-        baronTakedowns:
-          type: number
-          format: double
-          x-type: double
-        blastConeOppositeOpponentCount:
-          type: number
-          format: double
-          x-type: double
-        bountyGold:
-          type: number
-          format: double
-          x-type: double
-        buffsStolen:
-          type: number
-          format: double
-          x-type: double
-        completeSupportQuestInTime:
-          type: number
-          format: double
-          x-type: double
-        controlWardsPlaced:
-          type: number
-          format: double
-          x-type: double
-        controlWardTimeCoverageInRiverOrEnemyHalf:
-          type: number
-          format: double
-          x-type: double
-        damagePerMinute:
-          type: number
-          format: double
-          x-type: double
-        damageTakenOnTeamPercentage:
-          type: number
-          format: double
-          x-type: double
-        dancedWithRiftHerald:
-          type: number
-          format: double
-          x-type: double
-        deathsByEnemyChamps:
-          type: number
-          format: double
-          x-type: double
-        dodgeSkillShotsSmallWindow:
-          type: number
-          format: double
-          x-type: double
-        doubleAces:
-          type: number
-          format: double
-          x-type: double
-        dragonTakedowns:
-          type: number
-          format: double
-          x-type: double
-        earliestBaron:
-          type: number
-          format: double
-          x-type: double
-        earliestDragonTakedown:
-          type: number
-          format: double
-          x-type: double
-        earliestElderDragon:
-          type: number
-          format: double
-          x-type: double
-        earlyLaningPhaseGoldExpAdvantage:
-          type: number
-          format: double
-          x-type: double
-        effectiveHealAndShielding:
-          type: number
-          format: double
-          x-type: double
-        elderDragonKillsWithOpposingSoul:
-          type: number
-          format: double
-          x-type: double
-        elderDragonMultikills:
-          type: number
-          format: double
-          x-type: double
-        enemyChampionImmobilizations:
-          type: number
-          format: double
-          x-type: double
-        enemyJungleMonsterKills:
-          type: number
-          format: double
-          x-type: double
-        epicMonsterKillsNearEnemyJungler:
-          type: number
-          format: double
-          x-type: double
-        epicMonsterKillsWithin30SecondsOfSpawn:
-          type: number
-          format: double
-          x-type: double
-        epicMonsterSteals:
-          type: number
-          format: double
-          x-type: double
-        epicMonsterStolenWithoutSmite:
-          type: number
-          format: double
-          x-type: double
-        fasterSupportQuestCompletion:
-          type: number
-          format: double
-          x-type: double
-        fastestLegendary:
-          type: number
-          format: double
-          x-type: double
-        firstTurretKilled:
-          type: number
-          format: double
-          x-type: double
-        firstTurretKilledTime:
-          type: number
-          format: double
-          x-type: double
-        flawlessAces:
-          type: number
-          format: double
-          x-type: double
-        fullTeamTakedown:
-          type: number
-          format: double
-          x-type: double
-        gameLength:
-          type: number
-          format: double
-          x-type: double
-        getTakedownsInAllLanesEarlyJungleAsLaner:
-          type: number
-          format: double
-          x-type: double
-        goldPerMinute:
-          type: number
-          format: double
-          x-type: double
-        hadAfkTeammate:
-          type: number
-          format: double
-          x-type: double
-        hadOpenNexus:
-          type: number
-          format: double
-          x-type: double
-        highestChampionDamage:
-          type: number
-          format: double
-          x-type: double
-        highestCrowdControlScore:
-          type: number
-          format: double
-          x-type: double
-        highestWardKills:
-          type: number
-          format: double
-          x-type: double
-        immobilizeAndKillWithAlly:
-          type: number
-          format: double
-          x-type: double
-        initialBuffCount:
-          type: number
-          format: double
-          x-type: double
-        initialCrabCount:
-          type: number
-          format: double
-          x-type: double
-        jungleCsBefore10Minutes:
-          type: number
-          format: double
-          x-type: double
-        junglerKillsEarlyJungle:
-          type: number
-          format: double
-          x-type: double
-        junglerTakedownsNearDamagedEpicMonster:
-          type: number
-          format: double
-          x-type: double
-        kda:
-          type: number
-          format: double
-          x-type: double
-        killAfterHiddenWithAlly:
-          type: number
-          format: double
-          x-type: double
-        killedChampTookFullTeamDamageSurvived:
-          type: number
-          format: double
-          x-type: double
-        killingSprees:
-          type: number
-          format: double
-          x-type: double
-        killParticipation:
-          type: number
-          format: double
-          x-type: double
-        killsNearEnemyTurret:
-          type: number
-          format: double
-          x-type: double
-        killsOnLanersEarlyJungleAsJungler:
-          type: number
-          format: double
-          x-type: double
-        killsOnOtherLanesEarlyJungleAsLaner:
-          type: number
-          format: double
-          x-type: double
-        killsOnRecentlyHealedByAramPack:
-          type: number
-          format: double
-          x-type: double
-        killsUnderOwnTurret:
-          type: number
-          format: double
-          x-type: double
-        killsWithHelpFromEpicMonster:
-          type: number
-          format: double
-          x-type: double
-        knockEnemyIntoTeamAndKill:
-          type: number
-          format: double
-          x-type: double
-        kTurretsDestroyedBeforePlatesFall:
-          type: number
-          format: double
-          x-type: double
-        landSkillShotsEarlyGame:
-          type: number
-          format: double
-          x-type: double
-        laneMinionsFirst10Minutes:
-          type: number
-          format: double
-          x-type: double
-        laningPhaseGoldExpAdvantage:
-          type: number
-          format: double
-          x-type: double
-        legendaryCount:
-          type: number
-          format: double
-          x-type: double
-        lostAnInhibitor:
-          type: number
-          format: double
-          x-type: double
-        maxCsAdvantageOnLaneOpponent:
-          type: number
-          format: double
-          x-type: double
-        maxKillDeficit:
-          type: number
-          format: double
-          x-type: double
-        maxLevelLeadLaneOpponent:
-          type: number
-          format: double
-          x-type: double
-        mejaisFullStackInTime:
-          type: number
-          format: double
-          x-type: double
-        moreEnemyJungleThanOpponent:
-          type: number
-          format: double
-          x-type: double
-        mostWardsDestroyedOneSweeper:
-          type: number
-          format: double
-          x-type: double
-        multiKillOneSpell:
-          type: number
-          format: double
-          x-type: double
-        multikills:
-          type: number
-          format: double
-          x-type: double
-        multikillsAfterAggressiveFlash:
-          type: number
-          format: double
-          x-type: double
-        multiTurretRiftHeraldCount:
-          type: number
-          format: double
-          x-type: double
-        mythicItemUsed:
-          type: number
-          format: double
-          x-type: double
-        outerTurretExecutesBefore10Minutes:
-          type: number
-          format: double
-          x-type: double
-        outnumberedKills:
-          type: number
-          format: double
-          x-type: double
-        outnumberedNexusKill:
-          type: number
-          format: double
-          x-type: double
-        perfectDragonSoulsTaken:
-          type: number
-          format: double
-          x-type: double
-        perfectGame:
-          type: number
-          format: double
-          x-type: double
-        pickKillWithAlly:
-          type: number
-          format: double
-          x-type: double
-        playedChampSelectPosition:
-          type: number
-          format: double
-          x-type: double
-        poroExplosions:
-          type: number
-          format: double
-          x-type: double
-        quickCleanse:
-          type: number
-          format: double
-          x-type: double
-        quickFirstTurret:
-          type: number
-          format: double
-          x-type: double
-        quickSoloKills:
-          type: number
-          format: double
-          x-type: double
-        riftHeraldTakedowns:
-          type: number
-          format: double
-          x-type: double
-        saveAllyFromDeath:
-          type: number
-          format: double
-          x-type: double
-        scuttleCrabKills:
-          type: number
-          format: double
-          x-type: double
-        shortestTimeToAceFromFirstTakedown:
-          type: number
-          format: double
-          x-type: double
-        skillshotsDodged:
-          type: number
-          format: double
-          x-type: double
-        skillshotsHit:
-          type: number
-          format: double
-          x-type: double
-        snowballsHit:
-          type: number
-          format: double
-          x-type: double
-        soloBaronKills:
-          type: number
-          format: double
-          x-type: double
-        soloKills:
-          type: number
-          format: double
-          x-type: double
-        soloTurretsLategame:
-          type: number
-          format: double
-          x-type: double
-        stealthWardsPlaced:
-          type: number
-          format: double
-          x-type: double
-        survivedSingleDigitHpCount:
-          type: number
-          format: double
-          x-type: double
-        survivedThreeImmobilizesInFight:
-          type: number
-          format: double
-          x-type: double
-        takedownOnFirstTurret:
-          type: number
-          format: double
-          x-type: double
-        takedowns:
-          type: number
-          format: double
-          x-type: double
-        takedownsAfterGainingLevelAdvantage:
-          type: number
-          format: double
-          x-type: double
-        takedownsBeforeJungleMinionSpawn:
-          type: number
-          format: double
-          x-type: double
-        takedownsFirst25Minutes:
-          type: number
-          format: double
-          x-type: double
-        takedownsFirstXMinutes:
-          type: number
-          format: double
-          x-type: double
-        takedownsInAlcove:
-          type: number
-          format: double
-          x-type: double
-        takedownsInEnemyFountain:
-          type: number
-          format: double
-          x-type: double
-        teamBaronKills:
-          type: number
-          format: double
-          x-type: double
-        teamDamagePercentage:
-          type: number
-          format: double
-          x-type: double
-        teamElderDragonKills:
-          type: number
-          format: double
-          x-type: double
-        teamRiftHeraldKills:
-          type: number
-          format: double
-          x-type: double
-        teleportTakedowns:
-          type: number
-          format: double
-          x-type: double
-        thirdInhibitorDestroyedTime:
-          type: number
-          format: double
-          x-type: double
-        threeWardsOneSweeperCount:
-          type: number
-          format: double
-          x-type: double
-        tookLargeDamageSurvived:
-          type: number
-          format: double
-          x-type: double
-        turretPlatesTaken:
-          type: number
-          format: double
-          x-type: double
-        turretsTakenWithRiftHerald:
-          type: number
-          format: double
-          x-type: double
-        turretTakedowns:
-          type: number
-          format: double
-          x-type: double
-        twentyMinionsIn3SecondsCount:
-          type: number
-          format: double
-          x-type: double
-        twoWardsOneSweeperCount:
-          type: integer
-          format: int32
-          x-type: int
-        unseenRecalls:
-          type: number
-          format: double
-          x-type: double
-        visionScoreAdvantageLaneOpponent:
-          type: number
-          format: double
-          x-type: double
-        visionScorePerMinute:
-          type: number
-          format: double
-          x-type: double
-        wardsGuarded:
-          type: number
-          format: double
-          x-type: double
-        wardTakedowns:
-          type: number
-          format: double
-          x-type: double
-        wardTakedownsBefore20M:
-          type: number
-          format: double
-          x-type: double
-        legendaryItemUsed:
-          type: array
-          items:
-            type: integer
-            format: int32
-            x-type: int
-          x-type: 'List[int]'
-    match-v5.ParticipantMissions:
-      type: object
-      title: ParticipantMissions
-      properties:
-        PlayerScore0:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore0
-        PlayerScore1:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore1
-        PlayerScore10:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore10
-        PlayerScore11:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore11
-        PlayerScore2:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore2
-        PlayerScore3:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore3
-        PlayerScore4:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore4
-        PlayerScore5:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore5
-        PlayerScore6:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore6
-        PlayerScore7:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore7
-        PlayerScore8:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore8
-        PlayerScore9:
-          type: integer
-          format: int32
-          x-type: int
-          x-alias: playerScore9
-      required:
-        - PlayerScore0
-        - PlayerScore1
-        - PlayerScore10
-        - PlayerScore11
-        - PlayerScore2
-        - PlayerScore3
-        - PlayerScore4
-        - PlayerScore5
-        - PlayerScore6
-        - PlayerScore7
-        - PlayerScore8
-        - PlayerScore9
     match-v5.MatchTimelineInfoFrameEvent:
       title: MatchTimelineInfoFrameEvent
       type: object

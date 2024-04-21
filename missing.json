@@ -4,5 +4,7 @@
   "lol-challenges-v1.ChallengePoints",
   "lol-challenges-v1.PlayerClientPreferences",
   "match-v5.MatchTimelineDto",
+  "match-v5.ParticipantChallenges",
+  "match-v5.ParticipantMissions",
   "tft-match-v1.CompanionDto"
 ]
