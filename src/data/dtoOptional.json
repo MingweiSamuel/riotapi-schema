@@ -6,9 +6,6 @@
   "clash-v1.PlayerDto.teamId": true,
 
 
-  "champion-mastery-v4.ChampionMasteryDto.puuid": true,
-
-
   "league-exp-v4.LeagueEntryDTO.miniSeries": true,
   "league-v4.LeagueItemDTO.miniSeries": true,
 
