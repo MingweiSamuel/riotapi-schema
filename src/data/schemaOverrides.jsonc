@@ -1697,6 +1697,7 @@
   },
 
 
+  // https://github.com/RiotGames/developer-relations/issues/749
   "tft-match-v1.ParticipantMissionsDto": {
     "type": "object",
     "title": "ParticipantMissionsDto",
