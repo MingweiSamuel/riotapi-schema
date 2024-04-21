@@ -16092,6 +16092,32 @@
           "numberOfWins"
         ]
       },
+      "val-ranked-v1.TierDetailDto": {
+        "type": "object",
+        "title": "TierDetailDto",
+        "properties": {
+          "rankedRatingThreshold": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "startingPage": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "startingIndex": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          }
+        },
+        "required": [
+          "rankedRatingThreshold",
+          "startingPage",
+          "startingIndex"
+        ]
+      },
       "val-status-v1.PlatformDataDto": {
         "type": "object",
         "title": "PlatformDataDto",
@@ -16928,32 +16954,6 @@
         "required": [
           "frameInterval",
           "frames"
-        ]
-      },
-      "val-ranked-v1.TierDetailDto": {
-        "type": "object",
-        "title": "TierDetailDto",
-        "properties": {
-          "rankedRatingThreshold": {
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          },
-          "startingPage": {
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          },
-          "startingIndex": {
-            "type": "integer",
-            "format": "int64",
-            "x-type": "long"
-          }
-        },
-        "required": [
-          "rankedRatingThreshold",
-          "startingPage",
-          "startingIndex"
         ]
       },
       "tft-match-v1.ParticipantMissionsDto": {

@@ -6,5 +6,6 @@
   "match-v5.MatchTimelineDto",
   "match-v5.ParticipantChallenges",
   "match-v5.ParticipantMissions",
-  "tft-match-v1.CompanionDto"
+  "tft-match-v1.CompanionDto",
+  "val-ranked-v1.TierDetailDto"
 ]
