@@ -1,4 +1,5 @@
 {
+  // https://github.com/RiotGames/developer-relations/issues/749
   "summoner-v4.SummonerDTO": {
     "title": "SummonerDTO",
     "type": "object",
