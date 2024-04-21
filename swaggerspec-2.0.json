@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "c5f0e1bbc3eb06bd40ace38759ee9408cd162b0c",
-    "x-hash": "c5f0e1bbc3eb06bd40ace38759ee9408cd162b0c64700fbe34607bae21cd699af3b03b8754d21972",
+    "version": "dba9d0fb50fc866e8e593b470f2ffa0b66d47380",
+    "x-hash": "dba9d0fb50fc866e8e593b470f2ffa0b66d4738064700fbe34607bae21cd699af3b03b8754d21972",
     "x-enumsHash": "64700fbe34607bae21cd699af3b03b8754d21972"
   },
   "host": "na1.api.riotgames.com",
@@ -8607,207 +8607,6 @@
         "summonerLevel"
       ]
     },
-    "champion-mastery-v4.ChampionMasteryDto": {
-      "type": "object",
-      "title": "ChampionMasteryDto",
-      "properties": {
-        "puuid": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "championPointsUntilNextLevel": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Number of points needed to achieve next level. Zero if player reached maximum champion level for this champion."
-        },
-        "chestGranted": {
-          "type": "boolean",
-          "x-type": "boolean",
-          "description": "Is chest granted for this champion or not in current season."
-        },
-        "championId": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Champion ID for this entry.",
-          "x-enum": "champion"
-        },
-        "lastPlayTime": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Last time this champion was played by this player - in Unix milliseconds time format."
-        },
-        "championLevel": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "Champion level for specified player and champion combination."
-        },
-        "summonerId": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Summoner ID for this entry. (Encrypted)"
-        },
-        "championPoints": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "Total number of champion points for this player and champion combination - they are used to determine championLevel."
-        },
-        "championPointsSinceLastLevel": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Number of points earned since current level has been achieved."
-        },
-        "tokensEarned": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0."
-        },
-        "markRequiredForNextLevel": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "championSeasonMilestone": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        }
-      },
-      "description": "This object contains single Champion Mastery information for player and champion combination.",
-      "required": [
-        "puuid",
-        "championPointsUntilNextLevel",
-        "chestGranted",
-        "championId",
-        "lastPlayTime",
-        "championLevel",
-        "summonerId",
-        "championPoints",
-        "championPointsSinceLastLevel",
-        "tokensEarned",
-        "markRequiredForNextLevel",
-        "championSeasonMilestone"
-      ]
-    },
-    "match-v5.InfoDto": {
-      "type": "object",
-      "title": "InfoDto",
-      "properties": {
-        "gameCreation": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Unix timestamp for when the game is created on the game server (i.e., the loading screen)."
-        },
-        "gameDuration": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Prior to patch 11.20, this field returns the game length in milliseconds calculated from gameEndTimestamp - gameStartTimestamp. Post patch 11.20, this field returns the max timePlayed of any participant in the game in seconds, which makes the behavior of this field consistent with that of match-v4. The best way to handling the change in this field is to treat the value as milliseconds if the gameEndTimestamp field isn't in the response and to treat the value as seconds if gameEndTimestamp is in the response."
-        },
-        "gameEndTimestamp": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Unix timestamp for when match ends on the game server. This timestamp can occasionally be significantly longer than when the match \"ends\". The most reliable way of determining the timestamp for the end of the match would be to add the max time played of any participant to the gameStartTimestamp. This field was added to match-v5 in patch 11.20 on Oct 5th, 2021."
-        },
-        "gameId": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long"
-        },
-        "gameMode": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Refer to the Game Constants documentation.",
-          "x-enum": "gameMode"
-        },
-        "gameName": {
-          "type": "string",
-          "x-type": "string"
-        },
-        "gameStartTimestamp": {
-          "type": "integer",
-          "format": "int64",
-          "x-type": "long",
-          "description": "Unix timestamp for when match starts on the game server."
-        },
-        "gameType": {
-          "type": "string",
-          "x-type": "string",
-          "x-enum": "gameType"
-        },
-        "gameVersion": {
-          "type": "string",
-          "x-type": "string",
-          "description": "The first two parts can be used to determine the patch a game was played on."
-        },
-        "mapId": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "Refer to the Game Constants documentation.",
-          "x-enum": "map"
-        },
-        "participants": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/match-v5.ParticipantDto",
-            "x-type": "ParticipantDto"
-          },
-          "x-type": "List[ParticipantDto]"
-        },
-        "platformId": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Platform where the match was played."
-        },
-        "queueId": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int",
-          "description": "Refer to the Game Constants documentation.",
-          "x-enum": "queue"
-        },
-        "teams": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/match-v5.TeamDto",
-            "x-type": "TeamDto"
-          },
-          "x-type": "List[TeamDto]"
-        },
-        "tournamentCode": {
-          "type": "string",
-          "x-type": "string",
-          "description": "Tournament code used to generate the match. This field was added to match-v5 in patch 11.13 on June 23rd, 2021."
-        },
-        "endOfGameResult": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "gameCreation",
-        "gameDuration",
-        "gameId",
-        "gameMode",
-        "gameName",
-        "gameStartTimestamp",
-        "gameType",
-        "gameVersion",
-        "mapId",
-        "participants",
-        "platformId",
-        "queueId",
-        "teams"
-      ]
-    },
     "match-v5.ParticipantDto": {
       "type": "object",
       "title": "ParticipantDto",
@@ -12398,6 +12197,95 @@
         "gameCustomizationObjects"
       ]
     },
+    "champion-mastery-v4.ChampionMasteryDto": {
+      "type": "object",
+      "title": "ChampionMasteryDto",
+      "properties": {
+        "puuid": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Player Universal Unique Identifier. Exact length of 78 characters. (Encrypted)"
+        },
+        "championPointsUntilNextLevel": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Number of points needed to achieve next level. Zero if player reached maximum champion level for this champion."
+        },
+        "chestGranted": {
+          "type": "boolean",
+          "x-type": "boolean",
+          "description": "Is chest granted for this champion or not in current season."
+        },
+        "championId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Champion ID for this entry.",
+          "x-enum": "champion"
+        },
+        "lastPlayTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Last time this champion was played by this player - in Unix milliseconds time format."
+        },
+        "championLevel": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Champion level for specified player and champion combination."
+        },
+        "summonerId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Summoner ID for this entry. (Encrypted)"
+        },
+        "championPoints": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Total number of champion points for this player and champion combination - they are used to determine championLevel."
+        },
+        "championPointsSinceLastLevel": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Number of points earned since current level has been achieved."
+        },
+        "tokensEarned": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0."
+        },
+        "markRequiredForNextLevel": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "championSeasonMilestone": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        }
+      },
+      "description": "This object contains single Champion Mastery information for player and champion combination.",
+      "required": [
+        "puuid",
+        "championPointsUntilNextLevel",
+        "chestGranted",
+        "championId",
+        "lastPlayTime",
+        "championLevel",
+        "summonerId",
+        "championPoints",
+        "championPointsSinceLastLevel",
+        "tokensEarned",
+        "markRequiredForNextLevel",
+        "championSeasonMilestone"
+      ]
+    },
     "champion-v3.ChampionInfo": {
       "type": "object",
       "title": "ChampionInfo",
@@ -13744,6 +13632,121 @@
         "dataVersion",
         "matchId",
         "participants"
+      ]
+    },
+    "match-v5.InfoDto": {
+      "type": "object",
+      "title": "InfoDto",
+      "properties": {
+        "endOfGameResult": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Refer to indicate if the game ended in termination."
+        },
+        "gameCreation": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Unix timestamp for when the game is created on the game server (i.e., the loading screen)."
+        },
+        "gameDuration": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Prior to patch 11.20, this field returns the game length in milliseconds calculated from gameEndTimestamp - gameStartTimestamp. Post patch 11.20, this field returns the max timePlayed of any participant in the game in seconds, which makes the behavior of this field consistent with that of match-v4. The best way to handling the change in this field is to treat the value as milliseconds if the gameEndTimestamp field isn't in the response and to treat the value as seconds if gameEndTimestamp is in the response."
+        },
+        "gameEndTimestamp": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Unix timestamp for when match ends on the game server. This timestamp can occasionally be significantly longer than when the match \"ends\". The most reliable way of determining the timestamp for the end of the match would be to add the max time played of any participant to the gameStartTimestamp. This field was added to match-v5 in patch 11.20 on Oct 5th, 2021."
+        },
+        "gameId": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long"
+        },
+        "gameMode": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Refer to the Game Constants documentation.",
+          "x-enum": "gameMode"
+        },
+        "gameName": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "gameStartTimestamp": {
+          "type": "integer",
+          "format": "int64",
+          "x-type": "long",
+          "description": "Unix timestamp for when match starts on the game server."
+        },
+        "gameType": {
+          "type": "string",
+          "x-type": "string",
+          "x-enum": "gameType"
+        },
+        "gameVersion": {
+          "type": "string",
+          "x-type": "string",
+          "description": "The first two parts can be used to determine the patch a game was played on."
+        },
+        "mapId": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Refer to the Game Constants documentation.",
+          "x-enum": "map"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/match-v5.ParticipantDto",
+            "x-type": "ParticipantDto"
+          },
+          "x-type": "List[ParticipantDto]"
+        },
+        "platformId": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Platform where the match was played."
+        },
+        "queueId": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "Refer to the Game Constants documentation.",
+          "x-enum": "queue"
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/match-v5.TeamDto",
+            "x-type": "TeamDto"
+          },
+          "x-type": "List[TeamDto]"
+        },
+        "tournamentCode": {
+          "type": "string",
+          "x-type": "string",
+          "description": "Tournament code used to generate the match. This field was added to match-v5 in patch 11.13 on June 23rd, 2021."
+        }
+      },
+      "required": [
+        "gameCreation",
+        "gameDuration",
+        "gameId",
+        "gameMode",
+        "gameName",
+        "gameStartTimestamp",
+        "gameType",
+        "gameVersion",
+        "mapId",
+        "participants",
+        "platformId",
+        "queueId",
+        "teams"
       ]
     },
     "match-v5.PerksDto": {
