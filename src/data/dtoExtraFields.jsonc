@@ -222,6 +222,32 @@
     }
   },
   //
+  // https://github.com/RiotGames/developer-relations/issues/906
+  "spectator-tft-v5.CurrentGameParticipant": {
+    "riotId": {
+      "type": "string",
+      "x-type": "string"
+    }
+  },
+  "spectator-tft-v5.Participant": {
+    "riotId": {
+      "type": "string",
+      "x-type": "string"
+    }
+  },
+  "spectator-v5.CurrentGameParticipant": {
+    "riotId": {
+      "type": "string",
+      "x-type": "string"
+    }
+  },
+  "spectator-v5.Participant": {
+    "riotId": {
+      "type": "string",
+      "x-type": "string"
+    }
+  },
+  //
   // https://github.com/RiotGames/developer-relations/issues/749
   "tft-match-v1.InfoDto": {
     "tft_game_type": {
