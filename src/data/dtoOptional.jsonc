@@ -265,9 +265,19 @@
   "val-match-v1.AbilityDto.*": true,
   "val-match-v1.PlayerStatsDto.abilityCasts": true,
 
+  /// https://github.com/RiotGames/developer-relations/issues/605
+  "val-ranked-v1.LeaderboardDto.immortalStartingPage": true,
+  "val-ranked-v1.LeaderboardDto.immortalStartingIndex": true,
+  "val-ranked-v1.LeaderboardDto.topTierRRThreshold": true,
+  "val-ranked-v1.LeaderboardDto.tierDetails": true,
+  "val-ranked-v1.LeaderboardDto.startIndex": true,
+  "val-ranked-v1.LeaderboardDto.query": true,
+
   "val-ranked-v1.PlayerDto.puuid": true,
   "val-ranked-v1.PlayerDto.gameName": true,
   "val-ranked-v1.PlayerDto.tagLine": true,
+  /// https://github.com/RiotGames/developer-relations/issues/605
+  "val-ranked-v1.PlayerDto.competitiveTier": true,
 
 
   "spectator-v4.Participant.puuid": true,

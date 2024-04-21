@@ -275,5 +275,53 @@
     "premierMatchInfo": {
       "type": "object"
     }
+  },
+  //
+  // https://github.com/RiotGames/developer-relations/issues/605
+  "val-ranked-v1.LeaderboardDto": {
+    "immortalStartingPage": {
+      "type": "integer",
+      "format": "int64",
+      "x-type": "long"
+    },
+    "immortalStartingIndex": {
+      "type": "integer",
+      "format": "int64",
+      "x-type": "long"
+    },
+    "topTierRRThreshold": {
+      "type": "integer",
+      "format": "int64",
+      "x-type": "long"
+    },
+    "tierDetails": {
+      "type": "object",
+      "x-key": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      },
+      "additionalProperties": {
+        "$ref": "#/components/schemas/val-ranked-v1.TierDetailDto",
+        "x-type": "TierDetailDto"
+      },
+      "x-type": "Map[long, TierDetailDto]"
+    },
+    "startIndex": {
+      "type": "integer",
+      "format": "int64",
+      "x-type": "long"
+    },
+    "query": {
+      "type": "string",
+      "x-type": "string"
+    }
+  },
+  "val-ranked-v1.PlayerDto": {
+    "competitiveTier": {
+      "type": "integer",
+      "format": "int64",
+      "x-type": "long"
+    }
   }
 }
