@@ -222,6 +222,76 @@
     }
   },
   //
+  // https://github.com/RiotGames/developer-relations/issues/749
+  "tft-match-v1.InfoDto": {
+    "tft_game_type": {
+      "type": "string",
+      "x-type": "string"
+    },
+    "tft_set_core_name": {
+      "type": "string",
+      "x-type": "string"
+    },
+    "endOfGameResult": {
+      "type": "string"
+    },
+    "gameCreation": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "gameId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "mapId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "queueId": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int",
+      "description": "Please refer to the League of Legends documentation.",
+      "x-enum": "queue"
+    }
+  },
+  "tft-match-v1.ParticipantDto": {
+    "augments": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "x-type": "List[string]"
+    },
+    "partner_group_id": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "missions": {
+      "$ref": "#/components/schemas/tft-match-v1.ParticipantMissionsDto",
+      "x-type": "ParticipantMissionsDto"
+    }
+  },
+  "tft-match-v1.CompanionDto": {
+    "item_ID": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    }
+  },
+  "tft-match-v1.UnitDto": {
+    "itemNames": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "x-type": "List[string]"
+    }
+  },
+  //
   // https://github.com/RiotGames/developer-relations/issues/604
   "val-content-v1.ActDto": {
     "parentId": {
