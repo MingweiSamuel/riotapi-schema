@@ -222,6 +222,35 @@
     }
   },
   //
+  // https://github.com/RiotGames/developer-relations/issues/604
+  "val-content-v1.ActDto": {
+    "parentId": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "val-content-v1.ContentDto": {
+    "ceremonies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/val-content-v1.ContentItemDto",
+        "x-type": "ContentItemDto"
+      },
+      "x-type": "List[ContentItemDto]"
+    },
+    "totems": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "description": "Unknown type, this is a placeholder subject to change.",
+      "x-type": "List[string]"
+    }
+  },
+  //
   // https://github.com/RiotGames/developer-relations/issues/916
   "val-match-v1.PlayerDto": {
     "isObserver": {
