@@ -12,6 +12,212 @@
     }
   },
 
+  "match-v5.ParticipantDto": {
+    "riotIdName": {
+      "type": "string",
+      "x-type": "string",
+      "description": "Replaced by `riotIdGameName` in games played in patch 14.5 and after."
+    },
+    "riotIdGameName": {
+      "type": "string",
+      "x-type": "string",
+      "description": "Use `riotIdName` for games before patch 14.5."
+    },
+
+    "allInPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "assistMePings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "baitPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "basicPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "commandPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "dangerPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "enemyMissingPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "enemyVisionPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "getBackPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "holdPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "needVisionPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "onMyWayPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "pushPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "visionClearedPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+
+    "eligibleForProgression": {
+      "type": "boolean",
+      "x-type": "boolean"
+    },
+
+    "challenges": {
+      "$ref": "#/components/schemas/match-v5.ParticipantChallenges",
+      "x-type": "ParticipantChallenges"
+    },
+
+    "totalAllyJungleMinionsKilled": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "totalEnemyJungleMinionsKilled": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+
+    "playerAugment1": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerAugment2": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerAugment3": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerAugment4": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerSubteamId": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "subteamPlacement": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "placement": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+
+    "missions": {
+      "$ref": "#/components/schemas/match-v5.ParticipantMissions",
+      "x-type": "ParticipantMissions"
+    },
+    "playerScore0": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore1": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore10": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore11": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore2": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore3": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore4": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore5": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore6": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore7": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore8": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore9": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    }
+  },
+
   "val-match-v1.PlayerDto": {
     "isObserver": {
       "type": "boolean",
