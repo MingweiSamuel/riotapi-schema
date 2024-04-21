@@ -1496,6 +1496,8 @@
   },
 
 
+  // Cannot parse due to "State" and "Tracking" formatted as DTOs when they're actually fields.
+  // https://github.com/RiotGames/developer-relations/issues/633
   "lol-challenges-v1.ChallengeConfigInfoDto": {
     "type": "object",
     "title": "ChallengeConfigInfoDto",
@@ -1581,6 +1583,7 @@
       "thresholds"
     ]
   },
+  // https://github.com/RiotGames/developer-relations/issues/633#issuecomment-1138001855
   "lol-challenges-v1.ChallengePoints": {
     "type": "object",
     "title": "ChallengePoints",
