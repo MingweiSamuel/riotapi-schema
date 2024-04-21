@@ -10485,12 +10485,6 @@ components:
       type: object
       title: InfoDto
       properties:
-        tft_game_type:
-          type: string
-          x-type: string
-        tft_set_core_name:
-          type: string
-          x-type: string
         game_datetime:
           type: integer
           format: int64
@@ -10526,6 +10520,12 @@ components:
           format: int32
           x-type: int
           description: 'Teamfight Tactics set number.'
+        tft_game_type:
+          type: string
+          x-type: string
+        tft_set_core_name:
+          type: string
+          x-type: string
         endOfGameResult:
           type: string
         gameCreation:
@@ -10554,16 +10554,6 @@ components:
       type: object
       title: ParticipantDto
       properties:
-        augments:
-          type: array
-          items:
-            type: string
-            x-type: string
-          x-type: 'List[string]'
-        partner_group_id:
-          type: integer
-          format: int32
-          x-type: int
         companion:
           $ref: '#/components/schemas/tft-match-v1.CompanionDto'
           x-type: CompanionDto
@@ -10620,6 +10610,16 @@ components:
             x-type: UnitDto
           x-type: 'List[UnitDto]'
           description: 'A list of active units for the participant.'
+        augments:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+        partner_group_id:
+          type: integer
+          format: int32
+          x-type: int
         missions:
           $ref: '#/components/schemas/tft-match-v1.ParticipantMissionsDto'
           x-type: ParticipantMissionsDto
@@ -10671,12 +10671,6 @@ components:
       type: object
       title: UnitDto
       properties:
-        itemNames:
-          type: array
-          items:
-            type: string
-            x-type: string
-          x-type: 'List[string]'
         items:
           type: array
           items:
@@ -10707,6 +10701,12 @@ components:
           format: int32
           x-type: int
           description: 'Unit tier.'
+        itemNames:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
       required:
         - character_id
         - name
@@ -10734,6 +10734,194 @@ components:
         - skin_ID
         - content_ID
         - species
+    tft-match-v1.ParticipantMissionsDto:
+      type: object
+      title: ParticipantMissionsDto
+      properties:
+        Assists:
+          type: integer
+          format: int32
+        DamageDealt:
+          type: integer
+          format: int32
+        DamageDealtToObjectives:
+          type: integer
+          format: int32
+        DamageDealtToTurrets:
+          type: integer
+          format: int32
+        DamageTaken:
+          type: integer
+          format: int32
+        DoubleKills:
+          type: integer
+          format: int32
+        GoldEarned:
+          type: integer
+          format: int32
+        GoldSpent:
+          type: integer
+          format: int32
+        InhibitorsDestroyed:
+          type: integer
+          format: int32
+        Kills:
+          type: integer
+          format: int32
+        LargestKillingSpree:
+          type: integer
+          format: int32
+        LargestMultiKill:
+          type: integer
+          format: int32
+        MagicDamageDealt:
+          type: integer
+          format: int32
+        MagicDamageDealtToChampions:
+          type: integer
+          format: int32
+        NeutralMinionsKilledTeamJungle:
+          type: integer
+          format: int32
+        PhysicalDamageDealt:
+          type: integer
+          format: int32
+        PhysicalDamageTaken:
+          type: integer
+          format: int32
+        PlayerScore0:
+          type: integer
+          format: int32
+        PlayerScore1:
+          type: integer
+          format: int32
+        PlayerScore2:
+          type: integer
+          format: int32
+        PlayerScore3:
+          type: integer
+          format: int32
+        PlayerScore4:
+          type: integer
+          format: int32
+        PlayerScore5:
+          type: integer
+          format: int32
+        PlayerScore6:
+          type: integer
+          format: int32
+        PlayerScore9:
+          type: integer
+          format: int32
+        PlayerScore10:
+          type: integer
+          format: int32
+        PlayerScore11:
+          type: integer
+          format: int32
+        QuadraKills:
+          type: integer
+          format: int32
+        Spell1Casts:
+          type: integer
+          format: int32
+        Spell2Casts:
+          type: integer
+          format: int32
+        Spell3Casts:
+          type: integer
+          format: int32
+        Spell4Casts:
+          type: integer
+          format: int32
+        SummonerSpell1Casts:
+          type: integer
+          format: int32
+        TimeCCOthers:
+          type: integer
+          format: int32
+        TotalMinionsKilled:
+          type: integer
+          format: int32
+        TrueDamageDealtToChampions:
+          type: integer
+          format: int32
+        UnrealKills:
+          type: integer
+          format: int32
+        VisionScore:
+          type: integer
+          format: int32
+        WardsKilled:
+          type: integer
+          format: int32
+        Deaths:
+          type: integer
+          format: int32
+        KillingSprees:
+          type: integer
+          format: int32
+        MagicDamageTaken:
+          type: integer
+          format: int32
+        PentaKills:
+          type: integer
+          format: int32
+        PhysicalDamageDealtToChampions:
+          type: integer
+          format: int32
+        TotalDamageDealtToChampions:
+          type: integer
+          format: int32
+        TripleKills:
+          type: integer
+          format: int32
+        TrueDamageDealt:
+          type: integer
+          format: int32
+        TrueDamageTaken:
+          type: integer
+          format: int32
+      required:
+        - Assists
+        - DamageDealt
+        - DamageDealtToObjectives
+        - DamageDealtToTurrets
+        - DamageTaken
+        - DoubleKills
+        - GoldEarned
+        - GoldSpent
+        - InhibitorsDestroyed
+        - Kills
+        - LargestKillingSpree
+        - LargestMultiKill
+        - MagicDamageDealt
+        - MagicDamageDealtToChampions
+        - NeutralMinionsKilledTeamJungle
+        - PhysicalDamageDealt
+        - PhysicalDamageTaken
+        - PlayerScore0
+        - PlayerScore1
+        - PlayerScore10
+        - PlayerScore11
+        - PlayerScore2
+        - PlayerScore3
+        - PlayerScore4
+        - PlayerScore5
+        - PlayerScore6
+        - PlayerScore9
+        - QuadraKills
+        - Spell1Casts
+        - Spell2Casts
+        - Spell3Casts
+        - Spell4Casts
+        - SummonerSpell1Casts
+        - TimeCCOthers
+        - TotalMinionsKilled
+        - TrueDamageDealtToChampions
+        - UnrealKills
+        - VisionScore
+        - WardsKilled
     tft-status-v1.PlatformDataDto:
       type: object
       title: PlatformDataDto
@@ -13088,194 +13276,6 @@ components:
       required:
         - frameInterval
         - frames
-    tft-match-v1.ParticipantMissionsDto:
-      type: object
-      title: ParticipantMissionsDto
-      properties:
-        Assists:
-          type: integer
-          format: int32
-        DamageDealt:
-          type: integer
-          format: int32
-        DamageDealtToObjectives:
-          type: integer
-          format: int32
-        DamageDealtToTurrets:
-          type: integer
-          format: int32
-        DamageTaken:
-          type: integer
-          format: int32
-        DoubleKills:
-          type: integer
-          format: int32
-        GoldEarned:
-          type: integer
-          format: int32
-        GoldSpent:
-          type: integer
-          format: int32
-        InhibitorsDestroyed:
-          type: integer
-          format: int32
-        Kills:
-          type: integer
-          format: int32
-        LargestKillingSpree:
-          type: integer
-          format: int32
-        LargestMultiKill:
-          type: integer
-          format: int32
-        MagicDamageDealt:
-          type: integer
-          format: int32
-        MagicDamageDealtToChampions:
-          type: integer
-          format: int32
-        NeutralMinionsKilledTeamJungle:
-          type: integer
-          format: int32
-        PhysicalDamageDealt:
-          type: integer
-          format: int32
-        PhysicalDamageTaken:
-          type: integer
-          format: int32
-        PlayerScore0:
-          type: integer
-          format: int32
-        PlayerScore1:
-          type: integer
-          format: int32
-        PlayerScore2:
-          type: integer
-          format: int32
-        PlayerScore3:
-          type: integer
-          format: int32
-        PlayerScore4:
-          type: integer
-          format: int32
-        PlayerScore5:
-          type: integer
-          format: int32
-        PlayerScore6:
-          type: integer
-          format: int32
-        PlayerScore9:
-          type: integer
-          format: int32
-        PlayerScore10:
-          type: integer
-          format: int32
-        PlayerScore11:
-          type: integer
-          format: int32
-        QuadraKills:
-          type: integer
-          format: int32
-        Spell1Casts:
-          type: integer
-          format: int32
-        Spell2Casts:
-          type: integer
-          format: int32
-        Spell3Casts:
-          type: integer
-          format: int32
-        Spell4Casts:
-          type: integer
-          format: int32
-        SummonerSpell1Casts:
-          type: integer
-          format: int32
-        TimeCCOthers:
-          type: integer
-          format: int32
-        TotalMinionsKilled:
-          type: integer
-          format: int32
-        TrueDamageDealtToChampions:
-          type: integer
-          format: int32
-        UnrealKills:
-          type: integer
-          format: int32
-        VisionScore:
-          type: integer
-          format: int32
-        WardsKilled:
-          type: integer
-          format: int32
-        Deaths:
-          type: integer
-          format: int32
-        KillingSprees:
-          type: integer
-          format: int32
-        MagicDamageTaken:
-          type: integer
-          format: int32
-        PentaKills:
-          type: integer
-          format: int32
-        PhysicalDamageDealtToChampions:
-          type: integer
-          format: int32
-        TotalDamageDealtToChampions:
-          type: integer
-          format: int32
-        TripleKills:
-          type: integer
-          format: int32
-        TrueDamageDealt:
-          type: integer
-          format: int32
-        TrueDamageTaken:
-          type: integer
-          format: int32
-      required:
-        - Assists
-        - DamageDealt
-        - DamageDealtToObjectives
-        - DamageDealtToTurrets
-        - DamageTaken
-        - DoubleKills
-        - GoldEarned
-        - GoldSpent
-        - InhibitorsDestroyed
-        - Kills
-        - LargestKillingSpree
-        - LargestMultiKill
-        - MagicDamageDealt
-        - MagicDamageDealtToChampions
-        - NeutralMinionsKilledTeamJungle
-        - PhysicalDamageDealt
-        - PhysicalDamageTaken
-        - PlayerScore0
-        - PlayerScore1
-        - PlayerScore10
-        - PlayerScore11
-        - PlayerScore2
-        - PlayerScore3
-        - PlayerScore4
-        - PlayerScore5
-        - PlayerScore6
-        - PlayerScore9
-        - QuadraKills
-        - Spell1Casts
-        - Spell2Casts
-        - Spell3Casts
-        - Spell4Casts
-        - SummonerSpell1Casts
-        - TimeCCOthers
-        - TotalMinionsKilled
-        - TrueDamageDealtToChampions
-        - UnrealKills
-        - VisionScore
-        - WardsKilled
   securitySchemes:
     api_key:
       type: apiKey
