@@ -307,5 +307,10 @@
   "spectator-tft-v5.CurrentGameParticipant.riotId": true,
 
 
-  "tournament-v5.TournamentGamesV5.metaData": true
+  "tournament-v5.TournamentGamesV5.metaData": true,
+
+
+  // https://github.com/RiotGames/developer-relations/issues/915#issuecomment-2088660009
+  "champion-mastery-v4.ChampionMasteryDto.championSeasonMilestone": true,
+  "champion-mastery-v4.ChampionMasteryDto.markRequiredForNextLevel": true
 }
