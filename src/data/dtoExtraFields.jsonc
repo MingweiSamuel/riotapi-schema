@@ -1,17 +1,18 @@
 {
-  // https://github.com/RiotGames/developer-relations/issues/915
-  "champion-mastery-v4.ChampionMasteryDto": {
-    "markRequiredForNextLevel": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "championSeasonMilestone": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    }
-  },
+  // https://github.com/RiotGames/developer-relations/issues/915#issuecomment-2089442783
+  // // https://github.com/RiotGames/developer-relations/issues/915
+  // "champion-mastery-v4.ChampionMasteryDto": {
+  //   "markRequiredForNextLevel": {
+  //     "type": "integer",
+  //     "format": "int32",
+  //     "x-type": "int"
+  //   },
+  //   "championSeasonMilestone": {
+  //     "type": "integer",
+  //     "format": "int32",
+  //     "x-type": "int"
+  //   }
+  // },
   //
   // https://github.com/RiotGames/developer-relations/issues/754
   "match-v5.ParticipantDto": {
