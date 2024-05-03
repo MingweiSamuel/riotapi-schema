@@ -173,7 +173,7 @@ async function writeEnums() {
   async function getEnumData(enumUrl, valKey, enumModifier) {
     const filename = enumUrl.slice(1 + enumUrl.lastIndexOf('/'));
     const enumLists = await Promise.all([
-      fs.readFile(`${__dirname}/enums/${filename}`).then(JSON.parse), // From local enums folder.
+      jsonc.read(`${__dirname}/enums/${filename}c`), // From local enums folder.
       req(enumUrl).then(JSON.parse), // From Riot.
     ]);
 
@@ -265,7 +265,7 @@ async function writeEnums() {
     (async () => {
       const filename = 'queueTypes.json';
       const valKey = 'queueId'; // TODO: val is set to queueId, but all serialization is a STRING. Tricky.
-      const enumDict = await fs.readFile(`${__dirname}/enums/${filename}`).then(JSON.parse);
+      const enumDict = await jsonc.read(`${__dirname}/enums/${filename}c`);
       const enums = setEnumXValues([ enumDict ], valKey);
       for (const enumb of enums) {
         const { queueType, description, notes } = enumb;
