@@ -1280,54 +1280,6 @@
       "xp"
     ]
   },
-  "match-v5.MatchTimelineInfoFrameParticipantFrames": {
-    "title": "MatchTimelineInfoFrameParticipantFrames",
-    "type": "object",
-    "properties": {
-      "1": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
-      },
-      "2": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
-      },
-      "3": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
-      },
-      "4": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
-      },
-      "5": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
-      },
-      "6": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
-      },
-      "7": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
-      },
-      "8": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
-      },
-      "9": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame",
-        "description": "Possibly null for the Arena 2v2v2v2 (`CHERRY`) game mode."
-      },
-      "10": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame",
-        "description": "Possibly null for the Arena 2v2v2v2 (`CHERRY`) game mode."
-      }
-    },
-    "required": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8"
-    ]
-  },
   "match-v5.MatchTimelineInfoFrame": {
     "title": "MatchTimelineInfoFrame",
     "type": "object",
@@ -1339,7 +1291,14 @@
         }
       },
       "participantFrames": {
-        "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrames"
+        "type": "object",
+        "x-key": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/match-v5.MatchTimelineInfoFrameParticipantFrame"
+        }
       },
       "timestamp": {
         "type": "integer",

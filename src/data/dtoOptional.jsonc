@@ -187,9 +187,6 @@
   "TODO__match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats.omnivamp": true,
   "TODO__match-v5.MatchTimelineInfoFrameParticipantFrameChampionStats.physicalVamp": true,
 
-  "TODO__match-v5.MatchTimelineInfoFrameParticipantFrames.9": true,
-  "TODO__match-v5.MatchTimelineInfoFrameParticipantFrames.10": true,
-
 
   "lol-status-v4.StatusDto.archive_at": true,
   "lol-status-v4.StatusDto.incident_severity": true,
