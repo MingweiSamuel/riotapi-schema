@@ -882,12 +882,12 @@
   {
     "queueId": 1710,
     "map": "Rings of Wrath",
-    "description": "Arena",
+    "description": "Arena (2v2v2v2v2v2v2v2 `CHERRY` games)",
     "notes": null,
     "x-value": 1710,
     "x-deprecated": false,
-    "x-desc": "Arena games on Rings of Wrath",
-    "x-name": "RINGS_OF_WRATH_ARENA"
+    "x-desc": "Arena (2v2v2v2v2v2v2v2 `CHERRY` games) games on Rings of Wrath",
+    "x-name": "RINGS_OF_WRATH_ARENA_2V2V2V2V2V2V2V2_CHERRY_GAMES_"
   },
   {
     "queueId": 1900,
