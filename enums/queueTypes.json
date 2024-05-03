@@ -71,10 +71,10 @@
   },
   {
     "queueType": "CHERRY",
-    "queueId": 1700,
+    "queueId": 1710,
     "description": "2v2v2v2 \"Arena\" games",
     "notes": null,
-    "x-value": 1700,
+    "x-value": 1710,
     "x-deprecated": false,
     "x-name": "CHERRY",
     "x-desc": "2v2v2v2 \"Arena\" games"
