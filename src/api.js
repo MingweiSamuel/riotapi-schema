@@ -196,7 +196,12 @@ async function writeEnums() {
     }),
     getEnumData("https://static.developer.riotgames.com/docs/lol/queues.json", 'queueId', enums => {
       const noGames = s => s.replace(/\s*\bGAMES$/i, '');
-      const formatName = s => noGames(s.trim()).replace(/'/g, '').replace(/\W+/g, '_').toUpperCase();
+      const formatName = s => noGames(s.trim())
+        .replace(/'/g, '')
+        .replace(/\W+/g, ' ')
+        .trim()
+        .replace(/ /g, '_')
+        .toUpperCase();
 
       const groups = {};
       for (const enumb of enums) {
