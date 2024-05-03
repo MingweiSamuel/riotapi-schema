@@ -483,7 +483,7 @@
     "queueId": 490,
     "map": "Summoner's Rift",
     "description": "Normal (Quickplay)",
-    "notes": "https://github.com/RiotGames/developer-relations/issues/846",
+    "notes": null,
     "x-value": 490,
     "x-deprecated": false,
     "x-desc": "Normal (Quickplay) games on Summoner's Rift",
@@ -878,6 +878,16 @@
     "x-deprecated": false,
     "x-desc": "2v2v2v2 `CHERRY` games on Arena",
     "x-name": "ARENA_2V2V2V2_CHERRY_"
+  },
+  {
+    "queueId": 1710,
+    "map": "Rings of Wrath",
+    "description": "Arena",
+    "notes": null,
+    "x-value": 1710,
+    "x-deprecated": false,
+    "x-desc": "Arena games on Rings of Wrath",
+    "x-name": "RINGS_OF_WRATH_ARENA"
   },
   {
     "queueId": 1900,
