@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: cc318f9714523e2339bec3595a3bb772e9e882a3
-  x-hash: cc318f9714523e2339bec3595a3bb772e9e882a3d97a3afbd5cba8254fad423515e31dfe6814c69e
+  version: c4b7138215ec7b3ab5fe6a7517689601a8c7de2e
+  x-hash: c4b7138215ec7b3ab5fe6a7517689601a8c7de2ed97a3afbd5cba8254fad423515e31dfe6814c69e
   x-enumsHash: d97a3afbd5cba8254fad423515e31dfe6814c69e
 host: na1.api.riotgames.com
 x-host-platform:
@@ -208,15 +208,11 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: account-v1.getByAccessToken
-      description: 'Get account by access token'
-      parameters:
+      security:
         -
-          name: Authorization
-          in: header
-          required: true
-          type: string
-          x-type: string
-          description: ""
+          rso:
+            - openid
+      description: 'Get account by access token'
       x-endpoint: account-v1
       x-platforms-available:
         - americas
@@ -2594,15 +2590,11 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lor-deck-v1.getDecks
-      description: 'Get a list of the calling user''s decks.'
-      parameters:
+      security:
         -
-          name: Authorization
-          in: header
-          required: true
-          type: string
-          x-type: String
-          description: ""
+          rso:
+            - openid
+      description: 'Get a list of the calling user''s decks.'
       x-endpoint: lor-deck-v1
       x-platforms-available:
         - americas
@@ -2653,22 +2645,11 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lor-deck-v1.createDeck
+      security:
+        -
+          rso:
+            - openid
       description: 'Create a new deck for the calling user.'
-      parameters:
-        -
-          name: Authorization
-          in: header
-          required: true
-          type: string
-          x-type: String
-          description: ""
-        -
-          required: true
-          schema:
-            $ref: '#/definitions/lor-deck-v1.NewDeckDto'
-            x-type: NewDeckDto
-          in: body
-          name: NewDeckDto
       x-endpoint: lor-deck-v1
       x-platforms-available:
         - americas
@@ -2679,6 +2660,14 @@ paths:
         - application/json
       consumes:
         - application/json
+      parameters:
+        -
+          required: true
+          schema:
+            $ref: '#/definitions/lor-deck-v1.NewDeckDto'
+            x-type: NewDeckDto
+          in: body
+          name: NewDeckDto
   /lor/inventory/v1/cards/me:
     get:
       tags:
@@ -2719,15 +2708,11 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: lor-inventory-v1.getCards
-      description: 'Return a list of cards owned by the calling user.'
-      parameters:
+      security:
         -
-          name: Authorization
-          in: header
-          required: true
-          type: string
-          x-type: String
-          description: ""
+          rso:
+            - openid
+      description: 'Return a list of cards owned by the calling user.'
       x-endpoint: lor-inventory-v1
       x-platforms-available:
         - americas
@@ -3842,15 +3827,11 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: summoner-v4.getByAccessToken
-      description: 'Get a summoner by access token.'
-      parameters:
+      security:
         -
-          name: Authorization
-          in: header
-          required: false
-          description: 'Bearer token'
-          type: string
-          x-type: string
+          rso:
+            - openid
+      description: 'Get a summoner by access token.'
       x-endpoint: summoner-v4
       x-platforms-available:
         - br1
@@ -5089,15 +5070,11 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: tft-summoner-v1.getByAccessToken
-      description: 'Get a summoner by access token.'
-      parameters:
+      security:
         -
-          name: Authorization
-          in: header
-          required: false
-          description: 'Bearer token.'
-          type: string
-          x-type: string
+          rso:
+            - openid
+      description: 'Get a summoner by access token.'
       x-endpoint: tft-summoner-v1
       x-platforms-available:
         - br1
@@ -13041,6 +13018,16 @@ securityDefinitions:
     description: 'API key in header.'
     name: X-Riot-Token
     in: header
+  rso:
+    type: oauth2
+    description: 'Riot Sign-On (RSO).'
+    flow: accessCode
+    authorizationUrl: 'https://auth.riotgames.com/authorize'
+    tokenUrl: 'https://auth.riotgames.com/token'
+    scopes:
+      openid: 'Required, scope for authentication.'
+      cpid: 'Returns the game region for League of Legends.'
+      offline_access: 'Allows Refresh Tokens to be used to retrieve new access_tokens that have access to the /userinfo endpoint.'
 security:
   -
     api_key: []
