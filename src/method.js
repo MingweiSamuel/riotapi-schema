@@ -44,6 +44,7 @@ function Method(endpoint, methodEl) {
   this.routeEnumName = null;
 
   this.nullable404 = METHOD_OPTIONAL[this.canonName] || false;
+  this.isRso = false;
 
   console.log(`  ${this.name} - ${this.httpMethod.toUpperCase()}` +
     (this.nullable404 ? ' (nullable)' : '') +
@@ -57,7 +58,7 @@ function Method(endpoint, methodEl) {
   this._handlePlatformSelect(platformSelect);
 }
 
-// https://swagger.io/specification/#pathItemObject
+// https://swagger.io/specification/#operation-object
 Method.prototype.getOperation = function() {
   let response200 = {
     description: 'Success',
@@ -81,6 +82,14 @@ Method.prototype.getOperation = function() {
     responses: this.responses,
     operationId: this.canonName
   };
+
+  if (this.isRso) {
+    operation.security = [
+      {
+       'rso': [ 'openid' ]
+      }
+    ]
+  }
 
   if (this.nullable404) // Can return 404.
     operation['x-nullable-404'] = true;
@@ -148,7 +157,15 @@ Method.prototype._compileApiBlock = function(apiBlockHtml) {
       let inType = type.split(/\s+/, 1)[0];
       let params = Schema.fromHtml(apiBlockHtml, this.endpoint.name, this.name, {
           isParam: true, requiredByDefault, onlyUseRequiredByDefault
-        }).toParameters(inType);
+        })
+        .toParameters(inType)
+        .filter(param => {
+          if ('header' === param.in && 'Authorization' === param.name) {
+            this.isRso = true;
+            return false;
+          }
+          return true;
+        });
       this.params.push(...params);
       break;
     case 'body parameters':

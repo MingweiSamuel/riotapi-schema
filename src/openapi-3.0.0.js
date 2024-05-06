@@ -77,6 +77,21 @@ function toSpec({ endpoints, regions, description, schemaOverrides, enumsHash })
           description: 'API key in header.',
           name: 'X-Riot-Token',
           in: 'header'
+        },
+        'rso': {
+          type: 'oauth2',
+          description: 'Riot Sign-On (RSO).',
+          flows: {
+            authorizationCode: {
+              authorizationUrl: 'https://auth.riotgames.com/authorize',
+              tokenUrl: 'https://auth.riotgames.com/token',
+              scopes: {
+                'openid': 'Required, scope for authentication.',
+                'cpid': 'Returns the game region for League of Legends.',
+                'offline_access': 'Allows Refresh Tokens to be used to retrieve new access_tokens that have access to the /userinfo endpoint.'
+              }
+            }
+          }
         }
       }
     },
