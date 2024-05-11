@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 92f57e3e7279cc02ec6a5ce6665ca08354d6a178
-  x-hash: 92f57e3e7279cc02ec6a5ce6665ca08354d6a178d97a3afbd5cba8254fad423515e31dfe6814c69e
+  version: 3787fe78724f2d58183c59ae31cb2d77a5627389
+  x-hash: 3787fe78724f2d58183c59ae31cb2d77a5627389d97a3afbd5cba8254fad423515e31dfe6814c69e
   x-enumsHash: d97a3afbd5cba8254fad423515e31dfe6814c69e
 servers:
   -
@@ -3168,8 +3168,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/match-v5.MatchTimelineDto'
-                x-type: MatchTimelineDto
+                $ref: '#/components/schemas/match-v5.TimelineDto'
+                x-type: TimelineDto
         '400':
           description: 'Bad request'
         '401':
@@ -7792,6 +7792,14 @@ components:
       type: object
       title: ParticipantDto
       properties:
+        allInPings:
+          type: integer
+          format: int32
+          x-type: int
+        assistMePings:
+          type: integer
+          format: int32
+          x-type: int
         assists:
           type: integer
           format: int32
@@ -7821,6 +7829,10 @@ components:
         championName:
           type: string
           x-type: string
+        commandPings:
+          type: integer
+          format: int32
+          x-type: int
         championTransform:
           type: integer
           format: int32
@@ -7830,6 +7842,9 @@ components:
           type: integer
           format: int32
           x-type: int
+        challenges:
+          $ref: '#/components/schemas/match-v5.ParticipantChallenges'
+          x-type: ParticipantChallenges
         damageDealtToBuildings:
           type: integer
           format: int32
@@ -7839,6 +7854,10 @@ components:
           format: int32
           x-type: int
         damageDealtToTurrets:
+          type: integer
+          format: int32
+          x-type: int
+        dangerPings:
           type: integer
           format: int32
           x-type: int
@@ -7862,6 +7881,17 @@ components:
           type: integer
           format: int32
           x-type: int
+        eligibleForProgression:
+          type: boolean
+          x-type: boolean
+        enemyMissingPings:
+          type: integer
+          format: int32
+          x-type: int
+        enemyVisionPings:
+          type: integer
+          format: int32
+          x-type: int
         firstBloodAssist:
           type: boolean
           x-type: boolean
@@ -7880,6 +7910,10 @@ components:
         gameEndedInSurrender:
           type: boolean
           x-type: boolean
+        getBackPings:
+          type: integer
+          format: int32
+          x-type: int
         goldEarned:
           type: integer
           format: int32
@@ -7975,7 +8009,14 @@ components:
           type: integer
           format: int32
           x-type: int
+        missions:
+          $ref: '#/components/schemas/match-v5.ParticipantMissions'
+          x-type: ParticipantMissions
         neutralMinionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        needVisionPings:
           type: integer
           format: int32
           x-type: int
@@ -7996,6 +8037,10 @@ components:
           format: int32
           x-type: int
         objectivesStolenAssists:
+          type: integer
+          format: int32
+          x-type: int
+        onMyWayPings:
           type: integer
           format: int32
           x-type: int
@@ -8022,6 +8067,10 @@ components:
           type: integer
           format: int32
           x-type: int
+        placement:
+          type: integer
+          format: int32
+          x-type: int
         playerAugment1:
           type: integer
           format: int32
@@ -8042,6 +8091,10 @@ components:
           type: integer
           format: int32
           x-type: int
+        pushPings:
+          type: integer
+          format: int32
+          x-type: int
         profileIcon:
           type: integer
           format: int32
@@ -8053,6 +8106,10 @@ components:
           type: integer
           format: int32
           x-type: int
+        riotIdGameName:
+          type: string
+          x-type: string
+          description: 'Use `riotIdName` for games before patch 14.5.'
         riotIdName:
           type: string
           x-type: string
@@ -8080,6 +8137,10 @@ components:
           format: int32
           x-type: int
         spell4Casts:
+          type: integer
+          format: int32
+          x-type: int
+        subteamPlacement:
           type: integer
           format: int32
           x-type: int
@@ -8129,6 +8190,10 @@ components:
           type: integer
           format: int32
           x-type: int
+        totalAllyJungleMinionsKilled:
+          type: integer
+          format: int32
+          x-type: int
         totalDamageDealt:
           type: integer
           format: int32
@@ -8142,6 +8207,10 @@ components:
           format: int32
           x-type: int
         totalDamageTaken:
+          type: integer
+          format: int32
+          x-type: int
+        totalEnemyJungleMinionsKilled:
           type: integer
           format: int32
           x-type: int
@@ -8205,6 +8274,10 @@ components:
           type: integer
           format: int32
           x-type: int
+        visionClearedPings:
+          type: integer
+          format: int32
+          x-type: int
         visionWardsBoughtInGame:
           type: integer
           format: int32
@@ -8220,18 +8293,6 @@ components:
         win:
           type: boolean
           x-type: boolean
-        riotIdGameName:
-          type: string
-          x-type: string
-          description: 'Use `riotIdName` for games before patch 14.5.'
-        allInPings:
-          type: integer
-          format: int32
-          x-type: int
-        assistMePings:
-          type: integer
-          format: int32
-          x-type: int
         baitPings:
           type: integer
           format: int32
@@ -8240,71 +8301,10 @@ components:
           type: integer
           format: int32
           x-type: int
-        commandPings:
-          type: integer
-          format: int32
-          x-type: int
-        dangerPings:
-          type: integer
-          format: int32
-          x-type: int
-        enemyMissingPings:
-          type: integer
-          format: int32
-          x-type: int
-        enemyVisionPings:
-          type: integer
-          format: int32
-          x-type: int
-        getBackPings:
-          type: integer
-          format: int32
-          x-type: int
         holdPings:
           type: integer
           format: int32
           x-type: int
-        needVisionPings:
-          type: integer
-          format: int32
-          x-type: int
-        onMyWayPings:
-          type: integer
-          format: int32
-          x-type: int
-        pushPings:
-          type: integer
-          format: int32
-          x-type: int
-        visionClearedPings:
-          type: integer
-          format: int32
-          x-type: int
-        eligibleForProgression:
-          type: boolean
-          x-type: boolean
-        challenges:
-          $ref: '#/components/schemas/match-v5.ParticipantChallenges'
-          x-type: ParticipantChallenges
-        totalAllyJungleMinionsKilled:
-          type: integer
-          format: int32
-          x-type: int
-        totalEnemyJungleMinionsKilled:
-          type: integer
-          format: int32
-          x-type: int
-        subteamPlacement:
-          type: integer
-          format: int32
-          x-type: int
-        placement:
-          type: integer
-          format: int32
-          x-type: int
-        missions:
-          $ref: '#/components/schemas/match-v5.ParticipantMissions'
-          x-type: ParticipantMissions
         playerScore0:
           type: integer
           format: int32
@@ -8451,6 +8451,611 @@ components:
         - wardsKilled
         - wardsPlaced
         - win
+    match-v5.ChallengesDto:
+      type: object
+      title: ChallengesDto
+      properties:
+        12AssistStreakCount:
+          type: integer
+          format: int32
+          x-type: int
+        abilityUses:
+          type: integer
+          format: int32
+          x-type: int
+        acesBefore15Minutes:
+          type: integer
+          format: int32
+          x-type: int
+        alliedJungleMonsterKills:
+          type: integer
+          format: int32
+          x-type: int
+        baronTakedowns:
+          type: integer
+          format: int32
+          x-type: int
+        blastConeOppositeOpponentCount:
+          type: integer
+          format: int32
+          x-type: int
+        bountyGold:
+          type: integer
+          format: int32
+          x-type: int
+        buffsStolen:
+          type: integer
+          format: int32
+          x-type: int
+        completeSupportQuestInTime:
+          type: integer
+          format: int32
+          x-type: int
+        controlWardsPlaced:
+          type: integer
+          format: int32
+          x-type: int
+        damagePerMinute:
+          type: number
+          format: float
+          x-type: float
+        damageTakenOnTeamPercentage:
+          type: number
+          format: float
+          x-type: float
+        dancedWithRiftHerald:
+          type: integer
+          format: int32
+          x-type: int
+        deathsByEnemyChamps:
+          type: integer
+          format: int32
+          x-type: int
+        dodgeSkillShotsSmallWindow:
+          type: integer
+          format: int32
+          x-type: int
+        doubleAces:
+          type: integer
+          format: int32
+          x-type: int
+        dragonTakedowns:
+          type: integer
+          format: int32
+          x-type: int
+        legendaryItemUsed:
+          type: array
+          items:
+            type: integer
+            format: int32
+            x-type: int
+          x-type: 'List[int]'
+        effectiveHealAndShielding:
+          type: number
+          format: float
+          x-type: float
+        elderDragonKillsWithOpposingSoul:
+          type: integer
+          format: int32
+          x-type: int
+        elderDragonMultikills:
+          type: integer
+          format: int32
+          x-type: int
+        enemyChampionImmobilizations:
+          type: integer
+          format: int32
+          x-type: int
+        enemyJungleMonsterKills:
+          type: integer
+          format: int32
+          x-type: int
+        epicMonsterKillsNearEnemyJungler:
+          type: integer
+          format: int32
+          x-type: int
+        epicMonsterKillsWithin30SecondsOfSpawn:
+          type: integer
+          format: int32
+          x-type: int
+        epicMonsterSteals:
+          type: integer
+          format: int32
+          x-type: int
+        epicMonsterStolenWithoutSmite:
+          type: integer
+          format: int32
+          x-type: int
+        firstTurretKilled:
+          type: integer
+          format: int32
+          x-type: int
+        firstTurretKilledTime:
+          type: number
+          format: float
+          x-type: float
+        flawlessAces:
+          type: integer
+          format: int32
+          x-type: int
+        fullTeamTakedown:
+          type: integer
+          format: int32
+          x-type: int
+        gameLength:
+          type: number
+          format: float
+          x-type: float
+        getTakedownsInAllLanesEarlyJungleAsLaner:
+          type: integer
+          format: int32
+          x-type: int
+        goldPerMinute:
+          type: number
+          format: float
+          x-type: float
+        hadOpenNexus:
+          type: integer
+          format: int32
+          x-type: int
+        immobilizeAndKillWithAlly:
+          type: integer
+          format: int32
+          x-type: int
+        initialBuffCount:
+          type: integer
+          format: int32
+          x-type: int
+        initialCrabCount:
+          type: integer
+          format: int32
+          x-type: int
+        jungleCsBefore10Minutes:
+          type: integer
+          format: int32
+          x-type: int
+        junglerTakedownsNearDamagedEpicMonster:
+          type: integer
+          format: int32
+          x-type: int
+        kda:
+          type: number
+          format: float
+          x-type: float
+        killAfterHiddenWithAlly:
+          type: integer
+          format: int32
+          x-type: int
+        killedChampTookFullTeamDamageSurvived:
+          type: integer
+          format: int32
+          x-type: int
+        killingSprees:
+          type: integer
+          format: int32
+          x-type: int
+        killParticipation:
+          type: number
+          format: float
+          x-type: float
+        killsNearEnemyTurret:
+          type: integer
+          format: int32
+          x-type: int
+        killsOnOtherLanesEarlyJungleAsLaner:
+          type: integer
+          format: int32
+          x-type: int
+        killsOnRecentlyHealedByAramPack:
+          type: integer
+          format: int32
+          x-type: int
+        killsUnderOwnTurret:
+          type: integer
+          format: int32
+          x-type: int
+        killsWithHelpFromEpicMonster:
+          type: integer
+          format: int32
+          x-type: int
+        knockEnemyIntoTeamAndKill:
+          type: integer
+          format: int32
+          x-type: int
+        kTurretsDestroyedBeforePlatesFall:
+          type: integer
+          format: int32
+          x-type: int
+        landSkillShotsEarlyGame:
+          type: integer
+          format: int32
+          x-type: int
+        laneMinionsFirst10Minutes:
+          type: integer
+          format: int32
+          x-type: int
+        lostAnInhibitor:
+          type: integer
+          format: int32
+          x-type: int
+        maxKillDeficit:
+          type: integer
+          format: int32
+          x-type: int
+        mejaisFullStackInTime:
+          type: integer
+          format: int32
+          x-type: int
+        moreEnemyJungleThanOpponent:
+          type: integer
+          format: int32
+          x-type: int
+        multiKillOneSpell:
+          type: integer
+          format: int32
+          x-type: int
+        multikills:
+          type: integer
+          format: int32
+          x-type: int
+        multikillsAfterAggressiveFlash:
+          type: integer
+          format: int32
+          x-type: int
+        multiTurretRiftHeraldCount:
+          type: integer
+          format: int32
+          x-type: int
+        outerTurretExecutesBefore10Minutes:
+          type: integer
+          format: int32
+          x-type: int
+        outnumberedKills:
+          type: integer
+          format: int32
+          x-type: int
+        outnumberedNexusKill:
+          type: integer
+          format: int32
+          x-type: int
+        perfectDragonSoulsTaken:
+          type: integer
+          format: int32
+          x-type: int
+        perfectGame:
+          type: integer
+          format: int32
+          x-type: int
+        pickKillWithAlly:
+          type: integer
+          format: int32
+          x-type: int
+        poroExplosions:
+          type: integer
+          format: int32
+          x-type: int
+        quickCleanse:
+          type: integer
+          format: int32
+          x-type: int
+        quickFirstTurret:
+          type: integer
+          format: int32
+          x-type: int
+        quickSoloKills:
+          type: integer
+          format: int32
+          x-type: int
+        riftHeraldTakedowns:
+          type: integer
+          format: int32
+          x-type: int
+        saveAllyFromDeath:
+          type: integer
+          format: int32
+          x-type: int
+        scuttleCrabKills:
+          type: integer
+          format: int32
+          x-type: int
+        shortestTimeToAceFromFirstTakedown:
+          type: number
+          format: float
+          x-type: float
+        skillshotsDodged:
+          type: integer
+          format: int32
+          x-type: int
+        skillshotsHit:
+          type: integer
+          format: int32
+          x-type: int
+        snowballsHit:
+          type: integer
+          format: int32
+          x-type: int
+        soloBaronKills:
+          type: integer
+          format: int32
+          x-type: int
+        soloKills:
+          type: integer
+          format: int32
+          x-type: int
+        stealthWardsPlaced:
+          type: integer
+          format: int32
+          x-type: int
+        survivedSingleDigitHpCount:
+          type: integer
+          format: int32
+          x-type: int
+        survivedThreeImmobilizesInFight:
+          type: integer
+          format: int32
+          x-type: int
+        takedownOnFirstTurret:
+          type: integer
+          format: int32
+          x-type: int
+        takedowns:
+          type: integer
+          format: int32
+          x-type: int
+        takedownsAfterGainingLevelAdvantage:
+          type: integer
+          format: int32
+          x-type: int
+        takedownsBeforeJungleMinionSpawn:
+          type: integer
+          format: int32
+          x-type: int
+        takedownsFirstXMinutes:
+          type: integer
+          format: int32
+          x-type: int
+        takedownsInAlcove:
+          type: integer
+          format: int32
+          x-type: int
+        takedownsInEnemyFountain:
+          type: integer
+          format: int32
+          x-type: int
+        teamBaronKills:
+          type: integer
+          format: int32
+          x-type: int
+        teamDamagePercentage:
+          type: number
+          format: float
+          x-type: float
+        teamElderDragonKills:
+          type: integer
+          format: int32
+          x-type: int
+        teamRiftHeraldKills:
+          type: integer
+          format: int32
+          x-type: int
+        tookLargeDamageSurvived:
+          type: integer
+          format: int32
+          x-type: int
+        turretPlatesTaken:
+          type: integer
+          format: int32
+          x-type: int
+        turretsTakenWithRiftHerald:
+          type: integer
+          format: int32
+          x-type: int
+        turretTakedowns:
+          type: integer
+          format: int32
+          x-type: int
+        twentyMinionsIn3SecondsCount:
+          type: integer
+          format: int32
+          x-type: int
+        twoWardsOneSweeperCount:
+          type: integer
+          format: int32
+          x-type: int
+        unseenRecalls:
+          type: integer
+          format: int32
+          x-type: int
+        visionScorePerMinute:
+          type: integer
+          format: int32
+          x-type: int
+        wardsGuarded:
+          type: integer
+          format: int32
+          x-type: int
+        wardTakedowns:
+          type: integer
+          format: int32
+          x-type: int
+        wardTakedownsBefore20M:
+          type: integer
+          format: int32
+          x-type: int
+      description: 'Challenges DTO'
+      required:
+        - 12AssistStreakCount
+        - abilityUses
+        - acesBefore15Minutes
+        - alliedJungleMonsterKills
+        - baronTakedowns
+        - blastConeOppositeOpponentCount
+        - bountyGold
+        - buffsStolen
+        - completeSupportQuestInTime
+        - controlWardsPlaced
+        - damagePerMinute
+        - damageTakenOnTeamPercentage
+        - dancedWithRiftHerald
+        - deathsByEnemyChamps
+        - dodgeSkillShotsSmallWindow
+        - doubleAces
+        - dragonTakedowns
+        - legendaryItemUsed
+        - effectiveHealAndShielding
+        - elderDragonKillsWithOpposingSoul
+        - elderDragonMultikills
+        - enemyChampionImmobilizations
+        - enemyJungleMonsterKills
+        - epicMonsterKillsNearEnemyJungler
+        - epicMonsterKillsWithin30SecondsOfSpawn
+        - epicMonsterSteals
+        - epicMonsterStolenWithoutSmite
+        - firstTurretKilled
+        - firstTurretKilledTime
+        - flawlessAces
+        - fullTeamTakedown
+        - gameLength
+        - getTakedownsInAllLanesEarlyJungleAsLaner
+        - goldPerMinute
+        - hadOpenNexus
+        - immobilizeAndKillWithAlly
+        - initialBuffCount
+        - initialCrabCount
+        - jungleCsBefore10Minutes
+        - junglerTakedownsNearDamagedEpicMonster
+        - kda
+        - killAfterHiddenWithAlly
+        - killedChampTookFullTeamDamageSurvived
+        - killingSprees
+        - killParticipation
+        - killsNearEnemyTurret
+        - killsOnOtherLanesEarlyJungleAsLaner
+        - killsOnRecentlyHealedByAramPack
+        - killsUnderOwnTurret
+        - killsWithHelpFromEpicMonster
+        - knockEnemyIntoTeamAndKill
+        - kTurretsDestroyedBeforePlatesFall
+        - landSkillShotsEarlyGame
+        - laneMinionsFirst10Minutes
+        - lostAnInhibitor
+        - maxKillDeficit
+        - mejaisFullStackInTime
+        - moreEnemyJungleThanOpponent
+        - multiKillOneSpell
+        - multikills
+        - multikillsAfterAggressiveFlash
+        - multiTurretRiftHeraldCount
+        - outerTurretExecutesBefore10Minutes
+        - outnumberedKills
+        - outnumberedNexusKill
+        - perfectDragonSoulsTaken
+        - perfectGame
+        - pickKillWithAlly
+        - poroExplosions
+        - quickCleanse
+        - quickFirstTurret
+        - quickSoloKills
+        - riftHeraldTakedowns
+        - saveAllyFromDeath
+        - scuttleCrabKills
+        - shortestTimeToAceFromFirstTakedown
+        - skillshotsDodged
+        - skillshotsHit
+        - snowballsHit
+        - soloBaronKills
+        - soloKills
+        - stealthWardsPlaced
+        - survivedSingleDigitHpCount
+        - survivedThreeImmobilizesInFight
+        - takedownOnFirstTurret
+        - takedowns
+        - takedownsAfterGainingLevelAdvantage
+        - takedownsBeforeJungleMinionSpawn
+        - takedownsFirstXMinutes
+        - takedownsInAlcove
+        - takedownsInEnemyFountain
+        - teamBaronKills
+        - teamDamagePercentage
+        - teamElderDragonKills
+        - teamRiftHeraldKills
+        - tookLargeDamageSurvived
+        - turretPlatesTaken
+        - turretsTakenWithRiftHerald
+        - turretTakedowns
+        - twentyMinionsIn3SecondsCount
+        - twoWardsOneSweeperCount
+        - unseenRecalls
+        - visionScorePerMinute
+        - wardsGuarded
+        - wardTakedowns
+        - wardTakedownsBefore20M
+    match-v5.MissionsDto:
+      type: object
+      title: MissionsDto
+      properties:
+        playerScore0:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore1:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore2:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore3:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore4:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore5:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore6:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore7:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore8:
+          type: integer
+          format: int32
+          x-type: int
+        PlayerScore9:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore10:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore11:
+          type: integer
+          format: int32
+          x-type: int
+      description: 'Missions DTO'
+      required:
+        - playerScore0
+        - playerScore1
+        - playerScore2
+        - playerScore3
+        - playerScore4
+        - playerScore5
+        - playerScore6
+        - playerScore7
+        - playerScore8
+        - PlayerScore9
+        - playerScore10
+        - playerScore11
     match-v5.PerksDto:
       type: object
       title: PerksDto
@@ -8588,6 +9193,9 @@ components:
         dragon:
           $ref: '#/components/schemas/match-v5.ObjectiveDto'
           x-type: ObjectiveDto
+        horde:
+          $ref: '#/components/schemas/match-v5.ObjectiveDto'
+          x-type: ObjectiveDto
         inhibitor:
           $ref: '#/components/schemas/match-v5.ObjectiveDto'
           x-type: ObjectiveDto
@@ -8595,9 +9203,6 @@ components:
           $ref: '#/components/schemas/match-v5.ObjectiveDto'
           x-type: ObjectiveDto
         tower:
-          $ref: '#/components/schemas/match-v5.ObjectiveDto'
-          x-type: ObjectiveDto
-        horde:
           $ref: '#/components/schemas/match-v5.ObjectiveDto'
           x-type: ObjectiveDto
       required:
@@ -8621,6 +9226,446 @@ components:
       required:
         - first
         - kills
+    match-v5.TimelineDto:
+      type: object
+      title: TimelineDto
+      properties:
+        metadata:
+          $ref: '#/components/schemas/match-v5.MetadataTimeLineDto'
+          x-type: MetadataTimeLineDto
+          description: 'Match metadata.'
+        info:
+          $ref: '#/components/schemas/match-v5.InfoTimeLineDto'
+          x-type: InfoTimeLineDto
+          description: 'Match info.'
+      required:
+        - metadata
+        - info
+    match-v5.MetadataTimeLineDto:
+      type: object
+      title: MetadataTimeLineDto
+      properties:
+        dataVersion:
+          type: string
+          x-type: string
+          description: 'Match data version.'
+        matchId:
+          type: string
+          x-type: string
+          description: 'Match id.'
+        participants:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+          description: 'A list of participant PUUIDs.'
+      required:
+        - dataVersion
+        - matchId
+        - participants
+    match-v5.InfoTimeLineDto:
+      type: object
+      title: InfoTimeLineDto
+      properties:
+        endOfGameResult:
+          type: string
+          x-type: string
+          description: 'Refer to indicate if the game ended in termination.'
+        frameInterval:
+          type: integer
+          format: int64
+          x-type: long
+        gameId:
+          type: integer
+          format: int64
+          x-type: long
+        participants:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.ParticipantTimeLineDto'
+            x-type: ParticipantTimeLineDto
+          x-type: 'List[ParticipantTimeLineDto]'
+        frames:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.FramesTimeLineDto'
+            x-type: FramesTimeLineDto
+          x-type: 'List[FramesTimeLineDto]'
+      required:
+        - endOfGameResult
+        - frameInterval
+        - gameId
+        - participants
+        - frames
+    match-v5.ParticipantTimeLineDto:
+      type: object
+      title: ParticipantTimeLineDto
+      properties:
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+        puuid:
+          type: string
+          x-type: string
+      required:
+        - participantId
+        - puuid
+    match-v5.FramesTimeLineDto:
+      type: object
+      title: FramesTimeLineDto
+      properties:
+        events:
+          $ref: '#/components/schemas/match-v5.EventsTimeLineDto'
+          x-type: EventsTimeLineDto
+        participantFrames:
+          $ref: '#/components/schemas/match-v5.ParticipantFramesDto'
+          x-type: ParticipantFramesDto
+        timestamp:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - events
+        - participantFrames
+        - timestamp
+    match-v5.EventsTimeLineDto:
+      type: object
+      title: EventsTimeLineDto
+      properties:
+        timestamp:
+          type: integer
+          format: int64
+          x-type: long
+        realTimestamp:
+          type: integer
+          format: int64
+          x-type: long
+        type:
+          type: string
+          x-type: string
+      required:
+        - timestamp
+        - realTimestamp
+        - type
+    match-v5.ParticipantFramesDto:
+      type: object
+      title: ParticipantFramesDto
+      properties:
+        '1':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '2':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '3':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '4':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '5':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '6':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '7':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '8':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '9':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+        '10':
+          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+          x-type: ParticipantFrameDto
+      required:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+        - '6'
+        - '7'
+        - '8'
+        - '9'
+        - '10'
+    match-v5.ParticipantFrameDto:
+      type: object
+      title: ParticipantFrameDto
+      properties:
+        championStats:
+          $ref: '#/components/schemas/match-v5.ChampionStatsDto'
+          x-type: ChampionStatsDto
+        currentGold:
+          type: integer
+          format: int32
+          x-type: int
+        damageStats:
+          $ref: '#/components/schemas/match-v5.DamageStatsDto'
+          x-type: DamageStatsDto
+        goldPerSecond:
+          type: integer
+          format: int32
+          x-type: int
+        jungleMinionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        level:
+          type: integer
+          format: int32
+          x-type: int
+        minionsKilled:
+          type: integer
+          format: int32
+          x-type: int
+        participantId:
+          type: integer
+          format: int32
+          x-type: int
+        position:
+          $ref: '#/components/schemas/match-v5.PositionDto'
+          x-type: PositionDto
+        timeEnemySpentControlled:
+          type: integer
+          format: int32
+          x-type: int
+        totalGold:
+          type: integer
+          format: int32
+          x-type: int
+        xp:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - championStats
+        - currentGold
+        - damageStats
+        - goldPerSecond
+        - jungleMinionsKilled
+        - level
+        - minionsKilled
+        - participantId
+        - position
+        - timeEnemySpentControlled
+        - totalGold
+        - xp
+    match-v5.ChampionStatsDto:
+      type: object
+      title: ChampionStatsDto
+      properties:
+        abilityHaste:
+          type: integer
+          format: int32
+          x-type: int
+        abilityPower:
+          type: integer
+          format: int32
+          x-type: int
+        armor:
+          type: integer
+          format: int32
+          x-type: int
+        armorPen:
+          type: integer
+          format: int32
+          x-type: int
+        armorPenPercent:
+          type: integer
+          format: int32
+          x-type: int
+        attackDamage:
+          type: integer
+          format: int32
+          x-type: int
+        attackSpeed:
+          type: integer
+          format: int32
+          x-type: int
+        bonusArmorPenPercent:
+          type: integer
+          format: int32
+          x-type: int
+        bonusMagicPenPercent:
+          type: integer
+          format: int32
+          x-type: int
+        ccReduction:
+          type: integer
+          format: int32
+          x-type: int
+        cooldownReduction:
+          type: integer
+          format: int32
+          x-type: int
+        health:
+          type: integer
+          format: int32
+          x-type: int
+        healthMax:
+          type: integer
+          format: int32
+          x-type: int
+        healthRegen:
+          type: integer
+          format: int32
+          x-type: int
+        lifesteal:
+          type: integer
+          format: int32
+          x-type: int
+        magicPen:
+          type: integer
+          format: int32
+          x-type: int
+        magicPenPercent:
+          type: integer
+          format: int32
+          x-type: int
+        magicResist:
+          type: integer
+          format: int32
+          x-type: int
+        movementSpeed:
+          type: integer
+          format: int32
+          x-type: int
+        omnivamp:
+          type: integer
+          format: int32
+          x-type: int
+        physicalVamp:
+          type: integer
+          format: int32
+          x-type: int
+        power:
+          type: integer
+          format: int32
+          x-type: int
+        powerMax:
+          type: integer
+          format: int32
+          x-type: int
+        powerRegen:
+          type: integer
+          format: int32
+          x-type: int
+        spellVamp:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - abilityHaste
+        - abilityPower
+        - armor
+        - armorPen
+        - armorPenPercent
+        - attackDamage
+        - attackSpeed
+        - bonusArmorPenPercent
+        - bonusMagicPenPercent
+        - ccReduction
+        - cooldownReduction
+        - health
+        - healthMax
+        - healthRegen
+        - lifesteal
+        - magicPen
+        - magicPenPercent
+        - magicResist
+        - movementSpeed
+        - omnivamp
+        - physicalVamp
+        - power
+        - powerMax
+        - powerRegen
+        - spellVamp
+    match-v5.DamageStatsDto:
+      type: object
+      title: DamageStatsDto
+      properties:
+        magicDamageDone:
+          type: integer
+          format: int32
+          x-type: int
+        magicDamageDoneToChampions:
+          type: integer
+          format: int32
+          x-type: int
+        magicDamageTaken:
+          type: integer
+          format: int32
+          x-type: int
+        physicalDamageDone:
+          type: integer
+          format: int32
+          x-type: int
+        physicalDamageDoneToChampions:
+          type: integer
+          format: int32
+          x-type: int
+        physicalDamageTaken:
+          type: integer
+          format: int32
+          x-type: int
+        totalDamageDone:
+          type: integer
+          format: int32
+          x-type: int
+        totalDamageDoneToChampions:
+          type: integer
+          format: int32
+          x-type: int
+        totalDamageTaken:
+          type: integer
+          format: int32
+          x-type: int
+        trueDamageDone:
+          type: integer
+          format: int32
+          x-type: int
+        trueDamageDoneToChampions:
+          type: integer
+          format: int32
+          x-type: int
+        trueDamageTaken:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - magicDamageDone
+        - magicDamageDoneToChampions
+        - magicDamageTaken
+        - physicalDamageDone
+        - physicalDamageDoneToChampions
+        - physicalDamageTaken
+        - totalDamageDone
+        - totalDamageDoneToChampions
+        - totalDamageTaken
+        - trueDamageDone
+        - trueDamageDoneToChampions
+        - trueDamageTaken
+    match-v5.PositionDto:
+      type: object
+      title: PositionDto
+      properties:
+        x:
+          type: integer
+          format: int32
+          x-type: int
+        y:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - x
+        - y
     match-v5.ParticipantChallenges:
       type: object
       title: ParticipantChallenges
@@ -9237,17 +10282,6 @@ components:
         - PlayerScore7
         - PlayerScore8
         - PlayerScore9
-    match-v5.MatchTimelineDto:
-      title: MatchTimelineDto
-      type: object
-      properties:
-        metadata:
-          $ref: '#/components/schemas/match-v5.MetadataDto'
-        info:
-          $ref: '#/components/schemas/match-v5.MatchTimelineInfo'
-      required:
-        - metadata
-        - info
     spectator-tft-v5.CurrentGameInfo:
       type: object
       title: CurrentGameInfo
@@ -13032,6 +14066,17 @@ components:
       required:
         - frameInterval
         - frames
+    match-v5.MatchTimelineDto:
+      title: MatchTimelineDto
+      type: object
+      properties:
+        metadata:
+          $ref: '#/components/schemas/match-v5.MetadataDto'
+        info:
+          $ref: '#/components/schemas/match-v5.MatchTimelineInfo'
+      required:
+        - metadata
+        - info
   securitySchemes:
     api_key:
       type: apiKey
