@@ -447,5 +447,138 @@
       "type": "integer",
       "format": "int64"
     }
+  },
+  // https://github.com/RiotGames/developer-relations/issues/754
+  "match-v5.ChallengesDto": {
+    "baronBuffGoldAdvantageOverThreshold": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "controlWardTimeCoverageInRiverOrEnemyHalf": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "earliestBaron": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "earliestDragonTakedown": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "earliestElderDragon": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "earlyLaningPhaseGoldExpAdvantage": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "fasterSupportQuestCompletion": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "fastestLegendary": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "hadAfkTeammate": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "highestChampionDamage": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "highestCrowdControlScore": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "highestWardKills": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "junglerKillsEarlyJungle": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "killsOnLanersEarlyJungleAsJungler": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "laningPhaseGoldExpAdvantage": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "legendaryCount": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "maxCsAdvantageOnLaneOpponent": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "maxLevelLeadLaneOpponent": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "mostWardsDestroyedOneSweeper": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "playedChampSelectPosition": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "soloTurretsLategame": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "takedownsFirst25Minutes": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "teleportTakedowns": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "thirdInhibitorDestroyedTime": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "threeWardsOneSweeperCount": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "visionScoreAdvantageLaneOpponent": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    }
   }
 }

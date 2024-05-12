@@ -167,7 +167,7 @@
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.InfoDto.endOfGameResult": true,
-  "match-v5.ParticipantChallenges.*": true,
+  "match-v5.ChallengesDto.*": true,
 
   // https://github.com/RiotGames/developer-relations/issues/829
   "match-v5.ObjectivesDto.horde": true,
