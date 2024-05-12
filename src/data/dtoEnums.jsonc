@@ -90,8 +90,8 @@
 
   "match-v5.BanDto.championId": "champion",
 
-  "TODO__match-v5.MatchTimelineInfoFrameEvent.teamId": "team",
-  "TODO__match-v5.MatchTimelineInfoFrameEvent.killerTeamId": "team",
+  "match-v5.EventsTimeLineDto.teamId": "team",
+  "match-v5.EventsTimeLineDto.killerTeamId": "team",
 
 
   "tournament-stub-v4.ProviderRegistrationParameters.region": "tournamentRegion",
