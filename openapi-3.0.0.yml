@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 3787fe78724f2d58183c59ae31cb2d77a5627389
-  x-hash: 3787fe78724f2d58183c59ae31cb2d77a5627389d97a3afbd5cba8254fad423515e31dfe6814c69e
+  version: 7d5d1c2bf138375dd57e7d8a05e3b766a5a7ccfc
+  x-hash: 7d5d1c2bf138375dd57e7d8a05e3b766a5a7ccfcd97a3afbd5cba8254fad423515e31dfe6814c69e
   x-enumsHash: d97a3afbd5cba8254fad423515e31dfe6814c69e
 servers:
   -
@@ -9293,10 +9293,7 @@ components:
             x-type: FramesTimeLineDto
           x-type: 'List[FramesTimeLineDto]'
       required:
-        - endOfGameResult
         - frameInterval
-        - gameId
-        - participants
         - frames
     match-v5.ParticipantTimeLineDto:
       type: object
@@ -9328,7 +9325,6 @@ components:
           x-type: int
       required:
         - events
-        - participantFrames
         - timestamp
     match-v5.EventsTimeLineDto:
       type: object
@@ -9347,7 +9343,6 @@ components:
           x-type: string
       required:
         - timestamp
-        - realTimestamp
         - type
     match-v5.ParticipantFramesDto:
       type: object
@@ -9561,7 +9556,6 @@ components:
           format: int32
           x-type: int
       required:
-        - abilityHaste
         - abilityPower
         - armor
         - armorPen
@@ -9580,8 +9574,6 @@ components:
         - magicPenPercent
         - magicResist
         - movementSpeed
-        - omnivamp
-        - physicalVamp
         - power
         - powerMax
         - powerRegen
