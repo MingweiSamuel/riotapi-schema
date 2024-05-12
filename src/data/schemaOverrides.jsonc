@@ -640,20 +640,6 @@
         "x-type": "int"
       }
     },
-    "description": "Missions DTO",
-    "required": [
-      "playerScore0",
-      "playerScore1",
-      "playerScore2",
-      "playerScore3",
-      "playerScore4",
-      "playerScore5",
-      "playerScore6",
-      "playerScore7",
-      "playerScore8",
-      "playerScore9",
-      "playerScore10",
-      "playerScore11"
-    ]
+    "description": "Missions DTO"
   }
 }

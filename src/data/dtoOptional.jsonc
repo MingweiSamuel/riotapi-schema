@@ -184,6 +184,9 @@
   "match-v5.ChampionStatsDto.omnivamp": true,
   "match-v5.ChampionStatsDto.physicalVamp": true,
 
+  // https://github.com/RiotGames/developer-relations/issues/929#issuecomment-2106321084
+  "match-v5.MissionsDto.*": true,
+
 
   "lol-status-v4.StatusDto.archive_at": true,
   "lol-status-v4.StatusDto.incident_severity": true,
