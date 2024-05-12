@@ -420,5 +420,150 @@
       "format": "int64",
       "x-type": "long"
     }
+  },
+  // https://github.com/RiotGames/developer-relations/issues/925
+  "match-v5.FramesTimeLineDto": {
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/match-v5.EventsTimeLineDto",
+        "x-type": "EventsTimeLineDto"
+      },
+      "x-type": "List[EventsTimeLineDto]"
+    }
+  },
+  //
+  "match-v5.EventsTimeLineDto": {
+    "itemId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "participantId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "levelUpType": {
+      "type": "string"
+    },
+    "skillSlot": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "creatorId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "wardType": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "assistingParticipantIds": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "bounty": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "killStreakLength": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "killerId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "position": {
+      "$ref": "#/components/schemas/match-v5.PositionDto"
+    },
+    "victimDamageDealt": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/match-v5.MatchTimelineVictimDamage"
+      }
+    },
+    "victimDamageReceived": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/match-v5.MatchTimelineVictimDamage"
+      }
+    },
+    "victimId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "killType": {
+      "type": "string"
+    },
+    "laneType": {
+      "type": "string"
+    },
+    "teamId": {
+      "type": "integer",
+      "format": "int32",
+      "x-enum": "team"
+    },
+    "multiKillLength": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "killerTeamId": {
+      "type": "integer",
+      "format": "int32",
+      "x-enum": "team"
+    },
+    "monsterType": {
+      "type": "string"
+    },
+    "monsterSubType": {
+      "type": "string"
+    },
+    "buildingType": {
+      "type": "string"
+    },
+    "towerType": {
+      "type": "string"
+    },
+    "afterId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "beforeId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "goldGain": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "gameId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "winningTeam": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "transformType": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+
+    "shutdownBounty": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "actualStartTime": {
+      "type": "integer",
+      "format": "int64"
+    }
   }
 }
