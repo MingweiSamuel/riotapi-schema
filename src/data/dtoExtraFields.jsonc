@@ -421,8 +421,9 @@
       "x-type": "long"
     }
   },
-  // https://github.com/RiotGames/developer-relations/issues/925
+  //
   "match-v5.FramesTimeLineDto": {
+    // https://github.com/RiotGames/developer-relations/issues/925
     "events": {
       "type": "array",
       "items": {
@@ -430,9 +431,20 @@
         "x-type": "EventsTimeLineDto"
       },
       "x-type": "List[EventsTimeLineDto]"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/927
+    "participantFrames": {
+      "type": "object",
+      "x-key": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "additionalProperties": {
+        "$ref": "#/components/schemas/match-v5.ParticipantFrameDto"
+      }
     }
   },
-  //
+  // https://github.com/RiotGames/developer-relations/issues/926
   "match-v5.EventsTimeLineDto": {
     "itemId": {
       "type": "integer",
