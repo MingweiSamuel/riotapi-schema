@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "d15378555b1904b7f6e2a7c948c35bc408350612",
-    "x-hash": "d15378555b1904b7f6e2a7c948c35bc408350612d97a3afbd5cba8254fad423515e31dfe6814c69e",
+    "version": "06dab6db49810576ccddfee86544ff404bc756cf",
+    "x-hash": "06dab6db49810576ccddfee86544ff404bc756cfd97a3afbd5cba8254fad423515e31dfe6814c69e",
     "x-enumsHash": "d97a3afbd5cba8254fad423515e31dfe6814c69e"
   },
   "host": "na1.api.riotgames.com",
@@ -8369,681 +8369,6 @@
         "summonerLevel"
       ]
     },
-    "match-v5.ParticipantChallenges": {
-      "type": "object",
-      "title": "ParticipantChallenges",
-      "properties": {
-        "12AssistStreakCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "abilityUses": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "acesBefore15Minutes": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "alliedJungleMonsterKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "baronBuffGoldAdvantageOverThreshold": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "baronTakedowns": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "blastConeOppositeOpponentCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "bountyGold": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "buffsStolen": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "completeSupportQuestInTime": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "controlWardsPlaced": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "controlWardTimeCoverageInRiverOrEnemyHalf": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "damagePerMinute": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "damageTakenOnTeamPercentage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "dancedWithRiftHerald": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "deathsByEnemyChamps": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "dodgeSkillShotsSmallWindow": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "doubleAces": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "dragonTakedowns": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "earliestBaron": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "earliestDragonTakedown": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "earliestElderDragon": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "earlyLaningPhaseGoldExpAdvantage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "effectiveHealAndShielding": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "elderDragonKillsWithOpposingSoul": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "elderDragonMultikills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "enemyChampionImmobilizations": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "enemyJungleMonsterKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "epicMonsterKillsNearEnemyJungler": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "epicMonsterKillsWithin30SecondsOfSpawn": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "epicMonsterSteals": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "epicMonsterStolenWithoutSmite": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "fasterSupportQuestCompletion": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "fastestLegendary": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "firstTurretKilled": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "firstTurretKilledTime": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "flawlessAces": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "fullTeamTakedown": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "gameLength": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "getTakedownsInAllLanesEarlyJungleAsLaner": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "goldPerMinute": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "hadAfkTeammate": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "hadOpenNexus": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "highestChampionDamage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "highestCrowdControlScore": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "highestWardKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "immobilizeAndKillWithAlly": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "initialBuffCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "initialCrabCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "jungleCsBefore10Minutes": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "junglerKillsEarlyJungle": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "junglerTakedownsNearDamagedEpicMonster": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "kda": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killAfterHiddenWithAlly": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killedChampTookFullTeamDamageSurvived": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killingSprees": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killParticipation": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killsNearEnemyTurret": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killsOnLanersEarlyJungleAsJungler": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killsOnOtherLanesEarlyJungleAsLaner": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killsOnRecentlyHealedByAramPack": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killsUnderOwnTurret": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killsWithHelpFromEpicMonster": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "knockEnemyIntoTeamAndKill": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "kTurretsDestroyedBeforePlatesFall": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "landSkillShotsEarlyGame": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "laneMinionsFirst10Minutes": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "laningPhaseGoldExpAdvantage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "legendaryCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "lostAnInhibitor": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "maxCsAdvantageOnLaneOpponent": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "maxKillDeficit": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "maxLevelLeadLaneOpponent": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "mejaisFullStackInTime": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "moreEnemyJungleThanOpponent": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "mostWardsDestroyedOneSweeper": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "multiKillOneSpell": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "multikills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "multikillsAfterAggressiveFlash": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "multiTurretRiftHeraldCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "mythicItemUsed": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "outerTurretExecutesBefore10Minutes": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "outnumberedKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "outnumberedNexusKill": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "perfectDragonSoulsTaken": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "perfectGame": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "pickKillWithAlly": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "playedChampSelectPosition": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "poroExplosions": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "quickCleanse": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "quickFirstTurret": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "quickSoloKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "riftHeraldTakedowns": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "saveAllyFromDeath": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "scuttleCrabKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "shortestTimeToAceFromFirstTakedown": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "skillshotsDodged": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "skillshotsHit": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "snowballsHit": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "soloBaronKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "soloKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "soloTurretsLategame": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "stealthWardsPlaced": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "survivedSingleDigitHpCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "survivedThreeImmobilizesInFight": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedownOnFirstTurret": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedowns": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedownsAfterGainingLevelAdvantage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedownsBeforeJungleMinionSpawn": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedownsFirst25Minutes": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedownsFirstXMinutes": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedownsInAlcove": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedownsInEnemyFountain": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "teamBaronKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "teamDamagePercentage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "teamElderDragonKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "teamRiftHeraldKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "teleportTakedowns": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "thirdInhibitorDestroyedTime": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "threeWardsOneSweeperCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "tookLargeDamageSurvived": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "turretPlatesTaken": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "turretsTakenWithRiftHerald": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "turretTakedowns": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "twentyMinionsIn3SecondsCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "twoWardsOneSweeperCount": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "unseenRecalls": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "visionScoreAdvantageLaneOpponent": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "visionScorePerMinute": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "wardsGuarded": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "wardTakedowns": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "wardTakedownsBefore20M": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "legendaryItemUsed": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          },
-          "x-type": "List[int]"
-        }
-      }
-    },
     "val-ranked-v1.TierDetailDto": {
       "type": "object",
       "title": "TierDetailDto",
@@ -12439,117 +11764,139 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int"
+        },
+        "baronBuffGoldAdvantageOverThreshold": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "controlWardTimeCoverageInRiverOrEnemyHalf": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "earliestBaron": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "earliestDragonTakedown": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "earliestElderDragon": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "earlyLaningPhaseGoldExpAdvantage": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "fasterSupportQuestCompletion": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "fastestLegendary": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "hadAfkTeammate": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "highestChampionDamage": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "highestCrowdControlScore": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "highestWardKills": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "junglerKillsEarlyJungle": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "killsOnLanersEarlyJungleAsJungler": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "laningPhaseGoldExpAdvantage": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "legendaryCount": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "maxCsAdvantageOnLaneOpponent": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "maxLevelLeadLaneOpponent": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "mostWardsDestroyedOneSweeper": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "playedChampSelectPosition": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "soloTurretsLategame": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "takedownsFirst25Minutes": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "teleportTakedowns": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "thirdInhibitorDestroyedTime": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "threeWardsOneSweeperCount": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "visionScoreAdvantageLaneOpponent": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
         }
       },
-      "description": "Challenges DTO",
-      "required": [
-        "12AssistStreakCount",
-        "abilityUses",
-        "acesBefore15Minutes",
-        "alliedJungleMonsterKills",
-        "baronTakedowns",
-        "blastConeOppositeOpponentCount",
-        "bountyGold",
-        "buffsStolen",
-        "completeSupportQuestInTime",
-        "controlWardsPlaced",
-        "damagePerMinute",
-        "damageTakenOnTeamPercentage",
-        "dancedWithRiftHerald",
-        "deathsByEnemyChamps",
-        "dodgeSkillShotsSmallWindow",
-        "doubleAces",
-        "dragonTakedowns",
-        "legendaryItemUsed",
-        "effectiveHealAndShielding",
-        "elderDragonKillsWithOpposingSoul",
-        "elderDragonMultikills",
-        "enemyChampionImmobilizations",
-        "enemyJungleMonsterKills",
-        "epicMonsterKillsNearEnemyJungler",
-        "epicMonsterKillsWithin30SecondsOfSpawn",
-        "epicMonsterSteals",
-        "epicMonsterStolenWithoutSmite",
-        "firstTurretKilled",
-        "firstTurretKilledTime",
-        "flawlessAces",
-        "fullTeamTakedown",
-        "gameLength",
-        "getTakedownsInAllLanesEarlyJungleAsLaner",
-        "goldPerMinute",
-        "hadOpenNexus",
-        "immobilizeAndKillWithAlly",
-        "initialBuffCount",
-        "initialCrabCount",
-        "jungleCsBefore10Minutes",
-        "junglerTakedownsNearDamagedEpicMonster",
-        "kda",
-        "killAfterHiddenWithAlly",
-        "killedChampTookFullTeamDamageSurvived",
-        "killingSprees",
-        "killParticipation",
-        "killsNearEnemyTurret",
-        "killsOnOtherLanesEarlyJungleAsLaner",
-        "killsOnRecentlyHealedByAramPack",
-        "killsUnderOwnTurret",
-        "killsWithHelpFromEpicMonster",
-        "knockEnemyIntoTeamAndKill",
-        "kTurretsDestroyedBeforePlatesFall",
-        "landSkillShotsEarlyGame",
-        "laneMinionsFirst10Minutes",
-        "lostAnInhibitor",
-        "maxKillDeficit",
-        "mejaisFullStackInTime",
-        "moreEnemyJungleThanOpponent",
-        "multiKillOneSpell",
-        "multikills",
-        "multikillsAfterAggressiveFlash",
-        "multiTurretRiftHeraldCount",
-        "outerTurretExecutesBefore10Minutes",
-        "outnumberedKills",
-        "outnumberedNexusKill",
-        "perfectDragonSoulsTaken",
-        "perfectGame",
-        "pickKillWithAlly",
-        "poroExplosions",
-        "quickCleanse",
-        "quickFirstTurret",
-        "quickSoloKills",
-        "riftHeraldTakedowns",
-        "saveAllyFromDeath",
-        "scuttleCrabKills",
-        "shortestTimeToAceFromFirstTakedown",
-        "skillshotsDodged",
-        "skillshotsHit",
-        "snowballsHit",
-        "soloBaronKills",
-        "soloKills",
-        "stealthWardsPlaced",
-        "survivedSingleDigitHpCount",
-        "survivedThreeImmobilizesInFight",
-        "takedownOnFirstTurret",
-        "takedowns",
-        "takedownsAfterGainingLevelAdvantage",
-        "takedownsBeforeJungleMinionSpawn",
-        "takedownsFirstXMinutes",
-        "takedownsInAlcove",
-        "takedownsInEnemyFountain",
-        "teamBaronKills",
-        "teamDamagePercentage",
-        "teamElderDragonKills",
-        "teamRiftHeraldKills",
-        "tookLargeDamageSurvived",
-        "turretPlatesTaken",
-        "turretsTakenWithRiftHerald",
-        "turretTakedowns",
-        "twentyMinionsIn3SecondsCount",
-        "twoWardsOneSweeperCount",
-        "unseenRecalls",
-        "visionScorePerMinute",
-        "wardsGuarded",
-        "wardTakedowns",
-        "wardTakedownsBefore20M"
-      ]
+      "description": "Challenges DTO"
     },
     "match-v5.MissionsDto": {
       "type": "object",
