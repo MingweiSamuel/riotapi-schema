@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "5e592e017ea77bd14fa9e793655f6f82990aacd3",
-    "x-hash": "5e592e017ea77bd14fa9e793655f6f82990aacd3d97a3afbd5cba8254fad423515e31dfe6814c69e",
+    "version": "5817c26949684c1bf02981e4efbeee957d8b70ba",
+    "x-hash": "5817c26949684c1bf02981e4efbeee957d8b70bad97a3afbd5cba8254fad423515e31dfe6814c69e",
     "x-enumsHash": "d97a3afbd5cba8254fad423515e31dfe6814c69e"
   },
   "servers": [
@@ -11080,9 +11080,9 @@
             "x-type": "int"
           },
           "alliedJungleMonsterKills": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
+            "type": "number",
+            "format": "double",
+            "x-type": "double"
           },
           "baronTakedowns": {
             "type": "integer",
@@ -11116,13 +11116,13 @@
           },
           "damagePerMinute": {
             "type": "number",
-            "format": "float",
-            "x-type": "float"
+            "format": "double",
+            "x-type": "double"
           },
           "damageTakenOnTeamPercentage": {
             "type": "number",
-            "format": "float",
-            "x-type": "float"
+            "format": "double",
+            "x-type": "double"
           },
           "dancedWithRiftHerald": {
             "type": "integer",
@@ -11179,9 +11179,9 @@
             "x-type": "int"
           },
           "enemyJungleMonsterKills": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
+            "type": "number",
+            "format": "double",
+            "x-type": "double"
           },
           "epicMonsterKillsNearEnemyJungler": {
             "type": "integer",
@@ -11225,8 +11225,8 @@
           },
           "gameLength": {
             "type": "number",
-            "format": "float",
-            "x-type": "float"
+            "format": "double",
+            "x-type": "double"
           },
           "getTakedownsInAllLanesEarlyJungleAsLaner": {
             "type": "integer",
@@ -11235,8 +11235,8 @@
           },
           "goldPerMinute": {
             "type": "number",
-            "format": "float",
-            "x-type": "float"
+            "format": "double",
+            "x-type": "double"
           },
           "hadOpenNexus": {
             "type": "integer",
@@ -11259,9 +11259,9 @@
             "x-type": "int"
           },
           "jungleCsBefore10Minutes": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
+            "type": "number",
+            "format": "double",
+            "x-type": "double"
           },
           "junglerTakedownsNearDamagedEpicMonster": {
             "type": "integer",
@@ -11270,8 +11270,8 @@
           },
           "kda": {
             "type": "number",
-            "format": "float",
-            "x-type": "float"
+            "format": "double",
+            "x-type": "double"
           },
           "killAfterHiddenWithAlly": {
             "type": "integer",
@@ -11290,8 +11290,8 @@
           },
           "killParticipation": {
             "type": "number",
-            "format": "float",
-            "x-type": "float"
+            "format": "double",
+            "x-type": "double"
           },
           "killsNearEnemyTurret": {
             "type": "integer",
@@ -11354,9 +11354,9 @@
             "x-type": "int"
           },
           "moreEnemyJungleThanOpponent": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
+            "type": "number",
+            "format": "double",
+            "x-type": "double"
           },
           "multiKillOneSpell": {
             "type": "integer",
@@ -11530,8 +11530,8 @@
           },
           "teamDamagePercentage": {
             "type": "number",
-            "format": "float",
-            "x-type": "float"
+            "format": "double",
+            "x-type": "double"
           },
           "teamElderDragonKills": {
             "type": "integer",
@@ -11579,9 +11579,9 @@
             "x-type": "int"
           },
           "visionScorePerMinute": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
+            "type": "number",
+            "format": "double",
+            "x-type": "double"
           },
           "wardsGuarded": {
             "type": "integer",
@@ -11780,7 +11780,7 @@
             "format": "int32",
             "x-type": "int"
           },
-          "PlayerScore9": {
+          "playerScore9": {
             "type": "integer",
             "format": "int32",
             "x-type": "int"
@@ -11807,7 +11807,7 @@
           "playerScore6",
           "playerScore7",
           "playerScore8",
-          "PlayerScore9",
+          "playerScore9",
           "playerScore10",
           "playerScore11"
         ]
