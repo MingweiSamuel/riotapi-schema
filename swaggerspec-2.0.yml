@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 2cd20e103877850f7fb36626ad59fc93bb19829f
-  x-hash: 2cd20e103877850f7fb36626ad59fc93bb19829fd97a3afbd5cba8254fad423515e31dfe6814c69e
+  version: d15378555b1904b7f6e2a7c948c35bc408350612
+  x-hash: d15378555b1904b7f6e2a7c948c35bc408350612d97a3afbd5cba8254fad423515e31dfe6814c69e
   x-enumsHash: d97a3afbd5cba8254fad423515e31dfe6814c69e
 host: na1.api.riotgames.com
 x-host-platform:
@@ -8641,8 +8641,8 @@ definitions:
         format: int32
         x-type: int
       challenges:
-        $ref: '#/definitions/match-v5.ParticipantChallenges'
-        x-type: ParticipantChallenges
+        $ref: '#/definitions/match-v5.ChallengesDto'
+        x-type: ChallengesDto
       damageDealtToBuildings:
         type: integer
         format: int32
@@ -8907,11 +8907,9 @@ definitions:
       riotIdGameName:
         type: string
         x-type: string
-        description: 'Use `riotIdName` for games before patch 14.5.'
       riotIdName:
         type: string
         x-type: string
-        description: 'Replaced by `riotIdGameName` in games played in patch 14.5 and after.'
       riotIdTagline:
         type: string
         x-type: string
