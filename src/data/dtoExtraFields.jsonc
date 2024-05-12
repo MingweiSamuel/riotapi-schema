@@ -547,6 +547,11 @@
       "format": "double",
       "x-type": "double"
     },
+    "mythicItemUsed": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
     "playedChampSelectPosition": {
       "type": "number",
       "format": "double",
