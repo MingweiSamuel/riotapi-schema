@@ -448,8 +448,10 @@
       "format": "int64"
     }
   },
-  // https://github.com/RiotGames/developer-relations/issues/754
+  // https://github.com/RiotGames/developer-relations/issues/928
+  // related: https://github.com/RiotGames/developer-relations/issues/754
   "match-v5.ChallengesDto": {
+    // Missing
     "baronBuffGoldAdvantageOverThreshold": {
       "type": "number",
       "format": "double",
@@ -576,6 +578,67 @@
       "x-type": "double"
     },
     "visionScoreAdvantageLaneOpponent": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    // Need to be float instead of int.
+    "alliedJungleMonsterKills": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "damagePerMinute": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "damageTakenOnTeamPercentage": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "enemyJungleMonsterKills": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "gameLength": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "goldPerMinute": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "jungleCsBefore10Minutes": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "kda": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "killParticipation": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "moreEnemyJungleThanOpponent": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "teamDamagePercentage": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "visionScorePerMinute": {
       "type": "number",
       "format": "double",
       "x-type": "double"
