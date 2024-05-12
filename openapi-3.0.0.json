@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "35b1c1fe8dfa2f171678bac6ee7bb78fa8ac94b7",
-    "x-hash": "35b1c1fe8dfa2f171678bac6ee7bb78fa8ac94b7d97a3afbd5cba8254fad423515e31dfe6814c69e",
+    "version": "c53826c7122784e5a525ce61f16adb50776e1ede",
+    "x-hash": "c53826c7122784e5a525ce61f16adb50776e1eded97a3afbd5cba8254fad423515e31dfe6814c69e",
     "x-enumsHash": "d97a3afbd5cba8254fad423515e31dfe6814c69e"
   },
   "servers": [
@@ -10530,8 +10530,8 @@
             "x-type": "int"
           },
           "missions": {
-            "$ref": "#/components/schemas/match-v5.ParticipantMissions",
-            "x-type": "ParticipantMissions"
+            "$ref": "#/components/schemas/match-v5.MissionsDto",
+            "x-type": "MissionsDto"
           },
           "neutralMinionsKilled": {
             "type": "integer",
@@ -13378,98 +13378,6 @@
             "x-type": "List[int]"
           }
         }
-      },
-      "match-v5.ParticipantMissions": {
-        "type": "object",
-        "title": "ParticipantMissions",
-        "properties": {
-          "PlayerScore0": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore0"
-          },
-          "PlayerScore1": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore1"
-          },
-          "PlayerScore10": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore10"
-          },
-          "PlayerScore11": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore11"
-          },
-          "PlayerScore2": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore2"
-          },
-          "PlayerScore3": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore3"
-          },
-          "PlayerScore4": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore4"
-          },
-          "PlayerScore5": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore5"
-          },
-          "PlayerScore6": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore6"
-          },
-          "PlayerScore7": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore7"
-          },
-          "PlayerScore8": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore8"
-          },
-          "PlayerScore9": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int",
-            "x-alias": "playerScore9"
-          }
-        },
-        "required": [
-          "PlayerScore0",
-          "PlayerScore1",
-          "PlayerScore10",
-          "PlayerScore11",
-          "PlayerScore2",
-          "PlayerScore3",
-          "PlayerScore4",
-          "PlayerScore5",
-          "PlayerScore6",
-          "PlayerScore7",
-          "PlayerScore8",
-          "PlayerScore9"
-        ]
       },
       "match-v5.MatchTimelineVictimDamage": {
         "title": "MatchTimelineVictimDamage",
