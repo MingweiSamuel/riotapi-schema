@@ -93,14 +93,6 @@
     }
   },
   //
-  // https://github.com/RiotGames/developer-relations/issues/829
-  "match-v5.ObjectivesDto": {
-    "horde": {
-      "$ref": "#/components/schemas/match-v5.ObjectiveDto",
-      "x-type": "ObjectiveDto"
-    }
-  },
-  //
   // https://github.com/RiotGames/developer-relations/issues/906
   "spectator-tft-v5.CurrentGameParticipant": {
     "riotId": {
