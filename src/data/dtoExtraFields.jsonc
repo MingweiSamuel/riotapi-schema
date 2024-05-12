@@ -149,10 +149,6 @@
       "format": "int32",
       "x-type": "int"
     },
-    "missions": {
-      "$ref": "#/components/schemas/match-v5.ParticipantMissions",
-      "x-type": "ParticipantMissions"
-    },
     "playerScore0": {
       "type": "integer",
       "format": "int32",
