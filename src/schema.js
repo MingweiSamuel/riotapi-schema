@@ -123,6 +123,9 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
         schema.required.push(fieldName);
       }
       annotateEnums(prop, endpointName, fieldName, methodName, isParam);
+      if (null != schema.properties[fieldName]) {
+        console.log(`      Overwriting existing field: '${fieldName}'`);
+      }
       schema.properties[fieldName] = JSON.parse(JSON.stringify(prop));
     }
   }
