@@ -8222,6 +8222,10 @@ definitions:
       gameEndedInSurrender:
         type: boolean
         x-type: boolean
+      holdPings:
+        type: integer
+        format: int32
+        x-type: int
       getBackPings:
         type: integer
         format: int32
@@ -8608,10 +8612,6 @@ definitions:
         format: int32
         x-type: int
       basicPings:
-        type: integer
-        format: int32
-        x-type: int
-      holdPings:
         type: integer
         format: int32
         x-type: int
