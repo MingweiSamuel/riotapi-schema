@@ -6842,59 +6842,6 @@ definitions:
       - UnrealKills
       - VisionScore
       - WardsKilled
-  match-v5.MissionsDto:
-    type: object
-    title: MissionsDto
-    properties:
-      playerScore0:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore1:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore2:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore3:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore4:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore5:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore6:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore7:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore8:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore9:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore10:
-        type: integer
-        format: int32
-        x-type: int
-      playerScore11:
-        type: integer
-        format: int32
-        x-type: int
-    description: 'Missions DTO'
   champion-mastery-v4.ChampionMasteryDto:
     type: object
     title: ChampionMasteryDto
@@ -9301,6 +9248,59 @@ definitions:
         format: double
         x-type: double
     description: 'Challenges DTO'
+  match-v5.MissionsDto:
+    type: object
+    title: MissionsDto
+    properties:
+      playerScore0:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore1:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore2:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore3:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore4:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore5:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore6:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore7:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore8:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore9:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore10:
+        type: integer
+        format: int32
+        x-type: int
+      playerScore11:
+        type: integer
+        format: int32
+        x-type: int
+    description: 'Missions DTO'
   match-v5.PerksDto:
     type: object
     title: PerksDto
