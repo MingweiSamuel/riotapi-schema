@@ -571,5 +571,70 @@
       "VisionScore",
       "WardsKilled"
     ]
+  },
+
+
+  // https://github.com/RiotGames/developer-relations/issues/930#issuecomment-2116062942
+  "champion-mastery-v4.NextSeasonMilestone": {
+    "type": "object",
+    "title": "NextSeasonMilestone",
+    "properties": {
+      "requireGradeCounts": {
+        "type": "object",
+        "x-key": {
+          "type": "string",
+          "x-type": "string"
+        },
+        "additionalProperties": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "x-type": "Map[string, int]"
+      },
+      "rewardMarks": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "bonus": {
+        "type": "boolean",
+        "x-type": "boolean"
+      },
+      "rewardConfig": {
+        "$ref": "#/components/schemas/champion-mastery-v4.RewardConfig",
+        "x-type": "RewardConfig"
+      }
+    },
+    "required": [
+      "requireGradeCounts",
+      "rewardMarks",
+      "bonus",
+      "rewardConfig"
+    ]
+  },
+  "champion-mastery-v4.RewardConfig": {
+    "type": "object",
+    "title": "RewardConfig",
+    "properties": {
+      "rewardValue": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "rewardType": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "maximumReward": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      }
+    },
+    "required": [
+      "rewardValue",
+      "rewardType",
+      "maximumReward"
+    ]
   }
 }
