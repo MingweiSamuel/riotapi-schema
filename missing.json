@@ -1,5 +1,6 @@
 [
   "account-v1.ActiveShardDto",
+  "champion-mastery-v4.NextSeasonMilestone",
   "lol-challenges-v1.ChallengeInfo",
   "lol-challenges-v1.ChallengePoints",
   "lol-challenges-v1.PlayerClientPreferences",

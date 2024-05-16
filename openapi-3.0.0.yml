@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 6461993a9c4165ddca053929f19f6d0e3eb1ca14
-  x-hash: 6461993a9c4165ddca053929f19f6d0e3eb1ca14d97a3afbd5cba8254fad423515e31dfe6814c69e
+  version: 42bbac355a3e32eabc9e11347446b12614919806
+  x-hash: 42bbac355a3e32eabc9e11347446b12614919806d97a3afbd5cba8254fad423515e31dfe6814c69e
   x-enumsHash: d97a3afbd5cba8254fad423515e31dfe6814c69e
 servers:
   -
@@ -6483,6 +6483,23 @@ components:
           format: int32
           x-type: int
           description: 'The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0.'
+        markRequiredForNextLevel:
+          type: integer
+          format: int32
+          x-type: int
+        championSeasonMilestone:
+          type: integer
+          format: int32
+          x-type: int
+        milestoneGrades:
+          type: array
+          items:
+            type: string
+            x-type: string
+          x-type: 'List[string]'
+        nextSeasonMilestone:
+          $ref: '#/components/schemas/champion-mastery-v4.NextSeasonMilestone'
+          x-type: NextSeasonMilestone
       description: 'This object contains single Champion Mastery information for player and champion combination.'
       required:
         - puuid
@@ -6495,6 +6512,39 @@ components:
         - championPoints
         - championPointsSinceLastLevel
         - tokensEarned
+        - markRequiredForNextLevel
+        - championSeasonMilestone
+        - milestoneGrades
+        - nextSeasonMilestone
+    champion-mastery-v4.NextSeasonMilestone:
+      type: object
+      title: NextSeasonMilestone
+      properties:
+        requireGradeCounts:
+          type: object
+          x-key:
+            type: string
+            x-type: string
+          additionalProperties:
+            type: integer
+            format: int32
+            x-type: int
+          x-type: 'Map[string, int]'
+        rewardMarks:
+          type: integer
+          format: int32
+          x-type: int
+        bonus:
+          type: boolean
+          x-type: boolean
+        rewardConfig:
+          $ref: '#/components/schemas/champion-mastery-v4.RewardConfig'
+          x-type: RewardConfig
+      required:
+        - requireGradeCounts
+        - rewardMarks
+        - bonus
+        - rewardConfig
     champion-v3.ChampionInfo:
       type: object
       title: ChampionInfo
@@ -9319,7 +9369,6 @@ components:
       required:
         - events
         - timestamp
-        - events
     match-v5.EventsTimeLineDto:
       type: object
       title: EventsTimeLineDto
@@ -13123,6 +13172,24 @@ components:
         - translations
         - created_at
         - updated_at
+    champion-mastery-v4.RewardConfig:
+      type: object
+      title: RewardConfig
+      properties:
+        rewardValue:
+          type: string
+          x-type: string
+        rewardType:
+          type: string
+          x-type: string
+        maximumReward:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - rewardValue
+        - rewardType
+        - maximumReward
   securitySchemes:
     api_key:
       type: apiKey
