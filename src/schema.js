@@ -119,7 +119,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
     for (const [fieldName, extraProp] of Object.entries(extraFields)) {
       const prop = JSON.parse(JSON.stringify(extraProp));
       const isRequired = !Schema.isFieldInDtoOptional(endpointName, dtoName, fieldName);
-      if (isRequired) {
+      if (isRequired && !schema.required.includes(fieldName)) {
         schema.required.push(fieldName);
       }
       annotateEnums(prop, endpointName, fieldName, methodName, isParam);
