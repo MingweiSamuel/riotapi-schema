@@ -10,6 +10,18 @@
       "type": "integer",
       "format": "int32",
       "x-type": "int"
+    },
+    "milestoneGrades": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "x-type": "List[string]"
+    },
+    "nextSeasonMilestone": {
+      "$ref": "#/components/schemas/champion-mastery-v4.NextSeasonMilestone",
+      "x-type": "NextSeasonMilestone"
     }
   },
   //
