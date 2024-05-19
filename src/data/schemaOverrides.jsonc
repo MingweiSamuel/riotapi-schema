@@ -609,8 +609,7 @@
     "required": [
       "requireGradeCounts",
       "rewardMarks",
-      "bonus",
-      "rewardConfig"
+      "bonus"
     ]
   },
   "champion-mastery-v4.RewardConfig": {
