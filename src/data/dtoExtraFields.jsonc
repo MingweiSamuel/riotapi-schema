@@ -658,6 +658,22 @@
       "type": "number",
       "format": "double",
       "x-type": "double"
+    },
+    // 2024-05-18
+    "InfernalScalePickup": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
+    },
+    "fistBumpParticipation": {
+      "type": "number",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "voidMonsterKill": {
+      "type": "number",
+      "format": "int32",
+      "x-type": "int"
     }
   }
 }
