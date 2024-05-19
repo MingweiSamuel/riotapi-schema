@@ -850,6 +850,16 @@
     "x-name": "NEXUS_BLITZ_DEPRECATED_1200"
   },
   {
+    "queueId": 1210,
+    "map": "Convergence",
+    "description": "Teamfight Tactics (Choncc's Treasure)",
+    "notes": null,
+    "x-value": 1210,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics (Choncc's Treasure) games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_CHONCCS_TREASURE"
+  },
+  {
     "queueId": 1300,
     "map": "Nexus Blitz",
     "description": "Nexus Blitz games",
