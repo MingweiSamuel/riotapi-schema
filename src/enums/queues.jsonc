@@ -59,5 +59,12 @@
         "map": "Rings of Wrath",
         "description": "Arena (`CHERRY` games)",
         "notes": null
+    },
+    // https://github.com/RiotGames/developer-relations/issues/934
+    {
+        "queueId": 1210,
+        "map": "Convergence",
+        "description": "Teamfight Tactics (Choncc's Treasure)",
+        "notes": null
     }
 ]
