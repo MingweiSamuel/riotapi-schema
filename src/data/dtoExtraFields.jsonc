@@ -666,12 +666,12 @@
       "x-type": "double"
     },
     "fistBumpParticipation": {
-      "type": "number",
+      "type": "integer",
       "format": "int32",
       "x-type": "int"
     },
     "voidMonsterKill": {
-      "type": "number",
+      "type": "integer",
       "format": "int32",
       "x-type": "int"
     }
