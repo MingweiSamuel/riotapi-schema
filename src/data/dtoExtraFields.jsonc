@@ -674,6 +674,12 @@
       "type": "integer",
       "format": "int32",
       "x-type": "int"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/928#issuecomment-2133869752
+    "firstTurretKilled": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
     }
   }
 }
