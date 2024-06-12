@@ -154,6 +154,8 @@
   "match-v5.ParticipantDto.playerAugment2": true,
   "match-v5.ParticipantDto.playerAugment3": true,
   "match-v5.ParticipantDto.playerAugment4": true,
+  "match-v5.ParticipantDto.playerAugment5": true,
+  "match-v5.ParticipantDto.playerAugment6": true,
   "match-v5.ParticipantDto.playerSubteamId": true,
   "match-v5.ParticipantDto.subteamPlacement": true,
   "match-v5.ParticipantDto.placement": true,

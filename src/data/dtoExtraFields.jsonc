@@ -101,6 +101,17 @@
       "type": "integer",
       "format": "int32",
       "x-type": "int"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/754#issuecomment-2162200297
+    "playerAugment5": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerAugment6": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
     }
   },
   //
