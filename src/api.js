@@ -136,7 +136,7 @@ async function fixMissingDtos(endpoints) {
               }
               console.log(`    Missing DTO, referenced by field: ${otherEndpointName}.${otherDtoName}.`);
               // Skip if already added to queue.
-              if (missingDtos.some(({ dtoName }) => dtoName === otherDtoName)) continue;
+              if (missingDtos.some(({ endpoint, dtoName }) => endpoint.name === otherEndpointName && dtoName === otherDtoName)) continue;
               missingDtos.push({
                 endpoint, // Same endpoint.
                 dtoName: otherDtoName,
