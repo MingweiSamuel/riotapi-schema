@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 3c0bd6b3aee83b97e90e7c93c5ef563b7ddfbb11
-  x-hash: 3c0bd6b3aee83b97e90e7c93c5ef563b7ddfbb113b9df736778d27cd6467f8d52f2ef1d8075f86b1
+  version: 455143c78d135152677879137252750775ff01f0
+  x-hash: 455143c78d135152677879137252750775ff01f03b9df736778d27cd6467f8d52f2ef1d8075f86b1
   x-enumsHash: 3b9df736778d27cd6467f8d52f2ef1d8075f86b1
 servers:
   -
@@ -6537,6 +6537,24 @@ components:
         - requireGradeCounts
         - rewardMarks
         - bonus
+    champion-mastery-v4.RewardConfig:
+      type: object
+      title: RewardConfig
+      properties:
+        rewardValue:
+          type: string
+          x-type: string
+        rewardType:
+          type: string
+          x-type: string
+        maximumReward:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - rewardValue
+        - rewardType
+        - maximumReward
     champion-v3.ChampionInfo:
       type: object
       title: ChampionInfo
@@ -8094,6 +8112,54 @@ components:
           type: integer
           format: int32
           x-type: int
+        playerScore0:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore1:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore2:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore3:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore4:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore5:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore6:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore7:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore8:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore9:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore10:
+          type: integer
+          format: int32
+          x-type: int
+        playerScore11:
+          type: integer
+          format: int32
+          x-type: int
         pentaKills:
           type: integer
           format: int32
@@ -8342,54 +8408,6 @@ components:
           format: int32
           x-type: int
         basicPings:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore0:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore1:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore10:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore11:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore2:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore3:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore4:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore5:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore6:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore7:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore8:
-          type: integer
-          format: int32
-          x-type: int
-        playerScore9:
           type: integer
           format: int32
           x-type: int
@@ -9497,47 +9515,18 @@ components:
       type: object
       title: ParticipantFramesDto
       properties:
-        '1':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '2':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '3':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '4':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '5':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '6':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '7':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '8':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '9':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
-        '10':
-          $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
-          x-type: ParticipantFrameDto
+        participantFrames:
+          type: object
+          x-key:
+            type: integer
+            format: int32
+            x-type: Integer
+          additionalProperties:
+            $ref: '#/components/schemas/match-v5.ParticipantFrameDto'
+            x-type: ParticipantFrameDto
+          x-type: 'Map[Integer, ParticipantFrameDto]'
       required:
-        - '1'
-        - '2'
-        - '3'
-        - '4'
-        - '5'
-        - '6'
-        - '7'
-        - '8'
-        - '9'
-        - '10'
+        - participantFrames
     match-v5.ParticipantFrameDto:
       type: object
       title: ParticipantFrameDto
@@ -9600,6 +9589,58 @@ components:
         - timeEnemySpentControlled
         - totalGold
         - xp
+    match-v5.PositionDto:
+      type: object
+      title: PositionDto
+      properties:
+        x:
+          type: integer
+          format: int32
+          x-type: int
+        y:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - x
+        - y
+    match-v5.MatchTimelineVictimDamage:
+      title: MatchTimelineVictimDamage
+      type: object
+      properties:
+        basic:
+          type: boolean
+        magicDamage:
+          type: integer
+          format: int32
+        name:
+          type: string
+        participantId:
+          type: integer
+          format: int32
+        physicalDamage:
+          type: integer
+          format: int32
+        spellName:
+          type: string
+        spellSlot:
+          type: integer
+          format: int32
+        trueDamage:
+          type: integer
+          format: int32
+        type:
+          type: string
+      required:
+        - basic
+        - magicDamage
+        - name
+        - participantId
+        - physicalDamage
+        - spellName
+        - spellSlot
+        - trueDamage
+        - type
     match-v5.ChampionStatsDto:
       type: object
       title: ChampionStatsDto
@@ -9792,58 +9833,6 @@ components:
         - trueDamageDone
         - trueDamageDoneToChampions
         - trueDamageTaken
-    match-v5.PositionDto:
-      type: object
-      title: PositionDto
-      properties:
-        x:
-          type: integer
-          format: int32
-          x-type: int
-        y:
-          type: integer
-          format: int32
-          x-type: int
-      required:
-        - x
-        - y
-    match-v5.MatchTimelineVictimDamage:
-      title: MatchTimelineVictimDamage
-      type: object
-      properties:
-        basic:
-          type: boolean
-        magicDamage:
-          type: integer
-          format: int32
-        name:
-          type: string
-        participantId:
-          type: integer
-          format: int32
-        physicalDamage:
-          type: integer
-          format: int32
-        spellName:
-          type: string
-        spellSlot:
-          type: integer
-          format: int32
-        trueDamage:
-          type: integer
-          format: int32
-        type:
-          type: string
-      required:
-        - basic
-        - magicDamage
-        - name
-        - participantId
-        - physicalDamage
-        - spellName
-        - spellSlot
-        - trueDamage
-        - type
     spectator-tft-v5.CurrentGameInfo:
       type: object
       title: CurrentGameInfo
@@ -13144,24 +13133,6 @@ components:
         - translations
         - created_at
         - updated_at
-    champion-mastery-v4.RewardConfig:
-      type: object
-      title: RewardConfig
-      properties:
-        rewardValue:
-          type: string
-          x-type: string
-        rewardType:
-          type: string
-          x-type: string
-        maximumReward:
-          type: integer
-          format: int32
-          x-type: int
-      required:
-        - rewardValue
-        - rewardType
-        - maximumReward
   securitySchemes:
     api_key:
       type: apiKey
