@@ -85,9 +85,11 @@ async function getEndpoints() {
 async function fixMissingDtos(endpoints) {
   // Look back at previous version for any missing dtos.
   // TODO: doesn't check if added dtos in turn have their own missing dtos...
-  let missingDtos = endpoints.flatMap(endpoint => endpoint.list_missing_dtos()
-    .map(dtoName => ({ endpoint, dtoName })));
-  let missingDtoNames = [];
+  const missingDtos = endpoints.flatMap(
+    endpoint => endpoint.list_missing_dtos()
+      .map(dtoName => ({ endpoint, dtoName }))
+  );
+  const missingDtoNames = [];
   if (missingDtos.length) {
     console.log();
 
@@ -108,18 +110,42 @@ async function fixMissingDtos(endpoints) {
         // Try finding DTO in previous spec.
 
         // TODO: fullDtoName magic string.
-        let fullDtoName = endpoint.name + '.' + dtoName;
+        const fullDtoName = endpoint.name + '.' + dtoName;
         console.log('Missing DTO: ' + fullDtoName + '.');
         missingDtoNames.push(fullDtoName);
 
         let oldDto = oldSchema.components.schemas[fullDtoName]
         if (oldDto) {
-          if (Object.keys(oldDto.properties).length) {
+          const oldDtoFields = Object.values(oldDto.properties);
+          if (0 < oldDtoFields.length) {
             console.log('  Using previous commit version.');
             endpoint.add_old_dto(oldDto);
+
+            // Recurse on any `$ref` fields.
+            for (const field of oldDtoFields) {
+              if (null == field.$ref) continue;
+              const REF_PREFIX = '#/components/schemas/';
+              if (!field.$ref.startsWith(REF_PREFIX)) {
+                console.log(`    Unexpected \`$ref\` format: ${field.ref}.`);
+                continue;
+              }
+              const [ otherEndpointName, otherDtoName ] = field.$ref.slice(REF_PREFIX.length).split('.', 2);
+              if (otherEndpointName !== endpoint.name) {
+                console.log(`    Unexpected changed endpoint name traversing previous commit version: ${otherEndpointName}`);
+                continue;
+              }
+              console.log(`    Missing DTO, referenced by field: ${otherEndpointName}.${otherDtoName}.`);
+              // Skip if already added to queue.
+              if (missingDtos.some(({ dtoName }) => dtoName === otherDtoName)) continue;
+              missingDtos.push({
+                endpoint, // Same endpoint.
+                dtoName: otherDtoName,
+              });
+            }
+
             continue outer;
           }
-          console.log('  Not using previous commit version, is placeholder.')
+          console.log('  Not using previous commit version, is placeholder (empty `properties`).')
         }
 
         // Try finding DTO in endpointSharedDtos.
@@ -147,7 +173,7 @@ async function fixMissingDtos(endpoints) {
       }
     }
     catch(e) {
-      console.log('FAILED to get previous commit.', e);
+      console.log('FAILED to get DTOs from previous commit.', e);
     }
   }
   return missingDtoNames;
