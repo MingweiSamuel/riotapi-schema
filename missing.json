@@ -5,8 +5,6 @@
   "lol-challenges-v1.ChallengePoints",
   "lol-challenges-v1.PlayerClientPreferences",
   "match-v5.MatchTimelineVictimDamage",
-  "match-v5.ParticipantFrameDto",
-  "match-v5.PositionDto",
   "tft-match-v1.CompanionDto",
   "tft-match-v1.ParticipantMissionsDto",
   "val-ranked-v1.TierDetailDto"
