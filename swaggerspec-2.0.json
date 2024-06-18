@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "0b0a3ee5baf06771eb0c2435c75a2532e14ef310",
-    "x-hash": "0b0a3ee5baf06771eb0c2435c75a2532e14ef3103b9df736778d27cd6467f8d52f2ef1d8075f86b1",
+    "version": "e77f9dc1f37ca24db7b47309021310b8886cfea0",
+    "x-hash": "e77f9dc1f37ca24db7b47309021310b8886cfea03b9df736778d27cd6467f8d52f2ef1d8075f86b1",
     "x-enumsHash": "3b9df736778d27cd6467f8d52f2ef1d8075f86b1"
   },
   "host": "na1.api.riotgames.com",
@@ -10468,12 +10468,14 @@
         "allInPings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Yellow crossed swords"
         },
         "assistMePings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Green flag"
         },
         "assists": {
           "type": "integer",
@@ -10514,7 +10516,8 @@
         "commandPings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Blue generic ping (ALT+click)"
         },
         "championTransform": {
           "type": "integer",
@@ -10542,11 +10545,6 @@
           "x-type": "int"
         },
         "damageDealtToTurrets": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "dangerPings": {
           "type": "integer",
           "format": "int32",
           "x-type": "int"
@@ -10583,12 +10581,14 @@
         "enemyMissingPings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Yellow questionmark"
         },
         "enemyVisionPings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Red eyeball"
         },
         "firstBloodAssist": {
           "type": "boolean",
@@ -10608,7 +10608,8 @@
         },
         "gameEndedInEarlySurrender": {
           "type": "boolean",
-          "x-type": "boolean"
+          "x-type": "boolean",
+          "description": "This is an offshoot of the OneStone challenge. The code checks if a spell with the same instance ID does the final point of damage to at least 2 Champions. It doesn't matter if they're enemies, but you cannot hurt your friends."
         },
         "gameEndedInSurrender": {
           "type": "boolean",
@@ -10622,7 +10623,8 @@
         "getBackPings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Yellow circle with horizontal line"
         },
         "goldEarned": {
           "type": "integer",
@@ -10750,12 +10752,14 @@
         "neutralMinionsKilled": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "neutralMinionsKilled = mNeutralMinionsKilled, which is incremented on kills of kPet and kJungleMonster"
         },
         "needVisionPings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Green ward"
         },
         "nexusKills": {
           "type": "integer",
@@ -10785,7 +10789,8 @@
         "onMyWayPings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Blue arrow pointing at ground"
         },
         "participantId": {
           "type": "integer",
@@ -10909,7 +10914,8 @@
         "pushPings": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Green minion"
         },
         "profileIcon": {
           "type": "integer",
@@ -11062,17 +11068,20 @@
         "totalHeal": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Whenever positive health is applied (which translates to all heals in the game but not things like regeneration), totalHeal is incremented by the amount of health received. This includes healing enemies, jungle monsters, yourself, etc"
         },
         "totalHealsOnTeammates": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Whenever positive health is applied (which translates to all heals in the game but not things like regeneration), totalHealsOnTeammates is incremented by the amount of health received.  This is post modified, so if you heal someone missing 5 health for 100 you will get +5 totalHealsOnTeammates"
         },
         "totalMinionsKilled": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "totalMillionsKilled = mMinionsKilled, which is only incremented on kills of kTeamMinion, kMeleeLaneMinion, kSuperLaneMinion, kRangedLaneMinion and kSiegeLaneMinion"
         },
         "totalTimeCCDealt": {
           "type": "integer",
@@ -11284,6 +11293,156 @@
       "title": "ChallengesDto",
       "properties": {
         "12AssistStreakCount": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "baronBuffGoldAdvantageOverThreshold": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "controlWardTimeCoverageInRiverOrEnemyHalf": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "earliestBaron": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "earliestDragonTakedown": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "earliestElderDragon": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "earlyLaningPhaseGoldExpAdvantage": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "fasterSupportQuestCompletion": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "fastestLegendary": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "hadAfkTeammate": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "highestChampionDamage": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "highestCrowdControlScore": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "highestWardKills": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "junglerKillsEarlyJungle": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "killsOnLanersEarlyJungleAsJungler": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "laningPhaseGoldExpAdvantage": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "legendaryCount": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "maxCsAdvantageOnLaneOpponent": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "maxLevelLeadLaneOpponent": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "mostWardsDestroyedOneSweeper": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "mythicItemUsed": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "playedChampSelectPosition": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "soloTurretsLategame": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "takedownsFirst25Minutes": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "teleportTakedowns": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "thirdInhibitorDestroyedTime": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "threeWardsOneSweeperCount": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "visionScoreAdvantageLaneOpponent": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "InfernalScalePickup": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
+        },
+        "fistBumpParticipation": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "voidMonsterKill": {
           "type": "integer",
           "format": "int32",
           "x-type": "int"
@@ -11580,7 +11739,8 @@
         "multiKillOneSpell": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "This is an offshoot of the OneStone challenge. The code checks if a spell with the same instance ID does the final point of damage to at least 2 Champions. It doesn't matter if they're enemies, but you cannot hurt your friends."
         },
         "multikills": {
           "type": "integer",
@@ -11775,7 +11935,8 @@
         "turretsTakenWithRiftHerald": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "description": "Any player who damages a tower that is destroyed within 30 seconds of a Rift Herald charge will receive credit. A player who does not damage the tower will not receive credit."
         },
         "turretTakedowns": {
           "type": "integer",
@@ -11813,156 +11974,6 @@
           "x-type": "int"
         },
         "wardTakedownsBefore20M": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "baronBuffGoldAdvantageOverThreshold": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "controlWardTimeCoverageInRiverOrEnemyHalf": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "earliestBaron": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "earliestDragonTakedown": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "earliestElderDragon": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "earlyLaningPhaseGoldExpAdvantage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "fasterSupportQuestCompletion": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "fastestLegendary": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "hadAfkTeammate": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "highestChampionDamage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "highestCrowdControlScore": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "highestWardKills": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "junglerKillsEarlyJungle": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "killsOnLanersEarlyJungleAsJungler": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "laningPhaseGoldExpAdvantage": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "legendaryCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "maxCsAdvantageOnLaneOpponent": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "maxLevelLeadLaneOpponent": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "mostWardsDestroyedOneSweeper": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "mythicItemUsed": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "playedChampSelectPosition": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "soloTurretsLategame": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "takedownsFirst25Minutes": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "teleportTakedowns": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "thirdInhibitorDestroyedTime": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "threeWardsOneSweeperCount": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "visionScoreAdvantageLaneOpponent": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "InfernalScalePickup": {
-          "type": "number",
-          "format": "double",
-          "x-type": "double"
-        },
-        "fistBumpParticipation": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "voidMonsterKill": {
           "type": "integer",
           "format": "int32",
           "x-type": "int"
