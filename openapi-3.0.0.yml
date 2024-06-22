@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: d087f1a9b9b73fa77744360ae39c8fa95ba52703
-  x-hash: d087f1a9b9b73fa77744360ae39c8fa95ba527033b9df736778d27cd6467f8d52f2ef1d8075f86b1
+  version: c6a72fe462539a79dba4fbaa66b180aa2761bdb3
+  x-hash: c6a72fe462539a79dba4fbaa66b180aa2761bdb33b9df736778d27cd6467f8d52f2ef1d8075f86b1
   x-enumsHash: 3b9df736778d27cd6467f8d52f2ef1d8075f86b1
 servers:
   -
@@ -6669,11 +6669,6 @@ components:
           format: int64
           x-type: long
           description: 'Number of points earned since current level has been achieved.'
-        tokensEarned:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0.'
         markRequiredForNextLevel:
           type: integer
           format: int32
@@ -6682,15 +6677,20 @@ components:
           type: integer
           format: int32
           x-type: int
+        nextSeasonMilestone:
+          $ref: '#/components/schemas/champion-mastery-v4.NextSeasonMilestone'
+          x-type: NextSeasonMilestone
+        tokensEarned:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'The token earned for this champion at the current championLevel. When the championLevel is advanced the tokensEarned resets to 0.'
         milestoneGrades:
           type: array
           items:
             type: string
             x-type: string
           x-type: 'List[string]'
-        nextSeasonMilestone:
-          $ref: '#/components/schemas/champion-mastery-v4.NextSeasonMilestone'
-          x-type: NextSeasonMilestone
       description: 'This object contains single Champion Mastery information for player and champion combination.'
       required:
         - puuid
@@ -6700,10 +6700,58 @@ components:
         - championLevel
         - championPoints
         - championPointsSinceLastLevel
-        - tokensEarned
         - markRequiredForNextLevel
         - championSeasonMilestone
         - nextSeasonMilestone
+        - tokensEarned
+    champion-mastery-v4.NextSeasonMilestonesDto:
+      type: object
+      title: NextSeasonMilestonesDto
+      properties:
+        requireGradeCounts:
+          type: object
+          x-type: object
+        rewardMarks:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Reward marks.'
+        bonus:
+          type: boolean
+          x-type: boolean
+          description: Bonus.
+        rewardConfig:
+          $ref: '#/components/schemas/champion-mastery-v4.RewardConfigDto'
+          x-type: RewardConfigDto
+          description: 'Reward configuration.'
+      description: 'This object contains required next season milestone information.'
+      required:
+        - requireGradeCounts
+        - rewardMarks
+        - bonus
+        - rewardConfig
+    champion-mastery-v4.RewardConfigDto:
+      type: object
+      title: RewardConfigDto
+      properties:
+        rewardValue:
+          type: string
+          x-type: string
+          description: 'Reward value'
+        rewardType:
+          type: string
+          x-type: string
+          description: 'Reward type'
+        maximumReward:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Maximun reward'
+      description: 'This object contains required reward config information.'
+      required:
+        - rewardValue
+        - rewardType
+        - maximumReward
     champion-mastery-v4.NextSeasonMilestone:
       type: object
       title: NextSeasonMilestone
