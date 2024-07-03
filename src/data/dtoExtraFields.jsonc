@@ -12,6 +12,22 @@
       "x-type": "int"
     }
   },
+  // https://github.com/RiotGames/developer-relations/issues/930#issuecomment-2206370014
+  "champion-mastery-v4.NextSeasonMilestoneDto": {
+    "requireGradeCounts": {
+      "type": "object",
+      "x-key": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "x-type": "Map[string, int]"
+    }
+  },
   //
   // https://github.com/RiotGames/developer-relations/issues/754
   "match-v5.ParticipantDto": {
