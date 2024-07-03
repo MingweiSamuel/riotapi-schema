@@ -265,6 +265,12 @@
       "type": "object"
     }
   },
+  // https://github.com/RiotGames/developer-relations/issues/950
+  "val-match-v1.RoundResultDto": {
+    "name": {
+      "winningTeamRole": "string"
+    }
+  },
   //
   // https://github.com/RiotGames/developer-relations/issues/605
   "val-ranked-v1.LeaderboardDto": {
