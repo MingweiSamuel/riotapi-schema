@@ -27,6 +27,15 @@
         }
     },
     "platform": {
+        // - `id`: numeric ID chosen by `riotapi-schema`. Currently just incrementing as new platforms are added.
+        // - `description`: Human-readable description.
+        // - `tournamentRegion`: Used in the LoL Tournament API. Specifically the `registerProviderData` endpoints:
+        //   [`tournament-stub-v5.registerProviderData`](https://developer.riotgames.com/apis#tournament-stub-v5/POST_registerProviderData)
+        //   and [`tournament-v5.registerProviderData`](https://developer.riotgames.com/apis#tournament-v5/POST_registerProviderData).
+        // - `altName`: Slightly more human-friendly name, usually something like the platform name with the trailing
+        //   number replaced with `N` or `S` for north/south, etc.
+        // - `regionalRoute`: The corresponding `"regional"` route for LoL and TFT match endpoints.
+        // - `regionalRouteLor`: The corresponding `"regional"` route for LoR match endpoints.
         "br1": {
             "id": 16,
             "description": "Brazil.",
@@ -80,6 +89,15 @@
             "altName": "LAS",
             "regionalRoute": "americas",
             "regionalRouteLor": "americas"
+        },
+        "me1": {
+            "id": 37,
+            "description": "Middle East and North Africa.",
+            // https://github.com/RiotGames/developer-relations/issues/951
+            "tournamentRegion": "UNKNOWN: https://github.com/RiotGames/developer-relations/issues/951",
+            "altName": "MENA",
+            "regionalRoute": "europe",
+            "regionalRouteLor": "europe"
         },
         "na1": {
             "id": 23,

@@ -333,8 +333,8 @@ async function writeEnums() {
 
 
 async function writeRoutesTable() {
-  const routesTable = require('./data/routesTable');
-  await fs.writeFile('routesTable.json', JSON.stringify(routesTable, null, 2));
+  const ROUTES_TABLE = jsonc.readSync(__dirname + '/data/routesTable.jsonc');
+  await fs.writeFile('routesTable.json', JSON.stringify(ROUTES_TABLE, null, 2));
 }
 
 

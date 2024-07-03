@@ -7,7 +7,7 @@ const jsonc = require('jsonc');
 
 const PLATFORM_AVAILABLE_OVERRIDES = jsonc.readSync(__dirname + '/data/endpointPlatformsAvailableOverrides.jsonc');
 const METHOD_RETURN_OVERRIDES = jsonc.readSync(__dirname + '/data/methodReturnOverrides.jsonc');
-const ROUTES_TABLE = require('./data/routesTable');
+const ROUTES_TABLE = jsonc.readSync(__dirname + '/data/routesTable.jsonc');
 const METHOD_OPTIONAL = jsonc.readSync(__dirname + '/data/methodOptional.jsonc');
 
 const Schema = require('./schema');
