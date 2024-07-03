@@ -93,8 +93,6 @@
         "me1": {
             "id": 37,
             "description": "Middle East and North Africa.",
-            // https://github.com/RiotGames/developer-relations/issues/951
-            "tournamentRegion": "UNKNOWN: https://github.com/RiotGames/developer-relations/issues/951",
             "altName": "MENA",
             "regionalRoute": "europe",
             "regionalRouteLor": "europe"
