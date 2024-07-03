@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 7db4ea30494ebeaa271dbe535b5538ed8fbbd098
-  x-hash: 7db4ea30494ebeaa271dbe535b5538ed8fbbd0983b9df736778d27cd6467f8d52f2ef1d8075f86b1
+  version: cec264eb9ad11b578d96c6ababa22dea9edbe9fa
+  x-hash: cec264eb9ad11b578d96c6ababa22dea9edbe9fa3b9df736778d27cd6467f8d52f2ef1d8075f86b1
   x-enumsHash: 3b9df736778d27cd6467f8d52f2ef1d8075f86b1
 servers:
   -
@@ -378,7 +378,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - br1
@@ -398,7 +398,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/champion-mastery/v4/champion-masteries/by-puuid/{encryptedPUUID}/by-champion/{championId}':
     get:
       tags:
@@ -476,7 +476,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - br1
@@ -496,7 +496,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/champion-mastery/v4/champion-masteries/by-puuid/{encryptedPUUID}/top':
     get:
       tags:
@@ -576,7 +576,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - br1
@@ -596,7 +596,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/champion-mastery/v4/scores/by-puuid/{encryptedPUUID}':
     get:
       tags:
@@ -665,7 +665,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: champion-mastery-v4
     x-platforms-available:
       - br1
@@ -685,7 +685,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/platform/v3/champion-rotations:
     get:
       tags:
@@ -745,7 +745,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: champion-v3
     x-platforms-available:
       - br1
@@ -765,7 +765,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/clash/v1/players/by-summoner/{summonerId}':
     get:
       tags:
@@ -836,7 +836,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -856,7 +856,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/clash/v1/teams/{teamId}':
     get:
       tags:
@@ -925,7 +925,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -945,7 +945,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/clash/v1/tournaments:
     get:
       tags:
@@ -1008,7 +1008,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -1028,7 +1028,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/clash/v1/tournaments/by-team/{teamId}':
     get:
       tags:
@@ -1097,7 +1097,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -1117,7 +1117,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/clash/v1/tournaments/{tournamentId}':
     get:
       tags:
@@ -1187,7 +1187,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: clash-v1
     x-platforms-available:
       - br1
@@ -1207,7 +1207,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/league-exp/v4/entries/{queue}/{tier}/{division}':
     get:
       tags:
@@ -1326,7 +1326,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: league-exp-v4
     x-platforms-available:
       - br1
@@ -1346,7 +1346,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/league/v4/challengerleagues/by-queue/{queue}':
     get:
       tags:
@@ -1419,7 +1419,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1439,7 +1439,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/league/v4/entries/by-summoner/{encryptedSummonerId}':
     get:
       tags:
@@ -1510,7 +1510,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1530,7 +1530,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/league/v4/entries/{queue}/{tier}/{division}':
     get:
       tags:
@@ -1645,7 +1645,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1665,7 +1665,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/league/v4/grandmasterleagues/by-queue/{queue}':
     get:
       tags:
@@ -1738,7 +1738,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1758,7 +1758,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/league/v4/leagues/{leagueId}':
     get:
       tags:
@@ -1828,7 +1828,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1848,7 +1848,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/league/v4/masterleagues/by-queue/{queue}':
     get:
       tags:
@@ -1921,7 +1921,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: league-v4
     x-platforms-available:
       - br1
@@ -1941,7 +1941,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/challenges/v1/challenges/config:
     get:
       tags:
@@ -2005,7 +2005,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: lol-challenges-v1
     x-platforms-available:
       - br1
@@ -2026,7 +2026,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/challenges/v1/challenges/percentiles:
     get:
       tags:
@@ -2102,7 +2102,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: lol-challenges-v1
     x-platforms-available:
       - br1
@@ -2123,7 +2123,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/challenges/v1/challenges/{challengeId}/config':
     get:
       tags:
@@ -2194,7 +2194,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: lol-challenges-v1
     x-platforms-available:
       - br1
@@ -2215,7 +2215,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/challenges/v1/challenges/{challengeId}/leaderboards/by-level/{level}':
     get:
       tags:
@@ -2319,7 +2319,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: lol-challenges-v1
     x-platforms-available:
       - br1
@@ -2340,7 +2340,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/challenges/v1/challenges/{challengeId}/percentiles':
     get:
       tags:
@@ -2419,7 +2419,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: lol-challenges-v1
     x-platforms-available:
       - br1
@@ -2440,7 +2440,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/challenges/v1/player-data/{puuid}':
     get:
       tags:
@@ -2509,7 +2509,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: lol-challenges-v1
     x-platforms-available:
       - br1
@@ -2530,7 +2530,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/status/v4/platform-data:
     get:
       tags:
@@ -2590,7 +2590,7 @@ paths:
         - th2
         - tr1
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: lol-status-v4
     x-platforms-available:
       - br1
@@ -2610,7 +2610,7 @@ paths:
       - th2
       - tr1
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lor/deck/v1/decks/me:
     get:
       tags:
@@ -3335,7 +3335,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: spectator-tft-v5
     x-platforms-available:
       - br1
@@ -3355,7 +3355,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/spectator/tft/v5/featured-games:
     get:
       tags:
@@ -3415,7 +3415,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: spectator-tft-v5
     x-platforms-available:
       - br1
@@ -3435,7 +3435,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/spectator/v5/active-games/by-summoner/{encryptedPUUID}':
     get:
       tags:
@@ -3505,7 +3505,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: spectator-v5
     x-platforms-available:
       - br1
@@ -3525,7 +3525,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/spectator/v5/featured-games:
     get:
       tags:
@@ -3585,7 +3585,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: spectator-v5
     x-platforms-available:
       - br1
@@ -3605,7 +3605,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/fulfillment/v1/summoners/by-puuid/{rsoPUUID}':
     get:
       tags:
@@ -3674,7 +3674,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -3694,7 +3694,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/summoner/v4/summoners/by-account/{encryptedAccountId}':
     get:
       tags:
@@ -3762,7 +3762,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -3782,7 +3782,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/summoner/v4/summoners/by-puuid/{encryptedPUUID}':
     get:
       tags:
@@ -3851,7 +3851,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -3871,7 +3871,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/summoner/v4/summoners/me:
     get:
       tags:
@@ -3935,7 +3935,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -3955,7 +3955,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/lol/summoner/v4/summoners/{encryptedSummonerId}':
     get:
       tags:
@@ -4024,7 +4024,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: summoner-v4
     x-platforms-available:
       - br1
@@ -4044,7 +4044,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /tft/league/v1/challenger:
     get:
       tags:
@@ -4116,7 +4116,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -4136,7 +4136,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/tft/league/v1/entries/by-summoner/{summonerId}':
     get:
       tags:
@@ -4207,7 +4207,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -4227,7 +4227,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/tft/league/v1/entries/{tier}/{division}':
     get:
       tags:
@@ -4339,7 +4339,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -4359,7 +4359,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /tft/league/v1/grandmaster:
     get:
       tags:
@@ -4431,7 +4431,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -4451,7 +4451,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/tft/league/v1/leagues/{leagueId}':
     get:
       tags:
@@ -4521,7 +4521,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -4541,7 +4541,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /tft/league/v1/master:
     get:
       tags:
@@ -4613,7 +4613,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -4633,7 +4633,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/tft/league/v1/rated-ladders/{queue}/top':
     get:
       tags:
@@ -4707,7 +4707,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
@@ -4727,7 +4727,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/tft/match/v1/matches/by-puuid/{puuid}/ids':
     get:
       tags:
@@ -4952,7 +4952,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-status-v1
     x-platforms-available:
       - br1
@@ -4973,7 +4973,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/tft/summoner/v1/summoners/by-account/{encryptedAccountId}':
     get:
       tags:
@@ -5041,7 +5041,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - br1
@@ -5061,7 +5061,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/tft/summoner/v1/summoners/by-puuid/{encryptedPUUID}':
     get:
       tags:
@@ -5130,7 +5130,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - br1
@@ -5150,7 +5150,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /tft/summoner/v1/summoners/me:
     get:
       tags:
@@ -5214,7 +5214,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - br1
@@ -5234,7 +5234,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   '/tft/summoner/v1/summoners/{encryptedSummonerId}':
     get:
       tags:
@@ -5303,7 +5303,7 @@ paths:
         - tr1
         - tw2
         - vn2
-      x-route-enum: null
+      x-route-enum: platform
     x-endpoint: tft-summoner-v1
     x-platforms-available:
       - br1
@@ -5323,7 +5323,7 @@ paths:
       - tr1
       - tw2
       - vn2
-    x-route-enum: null
+    x-route-enum: platform
   /lol/tournament-stub/v5/codes:
     post:
       tags:
