@@ -36,6 +36,11 @@
       "format": "int32",
       "x-type": "int"
     },
+    "dangerPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
     "basicPings": {
       "type": "integer",
       "format": "int32",
