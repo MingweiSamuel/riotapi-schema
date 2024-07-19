@@ -3,6 +3,8 @@
   "lol-challenges-v1.ChallengeInfo",
   "lol-challenges-v1.ChallengePoints",
   "lol-challenges-v1.PlayerClientPreferences",
+  "lol-rso-match-v1.MatchDto",
+  "lol-rso-match-v1.TimelineDto",
   "match-v5.MatchTimelineVictimDamage",
   "tft-match-v1.CompanionDto",
   "tft-match-v1.ParticipantMissionsDto",

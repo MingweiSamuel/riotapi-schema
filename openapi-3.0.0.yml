@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 54ad38717276da9ce06bc6da8b27008d59d109f2
-  x-hash: 54ad38717276da9ce06bc6da8b27008d59d109f23b9df736778d27cd6467f8d52f2ef1d8075f86b1
+  version: db87f38b04ca43dab4aa172bf66ad33bce803528
+  x-hash: db87f38b04ca43dab4aa172bf66ad33bce8035283b9df736778d27cd6467f8d52f2ef1d8075f86b1
   x-enumsHash: 3b9df736778d27cd6467f8d52f2ef1d8075f86b1
 servers:
   -
@@ -2531,6 +2531,258 @@ paths:
       - tw2
       - vn2
     x-route-enum: platform
+  /lol/rso-match/v1/matches/ids:
+    get:
+      tags:
+        - lol-rso-match-v1
+      summary: 'Get a list of match ids by player access token - Includes custom matches'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lol-rso-match-v1/GET_getMatchIds'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  x-type: string
+                x-type: 'List[string]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lol-rso-match-v1.getMatchIds
+      security:
+        -
+          rso:
+            - openid
+      description: 'Get a list of match ids by player access token - Includes custom matches'
+      parameters:
+        -
+          name: count
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'Defaults to 20. Valid values: 0 to 100. Number of match ids to return.'
+        -
+          name: start
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'Defaults to 0. Start index.'
+        -
+          name: type
+          in: query
+          required: false
+          schema:
+            type: string
+            x-type: string
+            enum:
+              - ranked
+              - normal
+              - tourney
+              - tutorial
+          description: 'Filter the list of match ids by the type of match. This filter is mutually inclusive of the queue filter meaning any match ids returned must match both the queue and type filters.'
+        -
+          name: queue
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            x-type: int
+          description: 'Filter the list of match ids by a specific queue id. This filter is mutually inclusive of the type filter meaning any match ids returned must match both the queue and type filters.'
+        -
+          name: endTime
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+            x-type: long
+          description: 'Epoch timestamp in seconds.'
+        -
+          name: startTime
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+            x-type: long
+          description: 'Epoch timestamp in seconds. The matchlist started storing timestamps on June 16th, 2021. Any matches played before June 16th, 2021 won''t be included in the results if the startTime filter is set.'
+      x-endpoint: lol-rso-match-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+        - sea
+      x-route-enum: regional
+    x-endpoint: lol-rso-match-v1
+    x-platforms-available:
+      - americas
+      - asia
+      - europe
+      - sea
+    x-route-enum: regional
+  '/lol/rso-match/v1/matches/{matchId}':
+    get:
+      tags:
+        - lol-rso-match-v1
+      summary: 'Get a match by match id'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lol-rso-match-v1/GET_getMatch'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/lol-rso-match-v1.MatchDto'
+                x-type: MatchDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lol-rso-match-v1.getMatch
+      security:
+        -
+          rso:
+            - openid
+      description: 'Get a match by match id'
+      parameters:
+        -
+          name: matchId
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: String
+      x-endpoint: lol-rso-match-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+        - sea
+      x-route-enum: regional
+    x-endpoint: lol-rso-match-v1
+    x-platforms-available:
+      - americas
+      - asia
+      - europe
+      - sea
+    x-route-enum: regional
+  '/lol/rso-match/v1/matches/{matchId}/timeline':
+    get:
+      tags:
+        - lol-rso-match-v1
+      summary: 'Get a match timeline by match id'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#lol-rso-match-v1/GET_getTimeline'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/lol-rso-match-v1.TimelineDto'
+                x-type: TimelineDto
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: lol-rso-match-v1.getTimeline
+      security:
+        -
+          rso:
+            - openid
+      description: 'Get a match timeline by match id'
+      parameters:
+        -
+          name: matchId
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: String
+      x-endpoint: lol-rso-match-v1
+      x-platforms-available:
+        - americas
+        - asia
+        - europe
+        - sea
+      x-route-enum: regional
+    x-endpoint: lol-rso-match-v1
+    x-platforms-available:
+      - americas
+      - asia
+      - europe
+      - sea
+    x-route-enum: regional
   /lol/status/v4/platform-data:
     get:
       tags:
@@ -7486,6 +7738,16 @@ components:
         - level
         - current
         - max
+    lol-rso-match-v1.MatchDto:
+      type: object
+      title: MatchDto
+      properties: {}
+      description: 'UNKNOWN TYPE.'
+    lol-rso-match-v1.TimelineDto:
+      type: object
+      title: TimelineDto
+      properties: {}
+      description: 'UNKNOWN TYPE.'
     lol-status-v4.PlatformDataDto:
       type: object
       title: PlatformDataDto
