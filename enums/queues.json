@@ -902,12 +902,22 @@
   {
     "queueId": 1810,
     "map": "Swarm",
-    "description": "Swarm (`STRAWBERRY` games)",
+    "description": "Swarm solo (`STRAWBERRY` games)",
     "notes": null,
     "x-value": 1810,
     "x-deprecated": false,
-    "x-desc": "Swarm (`STRAWBERRY` games) games on Swarm",
-    "x-name": "SWARM_STRAWBERRY_GAMES"
+    "x-desc": "Swarm solo (`STRAWBERRY` games) games on Swarm",
+    "x-name": "SWARM_SOLO_STRAWBERRY_GAMES"
+  },
+  {
+    "queueId": 1820,
+    "map": "Swarm",
+    "description": "Swarm duo (`STRAWBERRY` games)",
+    "notes": null,
+    "x-value": 1820,
+    "x-deprecated": false,
+    "x-desc": "Swarm duo (`STRAWBERRY` games) games on Swarm",
+    "x-name": "SWARM_DUO_STRAWBERRY_GAMES"
   },
   {
     "queueId": 1900,
