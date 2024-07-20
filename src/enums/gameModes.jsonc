@@ -17,10 +17,14 @@
     },
     {
         "gameMode": "CHERRY",
-        "description": "2v2v2v2"
+        "description": "2v2v2v2 Arena"
     },
     {
         "gameMode": "TFT",
         "description": "Teamfight Tactics."
+    },
+    {
+        "gameMode": "STRAWBERRY",
+        "description": "Swarm"
     }
 ]
