@@ -29,10 +29,10 @@
   },
   {
     "gameMode": "CHERRY",
-    "description": "2v2v2v2",
+    "description": "2v2v2v2 Arena",
     "x-value": "CHERRY",
     "x-name": "CHERRY",
-    "x-desc": "2v2v2v2"
+    "x-desc": "2v2v2v2 Arena"
   },
   {
     "gameMode": "CLASSIC",
@@ -131,6 +131,13 @@
     "x-value": "STARGUARDIAN",
     "x-name": "STARGUARDIAN",
     "x-desc": "Star Guardian Invasion games"
+  },
+  {
+    "gameMode": "STRAWBERRY",
+    "description": "Swarm",
+    "x-value": "STRAWBERRY",
+    "x-name": "STRAWBERRY",
+    "x-desc": "Swarm"
   },
   {
     "gameMode": "TFT",
