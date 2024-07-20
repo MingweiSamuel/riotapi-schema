@@ -900,6 +900,16 @@
     "x-name": "RINGS_OF_WRATH_ARENA_CHERRY_GAMES"
   },
   {
+    "queueId": 1810,
+    "map": "Swarm",
+    "description": "Swarm (`STRAWBERRY` games)",
+    "notes": null,
+    "x-value": 1810,
+    "x-deprecated": false,
+    "x-desc": "Swarm (`STRAWBERRY` games) games on Swarm",
+    "x-name": "SWARM_STRAWBERRY_GAMES"
+  },
+  {
     "queueId": 1900,
     "map": "Summoner's Rift",
     "description": "Pick URF games",
