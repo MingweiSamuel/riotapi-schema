@@ -66,5 +66,12 @@
         "map": "Convergence",
         "description": "Teamfight Tactics (Choncc's Treasure)",
         "notes": null
+    },
+    //
+    {
+        "queueId": 1810,
+        "map": "Swarm",
+        "description": "Swarm (`STRAWBERRY` games)",
+        "notes": null
     }
 ]
