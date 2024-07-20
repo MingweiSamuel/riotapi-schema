@@ -142,5 +142,14 @@
     "x-deprecated": false,
     "x-desc": "Arena\nMap for 2v2v2v2 (`CHERRY`). Team up with a friend or venture solo in this new game mode. Face against multiple teams in chaotic battles across diverse arenas",
     "x-name": "ARENA"
+  },
+  {
+    "mapId": 33,
+    "mapName": "Swarm",
+    "notes": "Map for Swarm (`STRAWBERRY`). Team up with a friend or venture solo in this horde survival mode.",
+    "x-value": 33,
+    "x-deprecated": false,
+    "x-desc": "Swarm\nMap for Swarm (`STRAWBERRY`). Team up with a friend or venture solo in this horde survival mode.",
+    "x-name": "SWARM"
   }
 ]
