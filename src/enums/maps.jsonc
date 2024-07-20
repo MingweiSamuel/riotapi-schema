@@ -8,5 +8,10 @@
         "mapId": 30,
         "mapName": "Arena",
         "notes": "Map for 2v2v2v2 (`CHERRY`). Team up with a friend or venture solo in this new game mode. Face against multiple teams in chaotic battles across diverse arenas"
+    },
+    {
+        "mapId": 33,
+        "mapName": "Swarm",
+        "notes": "Map for Swarm (`STRAWBERRY`). Team up with a friend or venture solo in this horde survival mode."
     }
 ]
