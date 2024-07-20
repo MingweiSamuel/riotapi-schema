@@ -71,7 +71,13 @@
     {
         "queueId": 1810,
         "map": "Swarm",
-        "description": "Swarm (`STRAWBERRY` games)",
+        "description": "Swarm solo (`STRAWBERRY` games)",
+        "notes": null
+    },
+    {
+        "queueId": 1820,
+        "map": "Swarm",
+        "description": "Swarm duo (`STRAWBERRY` games)",
         "notes": null
     }
 ]
