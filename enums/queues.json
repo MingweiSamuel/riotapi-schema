@@ -920,6 +920,26 @@
     "x-name": "SWARM_DUO_STRAWBERRY_GAMES"
   },
   {
+    "queueId": 1830,
+    "map": "Swarm",
+    "description": "Swarm trio (`STRAWBERRY` games)",
+    "notes": null,
+    "x-value": 1830,
+    "x-deprecated": false,
+    "x-desc": "Swarm trio (`STRAWBERRY` games) games on Swarm",
+    "x-name": "SWARM_TRIO_STRAWBERRY_GAMES"
+  },
+  {
+    "queueId": 1840,
+    "map": "Swarm",
+    "description": "Swarm quad (`STRAWBERRY` games)",
+    "notes": null,
+    "x-value": 1840,
+    "x-deprecated": false,
+    "x-desc": "Swarm quad (`STRAWBERRY` games) games on Swarm",
+    "x-name": "SWARM_QUAD_STRAWBERRY_GAMES"
+  },
+  {
     "queueId": 1900,
     "map": "Summoner's Rift",
     "description": "Pick URF games",
