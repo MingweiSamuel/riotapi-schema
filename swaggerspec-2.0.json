@@ -12684,6 +12684,56 @@
           "format": "int32",
           "x-type": "int"
         },
+        "SWARM_DefeatAatrox": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_DefeatBriar": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_DefeatMiniBosses": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_EvolveWeapon": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_Have3Passives": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_KillEnemy": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_PickupGold": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_ReachLevel50": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_Survive15Min": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
+        "SWARM_WinWith5EvolvedWeapons": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int"
+        },
         "soloKills": {
           "type": "integer",
           "format": "int32",
@@ -12811,56 +12861,6 @@
           "x-type": "int"
         },
         "wardTakedownsBefore20M": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_DefeatAatrox": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_DefeatBriar": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_DefeatMiniBosses": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_EvolveWeapon": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_Have3Passives": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_KillEnemy": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_PickupGold": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_ReachLevel50": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_Survive15Min": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
-        },
-        "SWARM_WinWith5EvolvedWeapons": {
           "type": "integer",
           "format": "int32",
           "x-type": "int"
