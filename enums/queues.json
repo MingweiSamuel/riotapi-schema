@@ -563,31 +563,31 @@
     "queueId": 830,
     "map": "Summoner's Rift",
     "description": "Co-op vs. AI Intro Bot games",
-    "notes": null,
+    "notes": "Deprecated in March 2024 in favor of queueId 870",
     "x-value": 830,
-    "x-deprecated": false,
+    "x-deprecated": true,
     "x-desc": "Co-op vs. AI Intro Bot games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTRO_BOT"
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTRO_BOT_DEPRECATED_830"
   },
   {
     "queueId": 840,
     "map": "Summoner's Rift",
     "description": "Co-op vs. AI Beginner Bot games",
-    "notes": null,
+    "notes": "Deprecated in March 2024 in favor of queueId 880",
     "x-value": 840,
-    "x-deprecated": false,
+    "x-deprecated": true,
     "x-desc": "Co-op vs. AI Beginner Bot games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_BEGINNER_BOT"
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_BEGINNER_BOT_DEPRECATED_840"
   },
   {
     "queueId": 850,
     "map": "Summoner's Rift",
     "description": "Co-op vs. AI Intermediate Bot games",
-    "notes": null,
+    "notes": "Deprecated in March 2024 in favor of queueId 890",
     "x-value": 850,
-    "x-deprecated": false,
+    "x-deprecated": true,
     "x-desc": "Co-op vs. AI Intermediate Bot games on Summoner's Rift",
-    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTERMEDIATE_BOT"
+    "x-name": "SUMMONERS_RIFT_CO_OP_VS_AI_INTERMEDIATE_BOT_DEPRECATED_850"
   },
   {
     "queueId": 870,
