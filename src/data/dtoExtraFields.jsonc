@@ -50,6 +50,12 @@
       "type": "integer",
       "format": "int32",
       "x-type": "int"
+    },
+    //
+    "riotIdName": {
+      "type": "string",
+      "x-type": "string",
+      "description": "Deprecated, use `riotIdGameName`. This field name was briefly used instead of `riotIdGameName`, prior to patch 14.5."
     }
   },
   //
