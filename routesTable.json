@@ -24,6 +24,10 @@
     "esports": {
       "id": 11,
       "description": "Special esports platform for `account-v1`. Do not confuse with the `esports` Valorant platform route."
+    },
+    "esportseu": {
+      "id": 12,
+      "description": "Special Europe esports platform for `account-v1`. Do not confuse with the `esports` Valorant platform route."
     }
   },
   "platform": {
