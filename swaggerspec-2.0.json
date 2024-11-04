@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "b2e088fcea42cb009d586bbe24c68fb651c52ac7",
-    "x-hash": "b2e088fcea42cb009d586bbe24c68fb651c52ac7007a751de1c8259ad1cdb981476f9229dc5bb6e2",
+    "version": "12dd6e6a44a117625757fbee58bd6a1fa2ec6ea9",
+    "x-hash": "12dd6e6a44a117625757fbee58bd6a1fa2ec6ea9007a751de1c8259ad1cdb981476f9229dc5bb6e2",
     "x-enumsHash": "007a751de1c8259ad1cdb981476f9229dc5bb6e2"
   },
   "host": "na1.api.riotgames.com",
@@ -12333,9 +12333,9 @@
           "x-type": "int"
         },
         "bountyGold": {
-          "type": "integer",
-          "format": "int32",
-          "x-type": "int"
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
         },
         "buffsStolen": {
           "type": "integer",
