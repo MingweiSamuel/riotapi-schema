@@ -711,6 +711,12 @@
       "type": "number",
       "format": "double",
       "x-type": "double"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/1005
+    "bountyGold": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
     }
   }
 }
