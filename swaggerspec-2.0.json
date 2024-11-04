@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "406337e10c07f50a574d23119640e571d94ae3f1",
-    "x-hash": "406337e10c07f50a574d23119640e571d94ae3f1007a751de1c8259ad1cdb981476f9229dc5bb6e2",
+    "version": "d923592730cfc98259dfa0e4693a548d7943f4e0",
+    "x-hash": "d923592730cfc98259dfa0e4693a548d7943f4e0007a751de1c8259ad1cdb981476f9229dc5bb6e2",
     "x-enumsHash": "007a751de1c8259ad1cdb981476f9229dc5bb6e2"
   },
   "host": "na1.api.riotgames.com",
@@ -12041,6 +12041,12 @@
           "type": "string",
           "x-type": "string",
           "description": "Deprecated, use `riotIdGameName`. This field name was briefly used instead of `riotIdGameName`, prior to patch 14.5."
+        },
+        "retreatPings": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "description": "https://github.com/RiotGames/developer-relations/issues/814"
         }
       },
       "required": [
@@ -12139,7 +12145,8 @@
         "visionWardsBoughtInGame",
         "wardsKilled",
         "wardsPlaced",
-        "win"
+        "win",
+        "retreatPings"
       ]
     },
     "match-v5.ChallengesDto": {
@@ -12881,6 +12888,11 @@
           "type": "integer",
           "format": "int32",
           "x-type": "int"
+        },
+        "HealFromMapSources": {
+          "type": "number",
+          "format": "double",
+          "x-type": "double"
         }
       },
       "description": "Challenges DTO"
@@ -15227,6 +15239,10 @@
         "missions": {
           "$ref": "#/definitions/tft-match-v1.ParticipantMissionsDto",
           "x-type": "ParticipantMissionsDto"
+        },
+        "win": {
+          "type": "boolean",
+          "x-type": "boolean"
         }
       },
       "required": [
@@ -15237,8 +15253,6 @@
         "placement",
         "players_eliminated",
         "puuid",
-        "riotIdGameName",
-        "riotIdTagline",
         "time_eliminated",
         "total_damage_to_players",
         "traits",
