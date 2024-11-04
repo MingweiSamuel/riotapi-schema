@@ -135,6 +135,10 @@
     "missions": {
       "$ref": "#/components/schemas/tft-match-v1.ParticipantMissionsDto",
       "x-type": "ParticipantMissionsDto"
+    },
+    "win": {
+      "type": "boolean",
+      "x-type": "boolean"
     }
   },
   "tft-match-v1.CompanionDto": {
@@ -694,6 +698,12 @@
       "type": "integer",
       "format": "int32",
       "x-type": "int"
+    },
+    // 2024-11-03
+    "HealFromMapSources": {
+      "type": "number",
+      "format": "double",
+      "x-type": "double"
     }
   }
 }
