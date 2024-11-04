@@ -56,6 +56,13 @@
       "type": "string",
       "x-type": "string",
       "description": "Deprecated, use `riotIdGameName`. This field name was briefly used instead of `riotIdGameName`, prior to patch 14.5."
+    },
+    // https://github.com/RiotGames/developer-relations/issues/754#issuecomment-2453866361
+    "retreatPings": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int",
+      "description": "https://github.com/RiotGames/developer-relations/issues/814"
     }
   },
   //
