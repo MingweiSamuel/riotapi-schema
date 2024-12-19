@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 8e457969702236e5d9331aa8afccda4c96d044cb
-  x-hash: 8e457969702236e5d9331aa8afccda4c96d044cb007a751de1c8259ad1cdb981476f9229dc5bb6e2
+  version: 3db3221cc1b657c2acddf6ce02428680f38ad9aa
+  x-hash: 3db3221cc1b657c2acddf6ce02428680f38ad9aa007a751de1c8259ad1cdb981476f9229dc5bb6e2
   x-enumsHash: 007a751de1c8259ad1cdb981476f9229dc5bb6e2
 servers:
   -
@@ -748,6 +748,97 @@ paths:
         - vn2
       x-route-enum: platform
     x-endpoint: champion-v3
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - me1
+      - na1
+      - oc1
+      - ph2
+      - ru
+      - sg2
+      - th2
+      - tr1
+      - tw2
+      - vn2
+    x-route-enum: platform
+  '/lol/clash/v1/players/by-puuid/{puuid}':
+    get:
+      tags:
+        - clash-v1
+      summary: 'Get players by puuid'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#clash-v1/GET_getPlayersByPUUID'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/clash-v1.PlayerDto'
+                  x-type: PlayerDto
+                x-type: 'List[PlayerDto]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: clash-v1.getPlayersByPUUID
+      description: "Get players by puuid\n## Implementation Notes\nThis endpoint returns a list of active Clash players for a given PUUID. If a summoner registers for multiple tournaments at the same time (e.g., Saturday and Sunday) then both registrations would appear in this list."
+      parameters:
+        -
+          name: puuid
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+      x-endpoint: clash-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - me1
+        - na1
+        - oc1
+        - ph2
+        - ru
+        - sg2
+        - th2
+        - tr1
+        - tw2
+        - vn2
+      x-route-enum: platform
+    x-endpoint: clash-v1
     x-platforms-available:
       - br1
       - eun1
