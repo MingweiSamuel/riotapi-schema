@@ -119,10 +119,11 @@
         },
         "ph2": {
             "id": 32,
-            "description": "Philippines",
+            "description": "Philippines, moved into `sg2` on 2025-01-08.",
             "altName": "PH",
             "regionalRoute": "sea",
-            "regionalRouteLor": "sea"
+            "regionalRouteLor": "sea",
+            "deprecated": true
         },
         "ru": {
             "id": 25,
@@ -132,17 +133,18 @@
         },
         "sg2": {
             "id": 33,
-            "description": "Singapore",
+            "description": "Singapore, Thailand, Philippines",
             "altName": "SG",
             "regionalRoute": "sea",
             "regionalRouteLor": "sea"
         },
         "th2": {
             "id": 34,
-            "description": "Thailand",
+            "description": "Thailand, moved into `sg2` on 2025-01-08.",
             "altName": "TH",
             "regionalRoute": "sea",
-            "regionalRouteLor": "sea"
+            "regionalRouteLor": "sea",
+            "deprecated": true
         },
         "tr1": {
             "id": 26,
