@@ -1,5 +1,11 @@
 [
     {
+        "queueId": 480,
+        "map": "Summoner's Rift",
+        "description": "Normal (Swiftplay)",
+        "notes": null
+    },
+    {
         "queueId": 1091,
         "map": "Convergence",
         "description": "Teamfight Tactics 1v0 games",
