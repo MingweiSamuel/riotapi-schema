@@ -140,6 +140,13 @@
     "x-desc": "Swarm"
   },
   {
+    "gameMode": "SWIFTPLAY",
+    "description": "Swiftplay Summoner's Rift",
+    "x-value": "SWIFTPLAY",
+    "x-name": "SWIFTPLAY",
+    "x-desc": "Swiftplay Summoner's Rift"
+  },
+  {
     "gameMode": "TFT",
     "description": "Teamfight Tactics.",
     "x-value": "TFT",
