@@ -5,6 +5,8 @@
     "champion-mastery-v4.getChampionMastery": true,
 
     "league-v4.getLeagueById": true,
+    "league-v4.getLeagueEntries": true, // returns 204 for empty league.
+    "league-exp-v4.getLeagueEntries": true, // returns 204 for empty league.
     "tft-league-v1.getLeagueById": true,
 
     "lol-challenges-v1.getChallengeConfigs": true,
