@@ -480,6 +480,16 @@
     "x-name": "TWISTED_TREELINE_3V3_RANKED_FLEX_DEPRECATED_470"
   },
   {
+    "queueId": 480,
+    "map": "Summoner's Rift",
+    "description": "Normal (Swiftplay)",
+    "notes": null,
+    "x-value": 480,
+    "x-deprecated": false,
+    "x-desc": "Normal (Swiftplay) games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_NORMAL_SWIFTPLAY"
+  },
+  {
     "queueId": 490,
     "map": "Summoner's Rift",
     "description": "Normal (Quickplay)",
