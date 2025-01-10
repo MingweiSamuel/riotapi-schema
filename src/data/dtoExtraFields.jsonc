@@ -718,5 +718,11 @@
       "format": "double",
       "x-type": "double"
     }
+  },
+  "match-v5.ObjectivesDto": {
+    "atakhan": {
+      "$ref": "#/components/schemas/match-v5.ObjectiveDto",
+      "x-type": "ObjectiveDto"
+    }
   }
 }

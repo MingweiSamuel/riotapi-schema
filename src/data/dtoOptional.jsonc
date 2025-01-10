@@ -182,6 +182,7 @@
 
   // https://github.com/RiotGames/developer-relations/issues/829
   "match-v5.ObjectivesDto.horde": true,
+  "match-v5.ObjectivesDto.atakhan": true,
 
   // https://github.com/RiotGames/developer-relations/issues/487#issuecomment-2106126745
   "match-v5.InfoTimeLineDto.gameId": true,
