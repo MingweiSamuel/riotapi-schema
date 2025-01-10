@@ -26,5 +26,10 @@
     {
         "gameMode": "STRAWBERRY",
         "description": "Swarm"
+    },
+    {
+        // https://www.leagueoflegends.com/en-us/news/dev/dev-introducing-swiftplay/
+        "gameMode": "SWIFTPLAY",
+        "description": "Swiftplay Summoner's Rift"
     }
 ]
