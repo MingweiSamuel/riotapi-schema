@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 87a817c76068fa125298278018e0cb57cca3dca6
-  x-hash: 87a817c76068fa125298278018e0cb57cca3dca6c41deaf3880567e5ea8b4f3f613dd3892ced97e1
+  version: 67e5e61f554affead822aba7839ca9c4b6f6a9b6
+  x-hash: 67e5e61f554affead822aba7839ca9c4b6f6a9b6c41deaf3880567e5ea8b4f3f613dd3892ced97e1
   x-enumsHash: c41deaf3880567e5ea8b4f3f613dd3892ced97e1
 host: na1.api.riotgames.com
 x-host-platform:
@@ -22,10 +22,8 @@ x-host-platform:
   - me1
   - na1
   - oc1
-  - ph2
   - ru
   - sg2
-  - th2
   - tr1
   - tw2
   - vn2
@@ -365,10 +363,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -387,10 +383,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -462,10 +456,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -484,10 +476,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -561,10 +551,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -583,10 +571,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -650,10 +636,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -672,10 +656,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -730,10 +712,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -752,10 +732,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -821,10 +799,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -843,10 +819,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -912,10 +886,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -934,10 +906,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1001,10 +971,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1023,10 +991,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1084,10 +1050,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1106,10 +1070,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1173,10 +1135,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1195,10 +1155,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1263,10 +1221,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1285,10 +1241,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1401,10 +1355,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1423,10 +1375,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1494,10 +1444,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1516,10 +1464,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1585,10 +1531,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1607,10 +1551,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1719,10 +1661,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1741,10 +1681,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1812,10 +1750,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1834,10 +1770,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1901,10 +1835,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -1923,10 +1855,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -1994,10 +1924,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -2016,10 +1944,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -2078,10 +2004,8 @@ paths:
         - na1
         - oc1
         - pbe1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -2101,10 +2025,8 @@ paths:
       - na1
       - oc1
       - pbe1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -2175,10 +2097,8 @@ paths:
         - na1
         - oc1
         - pbe1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -2198,10 +2118,8 @@ paths:
       - na1
       - oc1
       - pbe1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -2267,10 +2185,8 @@ paths:
         - na1
         - oc1
         - pbe1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -2290,10 +2206,8 @@ paths:
       - na1
       - oc1
       - pbe1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -2392,10 +2306,8 @@ paths:
         - na1
         - oc1
         - pbe1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -2415,10 +2327,8 @@ paths:
       - na1
       - oc1
       - pbe1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -2492,10 +2402,8 @@ paths:
         - na1
         - oc1
         - pbe1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -2515,10 +2423,8 @@ paths:
       - na1
       - oc1
       - pbe1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -2582,10 +2488,8 @@ paths:
         - na1
         - oc1
         - pbe1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -2605,10 +2509,8 @@ paths:
       - na1
       - oc1
       - pbe1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -2910,10 +2812,8 @@ paths:
         - na1
         - oc1
         - pbe1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - vn2
       x-route-enum: platform
@@ -2932,10 +2832,8 @@ paths:
       - na1
       - oc1
       - pbe1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - vn2
     x-route-enum: platform
@@ -3650,10 +3548,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -3672,10 +3568,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -3730,10 +3624,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -3752,10 +3644,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -3819,10 +3709,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -3841,10 +3729,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -3899,10 +3785,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -3921,10 +3805,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -3987,10 +3869,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4009,10 +3889,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4075,10 +3953,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4097,10 +3973,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4163,10 +4037,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4185,10 +4057,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4247,10 +4117,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4269,10 +4137,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4335,10 +4201,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4357,10 +4221,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4426,10 +4288,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4448,10 +4308,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4517,10 +4375,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4539,10 +4395,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4647,10 +4501,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4669,10 +4521,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4738,10 +4588,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4760,10 +4608,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4827,10 +4673,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4849,10 +4693,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -4918,10 +4760,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -4940,10 +4780,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -5012,10 +4850,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -5034,10 +4870,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -5261,10 +5095,8 @@ paths:
         - na1
         - oc1
         - pbe1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -5284,10 +5116,8 @@ paths:
       - na1
       - oc1
       - pbe1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -5350,10 +5180,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -5372,10 +5200,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -5438,10 +5264,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -5460,10 +5284,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -5522,10 +5344,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -5544,10 +5364,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
@@ -5610,10 +5428,8 @@ paths:
         - me1
         - na1
         - oc1
-        - ph2
         - ru
         - sg2
-        - th2
         - tr1
         - tw2
         - vn2
@@ -5632,10 +5448,8 @@ paths:
       - me1
       - na1
       - oc1
-      - ph2
       - ru
       - sg2
-      - th2
       - tr1
       - tw2
       - vn2
