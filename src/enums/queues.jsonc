@@ -97,5 +97,12 @@
         "map": "Swarm",
         "description": "Swarm quad (`STRAWBERRY` games)",
         "notes": null
+    },
+    //
+    {
+        "queueId": 6100,
+        "map": "Convergence",
+        "description": "Teamfight Tactics Revival: Festival of Beasts",
+        "notes": null
     }
 ]
