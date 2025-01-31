@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 67e5e61f554affead822aba7839ca9c4b6f6a9b6
-  x-hash: 67e5e61f554affead822aba7839ca9c4b6f6a9b6c41deaf3880567e5ea8b4f3f613dd3892ced97e1
+  version: fecff4f4f657adee652cc0f8ef227f908dc2f2d5
+  x-hash: fecff4f4f657adee652cc0f8ef227f908dc2f2d5c41deaf3880567e5ea8b4f3f613dd3892ced97e1
   x-enumsHash: c41deaf3880567e5ea8b4f3f613dd3892ced97e1
 host: na1.api.riotgames.com
 x-host-platform:
@@ -8913,50 +8913,62 @@ definitions:
         format: int32
         x-type: int
       playerScore0:
+        x-alias: PlayerScore0
         type: integer
         format: int32
         x-type: int
       playerScore1:
+        x-alias: PlayerScore1
         type: integer
         format: int32
         x-type: int
       playerScore2:
+        x-alias: PlayerScore2
         type: integer
         format: int32
         x-type: int
       playerScore3:
+        x-alias: PlayerScore3
         type: integer
         format: int32
         x-type: int
       playerScore4:
+        x-alias: PlayerScore4
         type: integer
         format: int32
         x-type: int
       playerScore5:
+        x-alias: PlayerScore5
         type: integer
         format: int32
         x-type: int
       playerScore6:
+        x-alias: PlayerScore6
         type: integer
         format: int32
         x-type: int
       playerScore7:
+        x-alias: PlayerScore7
         type: integer
         format: int32
         x-type: int
       playerScore8:
+        x-alias: PlayerScore8
         type: integer
         format: int32
         x-type: int
       playerScore9:
+        x-alias: PlayerScore9
         type: integer
         format: int32
         x-type: int
       playerScore10:
+        x-alias: PlayerScore10
         type: integer
         format: int32
         x-type: int
       playerScore11:
+        x-alias: PlayerScore11
         type: integer
         format: int32
         x-type: int
