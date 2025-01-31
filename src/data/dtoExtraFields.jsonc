@@ -198,6 +198,7 @@
       "x-enum": "queue"
     }
   },
+  // https://github.com/RiotGames/developer-relations/issues/749
   "tft-match-v1.ParticipantDto": {
     "augments": {
       "type": "array",
@@ -219,6 +220,19 @@
     "win": {
       "type": "boolean",
       "x-type": "boolean"
+    },
+    "skill_tree": {
+      "type": "object",
+      "x-key": {
+        "type": "string",
+        "x-type": "string"
+      },
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      },
+      "x-type": "Map[string, int]"
     }
   },
   "tft-match-v1.CompanionDto": {
