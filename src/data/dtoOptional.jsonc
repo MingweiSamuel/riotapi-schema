@@ -232,6 +232,7 @@
   "tft-match-v1.ParticipantDto.win": true,
   "tft-match-v1.ParticipantDto.riotIdGameName": true,
   "tft-match-v1.ParticipantDto.riotIdTagline": true,
+  "tft-match-v1.ParticipantDto.skill_tree": true,
   "tft-match-v1.ParticipantMissionsDto.*": true,
   "tft-match-v1.Companion.item_ID": true,
   "tft-match-v1.UnitDto.items": true,
