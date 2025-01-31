@@ -1028,5 +1028,15 @@
     "x-deprecated": false,
     "x-desc": "Teamfight Tactics Set 3.5 Revival games on Convergence",
     "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_SET_3_5_REVIVAL"
+  },
+  {
+    "queueId": 6100,
+    "map": "Convergence",
+    "description": "Teamfight Tactics Revival: Festival of Beasts",
+    "notes": null,
+    "x-value": 6100,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics Revival: Festival of Beasts games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_REVIVAL_FESTIVAL_OF_BEASTS"
   }
 ]
