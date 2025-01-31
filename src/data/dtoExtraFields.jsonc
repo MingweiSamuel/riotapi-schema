@@ -63,6 +63,79 @@
       "format": "int32",
       "x-type": "int",
       "description": "https://github.com/RiotGames/developer-relations/issues/814"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/1039
+    "playerScore0": {
+      "x-alias": "PlayerScore0",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore1": {
+      "x-alias": "PlayerScore1",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore2": {
+      "x-alias": "PlayerScore2",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore3": {
+      "x-alias": "PlayerScore3",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore4": {
+      "x-alias": "PlayerScore4",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore5": {
+      "x-alias": "PlayerScore5",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore6": {
+      "x-alias": "PlayerScore6",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore7": {
+      "x-alias": "PlayerScore7",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore8": {
+      "x-alias": "PlayerScore8",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore9": {
+      "x-alias": "PlayerScore9",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore10": {
+      "x-alias": "PlayerScore10",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "playerScore11": {
+      "x-alias": "PlayerScore11",
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
     }
   },
   //
