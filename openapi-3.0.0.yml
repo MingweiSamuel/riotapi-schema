@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: c98741b172f0b40c14f42371b638c87c33bebaca
-  x-hash: c98741b172f0b40c14f42371b638c87c33bebaca0361850fc29d259b90694ea5ee67ca98109be8f1
+  version: 6868c802bab567c791c43a1bab6c2098dfde5439
+  x-hash: 6868c802bab567c791c43a1bab6c2098dfde54390361850fc29d259b90694ea5ee67ca98109be8f1
   x-enumsHash: 0361850fc29d259b90694ea5ee67ca98109be8f1
 servers:
   -
@@ -1443,6 +1443,93 @@ paths:
               - RANKED_SOLO_5x5
               - RANKED_FLEX_SR
               - RANKED_FLEX_TT
+      x-endpoint: league-v4
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - me1
+        - na1
+        - oc1
+        - ru
+        - sg2
+        - tr1
+        - tw2
+        - vn2
+      x-route-enum: platform
+    x-endpoint: league-v4
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - me1
+      - na1
+      - oc1
+      - ru
+      - sg2
+      - tr1
+      - tw2
+      - vn2
+    x-route-enum: platform
+  '/lol/league/v4/entries/by-puuid/{encryptedPUUID}':
+    get:
+      tags:
+        - league-v4
+      summary: 'Get league entries in all queues for a given puuid'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#league-v4/GET_getLeagueEntriesByPUUID'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/league-v4.LeagueEntryDTO'
+                  x-type: LeagueEntryDTO
+                x-type: 'Set[LeagueEntryDTO]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: league-v4.getLeagueEntriesByPUUID
+      description: 'Get league entries in all queues for a given puuid'
+      parameters:
+        -
+          name: encryptedPUUID
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
       x-endpoint: league-v4
       x-platforms-available:
         - br1
@@ -7301,6 +7388,10 @@ components:
           type: string
           x-type: string
           description: 'Player''s summonerId (Encrypted)'
+        puuid:
+          type: string
+          x-type: string
+          description: 'Player''s encrypted puuid.'
         queueType:
           type: string
           x-type: string
@@ -7346,6 +7437,7 @@ components:
       required:
         - leagueId
         - summonerId
+        - puuid
         - queueType
         - tier
         - rank
@@ -7498,6 +7590,10 @@ components:
           type: string
           x-type: string
           description: 'Player''s encrypted summonerId.'
+        puuid:
+          type: string
+          x-type: string
+          description: 'Player''s encrypted puuid.'
         queueType:
           type: string
           x-type: string
@@ -7542,6 +7638,7 @@ components:
           x-type: MiniSeriesDTO
       required:
         - summonerId
+        - puuid
         - queueType
         - leaguePoints
         - wins
