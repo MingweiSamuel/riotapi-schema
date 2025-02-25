@@ -516,6 +516,16 @@
     "actualStartTime": {
       "type": "integer",
       "format": "int64"
+    },
+
+    // https://github.com/RiotGames/developer-relations/issues/926#issuecomment-2680530040
+    "featType": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "featValue": {
+      "type": "integer",
+      "format": "int32"
     }
   },
   // https://github.com/RiotGames/developer-relations/issues/928
