@@ -274,6 +274,12 @@
   "val-match-v1.AbilityDto.*": true,
   "val-match-v1.PlayerStatsDto.abilityCasts": true,
 
+  // Aborted games: NA 4c196b0a-b396-46ae-a937-b4c52ee83f9a
+  "val-match-v1.MatchDto.teams": true,
+  "val-match-v1.MatchDto.roundResults": true,
+  "val-match-v1.MatchInfoDto.gameLengthMillis": true,
+  "val-match-v1.PlayerDto.stats": true,
+
   /// https://github.com/RiotGames/developer-relations/issues/605
   "val-ranked-v1.LeaderboardDto.immortalStartingPage": true,
   "val-ranked-v1.LeaderboardDto.immortalStartingIndex": true,
