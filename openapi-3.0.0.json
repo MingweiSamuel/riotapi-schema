@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "b328d49fbda1a82f940f38513d8f841308ead694",
-    "x-hash": "b328d49fbda1a82f940f38513d8f841308ead6940361850fc29d259b90694ea5ee67ca98109be8f1",
+    "version": "313f162c59045123948a1872024485862504c361",
+    "x-hash": "313f162c59045123948a1872024485862504c3610361850fc29d259b90694ea5ee67ca98109be8f1",
     "x-enumsHash": "0361850fc29d259b90694ea5ee67ca98109be8f1"
   },
   "servers": [
@@ -17887,9 +17887,7 @@
         "required": [
           "matchInfo",
           "players",
-          "coaches",
-          "teams",
-          "roundResults"
+          "coaches"
         ]
       },
       "val-match-v1.MatchInfoDto": {
@@ -17957,7 +17955,6 @@
         "required": [
           "matchId",
           "mapId",
-          "gameLengthMillis",
           "gameStartMillis",
           "provisioningFlowId",
           "isCompleted",
@@ -18033,7 +18030,6 @@
           "teamId",
           "partyId",
           "characterId",
-          "stats",
           "competitiveTier",
           "playerCard",
           "playerTitle",
