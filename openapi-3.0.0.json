@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "ea10cf840edc883cc99bb56ce076fae579ce6150",
-    "x-hash": "ea10cf840edc883cc99bb56ce076fae579ce61500361850fc29d259b90694ea5ee67ca98109be8f1",
+    "version": "b328d49fbda1a82f940f38513d8f841308ead694",
+    "x-hash": "b328d49fbda1a82f940f38513d8f841308ead6940361850fc29d259b90694ea5ee67ca98109be8f1",
     "x-enumsHash": "0361850fc29d259b90694ea5ee67ca98109be8f1"
   },
   "servers": [
@@ -13472,6 +13472,14 @@
           "actualStartTime": {
             "type": "integer",
             "format": "int64"
+          },
+          "featType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "featValue": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "required": [
@@ -13891,6 +13899,17 @@
           "trueDamage",
           "type"
         ]
+      },
+      "match-v5.FeatDto": {
+        "type": "object",
+        "title": "FeatDto",
+        "properties": {
+          "featState": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          }
+        }
       },
       "spectator-tft-v5.CurrentGameInfo": {
         "type": "object",
@@ -18955,17 +18974,6 @@
           "created_at",
           "updated_at"
         ]
-      },
-      "match-v5.FeatDto": {
-        "type": "object",
-        "title": "FeatDto",
-        "properties": {
-          "featState": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
-          }
-        }
       }
     },
     "securitySchemes": {
