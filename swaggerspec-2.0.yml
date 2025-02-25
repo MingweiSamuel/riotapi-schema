@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: ebf1c5d7502fc5cb758e2a36205a42049b9a4693
-  x-hash: ebf1c5d7502fc5cb758e2a36205a42049b9a46930361850fc29d259b90694ea5ee67ca98109be8f1
+  version: 491ea6a9f98e58de5fefa19aeff08c5d03efc70b
+  x-hash: 491ea6a9f98e58de5fefa19aeff08c5d03efc70b0361850fc29d259b90694ea5ee67ca98109be8f1
   x-enumsHash: 0361850fc29d259b90694ea5ee67ca98109be8f1
 host: na1.api.riotgames.com
 x-host-platform:
@@ -7437,6 +7437,27 @@ definitions:
       TrueDamageTaken:
         type: integer
         format: int32
+  match-v5.FeatsDto:
+    type: object
+    title: FeatsDto
+    properties:
+      EPIC_MONSTER_KILL:
+        $ref: '#/definitions/match-v5.FeatDto'
+        x-type: FeatDto
+      FIRST_BLOOD:
+        $ref: '#/definitions/match-v5.FeatDto'
+        x-type: FeatDto
+      FIRST_TURRET:
+        $ref: '#/definitions/match-v5.FeatDto'
+        x-type: FeatDto
+  match-v5.FeatDto:
+    type: object
+    title: FeatDto
+    properties:
+      featState:
+        type: integer
+        format: int32
+        x-type: int
   champion-mastery-v4.ChampionMasteryDto:
     type: object
     title: ChampionMasteryDto
@@ -10200,6 +10221,9 @@ definitions:
       win:
         type: boolean
         x-type: boolean
+      feats:
+        $ref: '#/definitions/match-v5.FeatsDto'
+        x-type: FeatsDto
     required:
       - bans
       - objectives

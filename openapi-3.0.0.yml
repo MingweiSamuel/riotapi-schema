@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 6868c802bab567c791c43a1bab6c2098dfde5439
-  x-hash: 6868c802bab567c791c43a1bab6c2098dfde54390361850fc29d259b90694ea5ee67ca98109be8f1
+  version: ea10cf840edc883cc99bb56ce076fae579ce6150
+  x-hash: ea10cf840edc883cc99bb56ce076fae579ce61500361850fc29d259b90694ea5ee67ca98109be8f1
   x-enumsHash: 0361850fc29d259b90694ea5ee67ca98109be8f1
 servers:
   -
@@ -9990,6 +9990,9 @@ components:
         win:
           type: boolean
           x-type: boolean
+        feats:
+          $ref: '#/components/schemas/match-v5.FeatsDto'
+          x-type: FeatsDto
       required:
         - bans
         - objectives
@@ -10558,6 +10561,19 @@ components:
       required:
         - x
         - y
+    match-v5.FeatsDto:
+      type: object
+      title: FeatsDto
+      properties:
+        EPIC_MONSTER_KILL:
+          $ref: '#/components/schemas/match-v5.FeatDto'
+          x-type: FeatDto
+        FIRST_BLOOD:
+          $ref: '#/components/schemas/match-v5.FeatDto'
+          x-type: FeatDto
+        FIRST_TURRET:
+          $ref: '#/components/schemas/match-v5.FeatDto'
+          x-type: FeatDto
     match-v5.MatchTimelineVictimDamage:
       title: MatchTimelineVictimDamage
       type: object
@@ -14570,6 +14586,14 @@ components:
         - translations
         - created_at
         - updated_at
+    match-v5.FeatDto:
+      type: object
+      title: FeatDto
+      properties:
+        featState:
+          type: integer
+          format: int32
+          x-type: int
   securitySchemes:
     api_key:
       type: apiKey
