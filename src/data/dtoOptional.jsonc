@@ -199,6 +199,9 @@
   // https://github.com/RiotGames/developer-relations/issues/929#issuecomment-2106321084
   "match-v5.MissionsDto.*": true,
 
+  // https://github.com/RiotGames/developer-relations/issues/1052
+  "match-v5.TeamDto.feats": true,
+
 
   "lol-status-v4.StatusDto.archive_at": true,
   "lol-status-v4.StatusDto.incident_severity": true,

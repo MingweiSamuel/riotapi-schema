@@ -810,5 +810,13 @@
       "$ref": "#/components/schemas/match-v5.ObjectiveDto",
       "x-type": "ObjectiveDto"
     }
+  },
+
+  // https://github.com/RiotGames/developer-relations/issues/1052
+  "match-v5.TeamDto": {
+    "feats": {
+      "$ref": "#/components/schemas/match-v5.FeatsDto",
+      "x-type": "FeatsDto"
+    }
   }
 }

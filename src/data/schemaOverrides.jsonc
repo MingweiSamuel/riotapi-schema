@@ -530,5 +530,37 @@
         "format": "int32"
       }
     }
+  },
+
+
+  // https://github.com/RiotGames/developer-relations/issues/1052
+  "match-v5.FeatsDto": {
+    "type": "object",
+    "title": "FeatsDto",
+    "properties": {
+      "EPIC_MONSTER_KILL": {
+        "$ref": "#/components/schemas/match-v5.FeatDto",
+        "x-type": "FeatDto"
+      },
+      "FIRST_BLOOD": {
+        "$ref": "#/components/schemas/match-v5.FeatDto",
+        "x-type": "FeatDto"
+      },
+      "FIRST_TURRET": {
+        "$ref": "#/components/schemas/match-v5.FeatDto",
+        "x-type": "FeatDto"
+      }
+    }
+  },
+  "match-v5.FeatDto": {
+    "type": "object",
+    "title": "FeatDto",
+    "properties": {
+      "featState": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      }
+    }
   }
 }
