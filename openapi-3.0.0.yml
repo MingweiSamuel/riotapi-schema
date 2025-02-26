@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 313f162c59045123948a1872024485862504c361
-  x-hash: 313f162c59045123948a1872024485862504c3610361850fc29d259b90694ea5ee67ca98109be8f1
+  version: 1f15b5daff3b95acf32d83025121d3f58128f13a
+  x-hash: 1f15b5daff3b95acf32d83025121d3f58128f13a0361850fc29d259b90694ea5ee67ca98109be8f1
   x-enumsHash: 0361850fc29d259b90694ea5ee67ca98109be8f1
 servers:
   -
@@ -791,93 +791,6 @@ paths:
       parameters:
         -
           name: puuid
-          in: path
-          required: true
-          schema:
-            type: string
-            x-type: string
-      x-endpoint: clash-v1
-      x-platforms-available:
-        - br1
-        - eun1
-        - euw1
-        - jp1
-        - kr
-        - la1
-        - la2
-        - me1
-        - na1
-        - oc1
-        - ru
-        - sg2
-        - tr1
-        - tw2
-        - vn2
-      x-route-enum: platform
-    x-endpoint: clash-v1
-    x-platforms-available:
-      - br1
-      - eun1
-      - euw1
-      - jp1
-      - kr
-      - la1
-      - la2
-      - me1
-      - na1
-      - oc1
-      - ru
-      - sg2
-      - tr1
-      - tw2
-      - vn2
-    x-route-enum: platform
-  '/lol/clash/v1/players/by-summoner/{summonerId}':
-    get:
-      tags:
-        - clash-v1
-      summary: 'Get players by summoner ID.'
-      externalDocs:
-        description: 'Official API Reference'
-        url: 'https://developer.riotgames.com/api-methods/#clash-v1/GET_getPlayersBySummoner'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/clash-v1.PlayerDto'
-                  x-type: PlayerDto
-                x-type: 'List[PlayerDto]'
-        '400':
-          description: 'Bad request'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: 'Data not found'
-        '405':
-          description: 'Method not allowed'
-        '415':
-          description: 'Unsupported media type'
-        '429':
-          description: 'Rate limit exceeded'
-        '500':
-          description: 'Internal server error'
-        '502':
-          description: 'Bad gateway'
-        '503':
-          description: 'Service unavailable'
-        '504':
-          description: 'Gateway timeout'
-      operationId: clash-v1.getPlayersBySummoner
-      description: "Get players by summoner ID.\n## Implementation Notes\nThis endpoint returns a list of active Clash players for a given summoner ID. If a summoner registers for multiple tournaments at the same time (e.g., Saturday and Sunday) then both registrations would appear in this list."
-      parameters:
-        -
-          name: summonerId
           in: path
           required: true
           schema:
