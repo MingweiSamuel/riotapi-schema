@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: a5e5eb90ee5691ab2ae5ff300e7e636ae640ae00
-  x-hash: a5e5eb90ee5691ab2ae5ff300e7e636ae640ae000361850fc29d259b90694ea5ee67ca98109be8f1
+  version: c1a59e2d2c1379fade052ede55ce6722e79a2640
+  x-hash: c1a59e2d2c1379fade052ede55ce6722e79a26400361850fc29d259b90694ea5ee67ca98109be8f1
   x-enumsHash: 0361850fc29d259b90694ea5ee67ca98109be8f1
 host: na1.api.riotgames.com
 x-host-platform:
@@ -8950,64 +8950,52 @@ definitions:
         x-type: int
       playerScore0:
         x-alias: PlayerScore0
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore1:
         x-alias: PlayerScore1
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore2:
         x-alias: PlayerScore2
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore3:
         x-alias: PlayerScore3
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore4:
         x-alias: PlayerScore4
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore5:
         x-alias: PlayerScore5
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore6:
         x-alias: PlayerScore6
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore7:
         x-alias: PlayerScore7
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore8:
         x-alias: PlayerScore8
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore9:
         x-alias: PlayerScore9
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore10:
         x-alias: PlayerScore10
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       playerScore11:
         x-alias: PlayerScore11
-        type: integer
-        format: int32
-        x-type: int
+        type: number
+        format: float
       pentaKills:
         type: integer
         format: int32
@@ -9983,53 +9971,53 @@ definitions:
     title: MissionsDto
     properties:
       playerScore0:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore0
+        type: number
+        format: float
       playerScore1:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore1
+        type: number
+        format: float
       playerScore2:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore2
+        type: number
+        format: float
       playerScore3:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore3
+        type: number
+        format: float
       playerScore4:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore4
+        type: number
+        format: float
       playerScore5:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore5
+        type: number
+        format: float
       playerScore6:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore6
+        type: number
+        format: float
       playerScore7:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore7
+        type: number
+        format: float
       playerScore8:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore8
+        type: number
+        format: float
       playerScore9:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore9
+        type: number
+        format: float
       playerScore10:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore10
+        type: number
+        format: float
       playerScore11:
-        type: integer
-        format: int32
-        x-type: int
+        x-alias: PlayerScore11
+        type: number
+        format: float
     description: 'Missions DTO'
   match-v5.PerksDto:
     type: object
