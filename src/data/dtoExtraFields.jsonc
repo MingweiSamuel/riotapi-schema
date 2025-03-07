@@ -64,78 +64,68 @@
       "x-type": "int",
       "description": "https://github.com/RiotGames/developer-relations/issues/814"
     },
+    //
     // https://github.com/RiotGames/developer-relations/issues/1039
+    // https://github.com/RiotGames/developer-relations/issues/1053
     "playerScore0": {
       "x-alias": "PlayerScore0",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore1": {
       "x-alias": "PlayerScore1",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore2": {
       "x-alias": "PlayerScore2",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore3": {
       "x-alias": "PlayerScore3",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore4": {
       "x-alias": "PlayerScore4",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore5": {
       "x-alias": "PlayerScore5",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore6": {
       "x-alias": "PlayerScore6",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore7": {
       "x-alias": "PlayerScore7",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore8": {
       "x-alias": "PlayerScore8",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore9": {
       "x-alias": "PlayerScore9",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore10": {
       "x-alias": "PlayerScore10",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     },
     "playerScore11": {
       "x-alias": "PlayerScore11",
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
+      "type": "number",
+      "format": "float"
     }
   },
   //
@@ -821,12 +811,77 @@
       "x-type": "ObjectiveDto"
     }
   },
-
+  //
   // https://github.com/RiotGames/developer-relations/issues/1052
   "match-v5.TeamDto": {
     "feats": {
       "$ref": "#/components/schemas/match-v5.FeatsDto",
       "x-type": "FeatsDto"
+    }
+  },
+  //
+  // https://github.com/RiotGames/developer-relations/issues/908
+  // https://github.com/RiotGames/developer-relations/issues/1053
+  "match-v5.MissionsDto": {
+    "playerScore0": {
+      "x-alias": "PlayerScore0",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore1": {
+      "x-alias": "PlayerScore1",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore2": {
+      "x-alias": "PlayerScore2",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore3": {
+      "x-alias": "PlayerScore3",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore4": {
+      "x-alias": "PlayerScore4",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore5": {
+      "x-alias": "PlayerScore5",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore6": {
+      "x-alias": "PlayerScore6",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore7": {
+      "x-alias": "PlayerScore7",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore8": {
+      "x-alias": "PlayerScore8",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore9": {
+      "x-alias": "PlayerScore9",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore10": {
+      "x-alias": "PlayerScore10",
+      "type": "number",
+      "format": "float"
+    },
+    "playerScore11": {
+      "x-alias": "PlayerScore11",
+      "type": "number",
+      "format": "float"
     }
   }
 }
