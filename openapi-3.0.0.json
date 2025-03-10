@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "1b37b11075bdad584e6a46a1bdeffa7ad35c4303",
-    "x-hash": "1b37b11075bdad584e6a46a1bdeffa7ad35c43030361850fc29d259b90694ea5ee67ca98109be8f1",
+    "version": "1bf5b278f4955ad07ffbe6a525dfbdf86181be57",
+    "x-hash": "1bf5b278f4955ad07ffbe6a525dfbdf86181be570361850fc29d259b90694ea5ee67ca98109be8f1",
     "x-enumsHash": "0361850fc29d259b90694ea5ee67ca98109be8f1"
   },
   "servers": [
@@ -12600,9 +12600,9 @@
             "x-type": "int"
           },
           "SWARM_PickupGold": {
-            "type": "integer",
-            "format": "int32",
-            "x-type": "int"
+            "type": "number",
+            "format": "float",
+            "x-type": "float"
           },
           "SWARM_ReachLevel50": {
             "type": "integer",
