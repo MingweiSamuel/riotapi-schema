@@ -126,11 +126,22 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
       const oldField = schema.properties[fieldName];
       if (null != oldField) {
         console.log(`      Overwriting existing field: '${fieldName}'`);
-        if (oldField.type === extraProp.type && oldField.format === extraProp.format) {
-          if ('array' === oldField.type || 'object' === oldField.type) {
-            console.error(`        Original field MAY be compatible!`);
-          } else {
-            console.error(`        Original field IS compatible!`);
+        if (oldField.type === extraProp.type) {
+          if (oldField.format === extraProp.format) {
+            if ('array' === oldField.type || 'object' === oldField.type) {
+              console.error(`        Original object/array field MAYBE compatible!`);
+            }
+            else {
+              console.error(`        Original field IS compatible!`);
+            }
+          } else if ('number' === oldField.type || 'integer' === oldField.type) {
+            console.error(`        Original numeric field PROBABLY compatible!`);
+          }
+        } else if ('number' === oldField.type) {
+          if ('integer' === extraProp.type) {
+            console.error(`        Original field float/double overwritten by int, IS compatible!`);
+          } else if ('number' === oldField.type) {
+            console.error(`        Original field float/double overwritten by float/double, IS compatible!`);
           }
         }
       }
