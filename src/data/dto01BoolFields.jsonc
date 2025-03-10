@@ -1,0 +1,9 @@
+// Integer fields which can only be `0` or `1`, representing `false` or `true`.
+{
+    "match-v5.ChallengesDto.fasterSupportQuestCompletion": true,
+    "match-v5.ChallengesDto.hadAfkTeammate": true,
+    "match-v5.ChallengesDto.highestCrowdControlScore": true, // Is actually always `1`, or not present.
+    "match-v5.ChallengesDto.highestWardKills": true, // Is actually always `1`, or not present.
+    "match-v5.ChallengesDto.laningPhaseGoldExpAdvantage": true,
+    "match-v5.ChallengesDto.playedChampSelectPosition": true
+}

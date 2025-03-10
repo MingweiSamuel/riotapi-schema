@@ -11,6 +11,7 @@ const METHOD_DTO_RENAMES = jsonc.readSync(__dirname + '/data/methodDtoRenames.js
 const METHOD_PARAM_ENUMS = jsonc.readSync(__dirname + '/data/methodParamEnums.jsonc');
 const DTO_ENUMS = jsonc.readSync(__dirname + '/data/dtoEnums.jsonc');
 const DTO_EXTRA_FIELDS = jsonc.readSync(__dirname + '/data/dtoExtraFields.jsonc');
+const DTO_01_BOOL_FIELDS = jsonc.readSync(__dirname + '/data/dto01BoolFields.jsonc');
 
 const types = require('./types');
 const { subsetEqual } = require('./deepEqual');
@@ -55,6 +56,7 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
       .map((el, i) => data[headers[i]] = el.textContent.trim());
     let { name: fieldName, dataType, description } = data;
 
+    // Handle required vs optional.
     {
       if (onlyUseRequiredByDefault && useDtoOptional)
         throw Error('Cannot only use required by default and use dto optional.');
@@ -110,6 +112,15 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
         .filter(str => 0 < str.length);
     }
     schema.properties[fieldName] = prop;
+
+    const is01Bool = DTO_01_BOOL_FIELDS[`${endpointName}.${dtoName}.${fieldName}`];
+    if (true === is01Bool) {
+      if ('integer' === prop.type) {
+        prop.enum = [ 0, 1 ];
+      } else {
+        console.error(`    Field marked as 0/1 bool is not integer, is ${JSON.stringify(prop.type)}: '${endpointName}.${dtoName}.${fieldName}'`);
+      }
+    }
   });
 
   // Add dto extra fields.
