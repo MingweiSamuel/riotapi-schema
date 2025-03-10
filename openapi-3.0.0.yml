@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: e6ac907a8c63d4c9b92e2a2fb4d6177f9e5583d5
-  x-hash: e6ac907a8c63d4c9b92e2a2fb4d6177f9e5583d50361850fc29d259b90694ea5ee67ca98109be8f1
+  version: 0ec1ee73a0d4f3138f9cbbe51b2787d41c3d8892
+  x-hash: 0ec1ee73a0d4f3138f9cbbe51b2787d41c3d88920361850fc29d259b90694ea5ee67ca98109be8f1
   x-enumsHash: 0361850fc29d259b90694ea5ee67ca98109be8f1
 servers:
   -
@@ -9173,6 +9173,9 @@ components:
           type: integer
           format: int32
           x-type: int
+          enum:
+            - 0
+            - 1
         fastestLegendary:
           type: number
           format: double
@@ -9181,6 +9184,9 @@ components:
           type: integer
           format: int32
           x-type: int
+          enum:
+            - 0
+            - 1
         highestChampionDamage:
           type: integer
           format: int32
@@ -9189,10 +9195,16 @@ components:
           type: integer
           format: int32
           x-type: int
+          enum:
+            - 0
+            - 1
         highestWardKills:
           type: integer
           format: int32
           x-type: int
+          enum:
+            - 0
+            - 1
         junglerKillsEarlyJungle:
           type: integer
           format: int32
@@ -9205,6 +9217,9 @@ components:
           type: integer
           format: int32
           x-type: int
+          enum:
+            - 0
+            - 1
         legendaryCount:
           type: integer
           format: int32
@@ -9229,6 +9244,9 @@ components:
           type: integer
           format: int32
           x-type: int
+          enum:
+            - 0
+            - 1
         soloTurretsLategame:
           type: integer
           format: int32

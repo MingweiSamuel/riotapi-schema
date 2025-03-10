@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "1822574059aadd47cb7f12d07fced03f32d4552f",
-    "x-hash": "1822574059aadd47cb7f12d07fced03f32d4552f0361850fc29d259b90694ea5ee67ca98109be8f1",
+    "version": "3b1b6842d00ffd1903f21745356c587dd9e66f2d",
+    "x-hash": "3b1b6842d00ffd1903f21745356c587dd9e66f2d0361850fc29d259b90694ea5ee67ca98109be8f1",
     "x-enumsHash": "0361850fc29d259b90694ea5ee67ca98109be8f1"
   },
   "host": "na1.api.riotgames.com",
@@ -12173,7 +12173,11 @@
         "fasterSupportQuestCompletion": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "enum": [
+            0,
+            1
+          ]
         },
         "fastestLegendary": {
           "type": "number",
@@ -12183,7 +12187,11 @@
         "hadAfkTeammate": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "enum": [
+            0,
+            1
+          ]
         },
         "highestChampionDamage": {
           "type": "integer",
@@ -12193,12 +12201,20 @@
         "highestCrowdControlScore": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "enum": [
+            0,
+            1
+          ]
         },
         "highestWardKills": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "enum": [
+            0,
+            1
+          ]
         },
         "junglerKillsEarlyJungle": {
           "type": "integer",
@@ -12213,7 +12229,11 @@
         "laningPhaseGoldExpAdvantage": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "enum": [
+            0,
+            1
+          ]
         },
         "legendaryCount": {
           "type": "integer",
@@ -12243,7 +12263,11 @@
         "playedChampSelectPosition": {
           "type": "integer",
           "format": "int32",
-          "x-type": "int"
+          "x-type": "int",
+          "enum": [
+            0,
+            1
+          ]
         },
         "soloTurretsLategame": {
           "type": "integer",
