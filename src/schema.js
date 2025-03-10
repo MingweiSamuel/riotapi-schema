@@ -116,17 +116,21 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
   const extraFields = DTO_EXTRA_FIELDS[`${endpointName}.${dtoName}`];
   if (null != extraFields) {
     console.log(`    Adding fields to DTO '${endpointName}.${dtoName}': ${JSON.stringify(Object.keys(extraFields))}.`)
-    for (const [fieldName, extraProp] of Object.entries(extraFields)) {
-      const prop = JSON.parse(JSON.stringify(extraProp));
+    for (const [fieldName, fieldExtraProp] of Object.entries(extraFields)) {
+      const extraProp = JSON.parse(JSON.stringify(fieldExtraProp));
       const isRequired = !Schema.isFieldInDtoOptional(endpointName, dtoName, fieldName);
       if (isRequired && !schema.required.includes(fieldName)) {
         schema.required.push(fieldName);
       }
-      annotateEnums(prop, endpointName, fieldName, methodName, isParam);
-      if (null != schema.properties[fieldName]) {
+      annotateEnums(extraProp, endpointName, fieldName, methodName, isParam);
+      const oldField = schema.properties[fieldName];
+      if (null != oldField) {
         console.log(`      Overwriting existing field: '${fieldName}'`);
+        if (oldField.type === extraProp.type && oldField.format === extraProp.format) {
+          console.error(`        Original field may be compatible!`);
+        }
       }
-      schema.properties[fieldName] = JSON.parse(JSON.stringify(prop));
+      schema.properties[fieldName] = JSON.parse(JSON.stringify(extraProp));
     }
   }
 
