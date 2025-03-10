@@ -521,23 +521,12 @@
   // https://github.com/RiotGames/developer-relations/issues/928
   // related: https://github.com/RiotGames/developer-relations/issues/754
   "match-v5.ChallengesDto": {
-    // Missing
-    "baronBuffGoldAdvantageOverThreshold": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "controlWardTimeCoverageInRiverOrEnemyHalf": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
+    // Needs to be float instead of int.
     "earliestBaron": {
       "type": "number",
       "format": "double",
       "x-type": "double"
     },
-    // Needs to be float instead of int.
     "earliestDragonTakedown": {
       "type": "number",
       "format": "double",
@@ -553,174 +542,12 @@
       "format": "double",
       "x-type": "double"
     },
-    "fasterSupportQuestCompletion": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
     "fastestLegendary": {
       "type": "number",
       "format": "double",
       "x-type": "double"
     },
-    "hadAfkTeammate": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "highestChampionDamage": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "highestCrowdControlScore": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "highestWardKills": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "junglerKillsEarlyJungle": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "killsOnLanersEarlyJungleAsJungler": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "laningPhaseGoldExpAdvantage": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "legendaryCount": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "maxCsAdvantageOnLaneOpponent": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "maxLevelLeadLaneOpponent": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "mostWardsDestroyedOneSweeper": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "mythicItemUsed": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "playedChampSelectPosition": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "soloTurretsLategame": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "takedownsFirst25Minutes": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "teleportTakedowns": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
     "thirdInhibitorDestroyedTime": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "threeWardsOneSweeperCount": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "visionScoreAdvantageLaneOpponent": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    // Need to be float instead of int.
-    "alliedJungleMonsterKills": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "damagePerMinute": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "damageTakenOnTeamPercentage": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "enemyJungleMonsterKills": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "gameLength": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "goldPerMinute": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "jungleCsBefore10Minutes": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "kda": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "killParticipation": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "moreEnemyJungleThanOpponent": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "teamDamagePercentage": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    "visionScorePerMinute": {
-      "type": "number",
-      "format": "double",
-      "x-type": "double"
-    },
-    // 2024-05-18
-    "InfernalScalePickup": {
       "type": "number",
       "format": "double",
       "x-type": "double"
