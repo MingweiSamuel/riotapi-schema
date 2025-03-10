@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 4473523aea934a1f9c8f153d31b230a742a703a1
-  x-hash: 4473523aea934a1f9c8f153d31b230a742a703a10361850fc29d259b90694ea5ee67ca98109be8f1
+  version: 1822574059aadd47cb7f12d07fced03f32d4552f
+  x-hash: 1822574059aadd47cb7f12d07fced03f32d4552f0361850fc29d259b90694ea5ee67ca98109be8f1
   x-enumsHash: 0361850fc29d259b90694ea5ee67ca98109be8f1
 host: na1.api.riotgames.com
 x-host-platform:
@@ -9377,13 +9377,13 @@ definitions:
         format: int32
         x-type: int
       baronBuffGoldAdvantageOverThreshold:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       controlWardTimeCoverageInRiverOrEnemyHalf:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       earliestBaron:
         type: number
         format: double
@@ -9401,93 +9401,93 @@ definitions:
         format: double
         x-type: double
       fasterSupportQuestCompletion:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       fastestLegendary:
         type: number
         format: double
         x-type: double
       hadAfkTeammate:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       highestChampionDamage:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       highestCrowdControlScore:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       highestWardKills:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       junglerKillsEarlyJungle:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       killsOnLanersEarlyJungleAsJungler:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       laningPhaseGoldExpAdvantage:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       legendaryCount:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       maxCsAdvantageOnLaneOpponent:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       maxLevelLeadLaneOpponent:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       mostWardsDestroyedOneSweeper:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       mythicItemUsed:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       playedChampSelectPosition:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       soloTurretsLategame:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       takedownsFirst25Minutes:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       teleportTakedowns:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       thirdInhibitorDestroyedTime:
         type: number
         format: double
         x-type: double
       threeWardsOneSweeperCount:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       visionScoreAdvantageLaneOpponent:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       InfernalScalePickup:
-        type: number
-        format: double
-        x-type: double
+        type: integer
+        format: int32
+        x-type: int
       fistBumpParticipation:
         type: integer
         format: int32
@@ -9506,8 +9506,8 @@ definitions:
         x-type: int
       alliedJungleMonsterKills:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       baronTakedowns:
         type: integer
         format: int32
@@ -9534,12 +9534,12 @@ definitions:
         x-type: int
       damagePerMinute:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       damageTakenOnTeamPercentage:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       dancedWithRiftHerald:
         type: integer
         format: int32
@@ -9585,8 +9585,8 @@ definitions:
         x-type: int
       enemyJungleMonsterKills:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       epicMonsterKillsNearEnemyJungler:
         type: integer
         format: int32
@@ -9621,16 +9621,16 @@ definitions:
         x-type: int
       gameLength:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       getTakedownsInAllLanesEarlyJungleAsLaner:
         type: integer
         format: int32
         x-type: int
       goldPerMinute:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       hadOpenNexus:
         type: integer
         format: int32
@@ -9649,16 +9649,16 @@ definitions:
         x-type: int
       jungleCsBefore10Minutes:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       junglerTakedownsNearDamagedEpicMonster:
         type: integer
         format: int32
         x-type: int
       kda:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       killAfterHiddenWithAlly:
         type: integer
         format: int32
@@ -9673,8 +9673,8 @@ definitions:
         x-type: int
       killParticipation:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       killsNearEnemyTurret:
         type: integer
         format: int32
@@ -9725,8 +9725,8 @@ definitions:
         x-type: int
       moreEnemyJungleThanOpponent:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       multiKillOneSpell:
         type: integer
         format: int32
@@ -9906,8 +9906,8 @@ definitions:
         x-type: int
       teamDamagePercentage:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       teamElderDragonKills:
         type: integer
         format: int32
@@ -9947,8 +9947,8 @@ definitions:
         x-type: int
       visionScorePerMinute:
         type: number
-        format: double
-        x-type: double
+        format: float
+        x-type: float
       wardsGuarded:
         type: integer
         format: int32
