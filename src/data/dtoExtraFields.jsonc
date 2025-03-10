@@ -725,72 +725,11 @@
       "format": "double",
       "x-type": "double"
     },
-    "fistBumpParticipation": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "voidMonsterKill": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
     // https://github.com/RiotGames/developer-relations/issues/928#issuecomment-2133869752
     "firstTurretKilled": {
       "type": "number",
       "format": "double",
       "x-type": "double"
-    },
-    // SWARM: https://github.com/RiotGames/developer-relations/issues/928#issuecomment-2233623021
-    "SWARM_DefeatAatrox": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_DefeatBriar": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_DefeatMiniBosses": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_EvolveWeapon": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_Have3Passives": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_KillEnemy": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_PickupGold": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_ReachLevel50": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_Survive15Min": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
-    },
-    "SWARM_WinWith5EvolvedWeapons": {
-      "type": "integer",
-      "format": "int32",
-      "x-type": "int"
     },
     // 2024-11-03
     "HealFromMapSources": {

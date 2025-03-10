@@ -127,7 +127,11 @@ Schema.fromHtml = function(schemaHtml, endpointName, methodName,
       if (null != oldField) {
         console.log(`      Overwriting existing field: '${fieldName}'`);
         if (oldField.type === extraProp.type && oldField.format === extraProp.format) {
-          console.error(`        Original field may be compatible!`);
+          if ('array' === oldField.type || 'object' === oldField.type) {
+            console.error(`        Original field MAY be compatible!`);
+          } else {
+            console.error(`        Original field IS compatible!`);
+          }
         }
       }
       schema.properties[fieldName] = JSON.parse(JSON.stringify(extraProp));
