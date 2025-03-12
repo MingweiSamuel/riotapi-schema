@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 3b1b6842d00ffd1903f21745356c587dd9e66f2d
-  x-hash: 3b1b6842d00ffd1903f21745356c587dd9e66f2d0361850fc29d259b90694ea5ee67ca98109be8f1
+  version: 9c37988ee8f0a149e2e5bf9ffd1c896ff200c85d
+  x-hash: 9c37988ee8f0a149e2e5bf9ffd1c896ff200c85d0361850fc29d259b90694ea5ee67ca98109be8f1
   x-enumsHash: 0361850fc29d259b90694ea5ee67ca98109be8f1
 host: na1.api.riotgames.com
 x-host-platform:
@@ -6954,45 +6954,6 @@ definitions:
       - puuid
       - game
       - activeShard
-  summoner-v4.SummonerDTO:
-    title: SummonerDTO
-    type: object
-    description: 'represents a summoner'
-    properties:
-      accountId:
-        type: string
-        x-type: string
-        description: 'Encrypted account ID. Max length 56 characters.'
-      profileIconId:
-        type: integer
-        format: int32
-        x-type: int
-        description: 'ID of the summoner icon associated with the summoner.'
-      revisionDate:
-        type: integer
-        format: int64
-        x-type: long
-        description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change'
-      id:
-        type: string
-        x-type: string
-        description: 'Encrypted summoner ID. Max length 63 characters.'
-      puuid:
-        type: string
-        x-type: string
-        description: 'Encrypted PUUID. Exact length of 78 characters.'
-      summonerLevel:
-        type: integer
-        format: int64
-        x-type: long
-        description: 'Summoner level associated with the summoner.'
-    required:
-      - accountId
-      - profileIconId
-      - revisionDate
-      - id
-      - puuid
-      - summonerLevel
   val-ranked-v1.TierDetailDto:
     type: object
     title: TierDetailDto
@@ -11436,6 +11397,45 @@ definitions:
       - championId
       - teamId
       - spell1Id
+  summoner-v4.SummonerDTO:
+    type: object
+    title: SummonerDTO
+    properties:
+      accountId:
+        type: string
+        x-type: string
+        description: 'Encrypted account ID. Max length 56 characters.'
+      profileIconId:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'ID of the summoner icon associated with the summoner.'
+      revisionDate:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change.'
+      id:
+        type: string
+        x-type: string
+        description: 'Encrypted summoner ID. Max length 63 characters.'
+      puuid:
+        type: string
+        x-type: string
+        description: 'Encrypted PUUID. Exact length of 78 characters.'
+      summonerLevel:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'Summoner level associated with the summoner.'
+    description: 'represents a summoner'
+    required:
+      - accountId
+      - profileIconId
+      - revisionDate
+      - id
+      - puuid
+      - summonerLevel
   tft-league-v1.LeagueListDTO:
     type: object
     title: LeagueListDTO
@@ -12153,7 +12153,7 @@ definitions:
         type: integer
         format: int64
         x-type: long
-        description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: summoner name change, summoner level change, or profile icon change.'
+        description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change.'
       id:
         type: string
         x-type: string
