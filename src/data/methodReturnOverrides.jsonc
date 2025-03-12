@@ -1,10 +1,4 @@
 {
-  // https://github.com/RiotGames/developer-relations/issues/749
-  "tft-summoner-v1.getByAccessToken": {
-    "$ref": "#/components/schemas/tft-summoner-v1.SummonerDTO",
-    "x-type": "SummonerDTO"
-  },
-
   // https://github.com/RiotGames/developer-relations/issues/633#issuecomment-1124857215
   "lol-challenges-v1.getAllChallengePercentiles": {
     "x-type": "Map[Long, Map[Level, Double]]",
