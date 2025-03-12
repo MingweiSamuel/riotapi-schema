@@ -37,5 +37,14 @@
       "format": "double",
       "x-type": "double"
     }
+  },
+  // `lol-rso-match-v1`
+  "lol-rso-match-v1.getMatch": {
+    "$ref": "#/components/schemas/match-v5.MatchDto",
+    "x-type": "MatchDto"
+  },
+  "lol-rso-match-v1.getTimeline": {
+    "$ref": "#/components/schemas/match-v5.TimelineDto",
+    "x-type": "TimelineDto"
   }
 }
