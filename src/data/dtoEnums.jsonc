@@ -93,7 +93,10 @@
   "match-v5.EventsTimeLineDto.teamId": "team",
   "match-v5.EventsTimeLineDto.killerTeamId": "team",
 
-
-  "tournament-stub-v4.ProviderRegistrationParameters.region": "tournamentRegion",
-  "tournament-v4.ProviderRegistrationParameters.region": "tournamentRegion"
+  // `tournamentRegion`
+  "tournament-stub-v5.TournamentCodeV5DTO.region": "tournamentRegion",
+  "tournament-stub-v5.ProviderRegistrationParametersV5.region": "tournamentRegion",
+  "tournament-v5.TournamentCodeV5DTO.region": "tournamentRegion",
+  "tournament-v5.TournamentGamesV5.region": "tournamentRegion",
+  "tournament-v5.ProviderRegistrationParametersV5.region": "tournamentRegion"
 }
