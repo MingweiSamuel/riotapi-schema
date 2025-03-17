@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "70189fcbec142793477bfadf264265de0134d742",
-    "x-hash": "70189fcbec142793477bfadf264265de0134d7420361850fc29d259b90694ea5ee67ca98109be8f1",
+    "version": "996d171a2b79e9bb85c549f47b07c6ef2721fc8a",
+    "x-hash": "996d171a2b79e9bb85c549f47b07c6ef2721fc8a0361850fc29d259b90694ea5ee67ca98109be8f1",
     "x-enumsHash": "0361850fc29d259b90694ea5ee67ca98109be8f1"
   },
   "servers": [
@@ -16031,7 +16031,8 @@
               "TR",
               "KR"
             ],
-            "description": "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR)"
+            "description": "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR)",
+            "x-enum": "tournamentRegion"
           },
           "map": {
             "type": "string",
@@ -16128,7 +16129,8 @@
               "TR",
               "KR"
             ],
-            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR)"
+            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR)",
+            "x-enum": "tournamentRegion"
           },
           "url": {
             "type": "string",
@@ -16311,7 +16313,8 @@
               "TW",
               "VN"
             ],
-            "description": "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR,  PH,  SG,  TH,  TW,  VN)"
+            "description": "The tournament code's region.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR,  PH,  SG,  TH,  TW,  VN)",
+            "x-enum": "tournamentRegion"
           },
           "map": {
             "type": "string",
@@ -16450,7 +16453,8 @@
           "region": {
             "type": "string",
             "x-type": "string",
-            "description": "Region of the game"
+            "description": "Region of the game",
+            "x-enum": "tournamentRegion"
           }
         },
         "required": [
@@ -16548,7 +16552,8 @@
               "TW",
               "VN"
             ],
-            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR,  PH,  SG,  TH,  TW,  VN)"
+            "description": "The region in which the provider will be running tournaments.\n             (Legal values:  BR,  EUNE,  EUW,  JP,  LAN,  LAS,  NA,  OCE,  PBE,  RU,  TR,  KR,  PH,  SG,  TH,  TW,  VN)",
+            "x-enum": "tournamentRegion"
           },
           "url": {
             "type": "string",
