@@ -4,15 +4,14 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "738b9e9982db0d0bf7c3fc61ccffe96a43988060",
-    "x-hash": "738b9e9982db0d0bf7c3fc61ccffe96a439880600361850fc29d259b90694ea5ee67ca98109be8f1",
+    "version": "1dfefd3b428372a1439f0732a6eca1abfea293a9",
+    "x-hash": "1dfefd3b428372a1439f0732a6eca1abfea293a90361850fc29d259b90694ea5ee67ca98109be8f1",
     "x-enumsHash": "0361850fc29d259b90694ea5ee67ca98109be8f1"
   },
   "host": "na1.api.riotgames.com",
   "x-host-platform": [
     "americas",
     "asia",
-    "esports",
     "europe",
     "br1",
     "eun1",
@@ -32,6 +31,7 @@
     "pbe1",
     "sea",
     "apac",
+    "esports",
     "esportseu",
     "ap",
     "br",
@@ -48,10 +48,10 @@
         "tags": [
           "account-v1"
         ],
-        "summary": "Get account by puuid",
+        "summary": "Get account by puuid - ESPORTS",
         "externalDocs": {
           "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByPuuid"
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByPuuidEsports"
         },
         "responses": {
           "200": {
@@ -95,8 +95,8 @@
             "description": "Gateway timeout"
           }
         },
-        "operationId": "account-v1.getByPuuid",
-        "description": "Get account by puuid",
+        "operationId": "account-v1.getByPuuidEsports",
+        "description": "Get account by puuid - ESPORTS",
         "parameters": [
           {
             "name": "puuid",
@@ -111,7 +111,6 @@
         "x-platforms-available": [
           "americas",
           "asia",
-          "esports",
           "europe"
         ],
         "x-route-enum": "regional",
@@ -123,7 +122,6 @@
       "x-platforms-available": [
         "americas",
         "asia",
-        "esports",
         "europe"
       ],
       "x-route-enum": "regional"
@@ -133,10 +131,10 @@
         "tags": [
           "account-v1"
         ],
-        "summary": "Get account by riot id",
+        "summary": "Get account by riot id - ESPORTS",
         "externalDocs": {
           "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByRiotId"
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByRiotIdEsports"
         },
         "responses": {
           "200": {
@@ -180,12 +178,11 @@
             "description": "Gateway timeout"
           }
         },
-        "operationId": "account-v1.getByRiotId",
-        "x-nullable-404": true,
-        "description": "Get account by riot id",
+        "operationId": "account-v1.getByRiotIdEsports",
+        "description": "Get account by riot id - ESPORTS",
         "parameters": [
           {
-            "name": "tagLine",
+            "name": "gameName",
             "in": "path",
             "required": true,
             "description": "When querying for a player by their riot id, the gameName and tagLine query params are required.",
@@ -193,7 +190,7 @@
             "x-type": "string"
           },
           {
-            "name": "gameName",
+            "name": "tagLine",
             "in": "path",
             "required": true,
             "description": "When querying for a player by their riot id, the gameName and tagLine query params are required.",
@@ -205,7 +202,6 @@
         "x-platforms-available": [
           "americas",
           "asia",
-          "esports",
           "europe"
         ],
         "x-route-enum": "regional",
@@ -217,7 +213,6 @@
       "x-platforms-available": [
         "americas",
         "asia",
-        "esports",
         "europe"
       ],
       "x-route-enum": "regional"
@@ -227,10 +222,10 @@
         "tags": [
           "account-v1"
         ],
-        "summary": "Get account by access token",
+        "summary": "Get account by access token - ESPORTS",
         "externalDocs": {
           "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByAccessToken"
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByAccessTokenEsports"
         },
         "responses": {
           "200": {
@@ -274,7 +269,7 @@
             "description": "Gateway timeout"
           }
         },
-        "operationId": "account-v1.getByAccessToken",
+        "operationId": "account-v1.getByAccessTokenEsports",
         "security": [
           {
             "rso": [
@@ -282,12 +277,11 @@
             ]
           }
         ],
-        "description": "Get account by access token",
+        "description": "Get account by access token - ESPORTS",
         "x-endpoint": "account-v1",
         "x-platforms-available": [
           "americas",
           "asia",
-          "esports",
           "europe"
         ],
         "x-route-enum": "regional",
@@ -299,7 +293,6 @@
       "x-platforms-available": [
         "americas",
         "asia",
-        "esports",
         "europe"
       ],
       "x-route-enum": "regional"
@@ -385,7 +378,6 @@
         "x-platforms-available": [
           "americas",
           "asia",
-          "esports",
           "europe"
         ],
         "x-route-enum": "regional",
@@ -397,7 +389,6 @@
       "x-platforms-available": [
         "americas",
         "asia",
-        "esports",
         "europe"
       ],
       "x-route-enum": "regional"
