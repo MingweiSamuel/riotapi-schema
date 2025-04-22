@@ -900,6 +900,16 @@
     "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_CHONCCS_TREASURE"
   },
   {
+    "queueId": 1220,
+    "map": "Convergence",
+    "description": "Teamfight Tactics: Tocker's Trials",
+    "notes": null,
+    "x-value": 1220,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics: Tocker's Trials games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_TOCKERS_TRIALS"
+  },
+  {
     "queueId": 1300,
     "map": "Nexus Blitz",
     "description": "Nexus Blitz games",
