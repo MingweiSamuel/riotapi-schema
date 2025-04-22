@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "76c9e61d39aa08ac702e8137101333f8f05b1881",
-    "x-hash": "76c9e61d39aa08ac702e8137101333f8f05b188157eae4cd6c32c7ea0639822c643ca9686e9e2f52",
+    "version": "19ec54bd1d2d70698daa3ab49c0fde1006f87b2a",
+    "x-hash": "19ec54bd1d2d70698daa3ab49c0fde1006f87b2a57eae4cd6c32c7ea0639822c643ca9686e9e2f52",
     "x-enumsHash": "57eae4cd6c32c7ea0639822c643ca9686e9e2f52"
   },
   "servers": [
@@ -54,10 +54,10 @@
         "tags": [
           "account-v1"
         ],
-        "summary": "Get account by puuid - ESPORTS",
+        "summary": "Get account by puuid",
         "externalDocs": {
           "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByPuuidEsports"
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByPuuid"
         },
         "responses": {
           "200": {
@@ -105,8 +105,8 @@
             "description": "Gateway timeout"
           }
         },
-        "operationId": "account-v1.getByPuuidEsports",
-        "description": "Get account by puuid - ESPORTS",
+        "operationId": "account-v1.getByPuuid",
+        "description": "Get account by puuid",
         "parameters": [
           {
             "name": "puuid",
@@ -139,10 +139,10 @@
         "tags": [
           "account-v1"
         ],
-        "summary": "Get account by riot id - ESPORTS",
+        "summary": "Get account by riot id",
         "externalDocs": {
           "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByRiotIdEsports"
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByRiotId"
         },
         "responses": {
           "200": {
@@ -190,11 +190,12 @@
             "description": "Gateway timeout"
           }
         },
-        "operationId": "account-v1.getByRiotIdEsports",
-        "description": "Get account by riot id - ESPORTS",
+        "operationId": "account-v1.getByRiotId",
+        "x-nullable-404": true,
+        "description": "Get account by riot id",
         "parameters": [
           {
-            "name": "gameName",
+            "name": "tagLine",
             "in": "path",
             "required": true,
             "schema": {
@@ -204,7 +205,7 @@
             "description": "When querying for a player by their riot id, the gameName and tagLine query params are required."
           },
           {
-            "name": "tagLine",
+            "name": "gameName",
             "in": "path",
             "required": true,
             "schema": {
@@ -235,10 +236,10 @@
         "tags": [
           "account-v1"
         ],
-        "summary": "Get account by access token - ESPORTS",
+        "summary": "Get account by access token",
         "externalDocs": {
           "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByAccessTokenEsports"
+          "url": "https://developer.riotgames.com/api-methods/#account-v1/GET_getByAccessToken"
         },
         "responses": {
           "200": {
@@ -286,7 +287,7 @@
             "description": "Gateway timeout"
           }
         },
-        "operationId": "account-v1.getByAccessTokenEsports",
+        "operationId": "account-v1.getByAccessToken",
         "security": [
           {
             "rso": [
@@ -294,7 +295,7 @@
             ]
           }
         ],
-        "description": "Get account by access token - ESPORTS",
+        "description": "Get account by access token",
         "x-endpoint": "account-v1",
         "x-platforms-available": [
           "americas",
