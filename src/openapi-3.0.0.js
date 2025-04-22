@@ -7,6 +7,11 @@ function toSpec({ endpoints, regions, description, schemaOverrides, enumsHash })
   endpoints.forEach(endpoint => {
     endpoint.methods.forEach(method => {
       const path = paths[method.getPathUrl()] || (paths[method.getPathUrl()] = {});
+      const prev = path[method.httpMethod];
+      if (null != prev) {
+        console.error(`!!! Ignoring duplicate method ${JSON.stringify(method.httpMethod)} ${JSON.stringify(method.getPathUrl())}. Existing: ${prev.operationId}, ignored: ${method.canonName}.`);
+        return;
+      }
       const op = path[method.httpMethod] = method.getOperation();
       if (null == method.routeEnumName)
         console.error(`Failed to determine routeEnumName for method ${method.canonName}.`);
