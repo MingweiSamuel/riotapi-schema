@@ -223,6 +223,16 @@
         "x-type": "int"
       },
       "x-type": "Map[string, int]"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/749#issuecomment-2819738936
+    "pve_score": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
+    },
+    "pve_wonrun": {
+      "type": "boolean",
+      "x-type": "boolean"
     }
   },
   "tft-match-v1.CompanionDto": {

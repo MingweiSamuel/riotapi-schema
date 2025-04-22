@@ -1,3 +1,4 @@
+// https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/queues.json
 [
     {
         "queueId": 480,
@@ -103,6 +104,13 @@
         "queueId": 6100,
         "map": "Convergence",
         "description": "Teamfight Tactics Revival: Festival of Beasts",
+        "notes": null
+    },
+    // https://github.com/RiotGames/developer-relations/issues/1025#issuecomment-2819737219
+    {
+        "queueId": 1220,
+        "map": "Convergence",
+        "description": "Teamfight Tactics: Tocker's Trials",
         "notes": null
     }
 ]
