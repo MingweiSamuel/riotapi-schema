@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 19ec54bd1d2d70698daa3ab49c0fde1006f87b2a
-  x-hash: 19ec54bd1d2d70698daa3ab49c0fde1006f87b2a57eae4cd6c32c7ea0639822c643ca9686e9e2f52
+  version: 7a85e0caebbd6aae3f6e00fb196e936278a08efa
+  x-hash: 7a85e0caebbd6aae3f6e00fb196e936278a08efa57eae4cd6c32c7ea0639822c643ca9686e9e2f52
   x-enumsHash: 57eae4cd6c32c7ea0639822c643ca9686e9e2f52
 servers:
   -
@@ -4228,6 +4228,93 @@ paths:
         - vn2
       x-route-enum: platform
     x-endpoint: summoner-v4
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - me1
+      - na1
+      - oc1
+      - ru
+      - sg2
+      - tr1
+      - tw2
+      - vn2
+    x-route-enum: platform
+  '/tft/league/v1/by-puuid/{puuid}':
+    get:
+      tags:
+        - tft-league-v1
+      summary: 'Get league entries in all queues for a given puuid'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#tft-league-v1/GET_getLeagueEntriesByPUUID'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/tft-league-v1.LeagueEntryDTO'
+                  x-type: LeagueEntryDTO
+                x-type: 'Set[LeagueEntryDTO]'
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: tft-league-v1.getLeagueEntriesByPUUID
+      description: 'Get league entries in all queues for a given puuid'
+      parameters:
+        -
+          name: puuid
+          in: path
+          required: true
+          schema:
+            type: string
+            x-type: string
+      x-endpoint: tft-league-v1
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - me1
+        - na1
+        - oc1
+        - ru
+        - sg2
+        - tr1
+        - tw2
+        - vn2
+      x-route-enum: platform
+    x-endpoint: tft-league-v1
     x-platforms-available:
       - br1
       - eun1
@@ -11294,113 +11381,6 @@ components:
         - id
         - puuid
         - summonerLevel
-    tft-league-v1.LeagueListDTO:
-      type: object
-      title: LeagueListDTO
-      properties:
-        leagueId:
-          type: string
-          x-type: string
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/tft-league-v1.LeagueItemDTO'
-            x-type: LeagueItemDTO
-          x-type: 'List[LeagueItemDTO]'
-        tier:
-          type: string
-          x-type: string
-          x-enum: tier
-        name:
-          type: string
-          x-type: string
-        queue:
-          type: string
-          x-type: string
-          x-enum: queueType
-      required:
-        - entries
-        - tier
-    tft-league-v1.LeagueItemDTO:
-      type: object
-      title: LeagueItemDTO
-      properties:
-        freshBlood:
-          type: boolean
-          x-type: boolean
-        wins:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'First placement.'
-        miniSeries:
-          $ref: '#/components/schemas/tft-league-v1.MiniSeriesDTO'
-          x-type: MiniSeriesDTO
-        inactive:
-          type: boolean
-          x-type: boolean
-        veteran:
-          type: boolean
-          x-type: boolean
-        hotStreak:
-          type: boolean
-          x-type: boolean
-        rank:
-          type: string
-          x-type: string
-          x-enum: division
-        leaguePoints:
-          type: integer
-          format: int32
-          x-type: int
-        losses:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'Second through eighth placement.'
-        summonerId:
-          type: string
-          x-type: string
-          description: 'Player''s encrypted summonerId.'
-        puuid:
-          type: string
-          x-type: string
-          description: 'Player''s encrypted puuid.'
-      required:
-        - freshBlood
-        - wins
-        - inactive
-        - veteran
-        - hotStreak
-        - rank
-        - leaguePoints
-        - losses
-        - summonerId
-        - puuid
-    tft-league-v1.MiniSeriesDTO:
-      type: object
-      title: MiniSeriesDTO
-      properties:
-        losses:
-          type: integer
-          format: int32
-          x-type: int
-        progress:
-          type: string
-          x-type: string
-        target:
-          type: integer
-          format: int32
-          x-type: int
-        wins:
-          type: integer
-          format: int32
-          x-type: int
-      required:
-        - losses
-        - progress
-        - target
-        - wins
     tft-league-v1.LeagueEntryDTO:
       type: object
       title: LeagueEntryDTO
@@ -11486,6 +11466,113 @@ components:
         - queueType
         - wins
         - losses
+    tft-league-v1.MiniSeriesDTO:
+      type: object
+      title: MiniSeriesDTO
+      properties:
+        losses:
+          type: integer
+          format: int32
+          x-type: int
+        progress:
+          type: string
+          x-type: string
+        target:
+          type: integer
+          format: int32
+          x-type: int
+        wins:
+          type: integer
+          format: int32
+          x-type: int
+      required:
+        - losses
+        - progress
+        - target
+        - wins
+    tft-league-v1.LeagueListDTO:
+      type: object
+      title: LeagueListDTO
+      properties:
+        leagueId:
+          type: string
+          x-type: string
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/tft-league-v1.LeagueItemDTO'
+            x-type: LeagueItemDTO
+          x-type: 'List[LeagueItemDTO]'
+        tier:
+          type: string
+          x-type: string
+          x-enum: tier
+        name:
+          type: string
+          x-type: string
+        queue:
+          type: string
+          x-type: string
+          x-enum: queueType
+      required:
+        - entries
+        - tier
+    tft-league-v1.LeagueItemDTO:
+      type: object
+      title: LeagueItemDTO
+      properties:
+        freshBlood:
+          type: boolean
+          x-type: boolean
+        wins:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'First placement.'
+        miniSeries:
+          $ref: '#/components/schemas/tft-league-v1.MiniSeriesDTO'
+          x-type: MiniSeriesDTO
+        inactive:
+          type: boolean
+          x-type: boolean
+        veteran:
+          type: boolean
+          x-type: boolean
+        hotStreak:
+          type: boolean
+          x-type: boolean
+        rank:
+          type: string
+          x-type: string
+          x-enum: division
+        leaguePoints:
+          type: integer
+          format: int32
+          x-type: int
+        losses:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Second through eighth placement.'
+        summonerId:
+          type: string
+          x-type: string
+          description: 'Player''s encrypted summonerId.'
+        puuid:
+          type: string
+          x-type: string
+          description: 'Player''s encrypted puuid.'
+      required:
+        - freshBlood
+        - wins
+        - inactive
+        - veteran
+        - hotStreak
+        - rank
+        - leaguePoints
+        - losses
+        - summonerId
+        - puuid
     tft-league-v1.TopRatedLadderEntryDto:
       type: object
       title: TopRatedLadderEntryDto
