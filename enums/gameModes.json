@@ -28,6 +28,13 @@
     "x-desc": "Blood Hunt Assassin games"
   },
   {
+    "gameMode": "BRAWL",
+    "description": "Brawl",
+    "x-value": "BRAWL",
+    "x-name": "BRAWL",
+    "x-desc": "Brawl"
+  },
+  {
     "gameMode": "CHERRY",
     "description": "2v2v2v2 Arena",
     "x-value": "CHERRY",

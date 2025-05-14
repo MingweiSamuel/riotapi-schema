@@ -1030,6 +1030,16 @@
     "x-name": "SUMMONERS_RIFT_TUTORIAL_3"
   },
   {
+    "queueId": 2300,
+    "map": "The Bandlewood",
+    "decription": "Brawl",
+    "notes": null,
+    "x-value": 2300,
+    "x-deprecated": false,
+    "x-desc": "Games on The Bandlewood",
+    "x-name": "THE_BANDLEWOOD"
+  },
+  {
     "queueId": 6000,
     "map": "Convergence",
     "description": "Teamfight Tactics Set 3.5 Revival games",
