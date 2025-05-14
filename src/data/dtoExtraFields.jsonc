@@ -126,6 +126,14 @@
       "x-alias": "PlayerScore11",
       "type": "number",
       "format": "float"
+    },
+    // future-proofing for
+    // https://github.com/RiotGames/developer-relations/issues/1076
+    // https://github.com/MingweiSamuel/Riven/issues/88
+    "bountyLevel": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
     }
   },
   //

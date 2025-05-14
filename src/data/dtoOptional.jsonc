@@ -179,6 +179,9 @@
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.InfoDto.endOfGameResult": true,
   "match-v5.ChallengesDto.*": true,
+  // https://github.com/RiotGames/developer-relations/issues/1076
+  // https://github.com/MingweiSamuel/Riven/issues/88
+  "match-v5.ParticipantDto.bountyLevel": true,
 
   // https://github.com/RiotGames/developer-relations/issues/829
   "match-v5.ObjectivesDto.horde": true,
