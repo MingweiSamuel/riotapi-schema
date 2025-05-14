@@ -13,5 +13,10 @@
         "mapId": 33,
         "mapName": "Swarm",
         "notes": "Map for Swarm (`STRAWBERRY`). Team up with a friend or venture solo in this horde survival mode."
+    },
+    {
+        "mapId": 35,
+        "mapName": "The Bandlewood",
+        "notes": "Map for Brawl (`BRAWL`). Work together with your team to escort minions into the enemy portal. No roles, no lanes, no pressure. Just a five-on-five brawl."
     }
 ]

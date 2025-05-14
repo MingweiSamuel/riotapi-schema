@@ -112,5 +112,12 @@
         "map": "Convergence",
         "description": "Teamfight Tactics: Tocker's Trials",
         "notes": null
+    },
+    // https://www.leagueoflegends.com/en-us/news/dev/dev-get-ready-to-brawl/
+    {
+        "queueId": 2300,
+        "map": "The Bandlewood",
+        "decription": "Brawl",
+        "notes": null
     }
 ]

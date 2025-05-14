@@ -31,5 +31,10 @@
         // https://www.leagueoflegends.com/en-us/news/dev/dev-introducing-swiftplay/
         "gameMode": "SWIFTPLAY",
         "description": "Swiftplay Summoner's Rift"
+    },
+    {
+        // https://www.leagueoflegends.com/en-us/news/dev/dev-get-ready-to-brawl/
+        "gameMode": "BRAWL",
+        "description": "Brawl"
     }
 ]
