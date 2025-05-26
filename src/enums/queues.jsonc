@@ -119,5 +119,12 @@
         "map": "The Bandlewood",
         "decription": "Brawl",
         "notes": null
+    },
+    // https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/revival-remix-rumble-updates/
+    {
+        "queueId": 6110,
+        "map": "Convergence",
+        "description": "Teamfight Tactics Revival: Remix Rumble",
+        "notes": null
     }
 ]
