@@ -278,12 +278,25 @@
   "val-match-v1.RoundResultDto.defusePlayerLocations": true,
   "val-match-v1.AbilityDto.*": true,
   "val-match-v1.PlayerStatsDto.abilityCasts": true,
+  "val-console-match-v1.RoundResultDto.bombPlanter": true,
+  "val-console-match-v1.RoundResultDto.bombDefuser": true,
+  "val-console-match-v1.RoundResultDto.plantPlayerLocations": true,
+  "val-console-match-v1.RoundResultDto.defusePlayerLocations": true,
+  "val-console-match-v1.AbilityDto.*": true,
+  "val-console-match-v1.PlayerStatsDto.abilityCasts": true,
 
   // Aborted games: NA 4c196b0a-b396-46ae-a937-b4c52ee83f9a
   "val-match-v1.MatchDto.teams": true,
   "val-match-v1.MatchDto.roundResults": true,
   "val-match-v1.MatchInfoDto.gameLengthMillis": true,
   "val-match-v1.PlayerDto.stats": true,
+  "val-console-match-v1.MatchDto.teams": true,
+  "val-console-match-v1.MatchDto.roundResults": true,
+  "val-console-match-v1.MatchInfoDto.gameLengthMillis": true,
+  "val-console-match-v1.PlayerDto.stats": true,
+  // https://github.com/MingweiSamuel/Riven/issues/92
+  "val-match-v1.PlayerDto.characterId": true,
+  "val-console-match-v1.PlayerDto.characterId": true,
 
   /// https://github.com/RiotGames/developer-relations/issues/605
   "val-ranked-v1.LeaderboardDto.immortalStartingPage": true,
@@ -292,12 +305,22 @@
   "val-ranked-v1.LeaderboardDto.tierDetails": true,
   "val-ranked-v1.LeaderboardDto.startIndex": true,
   "val-ranked-v1.LeaderboardDto.query": true,
+  "val-console-ranked-v1.LeaderboardDto.immortalStartingPage": true,
+  "val-console-ranked-v1.LeaderboardDto.immortalStartingIndex": true,
+  "val-console-ranked-v1.LeaderboardDto.topTierRRThreshold": true,
+  "val-console-ranked-v1.LeaderboardDto.tierDetails": true,
+  "val-console-ranked-v1.LeaderboardDto.startIndex": true,
+  "val-console-ranked-v1.LeaderboardDto.query": true,
 
   "val-ranked-v1.PlayerDto.puuid": true,
   "val-ranked-v1.PlayerDto.gameName": true,
   "val-ranked-v1.PlayerDto.tagLine": true,
+  "val-console-ranked-v1.PlayerDto.puuid": true,
+  "val-console-ranked-v1.PlayerDto.gameName": true,
+  "val-console-ranked-v1.PlayerDto.tagLine": true,
   /// https://github.com/RiotGames/developer-relations/issues/605
   "val-ranked-v1.PlayerDto.competitiveTier": true,
+  "val-console-ranked-v1.PlayerDto.competitiveTier": true,
 
 
   "spectator-v4.Participant.puuid": true,

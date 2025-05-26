@@ -36,5 +36,7 @@
     "clash-v1.getTournamentByTeam": true,
 
     "val-match-v1.getMatch": true,
-    "val-ranked-v1.getLeaderboard": true
+    "val-ranked-v1.getLeaderboard": true,
+    "val-console-match-v1.getMatch": true,
+    "val-console-ranked-v1.getLeaderboard": true
 }
