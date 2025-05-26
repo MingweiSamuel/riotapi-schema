@@ -1058,5 +1058,15 @@
     "x-deprecated": false,
     "x-desc": "Teamfight Tactics Revival: Festival of Beasts games on Convergence",
     "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_REVIVAL_FESTIVAL_OF_BEASTS"
+  },
+  {
+    "queueId": 6110,
+    "map": "Convergence",
+    "description": "Teamfight Tactics Revival: Remix Rumble",
+    "notes": null,
+    "x-value": 6110,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics Revival: Remix Rumble games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_REVIVAL_REMIX_RUMBLE"
   }
 ]
