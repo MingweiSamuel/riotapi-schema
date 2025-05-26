@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 851168dfd956a2260ec2cbe085627c7e9fb3452c
-  x-hash: 851168dfd956a2260ec2cbe085627c7e9fb3452cf6769e78da4793e2c9425f239ccda4aac30ded40
+  version: 7ea607ed5d43b39f05e50ae331894b00248173c7
+  x-hash: 7ea607ed5d43b39f05e50ae331894b00248173c7f6769e78da4793e2c9425f239ccda4aac30ded40
   x-enumsHash: f6769e78da4793e2c9425f239ccda4aac30ded40
 servers:
   -
@@ -6406,6 +6406,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: val-console-match-v1.getMatch
+      x-nullable-404: true
       description: 'Get match by id'
       parameters:
         -
@@ -6614,6 +6615,7 @@ paths:
         '504':
           description: 'Gateway timeout'
       operationId: val-console-ranked-v1.getLeaderboard
+      x-nullable-404: true
       description: 'Get leaderboard for the competitive queue'
       parameters:
         -
@@ -7110,6 +7112,7 @@ components:
         puuid:
           type: string
           x-type: string
+          description: 'Encrypted PUUID. Exact length of 78 characters.'
         gameName:
           type: string
           x-type: string
@@ -11741,6 +11744,14 @@ components:
       type: object
       title: InfoDto
       properties:
+        endOfGameResult:
+          type: string
+        gameCreation:
+          type: integer
+          format: int64
+        gameId:
+          type: integer
+          format: int64
         game_datetime:
           type: integer
           format: int64
@@ -11751,14 +11762,17 @@ components:
           format: float
           x-type: float
           description: 'Game length in seconds.'
-        game_variation:
-          type: string
-          x-type: string
-          description: 'Game variation key. Game variations documented in TFT static data.'
         game_version:
           type: string
           x-type: string
           description: 'Game client version.'
+        game_variation:
+          type: string
+          x-type: string
+          description: 'Game variation key. Game variations documented in TFT static data.'
+        mapId:
+          type: integer
+          format: int64
         participants:
           type: array
           items:
@@ -11771,34 +11785,23 @@ components:
           x-type: int
           description: 'Please refer to the League of Legends documentation.'
           x-enum: queue
-        tft_set_number:
-          type: integer
-          format: int32
-          x-type: int
-          description: 'Teamfight Tactics set number.'
-        tft_game_type:
-          type: string
-          x-type: string
-        tft_set_core_name:
-          type: string
-          x-type: string
-        endOfGameResult:
-          type: string
-        gameCreation:
-          type: integer
-          format: int64
-        gameId:
-          type: integer
-          format: int64
-        mapId:
-          type: integer
-          format: int64
         queueId:
           type: integer
           format: int32
           x-type: int
           description: 'Please refer to the League of Legends documentation.'
           x-enum: queue
+        tft_game_type:
+          type: string
+          x-type: string
+        tft_set_core_name:
+          type: string
+          x-type: string
+        tft_set_number:
+          type: integer
+          format: int32
+          x-type: int
+          description: 'Teamfight Tactics set number.'
       required:
         - game_datetime
         - game_length
@@ -11917,6 +11920,29 @@ components:
         - total_damage_to_players
         - traits
         - units
+    tft-match-v1.CompanionDto:
+      type: object
+      title: CompanionDto
+      properties:
+        content_ID:
+          type: string
+          x-type: string
+        item_ID:
+          type: integer
+          format: int32
+          x-type: int
+        skin_ID:
+          type: integer
+          format: int32
+          x-type: int
+        species:
+          type: string
+          x-type: string
+      required:
+        - content_ID
+        - item_ID
+        - skin_ID
+        - species
     tft-match-v1.TraitDto:
       type: object
       title: TraitDto
@@ -11994,28 +12020,6 @@ components:
         - name
         - rarity
         - tier
-    tft-match-v1.CompanionDto:
-      type: object
-      title: CompanionDto
-      properties:
-        item_ID:
-          type: integer
-          format: int32
-          x-type: int
-        skin_ID:
-          type: integer
-          format: int32
-          x-type: int
-        content_ID:
-          type: string
-          x-type: string
-        species:
-          type: string
-          x-type: string
-      required:
-        - skin_ID
-        - content_ID
-        - species
     tft-match-v1.ParticipantMissionsDto:
       type: object
       title: ParticipantMissionsDto
@@ -12957,8 +12961,6 @@ components:
         - matchInfo
         - players
         - coaches
-        - teams
-        - roundResults
     val-console-match-v1.MatchInfoDto:
       type: object
       title: MatchInfoDto
@@ -13001,7 +13003,6 @@ components:
       required:
         - matchId
         - mapId
-        - gameLengthMillis
         - gameStartMillis
         - provisioningFlowId
         - isCompleted
@@ -13051,8 +13052,6 @@ components:
         - tagLine
         - teamId
         - partyId
-        - characterId
-        - stats
         - competitiveTier
         - playerCard
         - playerTitle
@@ -13094,7 +13093,6 @@ components:
         - deaths
         - assists
         - playtimeMillis
-        - abilityCasts
     val-console-match-v1.AbilityCastsDto:
       type: object
       title: AbilityCastsDto
@@ -13231,14 +13229,10 @@ components:
         - roundResult
         - roundCeremony
         - winningTeam
-        - bombPlanter
-        - bombDefuser
         - plantRoundTime
-        - plantPlayerLocations
         - plantLocation
         - plantSite
         - defuseRoundTime
-        - defusePlayerLocations
         - defuseLocation
         - playerStats
         - roundResultCode
@@ -13450,11 +13444,6 @@ components:
         ultimateEffects:
           type: string
           x-type: string
-      required:
-        - grenadeEffects
-        - ability1Effects
-        - ability2Effects
-        - ultimateEffects
     val-console-match-v1.MatchlistDto:
       type: object
       title: MatchlistDto
@@ -13564,9 +13553,6 @@ components:
           format: int64
           x-type: long
       required:
-        - puuid
-        - gameName
-        - tagLine
         - leaderboardRank
         - rankedRating
         - numberOfWins
@@ -13963,7 +13949,6 @@ components:
         - tagLine
         - teamId
         - partyId
-        - characterId
         - competitiveTier
         - playerCard
         - playerTitle

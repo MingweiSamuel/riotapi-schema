@@ -8,7 +8,6 @@
   "match-v5.FeatDto",
   "match-v5.FeatsDto",
   "match-v5.MatchTimelineVictimDamage",
-  "tft-match-v1.CompanionDto",
   "tft-match-v1.ParticipantMissionsDto",
   "val-ranked-v1.TierDetailDto"
 ]
