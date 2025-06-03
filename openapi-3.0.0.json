@@ -15488,6 +15488,10 @@
             "x-type": "List[UnitDto]",
             "description": "A list of active units for the participant."
           },
+          "win": {
+            "type": "boolean",
+            "x-type": "boolean"
+          },
           "augments": {
             "type": "array",
             "items": {
@@ -15504,10 +15508,6 @@
           "missions": {
             "$ref": "#/components/schemas/tft-match-v1.ParticipantMissionsDto",
             "x-type": "ParticipantMissionsDto"
-          },
-          "win": {
-            "type": "boolean",
-            "x-type": "boolean"
           },
           "skill_tree": {
             "type": "object",
@@ -15635,6 +15635,14 @@
             "x-type": "string",
             "description": "This field was introduced in patch 9.22 with data_version 2."
           },
+          "itemNames": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "x-type": "List[string]"
+          },
           "chosen": {
             "type": "string",
             "x-type": "string",
@@ -15656,14 +15664,6 @@
             "format": "int32",
             "x-type": "int",
             "description": "Unit tier."
-          },
-          "itemNames": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "x-type": "string"
-            },
-            "x-type": "List[string]"
           }
         },
         "required": [
