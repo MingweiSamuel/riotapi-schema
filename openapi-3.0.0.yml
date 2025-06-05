@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 34f358c2d88234f3b597b6083f2aab4af2c5bb7b
-  x-hash: 34f358c2d88234f3b597b6083f2aab4af2c5bb7b064618787d3d44af1ca53fa88c2ecb236c5f8c63
+  version: 1047e9e49d126339c7b2cf1272cdcc148b9c4c8a
+  x-hash: 1047e9e49d126339c7b2cf1272cdcc148b9c4c8a064618787d3d44af1ca53fa88c2ecb236c5f8c63
   x-enumsHash: 064618787d3d44af1ca53fa88c2ecb236c5f8c63
 servers:
   -
@@ -13850,10 +13850,16 @@ components:
         mapId:
           type: string
           x-type: string
+        gameVersion:
+          type: string
+          x-type: string
         gameLengthMillis:
           type: integer
           format: int32
           x-type: int
+        region:
+          type: string
+          x-type: string
         gameStartMillis:
           type: integer
           format: int64
@@ -13879,17 +13885,13 @@ components:
         seasonId:
           type: string
           x-type: string
-        gameVersion:
-          type: string
-          x-type: string
-        region:
-          type: string
-          x-type: string
         premierMatchInfo:
           type: object
       required:
         - matchId
         - mapId
+        - gameVersion
+        - region
         - gameStartMillis
         - provisioningFlowId
         - isCompleted
@@ -13898,8 +13900,6 @@ components:
         - gameMode
         - isRanked
         - seasonId
-        - gameVersion
-        - region
         - premierMatchInfo
     val-match-v1.PlayerDto:
       type: object
@@ -13930,15 +13930,15 @@ components:
           type: integer
           format: int32
           x-type: int
+        isObserver:
+          type: boolean
+          x-type: boolean
         playerCard:
           type: string
           x-type: string
         playerTitle:
           type: string
           x-type: string
-        isObserver:
-          type: boolean
-          x-type: boolean
         accountLevel:
           type: integer
           format: int32
@@ -13950,9 +13950,9 @@ components:
         - teamId
         - partyId
         - competitiveTier
+        - isObserver
         - playerCard
         - playerTitle
-        - isObserver
         - accountLevel
     val-match-v1.PlayerStatsDto:
       type: object
@@ -14077,6 +14077,9 @@ components:
         winningTeam:
           type: string
           x-type: string
+        winningTeamRole:
+          type: string
+          x-type: string
         bombPlanter:
           type: string
           x-type: string
@@ -14123,14 +14126,12 @@ components:
         roundResultCode:
           type: string
           x-type: string
-        winningTeamRole:
-          type: string
-          x-type: string
       required:
         - roundNum
         - roundResult
         - roundCeremony
         - winningTeam
+        - winningTeamRole
         - plantRoundTime
         - plantLocation
         - plantSite
@@ -14138,7 +14139,6 @@ components:
         - defuseLocation
         - playerStats
         - roundResultCode
-        - winningTeamRole
     val-match-v1.PlayerLocationsDto:
       type: object
       title: PlayerLocationsDto
