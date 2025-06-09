@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 5a70eb20a54a492c539486450ca73f78ac77ee48
-  x-hash: 5a70eb20a54a492c539486450ca73f78ac77ee48064618787d3d44af1ca53fa88c2ecb236c5f8c63
+  version: 5c10445bfc12facadafd1ccbc655355dd13bc5b7
+  x-hash: 5c10445bfc12facadafd1ccbc655355dd13bc5b7064618787d3d44af1ca53fa88c2ecb236c5f8c63
   x-enumsHash: 064618787d3d44af1ca53fa88c2ecb236c5f8c63
 host: na1.api.riotgames.com
 x-host-platform:
@@ -12632,50 +12632,25 @@ definitions:
     type: object
     title: TournamentCodeV5DTO
     properties:
-      code:
-        type: string
-        x-type: string
-        description: 'The tournament code.'
-      spectators:
-        type: string
-        x-type: string
-        description: 'The spectator mode for the tournament code game.'
-      lobbyName:
-        type: string
-        x-type: string
-        description: 'The lobby name for the tournament code game.'
-      metaData:
-        type: string
-        x-type: string
-        description: 'The metadata for tournament code.'
-      password:
-        type: string
-        x-type: string
-        description: 'The password for the tournament code game.'
-      teamSize:
-        type: integer
-        format: int32
-        x-type: int
-        description: 'The team size for the tournament code game.'
-      providerId:
-        type: integer
-        format: int32
-        x-type: int
-        description: 'The provider''s ID.'
-      pickType:
-        type: string
-        x-type: string
-        description: 'The pick mode for tournament code game.'
-      tournamentId:
-        type: integer
-        format: int32
-        x-type: int
-        description: 'The tournament''s ID.'
       id:
         type: integer
         format: int32
         x-type: int
         description: 'The tournament code''s ID.'
+      providerId:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The provider''s ID.'
+      tournamentId:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The tournament''s ID.'
+      code:
+        type: string
+        x-type: string
+        description: 'The tournament code.'
       region:
         type: string
         x-type: string
@@ -12703,6 +12678,31 @@ definitions:
         type: string
         x-type: string
         description: 'The game map for the tournament code game'
+      teamSize:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The team size for the tournament code game.'
+      spectators:
+        type: string
+        x-type: string
+        description: 'The spectator mode for the tournament code game.'
+      pickType:
+        type: string
+        x-type: string
+        description: 'The pick mode for tournament code game.'
+      lobbyName:
+        type: string
+        x-type: string
+        description: 'The lobby name for the tournament code game.'
+      password:
+        type: string
+        x-type: string
+        description: 'The password for the tournament code game.'
+      metaData:
+        type: string
+        x-type: string
+        description: 'The metadata for tournament code.'
       participants:
         type: array
         items:
@@ -12711,18 +12711,18 @@ definitions:
         x-type: 'Set[string]'
         description: 'The puuids of the participants (Encrypted)'
     required:
-      - code
-      - spectators
-      - lobbyName
-      - metaData
-      - password
-      - teamSize
-      - providerId
-      - pickType
-      - tournamentId
       - id
+      - providerId
+      - tournamentId
+      - code
       - region
       - map
+      - teamSize
+      - spectators
+      - pickType
+      - lobbyName
+      - password
+      - metaData
       - participants
   tournament-v5.TournamentCodeUpdateParametersV5:
     type: object
@@ -12767,6 +12767,10 @@ definitions:
     type: object
     title: TournamentGamesV5
     properties:
+      startTime:
+        type: integer
+        format: int64
+        x-type: long
       winningTeam:
         type: array
         items:
@@ -12811,6 +12815,7 @@ definitions:
         description: 'Region of the game'
         x-enum: tournamentRegion
     required:
+      - startTime
       - winningTeam
       - losingTeam
       - shortCode
