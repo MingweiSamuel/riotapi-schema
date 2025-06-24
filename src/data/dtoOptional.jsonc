@@ -15,6 +15,8 @@
 
   "league-exp-v4.LeagueEntryDTO.miniSeries": true,
   "league-v4.LeagueItemDTO.miniSeries": true,
+  // https://github.com/RiotGames/developer-relations/issues/1085
+  "league-exp-v4.LeagueEntryDTO.summonerId": true,
 
   "league-v4.LeagueListDTO.*": true,
   "league-v4.LeagueListDTO.tier": false,
@@ -175,6 +177,7 @@
   "match-v5.ParticipantDto.riotIdGameName": true,
   "match-v5.ParticipantDto.riotIdTagline": true,
   "match-v5.ParticipantDto.retreatPings": true,
+  "match-v5.ParticipantDto.championSkinId": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.InfoDto.endOfGameResult": true,
