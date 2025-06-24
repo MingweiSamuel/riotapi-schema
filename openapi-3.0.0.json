@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "3e12062ba428a86334f8cd970d4a6b961d6f8904",
-    "x-hash": "3e12062ba428a86334f8cd970d4a6b961d6f8904064618787d3d44af1ca53fa88c2ecb236c5f8c63",
+    "version": "85da33bac8e346d37110967f16ade0674c12e4d9",
+    "x-hash": "85da33bac8e346d37110967f16ade0674c12e4d9064618787d3d44af1ca53fa88c2ecb236c5f8c63",
     "x-enumsHash": "064618787d3d44af1ca53fa88c2ecb236c5f8c63"
   },
   "servers": [
@@ -9452,11 +9452,6 @@
             "x-type": "int",
             "description": "Losing team on Summoners Rift."
           },
-          "summonerId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Player's encrypted summonerId."
-          },
           "puuid": {
             "type": "string",
             "x-type": "string",
@@ -9472,7 +9467,6 @@
           "rank",
           "leaguePoints",
           "losses",
-          "summonerId",
           "puuid"
         ]
       },
@@ -9514,11 +9508,6 @@
           "leagueId": {
             "type": "string",
             "x-type": "string"
-          },
-          "summonerId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Player's encrypted summonerId."
           },
           "puuid": {
             "type": "string",
@@ -9580,7 +9569,6 @@
           }
         },
         "required": [
-          "summonerId",
           "puuid",
           "queueType",
           "leaguePoints",
@@ -13537,11 +13525,6 @@
             "description": "The team ID of this participant, indicating the participant's team",
             "x-enum": "team"
           },
-          "summonerId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "The encrypted summoner ID of this participant"
-          },
           "puuid": {
             "type": "string",
             "x-type": "string",
@@ -13577,7 +13560,6 @@
           "championId",
           "profileIconId",
           "teamId",
-          "summonerId",
           "spell1Id",
           "spell2Id",
           "gameCustomizationObjects"
@@ -13765,11 +13747,6 @@
             "format": "int64",
             "x-type": "long",
             "description": "The ID of the profile icon used by this participant"
-          },
-          "summonerId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Encrypted summoner ID of this participant"
           },
           "puuid": {
             "type": "string",
@@ -13978,11 +13955,6 @@
             "description": "The team ID of this participant, indicating the participant's team",
             "x-enum": "team"
           },
-          "summonerId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "The encrypted summoner ID of this participant"
-          },
           "puuid": {
             "type": "string",
             "x-type": "string",
@@ -14019,7 +13991,6 @@
           "profileIconId",
           "bot",
           "teamId",
-          "summonerId",
           "spell1Id",
           "spell2Id",
           "gameCustomizationObjects"
@@ -14222,11 +14193,6 @@
             "x-type": "long",
             "description": "The ID of the profile icon used by this participant"
           },
-          "summonerId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Encrypted summoner ID of this participant"
-          },
           "puuid": {
             "type": "string",
             "x-type": "string",
@@ -14270,11 +14236,6 @@
         "type": "object",
         "title": "SummonerDTO",
         "properties": {
-          "accountId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Encrypted account ID. Max length 56 characters."
-          },
           "profileIconId": {
             "type": "integer",
             "format": "int32",
@@ -14286,11 +14247,6 @@
             "format": "int64",
             "x-type": "long",
             "description": "Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change."
-          },
-          "id": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Encrypted summoner ID. Max length 63 characters."
           },
           "puuid": {
             "type": "string",
@@ -14306,10 +14262,8 @@
         },
         "description": "represents a summoner",
         "required": [
-          "accountId",
           "profileIconId",
           "revisionDate",
-          "id",
           "puuid",
           "summonerLevel"
         ]
@@ -14327,11 +14281,6 @@
             "type": "string",
             "x-type": "string",
             "description": "Not included for the RANKED_TFT_TURBO queueType."
-          },
-          "summonerId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Player's encrypted summonerId."
           },
           "queueType": {
             "type": "string",
@@ -14413,7 +14362,6 @@
           }
         },
         "required": [
-          "summonerId",
           "queueType",
           "wins",
           "losses"
@@ -14532,11 +14480,6 @@
             "x-type": "int",
             "description": "Second through eighth placement."
           },
-          "summonerId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Player's encrypted summonerId."
-          },
           "puuid": {
             "type": "string",
             "x-type": "string",
@@ -14552,7 +14495,6 @@
           "rank",
           "leaguePoints",
           "losses",
-          "summonerId",
           "puuid"
         ]
       },
@@ -14560,9 +14502,10 @@
         "type": "object",
         "title": "TopRatedLadderEntryDto",
         "properties": {
-          "summonerId": {
+          "puuid": {
             "type": "string",
-            "x-type": "string"
+            "x-type": "string",
+            "description": "Player's encrypted puuid."
           },
           "ratedTier": {
             "type": "string",
@@ -14594,7 +14537,7 @@
           }
         },
         "required": [
-          "summonerId",
+          "puuid",
           "ratedTier",
           "ratedRating",
           "wins",
@@ -15415,16 +15358,6 @@
         "type": "object",
         "title": "SummonerDTO",
         "properties": {
-          "id": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Encrypted summoner ID. Max length 63 characters."
-          },
-          "accountId": {
-            "type": "string",
-            "x-type": "string",
-            "description": "Encrypted account ID. Max length 56 characters."
-          },
           "puuid": {
             "type": "string",
             "x-type": "string",
@@ -15451,8 +15384,6 @@
         },
         "description": "represents a summoner",
         "required": [
-          "id",
-          "accountId",
           "puuid",
           "profileIconId",
           "revisionDate",

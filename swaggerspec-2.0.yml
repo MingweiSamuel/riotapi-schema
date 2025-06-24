@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 7a2ae6918dace8658bd7a09347f561c5fc1164c3
-  x-hash: 7a2ae6918dace8658bd7a09347f561c5fc1164c3064618787d3d44af1ca53fa88c2ecb236c5f8c63
+  version: eb8598a9cb38b58a206ab80dfad718be86dd7dd0
+  x-hash: eb8598a9cb38b58a206ab80dfad718be86dd7dd0064618787d3d44af1ca53fa88c2ecb236c5f8c63
   x-enumsHash: 064618787d3d44af1ca53fa88c2ecb236c5f8c63
 host: na1.api.riotgames.com
 x-host-platform:
@@ -7451,10 +7451,6 @@ definitions:
         format: int32
         x-type: int
         description: 'Losing team on Summoners Rift.'
-      summonerId:
-        type: string
-        x-type: string
-        description: 'Player''s encrypted summonerId.'
       puuid:
         type: string
         x-type: string
@@ -7468,7 +7464,6 @@ definitions:
       - rank
       - leaguePoints
       - losses
-      - summonerId
       - puuid
   league-v4.MiniSeriesDTO:
     type: object
@@ -7501,10 +7496,6 @@ definitions:
       leagueId:
         type: string
         x-type: string
-      summonerId:
-        type: string
-        x-type: string
-        description: 'Player''s encrypted summonerId.'
       puuid:
         type: string
         x-type: string
@@ -7552,7 +7543,6 @@ definitions:
         $ref: '#/definitions/league-v4.MiniSeriesDTO'
         x-type: MiniSeriesDTO
     required:
-      - summonerId
       - puuid
       - queueType
       - leaguePoints
@@ -10469,10 +10459,6 @@ definitions:
         x-type: long
         description: 'The team ID of this participant, indicating the participant''s team'
         x-enum: team
-      summonerId:
-        type: string
-        x-type: string
-        description: 'The encrypted summoner ID of this participant'
       puuid:
         type: string
         x-type: string
@@ -10501,7 +10487,6 @@ definitions:
       - championId
       - profileIconId
       - teamId
-      - summonerId
       - spell1Id
       - spell2Id
       - gameCustomizationObjects
@@ -10651,10 +10636,6 @@ definitions:
         format: int64
         x-type: long
         description: 'The ID of the profile icon used by this participant'
-      summonerId:
-        type: string
-        x-type: string
-        description: 'Encrypted summoner ID of this participant'
       puuid:
         type: string
         x-type: string
@@ -10823,10 +10804,6 @@ definitions:
         x-type: long
         description: 'The team ID of this participant, indicating the participant''s team'
         x-enum: team
-      summonerId:
-        type: string
-        x-type: string
-        description: 'The encrypted summoner ID of this participant'
       puuid:
         type: string
         x-type: string
@@ -10856,7 +10833,6 @@ definitions:
       - profileIconId
       - bot
       - teamId
-      - summonerId
       - spell1Id
       - spell2Id
       - gameCustomizationObjects
@@ -11019,10 +10995,6 @@ definitions:
         format: int64
         x-type: long
         description: 'The ID of the profile icon used by this participant'
-      summonerId:
-        type: string
-        x-type: string
-        description: 'Encrypted summoner ID of this participant'
       puuid:
         type: string
         x-type: string
@@ -11058,10 +11030,6 @@ definitions:
     type: object
     title: SummonerDTO
     properties:
-      accountId:
-        type: string
-        x-type: string
-        description: 'Encrypted account ID. Max length 56 characters.'
       profileIconId:
         type: integer
         format: int32
@@ -11072,10 +11040,6 @@ definitions:
         format: int64
         x-type: long
         description: 'Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change.'
-      id:
-        type: string
-        x-type: string
-        description: 'Encrypted summoner ID. Max length 63 characters.'
       puuid:
         type: string
         x-type: string
@@ -11087,10 +11051,8 @@ definitions:
         description: 'Summoner level associated with the summoner.'
     description: 'represents a summoner'
     required:
-      - accountId
       - profileIconId
       - revisionDate
-      - id
       - puuid
       - summonerLevel
   tft-league-v1.LeagueEntryDTO:
@@ -11105,10 +11067,6 @@ definitions:
         type: string
         x-type: string
         description: 'Not included for the RANKED_TFT_TURBO queueType.'
-      summonerId:
-        type: string
-        x-type: string
-        description: 'Player''s encrypted summonerId.'
       queueType:
         type: string
         x-type: string
@@ -11174,7 +11132,6 @@ definitions:
         x-type: MiniSeriesDTO
         description: 'Not included for the RANKED_TFT_TURBO queueType.'
     required:
-      - summonerId
       - queueType
       - wins
       - losses
@@ -11266,10 +11223,6 @@ definitions:
         format: int32
         x-type: int
         description: 'Second through eighth placement.'
-      summonerId:
-        type: string
-        x-type: string
-        description: 'Player''s encrypted summonerId.'
       puuid:
         type: string
         x-type: string
@@ -11283,15 +11236,15 @@ definitions:
       - rank
       - leaguePoints
       - losses
-      - summonerId
       - puuid
   tft-league-v1.TopRatedLadderEntryDto:
     type: object
     title: TopRatedLadderEntryDto
     properties:
-      summonerId:
+      puuid:
         type: string
         x-type: string
+        description: 'Player''s encrypted puuid.'
       ratedTier:
         type: string
         x-type: string
@@ -11316,7 +11269,7 @@ definitions:
         format: int32
         x-type: int
     required:
-      - summonerId
+      - puuid
       - ratedTier
       - ratedRating
       - wins
@@ -11805,14 +11758,6 @@ definitions:
     type: object
     title: SummonerDTO
     properties:
-      id:
-        type: string
-        x-type: string
-        description: 'Encrypted summoner ID. Max length 63 characters.'
-      accountId:
-        type: string
-        x-type: string
-        description: 'Encrypted account ID. Max length 56 characters.'
       puuid:
         type: string
         x-type: string
@@ -11834,8 +11779,6 @@ definitions:
         description: 'Summoner level associated with the summoner.'
     description: 'represents a summoner'
     required:
-      - id
-      - accountId
       - puuid
       - profileIconId
       - revisionDate
