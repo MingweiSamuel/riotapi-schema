@@ -673,5 +673,37 @@
       "type": "number",
       "format": "float"
     }
+  },
+  // https://github.com/MingweiSamuel/riotapi-schema/issues/59
+  "league-v4.LeagueItemDTO": {
+    "summonerId": {
+      "type": "string",
+      "x-type": "string",
+      "description": "Encrypted summoner ID. This field is deprecated and will be removed. Use `puuid` instead."
+    }
+  },
+  // https://github.com/MingweiSamuel/riotapi-schema/issues/59
+  "summoner-v4.SummonerDTO": {
+    "id": {
+      "type": "string",
+      "x-type": "string",
+      "description": "Encrypted summoner ID. This field is deprecated and will be removed. Use `puuid` instead."
+    }
+  },
+  // https://github.com/MingweiSamuel/riotapi-schema/issues/59
+  "tft-summoner-v1.SummonerDTO": {
+    "id": {
+      "type": "string",
+      "x-type": "string",
+      "description": "Encrypted summoner ID. This field is deprecated and will be removed. Use `puuid` instead."
+    }
+  },
+  // https://github.com/MingweiSamuel/riotapi-schema/issues/59
+  "league-v4.LeagueEntryDTO": {
+    "summonerId": {
+      "type": "string",
+      "x-type": "string",
+      "description": "Encrypted summoner ID. This field is deprecated and will be removed. Use `puuid` instead."
+    }
   }
 }

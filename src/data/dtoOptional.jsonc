@@ -15,8 +15,9 @@
 
   "league-exp-v4.LeagueEntryDTO.miniSeries": true,
   "league-v4.LeagueItemDTO.miniSeries": true,
-  // https://github.com/RiotGames/developer-relations/issues/1085
-  "league-exp-v4.LeagueEntryDTO.summonerId": true,
+  // https://github.com/MingweiSamuel/riotapi-schema/issues/59
+  "league-exp-v4.LeagueEntryDTO.summonerId": true, // https://github.com/RiotGames/developer-relations/issues/1085
+  "league-v4.LeagueItemDTO.summonerId": true,
 
   "league-v4.LeagueListDTO.*": true,
   "league-v4.LeagueListDTO.tier": false,
@@ -352,5 +353,11 @@
   "spectator-tft-v5.CurrentGameParticipant.riotId": true,
 
 
-  "tournament-v5.TournamentGamesV5.metaData": true
+  "tournament-v5.TournamentGamesV5.metaData": true,
+
+
+  // https://github.com/MingweiSamuel/riotapi-schema/issues/59
+  "summoner-v4.SummonerDTO.id": true,
+  "tft-summoner-v1.SummonerDTO.id": true,
+  "league-v4.LeagueEntryDTO.summonerId": true
 }
