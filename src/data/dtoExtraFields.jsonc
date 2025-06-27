@@ -373,6 +373,10 @@
       "type": "integer",
       "format": "int64",
       "x-type": "long"
+    },
+    "prefix": {
+      "type": "string",
+      "x-type": "string"
     }
   },
   //

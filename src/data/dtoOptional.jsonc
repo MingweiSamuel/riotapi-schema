@@ -324,7 +324,9 @@
   "val-console-ranked-v1.PlayerDto.tagLine": true,
   /// https://github.com/RiotGames/developer-relations/issues/605
   "val-ranked-v1.PlayerDto.competitiveTier": true,
+  "val-ranked-v1.PlayerDto.prefix": true,
   "val-console-ranked-v1.PlayerDto.competitiveTier": true,
+  "val-console-ranked-v1.PlayerDto.prefix": true,
 
 
   "spectator-v4.Participant.puuid": true,
