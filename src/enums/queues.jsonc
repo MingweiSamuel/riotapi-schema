@@ -126,5 +126,12 @@
         "map": "Convergence",
         "description": "Teamfight Tactics Revival: Remix Rumble",
         "notes": null
+    },
+    // Pengu's Party: https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/tfts-6-year-bash/
+    {
+        "queueId": 6120,
+        "map": "Convergence",
+        "description": "Teamfight Tactics: Pengu's Party",
+        "notes": null
     }
 ]
