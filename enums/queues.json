@@ -1068,5 +1068,15 @@
     "x-deprecated": false,
     "x-desc": "Teamfight Tactics Revival: Remix Rumble games on Convergence",
     "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_REVIVAL_REMIX_RUMBLE"
+  },
+  {
+    "queueId": 6120,
+    "map": "Convergence",
+    "description": "Teamfight Tactics: Pengu's Party",
+    "notes": null,
+    "x-value": 6120,
+    "x-deprecated": false,
+    "x-desc": "Teamfight Tactics: Pengu's Party games on Convergence",
+    "x-name": "CONVERGENCE_TEAMFIGHT_TACTICS_PENGUS_PARTY"
   }
 ]
