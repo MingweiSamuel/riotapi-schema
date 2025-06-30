@@ -526,7 +526,6 @@
     "name": {
       "type": "string"
     },
-
     "shutdownBounty": {
       "type": "integer",
       "format": "int32"
@@ -535,7 +534,6 @@
       "type": "integer",
       "format": "int64"
     },
-
     // https://github.com/RiotGames/developer-relations/issues/926#issuecomment-2680530040
     "featType": {
       "type": "integer",
@@ -708,6 +706,16 @@
       "type": "string",
       "x-type": "string",
       "description": "Encrypted summoner ID. This field is deprecated and will be removed. Use `puuid` instead."
+    }
+  },
+  // https://github.com/RiotGames/developer-relations/issues/1086
+  "match-v5.InfoDto": {
+    "gameModeMutators": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "x-type": "string"
+      }
     }
   }
 }

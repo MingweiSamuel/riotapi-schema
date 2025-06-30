@@ -182,6 +182,9 @@
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.InfoDto.endOfGameResult": true,
+  // https://github.com/RiotGames/developer-relations/issues/1086
+  "match-v5.InfoDto.gameModeMutators": true,
+  //
   "match-v5.ChallengesDto.*": true,
   // https://github.com/RiotGames/developer-relations/issues/1076
   // https://github.com/MingweiSamuel/Riven/issues/88
