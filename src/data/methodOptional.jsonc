@@ -28,9 +28,6 @@
     "spectator-v5.getCurrentGameInfoByPuuid": true,
     "spectator-tft-v5.getCurrentGameInfoByPuuid": true,
 
-    "summoner-v4.getBySummonerName": true,
-    "tft-summoner-v1.getBySummonerName": true,
-
     "clash-v1.getTeamById": true,
     "clash-v1.getTournamentById": true,
     "clash-v1.getTournamentByTeam": true,
@@ -38,5 +35,10 @@
     "val-match-v1.getMatch": true,
     "val-ranked-v1.getLeaderboard": true,
     "val-console-match-v1.getMatch": true,
-    "val-console-ranked-v1.getLeaderboard": true
+    "val-console-ranked-v1.getLeaderboard": true,
+
+    // https://github.com/MingweiSamuel/Riven/issues/96
+    // https://github.com/RiotGames/developer-relations/issues/1087
+    "summoner-v4.getByPUUID": true,
+    "summoner-v4/getByRSOPUUID": true
 }
