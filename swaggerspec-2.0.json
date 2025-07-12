@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "73a2cab0181867d027c7051c641273e9ee449914",
-    "x-hash": "73a2cab0181867d027c7051c641273e9ee44991491786d3eb3156c54f554c593f2a0e82fd12b88c7",
+    "version": "5d8d993977fbda3e81bc809e31c84697a142c1e4",
+    "x-hash": "5d8d993977fbda3e81bc809e31c84697a142c1e491786d3eb3156c54f554c593f2a0e82fd12b88c7",
     "x-enumsHash": "91786d3eb3156c54f554c593f2a0e82fd12b88c7"
   },
   "host": "na1.api.riotgames.com",
@@ -4883,113 +4883,6 @@
         ]
       },
       "x-endpoint": "spectator-v5",
-      "x-platforms-available": [
-        "br1",
-        "eun1",
-        "euw1",
-        "jp1",
-        "kr",
-        "la1",
-        "la2",
-        "me1",
-        "na1",
-        "oc1",
-        "ru",
-        "sg2",
-        "tr1",
-        "tw2",
-        "vn2"
-      ],
-      "x-route-enum": "platform"
-    },
-    "/fulfillment/v1/summoners/by-puuid/{rsoPUUID}": {
-      "get": {
-        "tags": [
-          "summoner-v4"
-        ],
-        "summary": "Get a summoner by its RSO encrypted PUUID.",
-        "externalDocs": {
-          "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#summoner-v4/GET_getByRSOPUUID"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/summoner-v4.SummonerDTO",
-              "x-type": "SummonerDTO"
-            }
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Data not found"
-          },
-          "405": {
-            "description": "Method not allowed"
-          },
-          "415": {
-            "description": "Unsupported media type"
-          },
-          "429": {
-            "description": "Rate limit exceeded"
-          },
-          "500": {
-            "description": "Internal server error"
-          },
-          "502": {
-            "description": "Bad gateway"
-          },
-          "503": {
-            "description": "Service unavailable"
-          },
-          "504": {
-            "description": "Gateway timeout"
-          }
-        },
-        "operationId": "summoner-v4.getByRSOPUUID",
-        "description": "Get a summoner by its RSO encrypted PUUID.",
-        "parameters": [
-          {
-            "name": "rsoPUUID",
-            "in": "path",
-            "required": true,
-            "description": "Summoner ID",
-            "type": "string",
-            "x-type": "string"
-          }
-        ],
-        "x-endpoint": "summoner-v4",
-        "x-platforms-available": [
-          "br1",
-          "eun1",
-          "euw1",
-          "jp1",
-          "kr",
-          "la1",
-          "la2",
-          "me1",
-          "na1",
-          "oc1",
-          "ru",
-          "sg2",
-          "tr1",
-          "tw2",
-          "vn2"
-        ],
-        "x-route-enum": "platform",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "x-endpoint": "summoner-v4",
       "x-platforms-available": [
         "br1",
         "eun1",
