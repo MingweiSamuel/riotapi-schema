@@ -1,8 +1,5 @@
 [
   "account-v1.ActiveShardDto",
-  "lol-challenges-v1.ChallengeInfo",
-  "lol-challenges-v1.ChallengePoints",
-  "lol-challenges-v1.PlayerClientPreferences",
   "lol-rso-match-v1.MatchDto",
   "lol-rso-match-v1.TimelineDto",
   "match-v5.FeatDto",
