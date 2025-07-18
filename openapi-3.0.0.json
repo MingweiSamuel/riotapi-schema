@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "48bcc0e137cbd686364532616e79a43436a1b54f",
-    "x-hash": "48bcc0e137cbd686364532616e79a43436a1b54f91786d3eb3156c54f554c593f2a0e82fd12b88c7",
+    "version": "b2ca9bb77201a288e8c7719538497912d0cf13e4",
+    "x-hash": "b2ca9bb77201a288e8c7719538497912d0cf13e491786d3eb3156c54f554c593f2a0e82fd12b88c7",
     "x-enumsHash": "91786d3eb3156c54f554c593f2a0e82fd12b88c7"
   },
   "servers": [
@@ -4626,7 +4626,15 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/riftbound-content-v1.RiftboundContentDTO",
+                  "x-type": "RiftboundContentDTO"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad request"
@@ -13373,6 +13381,210 @@
             "x-type": "int"
           }
         }
+      },
+      "riftbound-content-v1.RiftboundContentDTO": {
+        "type": "object",
+        "title": "RiftboundContentDTO",
+        "properties": {
+          "game": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Game Name"
+          },
+          "version": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Content version"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "x-type": "string",
+            "description": "ISO Timestamp of content last update"
+          },
+          "sets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/riftbound-content-v1.SetDTO",
+              "x-type": "SetDTO"
+            },
+            "x-type": "List[SetDTO]"
+          }
+        },
+        "required": [
+          "game",
+          "version",
+          "lastUpdated",
+          "sets"
+        ]
+      },
+      "riftbound-content-v1.SetDTO": {
+        "type": "object",
+        "title": "SetDTO",
+        "properties": {
+          "id": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Set ID"
+          },
+          "name": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Set Name"
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/riftbound-content-v1.CardDTO",
+              "x-type": "CardDTO"
+            },
+            "x-type": "List[CardDTO]"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "cards"
+        ]
+      },
+      "riftbound-content-v1.CardDTO": {
+        "type": "object",
+        "title": "CardDTO",
+        "properties": {
+          "id": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Card ID"
+          },
+          "collectorNumber": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "set": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "name": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Card Name"
+          },
+          "description": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "type": {
+            "type": "string",
+            "x-type": "string",
+            "description": "Card Type"
+          },
+          "rarity": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "faction": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/riftbound-content-v1.CardStatsDTO",
+            "x-type": "CardStatsDTO"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "x-type": "List[string]"
+          },
+          "art": {
+            "$ref": "#/components/schemas/riftbound-content-v1.CardArtDTO",
+            "x-type": "CardArtDTO"
+          },
+          "flavorText": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-type": "string"
+            },
+            "x-type": "List[string]"
+          }
+        },
+        "required": [
+          "id",
+          "collectorNumber",
+          "set",
+          "name",
+          "description",
+          "type",
+          "rarity",
+          "faction",
+          "stats",
+          "keywords",
+          "art",
+          "flavorText",
+          "tags"
+        ]
+      },
+      "riftbound-content-v1.CardStatsDTO": {
+        "type": "object",
+        "title": "CardStatsDTO",
+        "properties": {
+          "energy": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "might": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "cost": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          },
+          "power": {
+            "type": "integer",
+            "format": "int64",
+            "x-type": "long"
+          }
+        },
+        "required": [
+          "energy",
+          "might",
+          "cost",
+          "power"
+        ]
+      },
+      "riftbound-content-v1.CardArtDTO": {
+        "type": "object",
+        "title": "CardArtDTO",
+        "properties": {
+          "thumbnailURL": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "fullURL": {
+            "type": "string",
+            "x-type": "string"
+          },
+          "artist": {
+            "type": "string",
+            "x-type": "string"
+          }
+        },
+        "required": [
+          "thumbnailURL",
+          "fullURL",
+          "artist"
+        ]
       },
       "spectator-tft-v5.CurrentGameInfo": {
         "type": "object",
