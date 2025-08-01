@@ -717,5 +717,17 @@
         "x-type": "string"
       }
     }
+  },
+  // https://github.com/RiotGames/developer-relations/issues/633#issuecomment-3142082902
+  "lol-challenges-v1.PlayerClientPreferencesDto": {
+    "challengeIds": {
+      "x-type": "List[long]",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int64",
+        "x-type": "long"
+      }
+    }
   }
 }
