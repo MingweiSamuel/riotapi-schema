@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: ddd50eac42339c984b5b8d935c13e3a54f37e80e
-  x-hash: ddd50eac42339c984b5b8d935c13e3a54f37e80e91786d3eb3156c54f554c593f2a0e82fd12b88c7
+  version: 618fb919d1b53260687d7c0dec8d37e7262de3bc
+  x-hash: 618fb919d1b53260687d7c0dec8d37e7262de3bc91786d3eb3156c54f554c593f2a0e82fd12b88c7
   x-enumsHash: 91786d3eb3156c54f554c593f2a0e82fd12b88c7
 host: na1.api.riotgames.com
 x-host-platform:
@@ -3523,6 +3523,91 @@ paths:
       - asia
       - europe
     x-route-enum: regional
+  '/lol/spectator/tft/v5/active-games/by-puuid/{encryptedPUUID}':
+    get:
+      tags:
+        - spectator-tft-v5
+      summary: 'Get current game information for the given puuid.'
+      externalDocs:
+        description: 'Official API Reference'
+        url: 'https://developer.riotgames.com/api-methods/#spectator-tft-v5/GET_getCurrentGameInfoByPuuid'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/spectator-tft-v5.CurrentGameInfo'
+            x-type: CurrentGameInfo
+        '400':
+          description: 'Bad request'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 'Data not found'
+        '405':
+          description: 'Method not allowed'
+        '415':
+          description: 'Unsupported media type'
+        '429':
+          description: 'Rate limit exceeded'
+        '500':
+          description: 'Internal server error'
+        '502':
+          description: 'Bad gateway'
+        '503':
+          description: 'Service unavailable'
+        '504':
+          description: 'Gateway timeout'
+      operationId: spectator-tft-v5.getCurrentGameInfoByPuuid
+      x-nullable-404: true
+      description: 'Get current game information for the given puuid.'
+      parameters:
+        -
+          name: encryptedPUUID
+          in: path
+          required: true
+          description: 'The puuid of the summoner.'
+          type: string
+          x-type: string
+      x-endpoint: spectator-tft-v5
+      x-platforms-available:
+        - br1
+        - eun1
+        - euw1
+        - jp1
+        - kr
+        - la1
+        - la2
+        - me1
+        - na1
+        - oc1
+        - ru
+        - sg2
+        - tr1
+        - tw2
+        - vn2
+      x-route-enum: platform
+      produces:
+        - application/json
+    x-endpoint: spectator-tft-v5
+    x-platforms-available:
+      - br1
+      - eun1
+      - euw1
+      - jp1
+      - kr
+      - la1
+      - la2
+      - me1
+      - na1
+      - oc1
+      - ru
+      - sg2
+      - tr1
+      - tw2
+      - vn2
+    x-route-enum: platform
   '/lol/spectator/v5/active-games/by-summoner/{encryptedPUUID}':
     get:
       tags:
@@ -10252,6 +10337,212 @@ definitions:
       - thumbnailURL
       - fullURL
       - artist
+  spectator-tft-v5.CurrentGameInfo:
+    type: object
+    title: CurrentGameInfo
+    properties:
+      gameId:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The ID of the game'
+      gameType:
+        type: string
+        x-type: string
+        description: 'The game type'
+        x-enum: gameType
+      gameStartTime:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The game start time represented in epoch milliseconds'
+      mapId:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The ID of the map'
+        x-enum: map
+      gameLength:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The amount of time in seconds that has passed since the game started'
+      platformId:
+        type: string
+        x-type: string
+        description: 'The ID of the platform on which the game is being played'
+      gameMode:
+        type: string
+        x-type: string
+        description: 'The game mode'
+        x-enum: gameMode
+      bannedChampions:
+        type: array
+        items:
+          $ref: '#/definitions/spectator-tft-v5.BannedChampion'
+          x-type: BannedChampion
+        x-type: 'List[BannedChampion]'
+        description: 'Banned champion information'
+      gameQueueConfigId:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The queue type (queue types are documented on the Game Constants page)'
+        x-enum: queue
+      observers:
+        $ref: '#/definitions/spectator-tft-v5.Observer'
+        x-type: Observer
+        description: 'The observer information'
+      participants:
+        type: array
+        items:
+          $ref: '#/definitions/spectator-tft-v5.CurrentGameParticipant'
+          x-type: CurrentGameParticipant
+        x-type: 'List[CurrentGameParticipant]'
+        description: 'The participant information'
+    required:
+      - gameId
+      - gameType
+      - gameStartTime
+      - mapId
+      - gameLength
+      - platformId
+      - gameMode
+      - bannedChampions
+      - observers
+      - participants
+  spectator-tft-v5.BannedChampion:
+    type: object
+    title: BannedChampion
+    properties:
+      pickTurn:
+        type: integer
+        format: int32
+        x-type: int
+        description: 'The turn during which the champion was banned'
+      championId:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The ID of the banned champion'
+        x-enum: champion
+      teamId:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The ID of the team that banned the champion'
+        x-enum: team
+    required:
+      - pickTurn
+      - championId
+      - teamId
+  spectator-tft-v5.Observer:
+    type: object
+    title: Observer
+    properties:
+      encryptionKey:
+        type: string
+        x-type: string
+        description: 'Key used to decrypt the spectator grid game data for playback'
+    required:
+      - encryptionKey
+  spectator-tft-v5.CurrentGameParticipant:
+    type: object
+    title: CurrentGameParticipant
+    properties:
+      championId:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The ID of the champion played by this participant'
+        x-enum: champion
+      perks:
+        $ref: '#/definitions/spectator-tft-v5.Perks'
+        x-type: Perks
+        description: 'Perks/Runes Reforged Information'
+      profileIconId:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The ID of the profile icon used by this participant'
+      teamId:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The team ID of this participant, indicating the participant''s team'
+        x-enum: team
+      puuid:
+        type: string
+        x-type: string
+        description: 'The encrypted puuid of this participant. null when the player is anonym.'
+      spell1Id:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The ID of the first summoner spell used by this participant'
+      spell2Id:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'The ID of the second summoner spell used by this participant'
+      gameCustomizationObjects:
+        type: array
+        items:
+          $ref: '#/definitions/spectator-tft-v5.GameCustomizationObject'
+          x-type: GameCustomizationObject
+        x-type: 'List[GameCustomizationObject]'
+        description: 'List of Game Customizations'
+      riotId:
+        type: string
+        x-type: string
+    required:
+      - championId
+      - profileIconId
+      - teamId
+      - spell1Id
+      - spell2Id
+      - gameCustomizationObjects
+  spectator-tft-v5.Perks:
+    type: object
+    title: Perks
+    properties:
+      perkIds:
+        type: array
+        items:
+          type: integer
+          format: int64
+          x-type: long
+        x-type: 'List[long]'
+        description: 'IDs of the perks/runes assigned.'
+      perkStyle:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'Primary runes path'
+      perkSubStyle:
+        type: integer
+        format: int64
+        x-type: long
+        description: 'Secondary runes path'
+    required:
+      - perkIds
+      - perkStyle
+      - perkSubStyle
+  spectator-tft-v5.GameCustomizationObject:
+    type: object
+    title: GameCustomizationObject
+    properties:
+      category:
+        type: string
+        x-type: string
+        description: 'Category identifier for Game Customization'
+      content:
+        type: string
+        x-type: string
+        description: 'Game Customization content'
+    required:
+      - category
+      - content
   spectator-v5.CurrentGameInfo:
     type: object
     title: CurrentGameInfo
