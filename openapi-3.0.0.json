@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "8fe5cbba355b369122ba6fca976ce8337698b578",
-    "x-hash": "8fe5cbba355b369122ba6fca976ce8337698b57891786d3eb3156c54f554c593f2a0e82fd12b88c7",
+    "version": "932311cdb3682a6f8f9120aeb089ce5500cf080a",
+    "x-hash": "932311cdb3682a6f8f9120aeb089ce5500cf080a91786d3eb3156c54f554c593f2a0e82fd12b88c7",
     "x-enumsHash": "91786d3eb3156c54f554c593f2a0e82fd12b88c7"
   },
   "servers": [
@@ -4418,6 +4418,93 @@
               "x-type": "int"
             },
             "description": "Defaults to 20. Valid values: 0 to 100. Number of match ids to return."
+          }
+        ],
+        "x-endpoint": "match-v5",
+        "x-platforms-available": [
+          "americas",
+          "asia",
+          "europe",
+          "sea"
+        ],
+        "x-route-enum": "regional"
+      },
+      "x-endpoint": "match-v5",
+      "x-platforms-available": [
+        "americas",
+        "asia",
+        "europe",
+        "sea"
+      ],
+      "x-route-enum": "regional"
+    },
+    "/lol/match/v5/matches/by-puuid/{puuid}/replays": {
+      "get": {
+        "tags": [
+          "match-v5"
+        ],
+        "summary": "Get player replays",
+        "externalDocs": {
+          "description": "Official API Reference",
+          "url": "https://developer.riotgames.com/api-methods/#match-v5/GET_getReplay"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/match-v5.ReplayDTO",
+                  "x-type": "ReplayDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Data not found"
+          },
+          "405": {
+            "description": "Method not allowed"
+          },
+          "415": {
+            "description": "Unsupported media type"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal server error"
+          },
+          "502": {
+            "description": "Bad gateway"
+          },
+          "503": {
+            "description": "Service unavailable"
+          },
+          "504": {
+            "description": "Gateway timeout"
+          }
+        },
+        "operationId": "match-v5.getReplay",
+        "description": "Get player replays",
+        "parameters": [
+          {
+            "name": "puuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-type": "string"
+            }
           }
         ],
         "x-endpoint": "match-v5",
@@ -10361,6 +10448,27 @@
           "updated_at"
         ]
       },
+      "match-v5.ReplayDTO": {
+        "type": "object",
+        "title": "ReplayDTO",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int",
+            "description": "Total of replay files"
+          },
+          "matchFileURLs": {
+            "$ref": "#/components/schemas/match-v5.array",
+            "x-type": "array",
+            "description": "Replay files URL (.rofl)"
+          }
+        },
+        "required": [
+          "total",
+          "matchFileURLs"
+        ]
+      },
       "match-v5.MatchDto": {
         "type": "object",
         "title": "MatchDto",
@@ -11274,6 +11382,11 @@
             "description": "https://github.com/RiotGames/developer-relations/issues/814"
           },
           "championSkinId": {
+            "type": "integer",
+            "format": "int32",
+            "x-type": "int"
+          },
+          "damageDealtToEpicMonsters": {
             "type": "integer",
             "format": "int32",
             "x-type": "int"
@@ -13098,6 +13211,12 @@
           "x",
           "y"
         ]
+      },
+      "match-v5.array": {
+        "type": "object",
+        "title": "array",
+        "properties": {},
+        "description": "UNKNOWN TYPE."
       },
       "match-v5.FeatsDto": {
         "type": "object",
