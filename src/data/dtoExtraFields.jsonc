@@ -140,6 +140,12 @@
       "type": "integer",
       "format": "int32",
       "x-type": "int"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/754#issuecomment-3553945295
+    "damageDealtToEpicMonsters": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
     }
   },
   //
