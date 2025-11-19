@@ -735,5 +735,16 @@
         "x-type": "long"
       }
     }
+  },
+  // https://github.com/RiotGames/developer-relations/issues/1116
+  "match-v5.ReplayDTO": {
+    "matchFileURLs": {
+      "x-type": "List[string]",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "x-type": "string"
+      }
+    }
   }
 }
