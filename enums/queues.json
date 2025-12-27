@@ -1040,6 +1040,16 @@
     "x-name": "THE_BANDLEWOOD"
   },
   {
+    "queueId": 2400,
+    "map": "Howling Abyss",
+    "description": "ARAM: Mayhem",
+    "notes": null,
+    "x-value": 2400,
+    "x-deprecated": false,
+    "x-desc": "ARAM: Mayhem games on Howling Abyss",
+    "x-name": "HOWLING_ABYSS_ARAM_MAYHEM"
+  },
+  {
     "queueId": 6000,
     "map": "Convergence",
     "description": "Teamfight Tactics Set 3.5 Revival games",
