@@ -146,6 +146,12 @@
       "type": "integer",
       "format": "int32",
       "x-type": "int"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/754#issuecomment-3793761744
+    "roleBoundItem": {
+      "type": "integer",
+      "format": "int32",
+      "x-type": "int"
     }
   },
   //
