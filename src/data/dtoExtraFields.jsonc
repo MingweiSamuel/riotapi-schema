@@ -383,6 +383,11 @@
     "prefix": {
       "type": "string",
       "x-type": "string"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/605#issuecomment-3793766265
+    "premierRosterType": {
+      "type": "string",
+      "x-type": "string"
     }
   },
   //
