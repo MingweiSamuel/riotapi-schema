@@ -230,6 +230,7 @@
 
   // https://github.com/RiotGames/developer-relations/issues/633#issuecomment-3141999299
   "lol-challenges-v1.ChallengePointDto.percentile": true,
+  "lol-challenges-v1.ChallengePointDto.position": true,
   "lol-challenges-v1.ChallengeInfoDto.achievedTime": true,
   "lol-challenges-v1.ChallengeInfoDto.position": true,
   "lol-challenges-v1.ChallengeInfoDto.playersInLevel": true,

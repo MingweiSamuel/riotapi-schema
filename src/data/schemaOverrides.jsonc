@@ -170,7 +170,7 @@
   // https://github.com/RiotGames/developer-relations/issues/633#issuecomment-3142024548
   "lol-challenges-v1.ChallengePointDto": {
     "type": "object",
-    "title": "ChallengePointsDto",
+    "title": "ChallengePointDto",
     "properties": {
       "level": {
         "x-type": "string",
@@ -187,10 +187,17 @@
         "type": "integer",
         "format": "int64"
       },
+      // https://github.com/RiotGames/developer-relations/issues/633#issuecomment-3142024548
       "percentile": {
         "x-type": "double",
         "type": "number",
         "format": "double"
+      },
+      // https://github.com/RiotGames/developer-relations/issues/633#issuecomment-3793770225
+      "position": {
+        "x-type": "long",
+        "type": "integer",
+        "format": "int64"
       }
     },
     "required": [
