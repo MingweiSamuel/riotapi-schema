@@ -559,6 +559,19 @@
     "featValue": {
       "type": "integer",
       "format": "int32"
+    },
+    // https://github.com/RiotGames/developer-relations/issues/926#issuecomment-3864946247
+    "victimTeamfightDamageDealt": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/match-v5.MatchTimelineVictimDamage"
+      }
+    },
+    "victimTeamfightDamageReceived": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/match-v5.MatchTimelineVictimDamage"
+      }
     }
   },
   // https://github.com/RiotGames/developer-relations/issues/928
