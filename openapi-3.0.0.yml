@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 966de8a03769b96aa89caab2e07b64bde10da560
-  x-hash: 966de8a03769b96aa89caab2e07b64bde10da560841cbd6bac25e76aadb09bf07e346ca47784b6df
+  version: 74ce4c4b124cc8d70ed161e46e4d84a1898f7736
+  x-hash: 74ce4c4b124cc8d70ed161e46e4d84a1898f7736841cbd6bac25e76aadb09bf07e346ca47784b6df
   x-enumsHash: 841cbd6bac25e76aadb09bf07e346ca47784b6df
 servers:
   -
@@ -9797,6 +9797,14 @@ components:
         featValue:
           type: integer
           format: int32
+        victimTeamfightDamageDealt:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchTimelineVictimDamage'
+        victimTeamfightDamageReceived:
+          type: array
+          items:
+            $ref: '#/components/schemas/match-v5.MatchTimelineVictimDamage'
       required:
         - timestamp
         - type
