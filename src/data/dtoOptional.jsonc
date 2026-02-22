@@ -181,6 +181,7 @@
   "match-v5.ParticipantDto.championSkinId": true,
   "match-v5.ParticipantDto.damageDealtToEpicMonsters": true,
   "match-v5.ParticipantDto.roleBoundItem": true,
+  "match-v5.ParticipantDto.playerBehavior": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.InfoDto.endOfGameResult": true,
