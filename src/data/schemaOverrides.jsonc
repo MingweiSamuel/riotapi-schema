@@ -439,5 +439,17 @@
         "x-type": "int"
       }
     }
+  },
+  // https://github.com/RiotGames/developer-relations/issues/754#issuecomment-3940157820
+  "match-v5.ParticipantPlayerBehaviorDto": {
+    "type": "object",
+    "title": "ParticipantPlayerBehaviorDto",
+    "properties": {
+      "PlayerBehavior_IsHeroInCombat": {
+        "type": "integer",
+        "format": "int32",
+        "x-type": "int"
+      }
+    }
   }
 }
