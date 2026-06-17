@@ -1,5 +1,6 @@
 [
   "account-v1.ActiveShardDto",
+  "champion-v3.array",
   "lol-rso-match-v1.MatchDto",
   "lol-rso-match-v1.TimelineDto",
   "match-v5.FeatDto",
