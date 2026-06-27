@@ -3,9 +3,9 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 2abe323118826122d8798edd16f5975ffb49d1ae
-  x-hash: 2abe323118826122d8798edd16f5975ffb49d1ae841cbd6bac25e76aadb09bf07e346ca47784b6df
-  x-enumsHash: 841cbd6bac25e76aadb09bf07e346ca47784b6df
+  version: 55d92749088467cdc4bb517458b1eb6caa5234a8
+  x-hash: 55d92749088467cdc4bb517458b1eb6caa5234a8a2591954004b70b6d1909828f157d9a4acf6cff8
+  x-enumsHash: a2591954004b70b6d1909828f157d9a4acf6cff8
 servers:
   -
     url: 'https://{platform}.api.riotgames.com'
@@ -6513,13 +6513,21 @@ components:
       title: ChampionInfo
       properties:
         newplayer:
-          $ref: '#/components/schemas/champion-v3.array'
-          x-type: array
-          description: 'A list of champion IDs available to players under summoner level 11'
+          type: array
+          items:
+            type: integer
+            format: int32
+            x-type: int
+            x-enum: champion
+          x-type: 'List[int]'
         sr:
-          $ref: '#/components/schemas/champion-v3.array'
-          x-type: array
-          description: 'A list of champion IDs available to all players on Summoner''s Rift'
+          type: array
+          items:
+            type: integer
+            format: int32
+            x-type: int
+            x-enum: champion
+          x-type: 'List[int]'
       required:
         - newplayer
         - sr
@@ -6719,7 +6727,6 @@ components:
           $ref: '#/components/schemas/league-exp-v4.MiniSeriesDTO'
           x-type: MiniSeriesDTO
       required:
-        - leagueId
         - puuid
         - queueType
         - tier
@@ -8464,6 +8471,30 @@ components:
           $ref: '#/components/schemas/match-v5.ParticipantPlayerBehaviorDto'
           x-type: ParticipantPlayerBehaviorDto
           description: 'https://github.com/RiotGames/developer-relations/issues/754#issuecomment-3940157820'
+        causedGameEndFromIGNBSurrender:
+          type: boolean
+          x-type: boolean
+        gameEndedInIGNBSurrender:
+          type: boolean
+          x-type: boolean
+        positionAssignedByMatchmaking:
+          type: string
+          x-type: string
+        selectedRolePreferences:
+          type: string
+          x-type: string
+        teamIGNBSurrendered:
+          type: boolean
+          x-type: boolean
+        wasPremadeWithIGNBGameEndCauser:
+          type: boolean
+          x-type: boolean
+        wasPremadeWithSevereTransgressor:
+          type: boolean
+          x-type: boolean
+        wasSevereTransgressor:
+          type: boolean
+          x-type: boolean
       required:
         - assists
         - baronKills

@@ -530,6 +530,16 @@
     "x-name": "SUMMONERS_RIFT_CLASH"
   },
   {
+    "queueId": 710,
+    "map": "Summoner's Rift",
+    "description": "Ranked 5v5 Team games",
+    "notes": "Observed in CommunityDragon queues and live payloads; Riot's official queues.json may lag updates. 420 (Ranked Solo) still exists alongside 710.",
+    "x-value": 710,
+    "x-deprecated": false,
+    "x-desc": "Ranked 5v5 Team games on Summoner's Rift",
+    "x-name": "SUMMONERS_RIFT_RANKED_5V5_TEAM"
+  },
+  {
     "queueId": 720,
     "map": "Howling Abyss",
     "description": "ARAM Clash games",
