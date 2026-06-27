@@ -15,8 +15,8 @@
   "tft-match-v1.InfoDto.queueId": "queue",
 
   "champion-mastery-v4.ChampionMasteryDto.championId": "champion",
-  "champion-v3.ChampionInfo.freeChampionIdsForNewPlayers[]": "champion",
-  "champion-v3.ChampionInfo.freeChampionIds[]": "champion",
+  "champion-v3.ChampionInfo.newplayer[]": "champion",
+  "champion-v3.ChampionInfo.sr[]": "champion",
   "spectator-v4.BannedChampion.championId": "champion",
   "spectator-v4.CurrentGameParticipant.championId": "champion",
   "spectator-v4.Participant.championId": "champion",

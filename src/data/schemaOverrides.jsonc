@@ -28,6 +28,38 @@
   },
 
 
+  "champion-v3.ChampionInfo": {
+    "type": "object",
+    "title": "ChampionInfo",
+    "properties": {
+      "newplayer": {
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "x-enum": "champion"
+        },
+        "x-type": "List[int]"
+      },
+      "sr": {
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "format": "int32",
+          "x-type": "int",
+          "x-enum": "champion"
+        },
+        "x-type": "List[int]"
+      }
+    },
+    "required": [
+      "newplayer",
+      "sr"
+    ]
+  },
+
+
   // https://github.com/RiotGames/developer-relations/issues/926
   "match-v5.MatchTimelineVictimDamage": {
     "title": "MatchTimelineVictimDamage",

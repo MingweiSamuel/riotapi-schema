@@ -133,5 +133,12 @@
         "map": "Convergence",
         "description": "Teamfight Tactics: Pengu's Party",
         "notes": null
+    },
+    // https://www.leagueoflegends.com/en-us/news/dev/dev-the-return-of-ranked-5s/
+    {
+        "queueId": 710,
+        "map": "Summoner's Rift",
+        "description": "Ranked 5v5 Team games",
+        "notes": "Observed in CommunityDragon queues and live payloads; Riot's official queues.json may lag updates. 420 (Ranked Solo) still exists alongside 710."
     }
 ]

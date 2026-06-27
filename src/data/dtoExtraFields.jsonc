@@ -20,7 +20,6 @@
       "x-type": "int"
     }
   },
-  //
   // https://github.com/RiotGames/developer-relations/issues/754
   "match-v5.ParticipantDto": {
     "baitPings": {
@@ -158,6 +157,38 @@
       "$ref": "#/components/schemas/match-v5.ParticipantPlayerBehaviorDto",
       "x-type": "ParticipantPlayerBehaviorDto",
       "description": "https://github.com/RiotGames/developer-relations/issues/754#issuecomment-3940157820"
+    },
+    "causedGameEndFromIGNBSurrender": {
+      "type": "boolean",
+      "x-type": "boolean"
+    },
+    "gameEndedInIGNBSurrender": {
+      "type": "boolean",
+      "x-type": "boolean"
+    },
+    "positionAssignedByMatchmaking": {
+      "type": "string",
+      "x-type": "string"
+    },
+    "selectedRolePreferences": {
+      "type": "string",
+      "x-type": "string"
+    },
+    "teamIGNBSurrendered": {
+      "type": "boolean",
+      "x-type": "boolean"
+    },
+    "wasPremadeWithIGNBGameEndCauser": {
+      "type": "boolean",
+      "x-type": "boolean"
+    },
+    "wasPremadeWithSevereTransgressor": {
+      "type": "boolean",
+      "x-type": "boolean"
+    },
+    "wasSevereTransgressor": {
+      "type": "boolean",
+      "x-type": "boolean"
     }
   },
   //

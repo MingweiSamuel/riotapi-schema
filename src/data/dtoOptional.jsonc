@@ -17,6 +17,7 @@
   "league-v4.LeagueItemDTO.miniSeries": true,
   // https://github.com/MingweiSamuel/riotapi-schema/issues/59
   "league-exp-v4.LeagueEntryDTO.summonerId": true, // https://github.com/RiotGames/developer-relations/issues/1085
+  "league-exp-v4.LeagueEntryDTO.leagueId": true,
   "league-v4.LeagueItemDTO.summonerId": true,
 
   "league-v4.LeagueListDTO.*": true,
@@ -182,6 +183,14 @@
   "match-v5.ParticipantDto.damageDealtToEpicMonsters": true,
   "match-v5.ParticipantDto.roleBoundItem": true,
   "match-v5.ParticipantDto.PlayerBehavior": true,
+  "match-v5.ParticipantDto.causedGameEndFromIGNBSurrender": true,
+  "match-v5.ParticipantDto.gameEndedInIGNBSurrender": true,
+  "match-v5.ParticipantDto.positionAssignedByMatchmaking": true,
+  "match-v5.ParticipantDto.selectedRolePreferences": true,
+  "match-v5.ParticipantDto.teamIGNBSurrendered": true,
+  "match-v5.ParticipantDto.wasPremadeWithIGNBGameEndCauser": true,
+  "match-v5.ParticipantDto.wasPremadeWithSevereTransgressor": true,
+  "match-v5.ParticipantDto.wasSevereTransgressor": true,
   "match-v5.InfoDto.tournamentCode": true,
   "match-v5.InfoDto.gameEndTimestamp": true,
   "match-v5.InfoDto.endOfGameResult": true,
