@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 7631e2cfd5e18411c6d6ebc26212ffbf6cc8b2ef
-  x-hash: 7631e2cfd5e18411c6d6ebc26212ffbf6cc8b2efa2591954004b70b6d1909828f157d9a4acf6cff8
+  version: 651fd42a1af69dc0c8a3458d7013aab1271dadb6
+  x-hash: 651fd42a1af69dc0c8a3458d7013aab1271dadb6a2591954004b70b6d1909828f157d9a4acf6cff8
   x-enumsHash: a2591954004b70b6d1909828f157d9a4acf6cff8
 servers:
   -
@@ -8598,11 +8598,11 @@ components:
         12AssistStreakCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         baronBuffGoldAdvantageOverThreshold:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         controlWardTimeCoverageInRiverOrEnemyHalf:
           type: number
           format: float
@@ -8626,7 +8626,7 @@ components:
         fasterSupportQuestCompletion:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
           enum:
             - 0
             - 1
@@ -8637,47 +8637,47 @@ components:
         hadAfkTeammate:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
           enum:
             - 0
             - 1
         highestChampionDamage:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         highestCrowdControlScore:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
           enum:
             - 0
             - 1
         highestWardKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
           enum:
             - 0
             - 1
         junglerKillsEarlyJungle:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         killsOnLanersEarlyJungleAsJungler:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         laningPhaseGoldExpAdvantage:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
           enum:
             - 0
             - 1
         legendaryCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         maxCsAdvantageOnLaneOpponent:
           type: number
           format: float
@@ -8685,34 +8685,34 @@ components:
         maxLevelLeadLaneOpponent:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         mostWardsDestroyedOneSweeper:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         mythicItemUsed:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         playedChampSelectPosition:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
           enum:
             - 0
             - 1
         soloTurretsLategame:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         takedownsFirst25Minutes:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         teleportTakedowns:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         thirdInhibitorDestroyedTime:
           type: number
           format: double
@@ -8720,7 +8720,7 @@ components:
         threeWardsOneSweeperCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         visionScoreAdvantageLaneOpponent:
           type: number
           format: float
@@ -8728,23 +8728,23 @@ components:
         InfernalScalePickup:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         fistBumpParticipation:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         voidMonsterKill:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         abilityUses:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         acesBefore15Minutes:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         alliedJungleMonsterKills:
           type: number
           format: float
@@ -8752,11 +8752,11 @@ components:
         baronTakedowns:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         blastConeOppositeOpponentCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         bountyGold:
           type: number
           format: double
@@ -8764,15 +8764,15 @@ components:
         buffsStolen:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         completeSupportQuestInTime:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         controlWardsPlaced:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         damagePerMinute:
           type: number
           format: float
@@ -8784,23 +8784,23 @@ components:
         dancedWithRiftHerald:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         deathsByEnemyChamps:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         dodgeSkillShotsSmallWindow:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         doubleAces:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         dragonTakedowns:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         legendaryItemUsed:
           type: array
           items:
@@ -8815,15 +8815,15 @@ components:
         elderDragonKillsWithOpposingSoul:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         elderDragonMultikills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         enemyChampionImmobilizations:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         enemyJungleMonsterKills:
           type: number
           format: float
@@ -8831,19 +8831,19 @@ components:
         epicMonsterKillsNearEnemyJungler:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         epicMonsterKillsWithin30SecondsOfSpawn:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         epicMonsterSteals:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         epicMonsterStolenWithoutSmite:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         firstTurretKilled:
           type: number
           format: double
@@ -8855,11 +8855,11 @@ components:
         flawlessAces:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         fullTeamTakedown:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         gameLength:
           type: number
           format: float
@@ -8867,7 +8867,7 @@ components:
         getTakedownsInAllLanesEarlyJungleAsLaner:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         goldPerMinute:
           type: number
           format: float
@@ -8875,19 +8875,19 @@ components:
         hadOpenNexus:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         immobilizeAndKillWithAlly:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         initialBuffCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         initialCrabCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         jungleCsBefore10Minutes:
           type: number
           format: float
@@ -8895,7 +8895,7 @@ components:
         junglerTakedownsNearDamagedEpicMonster:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         kda:
           type: number
           format: float
@@ -8903,15 +8903,15 @@ components:
         killAfterHiddenWithAlly:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         killedChampTookFullTeamDamageSurvived:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         killingSprees:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         killParticipation:
           type: number
           format: float
@@ -8919,51 +8919,51 @@ components:
         killsNearEnemyTurret:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         killsOnOtherLanesEarlyJungleAsLaner:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         killsOnRecentlyHealedByAramPack:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         killsUnderOwnTurret:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         killsWithHelpFromEpicMonster:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         knockEnemyIntoTeamAndKill:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         kTurretsDestroyedBeforePlatesFall:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         landSkillShotsEarlyGame:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         laneMinionsFirst10Minutes:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         lostAnInhibitor:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         maxKillDeficit:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         mejaisFullStackInTime:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         moreEnemyJungleThanOpponent:
           type: number
           format: float
@@ -8971,72 +8971,72 @@ components:
         multiKillOneSpell:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
           description: 'This is an offshoot of the OneStone challenge. The code checks if a spell with the same instance ID does the final point of damage to at least 2 Champions. It doesn''t matter if they''re enemies, but you cannot hurt your friends.'
         multikills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         multikillsAfterAggressiveFlash:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         multiTurretRiftHeraldCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         outerTurretExecutesBefore10Minutes:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         outnumberedKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         outnumberedNexusKill:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         perfectDragonSoulsTaken:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         perfectGame:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         pickKillWithAlly:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         poroExplosions:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         quickCleanse:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         quickFirstTurret:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         quickSoloKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         riftHeraldTakedowns:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         saveAllyFromDeath:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         scuttleCrabKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         shortestTimeToAceFromFirstTakedown:
           type: number
           format: float
@@ -9044,43 +9044,43 @@ components:
         skillshotsDodged:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         skillshotsHit:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         snowballsHit:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         soloBaronKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_DefeatAatrox:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_DefeatBriar:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_DefeatMiniBosses:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_EvolveWeapon:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_Have3Passives:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_KillEnemy:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_PickupGold:
           type: number
           format: float
@@ -9088,63 +9088,63 @@ components:
         SWARM_ReachLevel50:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_Survive15Min:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         SWARM_WinWith5EvolvedWeapons:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         soloKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         stealthWardsPlaced:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         survivedSingleDigitHpCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         survivedThreeImmobilizesInFight:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         takedownOnFirstTurret:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         takedowns:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         takedownsAfterGainingLevelAdvantage:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         takedownsBeforeJungleMinionSpawn:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         takedownsFirstXMinutes:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         takedownsInAlcove:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         takedownsInEnemyFountain:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         teamBaronKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         teamDamagePercentage:
           type: number
           format: float
@@ -9152,40 +9152,40 @@ components:
         teamElderDragonKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         teamRiftHeraldKills:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         tookLargeDamageSurvived:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         turretPlatesTaken:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         turretsTakenWithRiftHerald:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
           description: 'Any player who damages a tower that is destroyed within 30 seconds of a Rift Herald charge will receive credit. A player who does not damage the tower will not receive credit.'
         turretTakedowns:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         twentyMinionsIn3SecondsCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         twoWardsOneSweeperCount:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         unseenRecalls:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         visionScorePerMinute:
           type: number
           format: float
@@ -9193,15 +9193,15 @@ components:
         wardsGuarded:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         wardTakedowns:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         wardTakedownsBefore20M:
           type: integer
           format: int32
-          x-type: int
+          x-type: integer
         HealFromMapSources:
           type: number
           format: double
