@@ -3,8 +3,8 @@ info:
   title: 'Riot API'
   description: "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n"
   termsOfService: 'https://developer.riotgames.com/terms'
-  version: 93d2c34f8e38f101a57b12120d5c8799d9b354d1
-  x-hash: 93d2c34f8e38f101a57b12120d5c8799d9b354d1a2591954004b70b6d1909828f157d9a4acf6cff8
+  version: 1c4d26790e95d5246a47368fa0dee8a105cc382c
+  x-hash: 1c4d26790e95d5246a47368fa0dee8a105cc382ca2591954004b70b6d1909828f157d9a4acf6cff8
   x-enumsHash: a2591954004b70b6d1909828f157d9a4acf6cff8
 host: na1.api.riotgames.com
 x-host-platform:
@@ -5740,6 +5740,7 @@ paths:
             - console_skirmish2v2
             - console_skirmishascension1v1
             - console_skirmishascension2v2
+            - console_abilitydraftarena
           description: ""
       x-endpoint: val-console-match-v1
       x-platforms-available:
@@ -6109,6 +6110,8 @@ paths:
             - skirmish2v2
             - skirmishascension1v1
             - skirmishascension2v2
+            - test
+            - abilitydraftarena
           description: ""
       x-endpoint: val-match-v1
       x-platforms-available:
