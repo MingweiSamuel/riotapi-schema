@@ -4,8 +4,8 @@
     "title": "Riot API",
     "description": "\nOpenAPI/Swagger version of the [Riot API](https://developer.riotgames.com/). Automatically generated daily.\n## OpenAPI Spec File\nThe following versions of the Riot API spec file are available:\n- `openapi-3.0.0.json` ([view file](../openapi-3.0.0.json), [ui select](?url=../openapi-3.0.0.json))\n- `openapi-3.0.0.min.json` ([view file](../openapi-3.0.0.min.json), [ui select](?url=../openapi-3.0.0.min.json))\n- `openapi-3.0.0.yml` ([view file](../openapi-3.0.0.yml), [ui select](?url=../openapi-3.0.0.yml))\n- `openapi-3.0.0.min.yml` ([view file](../openapi-3.0.0.min.yml), [ui select](?url=../openapi-3.0.0.min.yml))\n- `swaggerspec-2.0.json` ([view file](../swaggerspec-2.0.json), [ui select](?url=../swaggerspec-2.0.json))\n- `swaggerspec-2.0.min.json` ([view file](../swaggerspec-2.0.min.json), [ui select](?url=../swaggerspec-2.0.min.json))\n- `swaggerspec-2.0.yml` ([view file](../swaggerspec-2.0.yml), [ui select](?url=../swaggerspec-2.0.yml))\n- `swaggerspec-2.0.min.yml` ([view file](../swaggerspec-2.0.min.yml), [ui select](?url=../swaggerspec-2.0.min.yml))\n## Other Files\n- Missing DTOs: [`missing.json`](../missing.json)\n- Routes Table: [`routesTable.json`](../routesTable.json)\n- [Enum Files](../enums/)\n## Source Code\nSource code on [GitHub](https://github.com/MingweiSamuel/riotapi-schema). Pull requests welcome!\n## Automatically Generated\nRebuilt on [Travis CI](https://travis-ci.com/MingweiSamuel/riotapi-schema/builds) daily.\n***\n",
     "termsOfService": "https://developer.riotgames.com/terms",
-    "version": "bca08c6737245decb570e82447491f77fee83d38",
-    "x-hash": "bca08c6737245decb570e82447491f77fee83d38a2591954004b70b6d1909828f157d9a4acf6cff8",
+    "version": "f11a6ec7a4e117eac0a1997e9bda89bd6a5d52bf",
+    "x-hash": "f11a6ec7a4e117eac0a1997e9bda89bd6a5d52bfa2591954004b70b6d1909828f157d9a4acf6cff8",
     "x-enumsHash": "a2591954004b70b6d1909828f157d9a4acf6cff8"
   },
   "servers": [
@@ -4328,15 +4328,15 @@
       ],
       "x-route-enum": "regional"
     },
-    "/lol/match/v5/matches/by-puuid/{puuid}/replays": {
+    "/lol/match/v5/matches/replays": {
       "get": {
         "tags": [
           "match-v5"
         ],
-        "summary": "Get player replays",
+        "summary": "Get player replays by access token",
         "externalDocs": {
           "description": "Official API Reference",
-          "url": "https://developer.riotgames.com/api-methods/#match-v5/GET_getReplay"
+          "url": "https://developer.riotgames.com/api-methods/#match-v5/GET_getReplayByAccessToken"
         },
         "responses": {
           "200": {
@@ -4384,19 +4384,15 @@
             "description": "Gateway timeout"
           }
         },
-        "operationId": "match-v5.getReplay",
-        "description": "Get player replays",
-        "parameters": [
+        "operationId": "match-v5.getReplayByAccessToken",
+        "security": [
           {
-            "name": "puuid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "x-type": "string"
-            }
+            "rso": [
+              "openid"
+            ]
           }
         ],
+        "description": "Get player replays by access token",
         "x-endpoint": "match-v5",
         "x-platforms-available": [
           "americas",
